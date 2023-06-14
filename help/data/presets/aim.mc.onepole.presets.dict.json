@@ -1,0 +1,62 @@
+{
+	"_metadata" : 	{
+		"package-version" : 0.4
+	}
+,
+	"justTesting" : 	{
+		"channelcount" : "5.1 surround",
+		"ON" : 1,
+		"preset-description" : "undefined",
+		"preset-editflag" : 0,
+		"preset-name" : "justTesting",
+		"channel.1" : 		{
+			"frequency" : 610.0,
+			"ON" : 1,
+			"preset-description" : "undefined",
+			"preset-editflag" : 0,
+			"preset-name" : "test"
+		}
+,
+		"channel.2" : 		{
+			"frequency" : 1119.0,
+			"ON" : 1,
+			"preset-description" : "undefined",
+			"preset-editflag" : 0,
+			"preset-name" : "whatever"
+		}
+,
+		"channel.3" : 		{
+			"frequency" : 1000.0,
+			"ON" : 1,
+			"preset-description" : "undefined",
+			"preset-editflag" : 0,
+			"preset-name" : "none"
+		}
+,
+		"channel.4" : 		{
+			"frequency" : 1000.0,
+			"ON" : 1,
+			"preset-description" : "undefined",
+			"preset-editflag" : 0,
+			"preset-name" : "none"
+		}
+,
+		"channel.5" : 		{
+			"frequency" : 1000.0,
+			"ON" : 1,
+			"preset-description" : "undefined",
+			"preset-editflag" : 0,
+			"preset-name" : "none"
+		}
+,
+		"channel.6" : 		{
+			"frequency" : 1000.0,
+			"ON" : 1,
+			"preset-description" : "undefined",
+			"preset-editflag" : 0,
+			"preset-name" : "none"
+		}
+
+	}
+
+}

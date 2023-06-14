@@ -1,0 +1,23 @@
+{
+	"MyDevice" : {
+		"parent" : "none",
+		"type" : "myDevice",
+		"instances" : [["myDevice"]]
+	},
+
+	"5294" : {
+		"parent" : "MyDevice",
+		"type" : "mc.cascade",
+		"instances" : [["myMcCascade"]]
+	},
+	"5294.channel" : {
+		"parent" : "5294",
+		"type" : "cascade",
+		"instances" : [["channel.1"], ["channel.2"]]
+	},
+	"5294.channel.filter" : {
+		"parent" : "5294.channel",
+		"type" : "biquad",
+		"instances" : [["filter.1"], ["filter.1", "filter.3", "filter.3"]]
+	}			
+}

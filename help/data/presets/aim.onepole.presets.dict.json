@@ -1,0 +1,22 @@
+{
+	"_metadata" : 	{
+		"package-version" : 0.4
+	}
+,
+	"whatever" : 	{
+		"frequency" : 1119.0,
+		"ON" : 1,
+		"preset-description" : "undefined",
+		"preset-editflag" : 0,
+		"preset-name" : "whatever"
+	}
+,
+	"test" : 	{
+		"frequency" : 610.0,
+		"ON" : 1,
+		"preset-description" : "undefined",
+		"preset-editflag" : 0,
+		"preset-name" : "test"
+	}
+
+}

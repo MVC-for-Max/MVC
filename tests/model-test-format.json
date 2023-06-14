@@ -1,0 +1,53 @@
+{
+	"dev" : 
+		{
+			"uid" : [ "1437", 1 ],
+			"childs" :[
+				{
+					"myOnepole" :  {
+						"uid" : [ "7568", 1 ]
+					}
+				}
+				,
+				{
+					"onep" :  {
+						"uid" : [ "7625", 1 ],
+						"childs" :[
+							{
+								"channel.1" : {
+									"uid" : [ "7625.channel", 1 ],
+									"filter.1" : {
+										"uid" : [ "7625.channel.filter", 1 ]
+									}
+								}
+							},
+							{
+								"channel.2" : {
+									"uid" : [ "7625.channel", 2 ],
+									"filter.1" : {
+										"uid" : [ "7625.channel.filter", 2 ]
+									}
+								}
+							},
+							{
+								"channel.3" : {
+									"uid" : [ "7625.channel", 3 ],
+									"filter.1" : {
+										"uid" : [ "7625.channel.filter", 3 ]
+									}
+								}
+							},
+							{
+								"channel.4" : {
+									"uid" : [ "7625.channel", 4 ],
+									"filter.1" : {
+										"uid" : [ "7625.channel.filter", 4 ]
+									}
+								}
+							}
+						]
+					}
+				}
+			]
+		}
+	}
