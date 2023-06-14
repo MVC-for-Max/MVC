@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 355.0, 401.0, 708.0, 390.0 ],
+		"rect" : [ 212.0, 345.0, 708.0, 390.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -399,7 +399,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 511.5, 109.0, 59.0, 22.0 ],
+					"patching_rect" : [ 431.5, 109.0, 59.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -418,7 +418,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 528.0, 29.0, 72.0, 22.0 ],
+					"patching_rect" : [ 448.0, 29.0, 72.0, 22.0 ],
 					"text" : "patcherargs"
 				}
 
@@ -432,7 +432,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 35.0, 25.0, 30.0, 30.0 ]
+					"patching_rect" : [ 49.0, 21.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -443,7 +443,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 360.5, 200.0, 29.5, 22.0 ],
+					"patching_rect" : [ 280.5, 200.0, 29.5, 22.0 ],
 					"text" : "$2"
 				}
 
@@ -456,7 +456,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 30.0, 285.0, 30.0, 30.0 ]
+					"patching_rect" : [ 49.0, 285.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -468,7 +468,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 608.0, 285.0, 30.0, 30.0 ]
+					"patching_rect" : [ 528.0, 285.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -480,7 +480,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 237.5, 285.0, 30.0, 30.0 ]
+					"patching_rect" : [ 157.5, 285.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -493,7 +493,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 608.0, 21.0, 30.0, 30.0 ]
+					"patching_rect" : [ 528.0, 21.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -504,7 +504,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 237.5, 256.0, 87.0, 22.0 ],
+					"patching_rect" : [ 157.5, 256.0, 87.0, 22.0 ],
 					"text" : "setvalue $2 $1"
 				}
 
@@ -516,7 +516,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 237.5, 229.0, 142.0, 22.0 ],
+					"patching_rect" : [ 157.5, 229.0, 142.0, 22.0 ],
 					"text" : "pack 1000. 0"
 				}
 
@@ -530,7 +530,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 237.5, 143.5, 293.0, 49.0 ],
+					"patching_rect" : [ 157.5, 143.5, 293.0, 49.0 ],
 					"text" : "mvc.parameter #1 frequency @type decimal @range 20. 22000. @clip both @description \"Cutoff frequency\" @unit Hz @default 1000"
 				}
 
@@ -544,9 +544,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 129.0, 60.5, 498.0, 24.0 ],
-					"text" : "mvc.model #1 #2 #3 @type onepole",
-					"varname" : "aim.model"
+					"patching_rect" : [ 49.0, 60.5, 498.0, 24.0 ],
+					"text" : "mvc.model #1 #2 #3 @type onepole"
 				}
 
 			}

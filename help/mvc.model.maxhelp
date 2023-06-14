@@ -64,14 +64,13 @@
 			}
 , 			{
 				"box" : 				{
-					"color" : [ 0.501961, 0.501961, 0.501961, 1.0 ],
 					"id" : "obj-37",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 545.0, 164.0, 169.0, 22.0 ],
-					"text" : "mvc.mc.cascade~ dev mc.cas",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "mvc.mc.cascade~", "dev", "mc.cas" ],
+					"patching_rect" : [ 545.0, 164.0, 176.0, 22.0 ],
+					"text" : "t mvc.mc.cascade~ dev mc.cas",
 					"varname" : "mvc.mc.cascade~"
 				}
 
@@ -115,14 +114,13 @@
 			}
 , 			{
 				"box" : 				{
-					"color" : [ 0.501961, 0.501961, 0.501961, 1.0 ],
 					"id" : "obj-6",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 540.0, 67.0, 119.0, 22.0 ],
-					"text" : "mvc.biquad~ dev biq",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "mvc.biquad~", "dev", "biq" ],
+					"patching_rect" : [ 540.0, 67.0, 126.0, 22.0 ],
+					"text" : "t mvc.biquad~ dev biq",
 					"varname" : "aim.biquad~"
 				}
 
@@ -491,13 +489,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-6", 1 ],
-					"source" : [ "obj-17", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
 					"source" : [ "obj-18", 0 ]
 				}
@@ -540,13 +531,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-37", 1 ],
-					"source" : [ "obj-39", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-27", 1 ],
 					"source" : [ "obj-5", 0 ]
 				}
@@ -554,7 +538,6 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-27::obj-8::obj-5::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[5]", "live.toggle", 0 ],
 			"obj-36" : [ "mc.live.gain~", "mc.live.gain~", 0 ],
 			"obj-3::obj-35::obj-30::obj-18::obj-7" : [ "live.toggle[1]", "live.toggle", 0 ],
 			"parameterbanks" : 			{
@@ -562,13 +545,6 @@
 					"index" : 0,
 					"name" : "",
 					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
-				}
-
-			}
-,
-			"parameter_overrides" : 			{
-				"obj-27::obj-8::obj-5::obj-61::obj-20.1::obj-12::obj-8::obj-7" : 				{
-					"parameter_longname" : "live.toggle[5]"
 				}
 
 			}
@@ -647,13 +623,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "aim.channellayout2channelcount.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/lib",
-				"patcherrelativepath" : "../../AIM/patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "aim.createfolder.js",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
 				"patcherrelativepath" : "../../AIM/javascript",
@@ -720,13 +689,6 @@
 				"name" : "aim.f.io.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
 				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.filtergraph~.p.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/components",
-				"patcherrelativepath" : "../../AIM/patchers/components",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -871,42 +833,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "mvc.GUI.activeToggle.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "mvc.GUI.number.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.GUI.presets.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.biquad~.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.biquad~.model.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.cascade~.model.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
 				"patcherrelativepath" : "../patchers",
 				"type" : "JSON",
@@ -934,13 +861,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "mvc.mc.cascade~.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "mvc.model.declare.js",
 				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
 				"patcherrelativepath" : "../javascript",
@@ -948,21 +868,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "mvc.model.gui.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "mvc.model.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.onepole.gui.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
 				"patcherrelativepath" : "../patchers",
 				"type" : "JSON",
@@ -991,6 +897,13 @@
 			}
 , 			{
 				"name" : "mvc.parameter.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
+				"patcherrelativepath" : "../patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mvc.presets.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
 				"patcherrelativepath" : "../patchers",
 				"type" : "JSON",

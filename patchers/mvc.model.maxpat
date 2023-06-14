@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 265.0, 87.0, 1285.0, 834.0 ],
+		"rect" : [ 265.0, 87.0, 1197.0, 842.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -2817,6 +2817,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-22",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -5875,6 +5876,7 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-11",
+																					"linecount" : 2,
 																					"maxclass" : "newobj",
 																					"numinlets" : 1,
 																					"numoutlets" : 4,
@@ -6509,6 +6511,7 @@
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-4",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -6526,6 +6529,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-3",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -6662,6 +6666,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-51",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -6691,6 +6696,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-40",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
@@ -6965,6 +6971,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-70",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
@@ -7115,6 +7122,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-53",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
@@ -7181,6 +7189,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-67",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
@@ -7480,6 +7489,7 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-9",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
@@ -10020,7 +10030,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-5",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
@@ -10518,6 +10528,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-40",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
@@ -10720,6 +10731,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-10",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
@@ -11862,7 +11874,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 0,
 									"patching_rect" : [ 26.0, 294.926315789473733, 411.000000000000114, 24.0 ],
-									"text" : "aim.model.initialize"
+									"text" : "mvc.model.initialize"
 								}
 
 							}
@@ -12084,6 +12096,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-48",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -14320,8 +14333,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 69.0, 287.999999999999943, 117.0, 22.0 ],
-									"text" : "aim.model.initialized"
+									"patching_rect" : [ 69.0, 287.999999999999943, 119.0, 22.0 ],
+									"text" : "mvc.model.initialized"
 								}
 
 							}
@@ -17001,7 +17014,7 @@
 																		}
 ,
 																		"classnamespace" : "box",
-																		"rect" : [ 84.0, 131.0, 242.0, 213.0 ],
+																		"rect" : [ 84.0, 131.0, 525.0, 231.0 ],
 																		"bglocked" : 0,
 																		"openinpresentation" : 0,
 																		"default_fontsize" : 12.0,
@@ -17049,8 +17062,8 @@
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 50.0, 83.0, 56.0, 22.0 ],
-																					"text" : "aim.f.call"
+																					"patching_rect" : [ 50.0, 83.0, 59.0, 22.0 ],
+																					"text" : "mvc.f.call"
 																				}
 
 																			}
