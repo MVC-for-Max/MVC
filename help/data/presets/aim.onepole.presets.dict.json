@@ -18,5 +18,13 @@
 		"preset-editflag" : 0,
 		"preset-name" : "test"
 	}
+,
+	"oneoneone" : 	{
+		"frequency" : 111.0,
+		"ON" : 1,
+		"preset-description" : "undefined",
+		"preset-editflag" : 0,
+		"preset-name" : "oneoneone"
+	}
 
 }
