@@ -45,7 +45,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 224.0, 32.0, 30.0, 22.0 ],
+					"patching_rect" : [ 280.0, 51.0, 30.0, 22.0 ],
 					"text" : "GUI"
 				}
 
@@ -58,8 +58,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 44.0, 320.14285714285711, 195.0, 22.0 ],
-					"text" : "aim.mc.cascade~ ts mcCascade10"
+					"patching_rect" : [ 59.0, 335.14285714285711, 205.0, 22.0 ],
+					"text" : "mvc.mc.cascade~ ts mcCascade10"
 				}
 
 			}
@@ -71,8 +71,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 44.0, 268.555555555555543, 188.0, 22.0 ],
-					"text" : "aim.mc.cascade~ ts mcCascade9"
+					"patching_rect" : [ 59.0, 283.555555555555543, 198.0, 22.0 ],
+					"text" : "mvc.mc.cascade~ ts mcCascade9"
 				}
 
 			}
@@ -84,8 +84,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 44.0, 294.34920634920627, 188.0, 22.0 ],
-					"text" : "aim.mc.cascade~ ts mcCascade8"
+					"patching_rect" : [ 59.0, 309.34920634920627, 198.0, 22.0 ],
+					"text" : "mvc.mc.cascade~ ts mcCascade8"
 				}
 
 			}
@@ -97,8 +97,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 44.0, 242.761904761904731, 188.0, 22.0 ],
-					"text" : "aim.mc.cascade~ ts mcCascade7"
+					"patching_rect" : [ 59.0, 257.761904761904702, 198.0, 22.0 ],
+					"text" : "mvc.mc.cascade~ ts mcCascade7"
 				}
 
 			}
@@ -110,8 +110,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 44.0, 216.968253968253947, 188.0, 22.0 ],
-					"text" : "aim.mc.cascade~ ts mcCascade6"
+					"patching_rect" : [ 59.0, 231.968253968253947, 198.0, 22.0 ],
+					"text" : "mvc.mc.cascade~ ts mcCascade6"
 				}
 
 			}
@@ -123,8 +123,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 44.0, 191.174603174603135, 188.0, 22.0 ],
-					"text" : "aim.mc.cascade~ ts mcCascade5"
+					"patching_rect" : [ 59.0, 206.174603174603135, 198.0, 22.0 ],
+					"text" : "mvc.mc.cascade~ ts mcCascade5"
 				}
 
 			}
@@ -136,8 +136,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 44.0, 165.380952380952351, 188.0, 22.0 ],
-					"text" : "aim.mc.cascade~ ts mcCascade4"
+					"patching_rect" : [ 59.0, 180.380952380952351, 198.0, 22.0 ],
+					"text" : "mvc.mc.cascade~ ts mcCascade4"
 				}
 
 			}
@@ -149,8 +149,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 44.0, 139.587301587301567, 188.0, 22.0 ],
-					"text" : "aim.mc.cascade~ ts mcCascade3"
+					"patching_rect" : [ 59.0, 154.587301587301567, 198.0, 22.0 ],
+					"text" : "mvc.mc.cascade~ ts mcCascade3"
 				}
 
 			}
@@ -162,8 +162,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 44.0, 113.793650793650784, 188.0, 22.0 ],
-					"text" : "aim.mc.cascade~ ts mcCascade2"
+					"patching_rect" : [ 59.0, 128.793650793650784, 198.0, 22.0 ],
+					"text" : "mvc.mc.cascade~ ts mcCascade2"
 				}
 
 			}
@@ -175,8 +175,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 44.0, 88.0, 188.0, 22.0 ],
-					"text" : "aim.mc.cascade~ ts mcCascade1"
+					"patching_rect" : [ 37.0, 103.0, 198.0, 22.0 ],
+					"text" : "mvc.mc.cascade~ ts mcCascade1"
 				}
 
 			}
@@ -188,8 +188,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 47.0, 35.0, 79.0, 22.0 ],
-					"text" : "aim.device ts",
+					"patching_rect" : [ 62.0, 50.0, 81.0, 22.0 ],
+					"text" : "mvc.device ts",
 					"varname" : "aim.device"
 				}
 
@@ -333,9 +333,9 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "aim.biquad~.model.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/components",
-				"patcherrelativepath" : "../../AIM/patchers/components",
+				"name" : "aim.benchmarker.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
+				"patcherrelativepath" : "../../AIM/patchers/GUI",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -344,13 +344,6 @@
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
 				"patcherrelativepath" : "../../AIM/javascript",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.cascade~.model.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/components",
-				"patcherrelativepath" : "../../AIM/patchers/components",
-				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -372,20 +365,6 @@
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
 				"patcherrelativepath" : "../../AIM/javascript",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.device.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.device.parameters.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/lib",
-				"patcherrelativepath" : "../../AIM/patchers/lib",
-				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -480,13 +459,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "aim.mc.cascade~.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/components",
-				"patcherrelativepath" : "../../AIM/patchers/components",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "aim.model.initialize.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
 				"patcherrelativepath" : "../../AIM/patchers/core",
@@ -495,20 +467,6 @@
 			}
 , 			{
 				"name" : "aim.model.initialized.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.model.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.newgone.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
 				"patcherrelativepath" : "../../AIM/patchers/core",
 				"type" : "JSON",
@@ -532,13 +490,6 @@
 				"name" : "aim.osc2dict.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/lib",
 				"patcherrelativepath" : "../../AIM/patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.parameter.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -617,6 +568,83 @@
 				"bootpath" : "~/Documents/Max 8/Packages/AIM",
 				"patcherrelativepath" : "../../AIM",
 				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mvc.biquad~.model.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
+				"patcherrelativepath" : "../patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mvc.cascade~.model.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
+				"patcherrelativepath" : "../patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mvc.device.init.js",
+				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mvc.device.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
+				"patcherrelativepath" : "../patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mvc.device.parameters.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
+				"patcherrelativepath" : "../patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mvc.mc.cascade~.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
+				"patcherrelativepath" : "../patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mvc.model.declare.js",
+				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mvc.model.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
+				"patcherrelativepath" : "../patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mvc.parameter.declare.js",
+				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mvc.parameter.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
+				"patcherrelativepath" : "../patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mvc.presets.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
+				"patcherrelativepath" : "../patchers",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
