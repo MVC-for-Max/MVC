@@ -23,7 +23,7 @@ var parametersValuesDict = new Dict();
 parametersValuesDict.quiet = 1;
 parametersValuesDict.name = "aim.parameters.values.dict";
 
-var paramAttrDict = new Dict();
+// var paramAttrDict = new Dict();
 
 // var modelDefDict = new Dict();
 // modelDefDict.name = "aim.model-definitions.dict";
@@ -34,7 +34,7 @@ var parameter_UID;
 var previousAddresses = [];
 var currentAddresses = [];
 
-var parentUID;
+// var parentUID;
 
 function declare(adresses){
 	
@@ -117,13 +117,13 @@ function clear(){
 }
 
 
-function setParamDict(paramDict){
-	paramAttrDict.name = paramDict;
-	var parentModelType = modelDict
-}
+// function setParamDict(paramDict){
+// 	paramAttrDict.name = paramDict;
+// 	var parentModelType = modelDict
+// }
 
 
-function setParentUID(uid){
-		parentUID = uid;
-}
+// function setParentUID(uid){
+// 		parentUID = uid;
+// }
 
