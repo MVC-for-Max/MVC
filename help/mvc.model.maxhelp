@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 41.0, 460.0, 1131.0, 542.0 ],
+		"rect" : [ 143.0, 347.0, 1131.0, 542.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,18 +39,6 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
-				"box" : 				{
-					"id" : "obj-18",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 42.0, 15.0, 29.5, 22.0 ],
-					"text" : "init"
-				}
-
-			}
-, 			{
 				"box" : 				{
 					"id" : "obj-39",
 					"maxclass" : "message",
@@ -417,20 +405,6 @@
 , 			{
 				"box" : 				{
 					"color" : [ 0.501961, 0.501961, 0.501961, 1.0 ],
-					"id" : "obj-3",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 25.0, 39.0, 91.0, 22.0 ],
-					"text" : "mvc.device dev",
-					"varname" : "aim.device"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"color" : [ 0.501961, 0.501961, 0.501961, 1.0 ],
 					"id" : "obj-27",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -439,6 +413,32 @@
 					"patching_rect" : [ 93.0, 298.0, 171.0, 22.0 ],
 					"text" : "mvc.onepole~ dev myOnepole",
 					"varname" : "mvc.onepole~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-18",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 42.0, 15.0, 29.5, 22.0 ],
+					"text" : "init"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"color" : [ 0.501961, 0.501961, 0.501961, 1.0 ],
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 25.0, 39.0, 91.0, 22.0 ],
+					"text" : "mvc.device dev",
+					"varname" : "aim.device"
 				}
 
 			}
@@ -552,377 +552,6 @@
 			"inherited_shortname" : 1
 		}
 ,
-		"dependency_cache" : [ 			{
-				"name" : "aim.DSPrefresh.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.GUI.activeToggle.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
-				"patcherrelativepath" : "../../AIM/patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.GUI.listselector.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
-				"patcherrelativepath" : "../../AIM/patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.GUI.preset.description.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
-				"patcherrelativepath" : "../../AIM/patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.GUI.presets.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
-				"patcherrelativepath" : "../../AIM/patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.GUI.tabbing.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
-				"patcherrelativepath" : "../../AIM/patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.GUI.windowsettings.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
-				"patcherrelativepath" : "../../AIM/patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.benchmarker.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
-				"patcherrelativepath" : "../../AIM/patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.brace.expansion.js",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
-				"patcherrelativepath" : "../../AIM/javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.bypass.mono.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/lib",
-				"patcherrelativepath" : "../../AIM/patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.createfolder.js",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
-				"patcherrelativepath" : "../../AIM/javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.device.js",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
-				"patcherrelativepath" : "../../AIM/javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.dict.flatten.js",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
-				"patcherrelativepath" : "../../AIM/javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.dict.flatten.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.dict.join.js",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
-				"patcherrelativepath" : "../../AIM/javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.dict.keyrename.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/lib",
-				"patcherrelativepath" : "../../AIM/patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.dict.route.js",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
-				"patcherrelativepath" : "../../AIM/javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.dllb.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.f.call.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.f.io.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.import.presets.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.intnogap.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.isloading.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.locatePatcherWindow.js",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
-				"patcherrelativepath" : "../../AIM/javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.model.initialize.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.model.initialized.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.noblabang.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/lib",
-				"patcherrelativepath" : "../../AIM/patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.noblabla.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/lib",
-				"patcherrelativepath" : "../../AIM/patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.osc2dict.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/lib",
-				"patcherrelativepath" : "../../AIM/patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.polyreceive.p.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.presets.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.qlow.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/lib",
-				"patcherrelativepath" : "../../AIM/patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.remote.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.setMaxObjColor.js",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
-				"patcherrelativepath" : "../../AIM/javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.stripes10.purple.png",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/media",
-				"patcherrelativepath" : "../../AIM/media",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.wildcard-node.js",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
-				"patcherrelativepath" : "../../AIM/javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.wildcard.js",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
-				"patcherrelativepath" : "../../AIM/javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.wildcard.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/lib",
-				"patcherrelativepath" : "../../AIM/patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.wildcard2.js",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
-				"patcherrelativepath" : "../../AIM/javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "icon.png",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM",
-				"patcherrelativepath" : "../../AIM",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.GUI.number.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.device.init.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.device.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.device.parameters.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.model.declare.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.model.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.onepole~.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.onepole~.model.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.parameter.declare.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.parameter.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.presets.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.remote.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "thru.maxpat",
-				"bootpath" : "C74:/patchers/m4l/Pluggo for Live resources/patches",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0
 	}
 
