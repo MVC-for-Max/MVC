@@ -1,4 +1,4 @@
-// aim.dict.flatten.js : output each node of a dictionary tree
+// mvc.dict.flatten.js : output each node of a dictionary tree
 // This version of flatten will output *both* the dictionary at intermediate levels and the leaf at the end of the tree.
 // This enables to have parameter stored as dictionary.
 
@@ -17,12 +17,12 @@ var d = new Dict();
 function declare(uid, deviceName, deviceType){
 	
 	if (!deviceName) {
-		outlet(1, "aim.device says : please provide a device name.");
+		outlet(1, "mvc.device says : please provide a device name.");
 		return;
 	}
 	
 	s_uid = [uid.toString(), 1];
-	//d.name = "aim.devices.dict";
+	//d.name = "mvc.devices.dict";
 	//d.clear();
 	//d.replace(deviceName+"::uid", s_uid);
 	//d.replace(deviceName+"::type", deviceName);
@@ -32,7 +32,7 @@ function declare(uid, deviceName, deviceType){
 	//post(project_filepath);
 	//d.replace(deviceName+"::filepath", project_filepath);
 		
-	d.name = "aim.models.dict";
+	d.name = "mvc.models.dict";
 	d.replace(deviceName+"::uid", s_uid);
 	//d.replace(deviceName+"::parent", "none");
 	d.replace(deviceName+"::type", deviceType);

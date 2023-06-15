@@ -484,7 +484,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 50.0, 160.0, 145.0, 22.0 ],
-													"text" : "print aim.remote @level 1"
+													"text" : "print mvc.remote @level 1"
 												}
 
 											}
@@ -676,7 +676,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 134.0, 165.0, 145.0, 22.0 ],
-													"text" : "print aim.remote @level 1"
+													"text" : "print mvc.remote @level 1"
 												}
 
 											}
@@ -854,7 +854,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 134.0, 165.0, 145.0, 22.0 ],
-													"text" : "print aim.remote @level 1"
+													"text" : "print mvc.remote @level 1"
 												}
 
 											}
@@ -1896,7 +1896,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 50.0, 150.916666666666686, 435.0, 33.0 ],
-									"text" : "getaddresseslist : output the series of expended addresses monitored by the aim.remote, as pairs of index / address on the third outlet"
+									"text" : "getaddresseslist : output the series of expended addresses monitored by the mvc.remote, as pairs of index / address on the third outlet"
 								}
 
 							}
@@ -1994,7 +1994,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 106.0, 106.0, 145.0, 22.0 ],
-									"text" : "print aim.remote @level 1"
+									"text" : "print mvc.remote @level 1"
 								}
 
 							}
@@ -2265,7 +2265,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 270.0, 212.285714285714221, 141.0, 100.0 ],
-									"text" : "The address list reports the complete namespace monitored by the aim.remote instance, prepended by the index of the address in the namespace."
+									"text" : "The address list reports the complete namespace monitored by the mvc.remote instance, prepended by the index of the address in the namespace."
 								}
 
 							}
@@ -3126,7 +3126,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.parameters.values.dict @quiet 1"
+																	"text" : "dict mvc.parameters.values.dict @quiet 1"
 																}
 
 															}
@@ -3302,7 +3302,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.parameters.values.dict @quiet 1"
+																	"text" : "dict mvc.parameters.values.dict @quiet 1"
 																}
 
 															}
@@ -3511,7 +3511,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 44.0, 85.026259196378021, 111.0, 22.0 ],
-													"text" : "aim.noblabang 200"
+													"text" : "mvc.noblabang 200"
 												}
 
 											}
@@ -4813,7 +4813,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 499.0, 336.0, 114.0, 64.0 ],
-									"text" : "If we set all aim.remote's namespace, set hetero to 0."
+									"text" : "If we set all mvc.remote's namespace, set hetero to 0."
 								}
 
 							}
@@ -5235,7 +5235,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 50.0, 160.0, 145.0, 22.0 ],
-													"text" : "print aim.remote @level 1"
+													"text" : "print mvc.remote @level 1"
 												}
 
 											}
@@ -6221,7 +6221,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 96.0, 181.36051829268294, 192.0, 22.0 ],
-																	"text" : "sprintf symout aim.%ss.values.dict"
+																	"text" : "sprintf symout mvc.%ss.values.dict"
 																}
 
 															}
@@ -6275,7 +6275,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.inputs.dict @quiet 1"
+																	"text" : "dict mvc.inputs.dict @quiet 1"
 																}
 
 															}
@@ -6954,7 +6954,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.parameters.values.dict @quiet 1"
+													"text" : "dict mvc.parameters.values.dict @quiet 1"
 												}
 
 											}
@@ -7500,7 +7500,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 113.0, 96.0, 167.0, 24.0 ],
-									"text" : "poly~ aim.polyreceive.p 1"
+									"text" : "poly~ mvc.polyreceive.p 1"
 								}
 
 							}
@@ -8187,7 +8187,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 111.0, 105.0, 75.0, 22.0 ],
-																	"text" : "aim.osc2dict"
+																	"text" : "mvc.osc2dict"
 																}
 
 															}
@@ -8306,7 +8306,7 @@
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "" ],
 																					"patching_rect" : [ 106.5, 195.114951327545668, 92.0, 22.0 ],
-																					"text" : "aim.dict.flatten"
+																					"text" : "mvc.dict.flatten"
 																				}
 
 																			}
@@ -8324,7 +8324,7 @@
 																						"parameter_mappable" : 0
 																					}
 ,
-																					"text" : "dict aim.inputs.dict"
+																					"text" : "dict mvc.inputs.dict"
 																				}
 
 																			}
@@ -9013,11 +9013,11 @@
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 55.5, 59.0, 106.0, 22.0 ],
 																					"saved_object_attributes" : 																					{
-																						"filename" : "aim.wildcard2.js",
+																						"filename" : "mvc.wildcard2.js",
 																						"parameter_enable" : 0
 																					}
 ,
-																					"text" : "js aim.wildcard2.js"
+																					"text" : "js mvc.wildcard2.js"
 																				}
 
 																			}
@@ -10152,7 +10152,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 175.800000000000011, 242.213592233009678, 75.0, 22.0 ],
-																	"text" : "aim.osc2dict"
+																	"text" : "mvc.osc2dict"
 																}
 
 															}
@@ -10721,7 +10721,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "int" ],
 																	"patching_rect" : [ 31.0, 226.84955752212386, 117.0, 22.0 ],
-																	"text" : "aim.model.initialized"
+																	"text" : "mvc.model.initialized"
 																}
 
 															}
@@ -11302,7 +11302,7 @@
 																					"numinlets" : 1,
 																					"numoutlets" : 0,
 																					"patching_rect" : [ 47.333333333333371, 44.0, 387.0, 33.0 ],
-																					"text" : "Late parameters are those parameters whose address were monitored by this aim.remote instance before they were actually instanciated."
+																					"text" : "Late parameters are those parameters whose address were monitored by this mvc.remote instance before they were actually instanciated."
 																				}
 
 																			}
@@ -11434,7 +11434,7 @@
 																									"numoutlets" : 1,
 																									"outlettype" : [ "" ],
 																									"patching_rect" : [ 163.0, 141.0, 111.0, 22.0 ],
-																									"text" : "aim.noblabang 100"
+																									"text" : "mvc.noblabang 100"
 																								}
 
 																							}
@@ -11723,7 +11723,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 86.333333333333371, 91.0, 150.0, 22.0 ],
-																					"text" : "r AIM.parameter.initializers"
+																					"text" : "r MVC.parameter.initializers"
 																				}
 
 																			}
@@ -12109,7 +12109,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.inputs.dict @quiet 1"
+																	"text" : "dict mvc.inputs.dict @quiet 1"
 																}
 
 															}
@@ -12833,7 +12833,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 11.0, 97.0, 158.0, 22.0 ],
-																	"text" : "aim.f.call"
+																	"text" : "mvc.f.call"
 																}
 
 															}

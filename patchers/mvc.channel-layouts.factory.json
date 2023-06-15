@@ -1,0 +1,42 @@
+{
+	"Mono" : {
+		"layout" : [ "C" ],
+		"longnames" : {
+			"C" : "Center"
+		}
+	}
+,
+	"Stereo" : {
+		"layout" : [ "L", "R" ],
+		"longnames" : {
+			"L" : "Left",
+			"R" : "Right"
+		}
+	}
+,
+	"5.1 surround" : {
+		"layout" : [ "C", "L",  "R", "Ls", "Rs", "LFE" ],
+		"longnames": {
+			"L" : "Left",
+			"R" : "Right",
+			"C" : "Center",
+			"LFE" : "Low frequency effect",
+			"Ls" : "Left surround",
+			"Rs" : "Right surround"
+		}
+	}
+,
+	"7.1 surround" : {
+		"layout" : [ "C", "L", "R", "Ls", "Rs", "BL", "BR", "LFE" ],
+		"longnames": {
+			"L" : "Left",
+			"R" : "Right",
+			"C" : "Center",
+			"LFE" : "Low frequency effect",
+			"Ls" : "Left surround",
+			"Rs" : "Right surround",
+			"BL" : "Bottom left",
+			"BR" : "Bottom right"
+		}
+	}
+}

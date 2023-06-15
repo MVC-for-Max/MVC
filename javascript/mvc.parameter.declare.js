@@ -1,4 +1,4 @@
-	// aim.dict.flatten.js : output each node of a dictionary tree
+	// mvc.dict.flatten.js : output each node of a dictionary tree
 // This version of flatten will output *both* the dictionary at intermediate levels and the leaf at the end of the tree.
 // This enables to have parameter stored as dictionary.
 
@@ -9,24 +9,24 @@ _MVC_VERSION = 0.4;
 
 var modelDict = new Dict();
 modelDict.quiet = 1;
-modelDict.name = "aim.models.dict";
+modelDict.name = "mvc.models.dict";
 
 // var parametersDict = new Dict();
 // parametersDict.quiet = 1;
-// parametersDict.name = "aim.parameters.dict";
+// parametersDict.name = "mvc.parameters.dict";
 	
 var inputsDict = new Dict();
 inputsDict.quiet = 1;
-inputsDict.name = "aim.inputs.dict";
+inputsDict.name = "mvc.inputs.dict";
 
 var parametersValuesDict = new Dict();
 parametersValuesDict.quiet = 1;
-parametersValuesDict.name = "aim.parameters.values.dict";
+parametersValuesDict.name = "mvc.parameters.values.dict";
 
 // var paramAttrDict = new Dict();
 
 // var modelDefDict = new Dict();
-// modelDefDict.name = "aim.model-definitions.dict";
+// modelDefDict.name = "mvc.model-definitions.dict";
 
 var parameter_type;
 var parameter_UID;
@@ -36,7 +36,7 @@ var currentAddresses = [];
 
 // var parentUID;
 
-function declare(adresses){
+function updateDictionaries(){
 	
 	previousAddresses = currentAddresses;
 	currentAddresses = arrayfromargs(arguments);
@@ -78,11 +78,16 @@ function declare(adresses){
 		outlet(1, currentAddresses[i], 1);
 
 	}
-	
+}
+
+function declare(){
+	//just pass arguments to updtaeDictionaries
+	// (see https://stackoverflow.com/questions/3914557/passing-arguments-forward-to-another-javascript-function)
+	//post("model args in declare", JSON.stringify(arguments), "\n");
+	updateDictionaries.apply(null, arguments);
 	// bang when done
 	outlet(0, "bang")
 }
-
 
 function setParameterUID(uid){
 	parameter_UID = uid;
@@ -101,16 +106,13 @@ function findGoneItems(CurrentArray, PreviousArray) {
    return missingItems;
 }
 
-
 function loadbang(	) {
 	outlet(4, 'bang');
 }
 
-
 function empty(){
-	declare();
+	updateDictionaries();
 }
-
 
 function clear(){
 	previousAddresses = [];

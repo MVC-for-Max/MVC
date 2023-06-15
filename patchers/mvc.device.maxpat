@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 545.0, 477.0, 987.0, 419.0 ],
+		"rect" : [ 179.0, 510.0, 987.0, 419.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,14 +57,14 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 657.0, 203.0, 114.0, 22.0 ],
+					"patching_rect" : [ 657.0, 203.0, 117.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "dict aim.models.dict"
+					"text" : "dict mvc.models.dict"
 				}
 
 			}
@@ -87,14 +87,14 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 657.0, 58.0, 116.0, 22.0 ],
+					"patching_rect" : [ 657.0, 58.0, 119.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "dict aim.devices.dict"
+					"text" : "dict mvc.devices.dict"
 				}
 
 			}
@@ -375,7 +375,7 @@
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "bang", "bang" ],
 																	"patching_rect" : [ 35.153931000000057, 121.124145999999996, 360.0, 22.0 ],
-																	"text" : "aim.GUI.windowsettings #0 #1 #2"
+																	"text" : "mvc.GUI.windowsettings #0 #1 #2"
 																}
 
 															}
@@ -940,7 +940,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-29",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
@@ -1335,7 +1334,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-30",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 1,
@@ -1965,7 +1963,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 270.0, 923.79508196721315, 226.0, 24.0 ],
-													"text" : "aim.import.presets #1"
+													"text" : "mvc.import.presets #1"
 												}
 
 											}
@@ -2067,7 +2065,7 @@
 													"lockeddragscroll" : 0,
 													"lockedsize" : 0,
 													"maxclass" : "bpatcher",
-													"name" : "aim.GUI.listselector.maxpat",
+													"name" : "mvc.GUI.listselector.maxpat",
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"offset" : [ 0.0, 0.0 ],
@@ -3337,7 +3335,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 146.125, 88.0, 235.0, 35.0 ],
-																	"text" : "\"Macintosh HD:/Users/vg/Documents/Max 8/Packages/AIM/help/components/data/\""
+																	"text" : "\"Macintosh HD:/Users/vg/Documents/Max 8/Packages/MVC/help/components/data/\""
 																}
 
 															}
@@ -4587,7 +4585,7 @@
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "" ],
 													"patching_rect" : [ 521.5, 384.469741051947949, 116.0, 22.0 ],
-													"text" : "aim.wildcard"
+													"text" : "mvc.wildcard"
 												}
 
 											}
@@ -4675,18 +4673,19 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-55",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 4,
 																	"outlettype" : [ "dictionary", "", "", "" ],
-																	"patching_rect" : [ 50.0, 198.114951327545668, 107.0, 22.0 ],
+																	"patching_rect" : [ 50.0, 198.114951327545668, 107.0, 35.0 ],
 																	"saved_object_attributes" : 																	{
 																		"embed" : 0,
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.inputs.dict"
+																	"text" : "dict mvc.inputs.dict"
 																}
 
 															}
@@ -5071,12 +5070,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-63",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
-													"patching_rect" : [ 488.0, 319.913658054485722, 86.0, 22.0 ],
-													"text" : "aim.dict.flatten"
+													"patching_rect" : [ 488.0, 319.913658054485722, 86.0, 35.0 ],
+													"text" : "mvc.dict.flatten"
 												}
 
 											}
@@ -5300,12 +5300,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-29",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 43.0, 129.760919540229906, 75.0, 22.0 ],
-													"text" : "aim.osc2dict"
+													"patching_rect" : [ 43.0, 129.760919540229906, 75.0, 35.0 ],
+													"text" : "mvc.osc2dict"
 												}
 
 											}
@@ -6085,7 +6086,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-22",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -6119,17 +6119,18 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-9",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 55.0, 98.0, 106.0, 22.0 ],
 																	"saved_object_attributes" : 																	{
-																		"filename" : "aim.wildcard2.js",
+																		"filename" : "mvc.wildcard2.js",
 																		"parameter_enable" : 0
 																	}
 ,
-																	"text" : "js aim.wildcard2.js"
+																	"text" : "js mvc.wildcard2.js"
 																}
 
 															}
@@ -7828,6 +7829,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-1",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 4,
@@ -7839,7 +7841,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.inputs.dict @quiet 1"
+																	"text" : "dict mvc.inputs.dict @quiet 1"
 																}
 
 															}
@@ -8694,7 +8696,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.inputs.dict @quiet 1"
+																	"text" : "dict mvc.inputs.dict @quiet 1"
 																}
 
 															}
@@ -9908,7 +9910,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 58.0, 76.0, 143.0, 22.0 ],
-																	"text" : "aim.f.call"
+																	"text" : "mvc.f.call"
 																}
 
 															}
@@ -10413,11 +10415,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-69",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 50.0, 133.0, 143.0, 22.0 ],
-									"text" : "print aim.device @level 1"
+									"text" : "print mvc.device @level 1"
 								}
 
 							}
@@ -10513,12 +10516,12 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-11",
-									"linecount" : 4,
+									"linecount" : 5,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 87.0, 71.999994196319051, 387.0, 60.0 ],
-									"text" : "The aim.device has a GUI for recalling presets that affect all components and parameters attached to it.\nAs opposed to aim.models, aim.device has no \"type\", which is why devices' presets are stored in a file named after the aim.device's name."
+									"text" : "The mvc.device has a GUI for recalling presets that affect all components and parameters attached to it.\nAs opposed to mvc.models, mvc.device has no \"type\", which is why devices' presets are stored in a file named after the mvc.device's name."
 								}
 
 							}
@@ -10614,7 +10617,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 43.0, 47.0, 121.0, 22.0 ],
-													"text" : "aim.f.io #0.GUI.init"
+													"text" : "mvc.f.io #0.GUI.init"
 												}
 
 											}
@@ -10673,7 +10676,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 89.5, 235.5, 164.0, 22.0 ],
-													"text" : "v #1.AIMpath"
+													"text" : "v #1.MVCpath"
 												}
 
 											}
@@ -11178,7 +11181,7 @@
 													"lockeddragscroll" : 0,
 													"lockedsize" : 0,
 													"maxclass" : "bpatcher",
-													"name" : "aim.GUI.activeToggle.maxpat",
+													"name" : "mvc.GUI.activeToggle.maxpat",
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"offset" : [ 0.0, 0.0 ],
@@ -11220,7 +11223,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "jit_matrix" ],
 													"patching_rect" : [ 90.5, 47.0, 36.0, 35.0 ],
-													"pic" : "Macintosh HD:/Users/vg/Documents/Max 8/Packages/AIM/icon.png",
+													"pic" : "Macintosh HD:/Users/vg/Documents/Max 8/Packages/MVC/icon.png",
 													"presentation" : 1,
 													"presentation_rect" : [ -0.5, 0.0, 52.442307692307693, 52.0 ]
 												}
@@ -11391,7 +11394,7 @@
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "bang", "bang" ],
 																	"patching_rect" : [ 35.153931000000057, 121.124145999999996, 464.0, 22.0 ],
-																	"text" : "aim.GUI.windowsettings #0 #1 #2"
+																	"text" : "mvc.GUI.windowsettings #0 #1 #2"
 																}
 
 															}
@@ -11532,7 +11535,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 383.0, 302.0, 222.0, 22.0 ],
-													"text" : "aim.GUI.preset.description #1"
+													"text" : "mvc.GUI.preset.description #1"
 												}
 
 											}
@@ -11541,17 +11544,18 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-13",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 562.250000000000227, 241.0, 171.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"filename" : "aim.locatePatcherWindow.js",
+														"filename" : "mvc.locatePatcherWindow.js",
 														"parameter_enable" : 0
 													}
 ,
-													"text" : "js aim.locatePatcherWindow.js"
+													"text" : "js mvc.locatePatcherWindow.js"
 												}
 
 											}
@@ -12282,7 +12286,7 @@
 													"lockeddragscroll" : 0,
 													"lockedsize" : 0,
 													"maxclass" : "bpatcher",
-													"name" : "aim.GUI.presets.maxpat",
+													"name" : "mvc.GUI.presets.maxpat",
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"offset" : [ 0.0, 0.0 ],
@@ -12780,7 +12784,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-10",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
@@ -13007,6 +13010,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-28",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 4,
@@ -13018,7 +13022,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.devices.dict"
+																	"text" : "dict mvc.devices.dict"
 																}
 
 															}
@@ -13648,12 +13652,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-11",
-									"linecount" : 6,
+									"linecount" : 7,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 65.0, 64.500001196319047, 366.0, 87.0 ],
-									"text" : "The aim.device is using the same preset mechanism as any model.\nWhile there is no explicit \"aim.model\" inside a device, the device is seen *as* a model in the namespace. This means that the device also contains internal parameters (just like aim.model) for preset name, description and editflag (in the patcher aim.device.parameters)."
+									"text" : "The mvc.device is using the same preset mechanism as any model.\nWhile there is no explicit \"mvc.model\" inside a device, the device is seen *as* a model in the namespace. This means that the device also contains internal parameters (just like mvc.model) for preset name, description and editflag (in the patcher mvc.device.parameters)."
 								}
 
 							}
@@ -13795,7 +13799,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 44.5, 101.33837890625, 152.0, 22.0 ],
-													"text" : "aim.f.io #0.presets.init"
+													"text" : "mvc.f.io #0.presets.init"
 												}
 
 											}
@@ -13819,7 +13823,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 110.5, 183.5, 164.0, 22.0 ],
-													"text" : "v #1.AIMpath"
+													"text" : "v #1.MVCpath"
 												}
 
 											}
@@ -13945,7 +13949,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 27.0, 222.148148148148152, 177.0, 24.0 ],
-									"text" : "aim.presets #0"
+									"text" : "mvc.presets #0"
 								}
 
 							}
@@ -13993,7 +13997,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"patching_rect" : [ 26.0, 337.0, 153.0, 22.0 ],
-					"text" : "aim.isloading #0"
+					"text" : "mvc.isloading #0"
 				}
 
 			}
@@ -14225,18 +14229,20 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-12",
+													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 38.0, 103.5, 288.0, 22.0 ],
-													"text" : "read aim.channel-layouts.factory.json, getkeys, bang"
+													"text" : "read mvc.channel-layouts.factory.json, getkeys, bang"
 												}
 
 											}
 , 											{
 												"box" : 												{
 													"id" : "obj-14",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -14248,7 +14254,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.channel-layouts.factory.json"
+													"text" : "dict mvc.channel-layouts.factory.json"
 												}
 
 											}
@@ -14499,12 +14505,13 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-17",
+																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 70.5, 254.468075585672892, 182.0, 22.0 ],
-																	"text" : "symbol aim.channel-layouts.json"
+																	"text" : "symbol mvc.channel-layouts.json"
 																}
 
 															}
@@ -14839,6 +14846,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-19",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -14850,7 +14858,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.channel-layouts.json"
+													"text" : "dict mvc.channel-layouts.json"
 												}
 
 											}
@@ -14869,12 +14877,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-8",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 182.0, 236.65534028934087, 243.0, 22.0 ],
-													"text" : "combine path data/aim.channel-layouts.json"
+													"text" : "combine path data/mvc.channel-layouts.json"
 												}
 
 											}
@@ -15090,6 +15099,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-27",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
@@ -15101,7 +15111,7 @@
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict aim.channel-layouts.dict"
+									"text" : "dict mvc.channel-layouts.dict"
 								}
 
 							}
@@ -15139,7 +15149,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 67.0, 57.0, 611.0, 114.0 ],
-									"text" : "Channel layouts are used in multichannel component and allow to define channelcount as a symbol referring to a list of channel names in the aim.channel-layouts.dict.\nThe channel count is derived from the length of the \"layout\" array.\nTwo different channel-layouts files are loaded :\n - aim.channel-layouts.factory.json, located in the AIM package provides standard \"factory\" layouts\n - aim.channel-layouts.json, located in the project's data folder provides with project-related custom layouts\n\nNote that since project layout are loaded after factory layouts, the project layouts will override the factory layouts."
+									"text" : "Channel layouts are used in multichannel component and allow to define channelcount as a symbol referring to a list of channel names in the mvc.channel-layouts.dict.\nThe channel count is derived from the length of the \"layout\" array.\nTwo different channel-layouts files are loaded :\n - mvc.channel-layouts.factory.json, located in the MVC package provides standard \"factory\" layouts\n - mvc.channel-layouts.json, located in the project's data folder provides with project-related custom layouts\n\nNote that since project layout are loaded after factory layouts, the project layouts will override the factory layouts."
 								}
 
 							}
@@ -15198,7 +15208,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 88.0, 242.0, 235.0, 22.0 ],
-									"text" : "aim.f.io #0.ChannelLayouts.init"
+									"text" : "mvc.f.io #0.ChannelLayouts.init"
 								}
 
 							}
@@ -15435,11 +15445,12 @@
 									"fontname" : "Arial Bold",
 									"fontsize" : 18.0,
 									"id" : "obj-4",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 61.0, 11.0, 203.0, 27.0 ],
-									"text" : "AIM internal Functions"
+									"text" : "MVC internal Functions"
 								}
 
 							}
@@ -15546,11 +15557,11 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 65.5, 142.6846598458676, 115.0, 24.0 ],
 													"saved_object_attributes" : 													{
-														"filename" : "aim.device.js",
+														"filename" : "mvc.device.js",
 														"parameter_enable" : 0
 													}
 ,
-													"text" : "js aim.device.js"
+													"text" : "js mvc.device.js"
 												}
 
 											}
@@ -15563,7 +15574,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 65.5, 113.0, 195.0, 35.0 ],
-													"text" : "aim.f.io #0.aim.device.js.callback"
+													"text" : "mvc.f.io #0.mvc.device.js.callback"
 												}
 
 											}
@@ -15702,12 +15713,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-6",
-									"linecount" : 3,
+									"linecount" : 4,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 99.0, 57.0, 567.0, 47.0 ],
-									"text" : "This loads the sound samples stored in the folder \"/data/sounds\" in a polybuffer~ object.\nThe buffer names are available within this devices's context thanks to the \"coll #1/sounds/shortnames\".\nThe aim.GUI.sounds menu (combined with a corresponding parameter allows to retrieve theses samples."
+									"text" : "This loads the sound samples stored in the folder \"/data/sounds\" in a polybuffer~ object.\nThe buffer names are available within this devices's context thanks to the \"coll #1/sounds/shortnames\".\nThe mvc.GUI.sounds menu (combined with a corresponding parameter allows to retrieve theses samples."
 								}
 
 							}
@@ -15919,7 +15930,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 108.0, 181.0, 198.0, 22.0 ],
-									"text" : "aim.f.io #0.SoundsBuffer.init"
+									"text" : "mvc.f.io #0.SoundsBuffer.init"
 								}
 
 							}
@@ -16335,7 +16346,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 99.0, 57.0, 564.0, 47.0 ],
-									"text" : "This loads the Impulse Responses stored in the folder \"/data/IR\" in a polybuffer~ object.\nThe buffer names are available within this devices's context thanks to the \"coll #1/IRbuffers/shortnames\".\nThe aim.GUI.IR menu (combined with a corresponding parameter allows to retrieve theses samples."
+									"text" : "This loads the Impulse Responses stored in the folder \"/data/IR\" in a polybuffer~ object.\nThe buffer names are available within this devices's context thanks to the \"coll #1/IRbuffers/shortnames\".\nThe mvc.GUI.IR menu (combined with a corresponding parameter allows to retrieve theses samples."
 								}
 
 							}
@@ -16546,7 +16557,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 108.0, 181.0, 154.0, 22.0 ],
-									"text" : "aim.f.io #0.IRbuffer.init"
+									"text" : "mvc.f.io #0.IRbuffer.init"
 								}
 
 							}
@@ -17613,6 +17624,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-65",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -17624,7 +17636,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.parameters.dict @quiet 1"
+													"text" : "dict mvc.parameters.dict @quiet 1"
 												}
 
 											}
@@ -17873,7 +17885,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-35",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
@@ -18128,18 +18139,20 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-7",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 153.0, 194.0, 167.0, 22.0 ],
-													"text" : "aim.dict.flatten @separator \" \""
+													"text" : "mvc.dict.flatten @separator \" \""
 												}
 
 											}
 , 											{
 												"box" : 												{
 													"id" : "obj-4",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -18151,7 +18164,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.parameters.dict"
+													"text" : "dict mvc.parameters.dict"
 												}
 
 											}
@@ -18356,17 +18369,18 @@
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 158.666666666666657, 197.837606837606813, 125.000000000000028, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "aim.dict.flatten.js",
+										"filename" : "mvc.dict.flatten.js",
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js aim.dict.flatten.js"
+									"text" : "js mvc.dict.flatten.js"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-16",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
@@ -18378,7 +18392,7 @@
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict aim.parameters.values.dict"
+									"text" : "dict mvc.parameters.values.dict"
 								}
 
 							}
@@ -19134,7 +19148,7 @@
 																		"watch" : 0
 																	}
 ,
-																	"text" : "node.script aim.wildcard-node.js"
+																	"text" : "node.script mvc.wildcard-node.js"
 																}
 
 															}
@@ -19388,7 +19402,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 241.0, 184.83837890625, 170.0, 22.0 ],
-													"text" : "aim.f.io #0.nodewildcard.init"
+													"text" : "mvc.f.io #0.nodewildcard.init"
 												}
 
 											}
@@ -19923,6 +19937,7 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-5",
+																					"linecount" : 2,
 																					"maxclass" : "newobj",
 																					"numinlets" : 2,
 																					"numoutlets" : 4,
@@ -19934,7 +19949,7 @@
 																						"parameter_mappable" : 0
 																					}
 ,
-																					"text" : "dict aim.channel-layouts.dict"
+																					"text" : "dict mvc.channel-layouts.dict"
 																				}
 
 																			}
@@ -20186,7 +20201,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 72.833333333333314, 200.5, 284.0, 22.0 ],
-													"text" : "aim.f.io #1.getChannelCount"
+													"text" : "mvc.f.io #1.getChannelCount"
 												}
 
 											}
@@ -21291,6 +21306,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-114",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 4,
@@ -21302,7 +21318,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.devices.dict"
+																	"text" : "dict mvc.devices.dict"
 																}
 
 															}
@@ -21404,7 +21420,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 72.833333333333314, 200.5, 284.0, 22.0 ],
-													"text" : "aim.f.io #1.projectPath"
+													"text" : "mvc.f.io #1.projectPath"
 												}
 
 											}
@@ -21518,7 +21534,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 55.0, 46.0, 447.0, 60.0 ],
-													"text" : "Brace expansion allows to convert brace notation into expanded list of addresses.\nSee aim.brace.expansion.maxhelp for details on how it works.\nA single node.script instance located here in the device is responding for requests from anywhere in the patch, thanks to a callback mechanism."
+													"text" : "Brace expansion allows to convert brace notation into expanded list of addresses.\nSee mvc.brace.expansion.maxhelp for details on how it works.\nA single node.script instance located here in the device is responding for requests from anywhere in the patch, thanks to a callback mechanism."
 												}
 
 											}
@@ -21863,7 +21879,7 @@
 																		"watch" : 0
 																	}
 ,
-																	"text" : "node.script aim.brace.expansion.js"
+																	"text" : "node.script mvc.brace.expansion.js"
 																}
 
 															}
@@ -22230,8 +22246,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 61.0, 11.0, 190.0, 27.0 ],
-									"text" : "AIM global Functions"
+									"patching_rect" : [ 61.0, 11.0, 197.0, 27.0 ],
+									"text" : "MVC global Functions"
 								}
 
 							}
@@ -22243,7 +22259,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 61.0, 40.0, 570.0, 47.0 ],
-									"text" : "Here is a list of global function that may be called by other components/objects.\nThey use the \"aim.f.call\" and \"aim.f.io\" abstraction for callback.\nThe syntax of the caller should be : \"#1.functionName\" to keep function calls limited to the current context."
+									"text" : "Here is a list of global function that may be called by other components/objects.\nThey use the \"mvc.f.call\" and \"mvc.f.io\" abstraction for callback.\nThe syntax of the caller should be : \"#1.functionName\" to keep function calls limited to the current context."
 								}
 
 							}
@@ -22478,12 +22494,13 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-4",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "", "" ],
 																	"patching_rect" : [ 115.333333333333329, 161.0, 167.0, 22.0 ],
-																	"text" : "aim.dict.flatten @separator \" \""
+																	"text" : "mvc.dict.flatten @separator \" \""
 																}
 
 															}
@@ -22502,6 +22519,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-1",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 4,
@@ -22513,7 +22531,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.inputs.dict"
+																	"text" : "dict mvc.inputs.dict"
 																}
 
 															}
@@ -22671,7 +22689,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 54.833333333333314, 150.5, 284.0, 22.0 ],
-													"text" : "aim.f.io #1.gimmeTheTree"
+													"text" : "mvc.f.io #1.gimmeTheTree"
 												}
 
 											}
@@ -22740,7 +22758,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1081.0, 123.0, 563.0, 868.0 ],
+						"rect" : [ 980.0, 123.0, 563.0, 868.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -22783,18 +22801,19 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-21",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 328.0, 828.0, 166.0, 22.0 ],
+									"patching_rect" : [ 328.0, 828.0, 166.0, 35.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict aim.model-definitions.dict"
+									"text" : "dict mvc.model-definitions.dict"
 								}
 
 							}
@@ -22837,36 +22856,38 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-11",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 328.0, 103.0, 114.0, 22.0 ],
+									"patching_rect" : [ 328.0, 103.0, 114.0, 35.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict aim.models.dict"
+									"text" : "dict mvc.models.dict"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-7",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 328.0, 777.0, 159.0, 22.0 ],
+									"patching_rect" : [ 328.0, 777.0, 159.0, 35.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict aim.channel-layouts.dict"
+									"text" : "dict mvc.channel-layouts.dict"
 								}
 
 							}
@@ -23010,7 +23031,7 @@
 										"digest" : "",
 										"tags" : "",
 										"style" : "",
-										"subpatcher_template" : "aim_help-file_template",
+										"subpatcher_template" : "mvc_help-file_template",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
@@ -23025,7 +23046,7 @@
 														"precision" : 6
 													}
 ,
-													"text" : "coll AIM.model.initialized"
+													"text" : "coll MVC.model.initialized"
 												}
 
 											}
@@ -23037,7 +23058,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 30.0, 34.0, 200.0, 22.0 ],
-													"text" : "refer AIM.model.initialized"
+													"text" : "refer MVC.model.initialized"
 												}
 
 											}
@@ -23115,18 +23136,19 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-29",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 328.0, 646.070566412767448, 174.0, 22.0 ],
+									"patching_rect" : [ 328.0, 646.070566412767448, 174.0, 35.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict aim.parameters.values.dict"
+									"text" : "dict mvc.parameters.values.dict"
 								}
 
 							}
@@ -23145,18 +23167,19 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-6",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 328.0, 563.65645313021389, 152.0, 22.0 ],
+									"patching_rect" : [ 328.0, 563.65645313021389, 152.0, 35.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict aim.io.connections.dict"
+									"text" : "dict mvc.io.connections.dict"
 								}
 
 							}
@@ -23245,90 +23268,95 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-5",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 328.0, 713.484679695320892, 116.0, 22.0 ],
+									"patching_rect" : [ 328.0, 713.484679695320892, 116.0, 35.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict aim.devices.dict"
+									"text" : "dict mvc.devices.dict"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-4",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 328.0, 466.242339847660446, 107.0, 22.0 ],
+									"patching_rect" : [ 328.0, 466.242339847660446, 107.0, 35.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict aim.states.dict"
+									"text" : "dict mvc.states.dict"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-3",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 328.0, 383.828226565106945, 136.0, 22.0 ],
+									"patching_rect" : [ 328.0, 383.828226565106945, 136.0, 35.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict aim.parameters.dict"
+									"text" : "dict mvc.parameters.dict"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-2",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 328.0, 301.414113282553444, 115.0, 22.0 ],
+									"patching_rect" : [ 328.0, 301.414113282553444, 115.0, 35.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict aim.outputs.dict"
+									"text" : "dict mvc.outputs.dict"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-1",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 328.0, 210.0, 107.0, 22.0 ],
+									"patching_rect" : [ 328.0, 210.0, 107.0, 35.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict aim.inputs.dict"
+									"text" : "dict mvc.inputs.dict"
 								}
 
 							}
@@ -23691,8 +23719,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 50.0, 213.01219900000001, 139.0, 22.0 ],
-									"text" : "s /aim/debug/log_enable"
+									"patching_rect" : [ 50.0, 213.01219900000001, 142.0, 22.0 ],
+									"text" : "s /mvc/debug/log_enable"
 								}
 
 							}
@@ -23782,8 +23810,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 138.0, 182.0, 99.0, 22.0 ],
-									"text" : "s /aim/debug/key"
+									"patching_rect" : [ 138.0, 182.0, 102.0, 22.0 ],
+									"text" : "s /mvc/debug/key"
 								}
 
 							}
@@ -24005,7 +24033,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1000.0, 233.0, 603.0, 755.0 ],
+						"rect" : [ 878.0, 183.0, 603.0, 755.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -24035,13 +24063,25 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-20",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 152.0, 152.326633165829151, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-33",
 									"maxclass" : "button",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 206.0, 322.0, 24.0, 24.0 ]
+									"patching_rect" : [ 178.0, 242.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -24100,7 +24140,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 136.0, 133.0, 1510.0, 816.0 ],
+										"rect" : [ 136.0, 133.0, 1010.0, 439.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -24129,640 +24169,6 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
-												"box" : 												{
-													"id" : "obj-96",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 934.0, 24.0, 166.0, 22.0 ],
-													"text" : "declare 1234 dev::test biquad"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-95",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 1038.0, 113.0, 35.0, 22.0 ],
-													"text" : "clear"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-93",
-													"linecount" : 2,
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 261.0, 24.0, 141.0, 35.0 ],
-													"text" : "replace #1::type #1, replace #1::uid $1"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-91",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 1121.0, 206.0, 32.0, 22.0 ],
-													"text" : "print"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-90",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 1127.0, 112.0, 105.0, 22.0 ],
-													"text" : "get dev::instances"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-88",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 204.0, 504.0, 32.0, 22.0 ],
-													"text" : "print"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-87",
-													"linecount" : 12,
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 576.0, 634.0, 50.0, 169.0 ],
-													"text" : "dev/onep/channel.3/filter.1/filtermode dev::onep::channel.3::filter.1::filtermode"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-79",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 712.0, 533.0, 54.0, 22.0 ],
-													"text" : "deferlow"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-80",
-													"maxclass" : "button",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
-													"parameter_enable" : 0,
-													"patching_rect" : [ 576.0, 528.0, 24.0, 24.0 ]
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-81",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 577.0, 466.0, 35.0, 22.0 ],
-													"text" : "1000"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-82",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 576.0, 553.0, 66.0, 22.0 ],
-													"text" : "random 16"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"format" : 6,
-													"id" : "obj-83",
-													"maxclass" : "flonum",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "", "bang" ],
-													"parameter_enable" : 0,
-													"patching_rect" : [ 643.0, 533.0, 50.0, 22.0 ]
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-84",
-													"maxclass" : "button",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
-													"parameter_enable" : 0,
-													"patching_rect" : [ 712.0, 503.0, 24.0, 24.0 ]
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-85",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 3,
-													"outlettype" : [ "int", "float", "bang" ],
-													"patching_rect" : [ 576.0, 503.0, 101.0, 22.0 ],
-													"text" : "aim.benchmarker"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-78",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 4,
-													"outlettype" : [ "", "", "", "" ],
-													"patching_rect" : [ 577.0, 590.0, 141.0, 22.0 ],
-													"saved_object_attributes" : 													{
-														"embed" : 0,
-														"precision" : 6
-													}
-,
-													"text" : "coll 7732.OSCaddresses"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-66",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 1167.0, 533.0, 54.0, 22.0 ],
-													"text" : "deferlow"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-67",
-													"maxclass" : "button",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
-													"parameter_enable" : 0,
-													"patching_rect" : [ 1031.0, 528.0, 24.0, 24.0 ]
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-68",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 1032.0, 466.0, 35.0, 22.0 ],
-													"text" : "1000"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-69",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 1031.0, 553.0, 66.0, 22.0 ],
-													"text" : "random 16"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"format" : 6,
-													"id" : "obj-70",
-													"maxclass" : "flonum",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "", "bang" ],
-													"parameter_enable" : 0,
-													"patching_rect" : [ 1098.0, 533.0, 50.0, 22.0 ]
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-71",
-													"maxclass" : "button",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
-													"parameter_enable" : 0,
-													"patching_rect" : [ 1167.0, 503.0, 24.0, 24.0 ]
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-72",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 3,
-													"outlettype" : [ "int", "float", "bang" ],
-													"patching_rect" : [ 1031.0, 503.0, 101.0, 22.0 ],
-													"text" : "aim.benchmarker"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-73",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 1031.0, 694.0, 73.0, 22.0 ],
-													"text" : "prepend get"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-74",
-													"maxclass" : "number",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "", "bang" ],
-													"parameter_enable" : 0,
-													"patching_rect" : [ 1034.0, 585.0, 50.0, 22.0 ]
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-75",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "bang", "int" ],
-													"patching_rect" : [ 1031.0, 616.0, 29.5, 22.0 ],
-													"text" : "t b i"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-76",
-													"maxclass" : "newobj",
-													"numinlets" : 3,
-													"numoutlets" : 2,
-													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 1031.0, 652.0, 210.0, 22.0 ],
-													"text" : "combine drivetrain::cassette::cogs[ 0 ]"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"data" : 													{
-														"wheels" : 														{
-															"front" : 															{
-																"spokecount" : 24,
-																"lacing" : "radial",
-																"tirewidth" : 21
-															}
-,
-															"rear" : 															{
-																"spokecount" : 3334,
-																"lacing" : "2-cross",
-																"tirewidth" : 23
-															}
-
-														}
-,
-														"drivetrain" : 														{
-															"chainring" : 															{
-																"make" : "FSA",
-																"cogs" : [ 53, 39 ]
-															}
-,
-															"cassette" : 															{
-																"make" : "Campagnolo",
-																"cogs" : [ 12, 13, 14, 15, 16, 17, 19, 21, 23, 13 ],
-																"pogs" : "foo gooi iuu"
-															}
-
-														}
-
-													}
-,
-													"fontname" : "Arial",
-													"fontsize" : 13.0,
-													"id" : "obj-77",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 4,
-													"outlettype" : [ "dictionary", "", "", "" ],
-													"patching_rect" : [ 1031.0, 733.0, 195.0, 23.0 ],
-													"saved_object_attributes" : 													{
-														"embed" : 1,
-														"parameter_enable" : 0,
-														"parameter_mappable" : 0
-													}
-,
-													"text" : "dict bicycle @embed 1 @quiet 1"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-63",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 1402.0, 101.0, 54.0, 22.0 ],
-													"text" : "deferlow"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-62",
-													"maxclass" : "button",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
-													"parameter_enable" : 0,
-													"patching_rect" : [ 1266.0, 96.0, 24.0, 24.0 ]
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-58",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 1267.0, 34.0, 35.0, 22.0 ],
-													"text" : "1000"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-56",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 1266.0, 121.0, 66.0, 22.0 ],
-													"text" : "random 16"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"format" : 6,
-													"id" : "obj-55",
-													"maxclass" : "flonum",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "", "bang" ],
-													"parameter_enable" : 0,
-													"patching_rect" : [ 1333.0, 101.0, 50.0, 22.0 ]
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-53",
-													"maxclass" : "button",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
-													"parameter_enable" : 0,
-													"patching_rect" : [ 1402.0, 71.0, 24.0, 24.0 ]
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-51",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 3,
-													"outlettype" : [ "int", "float", "bang" ],
-													"patching_rect" : [ 1266.0, 71.0, 101.0, 22.0 ],
-													"text" : "aim.benchmarker"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-47",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 1266.0, 262.0, 73.0, 22.0 ],
-													"text" : "prepend get"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-46",
-													"maxclass" : "number",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "", "bang" ],
-													"parameter_enable" : 0,
-													"patching_rect" : [ 1269.0, 153.0, 50.0, 22.0 ]
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-44",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "bang", "int" ],
-													"patching_rect" : [ 1266.0, 184.0, 29.5, 22.0 ],
-													"text" : "t b i"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-43",
-													"maxclass" : "newobj",
-													"numinlets" : 3,
-													"numoutlets" : 2,
-													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 1266.0, 220.0, 210.0, 22.0 ],
-													"text" : "combine drivetrain::cassette::cogs[ 0 ]"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"data" : 													{
-														"wheels" : 														{
-															"front" : 															{
-																"spokecount" : 24,
-																"lacing" : "radial",
-																"tirewidth" : 21
-															}
-,
-															"rear" : 															{
-																"spokecount" : 3334,
-																"lacing" : "2-cross",
-																"tirewidth" : 23
-															}
-
-														}
-,
-														"drivetrain" : 														{
-															"chainring" : 															{
-																"make" : "FSA",
-																"cogs" : [ 53, 39 ]
-															}
-,
-															"cassette" : 															{
-																"make" : "Campagnolo",
-																"cogs" : [ 12, 13, 14, 15, 16, 17, 19, 21, 23, 13 ],
-																"pogs" : "foo gooi iuu"
-															}
-
-														}
-
-													}
-,
-													"fontname" : "Arial",
-													"fontsize" : 13.0,
-													"id" : "obj-41",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 4,
-													"outlettype" : [ "dictionary", "", "", "" ],
-													"patching_rect" : [ 1266.0, 301.0, 195.0, 23.0 ],
-													"saved_object_attributes" : 													{
-														"embed" : 1,
-														"parameter_enable" : 0,
-														"parameter_mappable" : 0
-													}
-,
-													"text" : "dict bicycle @embed 1 @quiet 1"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-39",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 1032.0, 221.0, 45.0, 22.0 ],
-													"text" : "import"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-34",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 4,
-													"outlettype" : [ "dictionary", "", "", "" ],
-													"patching_rect" : [ 1032.0, 253.0, 50.5, 22.0 ],
-													"saved_object_attributes" : 													{
-														"embed" : 0,
-														"parameter_enable" : 0,
-														"parameter_mappable" : 0
-													}
-,
-													"text" : "dict"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-33",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 1098.0, 34.0, 35.0, 22.0 ],
-													"text" : "clear"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-30",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 4,
-													"outlettype" : [ "dictionary", "", "", "" ],
-													"patching_rect" : [ 1091.0, 151.041210999999976, 114.0, 22.0 ],
-													"saved_object_attributes" : 													{
-														"embed" : 0,
-														"parameter_enable" : 0,
-														"parameter_mappable" : 0
-													}
-,
-													"text" : "dict aim.models.dict"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-29",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 4,
-													"outlettype" : [ "dictionary", "", "", "" ],
-													"patching_rect" : [ 1091.0, 60.999999999999886, 121.0, 22.0 ],
-													"saved_object_attributes" : 													{
-														"embed" : 0,
-														"parameter_enable" : 0,
-														"parameter_mappable" : 0
-													}
-,
-													"text" : "dict aim.devices.dict"
-												}
-
-											}
-, 											{
 												"box" : 												{
 													"id" : "obj-25",
 													"maxclass" : "newobj",
@@ -24801,7 +24207,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-22",
-													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
@@ -24956,12 +24361,11 @@
 														"boxes" : [ 															{
 																"box" : 																{
 																	"id" : "obj-7",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "" ],
-																	"patching_rect" : [ 136.0, 240.0, 80.0, 35.0 ],
+																	"patching_rect" : [ 136.0, 240.0, 117.0, 22.0 ],
 																	"text" : "unpack branch hash"
 																}
 
@@ -24974,7 +24378,7 @@
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 46.5, 402.066650666666646, 159.0, 22.0 ],
+																	"patching_rect" : [ 46.5, 402.066650666666646, 55.0, 22.0 ],
 																	"text" : "print #1"
 																}
 
@@ -25018,12 +24422,11 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-22",
-																	"linecount" : 3,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 136.0, 294.149963999999954, 126.0, 49.0 ],
+																	"patching_rect" : [ 136.0, 294.149963999999954, 245.0, 22.0 ],
 																	"text" : "replace /revision $1, get /revision, writeagain"
 																}
 
@@ -25035,7 +24438,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "" ],
-																	"patching_rect" : [ 36.0, 158.981180030819928, 265.0, 22.0 ],
+																	"patching_rect" : [ 36.0, 158.981180030819928, 81.0, 22.0 ],
 																	"text" : "t getGitSHA s"
 																}
 
@@ -25059,8 +24462,8 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 36.0, 133.289973497760286, 190.0, 22.0 ],
-																	"text" : "sprintf symout %saim.version.json"
+																	"patching_rect" : [ 36.0, 133.289973497760286, 193.0, 22.0 ],
+																	"text" : "sprintf symout %smvc.version.json"
 																}
 
 															}
@@ -25089,7 +24492,7 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 36.0, 79.86428978525808, 107.0, 22.0 ],
+																	"patching_rect" : [ 36.0, 79.86428978525808, 97.0, 22.0 ],
 																	"text" : "getPackagePath"
 																}
 
@@ -25098,13 +24501,12 @@
 																"box" : 																{
 																	"fontsize" : 14.0,
 																	"id" : "obj-78",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 36.0, 105.555496318317694, 235.0, 40.0 ],
-																	"text" : "aim.f.call #0.aim.device.js.callback"
+																	"patching_rect" : [ 36.0, 105.555496318317694, 244.0, 24.0 ],
+																	"text" : "mvc.f.call #0.mvc.device.js.callback"
 																}
 
 															}
@@ -25112,13 +24514,12 @@
 																"box" : 																{
 																	"fontsize" : 14.0,
 																	"id" : "obj-84",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 36.0, 184.672386563879542, 235.0, 40.0 ],
-																	"text" : "aim.f.call #0.aim.device.js.callback"
+																	"patching_rect" : [ 36.0, 184.672386563879542, 244.0, 24.0 ],
+																	"text" : "mvc.f.call #0.mvc.device.js.callback"
 																}
 
 															}
@@ -25237,7 +24638,7 @@
  ]
 													}
 ,
-													"patching_rect" : [ 722.0, 324.083313333333308, 164.0, 24.0 ],
+													"patching_rect" : [ 722.0, 324.083313333333308, 170.0, 24.0 ],
 													"saved_object_attributes" : 													{
 														"description" : "",
 														"digest" : "",
@@ -25245,7 +24646,7 @@
 														"tags" : ""
 													}
 ,
-													"text" : "p \"AIM package revision\""
+													"text" : "p \"MVC package revision\""
 												}
 
 											}
@@ -25310,7 +24711,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.devices.dict"
+													"text" : "dict mvc.devices.dict"
 												}
 
 											}
@@ -25498,38 +24899,8 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-91", 0 ],
-													"source" : [ "obj-30", 1 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-29", 0 ],
-													"order" : 1,
-													"source" : [ "obj-33", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-30", 0 ],
-													"order" : 0,
-													"source" : [ "obj-33", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-42", 0 ],
 													"source" : [ "obj-37", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-34", 0 ],
-													"source" : [ "obj-39", 0 ]
 												}
 
 											}
@@ -25572,41 +24943,6 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-47", 0 ],
-													"source" : [ "obj-43", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-43", 1 ],
-													"source" : [ "obj-44", 1 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-43", 0 ],
-													"source" : [ "obj-44", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-44", 0 ],
-													"source" : [ "obj-46", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-41", 0 ],
-													"source" : [ "obj-47", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-10", 0 ],
 													"order" : 0,
 													"source" : [ "obj-49", 0 ]
@@ -25623,92 +24959,8 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-53", 0 ],
-													"source" : [ "obj-51", 2 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-55", 0 ],
-													"source" : [ "obj-51", 1 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-62", 0 ],
-													"source" : [ "obj-51", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-63", 0 ],
-													"source" : [ "obj-53", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-46", 0 ],
-													"source" : [ "obj-56", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-51", 0 ],
-													"source" : [ "obj-58", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-49", 1 ],
 													"source" : [ "obj-59", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-56", 0 ],
-													"source" : [ "obj-62", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-51", 1 ],
-													"source" : [ "obj-63", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-72", 1 ],
-													"source" : [ "obj-66", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-69", 0 ],
-													"source" : [ "obj-67", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-72", 0 ],
-													"source" : [ "obj-68", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-74", 0 ],
-													"source" : [ "obj-69", 0 ]
 												}
 
 											}
@@ -25721,155 +24973,8 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-66", 0 ],
-													"source" : [ "obj-71", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-67", 0 ],
-													"source" : [ "obj-72", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-70", 0 ],
-													"source" : [ "obj-72", 1 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-71", 0 ],
-													"source" : [ "obj-72", 2 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-77", 0 ],
-													"source" : [ "obj-73", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-75", 0 ],
-													"source" : [ "obj-74", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-76", 1 ],
-													"source" : [ "obj-75", 1 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-76", 0 ],
-													"source" : [ "obj-75", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-73", 0 ],
-													"source" : [ "obj-76", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-87", 1 ],
-													"source" : [ "obj-78", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-85", 1 ],
-													"source" : [ "obj-79", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-27", 0 ],
 													"source" : [ "obj-8", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-82", 0 ],
-													"source" : [ "obj-80", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-85", 0 ],
-													"source" : [ "obj-81", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-78", 0 ],
-													"source" : [ "obj-82", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-79", 0 ],
-													"source" : [ "obj-84", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-80", 0 ],
-													"source" : [ "obj-85", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-83", 0 ],
-													"source" : [ "obj-85", 1 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-84", 0 ],
-													"source" : [ "obj-85", 2 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-30", 0 ],
-													"source" : [ "obj-90", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-30", 0 ],
-													"source" : [ "obj-95", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-17", 0 ],
-													"source" : [ "obj-96", 0 ]
 												}
 
 											}
@@ -25988,6 +25093,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-14",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -25999,7 +25105,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.devices.dict @quiet 1"
+													"text" : "dict mvc.devices.dict @quiet 1"
 												}
 
 											}
@@ -26011,7 +25117,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 69.5, 58.0, 302.0, 74.0 ],
-													"text" : "This unload the context from Max namespace and perfom some cleanup when the aim.device is removed (or the patcher containing the device is closed)\nThe dictionaries should not be cleared however, as other devices in other patchers may still be active."
+													"text" : "This unload the context from Max namespace and perfom some cleanup when the mvc.device is removed (or the patcher containing the device is closed)\nThe dictionaries should not be cleared however, as other devices in other patchers may still be active."
 												}
 
 											}
@@ -26042,7 +25148,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.inputs.dict @quiet 1"
+													"text" : "dict mvc.inputs.dict @quiet 1"
 												}
 
 											}
@@ -26060,7 +25166,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.states.dict @quiet 1"
+													"text" : "dict mvc.states.dict @quiet 1"
 												}
 
 											}
@@ -26078,13 +25184,14 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.states.values.dict @quiet 1"
+													"text" : "dict mvc.states.values.dict @quiet 1"
 												}
 
 											}
 , 											{
 												"box" : 												{
 													"id" : "obj-13",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -26096,7 +25203,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.parameters.dict @quiet 1"
+													"text" : "dict mvc.parameters.dict @quiet 1"
 												}
 
 											}
@@ -26115,6 +25222,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-8",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -26126,7 +25234,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.parameters.values.dict @quiet 1"
+													"text" : "dict mvc.parameters.values.dict @quiet 1"
 												}
 
 											}
@@ -26206,7 +25314,7 @@
 														"precision" : 6
 													}
 ,
-													"text" : "coll AIM.model.initialized"
+													"text" : "coll MVC.model.initialized"
 												}
 
 											}
@@ -26418,7 +25526,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 0,
 													"patching_rect" : [ 79.0, 122.5, 127.0, 22.0 ],
-													"text" : "aim.model.initialize"
+													"text" : "mvc.model.initialize"
 												}
 
 											}
@@ -26525,7 +25633,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 178.0, 201.19095477386935, 54.0, 22.0 ],
+									"patching_rect" : [ 178.0, 205.19095477386935, 54.0, 22.0 ],
 									"text" : "deferlow"
 								}
 
@@ -26537,7 +25645,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "int", "int" ],
-									"patching_rect" : [ 178.0, 176.758793969849251, 259.0, 22.0 ],
+									"patching_rect" : [ 178.0, 180.758793969849251, 259.0, 22.0 ],
 									"text" : "t b 0 0"
 								}
 
@@ -26562,8 +25670,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 26.0, 14.0, 346.0, 33.0 ],
-									"text" : "aim.device initialization chain"
+									"patching_rect" : [ 26.0, 14.0, 353.0, 33.0 ],
+									"text" : "mvc.device initialization chain"
 								}
 
 							}
@@ -26612,7 +25720,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 186.5, 691.35959449334041, 100.0, 22.0 ],
-									"text" : "v AIM.master"
+									"text" : "v MVC.master"
 								}
 
 							}
@@ -26623,7 +25731,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 173.5, 719.35959449334041, 100.0, 22.0 ],
-									"text" : "s AIM.master"
+									"text" : "s MVC.master"
 								}
 
 							}
@@ -26719,7 +25827,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 91.0, 57.5, 575.0, 47.0 ],
-													"text" : "The device UID is its own name.\nAs opposed, aim.models have an automatically generated UID (with #0), because there can be several models with the same name (though not the same path)."
+													"text" : "The device UID is its own name.\nAs opposed, mvc.models have an automatically generated UID (with #0), because there can be several models with the same name (though not the same path)."
 												}
 
 											}
@@ -26804,7 +25912,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 50.0, 187.251851851851853, 345.0, 22.0 ],
-													"text" : "label \"aim.device says : please provide a device name.\", bang"
+													"text" : "label \"mvc.device says : please provide a device name.\", bang"
 												}
 
 											}
@@ -27226,7 +26334,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 84.0, 265.0, 137.0, 49.0 ],
-																	"text" : "label \"aim.device says : path could not be retrieved .\", bang"
+																	"text" : "label \"mvc.device says : path could not be retrieved .\", bang"
 																}
 
 															}
@@ -27280,7 +26388,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.devices.dict"
+																	"text" : "dict mvc.devices.dict"
 																}
 
 															}
@@ -27653,7 +26761,7 @@
 														"watch" : 0
 													}
 ,
-													"text" : "node.script aim.createfolder.js"
+													"text" : "node.script mvc.createfolder.js"
 												}
 
 											}
@@ -28067,7 +27175,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 14.0, 415.050852141477378, 181.0, 22.0 ],
-													"text" : "aim.f.call #0.GUI.init"
+													"text" : "mvc.f.call #0.GUI.init"
 												}
 
 											}
@@ -28125,7 +27233,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 14.0, 672.418317025203123, 243.0, 22.0 ],
-													"text" : "aim.f.call #0.ChannelLayouts.init"
+													"text" : "mvc.f.call #0.ChannelLayouts.init"
 												}
 
 											}
@@ -28183,7 +27291,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 14.0, 587.418317025203123, 183.0, 22.0 ],
-													"text" : "aim.f.call #0.IRbuffer.init"
+													"text" : "mvc.f.call #0.IRbuffer.init"
 												}
 
 											}
@@ -28231,7 +27339,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 14.0, 505.734584583340222, 213.0, 22.0 ],
-													"text" : "aim.f.call #0.SoundsBuffer.init"
+													"text" : "mvc.f.call #0.SoundsBuffer.init"
 												}
 
 											}
@@ -28262,6 +27370,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-114",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -28273,7 +27382,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.devices.dict"
+													"text" : "dict mvc.devices.dict"
 												}
 
 											}
@@ -28320,7 +27429,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 14.0, 329.050852141477378, 181.0, 22.0 ],
-													"text" : "aim.f.call #0.presets.init"
+													"text" : "mvc.f.call #0.presets.init"
 												}
 
 											}
@@ -28367,7 +27476,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 14.0, 247.367119699614534, 168.0, 22.0 ],
-													"text" : "aim.f.call #0.node.init"
+													"text" : "mvc.f.call #0.node.init"
 												}
 
 											}
@@ -30669,7 +29778,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 56.0, 220.3153401541324, 212.0, 22.0 ],
-																	"text" : "aim.f.call #0.aim.device.js.callback"
+																	"text" : "mvc.f.call #0.mvc.device.js.callback"
 																}
 
 															}
@@ -30725,7 +29834,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.devices.dict"
+																	"text" : "dict mvc.devices.dict"
 																}
 
 															}
@@ -30814,7 +29923,7 @@
 																						"parameter_mappable" : 0
 																					}
 ,
-																					"text" : "dict aim.devices.dict"
+																					"text" : "dict mvc.devices.dict"
 																				}
 
 																			}
@@ -32017,6 +31126,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-30", 1 ],
 									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-25", 0 ],
+									"source" : [ "obj-20", 0 ]
 								}
 
 							}

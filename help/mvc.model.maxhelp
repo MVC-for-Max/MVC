@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 143.0, 347.0, 1131.0, 542.0 ],
+		"rect" : [ 43.0, 123.0, 847.0, 520.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -123,7 +123,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "multichannelsignal", "", "float", "list" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 679.0, 348.0, 136.0, 30.0 ],
+					"patching_rect" : [ 539.0, 395.0, 136.0, 30.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "mc.live.gain~",
@@ -148,7 +148,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "mvc.mc.onepole~", "dev", "myMcOnepole" ],
-					"patching_rect" : [ 679.0, 310.0, 213.0, 22.0 ],
+					"patching_rect" : [ 539.0, 357.0, 213.0, 22.0 ],
 					"text" : "t mvc.mc.onepole~ dev myMcOnepole",
 					"varname" : "mvc.mc.onepole~"
 				}
@@ -161,7 +161,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "multichannelsignal" ],
-					"patching_rect" : [ 679.0, 283.0, 60.0, 22.0 ],
+					"patching_rect" : [ 539.0, 330.0, 60.0, 22.0 ],
 					"text" : "mc.*~ 0.1"
 				}
 
@@ -172,7 +172,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 679.0, 393.0, 54.0, 22.0 ],
+					"patching_rect" : [ 539.0, 440.0, 54.0, 22.0 ],
 					"text" : "mc.dac~"
 				}
 
@@ -184,7 +184,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "multichannelsignal" ],
-					"patching_rect" : [ 680.0, 259.0, 64.0, 22.0 ],
+					"patching_rect" : [ 540.0, 306.0, 64.0, 22.0 ],
 					"text" : "mc.noise~"
 				}
 
@@ -196,7 +196,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 895.0, 247.0, 30.0, 22.0 ],
+					"patching_rect" : [ 698.0, 284.0, 30.0, 22.0 ],
 					"text" : "GUI"
 				}
 
@@ -208,7 +208,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 954.0, 263.0, 65.0, 22.0 ],
+					"patching_rect" : [ 757.0, 300.0, 65.0, 22.0 ],
 					"text" : "preset test"
 				}
 
@@ -349,7 +349,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 866.0, 224.0, 120.0, 22.0 ],
+					"patching_rect" : [ 669.0, 261.0, 120.0, 22.0 ],
 					"text" : "preset test channel.1"
 				}
 
@@ -361,7 +361,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 759.0, 182.0, 102.0, 22.0 ],
+					"patching_rect" : [ 619.0, 229.0, 102.0, 22.0 ],
 					"text" : "preset justTesting"
 				}
 
@@ -545,6 +545,13 @@
 					"index" : 0,
 					"name" : "",
 					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
+			"parameter_overrides" : 			{
+				"obj-3::obj-35::obj-30::obj-18::obj-7" : 				{
+					"parameter_longname" : "live.toggle[1]"
 				}
 
 			}

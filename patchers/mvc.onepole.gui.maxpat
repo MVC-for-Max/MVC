@@ -588,7 +588,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "bang", "bang" ],
 									"patching_rect" : [ 35.153931000000057, 121.124145999999996, 464.0, 22.0 ],
-									"text" : "aim.GUI.windowsettings #0 #1 #2"
+									"text" : "mvc.GUI.windowsettings #0 #1 #2"
 								}
 
 							}
@@ -768,7 +768,7 @@
 					"patching_rect" : [ 184.0, 86.0, 300.0, 24.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 300.0, 24.0 ],
-					"varname" : "aim.model.gui",
+					"varname" : "mvc.model.gui",
 					"viewvisibility" : 1
 				}
 
@@ -943,119 +943,119 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "aim.GUI.preset.description.maxpat",
+				"name" : "mvc.GUI.preset.description.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
 				"patcherrelativepath" : "../../AIM/patchers/GUI",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "aim.GUI.presets.maxpat",
+				"name" : "mvc.GUI.presets.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
 				"patcherrelativepath" : "../../AIM/patchers/GUI",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "aim.GUI.tabbing.maxpat",
+				"name" : "mvc.GUI.tabbing.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
 				"patcherrelativepath" : "../../AIM/patchers/GUI",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "aim.GUI.windowsettings.maxpat",
+				"name" : "mvc.GUI.windowsettings.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
 				"patcherrelativepath" : "../../AIM/patchers/GUI",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "aim.dict.flatten.js",
+				"name" : "mvc.dict.flatten.js",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
 				"patcherrelativepath" : "../../AIM/javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "aim.dict.flatten.maxpat",
+				"name" : "mvc.dict.flatten.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
 				"patcherrelativepath" : "../../AIM/patchers/core",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "aim.dllb.maxpat",
+				"name" : "mvc.dllb.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
 				"patcherrelativepath" : "../../AIM/patchers/core",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "aim.f.call.maxpat",
+				"name" : "mvc.f.call.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
 				"patcherrelativepath" : "../../AIM/patchers/core",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "aim.locatePatcherWindow.js",
+				"name" : "mvc.locatePatcherWindow.js",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
 				"patcherrelativepath" : "../../AIM/javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "aim.model.initialized.maxpat",
+				"name" : "mvc.model.initialized.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
 				"patcherrelativepath" : "../../AIM/patchers/core",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "aim.noblabang.maxpat",
+				"name" : "mvc.noblabang.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/lib",
 				"patcherrelativepath" : "../../AIM/patchers/lib",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "aim.osc2dict.maxpat",
+				"name" : "mvc.osc2dict.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/lib",
 				"patcherrelativepath" : "../../AIM/patchers/lib",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "aim.polyreceive.p.maxpat",
+				"name" : "mvc.polyreceive.p.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
 				"patcherrelativepath" : "../../AIM/patchers/core",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "aim.qlow.maxpat",
+				"name" : "mvc.qlow.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/lib",
 				"patcherrelativepath" : "../../AIM/patchers/lib",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "aim.remote.maxpat",
+				"name" : "mvc.remote.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
 				"patcherrelativepath" : "../../AIM/patchers/core",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "aim.stripes10.purple.png",
+				"name" : "mvc.stripes10.purple.png",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/media",
 				"patcherrelativepath" : "../../AIM/media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "aim.wildcard2.js",
+				"name" : "mvc.wildcard2.js",
 				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
 				"patcherrelativepath" : "../../AIM/javascript",
 				"type" : "TEXT",

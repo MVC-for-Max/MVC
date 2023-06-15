@@ -87,12 +87,13 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-4",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"patching_rect" : [ 650.0, 485.0, 113.0, 22.0 ],
-									"text" : "aim.GUI.listselector"
+									"text" : "mvc.GUI.listselector"
 								}
 
 							}
@@ -379,11 +380,11 @@
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 181.0, 304.0, 164.5, 22.0 ],
 													"saved_object_attributes" : 													{
-														"filename" : "aim.dict.route.js",
+														"filename" : "mvc.dict.route.js",
 														"parameter_enable" : 0
 													}
 ,
-													"text" : "js aim.dict.route.js"
+													"text" : "js mvc.dict.route.js"
 												}
 
 											}
@@ -1205,12 +1206,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-14",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 128.0, 160.0, 216.0, 22.0 ],
-													"text" : "sprintf symout aim.%s.presets.dict.json"
+													"text" : "sprintf symout mvc.%s.presets.dict.json"
 												}
 
 											}
@@ -2268,12 +2270,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-24",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 130.25, 154.579693660903899, 187.0, 22.0 ],
-													"text" : "sprintf symout aim.%s/presets/list"
+													"text" : "sprintf symout mvc.%s/presets/list"
 												}
 
 											}
@@ -3263,7 +3266,7 @@
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "bang", "bang" ],
 																	"patching_rect" : [ 35.153931000000057, 121.124145999999996, 360.0, 22.0 ],
-																	"text" : "aim.GUI.windowsettings #0 #1 #2"
+																	"text" : "mvc.GUI.windowsettings #0 #1 #2"
 																}
 
 															}
@@ -5244,11 +5247,11 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 50.0, 158.304332791067964, 144.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"filename" : "aim.dict.join.js",
+														"filename" : "mvc.dict.join.js",
 														"parameter_enable" : 0
 													}
 ,
-													"text" : "js aim.dict.join.js"
+													"text" : "js mvc.dict.join.js"
 												}
 
 											}
@@ -5523,11 +5526,11 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 50.0, 158.304332791067964, 202.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"filename" : "aim.dict.join.js",
+														"filename" : "mvc.dict.join.js",
 														"parameter_enable" : 0
 													}
 ,
-													"text" : "js aim.dict.join.js"
+													"text" : "js mvc.dict.join.js"
 												}
 
 											}
@@ -9032,11 +9035,11 @@
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 181.0, 304.0, 164.5, 22.0 ],
 													"saved_object_attributes" : 													{
-														"filename" : "aim.dict.route.js",
+														"filename" : "mvc.dict.route.js",
 														"parameter_enable" : 0
 													}
 ,
-													"text" : "js aim.dict.route.js"
+													"text" : "js mvc.dict.route.js"
 												}
 
 											}
@@ -9934,12 +9937,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-14",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 128.0, 160.0, 216.0, 22.0 ],
-													"text" : "sprintf symout aim.%s.presets.dict.json"
+													"text" : "sprintf symout mvc.%s.presets.dict.json"
 												}
 
 											}
@@ -10323,12 +10327,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-24",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 179.25, 124.579693660903899, 187.0, 22.0 ],
-													"text" : "sprintf symout aim.%s/presets/list"
+													"text" : "sprintf symout mvc.%s/presets/list"
 												}
 
 											}
@@ -11821,7 +11826,7 @@
 													"lockeddragscroll" : 0,
 													"lockedsize" : 0,
 													"maxclass" : "bpatcher",
-													"name" : "aim.GUI.listselector.maxpat",
+													"name" : "mvc.GUI.listselector.maxpat",
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"offset" : [ 0.0, 0.0 ],
@@ -12008,7 +12013,7 @@
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "bang", "bang" ],
 																	"patching_rect" : [ 35.153931000000057, 121.124145999999996, 360.0, 22.0 ],
-																	"text" : "aim.GUI.windowsettings #0 #1 #2"
+																	"text" : "mvc.GUI.windowsettings #0 #1 #2"
 																}
 
 															}
@@ -15099,7 +15104,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 250.5, 111.894440859484007, 246.0, 74.0 ],
-													"text" : "Retrieve the param uid. This also checks for the existence of parameter. Not-yet-existent parameters will be able to fetch their value from the \"dict aim.parameters.values.dict\" that we filled at the previous step."
+													"text" : "Retrieve the param uid. This also checks for the existence of parameter. Not-yet-existent parameters will be able to fetch their value from the \"dict mvc.parameters.values.dict\" that we filled at the previous step."
 												}
 
 											}
@@ -15118,6 +15123,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-65",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -15129,7 +15135,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.inputs.dict @quiet 1"
+													"text" : "dict mvc.inputs.dict @quiet 1"
 												}
 
 											}
@@ -16079,7 +16085,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 76.0, 83.0, 160.0, 22.0 ],
-									"text" : "aim.f.io #1.get-preset-list"
+									"text" : "mvc.f.io #1.get-preset-list"
 								}
 
 							}
@@ -16682,7 +16688,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 50.0, 134.0, 158.0, 22.0 ],
-													"text" : "aim.f.call"
+													"text" : "mvc.f.call"
 												}
 
 											}
@@ -17526,6 +17532,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-19",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
@@ -17537,7 +17544,7 @@
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict aim.parameters.values.dict @quiet 1"
+									"text" : "dict mvc.parameters.values.dict @quiet 1"
 								}
 
 							}
@@ -17750,6 +17757,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-4",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 4,
@@ -17761,7 +17769,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.inputs.dict @quiet 1"
+																	"text" : "dict mvc.inputs.dict @quiet 1"
 																}
 
 															}
@@ -18529,6 +18537,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-16",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 4,
@@ -18540,7 +18549,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.models.dict"
+																	"text" : "dict mvc.models.dict"
 																}
 
 															}
@@ -19630,11 +19639,12 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-4",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 131.0, 155.0, 113.0, 22.0 ],
-																	"text" : "print aim.parameter"
+																	"text" : "print mvc.parameter"
 																}
 
 															}
@@ -19753,6 +19763,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-9",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -19764,7 +19775,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.inputs.dict @quiet 1"
+													"text" : "dict mvc.inputs.dict @quiet 1"
 												}
 
 											}
@@ -19862,11 +19873,11 @@
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 159.333333000000039, 191.89607169788286, 212.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"filename" : "aim.dict.flatten.js",
+														"filename" : "mvc.dict.flatten.js",
 														"parameter_enable" : 0
 													}
 ,
-													"text" : "js aim.dict.flatten.js"
+													"text" : "js mvc.dict.flatten.js"
 												}
 
 											}
@@ -20430,7 +20441,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 140.0, 118.0, 150.0, 47.0 ],
-									"text" : "Not needed anymore if no aim.remote in the aim.preset abstraction!"
+									"text" : "Not needed anymore if no mvc.remote in the mvc.preset abstraction!"
 								}
 
 							}
@@ -20442,7 +20453,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 218.0, 55.0, 151.0, 60.0 ],
-									"text" : "Deferlowing here because initializing aim.remotes to a new path can take time and might reset value."
+									"text" : "Deferlowing here because initializing mvc.remotes to a new path can take time and might reset value."
 								}
 
 							}
@@ -20871,7 +20882,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 250.5, 111.894440859484007, 246.0, 74.0 ],
-													"text" : "Retrieve the param uid. This also checks for the existence of parameter. Not-yet-existent parameters will be able to fetch their value from the \"dict aim.parameters.values.dict\" that we filled at the previous step."
+													"text" : "Retrieve the param uid. This also checks for the existence of parameter. Not-yet-existent parameters will be able to fetch their value from the \"dict mvc.parameters.values.dict\" that we filled at the previous step."
 												}
 
 											}
@@ -20890,6 +20901,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-65",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -20901,7 +20913,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.inputs.dict @quiet 1"
+													"text" : "dict mvc.inputs.dict @quiet 1"
 												}
 
 											}
@@ -21185,7 +21197,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 66.0, 232.0, 74.0, 49.0 ],
-									"text" : "print aim.presets @level 1"
+									"text" : "print mvc.presets @level 1"
 								}
 
 							}
@@ -21250,12 +21262,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-6",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 346.0, 418.226190476190482, 187.0, 22.0 ],
-									"text" : "sprintf symout aim.%s/presets/list"
+									"text" : "sprintf symout mvc.%s/presets/list"
 								}
 
 							}
@@ -21551,6 +21564,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-70",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -21562,7 +21576,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.inputs.dict @quiet 1"
+													"text" : "dict mvc.inputs.dict @quiet 1"
 												}
 
 											}
@@ -21810,6 +21824,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-25",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -21821,7 +21836,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.parameters.values.dict"
+													"text" : "dict mvc.parameters.values.dict"
 												}
 
 											}
@@ -21877,23 +21892,25 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-4",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 75.0, 136.0, 110.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"filename" : "aim.dict.flatten.js",
+														"filename" : "mvc.dict.flatten.js",
 														"parameter_enable" : 0
 													}
 ,
-													"text" : "js aim.dict.flatten.js"
+													"text" : "js mvc.dict.flatten.js"
 												}
 
 											}
 , 											{
 												"box" : 												{
 													"id" : "obj-3",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -21905,7 +21922,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.devices.dict"
+													"text" : "dict mvc.devices.dict"
 												}
 
 											}
@@ -22347,6 +22364,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-16",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -22358,7 +22376,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.parameters.values.dict"
+													"text" : "dict mvc.parameters.values.dict"
 												}
 
 											}
@@ -22953,7 +22971,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 163.0, 232.0, 187.0, 24.0 ],
-									"text" : "aim.dict.keyrename"
+									"text" : "mvc.dict.keyrename"
 								}
 
 							}
@@ -24198,7 +24216,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 250.5, 111.894440859484007, 246.0, 74.0 ],
-													"text" : "Retrieve the param uid. This also checks for the existence of parameter. Not-yet-existent parameters will be able to fetch their value from the \"dict aim.parameters.values.dict\" that we filled at the previous step."
+													"text" : "Retrieve the param uid. This also checks for the existence of parameter. Not-yet-existent parameters will be able to fetch their value from the \"dict mvc.parameters.values.dict\" that we filled at the previous step."
 												}
 
 											}
@@ -24217,6 +24235,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-65",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -24228,7 +24247,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.inputs.dict @quiet 1"
+													"text" : "dict mvc.inputs.dict @quiet 1"
 												}
 
 											}
@@ -25541,6 +25560,7 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-36",
+																					"linecount" : 2,
 																					"maxclass" : "newobj",
 																					"numinlets" : 2,
 																					"numoutlets" : 4,
@@ -25552,7 +25572,7 @@
 																						"parameter_mappable" : 0
 																					}
 ,
-																					"text" : "dict aim.devices.dict"
+																					"text" : "dict mvc.devices.dict"
 																				}
 
 																			}
@@ -26111,6 +26131,7 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-36",
+																					"linecount" : 2,
 																					"maxclass" : "newobj",
 																					"numinlets" : 2,
 																					"numoutlets" : 4,
@@ -26122,7 +26143,7 @@
 																						"parameter_mappable" : 0
 																					}
 ,
-																					"text" : "dict aim.devices.dict"
+																					"text" : "dict mvc.devices.dict"
 																				}
 
 																			}
@@ -26467,8 +26488,8 @@
 																					"numinlets" : 3,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 40.0, 327.657894736842081, 323.0, 49.0 ],
-																					"text" : "sprintf symout Preset file \\\"%s\\\" is at version %s but package is at version %s. Please update your preset file first with the preset updater (located in AIM-package/tools)."
+																					"patching_rect" : [ 40.0, 327.657894736842081, 327.0, 49.0 ],
+																					"text" : "sprintf symout Preset file \\\"%s\\\" is at version %s but package is at version %s. Please update your preset file first with the preset updater (located in MVC-package/tools)."
 																				}
 
 																			}
@@ -27943,6 +27964,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-114",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 4,
@@ -27954,7 +27976,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.models.dict"
+																	"text" : "dict mvc.models.dict"
 																}
 
 															}
@@ -28160,6 +28182,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-4",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 4,
@@ -28171,7 +28194,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.models.dict"
+																	"text" : "dict mvc.models.dict"
 																}
 
 															}
@@ -28324,12 +28347,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-121",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 355.0, 199.99999991022446, 191.0, 22.0 ],
-													"text" : "sprintf symout aim.%s.presets.dict"
+													"text" : "sprintf symout mvc.%s.presets.dict"
 												}
 
 											}
@@ -29011,7 +29035,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.devices.dict"
+													"text" : "dict mvc.devices.dict"
 												}
 
 											}
@@ -29858,7 +29882,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 250.5, 111.894440859484007, 246.0, 74.0 ],
-																	"text" : "Retrieve the param uid. This also checks for the existence of parameter. Not-yet-existent parameters will be able to fetch their value from the \"dict aim.parameters.values.dict\" that we filled at the previous step."
+																	"text" : "Retrieve the param uid. This also checks for the existence of parameter. Not-yet-existent parameters will be able to fetch their value from the \"dict mvc.parameters.values.dict\" that we filled at the previous step."
 																}
 
 															}
@@ -29877,6 +29901,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-65",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 4,
@@ -29888,7 +29913,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.inputs.dict @quiet 1"
+																	"text" : "dict mvc.inputs.dict @quiet 1"
 																}
 
 															}
@@ -29997,11 +30022,11 @@
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 30.0, 91.0, 353.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"filename" : "aim.dict.flatten.js",
+														"filename" : "mvc.dict.flatten.js",
 														"parameter_enable" : 0
 													}
 ,
-													"text" : "js aim.dict.flatten.js"
+													"text" : "js mvc.dict.flatten.js"
 												}
 
 											}
@@ -30715,7 +30740,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 402.75, 175.5, 190.0, 106.0 ],
-													"text" : "Replace each target model in the aim.parameters.values.dict dictionary by the content of the preset, so that these value can be fetched if some parameters addresses do not yet exist."
+													"text" : "Replace each target model in the mvc.parameters.values.dict dictionary by the content of the preset, so that these value can be fetched if some parameters addresses do not yet exist."
 												}
 
 											}
@@ -30805,6 +30830,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-15",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -30816,7 +30842,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.parameters.values.dict @quiet 1"
+													"text" : "dict mvc.parameters.values.dict @quiet 1"
 												}
 
 											}
@@ -31327,7 +31353,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 71.75, 258.178343949044574, 74.0, 49.0 ],
-									"text" : "print aim.presets @level 1"
+									"text" : "print mvc.presets @level 1"
 								}
 
 							}
@@ -31439,12 +31465,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-24",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 130.25, 154.579693660903899, 187.0, 22.0 ],
-													"text" : "sprintf symout aim.%s/presets/list"
+													"text" : "sprintf symout mvc.%s/presets/list"
 												}
 
 											}
@@ -31635,6 +31662,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-16",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -31646,7 +31674,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.parameters.values.dict"
+													"text" : "dict mvc.parameters.values.dict"
 												}
 
 											}
@@ -32751,6 +32779,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-16",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -32762,7 +32791,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.parameters.values.dict"
+													"text" : "dict mvc.parameters.values.dict"
 												}
 
 											}
@@ -33294,6 +33323,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-14",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
@@ -33305,7 +33335,7 @@
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict aim.parameters.values.dict"
+									"text" : "dict mvc.parameters.values.dict"
 								}
 
 							}
@@ -33731,12 +33761,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-24",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 130.25, 130.579693660903899, 187.0, 22.0 ],
-													"text" : "sprintf symout aim.%s/presets/list"
+													"text" : "sprintf symout mvc.%s/presets/list"
 												}
 
 											}
@@ -33915,11 +33946,12 @@
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-34",
+													"linecount" : 2,
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 200.28125, 433.0, 377.0, 20.0 ],
-													"text" : "... and store in dict with no delay (contrary to what aim.parameter do)."
+													"text" : "... and store in dict with no delay (contrary to what mvc.parameter do)."
 												}
 
 											}
@@ -33973,6 +34005,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-13",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -33984,7 +34017,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.parameters.values.dict"
+													"text" : "dict mvc.parameters.values.dict"
 												}
 
 											}
@@ -34175,7 +34208,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 250.5, 111.894440859484007, 246.0, 74.0 ],
-																	"text" : "Retrieve the param uid. This also checks for the existence of parameter. Not-yet-existent parameters will be able to fetch their value from the \"dict aim.parameters.values.dict\" that we filled at the previous step."
+																	"text" : "Retrieve the param uid. This also checks for the existence of parameter. Not-yet-existent parameters will be able to fetch their value from the \"dict mvc.parameters.values.dict\" that we filled at the previous step."
 																}
 
 															}
@@ -34205,7 +34238,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.inputs.dict @quiet 1"
+																	"text" : "dict mvc.inputs.dict @quiet 1"
 																}
 
 															}

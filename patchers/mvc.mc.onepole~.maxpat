@@ -531,7 +531,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"patching_rect" : [ 172.5, 68.0, 115.0, 22.0 ],
-					"text" : "aim.isloading #0"
+					"text" : "mvc.isloading #0"
 				}
 
 			}
@@ -542,8 +542,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 144.0, 177.142857142857139, 183.0, 22.0 ],
-					"text" : "aim.channellayout2channelcount"
+					"patching_rect" : [ 144.0, 177.142857142857139, 186.0, 22.0 ],
+					"text" : "mvc.channellayout2channelcount"
 				}
 
 			}
@@ -555,7 +555,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 144.0, 261.14285714285711, 193.0, 22.0 ],
-					"text" : "aim.DSPrefresh #1"
+					"text" : "mvc.DSPrefresh #1"
 				}
 
 			}
@@ -563,7 +563,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-4",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -579,7 +579,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "multichannelsignal" ],
 					"patching_rect" : [ 28.0, 365.0, 135.0, 22.0 ],
-					"text" : "aim.bypass.multi #0"
+					"text" : "mvc.bypass.multi #0"
 				}
 
 			}
@@ -656,8 +656,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 144.0, 139.0, 331.0, 35.0 ],
-					"text" : "aim.parameter #0 channelcount @description \"Number of channels\" @default Mono @min 1 @max 64"
+					"patching_rect" : [ 144.0, 139.0, 334.0, 35.0 ],
+					"text" : "mvc.parameter #0 channelcount @description \"Number of channels\" @default Mono @min 1 @max 64"
 				}
 
 			}
@@ -665,7 +665,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-21",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -678,7 +678,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-2",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -690,7 +690,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-1",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -709,7 +709,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 128.0, 102.0, 483.0, 22.0 ],
 					"text" : "mvc.model #0 #1 #2 @type mc.onepole @autoinit 1",
-					"varname" : "aim.model"
+					"varname" : "mvc.model"
 				}
 
 			}
@@ -848,7 +848,8 @@
 				}
 
 			}
- ]
+ ],
+		"autosave" : 0
 	}
 
 }

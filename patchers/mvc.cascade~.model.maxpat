@@ -3430,7 +3430,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 80.0, 195.0, 73.0, 22.0 ],
-													"text" : "aim.qlow 50"
+													"text" : "mvc.qlow 50"
 												}
 
 											}
@@ -3943,7 +3943,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 46.0, 233.0, 100.0, 22.0 ],
-									"text" : "aim.noblabla 200"
+									"text" : "mvc.noblabla 200"
 								}
 
 							}
@@ -4183,7 +4183,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 35.0, 68.0, 723.0, 22.0 ],
 					"text" : "mvc.model #1 #2 #3 @type cascade",
-					"varname" : "aim.model"
+					"varname" : "mvc.model"
 				}
 
 			}

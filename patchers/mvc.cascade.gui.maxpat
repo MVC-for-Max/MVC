@@ -909,7 +909,7 @@
 , 			{
 				"box" : 				{
 					"border" : 0,
-					"filename" : "aim.hatches.UI.js",
+					"filename" : "mvc.hatches.UI.js",
 					"hidden" : 1,
 					"id" : "obj-9",
 					"ignoreclick" : 1,
@@ -1114,7 +1114,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "bang", "bang" ],
 									"patching_rect" : [ 35.153931000000057, 121.124145999999996, 449.0, 22.0 ],
-									"text" : "aim.GUI.windowsettings"
+									"text" : "mvc.GUI.windowsettings"
 								}
 
 							}
@@ -2842,7 +2842,7 @@
 					"patching_rect" : [ 71.0, 87.0, 300.0, 24.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 300.0, 24.0 ],
-					"varname" : "aim.model.gui",
+					"varname" : "mvc.model.gui",
 					"viewvisibility" : 1
 				}
 
@@ -4762,7 +4762,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 49.999999999999545, 391.48764786893139, 73.0, 22.0 ],
-									"text" : "aim.qlow 50"
+									"text" : "mvc.qlow 50"
 								}
 
 							}
@@ -5087,7 +5087,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 77.0, 112.0, 100.0, 22.0 ],
-													"text" : "aim.qlow 200"
+													"text" : "mvc.qlow 200"
 												}
 
 											}
@@ -5245,11 +5245,11 @@
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 130.666666666666629, 532.5, 105.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"filename" : "aim.dict.route.js",
+														"filename" : "mvc.dict.route.js",
 														"parameter_enable" : 0
 													}
 ,
-													"text" : "js aim.dict.route.js"
+													"text" : "js mvc.dict.route.js"
 												}
 
 											}
@@ -5292,7 +5292,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.parameters.values.dict @quiet 1"
+													"text" : "dict mvc.parameters.values.dict @quiet 1"
 												}
 
 											}
@@ -5304,7 +5304,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 165.0, 332.424528301886767, 75.0, 22.0 ],
-													"text" : "aim.osc2dict"
+													"text" : "mvc.osc2dict"
 												}
 
 											}
@@ -5944,7 +5944,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 157.0, 171.0, 158.0, 22.0 ],
-																	"text" : "aim.f.call"
+																	"text" : "mvc.f.call"
 																}
 
 															}
@@ -7291,7 +7291,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "initialized" ],
 									"patching_rect" : [ 209.958332750000295, 271.0, 141.0, 22.0 ],
-									"text" : "aim.remote @sendrate 0"
+									"text" : "mvc.remote @sendrate 0"
 								}
 
 							}
@@ -7353,7 +7353,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "initialized" ],
 									"patching_rect" : [ 529.244047892857338, 358.48764786893139, 141.0, 22.0 ],
-									"text" : "aim.remote @sendrate 0"
+									"text" : "mvc.remote @sendrate 0"
 								}
 
 							}
@@ -7365,7 +7365,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "initialized" ],
 									"patching_rect" : [ 422.815476178571657, 329.0, 141.0, 22.0 ],
-									"text" : "aim.remote @sendrate 0"
+									"text" : "mvc.remote @sendrate 0"
 								}
 
 							}
@@ -7402,7 +7402,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "initialized" ],
 									"patching_rect" : [ 316.386904464285976, 305.0, 141.0, 22.0 ],
-									"text" : "aim.remote @sendrate 0"
+									"text" : "mvc.remote @sendrate 0"
 								}
 
 							}
@@ -8028,7 +8028,7 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "aim.GUI.number.maxpat",
+					"name" : "mvc.GUI.number.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
@@ -8048,7 +8048,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 77.0, 201.0, 79.0, 22.0 ],
-					"text" : "aim.qlow 100"
+					"text" : "mvc.qlow 100"
 				}
 
 			}
@@ -8095,7 +8095,7 @@
 					"patching_rect" : [ 77.0, 373.0, 300.0, 257.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 220.0, 300.0, 251.0 ],
-					"varname" : "aim.biquad.gui",
+					"varname" : "mvc.biquad.gui",
 					"viewvisibility" : 1
 				}
 
@@ -8108,7 +8108,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 77.0, 322.5, 293.0, 22.0 ],
-					"text" : "aim.tab2subGUI filter."
+					"text" : "mvc.tab2subGUI filter."
 				}
 
 			}
@@ -8136,7 +8136,7 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "aim.GUI.nicetabs.maxpat",
+					"name" : "mvc.GUI.nicetabs.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],

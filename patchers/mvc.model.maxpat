@@ -234,7 +234,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 50.0, 160.0, 141.0, 22.0 ],
-													"text" : "print aim.model @level 1"
+													"text" : "print mvc.model @level 1"
 												}
 
 											}
@@ -422,7 +422,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 50.0, 160.0, 141.0, 22.0 ],
-													"text" : "print aim.model @level 1"
+													"text" : "print mvc.model @level 1"
 												}
 
 											}
@@ -629,7 +629,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 50.0, 160.0, 141.0, 22.0 ],
-													"text" : "print aim.model @level 1"
+													"text" : "print mvc.model @level 1"
 												}
 
 											}
@@ -975,7 +975,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 50.0, 133.0, 141.0, 22.0 ],
-									"text" : "print aim.model @level 1"
+									"text" : "print mvc.model @level 1"
 								}
 
 							}
@@ -1319,7 +1319,7 @@
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "" ],
 													"patching_rect" : [ 521.5, 384.469741051947949, 116.0, 22.0 ],
-													"text" : "aim.wildcard"
+													"text" : "mvc.wildcard"
 												}
 
 											}
@@ -1418,7 +1418,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.inputs.dict"
+																	"text" : "dict mvc.inputs.dict"
 																}
 
 															}
@@ -1808,7 +1808,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 488.0, 319.913658054485722, 86.0, 22.0 ],
-													"text" : "aim.dict.flatten"
+													"text" : "mvc.dict.flatten"
 												}
 
 											}
@@ -2037,7 +2037,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 43.0, 129.760919540229906, 75.0, 22.0 ],
-													"text" : "aim.osc2dict"
+													"text" : "mvc.osc2dict"
 												}
 
 											}
@@ -2857,11 +2857,11 @@
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 55.0, 98.0, 106.0, 22.0 ],
 																	"saved_object_attributes" : 																	{
-																		"filename" : "aim.wildcard2.js",
+																		"filename" : "mvc.wildcard2.js",
 																		"parameter_enable" : 0
 																	}
 ,
-																	"text" : "js aim.wildcard2.js"
+																	"text" : "js mvc.wildcard2.js"
 																}
 
 															}
@@ -4571,7 +4571,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.inputs.dict @quiet 1"
+																	"text" : "dict mvc.inputs.dict @quiet 1"
 																}
 
 															}
@@ -6028,7 +6028,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 58.0, 76.0, 143.0, 22.0 ],
-																	"text" : "aim.f.call"
+																	"text" : "mvc.f.call"
 																}
 
 															}
@@ -7031,7 +7031,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 270.0, 135.285714285714221, 141.0, 100.0 ],
-									"text" : "The address list reports the complete namespace monitored by the aim.remote instance, prepended by the index of the address in the namespace."
+									"text" : "The address list reports the complete namespace monitored by the mvc.remote instance, prepended by the index of the address in the namespace."
 								}
 
 							}
@@ -8641,7 +8641,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.parameters.values.dict @quiet 1"
+													"text" : "dict mvc.parameters.values.dict @quiet 1"
 												}
 
 											}
@@ -9439,7 +9439,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 50.5, 163.0, 163.0, 22.0 ],
-													"text" : "print aim.parameter @level 1"
+													"text" : "print mvc.parameter @level 1"
 												}
 
 											}
@@ -9999,7 +9999,7 @@
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict aim.parameters.values.dict"
+									"text" : "dict mvc.parameters.values.dict"
 								}
 
 							}
@@ -10036,7 +10036,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 279.5, 357.950000000000045, 148.0, 35.0 ],
-									"text" : "aim.model $1 (UID #1) has been removed."
+									"text" : "mvc.model $1 (UID #1) has been removed."
 								}
 
 							}
@@ -10190,7 +10190,7 @@
 										"precision" : 6
 									}
 ,
-									"text" : "coll AIM.model.initialized"
+									"text" : "coll MVC.model.initialized"
 								}
 
 							}
@@ -10861,7 +10861,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 50.5, 163.0, 163.0, 22.0 ],
-													"text" : "print aim.parameter @level 1"
+													"text" : "print mvc.parameter @level 1"
 												}
 
 											}
@@ -11669,7 +11669,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.devices.dict"
+													"text" : "dict mvc.devices.dict"
 												}
 
 											}
@@ -12653,7 +12653,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 393.500000000000057, 657.535815519198309, 199.0, 24.0 ],
 					"text" : "mvc.presets #1",
-					"varname" : "aim.presets"
+					"varname" : "mvc.presets"
 				}
 
 			}
@@ -12910,7 +12910,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "aim.default.gui" ],
+									"outlettype" : [ "mvc.default.gui" ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
@@ -12956,9 +12956,9 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"outlettype" : [ "aim.default.gui" ],
+													"outlettype" : [ "mvc.default.gui" ],
 													"patching_rect" : [ 32.0, 238.433526011560616, 93.0, 22.0 ],
-													"text" : "t aim.default.gui"
+													"text" : "t mvc.default.gui"
 												}
 
 											}
@@ -14126,7 +14126,7 @@
 														"precision" : 6
 													}
 ,
-													"text" : "coll AIM.model.initialized"
+													"text" : "coll MVC.model.initialized"
 												}
 
 											}
@@ -15020,7 +15020,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 54.666666666666686, 414.405226175248345, 141.0, 22.0 ],
-													"text" : "print aim.model @level 1"
+													"text" : "print mvc.model @level 1"
 												}
 
 											}
@@ -15074,7 +15074,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.devices.dict"
+													"text" : "dict mvc.devices.dict"
 												}
 
 											}
@@ -15086,7 +15086,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 87.666666666666686, 124.28014733332455, 75.0, 22.0 ],
-													"text" : "aim.osc2dict"
+													"text" : "mvc.osc2dict"
 												}
 
 											}
@@ -18029,7 +18029,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.models.dict"
+													"text" : "dict mvc.models.dict"
 												}
 
 											}
@@ -18348,7 +18348,7 @@
 														"precision" : 6
 													}
 ,
-													"text" : "coll AIM.model.initialized"
+													"text" : "coll MVC.model.initialized"
 												}
 
 											}
@@ -19481,7 +19481,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.models.dict"
+													"text" : "dict mvc.models.dict"
 												}
 
 											}

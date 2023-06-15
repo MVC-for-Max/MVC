@@ -697,7 +697,7 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "aim.GUI.channeltabs.maxpat",
+					"name" : "mvc.GUI.channeltabs.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
@@ -716,8 +716,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 93.0, 352.650000166666814, 73.0, 22.0 ],
-					"text" : "aim.qlow 40"
+					"patching_rect" : [ 93.0, 352.650000166666814, 75.0, 22.0 ],
+					"text" : "mvc.qlow 40"
 				}
 
 			}
@@ -733,7 +733,7 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "aim.GUI.channel-layout.maxpat",
+					"name" : "mvc.GUI.channel-layout.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
@@ -753,7 +753,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 93.0, 321.983333500000072, 320.0, 22.0 ],
-					"text" : "aim.tab2subGUI channel."
+					"text" : "mvc.tab2subGUI channel."
 				}
 
 			}
@@ -919,7 +919,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "bang", "bang" ],
 									"patching_rect" : [ 35.153931000000057, 121.124145999999996, 360.0, 22.0 ],
-									"text" : "aim.GUI.windowsettings #0 #1 #2"
+									"text" : "mvc.GUI.windowsettings #0 #1 #2"
 								}
 
 							}
@@ -1051,10 +1051,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 355.0, 62.0, 28.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"attr_comment" : ""
-					}
-,
 					"text" : "in 1"
 				}
 
@@ -1102,7 +1098,7 @@
 					"patching_rect" : [ 93.0, 386.483333500000072, 301.0, 64.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 103.0, 300.0, 63.0 ],
-					"varname" : "aim.biquad.gui",
+					"varname" : "mvc.biquad.gui",
 					"viewvisibility" : 1
 				}
 
@@ -1126,7 +1122,7 @@
 					"patching_rect" : [ 113.0, 101.665351999999984, 300.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 300.0, 22.0 ],
-					"varname" : "aim.model.gui",
+					"varname" : "mvc.model.gui",
 					"viewvisibility" : 1
 				}
 
@@ -1148,7 +1144,7 @@
 					"presentation_rect" : [ 0.0, 0.0, 300.0, 103.0 ],
 					"proportion" : 0.5,
 					"rounded" : 2,
-					"varname" : "14168-bgpanel"
+					"varname" : "1536-bgpanel"
 				}
 
 			}
@@ -1337,196 +1333,6 @@
 			"inherited_shortname" : 1
 		}
 ,
-		"dependency_cache" : [ 			{
-				"name" : "aim.GUI.channel-layout.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
-				"patcherrelativepath" : "../../AIM/patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.GUI.channeltabs.bp.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
-				"patcherrelativepath" : "../../AIM/patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.GUI.channeltabs.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
-				"patcherrelativepath" : "../../AIM/patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.GUI.preset.description.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
-				"patcherrelativepath" : "../../AIM/patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.GUI.presets.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
-				"patcherrelativepath" : "../../AIM/patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.GUI.tabbing.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
-				"patcherrelativepath" : "../../AIM/patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.GUI.windowsettings.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
-				"patcherrelativepath" : "../../AIM/patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.dict.flatten.js",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
-				"patcherrelativepath" : "../../AIM/javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.dict.flatten.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.dllb.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.f.call.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.locatePatcherWindow.js",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
-				"patcherrelativepath" : "../../AIM/javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.model.initialized.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.nicetabs.js",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
-				"patcherrelativepath" : "../../AIM/javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.noblabang.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/lib",
-				"patcherrelativepath" : "../../AIM/patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.osc2dict.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/lib",
-				"patcherrelativepath" : "../../AIM/patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.polyreceive.p.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.qlow.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/lib",
-				"patcherrelativepath" : "../../AIM/patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.remote.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/core",
-				"patcherrelativepath" : "../../AIM/patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.stripes10.purple.png",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/media",
-				"patcherrelativepath" : "../../AIM/media",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.tab2subGUI.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/patchers/GUI",
-				"patcherrelativepath" : "../../AIM/patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "aim.wildcard2.js",
-				"bootpath" : "~/Documents/Max 8/Packages/AIM/javascript",
-				"patcherrelativepath" : "../../AIM/javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.GUI.activeToggle.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.GUI.number.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.model.gui.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.onepole.gui.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.remote.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0
 	}
 

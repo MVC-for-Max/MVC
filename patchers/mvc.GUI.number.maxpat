@@ -296,7 +296,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "3229.focus" ],
 					"patching_rect" : [ 245.5, 239.0, 95.0, 22.0 ],
-					"text" : "aim.GUI.tabbing"
+					"text" : "mvc.GUI.tabbing"
 				}
 
 			}
@@ -945,7 +945,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 100.0, 75.0, 22.0 ],
-																	"text" : "aim.osc2dict"
+																	"text" : "mvc.osc2dict"
 																}
 
 															}
@@ -1024,7 +1024,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.inputs.dict @quiet 1"
+																	"text" : "dict mvc.inputs.dict @quiet 1"
 																}
 
 															}
@@ -3338,7 +3338,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "bang", "bang" ],
 									"patching_rect" : [ 35.153931000000057, 121.124145999999996, 360.0, 22.0 ],
-									"text" : "aim.GUI.windowsettings #0 #1 #2"
+									"text" : "mvc.GUI.windowsettings #0 #1 #2"
 								}
 
 							}
@@ -3566,7 +3566,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "initialized" ],
 					"patching_rect" : [ 123.0, 171.5, 261.0, 22.0 ],
-					"text" : "aim.remote @sendrate 10"
+					"text" : "mvc.remote @sendrate 10"
 				}
 
 			}
@@ -3611,7 +3611,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "jit_matrix" ],
 					"patching_rect" : [ 482.0, 233.5, 36.0, 22.0 ],
-					"pic" : "aim.stripes10.purple.png",
+					"pic" : "mvc.stripes10.purple.png",
 					"presentation" : 1,
 					"presentation_rect" : [ 170.0, 0.0, 58.0, 17.0 ]
 				}

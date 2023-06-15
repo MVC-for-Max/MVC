@@ -682,7 +682,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 105.0, 177.142857142857139, 183.0, 22.0 ],
-					"text" : "aim.channellayout2channelcount"
+					"text" : "mvc.channellayout2channelcount"
 				}
 
 			}
@@ -718,7 +718,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 105.0, 289.0, 195.0, 22.0 ],
-					"text" : "aim.DSPrefresh #1"
+					"text" : "mvc.DSPrefresh #1"
 				}
 
 			}
@@ -1011,7 +1011,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"patching_rect" : [ 454.5, 32.0, 122.0, 22.0 ],
-					"text" : "aim.isloading #0"
+					"text" : "mvc.isloading #0"
 				}
 
 			}
@@ -1063,7 +1063,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 75.5, 90.0, 560.0, 24.0 ],
 					"text" : "mvc.model #0 #1 #2 @type mc.cascade @autoinit 1",
-					"varname" : "aim.model"
+					"varname" : "mvc.model"
 				}
 
 			}

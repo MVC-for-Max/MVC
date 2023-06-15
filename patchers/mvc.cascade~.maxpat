@@ -45,7 +45,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"patching_rect" : [ 271.0, 42.0, 122.0, 22.0 ],
-					"text" : "aim.isloading #0"
+					"text" : "mvc.isloading #0"
 				}
 
 			}
@@ -333,7 +333,7 @@
 					"outlettype" : [ "clear", "", "bang", "" ],
 					"patching_rect" : [ 110.999999999999986, 72.5, 304.000000000000057, 40.0 ],
 					"text" : "mvc.cascade~.model #0 #1 #2 @autoinit 1",
-					"varname" : "aim.cascade~.model"
+					"varname" : "mvc.cascade~.model"
 				}
 
 			}

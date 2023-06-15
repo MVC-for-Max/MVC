@@ -185,7 +185,7 @@
 						"precision" : 6
 					}
 ,
-					"text" : "coll AIM.model.initialized"
+					"text" : "coll MVC.model.initialized"
 				}
 
 			}

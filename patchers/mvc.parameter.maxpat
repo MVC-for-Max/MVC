@@ -7835,6 +7835,8 @@
 													"format" : 6,
 													"id" : "obj-49",
 													"maxclass" : "flonum",
+													"maximum" : 22000.0,
+													"minimum" : 20.0,
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
@@ -7848,6 +7850,7 @@
 													"format" : 6,
 													"id" : "obj-48",
 													"maxclass" : "flonum",
+													"maximum" : 22000.0,
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
@@ -7861,6 +7864,7 @@
 													"format" : 6,
 													"id" : "obj-47",
 													"maxclass" : "flonum",
+													"minimum" : 20.0,
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
@@ -9987,6 +9991,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-13",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
@@ -9998,7 +10003,7 @@
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict aim.parameters.values.dict"
+									"text" : "dict mvc.parameters.values.dict"
 								}
 
 							}
@@ -12612,7 +12617,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 443.0, 275.381129553205483, 192.0, 35.0 ],
+													"patching_rect" : [ 443.0, 275.381129553205483, 184.0, 35.0 ],
 													"text" : "loadmess setParameterUID #0"
 												}
 
@@ -12625,7 +12630,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 554.0, 373.230886595777235, 24.0, 24.0 ]
+													"patching_rect" : [ 554.0, 366.230886595777235, 24.0, 24.0 ]
 												}
 
 											}
@@ -12635,7 +12640,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 326.5, 399.0, 127.0, 22.0 ],
+													"patching_rect" : [ 326.5, 392.0, 127.0, 22.0 ],
 													"text" : "s #0/recall_current"
 												}
 
@@ -12646,7 +12651,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 388.25, 373.230886595777235, 126.0, 22.0 ],
+													"patching_rect" : [ 388.25, 366.230886595777235, 126.0, 22.0 ],
 													"text" : "s #0/recall_default"
 												}
 
@@ -12657,8 +12662,8 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 264.75, 429.933728493333774, 152.0, 22.0 ],
-													"text" : "s AIM.parameter.initializers"
+													"patching_rect" : [ 264.75, 422.933728493333774, 158.0, 22.0 ],
+													"text" : "s MVC.parameter.initializers"
 												}
 
 											}
@@ -12746,7 +12751,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 203.0, 365.933728493333774, 54.0, 22.0 ],
+													"patching_rect" : [ 203.0, 358.933728493333774, 54.0, 22.0 ],
 													"text" : "deferlow"
 												}
 
@@ -12770,7 +12775,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "" ],
-													"patching_rect" : [ 203.0, 333.0, 266.0, 22.0 ],
+													"patching_rect" : [ 203.0, 326.0, 266.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"filename" : "mvc.parameter.declare.js",
 														"parameter_enable" : 0
@@ -12855,7 +12860,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 203.0, 403.933728493333774, 30.0, 30.0 ]
+													"patching_rect" : [ 203.0, 396.933728493333774, 30.0, 30.0 ]
 												}
 
 											}
@@ -12906,13 +12911,6 @@
 												"patchline" : 												{
 													"destination" : [ "obj-8", 0 ],
 													"source" : [ "obj-15", 4 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-15", 0 ],
-													"source" : [ "obj-16", 0 ]
 												}
 
 											}
@@ -13209,7 +13207,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "none" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 61.0, 69.571801386903871, 30.0, 30.0 ]
 				}
 
@@ -14324,7 +14322,7 @@
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict aim.parameters.values.dict @quiet 1"
+																	"text" : "dict mvc.parameters.values.dict @quiet 1"
 																}
 
 															}
@@ -14516,7 +14514,6 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-1",
-																					"linecount" : 2,
 																					"maxclass" : "newobj",
 																					"numinlets" : 2,
 																					"numoutlets" : 4,
@@ -15951,7 +15948,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 52.0, 69.0, 114.0, 35.0 ],
-													"text" : "aim.noblabla 100 @zlmaxsize 16384"
+													"text" : "mvc.noblabla 100 @zlmaxsize 16384"
 												}
 
 											}
@@ -16490,7 +16487,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.inputs.dict @quiet 1"
+													"text" : "dict mvc.inputs.dict @quiet 1"
 												}
 
 											}
@@ -17183,7 +17180,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-3",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,

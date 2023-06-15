@@ -68,7 +68,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "jit_matrix" ],
 					"patching_rect" : [ 393.833333333333371, 371.941175999999984, 50.0, 22.0 ],
-					"pic" : "aim.stripes10.purple.png",
+					"pic" : "mvc.stripes10.purple.png",
 					"presentation" : 1,
 					"presentation_rect" : [ -0.24161696434021, 1.0, 137.0, 18.038461538461519 ]
 				}
@@ -1058,7 +1058,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.models.dict"
+													"text" : "dict mvc.models.dict"
 												}
 
 											}
@@ -1130,7 +1130,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 339.333373999999935, 401.507339988255978, 63.0, 22.0 ],
-													"text" : "aim.f.call"
+													"text" : "mvc.f.call"
 												}
 
 											}
@@ -1160,7 +1160,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict aim.models.dict"
+													"text" : "dict mvc.models.dict"
 												}
 
 											}
@@ -1269,7 +1269,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 153.666686999999911, 311.461538461538453, 110.666666666666686, 35.0 ],
-													"text" : "sprintf symout aim.%s/presets/list"
+													"text" : "sprintf symout mvc.%s/presets/list"
 												}
 
 											}
@@ -2308,7 +2308,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "bang", "bang" ],
 									"patching_rect" : [ 35.153931000000057, 121.124145999999996, 360.0, 22.0 ],
-									"text" : "aim.GUI.windowsettings #0 #1 #2"
+									"text" : "mvc.GUI.windowsettings #0 #1 #2"
 								}
 
 							}
@@ -2626,7 +2626,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"patching_rect" : [ 53.0, 211.84955752212386, 117.0, 22.0 ],
-									"text" : "aim.model.initialized"
+									"text" : "mvc.model.initialized"
 								}
 
 							}
@@ -2731,7 +2731,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 78.000000000000057, 520.0, 319.0, 87.0 ],
-					"text" : "When a preset is \"saved as\",  deleted or renamed, aim.preset update all GUI menus with a list of preset names sent to [r aim.[type].presetmenu.\n\nWe send to the (first) corresponding model instance aim.preset instance."
+					"text" : "When a preset is \"saved as\",  deleted or renamed, mvc.preset update all GUI menus with a list of preset names sent to [r mvc.[type].presetmenu.\n\nWe send to the (first) corresponding model instance mvc.preset instance."
 				}
 
 			}
@@ -3201,7 +3201,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 38.0, 86.0, 79.0, 22.0 ],
-									"text" : "aim.qlow 100"
+									"text" : "mvc.qlow 100"
 								}
 
 							}
@@ -4044,7 +4044,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "initialized" ],
 					"patching_rect" : [ 473.666666666666742, 248.941175999999984, 106.0, 62.0 ],
-					"text" : "aim.remote @sendrate 10 @paramname preset-editflag",
+					"text" : "mvc.remote @sendrate 10 @paramname preset-editflag",
 					"varname" : "filtergain[2]"
 				}
 
@@ -4061,7 +4061,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "initialized" ],
 					"patching_rect" : [ 307.833333333333371, 248.941175999999984, 105.0, 62.0 ],
-					"text" : "aim.remote @sendrate 10 @paramname preset-name",
+					"text" : "mvc.remote @sendrate 10 @paramname preset-name",
 					"varname" : "filtergain[1]"
 				}
 
@@ -4148,7 +4148,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 379.0, 36.0, 205.0, 52.0 ],
-									"text" : "device UID let us know which device's aim.preset to talk to."
+									"text" : "device UID let us know which device's mvc.preset to talk to."
 								}
 
 							}
@@ -4299,7 +4299,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p \"send to aim.presets\""
+					"text" : "p \"send to mvc.presets\""
 				}
 
 			}

@@ -304,7 +304,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 208.5, 417.0, 145.999999999999886, 22.0 ],
-					"text" : "poly~ aim.filtergraph~.p"
+					"text" : "poly~ mvc.filtergraph~.p"
 				}
 
 			}
@@ -504,7 +504,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 514.5, 483.992366412213755, 175.0, 22.0 ],
-					"text" : "aim.DSPrefresh #2"
+					"text" : "mvc.DSPrefresh #2"
 				}
 
 			}
@@ -1663,7 +1663,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 51.0, 102.0, 760.5, 22.0 ],
 					"text" : "mvc.model #1 #2 #3 @type biquad",
-					"varname" : "aim.model"
+					"varname" : "mvc.model"
 				}
 
 			}

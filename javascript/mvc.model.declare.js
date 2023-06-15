@@ -1,6 +1,5 @@
-// aim.dict.flatten.js : output each node of a dictionary tree
-// This version of flatten will output *both* the dictionary at intermediate levels and the leaf at the end of the tree.
-// This enables to have parameter stored as dictionary.
+// mvc.model-declare.js
+// (un)declare an MVC model in the relevant dictionaries
 
 inlets = 1;
 outlets = 3;
@@ -23,12 +22,15 @@ var model_UID;
 var previousAddresses = [];
 var currentAddresses = [];
 
-function declare(adresses){
+
+function updateDictionaries(){
 	
-	modelDict.name = "aim.models.dict";
-	parametersDict.name = "aim.parameters.dict";
-	statesDict.name = "aim.states.dict";
-	parametersValuesDict.name = "aim.parameters.values.dict";
+	//post("model args in update", JSON.stringify(arguments), "\n");
+	
+	modelDict.name = "mvc.models.dict";
+	parametersDict.name = "mvc.parameters.dict";
+	statesDict.name = "mvc.states.dict";
+	parametersValuesDict.name = "mvc.parameters.values.dict";
 
 	previousAddresses = currentAddresses;
 	currentAddresses = arrayfromargs(arguments);
@@ -44,7 +46,7 @@ function declare(adresses){
 		parametersDict.remove(theAdd);
 		statesDict.remove(theAdd);
 		parametersValuesDict.remove(theAdd);
-		// send to AIM.parameter.initializers
+		// send to MVC.parameter.initializers
 		outlet(1, missingAdresses[i], 0);
 	}
 
@@ -62,9 +64,17 @@ function declare(adresses){
     	var addressUID = [model_UID, i + 1];
 		modelDict.replace(theAdd + "::uid", addressUID);
 		modelDict.replace(theAdd + "::type", model_type);
-		// send to AIM.parameter.initializers
+		// send to MVC.parameter.initializers
 		outlet(1, missingAdresses[i], 1);
 	}
+}
+
+function declare(){
+	//just pass arguments to updtaeDictionaries
+	// (see https://stackoverflow.com/questions/3914557/passing-arguments-forward-to-another-javascript-function)
+	//post("model args in declare", JSON.stringify(arguments), "\n");
+	updateDictionaries.apply(null, arguments);
+	//updateDictionaries(arguments);
 	outlet(0, "bang")
 }
 
@@ -96,7 +106,7 @@ function loadbang() {
 
 
 function empty(){
-	declare();
+	updateDictionaries();
 }
 
 
