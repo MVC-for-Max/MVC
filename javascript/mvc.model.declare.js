@@ -40,21 +40,21 @@ function declare(adresses){
 	// remove gone addresses
 	for (var i = 0; i < (missingAdresses.length); i++) {
 		var theAdd = missingAdresses[i].replace(/\//g, '::');
-		// remove model from parameters and states dict
+		//post('removing', theAdd, '\n')
 		parametersDict.remove(theAdd);
 		statesDict.remove(theAdd);
 		parametersValuesDict.remove(theAdd);
-		modelDict.remove(theAdd);
-		// remove the initialization state from coll 
-		outlet(1, 'remove', missingAdresses[i]);
+		// send to AIM.parameter.initializers
+		outlet(1, missingAdresses[i], 0);
 	}
 
+
+
 	// remove all previous addresses in models (to rebuild all)
-	//for (var i = 0; i < (previousAddresses.length); i++) {
-	//	var theAdd = previousAddresses[i].replace(/\//g, '::');
-	//	modelDict.remove(theAdd);
-	//}
-	
+	for (var i = 0; i < (previousAddresses.length); i++) {
+		var theAdd = previousAddresses[i].replace(/\//g, '::');
+		modelDict.remove(theAdd);
+	}
 	// add new addresses in model dict
 	for (var i = 0; i < (currentAddresses.length); i++) {
 		var theAdd = currentAddresses[i].replace(/\//g, '::');
@@ -62,6 +62,8 @@ function declare(adresses){
     	var addressUID = [model_UID, i + 1];
 		modelDict.replace(theAdd + "::uid", addressUID);
 		modelDict.replace(theAdd + "::type", model_type);
+		// send to AIM.parameter.initializers
+		outlet(1, missingAdresses[i], 1);
 	}
 	outlet(0, "bang")
 }
