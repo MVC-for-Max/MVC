@@ -545,7 +545,8 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 49.0, 60.5, 498.0, 24.0 ],
-					"text" : "mvc.model #1 #2 #3 @type onepole"
+					"text" : "mvc.model #1 #2 #3 @type onepole~",
+					"varname" : "mvc.model"
 				}
 
 			}
