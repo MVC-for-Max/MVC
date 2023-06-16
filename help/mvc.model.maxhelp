@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 62.0, 341.0, 1064.0, 520.0 ],
+		"rect" : [ 54.0, 357.0, 1051.0, 492.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,32 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-40",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 889.0, 399.0, 30.0, 22.0 ],
+					"text" : "GUI"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"color" : [ 0.501961, 0.501961, 0.501961, 1.0 ],
+					"id" : "obj-24",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "multichannelsignal", "" ],
+					"patching_rect" : [ 752.0, 429.0, 156.0, 22.0 ],
+					"text" : "mvc.biquad~ dev myBiquad",
+					"varname" : "mvc.onepole~[1]"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-35",
 					"maxclass" : "message",
@@ -400,8 +426,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 136.0, 86.0, 372.0, 47.0 ],
-					"text" : " dans le aim.model, inutile de déclarer dans \"p \"declare addresses\"\",\nvu qu'on le fait ensuite quand on remet les index d'uid\nJuste besoin d'effacer ceux qui sont partis"
+					"patching_rect" : [ 120.0, 81.5, 384.0, 47.0 ],
+					"text" : " dans le mvc.model, inutile de déclarer dans \"p \"declare addresses\"\",\nvu qu'on le fait ensuite quand on remet les index d'uid\nJuste besoin d'effacer ceux qui sont partis"
 				}
 
 			}
@@ -643,6 +669,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-24", 1 ],
+					"source" : [ "obj-40", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-27", 1 ],
 					"source" : [ "obj-5", 0 ]
 				}
@@ -664,6 +697,8 @@
 			}
  ],
 		"parameters" : 		{
+			"obj-24::obj-16::obj-5::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[3]", "live.toggle", 0 ],
+			"obj-27::obj-8::obj-5::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
 			"obj-36" : [ "mc.live.gain~", "mc.live.gain~", 0 ],
 			"obj-3::obj-35::obj-30::obj-18::obj-7" : [ "live.toggle[1]", "live.toggle", 0 ],
 			"parameterbanks" : 			{
@@ -676,6 +711,10 @@
 			}
 ,
 			"parameter_overrides" : 			{
+				"obj-24::obj-16::obj-5::obj-61::obj-20.1::obj-12::obj-8::obj-7" : 				{
+					"parameter_longname" : "live.toggle[3]"
+				}
+,
 				"obj-3::obj-35::obj-30::obj-18::obj-7" : 				{
 					"parameter_longname" : "live.toggle[1]"
 				}
