@@ -98,6 +98,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-18",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -176,6 +177,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-4",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 0,
 									"numoutlets" : 1,
@@ -10242,7 +10244,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 168.0, 328.0, 174.0, 22.0 ],
+									"patching_rect" : [ 168.0, 328.0, 174.0, 35.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
@@ -12090,7 +12092,7 @@
 																					"maxclass" : "newobj",
 																					"numinlets" : 1,
 																					"numoutlets" : 0,
-																					"patching_rect" : [ 141.0, 233.0, 113.0, 22.0 ],
+																					"patching_rect" : [ 141.0, 233.0, 113.0, 35.0 ],
 																					"text" : "s #0.devicename"
 																				}
 
@@ -12955,6 +12957,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-18",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 1,
@@ -13033,6 +13036,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-4",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
@@ -13750,7 +13754,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "none" ],
 					"patching_rect" : [ 43.0, 69.571801386903871, 30.0, 30.0 ]
 				}
 
@@ -16369,7 +16373,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1070.0, 534.0, 403.0, 345.0 ],
+						"rect" : [ 254.0, 628.0, 403.0, 345.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -16428,7 +16432,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 24.666666666666686, 118.999999999999943, 135.0, 35.0 ],
+									"patching_rect" : [ 24.666666666666686, 118.999999999999943, 136.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
