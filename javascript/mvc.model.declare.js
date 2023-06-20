@@ -9,8 +9,8 @@ _MVC_VERSION = 0.4;
 
 var modelDict = new Dict();
 modelDict.quiet = 1;
-var parametersDict = new Dict();
-parametersDict.quiet = 1;
+var inputsDict = new Dict();
+inputsDict.quiet = 1;
 var statesDict = new Dict();
 statesDict.quiet = 1;
 var parametersValuesDict = new Dict();
@@ -26,7 +26,7 @@ var currentAddresses = [];
 function declare(adresses){
 	
 	modelDict.name = "mvc.models.dict";
-	parametersDict.name = "mvc.parameters.dict";
+	inputsDict.name = "mvc.inputs.dict";
 	statesDict.name = "mvc.states.dict";
 	parametersValuesDict.name = "mvc.parameters.values.dict";
 
@@ -41,7 +41,7 @@ function declare(adresses){
 	for (var i = 0; i < (missingAdresses.length); i++) {
 		var theAdd = missingAdresses[i].replace(/\//g, '::');
 		//post('removing', theAdd, '\n')
-		parametersDict.remove(theAdd);
+		inputsDict.remove(theAdd);
 		statesDict.remove(theAdd);
 		parametersValuesDict.remove(theAdd);
 		// send to AIM.parameter.initializers
