@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 54.0, 357.0, 1051.0, 492.0 ],
+		"rect" : [ 236.0, 439.0, 1051.0, 492.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,53 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-43",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 107.0, 449.0, 50.0, 22.0 ],
+					"text" : "92."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-41",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 258.0, 448.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-16",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "multichannelsignal", "" ],
+					"patching_rect" : [ 419.0, 294.0, 94.0, 22.0 ],
+					"text" : "aim.mc.biquad~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-38",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 75.0, 9.0, 30.0, 22.0 ],
+					"text" : "GUI"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-40",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -47,20 +94,6 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 889.0, 399.0, 30.0, 22.0 ],
 					"text" : "GUI"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"color" : [ 0.501961, 0.501961, 0.501961, 1.0 ],
-					"id" : "obj-24",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 752.0, 429.0, 156.0, 22.0 ],
-					"text" : "mvc.biquad~ dev myBiquad",
-					"varname" : "mvc.onepole~[1]"
 				}
 
 			}
@@ -110,7 +143,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 782.0, 75.0, 50.0, 22.0 ]
+					"patching_rect" : [ 758.5, 68.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -121,7 +154,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 761.0, 121.0, 171.0, 22.0 ],
+					"patching_rect" : [ 758.5, 99.0, 171.0, 22.0 ],
 					"text" : "param channel.1/frequency $1"
 				}
 
@@ -133,20 +166,21 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 669.0, 128.5, 30.0, 22.0 ],
+					"patching_rect" : [ 689.0, 331.5, 30.0, 22.0 ],
 					"text" : "GUI"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"color" : [ 0.501961, 0.501961, 0.501961, 1.0 ],
 					"id" : "obj-37",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "mvc.mc.cascade~", "dev", "mc.cas" ],
-					"patching_rect" : [ 545.0, 164.0, 176.0, 22.0 ],
-					"text" : "t mvc.mc.cascade~ dev mc.cas",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "multichannelsignal", "" ],
+					"patching_rect" : [ 539.0, 360.0, 169.0, 22.0 ],
+					"text" : "mvc.mc.cascade~ dev mc.cas",
 					"varname" : "mvc.mc.cascade~"
 				}
 
@@ -165,13 +199,14 @@
 			}
 , 			{
 				"box" : 				{
+					"color" : [ 0.501961, 0.501961, 0.501961, 1.0 ],
 					"id" : "obj-20",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "mvc.cascade~", "dev", "cas" ],
-					"patching_rect" : [ 532.5, 111.0, 137.0, 22.0 ],
-					"text" : "t mvc.cascade~ dev cas",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "multichannelsignal", "" ],
+					"patching_rect" : [ 532.5, 111.0, 130.0, 22.0 ],
+					"text" : "mvc.cascade~ dev cas",
 					"varname" : "aim.cascade~"
 				}
 
@@ -204,14 +239,14 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-36",
-					"lastchannelcount" : 1,
+					"lastchannelcount" : 2,
 					"maxclass" : "mc.live.gain~",
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"orientation" : 1,
 					"outlettype" : [ "multichannelsignal", "", "float", "list" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 539.0, 395.0, 136.0, 30.0 ],
+					"patching_rect" : [ 539.0, 395.0, 136.0, 36.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "mc.live.gain~",
@@ -226,20 +261,6 @@
 ,
 					"showname" : 0,
 					"varname" : "mc.live.gain~"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"color" : [ 0.501961, 0.501961, 0.501961, 1.0 ],
-					"id" : "obj-34",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 539.0, 357.0, 206.0, 22.0 ],
-					"text" : "mvc.mc.onepole~ dev myMcOnepole",
-					"varname" : "mvc.mc.onepole~"
 				}
 
 			}
@@ -261,7 +282,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 539.0, 440.0, 54.0, 22.0 ],
+					"patching_rect" : [ 539.0, 470.0, 54.0, 22.0 ],
 					"text" : "mc.dac~"
 				}
 
@@ -273,8 +294,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "multichannelsignal" ],
-					"patching_rect" : [ 540.0, 306.0, 64.0, 22.0 ],
-					"text" : "mc.noise~"
+					"patching_rect" : [ 540.0, 306.0, 121.0, 22.0 ],
+					"text" : "mc.noise~ @chans 6"
 				}
 
 			}
@@ -368,7 +389,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 284.0, 384.0, 195.0, 22.0 ],
+					"patching_rect" : [ 289.0, 384.0, 195.0, 22.0 ],
 					"text" : "address dev/myOnepole/frequency"
 				}
 
@@ -426,8 +447,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 120.0, 81.5, 384.0, 47.0 ],
-					"text" : " dans le mvc.model, inutile de déclarer dans \"p \"declare addresses\"\",\nvu qu'on le fait ensuite quand on remet les index d'uid\nJuste besoin d'effacer ceux qui sont partis"
+					"patching_rect" : [ 93.0, 81.5, 384.0, 47.0 ],
+					"text" : "Dans le mvc.model, inutile de déclarer dans \"p \"declare addresses\"\",\nvu qu'on le fait ensuite quand on remet les index d'uid\nJuste besoin d'effacer ceux qui sont partis"
 				}
 
 			}
@@ -599,8 +620,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-34", 1 ],
-					"source" : [ "obj-22", 0 ]
+					"destination" : [ "obj-20", 1 ],
+					"source" : [ "obj-23", 0 ]
 				}
 
 			}
@@ -613,7 +634,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-34", 0 ],
+					"destination" : [ "obj-37", 0 ],
 					"source" : [ "obj-26", 0 ]
 				}
 
@@ -627,36 +648,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-34", 1 ],
-					"source" : [ "obj-30", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
 					"source" : [ "obj-31", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-34", 1 ],
-					"source" : [ "obj-32", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-34", 1 ],
-					"source" : [ "obj-33", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-34", 1 ],
-					"source" : [ "obj-35", 0 ]
 				}
 
 			}
@@ -669,8 +662,36 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-24", 1 ],
-					"source" : [ "obj-40", 0 ]
+					"destination" : [ "obj-36", 0 ],
+					"source" : [ "obj-37", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-38", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-37", 1 ],
+					"source" : [ "obj-39", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-41", 1 ],
+					"source" : [ "obj-4", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-43", 1 ],
+					"source" : [ "obj-4", 0 ]
 				}
 
 			}
@@ -681,27 +702,12 @@
 				}
 
 			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-34", 1 ],
-					"source" : [ "obj-8", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-34", 1 ],
-					"source" : [ "obj-9", 0 ]
-				}
-
-			}
  ],
 		"parameters" : 		{
-			"obj-24::obj-16::obj-5::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[3]", "live.toggle", 0 ],
-			"obj-27::obj-8::obj-5::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
-			"obj-34::obj-5::obj-61::obj-20.1::obj-19::obj-8::obj-7" : [ "live.toggle[4]", "live.toggle", 0 ],
-			"obj-34::obj-5::obj-61::obj-20.1::obj-5::obj-12::obj-8::obj-7" : [ "live.toggle[5]", "live.toggle", 0 ],
 			"obj-36" : [ "mc.live.gain~", "mc.live.gain~", 0 ],
+			"obj-37::obj-3::obj-61::obj-20.1::obj-16::obj-8::obj-7" : [ "live.toggle[4]", "live.toggle", 0 ],
+			"obj-37::obj-3::obj-61::obj-20.1::obj-5::obj-49::obj-8::obj-7" : [ "live.toggle[3]", "live.toggle", 0 ],
+			"obj-37::obj-3::obj-61::obj-20.1::obj-5::obj-5::obj-12::obj-8::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
 			"obj-3::obj-35::obj-30::obj-18::obj-7" : [ "live.toggle[1]", "live.toggle", 0 ],
 			"parameterbanks" : 			{
 				"0" : 				{
@@ -713,16 +719,12 @@
 			}
 ,
 			"parameter_overrides" : 			{
-				"obj-24::obj-16::obj-5::obj-61::obj-20.1::obj-12::obj-8::obj-7" : 				{
-					"parameter_longname" : "live.toggle[3]"
-				}
-,
-				"obj-34::obj-5::obj-61::obj-20.1::obj-19::obj-8::obj-7" : 				{
+				"obj-37::obj-3::obj-61::obj-20.1::obj-16::obj-8::obj-7" : 				{
 					"parameter_longname" : "live.toggle[4]"
 				}
 ,
-				"obj-34::obj-5::obj-61::obj-20.1::obj-5::obj-12::obj-8::obj-7" : 				{
-					"parameter_longname" : "live.toggle[5]"
+				"obj-37::obj-3::obj-61::obj-20.1::obj-5::obj-49::obj-8::obj-7" : 				{
+					"parameter_longname" : "live.toggle[3]"
 				}
 ,
 				"obj-3::obj-35::obj-30::obj-18::obj-7" : 				{
