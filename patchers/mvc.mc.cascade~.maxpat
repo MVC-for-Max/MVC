@@ -123,7 +123,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-19",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
@@ -263,7 +262,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-2",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
@@ -681,7 +679,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 105.0, 177.142857142857139, 183.0, 22.0 ],
+					"patching_rect" : [ 105.0, 177.142857142857139, 186.0, 22.0 ],
 					"text" : "mvc.channellayout2channelcount"
 				}
 
@@ -1062,7 +1060,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 75.5, 90.0, 560.0, 24.0 ],
-					"text" : "mvc.model #0 #1 #2 @type mc.cascade @autoinit 1",
+					"text" : "mvc.model #0 #1 #2 @type mc.cascade~ @autoinit 1",
 					"varname" : "mvc.model"
 				}
 

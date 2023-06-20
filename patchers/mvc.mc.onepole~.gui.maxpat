@@ -1051,6 +1051,10 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 355.0, 62.0, 28.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"attr_comment" : ""
+					}
+,
 					"text" : "in 1"
 				}
 
@@ -1091,7 +1095,7 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "mvc.onepole.gui.maxpat",
+					"name" : "mvc.onepole~.gui.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
@@ -1130,7 +1134,7 @@
 , 			{
 				"box" : 				{
 					"angle" : 270.0,
-					"bgcolor" : [ 0.87318, 0.86625, 0.85833, 0.4 ],
+					"bgcolor" : [ 0.785862, 0.779625, 0.772497, 0.4 ],
 					"border" : 1,
 					"bordercolor" : [ 0.56078431372549, 0.619607843137255, 0.709803921568627, 1.0 ],
 					"id" : "obj-11",
@@ -1144,7 +1148,7 @@
 					"presentation_rect" : [ 0.0, 0.0, 300.0, 103.0 ],
 					"proportion" : 0.5,
 					"rounded" : 2,
-					"varname" : "1536-bgpanel"
+					"varname" : "6521-bgpanel"
 				}
 
 			}
@@ -1306,34 +1310,7 @@
 				}
 
 			}
- ],
-		"parameters" : 		{
-			"obj-19::obj-8::obj-7" : [ "live.toggle[1]", "live.toggle", 0 ],
-			"obj-5::obj-12::obj-8::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
-			"parameterbanks" : 			{
-				"0" : 				{
-					"index" : 0,
-					"name" : "",
-					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
-				}
-
-			}
-,
-			"parameter_overrides" : 			{
-				"obj-19::obj-8::obj-7" : 				{
-					"parameter_longname" : "live.toggle[1]"
-				}
-,
-				"obj-5::obj-12::obj-8::obj-7" : 				{
-					"parameter_longname" : "live.toggle[2]"
-				}
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"autosave" : 0
+ ]
 	}
 
 }

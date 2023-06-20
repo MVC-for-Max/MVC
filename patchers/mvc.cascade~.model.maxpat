@@ -3425,6 +3425,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-42",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
@@ -3938,6 +3939,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-30",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
@@ -4182,7 +4184,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 35.0, 68.0, 723.0, 22.0 ],
-					"text" : "mvc.model #1 #2 #3 @type cascade",
+					"text" : "mvc.model #1 #2 #3 @type cascade~",
 					"varname" : "mvc.model"
 				}
 
@@ -4208,7 +4210,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 57.0, 246.5, 367.0, 24.0 ],
+					"patching_rect" : [ 57.0, 246.5, 378.0, 24.0 ],
 					"text" : "mvc.biquad~.model  #1.filter #1 filter.1"
 				}
 
@@ -4238,7 +4240,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-14", 0 ],
-					"midpoints" : [ 414.5, 296.5, 526.75, 296.5, 526.75, 260.0, 639.0, 260.0 ],
+					"midpoints" : [ 425.5, 296.5, 526.75, 296.5, 526.75, 260.0, 639.0, 260.0 ],
 					"order" : 1,
 					"source" : [ "obj-12", 2 ]
 				}
@@ -4247,7 +4249,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-27", 0 ],
-					"midpoints" : [ 414.5, 304.25, 748.5, 304.25 ],
+					"midpoints" : [ 425.5, 304.25, 748.5, 304.25 ],
 					"order" : 0,
 					"source" : [ "obj-12", 2 ]
 				}

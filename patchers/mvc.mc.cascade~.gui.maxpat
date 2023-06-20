@@ -1331,11 +1331,11 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "mvc.cascade.gui.maxpat",
+					"name" : "mvc.cascade~.gui.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 86.0, 365.0, 301.0, 473.0 ],
+					"patching_rect" : [ 86.0, 368.0, 301.0, 473.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 99.0, 300.0, 471.0 ],
 					"varname" : "mvc.mb.limiter.gui",
@@ -1385,7 +1385,7 @@
 					"presentation_rect" : [ 0.0, 0.0, 300.0, 99.0 ],
 					"proportion" : 0.5,
 					"rounded" : 2,
-					"varname" : "4825-bgpanel"
+					"varname" : "1532-bgpanel"
 				}
 
 			}
@@ -1555,39 +1555,7 @@
 				}
 
 			}
- ],
-		"parameters" : 		{
-			"obj-16::obj-8::obj-7" : [ "live.toggle[3]", "live.toggle", 0 ],
-			"obj-5::obj-49::obj-8::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
-			"obj-5::obj-5::obj-12::obj-8::obj-7" : [ "live.toggle[1]", "live.toggle", 0 ],
-			"parameterbanks" : 			{
-				"0" : 				{
-					"index" : 0,
-					"name" : "",
-					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
-				}
-
-			}
-,
-			"parameter_overrides" : 			{
-				"obj-16::obj-8::obj-7" : 				{
-					"parameter_longname" : "live.toggle[3]"
-				}
-,
-				"obj-5::obj-49::obj-8::obj-7" : 				{
-					"parameter_longname" : "live.toggle[2]"
-				}
-,
-				"obj-5::obj-5::obj-12::obj-8::obj-7" : 				{
-					"parameter_longname" : "live.toggle[1]"
-				}
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"autosave" : 0
+ ]
 	}
 
 }
