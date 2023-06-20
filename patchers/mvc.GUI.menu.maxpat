@@ -89,7 +89,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "1251.focus" ],
+					"outlettype" : [ "", "4687.focus" ],
 					"patching_rect" : [ 560.75, 330.0, 98.0, 22.0 ],
 					"text" : "mvc.GUI.tabbing"
 				}
@@ -401,7 +401,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 206.5, 177.5, 86.0, 35.0 ],
+									"patching_rect" : [ 206.5, 177.5, 89.0, 35.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1973,9 +1973,9 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
-									"outlettype" : [ "bang", "clear" ],
-									"patching_rect" : [ 98.0, 293.5, 51.0, 22.0 ],
-									"text" : "t b clear"
+									"outlettype" : [ "bang", "none" ],
+									"patching_rect" : [ 98.0, 293.5, 52.0, 22.0 ],
+									"text" : "t b none"
 								}
 
 							}
@@ -2313,7 +2313,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-7", 0 ],
+									"destination" : [ "obj-13", 0 ],
 									"source" : [ "obj-39", 1 ]
 								}
 
@@ -3642,7 +3642,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 335.75, 300.5, 249.0, 22.0 ],
+					"patching_rect" : [ 335.75, 300.5, 290.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 132.0, -2.0, 31.0, 22.0 ],
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -3702,7 +3702,7 @@
 					"bgfillcolor_proportion" : 0.5,
 					"bgfillcolor_type" : "color",
 					"fontface" : 2,
-					"hint" : "no target",
+					"hint" : "/filtermode : no target",
 					"id" : "obj-7",
 					"ignoreclick" : 1,
 					"items" : "no target",
