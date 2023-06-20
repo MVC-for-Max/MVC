@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 70.0, 243.0, 954.0, 596.0 ],
+		"rect" : [ 519.0, 565.0, 954.0, 596.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -294,8 +294,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "3229.focus" ],
-					"patching_rect" : [ 245.5, 239.0, 95.0, 22.0 ],
+					"outlettype" : [ "", "1715.focus" ],
+					"patching_rect" : [ 245.5, 239.0, 98.0, 22.0 ],
 					"text" : "mvc.GUI.tabbing"
 				}
 
@@ -839,7 +839,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 776.0, 171.0, 997.0, 812.0 ],
+										"rect" : [ 649.0, 171.0, 997.0, 812.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -940,6 +940,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-24",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 1,
@@ -1013,6 +1014,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-13",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 4,
@@ -2783,15 +2785,6 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-4", 0 ],
-													"order" : 1,
-													"source" : [ "obj-39", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-7", 0 ],
-													"order" : 0,
 													"source" : [ "obj-39", 0 ]
 												}
 
@@ -3584,7 +3577,7 @@
 					"bgfillcolor_proportion" : 0.5,
 					"bgfillcolor_type" : "color",
 					"fontface" : 2,
-					"hint" : "/frequency : no target",
+					"hint" : "/nfilters : no target",
 					"id" : "obj-14",
 					"ignoreclick" : 1,
 					"items" : "no target",
