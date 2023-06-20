@@ -512,7 +512,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 42.0, 15.0, 29.5, 22.0 ],
+					"patching_rect" : [ 25.0, 10.0, 29.5, 22.0 ],
 					"text" : "init"
 				}
 
@@ -699,6 +699,8 @@
 		"parameters" : 		{
 			"obj-24::obj-16::obj-5::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[3]", "live.toggle", 0 ],
 			"obj-27::obj-8::obj-5::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
+			"obj-34::obj-5::obj-61::obj-20.1::obj-19::obj-8::obj-7" : [ "live.toggle[4]", "live.toggle", 0 ],
+			"obj-34::obj-5::obj-61::obj-20.1::obj-5::obj-12::obj-8::obj-7" : [ "live.toggle[5]", "live.toggle", 0 ],
 			"obj-36" : [ "mc.live.gain~", "mc.live.gain~", 0 ],
 			"obj-3::obj-35::obj-30::obj-18::obj-7" : [ "live.toggle[1]", "live.toggle", 0 ],
 			"parameterbanks" : 			{
@@ -713,6 +715,14 @@
 			"parameter_overrides" : 			{
 				"obj-24::obj-16::obj-5::obj-61::obj-20.1::obj-12::obj-8::obj-7" : 				{
 					"parameter_longname" : "live.toggle[3]"
+				}
+,
+				"obj-34::obj-5::obj-61::obj-20.1::obj-19::obj-8::obj-7" : 				{
+					"parameter_longname" : "live.toggle[4]"
+				}
+,
+				"obj-34::obj-5::obj-61::obj-20.1::obj-5::obj-12::obj-8::obj-7" : 				{
+					"parameter_longname" : "live.toggle[5]"
 				}
 ,
 				"obj-3::obj-35::obj-30::obj-18::obj-7" : 				{
