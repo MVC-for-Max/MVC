@@ -3,7 +3,7 @@
 // This enables to have parameter stored as dictionary.
 
 inlets = 1;
-outlets = 5;
+outlets = 4;
 
 _MVC_VERSION = 0.4;
 
@@ -67,14 +67,14 @@ function updateDictionaries(){
 		// parametersDict.replace(theAdd + "::uid", addressUID);
 		inputsDict.replace(theAdd + "::uid", addressUID);
 		
-		if (parametersValuesDict.contains(currentAddresses[i])){
+		if (!(parametersValuesDict.contains(currentAddresses[i]))){
 			// if param has value, recall current
 			outlet(2, i+1);
 			}
-		else {
+		//else {
 			// else, recall defaul
-			outlet(3, i+1);
-		}
+		//	outlet(3, i+1);
+		//}
 		outlet(1, currentAddresses[i], 1);
 
 	}
@@ -107,7 +107,7 @@ function findGoneItems(CurrentArray, PreviousArray) {
 }
 
 function loadbang(	) {
-	outlet(4, 'bang');
+	outlet(3, 'bang');
 }
 
 function empty(){
