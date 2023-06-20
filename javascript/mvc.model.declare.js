@@ -1,5 +1,6 @@
-// mvc.model-declare.js
-// (un)declare an MVC model in the relevant dictionaries
+// aim.dict.flatten.js : output each node of a dictionary tree
+// This version of flatten will output *both* the dictionary at intermediate levels and the leaf at the end of the tree.
+// This enables to have parameter stored as dictionary.
 
 inlets = 1;
 outlets = 3;
@@ -22,10 +23,7 @@ var model_UID;
 var previousAddresses = [];
 var currentAddresses = [];
 
-
-function updateDictionaries(){
-	
-	//post("model args in update", JSON.stringify(arguments), "\n");
+function declare(adresses){
 	
 	modelDict.name = "mvc.models.dict";
 	parametersDict.name = "mvc.parameters.dict";
@@ -46,7 +44,7 @@ function updateDictionaries(){
 		parametersDict.remove(theAdd);
 		statesDict.remove(theAdd);
 		parametersValuesDict.remove(theAdd);
-		// send to MVC.parameter.initializers
+		// send to AIM.parameter.initializers
 		outlet(1, missingAdresses[i], 0);
 	}
 
@@ -60,27 +58,19 @@ function updateDictionaries(){
 	// add new addresses in model dict
 	for (var i = 0; i < (currentAddresses.length); i++) {
 		var theAdd = currentAddresses[i].replace(/\//g, '::');
-    	//post('add', i, theAdd, "\n");
     	var addressUID = [model_UID, i + 1];
+    	//post('add', i, model_UID, theAdd, "\n");
 		modelDict.replace(theAdd + "::uid", addressUID);
-		modelDict.replace(theAdd + "::type", model_type);
-		// send to MVC.parameter.initializers
+		//modelDict.replace(theAdd + "::type", model_type);
+		// send to AIM.parameter.initializers
 		outlet(1, missingAdresses[i], 1);
 	}
-}
-
-function declare(){
-	//just pass arguments to updtaeDictionaries
-	// (see https://stackoverflow.com/questions/3914557/passing-arguments-forward-to-another-javascript-function)
-	//post("model args in declare", JSON.stringify(arguments), "\n");
-	updateDictionaries.apply(null, arguments);
-	//updateDictionaries(arguments);
 	outlet(0, "bang")
 }
 
-function setModelType(type){
-	model_type = type;	
-}
+// function setModelType(type){
+// 	model_type = type;	
+// }
 
 function setModelUID(uid){
 	model_UID = uid;
@@ -106,7 +96,7 @@ function loadbang() {
 
 
 function empty(){
-	updateDictionaries();
+	declare();
 }
 
 
