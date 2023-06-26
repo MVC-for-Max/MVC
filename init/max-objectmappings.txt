@@ -1,0 +1,7 @@
+max objectfile mc.gate mc.wrapper~ gate;
+max objectfile mc.+ mc.wrapper~ +;
+max objectfile mc.- mc.wrapper~ -;
+max objectfile mc.* mc.wrapper~ *;
+max objectfile mc.filterdesign mc.wrapper~ filterdesign;
+max objectfile mc.qlim mc.wrapper~ qlim;
+max objectfile mc.zl.change mc.wrapper~ zl.change;
