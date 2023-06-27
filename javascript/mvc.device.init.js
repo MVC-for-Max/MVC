@@ -35,7 +35,6 @@ function declare(uid, deviceName, deviceType){
 	d.name = "mvc.models.dict";
 	d.replace(deviceName+"::uid", s_uid);
 	//d.replace(deviceName+"::parent", "none");
-	d.replace(deviceName+"::type", deviceType);
 	//d.replace(deviceName+"::instances", instances);
 
 
