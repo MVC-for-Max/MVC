@@ -29,21 +29,39 @@ parametersValuesDict.name = "mvc.parameters.values.dict";
 // modelDefDict.name = "mvc.model-definitions.dict";
 
 var parameter_type;
-var parameter_UID;
+var parameter_UID = 0;
 
 var previousAddresses = [];
-var currentAddresses = [];
+var currentAddresses = ["dummy"];
+var paramAddressDict = new Dict();
 
 // var parentUID;
 
 function updateDictionaries(){
 	
-	previousAddresses = currentAddresses;
+	var test = paramAddressDict.get(parameter_UID);
+	//post(test);
+	if (test != null) {
+		previousAddresses = test;
+		}
+	else {
+		previousAddresses= [];
+		}
+	//post("pa", previousAddresses, "\n");
+	//previousAddresses = currentAddresses;
 	currentAddresses = arrayfromargs(arguments);
+	currentAddresses.push("dummy");
+	//post("isarray", Array.isArray(previousAddresses), "\n");
+	//post("currentAddresses[0]", currentAddresses[0], "\n");
+
 	//post("received list " + currentAddresses + "\n");
 
 	var missingAdresses = findGoneItems(currentAddresses, previousAddresses);
 	//post('missingAdresses', missingAdresses, '\n');
+	
+
+	paramAddressDict.set(parameter_UID, currentAddresses);
+
 	
 	// remove gone addresses only for values
 	for (var i = 0; i < (missingAdresses.length); i++) {
@@ -58,9 +76,10 @@ function updateDictionaries(){
 		var theAdd = previousAddresses[i].replace(/\//g, '::');
 		// parametersDict.remove(theAdd);
 		inputsDict.remove(theAdd);
+		//post("removing param:", theAdd, "\n");
 	}
 	// add new addresses in model dict
-	for (var i = 0; i < (currentAddresses.length); i++) {
+	for (var i = 0; i < (currentAddresses.length-1); i++) {
 		var theAdd = currentAddresses[i].replace(/\//g, '::');
     	//post('add', i, theAdd, "\n");
     	var addressUID = [parameter_UID, i + 1];
