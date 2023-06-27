@@ -87,13 +87,15 @@ function updateDictionaries(){
 		inputsDict.replace(theAdd + "::uid", addressUID);
 		
 		if (!(parametersValuesDict.contains(currentAddresses[i]))){
-			// if param has value, recall current
-			outlet(2, i+1);
+			// if param does not have a value, recall default
+			//outlet(2, i+1);
+			outlet(2, i + 1, parameter_UID);
 			}
-		//else {
-			// else, recall defaul
-		//	outlet(3, i+1);
-		//}
+		else {
+			// else, recall current
+			//outlet(3, i+1);
+			outlet(3, i + 1, parameter_UID);
+		}
 		outlet(1, currentAddresses[i], 1);
 
 	}
@@ -105,6 +107,8 @@ function declare(){
 	//post("model args in declare", JSON.stringify(arguments), "\n");
 	updateDictionaries.apply(null, arguments);
 	// bang when done
+	var sendAddress = parameter_UID + ".param.declare.done";
+	outlet(0, "send", sendAddress)
 	outlet(0, "bang")
 }
 
