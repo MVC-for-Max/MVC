@@ -6,51 +6,99 @@ const braces = require('braces');
 
 
 // Use the 'outlet' function to send messages out of node.script's outlet
-Max.addHandler("expand", (...args) => {
+Max.addHandler("expand-old", (...args) => {
 	
 	// callback return address is last argument
 	var addr = args[args.length - 1];
 
 	// string to expand is everything before last argument
-	var msg = "";
-	if (args.length > 2) {
-		msg = "{" + args.slice(0, args.length - 1).join('|') + "}"; // if multiple string to expand, combine them with "|", so that they get expanded in that order
-			}
-	else {
-		msg = args[0];
-		}
+	// var msg = "";
+	// if (args.length > 2) {
+	// 	msg = "{" + args.slice(0, args.length - 1).join('|') + "}"; // if multiple string to expand, combine them with "|", so that they get expanded in that order
+	// 		}
+	// else {
+	// 	msg = args[0];
+	// 	}
 
-	var result = [];	
-	if (msg.includes("{")) {
-		// escape brackets and all -------------
-		// WARNING : order of the 2 following escape functions do matter!!
-		//Max.post("msg", msg);
-		var escaped = escapeMultiSlashes(msg);
-		escaped = escapePipeSign(escaped);
-		escaped = escapeRegExp(String(escaped));
-		// Max.outlet("escape", escaped);
-		if (!addr) addr = 'none';
-		// expand with output limit set to 1000 (default)
-		// see https://www.npmjs.com/package/braces for more info
-		result = braces([escaped], { expand: true, maxLength: 1000, rangeLimit:1000 });
-	}
-	else {
-		result = [msg];
-	}
-	
-	
+	var result = [];
+	var expansion = [];
+	expansion = args.slice(0, args.length - 1).join(' '); 
+	//expansion = expansion.concat(args.slice(0, args.length - 1));
 	Max.outlet("send", addr);
-	Max.outlet("expansion", msg);
-	//Max.outlet("escape", escaped);
-	//Max.outlet("count", result.length);	// this one could be removed as we can retrieve it with zl len on the result
-	//result.forEach(element => Max.outlet(element));
-	result = ["result"].concat(result);
-	//result = ["result"].concat(result).concat(msg); // this one would improve speed even more 
-	Max.outlet(result);
-	//Max.outlet("done");	// this one could be removed as we are done with the result
+	Max.outlet("expansion", expansion);
 
+	for (let i = (args.length - 2); i >= 0 ; i--) {
+			var msg = "";
+			msg = args[i];
+			if (msg.includes("{")) {
+				// escape brackets and all -------------
+				// WARNING : order of the 2 following escape functions do matter!!
+				//Max.post("msg", msg);
+				var escaped = escapeMultiSlashes(msg);
+				escaped = escapePipeSign(escaped);
+				escaped = escapeRegExp(String(escaped));
+				// Max.outlet("escape", escaped);
+				if (!addr) addr = 'none';
+				// expand with output limit set to 1000 (default)
+				// see https://www.npmjs.com/package/braces for more info
+				result = braces([escaped], { expand: true, maxLength: 1000, rangeLimit:1000 });
+			}
+			else {
+				result = [msg];
+			}
+			result = ["result"].concat(i+1, result);
+			Max.outlet(result);
+	}
 });
 
+
+// Use the 'outlet' function to send messages out of node.script's outlet
+Max.addHandler("expand", (...args) => {
+	
+	// callback return address is last argument
+	var addr = args[args.length - 1];
+	var uid = args[args.length - 2];
+
+	// string to expand is everything before last argument
+	// var msg = "";
+	// if (args.length > 2) {
+	// 	msg = "{" + args.slice(0, args.length - 1).join('|') + "}"; // if multiple string to expand, combine them with "|", so that they get expanded in that order
+	// 		}
+	// else {
+	// 	msg = args[0];
+	// 	}
+
+	var result = [];
+	var expansion = [];
+	expansion = args.slice(0, args.length - 2).join(' '); 
+	//expansion = expansion.concat(args.slice(0, args.length - 1));
+	Max.outlet("send", addr);
+	Max.outlet("uid", uid);
+	Max.outlet("expansion", expansion);
+
+	for (let i = (args.length - 3); i >= 0 ; i--) {
+			var msg = "";
+			msg = args[i];
+			if (msg.includes("{")) {
+				// escape brackets and all -------------
+				// WARNING : order of the 2 following escape functions do matter!!
+				//Max.post("msg", msg);
+				var escaped = escapeMultiSlashes(msg);
+				escaped = escapePipeSign(escaped);
+				escaped = escapeRegExp(String(escaped));
+				// Max.outlet("escape", escaped);
+				if (!addr) addr = 'none';
+				// expand with output limit set to 1000 (default)
+				// see https://www.npmjs.com/package/braces for more info
+				result = braces([escaped], { expand: true, maxLength: 1000, rangeLimit:1000 });
+			}
+			else {
+				result = [msg];
+			}
+			result = ["result"].concat(i+1, result);
+			Max.outlet(result);
+	}
+});
 
 // braces(patterns[, options]);
 
