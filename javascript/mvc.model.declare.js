@@ -44,6 +44,7 @@ function declare(adresses){
 		inputsDict.remove(theAdd);
 		statesDict.remove(theAdd);
 		parametersValuesDict.remove(theAdd);
+		post("removing", theAdd);
 		// send to AIM.parameter.initializers
 		outlet(1, missingAdresses[i], 0);
 	}

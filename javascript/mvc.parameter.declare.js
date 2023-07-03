@@ -34,6 +34,7 @@ var parameter_UID = 0;
 var previousAddresses = [];
 var currentAddresses = ["dummy"];
 var paramAddressDict = new Dict();
+paramAddressDict.name = "paramAddressDict";
 
 // var parentUID;
 
