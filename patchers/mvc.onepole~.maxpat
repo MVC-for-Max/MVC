@@ -45,7 +45,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"patching_rect" : [ 383.0, 43.0, 118.0, 22.0 ],
-					"text" : "mvc.isloading #0"
+					"text" : "mvc.isloading #1"
 				}
 
 			}
@@ -71,7 +71,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 133.0, 76.0, 389.0, 24.0 ],
-					"text" : "mvc.onepole~.model #0 #1 #2 @autoinit 1"
+					"text" : "mvc.onepole~.model #1 #2 @autoinit 1"
 				}
 
 			}

@@ -98,6 +98,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-18",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -177,6 +178,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-4",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 0,
 									"numoutlets" : 1,
@@ -10834,7 +10836,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "int", "clear" ],
-									"patching_rect" : [ 47.0, 163.0, 71.0, 22.0 ],
+									"patching_rect" : [ 47.0, 163.0, 78.0, 22.0 ],
 									"text" : "t #0 clear"
 								}
 
@@ -10870,9 +10872,9 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
-									"outlettype" : [ "bang", "bang" ],
-									"patching_rect" : [ 662.0, 494.0, 32.0, 22.0 ],
-									"text" : "t b b"
+									"outlettype" : [ "preset-name", "bang" ],
+									"patching_rect" : [ 662.0, 494.0, 104.5, 22.0 ],
+									"text" : "t #2 b"
 								}
 
 							}
@@ -10883,7 +10885,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 694.666666666666629, 580.0, 98.0, 22.0 ],
+									"patching_rect" : [ 767.166666666666629, 581.0, 98.0, 22.0 ],
 									"text" : "send $2.updated"
 								}
 
@@ -10895,7 +10897,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 675.0, 521.0, 63.0, 22.0 ],
+									"patching_rect" : [ 747.5, 522.0, 63.0, 22.0 ],
 									"text" : "get parent"
 								}
 
@@ -10907,7 +10909,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 5,
 									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 675.0, 552.0, 78.0, 22.0 ],
+									"patching_rect" : [ 747.5, 553.0, 85.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"legacy" : 0,
@@ -10938,7 +10940,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 551.0, 154.282190132370658, 141.0, 22.0 ],
+									"patching_rect" : [ 551.0, 154.282190132370658, 148.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"precision" : 6
@@ -11369,6 +11371,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-17",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -11508,7 +11511,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 730.0, 466.658790546315231, 98.0, 47.0 ],
+									"patching_rect" : [ 800.0, 466.658790546315231, 98.0, 47.0 ],
 									"text" : "Notify model, so it can prebuild address list."
 								}
 
@@ -11878,7 +11881,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "none" ],
 					"patching_rect" : [ 43.0, 69.571801386903871, 30.0, 30.0 ]
 				}
 
@@ -13784,7 +13787,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "int" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 53.0, 172.999999999999943, 119.0, 22.0 ],
 									"text" : "mvc.model.initialized"
 								}
@@ -13893,7 +13896,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "int" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 98.0, 74.0, 30.0, 30.0 ]
 												}
 

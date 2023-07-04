@@ -4645,7 +4645,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 455.0, 310.0, 50.0, 22.0 ],
+													"patching_rect" : [ 455.0, 310.0, 50.0, 35.0 ],
 													"text" : "300 264"
 												}
 
@@ -4877,7 +4877,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 230.0, 169.0, 171.0, 22.0 ],
+													"patching_rect" : [ 230.0, 169.0, 171.0, 35.0 ],
 													"saved_object_attributes" : 													{
 														"filename" : "mvc.locatePatcherWindow.js",
 														"parameter_enable" : 0
@@ -5433,13 +5433,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-71", 0 ],
 									"source" : [ "obj-4", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-2", 0 ],
-									"source" : [ "obj-55", 0 ]
 								}
 
 							}

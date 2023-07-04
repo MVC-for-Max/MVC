@@ -31,7 +31,7 @@ parametersValuesDict.name = "mvc.parameters.values.dict";
 var model_UID = 0;
 
 var previousAddresses = [];
-var currentAddresses = ["dummy"];
+var currentAddresses = [];
 var modelAddressDict = new Dict();
 modelAddressDict.name = "modelAddressDict";
 modelAddressDict.quiet = 1;
@@ -42,33 +42,39 @@ function updateDictionaries(){
 	var test = modelAddressDict.get(model_UID);
 	//post(test);
 	if (test != null) {
-		previousAddresses = test;
+		if (Array.isArray(test)) {
+			previousAddresses = test;
 		}
+		else {
+			previousAddresses = [].push(test);
+		}
+	}
 	else {
-		previousAddresses= [];
-		}
+		previousAddresses = [];
+	}
+	
 	//post("pa", previousAddresses, "\n");
 	//previousAddresses = currentAddresses;
 	currentAddresses = arrayfromargs(arguments);
-	currentAddresses.push("dummy");
-	//post("isarray", Array.isArray(previousAddresses), "\n");
+	// currentAddresses.push("dummy");
+	
+	
+	if (currentAddresses.length == 0) {
+		modelAddressDict.remove(model_UID.toString());
+	}
+	else {
+		modelAddressDict.set(model_UID, currentAddresses);
+	} 
+
+	//post("isarray", Array.isArray(currentAddresses), "\n");
 	//post("currentAddresses[0]", currentAddresses[0], "\n");
 
 	//post("received list " + currentAddresses + "\n");
 
 	var missingAdresses = findGoneItems(currentAddresses, previousAddresses);
 	//post('missingAdresses', missingAdresses, '\n');
-	
-	// if only dummy is in the new address, remove from the cached addresses dict
-	if (currentAddresses.length == 1){
-		//post("removing from modelAddressDict", model_UID , "\n");
-		modelAddressDict.remove(model_UID.toString());
-	}
-	else{
-	    //post("new addresses from modelAddressDict", model_UID , "\n");
-		modelAddressDict.set(model_UID, currentAddresses);
-	}
-	
+	//post("missingAdresses isarray", Array.isArray(currentAddresses), "\n");
+
 	// remove gone addresses only for values
 	for (var i = 0; i < (missingAdresses.length); i++) {
 		var theAdd = missingAdresses[i].replace(/\//g, '::');
@@ -88,9 +94,9 @@ function updateDictionaries(){
 		outlet(1, missingAdresses[i], 0);
 	}
 	// add new addresses in model dict
-	for (var i = 0; i < (currentAddresses.length-1); i++) {
+	for (var i = 0; i < (currentAddresses.length); i++) {
 		var theAdd = currentAddresses[i].replace(/\//g, '::');
-    	//post('add', i, theAdd, "\n");
+    	//post('add', i, model_UID, theAdd, "\n");
     	var addressUID = [model_UID, i + 1];
 		// parametersDict.replace(theAdd + "::uid", addressUID);
 		modelDict.replace(theAdd + "::uid", addressUID);
@@ -116,11 +122,12 @@ function setModelUID(uid){
 }
 
 function findGoneItems(CurrentArray, PreviousArray) {
-   var CurrentArrSize = CurrentArray.length;
-   var PreviousArrSize = PreviousArray.length;
-   var missingItems = [];
-   // loop through previous array
-   for(var j = 0; j < PreviousArrSize; j++) {
+	
+    var CurrentArrSize = CurrentArray.length;
+    var PreviousArrSize = PreviousArray.length;
+    var missingItems = [];
+    // loop through previous array
+    for(var j = 0; j < PreviousArrSize; j++) {
       // look for same thing in new array
       if (CurrentArray.indexOf(PreviousArray[j]) == -1)
          missingItems.push(PreviousArray[j]);

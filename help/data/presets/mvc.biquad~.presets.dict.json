@@ -2,5 +2,38 @@
 	"_metadata" : 	{
 		"package-version" : 0.4
 	}
+,
+	"five" : 	{
+		"gain" : 10.617501457761922,
+		"Q" : 3.024971536774713,
+		"filtermode" : "peaknotch",
+		"preset-name" : "five",
+		"preset-editflag" : 0,
+		"preset-description" : "undefined",
+		"ON" : 1,
+		"frequency" : 4341.115913485738929
+	}
+,
+	"three" : 	{
+		"gain" : 3.0,
+		"Q" : 3.0,
+		"filtermode" : "bandpass",
+		"preset-name" : "three",
+		"preset-editflag" : 0,
+		"preset-description" : "undefined",
+		"ON" : 1,
+		"frequency" : 3333.0
+	}
+,
+	"four" : 	{
+		"gain" : 4.0,
+		"Q" : 4.0,
+		"filtermode" : "bandstop",
+		"preset-name" : "four",
+		"preset-editflag" : 0,
+		"preset-description" : "undefined",
+		"ON" : 1,
+		"frequency" : 4444.0
+	}
 
 }
