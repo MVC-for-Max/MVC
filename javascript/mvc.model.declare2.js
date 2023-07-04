@@ -3,7 +3,7 @@
 // This enables to have parameter stored as dictionary.
 
 inlets = 1;
-outlets = 4;
+outlets = 2;
 
 _MVC_VERSION = 0.4;
 
@@ -28,19 +28,18 @@ parametersValuesDict.name = "mvc.parameters.values.dict";
 // var modelDefDict = new Dict();
 // modelDefDict.name = "mvc.model-definitions.dict";
 
-var parameter_type;
-var parameter_UID = 0;
+var model_UID = 0;
 
 var previousAddresses = [];
 var currentAddresses = ["dummy"];
-var paramAddressDict = new Dict();
-paramAddressDict.name = "paramAddressDict";
-paramAddressDict.quiet = 1;
+var modelAddressDict = new Dict();
+modelAddressDict.name = "modelAddressDict";
+modelAddressDict.quiet = 1;
 // var parentUID;
 
 function updateDictionaries(){
 	
-	var test = paramAddressDict.get(parameter_UID);
+	var test = modelAddressDict.get(model_UID);
 	//post(test);
 	if (test != null) {
 		previousAddresses = test;
@@ -62,12 +61,12 @@ function updateDictionaries(){
 	
 	// if only dummy is in the new address, remove from the cached addresses dict
 	if (currentAddresses.length == 1){
-		//post("removing from paramAddressDict", parameter_UID , "\n");
-		paramAddressDict.remove(parameter_UID.toString());
+		//post("removing from modelAddressDict", model_UID , "\n");
+		modelAddressDict.remove(model_UID.toString());
 	}
 	else{
-		//post("new addresses fro paramAddressDict", parameter_UID , "\n");
-		paramAddressDict.set(parameter_UID, currentAddresses);
+	    //post("new addresses from modelAddressDict", model_UID , "\n");
+		modelAddressDict.set(model_UID, currentAddresses);
 	}
 	
 	// remove gone addresses only for values
@@ -75,6 +74,7 @@ function updateDictionaries(){
 		var theAdd = missingAdresses[i].replace(/\//g, '::');
 		//post('removing', theAdd, '\n')
 		parametersValuesDict.remove(theAdd);
+		inputsDict.remove(theAdd);
 		outlet(1, missingAdresses[i], 0);
 	}
 
@@ -82,27 +82,19 @@ function updateDictionaries(){
 	for (var i = 0; i < (previousAddresses.length); i++) {
 		var theAdd = previousAddresses[i].replace(/\//g, '::');
 		// parametersDict.remove(theAdd);
-		inputsDict.remove(theAdd);
+		//inputsDict.remove(theAdd);
+		modelDict.remove(theAdd);
 		//post("removing param:", theAdd, "\n");
+		outlet(1, missingAdresses[i], 0);
 	}
 	// add new addresses in model dict
 	for (var i = 0; i < (currentAddresses.length-1); i++) {
 		var theAdd = currentAddresses[i].replace(/\//g, '::');
     	//post('add', i, theAdd, "\n");
-    	var addressUID = [parameter_UID, i + 1];
+    	var addressUID = [model_UID, i + 1];
 		// parametersDict.replace(theAdd + "::uid", addressUID);
-		inputsDict.replace(theAdd + "::uid", addressUID);
+		modelDict.replace(theAdd + "::uid", addressUID);
 		
-		if (!(parametersValuesDict.contains(currentAddresses[i]))){
-			// if param does not have a value, recall default
-			//outlet(2, i+1);
-			outlet(2, i + 1, parameter_UID);
-			}
-		else {
-			// else, recall current
-			//outlet(3, i+1);
-			outlet(3, i + 1, parameter_UID);
-		}
 		outlet(1, currentAddresses[i], 1);
 
 	}
@@ -114,13 +106,13 @@ function declare(){
 	//post("model args in declare", JSON.stringify(arguments), "\n");
 	updateDictionaries.apply(null, arguments);
 	// bang when done
-	var sendAddress = parameter_UID + ".param.declare.done";
+	var sendAddress = model_UID + ".model.declare.done";
 	outlet(0, "send", sendAddress)
 	outlet(0, "bang")
 }
 
-function setParameterUID(uid){
-	parameter_UID = uid;
+function setModelUID(uid){
+	model_UID = uid;
 }
 
 function findGoneItems(CurrentArray, PreviousArray) {
@@ -137,7 +129,7 @@ function findGoneItems(CurrentArray, PreviousArray) {
 }
 
 function loadbang(	) {
-	outlet(3, 'bang');
+	//outlet(3, 'bang');
 }
 
 function empty(){

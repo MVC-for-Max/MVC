@@ -630,7 +630,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 172.5, 319.0, 348.0, 24.0 ],
-					"text" : "mvc.onepole~.model #0.onepole #0 channel.1"
+					"text" : "mvc.onepole~.model #0 channel.1"
 				}
 
 			}
@@ -655,7 +655,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
+					"outlettype" : [ "", "", "initialized" ],
 					"patching_rect" : [ 144.0, 139.0, 334.0, 35.0 ],
 					"text" : "mvc.parameter #0 channelcount @description \"Number of channels\" @default Mono @min 1 @max 64"
 				}

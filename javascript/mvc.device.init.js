@@ -41,13 +41,6 @@ function declare(uid, deviceName, deviceType){
 	outlet(0, "bang")
 }
 
-function dictionary(dictname) {
-	prefixConcat = [];
-    d.name = dictname;
-    flattenSimple(JSON.parse(d.stringify()));
-	outlet(2, 'done');
-}
-
 
 // getProjectPath : retrieve current project's path
 // this is the place where the /data folder will be read from (or created, failing that)

@@ -15,7 +15,8 @@ var statesDict = new Dict();
 statesDict.quiet = 1;
 var parametersValuesDict = new Dict();
 parametersValuesDict.quiet = 1;
-
+var statesValuesDict = new Dict();
+statesValuesDict.quiet = 1;
 
 var model_type;
 var model_UID;
@@ -23,28 +24,29 @@ var model_UID;
 var previousAddresses = [];
 var currentAddresses = [];
 
-function declare(adresses){
+function updateDictionaries(adresses){
 	
 	modelDict.name = "mvc.models.dict";
 	inputsDict.name = "mvc.inputs.dict";
 	statesDict.name = "mvc.states.dict";
 	parametersValuesDict.name = "mvc.parameters.values.dict";
+	statesValuesDict.name = "mvc.states.values.dict";
 
 	previousAddresses = currentAddresses;
 	currentAddresses = arrayfromargs(arguments);
-	//post("received list " + currentAddresses + "\n");
+	post("received list " + currentAddresses + "\n");
 
 	var missingAdresses = findGoneItems(currentAddresses, previousAddresses);
-	//post('missingAdresses', missingAdresses, '\n');
+	post('missing Adresses in', model_UID,':', missingAdresses, '\n');
 	
 	// remove gone addresses
 	for (var i = 0; i < (missingAdresses.length); i++) {
 		var theAdd = missingAdresses[i].replace(/\//g, '::');
 		//post('removing', theAdd, '\n')
 		inputsDict.remove(theAdd);
-		statesDict.remove(theAdd);
+		//statesDict.remove(theAdd);
 		parametersValuesDict.remove(theAdd);
-		post("removing", theAdd);
+		post("removing", theAdd, "\n");
 		// send to AIM.parameter.initializers
 		outlet(1, missingAdresses[i], 0);
 	}
@@ -66,7 +68,6 @@ function declare(adresses){
 		// send to AIM.parameter.initializers
 		outlet(1, missingAdresses[i], 1);
 	}
-	outlet(0, "bang")
 }
 
 // function setModelType(type){
@@ -75,6 +76,17 @@ function declare(adresses){
 
 function setModelUID(uid){
 	model_UID = uid;
+}
+
+function declare(){
+	//just pass arguments to updtaeDictionaries
+	// (see https://stackoverflow.com/questions/3914557/passing-arguments-forward-to-another-javascript-function)
+	//post("model args in declare", JSON.stringify(arguments), "\n");
+	updateDictionaries.apply(null, arguments);
+	// bang when done
+	//var sendAddress = parameter_UID + ".param.declare.done";
+	//outlet(0, "send", sendAddress)
+	outlet(0, "bang")
 }
 
 function findGoneItems(CurrentArray, PreviousArray) {
@@ -97,7 +109,7 @@ function loadbang() {
 
 
 function empty(){
-	declare();
+	updateDictionaries();
 }
 
 

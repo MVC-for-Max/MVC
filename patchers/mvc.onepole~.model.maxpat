@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 480.0, 343.0, 888.0, 390.0 ],
+		"rect" : [ 462.0, 666.0, 888.0, 390.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -529,9 +529,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
+					"outlettype" : [ "", "", "initialized" ],
 					"patching_rect" : [ 157.5, 143.5, 293.0, 49.0 ],
-					"text" : "mvc.parameter #1 frequency @type decimal @range 20. 22000. @clip both @description \"Cutoff frequency\" @unit Hz @default 1000"
+					"text" : "mvc.parameter #0 frequency @type decimal @range 20. 22000. @clip both @description \"Cutoff frequency\" @unit Hz @default 1000"
 				}
 
 			}
@@ -545,7 +545,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 49.0, 60.5, 498.0, 24.0 ],
-					"text" : "mvc.model #1 #2 #3 @type onepole~",
+					"text" : "mvc.model #0 #1 #2 @type onepole~",
 					"varname" : "mvc.model"
 				}
 
