@@ -7,8 +7,9 @@ var level = 0;
 var initializing = 0;
 
 
-function init(){
-	if (jsarguments.length>1) level = jsarguments[1];
+function init(lev){
+	//if (jsarguments.length>1) level = jsarguments[1];
+	if (lev>=0){ level = lev};
 	initParentBox(level);
 }
 
@@ -18,8 +19,6 @@ function initParentBox(val){
 	//post("val", val, "\n");
 	
 	for (i = 0; i < val; i++){
-		//post("hello \n");
-	
 		if (currentPatcherLevel.parentpatcher) {
 			currentPatcherLevel = currentPatcherLevel.parentpatcher;
 		}
