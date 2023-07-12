@@ -175,27 +175,6 @@
 			}
 , 			{
 				"box" : 				{
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-22",
-					"lockeddragscroll" : 0,
-					"lockedsize" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "mvc.GUI.number.maxpat",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 129.0, 421.0, 229.0, 19.0 ],
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-16",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -472,18 +451,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-12",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 284.0, 384.0, 195.0, 22.0 ],
-					"text" : "address dev/myOnepole/frequency"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"format" : 6,
 					"id" : "obj-10",
 					"maxclass" : "flonum",
@@ -546,18 +513,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-7",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 315.0, 348.0, 30.0, 22.0 ],
-					"text" : "GUI"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-5",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -606,13 +561,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-10", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-22", 1 ],
-					"source" : [ "obj-12", 0 ]
 				}
 
 			}
@@ -802,10 +750,14 @@
 			}
  ],
 		"parameters" : 		{
+			"obj-20::obj-13::obj-5::obj-61::obj-20.1::obj-49::obj-8::obj-7" : [ "live.toggle[8]", "live.toggle", 0 ],
+			"obj-20::obj-13::obj-5::obj-61::obj-20.1::obj-5::obj-12::obj-8::obj-7" : [ "live.toggle[7]", "live.toggle", 0 ],
 			"obj-36" : [ "mc.live.gain~", "mc.live.gain~", 0 ],
 			"obj-37::obj-3::obj-61::obj-20.1::obj-16::obj-8::obj-7" : [ "live.toggle[4]", "live.toggle", 0 ],
 			"obj-37::obj-3::obj-61::obj-20.1::obj-5::obj-49::obj-8::obj-7" : [ "live.toggle[3]", "live.toggle", 0 ],
 			"obj-37::obj-3::obj-61::obj-20.1::obj-5::obj-5::obj-12::obj-8::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
+			"obj-4::obj-8::obj-5::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[5]", "live.toggle", 0 ],
+			"obj-6::obj-16::obj-5::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[6]", "live.toggle", 0 ],
 			"parameterbanks" : 			{
 				"0" : 				{
 					"index" : 0,
@@ -816,12 +768,28 @@
 			}
 ,
 			"parameter_overrides" : 			{
+				"obj-20::obj-13::obj-5::obj-61::obj-20.1::obj-49::obj-8::obj-7" : 				{
+					"parameter_longname" : "live.toggle[8]"
+				}
+,
+				"obj-20::obj-13::obj-5::obj-61::obj-20.1::obj-5::obj-12::obj-8::obj-7" : 				{
+					"parameter_longname" : "live.toggle[7]"
+				}
+,
 				"obj-37::obj-3::obj-61::obj-20.1::obj-16::obj-8::obj-7" : 				{
 					"parameter_longname" : "live.toggle[4]"
 				}
 ,
 				"obj-37::obj-3::obj-61::obj-20.1::obj-5::obj-49::obj-8::obj-7" : 				{
 					"parameter_longname" : "live.toggle[3]"
+				}
+,
+				"obj-4::obj-8::obj-5::obj-61::obj-20.1::obj-12::obj-8::obj-7" : 				{
+					"parameter_longname" : "live.toggle[5]"
+				}
+,
+				"obj-6::obj-16::obj-5::obj-61::obj-20.1::obj-12::obj-8::obj-7" : 				{
+					"parameter_longname" : "live.toggle[6]"
 				}
 
 			}
