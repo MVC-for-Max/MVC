@@ -84,7 +84,7 @@ function updateDictionaries(){
 		//post('removing', theAdd, '\n')
 		parametersValuesDict.remove(theAdd);
 		inputsDict.remove(theAdd);
-		outlet(1, missingAdresses[i], 0);
+		//outlet(1, model_UID.toString(), 0); // no need to uninitialize as they will be remove
 	}
 
 	// remove all previous addresses in parameters (to rebuild all indices)
@@ -95,7 +95,7 @@ function updateDictionaries(){
 		modelDict.remove(theAdd);
 		//post("removing param:", theAdd, "\n");
 		//outlet(1, missingAdresses[i], 0);
-		outlet(1, model_UID.toString(), 0);
+		//outlet(1, model_UID.toString(), 0);
 	}
 	// add new addresses in model dict
 	for (var i = 0; i < (currentAddresses.length); i++) {
@@ -117,9 +117,10 @@ function declare(){
 	//post("model args in declare", JSON.stringify(arguments), "\n");
 	updateDictionaries.apply(null, arguments);
 	// bang when done
+	var initState = arrayfromargs(arguments).length;
 	var sendAddress = model_UID + ".model.declare.done";
-	outlet(0, "send", sendAddress)
-	outlet(0, "bang")
+	outlet(0, "send", sendAddress);
+	outlet(0, initState>0);
 }
 
 function setModelUID(uid){
