@@ -94,7 +94,8 @@ function updateDictionaries(){
 		//inputsDict.remove(theAdd);
 		modelDict.remove(theAdd);
 		//post("removing param:", theAdd, "\n");
-		outlet(1, missingAdresses[i], 0);
+		//outlet(1, missingAdresses[i], 0);
+		outlet(1, model_UID.toString(), 0);
 	}
 	// add new addresses in model dict
 	for (var i = 0; i < (currentAddresses.length); i++) {
@@ -104,7 +105,8 @@ function updateDictionaries(){
 		// parametersDict.replace(theAdd + "::uid", addressUID);
 		modelDict.replace(theAdd + "::uid", addressUID);
 		
-		outlet(1, currentAddresses[i], 1);
+		//outlet(1, currentAddresses[i], 1);
+		outlet(1, model_UID.toString(), 1);
 
 	}
 }
