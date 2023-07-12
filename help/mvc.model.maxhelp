@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 147.0, 294.0, 1153.0, 654.0 ],
+		"rect" : [ 93.0, 330.0, 1115.0, 596.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,12 +40,98 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-40",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 523.0, 534.0, 30.0, 22.0 ],
+					"text" : "GUI"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-35",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 254.0, 560.0, 309.0, 22.0 ],
+					"text" : "mvc.model 12 dev testingName @type test~ @autoinit 1",
+					"varname" : "mvc.model"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-30",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 331.0, 280.0, 54.0, 22.0 ],
+					"text" : "type test"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-28",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 331.0, 252.0, 84.0, 22.0 ],
+					"text" : "type onepole~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-24",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 4.0, 2.0, 58.0, 22.0 ],
+					"text" : "loadbang"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-25",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 4.0, 31.0, 195.0, 22.0 ],
+					"text" : "window flags grow, window exec"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-27",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 4.0, 60.0, 67.0, 22.0 ],
+					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+					"text" : "thispatcher"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-52",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 772.631606578826904, 521.052650213241577, 35.0, 22.0 ],
+					"patching_rect" : [ 733.0, 450.052650213241577, 35.0, 22.0 ],
 					"text" : "reset"
 				}
 
@@ -59,7 +145,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 204.0, 551.578967094421387, 50.0, 22.0 ]
+					"patching_rect" : [ 172.684201002120972, 480.578967094421387, 50.0, 22.0 ]
 				}
 
 			}
@@ -70,7 +156,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "initialized" ],
-					"patching_rect" : [ 266.315798997879028, 551.578967094421387, 517.0, 22.0 ],
+					"patching_rect" : [ 235.0, 480.578967094421387, 517.0, 22.0 ],
 					"text" : "mvc.parameter dev test @description \"this model's preset name\" @type decimal @default 1234"
 				}
 
@@ -82,7 +168,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 40.15789270401001, 11.0, 29.5, 22.0 ],
+					"patching_rect" : [ 250.15789270401001, 35.0, 29.5, 22.0 ],
 					"text" : "init"
 				}
 
@@ -115,7 +201,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 755.0, 136.0, 155.0, 22.0 ],
+					"patching_rect" : [ 730.0, 136.0, 155.0, 22.0 ],
 					"text" : "preset channel.1/filter.1 five"
 				}
 
@@ -127,7 +213,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 97.0, 11.0, 30.0, 22.0 ],
+					"patching_rect" : [ 307.0, 35.0, 30.0, 22.0 ],
 					"text" : "GUI"
 				}
 
@@ -166,7 +252,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 545.0, 164.0, 169.0, 22.0 ],
+					"patching_rect" : [ 545.0, 170.0, 169.0, 22.0 ],
 					"text" : "mvc.mc.cascade~ dev mc.cas",
 					"varname" : "mvc.mc.cascade~"
 				}
@@ -179,20 +265,22 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 709.0, 77.5, 30.0, 22.0 ],
+					"patching_rect" : [ 674.0, 72.5, 30.0, 22.0 ],
 					"text" : "GUI"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"color" : [ 0.501961, 0.501961, 0.501961, 1.0 ],
 					"id" : "obj-20",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "mvc.cascade~", "dev", "cas" ],
-					"patching_rect" : [ 532.5, 111.0, 137.0, 22.0 ],
-					"text" : "t mvc.cascade~ dev cas"
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "multichannelsignal", "" ],
+					"patching_rect" : [ 563.0, 105.0, 130.0, 22.0 ],
+					"text" : "mvc.cascade~ dev cas",
+					"varname" : "mvc.cascade~"
 				}
 
 			}
@@ -216,7 +304,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 540.0, 67.0, 119.0, 22.0 ],
+					"patching_rect" : [ 537.0, 65.0, 119.0, 22.0 ],
 					"text" : "mvc.biquad~ dev biq",
 					"varname" : "mvc.biquad~"
 				}
@@ -232,7 +320,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "multichannelsignal", "", "float", "list" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 679.0, 348.0, 136.0, 30.0 ],
+					"patching_rect" : [ 544.0, 345.0, 136.0, 30.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "mc.live.gain~",
@@ -252,14 +340,14 @@
 			}
 , 			{
 				"box" : 				{
-					"color" : [ 0.501961, 0.501961, 0.501961, 1.0 ],
+					"color" : [ 1.0, 0.4, 0.0, 1.0 ],
 					"id" : "obj-34",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 679.0, 310.0, 206.0, 22.0 ],
-					"text" : "mvc.mc.onepole~ dev myMcOnepole",
+					"numinlets" : 4,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 544.0, 307.0, 237.0, 22.0 ],
+					"text" : "route mvc.mc.onepole~ dev myMcOnepole",
 					"varname" : "mvc.mc.onepole~"
 				}
 
@@ -271,7 +359,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "multichannelsignal" ],
-					"patching_rect" : [ 679.0, 283.0, 60.0, 22.0 ],
+					"patching_rect" : [ 544.0, 280.0, 60.0, 22.0 ],
 					"text" : "mc.*~ 0.1"
 				}
 
@@ -282,7 +370,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 679.0, 393.0, 54.0, 22.0 ],
+					"patching_rect" : [ 544.0, 390.0, 54.0, 22.0 ],
 					"text" : "mc.dac~"
 				}
 
@@ -294,7 +382,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "multichannelsignal" ],
-					"patching_rect" : [ 680.0, 259.0, 64.0, 22.0 ],
+					"patching_rect" : [ 545.0, 256.0, 64.0, 22.0 ],
 					"text" : "mc.noise~"
 				}
 
@@ -306,7 +394,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 866.0, 283.0, 30.0, 22.0 ],
+					"patching_rect" : [ 616.666666666666629, 280.0, 30.0, 22.0 ],
 					"text" : "GUI"
 				}
 
@@ -318,7 +406,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 954.0, 263.0, 65.0, 22.0 ],
+					"patching_rect" : [ 689.0, 268.0, 65.0, 22.0 ],
 					"text" : "preset test"
 				}
 
@@ -439,7 +527,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 866.0, 224.0, 120.0, 22.0 ],
+					"patching_rect" : [ 682.0, 234.0, 120.0, 22.0 ],
 					"text" : "preset test channel.1"
 				}
 
@@ -451,7 +539,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 747.0, 105.0, 109.0, 22.0 ],
+					"patching_rect" : [ 730.0, 108.5, 109.0, 22.0 ],
 					"text" : "preset anotherOne"
 				}
 
@@ -500,7 +588,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 25.0, 41.0, 91.0, 22.0 ],
+					"patching_rect" : [ 235.0, 65.0, 91.0, 22.0 ],
 					"text" : "mvc.device dev",
 					"varname" : "mvc.device"
 				}
@@ -588,8 +676,43 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-20", 1 ],
+					"source" : [ "obj-23", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-25", 0 ],
+					"source" : [ "obj-24", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-27", 0 ],
+					"source" : [ "obj-25", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-34", 0 ],
 					"source" : [ "obj-26", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 1 ],
+					"source" : [ "obj-28", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 1 ],
+					"source" : [ "obj-30", 0 ]
 				}
 
 			}
@@ -625,6 +748,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-14", 0 ],
 					"source" : [ "obj-4", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-35", 1 ],
+					"source" : [ "obj-40", 0 ]
 				}
 
 			}
@@ -673,12 +803,25 @@
  ],
 		"parameters" : 		{
 			"obj-36" : [ "mc.live.gain~", "mc.live.gain~", 0 ],
-			"obj-4::obj-8::obj-5::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
+			"obj-37::obj-3::obj-61::obj-20.1::obj-16::obj-8::obj-7" : [ "live.toggle[4]", "live.toggle", 0 ],
+			"obj-37::obj-3::obj-61::obj-20.1::obj-5::obj-49::obj-8::obj-7" : [ "live.toggle[3]", "live.toggle", 0 ],
+			"obj-37::obj-3::obj-61::obj-20.1::obj-5::obj-5::obj-12::obj-8::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
 			"parameterbanks" : 			{
 				"0" : 				{
 					"index" : 0,
 					"name" : "",
 					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
+			"parameter_overrides" : 			{
+				"obj-37::obj-3::obj-61::obj-20.1::obj-16::obj-8::obj-7" : 				{
+					"parameter_longname" : "live.toggle[4]"
+				}
+,
+				"obj-37::obj-3::obj-61::obj-20.1::obj-5::obj-49::obj-8::obj-7" : 				{
+					"parameter_longname" : "live.toggle[3]"
 				}
 
 			}
