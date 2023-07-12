@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 200.0, 174.0, 906.0, 584.0 ],
+		"rect" : [ 200.0, 200.0, 279.0, 17.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -89,7 +89,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "4687.focus" ],
+					"outlettype" : [ "", "17146.focus" ],
 					"patching_rect" : [ 560.75, 330.0, 98.0, 22.0 ],
 					"text" : "mvc.GUI.tabbing"
 				}
@@ -125,7 +125,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 725.0, 109.0, 700.0, 701.0 ],
+						"rect" : [ 946.0, 171.0, 700.0, 701.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1895,7 +1895,7 @@
 									"numinlets" : 7,
 									"numoutlets" : 7,
 									"outlettype" : [ "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 108.5, 478.0, 339.266666666666538, 22.0 ],
+									"patching_rect" : [ 108.5, 478.0, 267.0, 22.0 ],
 									"text" : "route range options description unit name hetero"
 								}
 
@@ -1957,13 +1957,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-106",
-									"linecount" : 3,
+									"linecount" : 4,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 467.5, 504.420803999999862, 150.0, 49.0 ],
-									"text" : "get activeaddresslist last, get activeaddresscount, get values last"
+									"patching_rect" : [ 467.5, 504.420803999999862, 141.0, 62.0 ],
+									"text" : "get activeaddresslist last, get activeaddresscount, get hetero, get values last"
 								}
 
 							}
@@ -2043,11 +2043,11 @@
 								"box" : 								{
 									"id" : "obj-19",
 									"maxclass" : "newobj",
-									"numinlets" : 4,
-									"numoutlets" : 4,
-									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 98.0, 76.0, 344.5, 22.0 ],
-									"text" : "route activeaddresscount activeaddresslist initialized"
+									"numinlets" : 5,
+									"numoutlets" : 5,
+									"outlettype" : [ "", "", "", "", "" ],
+									"patching_rect" : [ 98.0, 76.0, 453.0, 22.0 ],
+									"text" : "route activeaddresscount activeaddresslist initialized hetero"
 								}
 
 							}
@@ -2173,6 +2173,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
 									"source" : [ "obj-19", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-18", 0 ],
+									"source" : [ "obj-19", 3 ]
 								}
 
 							}
@@ -3089,7 +3096,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 442.166666666666629, 114.0, 69.0, 22.0 ],
-					"save" : [ "#N", "thispatcher", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
+					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "nogrow", "close", "nozoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 200, 200, 479, 217, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
 
@@ -3161,7 +3168,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-3",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -3642,7 +3649,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 335.75, 300.5, 290.0, 22.0 ],
+					"patching_rect" : [ 335.75, 300.5, 347.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 132.0, -2.0, 31.0, 22.0 ],
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -3655,7 +3662,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-29",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -3668,7 +3675,7 @@
 				"box" : 				{
 					"comment" : "output \"select\" when tab pressed",
 					"id" : "obj-13",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -3680,7 +3687,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-1",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -3702,7 +3709,7 @@
 					"bgfillcolor_proportion" : 0.5,
 					"bgfillcolor_type" : "color",
 					"fontface" : 2,
-					"hint" : "/filtermode : no target",
+					"hint" : "no target",
 					"id" : "obj-7",
 					"ignoreclick" : 1,
 					"items" : "no target",
@@ -4068,7 +4075,8 @@
 				}
 
 			}
- ]
+ ],
+		"autosave" : 0
 	}
 
 }

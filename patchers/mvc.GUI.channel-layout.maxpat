@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 200.0, 200.0, 279.0, 50.0 ],
+		"rect" : [ 200.0, 200.0, 972.0, 586.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -99,7 +99,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 797.0, 212.0, 537.0, 424.0 ],
+						"rect" : [ 1042.0, 270.0, 537.0, 424.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1955,7 +1955,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 4,
 													"outlettype" : [ "dictionary", "", "", "" ],
-													"patching_rect" : [ 110.0, 452.5, 79.0, 22.0 ],
+													"patching_rect" : [ 137.0, 441.5, 79.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 0,
 														"parameter_enable" : 0,
@@ -1972,9 +1972,9 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"outlettype" : [ "clear" ],
-													"patching_rect" : [ 110.0, 347.5, 41.0, 22.0 ],
-													"text" : "t clear"
+													"outlettype" : [ "bang" ],
+													"patching_rect" : [ 110.0, 347.5, 22.0, 22.0 ],
+													"text" : "t b"
 												}
 
 											}
@@ -2369,7 +2369,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-7", 0 ],
+													"destination" : [ "obj-80", 0 ],
 													"source" : [ "obj-39", 0 ]
 												}
 
@@ -2904,7 +2904,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "3892.focus" ],
+					"outlettype" : [ "", "22803.focus" ],
 					"patching_rect" : [ 463.75, 306.0, 98.0, 22.0 ],
 					"text" : "mvc.GUI.tabbing"
 				}
@@ -3549,7 +3549,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 322.75, 138.0, 69.0, 22.0 ],
-					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "nogrow", "close", "nozoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 200, 200, 479, 250, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
+					"save" : [ "#N", "thispatcher", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
 
@@ -3621,7 +3621,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-3",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -3837,7 +3837,7 @@
 									"hint" : "Filter mode",
 									"id" : "obj-9",
 									"ignoreclick" : 1,
-									"items" : [ "Mono", ",", "Stereo", ",", "5.1 surround", ",", "7.1 surround", ",", "Custom..." ],
+									"items" : "<empty>",
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -4660,7 +4660,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 349.75, 276.5, 208.0, 22.0 ],
+					"patching_rect" : [ 349.75, 276.5, 219.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 132.0, -2.0, 31.0, 22.0 ],
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -4673,7 +4673,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-29",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -4686,7 +4686,7 @@
 				"box" : 				{
 					"comment" : "output \"select\" when tab pressed",
 					"id" : "obj-13",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -4698,7 +4698,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-1",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -4720,7 +4720,7 @@
 					"bgfillcolor_proportion" : 0.5,
 					"bgfillcolor_type" : "color",
 					"fontface" : 2,
-					"hint" : "no target",
+					"hint" : "/channelcount : no target",
 					"id" : "obj-7",
 					"ignoreclick" : 1,
 					"items" : "no target",
@@ -4764,7 +4764,7 @@
 					"hint" : "Channel layout",
 					"id" : "obj-9",
 					"ignoreclick" : 1,
-					"items" : [ "Mono", ",", "Stereo", ",", "5.1 surround", ",", "7.1 surround", ",", "Custom..." ],
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -4800,7 +4800,6 @@
 					"fontsize" : 12.0,
 					"hint" : "Channel count",
 					"id" : "obj-38",
-					"ignoreclick" : 1,
 					"maxclass" : "number",
 					"maximum" : 128,
 					"minimum" : 1,
@@ -4808,11 +4807,10 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 305.75, 374.0, 55.0, 22.0 ],
+					"patching_rect" : [ 305.75, 374.0, 64.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 242.0, -3.0, 40.0, 22.0 ],
-					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
-					"triangle" : 0
+					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
 
 			}
@@ -5213,8 +5211,7 @@
 				}
 
 			}
- ],
-		"autosave" : 0
+ ]
 	}
 
 }
