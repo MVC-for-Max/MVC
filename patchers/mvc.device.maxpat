@@ -118,7 +118,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 214.0, 204.504647835458002, 297.0, 22.0 ],
-					"text" : "mvc.model #1 #1 #1 @type #1",
+					"text" : "mvc.model #1 #1 #1 @type #1 @version 0.4",
 					"varname" : "mvc.model"
 				}
 
@@ -14682,7 +14682,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 94.0, 129.0, 93.0, 35.0 ],
-													"text" : "toutout dev/myOnepole"
+													"text" : "devil dev/myOnepole"
 												}
 
 											}
@@ -39322,7 +39322,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 83.666666666666657, 100.0, 50.0, 35.0 ],
-													"text" : "1 1224"
+													"text" : "1 8231"
 												}
 
 											}
