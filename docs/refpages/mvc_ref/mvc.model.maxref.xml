@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.model" module="aim" kind="patcher" category="library">
+
+	<digest>
+		Declare an MVC model.
+	</digest>
+	
+	<description>
+		The <o>mvc.model</o> helps declaring a model in the <link type="vignette" module="aim" name="MVC_principles">Model-View-Controller</link> scheme used in the MVC package.
+		<br />
+		An <o>mvc.model</o> creates a node in the namespace to which several <o>mvc.parameter</o>, <o>mvc.state</o>, <o>mvc.message</o> or even <o>mvc.model</o> can register. It thus allows to create complex and nested address hierarchies describing your patcher's features as a namespace. An <o>mvc.model</o> can also declare a <at>type</at>, so that other instances of this model will share their presets.
+	</description>
+
+
+	<discussion>
+		Just like an <o>mvc.parameter</o>, an <o>mvc.model</o> can benefit from the brace expansion notation to create a series of subnodes. This is typically used in multichannel components, where a model name like <m>channel.{1..3}</m> would create subnodes for the three channels, named <m>channel.1</m>, <m>channel.2</m> and <m>channel.3</m>.
+		<br />
+		If the parent model to which a model is attached represents a series of parent addresses, a list of names can be given to the model so that each of these names will be distributed to the corresponding parent address. 
+		<br />
+		For instance, let's suppose we have a multichannel-multiband-limiter. Our top model will be holding a <m>channelcount</m> parameter and a submodel for channels, that we can call after our <m>channelcount</m> parameter value.
+		For instance, if the parent model has declared 3 channels (with the name <m>channel.{1..3}</m>)
+		Now, we need to define the frequency bands for each channel. That will be another submodel, this time attached to the parent "channel" model. To this "band" model, we can give a list of names like <m>band.{1..2} band.1 band.{1..5}</m>.
+		<br />
+		This way, each parent channel will receive a different band count and the "band" model addresses will be like :
+		<ol>
+ 			<li><m>myLimiter/channel.1/band.1</m></li>
+ 			<li><m>myLimiter/channel.1/band.2</m></li>
+ 			<li><m>myLimiter/channel.2/band.1</m></li>
+ 			<li><m>myLimiter/channel.3/band.1</m></li>
+ 			<li><m>myLimiter/channel.3/band.2</m></li>
+ 			<li><m>myLimiter/channel.3/band.3</m></li>
+ 			<li><m>myLimiter/channel.3/band.4</m></li>
+ 			<li><m>myLimiter/channel.3/band.5</m></li>
+		</ol>
+
+	</discussion>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="message">
+			<digest>unused for now.</digest>
+		</inlet>
+		<inlet id="1" type="message">
+			<digest>messages and requests</digest>
+			<description>Connect this inlet to the right outlet of the "thispatcher" object containing the mvc.model, as well as the right inlet of your MVC component.
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="message">
+			<digest>Output the ON value.</digest>
+		</outlet>
+		<outlet id="1" type="message">
+			<digest>dumpout.</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="UID" optional="0" type="symbol">
+			<digest>The unique ID of the <o>mvc.model</o> instance.</digest>
+			<description>
+				The unique identifier (UID) of the <o>mvc.model</o> instance allows to bind <o>mvc.parameter</o>, <o>mvc.state</o> or <o>mvc.message</o> to it by giving them the same UID. Its unicity avoid namespace collision among the various instances of <o>mvc.model</o>.
+				The <m>#0</m> argument in Max, which is automatically replaced by an auto-incremental integer, can be used for the purpose of unicity.
+			</description>
+		</objarg>
+		<objarg name="parent-model" optional="0" type="symbol">
+			<digest>The UID of the parent model (or device).</digest>
+			<description>
+				The second argument to <o>mvc.model</o> defines which parent <o>mvc.model</o> or <o>mvc.device</o> we want to bind this <o>mvc.model</o> to, by providing its UID.
+			</description>
+		</objarg>
+		<objarg name="name" optional="0" type="symbol">
+			<digest>The model's name, as seen in the namespace</digest>
+			<description>
+				The model's name is a symbol that defines the address in the <link type="vignette" module="aim" name="MVC_namespace">MVC namespace</link>. It can make use of the <link type="vignette" module="aim" name="brace_expansion">brace expansion notation</link>. Although multiple mvc.models cannot have the same UID, they can have the same name, as it may take place in a different place in the <link type="vignette" module="aim" name="MVC_namespace">MVC namespace</link>.
+			</description>
+		</objarg>
+	</objarglist>
+	
+		<!--ATTRIBUTES-->
+	<attributelist>
+		<attribute name="type" get="1" set="1" type="symbol" size="1">
+			<digest>
+				Assign a type to this model.
+			</digest>
+			<description>
+				The <m>type</m> attribute allows to declare that this model is of a certain type (e.g. <m>biquad</m> for a biquad filter wrapper), so that all components that use this model will load from - and save to the same preset file, enabling to share these presets. The preset file name will be named after this type, with the following syntax : <m>mvc.biquad.preset.dict.json</m> (replace "biquad" with the type of your choice) and stored in the <m>data/presets</m> folder of the folder where you main patch (containing the <o>mvc.device</o>) is saved.<br />
+				The default value is <m>undefined</m>.
+			</description>
+		</attribute>
+
+		<attribute name="autoinit" set="1" type="integer" size="1">
+			<digest>
+				Set `mvc.model` to auto-initialize as soon as parent model is ready.
+			</digest>
+			<description>
+				The <m>autoinit</m> attribute allows to have the <o>mvc.model</o> auto-initialize as soon as the parent <o>mvc.model</o> (or the <o>mvc.device</o>) it is bound to is ready. This is typically what you would want for the top-level <o>mvc.model</o> of a component containing multiple nested <o>mvc.model</o>.<br />
+				Conversely, a child-<o>mvc.model</o> may be initialized by an external parameter. For instance, in a multi-channel component, the <m>channelcount</m> parameter may re-define the name of the single-channel <o>mvc.model</o> with the brace expansion syntax : <m>name channel{1..N}</m> (N being the number of channels). The ability to <i>not</i> auto-initialize the child-<o>mvc.model</o> thus avoids to initialize it twice.<br />
+				The default value is 0 (does not auto-initialize).
+			</description>
+		</attribute>
+	</attributelist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="import">
+			<arglist>
+			</arglist>
+			<digest>
+				Import presets from a data folder.
+			</digest>
+			<description>
+				Load all the preset (or a subset) from a different data folder, so they are added to the list of available presets in your project's MVC components.
+			</description>
+		</method>
+		<method name="init">
+			<arglist>
+			</arglist>
+			<digest>
+				init: initialize the <o>mvc.model</o>.
+			</digest>
+			<description>
+				An <o>mvc.model</o> needs to be explicitely initilized, either with the <m>init</m> message or by passing a name to the model.
+			</description>
+		</method>
+		<method name="name">
+			<arglist>
+				<arg name="model's-name" optional="0" type="symbol" />
+			</arglist>
+			<digest>
+				The model's name can be changed on the fly with this message.
+			</digest>
+			<description>
+				It  will reinitialize the model (and anything attached to it).
+			</description>
+		</method>
+		<method name="GUI">
+			<arglist>
+				<arg name="parameter-settings" optional="0" type="float" />
+			</arglist>
+			<digest>
+				GUI: Opens the model's GUI.
+			</digest>
+			<description>
+				The model's GUI contains a preset menu which allows to store presets for this model.
+			</description>
+		</method>
+		<method name="param">
+			<arglist>
+				<arg name="parameter-name" optional="0" type="symbol" />
+				<arg name="parameter-values" optional="0" type="anything" />
+			</arglist>
+			<digest>
+				Pass a value value to a parameter of this model (or submodel).
+			</digest>
+			<description>
+				Passing a parameter's value with the <m>param</m> message allows to easily connect with the rest of the patcher.
+			</description>
+		</method>
+		<method name="preset">
+			<arglist>
+				<arg name="preset-name" optional="0" type="symbol" />
+				<arg name="submodel-address" optional="1" type="symbol"/>
+			</arglist>
+			<digest>
+				Recall a preset from this model or from any sub-model.
+			</digest>
+			<description>
+				The preset message followed by a preset name will recall the corresponding preset (if it exists) on the mvc.model. It is also possible to recall a preset of a sub-model by providing a third argument which is the sub-model address, relative to <o>the mvc.model.</o>
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mvc.device"/>
+		<seealso name="mvc.parameter"/>
+		<seealso name="mvc.remote"/>
+		<seealso name="mvc.state"/>
+		<seealso name="mvc.state.remote"/>
+		<seealso name="mvc.message"/>
+		<seealso name="mvc.message.remote"/>
+	</seealsolist>
+	
+</c74object>

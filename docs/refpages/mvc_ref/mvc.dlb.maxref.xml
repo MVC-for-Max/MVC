@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.dlb" module="aim" kind="patcher" category="library">
+
+	<digest>
+		Anti-loopback utility.
+	</digest>
+	
+	<description>
+		<o>mvc.dlb~</o> ("Don't Loop Back") is the trick used in Max's sw object to allow send/receive without stack overflow. Provided here as a separated to allow dynamic naming on send and receive.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>
+		<metadata name="tag">library</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="anything">
+			<digest>
+				Input data.
+			</digest>
+			<description>
+				Input data.
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<inlet id="0" type="anything">
+			<digest>
+				Output data.
+			</digest>
+			<description>
+				Output data.
+			</description>
+		</inlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mvc.dllb"/>
+		<seealso name="mvc.publish"/>
+		<seealso name="mvc.subscribe"/>
+	</seealsolist>
+</c74object>

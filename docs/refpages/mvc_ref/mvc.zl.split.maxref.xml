@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.zl.split" module="aim" kind="patcher" category="library">
+
+	<digest>
+		Just like split, but for lists.
+	</digest>
+	
+	<description>
+		<o>mvc.zl.split</o> will split out a list of numbers with values withing an interval output on the left outlet, and the others on the right outlet.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>$
+		<metadata name="tag">utilities</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="zl"/>
+	</seealsolist>
+</c74object>

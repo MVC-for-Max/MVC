@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+<!-- <link type="vignette" module="aim" name="brace_expansion">brace expansion notation</link> : add a link to a vignette -->
+<!-- <img src="images/image137.png" /> : put an image -->
+
+<c74object name="mvc.model.gui" module="aim" kind="patcher" category="library">
+
+	<digest>
+		Monitor and remote control from an <o>mvc.model</o>.
+	</digest>
+	
+	<description>
+		<o>mvc.model.gui</o> allows to bind to an <o>mvc.model</o> for remote control or monitoring.
+		The <o>mvc.model</o> it refers to can be set dynamically and multiple addresses can be provided through <link type="vignette" module="aim" name="brace_expansion">brace expansion notation</link>.<br />
+
+		<o>mvc.model.gui</o> helps implementing the <i>view</i> and <i>controller</i> part in the <link type="vignette" module="aim" name="MVC_principles">MVC model</link> used in the MVC package.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>
+		<metadata name="aim-type">core</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="anything">
+			<digest>Dummy inlet (unused)</digest>
+		</inlet>
+		<inlet id="1" type="anything">
+			<digest>Settings for the <o>mvc.model.gui</o> (see below)</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="anything">
+			<digest>Connect to a thispatcher object.</digest>
+		</outlet>
+		<outlet id="1" type="anything" size="1">
+			<digest>Connect to a panel object to reflect active/loading states.</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Output active and address. Can be used to further address other GUI elements.</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="address" optional="0" type="symbol">
+			<digest>
+				Monitored <o>mvc.model</o> adress(es).
+			</digest>
+			<description>
+				The <m>address</m> of the monitored <o>mvc.model</o> should be expressed with slash-separated symbols (à la OSC).
+			</description>
+		</objarg>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="anything (on the left inlet)">
+			<arglist>
+				<arg name="values" optional="0" type="list"/>
+			</arglist>
+			<digest>
+				Feed values to <o>mvc.remote</o> (on the left inlet).
+			</digest>
+			<description>
+				The values fed to the left inlet will be sent to all addresses covered by the <o>mvc.remote</o> namespace, given an matching <o>mvc.parameter</o> address exists.
+			</description>
+		</method>
+
+		<method name="setvalue (on the left inlet)">
+			<arglist>
+				<arg name="index" optional="0" type="int"/>
+				<arg name="values" optional="0" type="list"/>
+			</arglist>
+			<digest>
+				Set the value of a specific <m>address</m> in the <o>mvc.remote</o> namespace (on the left inlet).
+			</digest>
+			<description>
+				<m>setvalue</m> is a possible method on the left inlet.<br />
+
+				The values will be sent to the addresses of the <o>mvc.remote</o> at the specified index (following the setvalue method in MC components).
+			</description>
+		</method>
+
+		<method name="address (on the right inlet)">
+			<arglist>
+				<arg name="address" type="symbol" optional="0"/>
+			</arglist>
+			<digest>
+				Sets the value of a specific address in the <o>mvc.remote</o> namespace (on the right inlet).
+			</digest>
+			<description>
+				<m>address</m> is a possible method on the right inlet.<br />
+
+				The address of a specific <o>mvc.parameter</o> can be given as an OSC formatted symbol. A full <o>mvc.parameter</o> <m>address</m> is considered to be the concatenation of a <m>path</m> and a <m>name</m>.<br />
+				When setting a full <m>address</m>, the <o>mvc.remote</o> will parse it and implicitely set the <m>name</m> as the last part of the address and the <m>path</m> as everything that comes before this last part.<br />
+				Multiple <o>mvc.parameter</o> addresses can be set with the <link type="vignette" module="aim" name="brace_expansion">brace expansion notation</link>.
+			</description>
+		</method>
+
+		<method name="get (on the right inlet)">
+			<arglist>
+				<arg name="arguments" type="list" optional="1"/>
+			</arglist>
+			<digest>
+				Retrieve the <o>mvc.parameter</o> values or attributes.
+			</digest>
+			<description>
+				Possible arguments to the <m>get</m> message are :
+				<ul>
+					<li><m>get address</m> : output the <o>mvc.remote</o> address (compact/braced form)on the right-most outlet.</li>
+					<li><m>get uid</m> : output the <o>mvc.remote</o>'s UID (integer) on the right-most outlet.</li>
+					<li><m>get values</m> : output the values (on first outlet) and addresses/index (on second outlet) for all addresses of this <o>mvc.remote</o>. If it is followed by an index, only this index will be output.</li>
+					<li><m>get addresslist</m> : output the list of addresses on the right-most outlet in the format "addresslist [index] [address]".</li>
+					<li><m>get addresscount</m> : output the number of addresses in the namespace of this parameter.</li>
+					<li><m>get activeaddresslist</m> : output the list of currently active addresses (that is, for which there exist a corresponding <o>mvc.parameter</o>) on the right-most outlet in the format "addresslist [index] [address]".</li>
+					<li><m>get activeaddresscount</m> : output the number of active addresses in the namespace of this parameter.</li>					
+					<li><m>get attributes</m> : dumpout all attributes on the right-most outlet.</li>
+					<li><m>get [attribute]</m> : you can also retrive a specific attribute by specifying its name. For instance the meesage <m>get units</m> will output the units attribute, if any, on the right most outlet.</li>
+				</ul>
+			</description>
+		</method> 
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mvc.model"/>
+		<seealso name="mvc.device"/>
+		<seealso name="mvc.parameter"/>
+		<seealso name="mvc.state"/>
+		<seealso name="mvc.state.remote"/>
+		<seealso name="mvc.message"/>
+		<seealso name="mvc.message.remote"/>
+		<seealso name="mvc.gui.number"/>
+	</seealsolist>
+	
+</c74object>

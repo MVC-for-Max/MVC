@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.GUI.IR.menu" module="aim" kind="patcher" category="library">
+
+	<digest>
+		A GUI interface for an <o>mvc.parameter</o> of type Impulse Reponse buffer.
+	</digest>
+	
+	<description>
+		<o>mvc.GUI.IR.menu</o> is a wrapper around the more general <o>mvc.remote</o> objects. Use this to monitor a impulse response file parameter. It will automatically retrieve and display the list of impulse responses loaded by the <o>mvc.device</o> object from the "data/IR/" folder.
+	</description>
+
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>$
+		<metadata name="tag">utilities</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="bool">
+			<digest>Value input</digest>
+		</inlet>
+		<inlet id="1" type="anything">
+			<digest>Settings to the object.</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="bool">
+			<digest>Value output</digest>
+		</outlet>
+		<outlet id="1" type="anything">
+			<digest>Dump out</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="address" optional="1" type="symbol">
+			<digest>The <o>mvc.parameter</o> or <o>mvc.state</o>'s address to monitor.</digest>
+		</objarg>
+			<description>
+				The address of a specific <o>mvc.parameter</o> or <o>mvc.state</o> can be given as an OSC formatted symbol. Multiple addresses can be set either as a list or using <link type="vignette" module="aim" name="MVC_brace_expansion_and_wildcards">brace expansion notation or wildcards</link>.
+			</description>
+	</objarglist>
+	
+	<attributelist>
+		<attribute name="width" get="0" set="1" type="int" size="1">
+			<digest>
+				The GUI element width.
+			</digest>
+			<description>
+				Set the GUI element item width to fit your GUI.
+			</description>
+		</attribute>
+	</attributelist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="address">
+			<arglist>
+				<arg name="address" optional="0" type="symbol" />
+			</arglist>
+			<digest>
+				Sets the address of the <o>mvc.parameter</o> or <o>mvc.state</o> to monitor.
+			</digest>
+			<description>
+				<m>address</m> is a possible method on the right inlet.<br />
+
+				The address of a specific <o>mvc.parameter</o> or <o>mvc.state</o> can be given as an OSC formatted symbol. Multiple addresses can be set either as a list or using <link type="vignette" module="aim" name="MVC_brace_expansion_and_wildcards">brace expansion notation or wildcards</link>.
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mvc.GUI.samples.menu"/>
+		<seealso name="mvc.GUI.soundfiles.menu"/>
+		<seealso name="mvc.GUI.number"/>
+		<seealso name="mvc.parameter"/>
+		<seealso name="mvc.remote"/>
+	</seealsolist>
+</c74object>

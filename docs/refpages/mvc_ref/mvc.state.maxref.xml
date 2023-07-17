@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+
+<c74object name="mvc.state" module="aim" kind="patcher" category="library">
+
+	<digest>
+		Declare a state and its attributes
+	</digest>
+
+	<description>
+		<o>mvc.state</o> declares a state in the aim namespace - it is very similar to the <o>mvc.parameter</o> object, except that its value is not stored in presets. It is typically used for internal values that need to be queried or set but not stored. For instance, you may want that for the playhead position of a sample player.
+	</description>
+	<discussion>
+		An <o>mvc.state</o> object enable to define states in a model (defined by an <o>mvc.model</o>) to which we'll be able to send data and consequently tweak a process. We can also fetch its value, e.g. to display it in a GUI. Last, unlike <o>mvc.parameter</o>, <o>mvc.state</o>s can <b>not</b> be saved in presets.
+    	... to be discussed if this should just be a flavour of <o>mvc.parameter</o>.<br />
+
+		<o>mvc.parameter</o> helps defining a model in the <link type="vignette" module="aim" name="MVC_principles">MVC model</link> used in the MVC package.
+  	</discussion>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>
+		<metadata name="aim-type">core</metadata>
+	</metadatalist>
+
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" name="Value input" type="any">
+			<digest>Value to set the state to.</digest>
+			<description>Value to set the state to.</description>
+		</inlet>
+		<inlet id="1" name="control messages" type="any">
+			<digest>control the mvc.remote object.</digest>
+		</inlet>
+	</inletlist>
+
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" name="value output" type="any">
+			<digest>Value the state was set to.</digest>
+			<description>Value the state was set to.</description>
+		</outlet>
+		<outlet id="1" name="address outlet" type="any">
+			<digest>output the address and index</digest>
+			<description>Since <o>mvc.state</o> can declare multiple addresses thanks to the braces notation, this outlet provide the specific address for which we are receiving a value on the first outlet.</description>
+		</outlet>
+		<outlet id="2" name="dump outlet" type="any">
+			<digest>Various information messages</digest>
+			<description>Messages and information in reply to various messages</description>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="parent-uid" optional="0" type="symbol">
+			<digest>
+				Parent node's UID to which this <o>mvc.state</o> is attached.
+			</digest>
+			<description>
+				The parent node can either be :
+				<ul>
+					<li>an <b><o>mvc.device</o></b> : in this case, one should provide the device name (which is its own UID).</li>
+					<li>an <b><o>mvc.model</o></b> : in this case, one should provide the model's UID (see <o>mvc.model</o> reference).</li>
+				</ul>
+			</description>
+		</objarg>
+		<objarg name="state-name" optional="0" type="symbol">
+			<digest>
+				The state name.
+			</digest>
+			<description>
+				The state name should be a symbol (that is, it can contain spaces, as long as it is surrounded by quotes). Note that the use of slashes (like "cutoff/frequency") in the name is prohibited. Best to keep it short. 
+			</description>
+		</objarg>
+
+	</objarglist>
+
+	<!--METHODS-->	
+	<methodlist>
+
+		<method name="anything (on the left inlet)">
+			<arglist>
+				<arg name="values" optional="0" type="list"/>
+			</arglist>
+			<digest>
+				Feed values to <o>mvc.state</o>.
+			</digest>
+			<description>
+				The values will be sent to all addresses covered by the <o>mvc.state</o> namespace.
+			</description>
+		</method>
+
+		<method name="setvalue (on the left inlet)">
+			<arglist>
+				<arg name="index" optional="0" type="int"/>
+				<arg name="values" optional="0" type="list"/>
+			</arglist>
+			<digest>
+				Set the value of a specific address in the <o>mvc.state</o> namespace.
+			</digest>
+			<description>
+				The values will be sent to the addresses of the <o>mvc.state</o> at the specified index (following the setvalue method in MC components).
+			</description>
+		</method>
+
+		<method name="name (on the right inlet)">
+			<arglist>
+				<arg name="state-name" type="symbol" optional="0"/>
+			</arglist>
+			<digest>
+				Set the state name.
+			</digest>
+			<description>
+				Multiple state addresses can be set with the <link type="vignette" module="aim" name="brace_expansion">brace expansion notation</link>.
+			</description>
+		</method> 
+
+		<method name="parent (on the right inlet)">
+			<arglist>
+				<arg name="parent UID" type="symbol" optional="0"/>
+			</arglist>
+			<digest>
+				UNSUPPORTED. Set the model to which this state is attached.
+			</digest>
+			<description>
+				UNSUPPORTED..
+			</description>
+		</method> 
+
+		<method name="get (on the right inlet)">
+			<digest>
+				Retrieve the <o>mvc.state</o> values.
+			</digest>
+			<description>
+				Since a single <o>mvc.state</o> instance can stand for multiple addresses, the <m>get</m> message will generate a series of addresses and values output on the first and second outlet of the <o>mvc.state</o> object respectively.
+			</description>
+		</method> 
+
+		<method name="dump (on the right inlet) --- NOT YET IMPLEMENTED!">
+			<arglist/>
+			<digest>
+				Dump all attributes settings to rightmost outlet
+			</digest>
+			<description>
+				The message <m>dump</m> outputs all attribute settings to rightmost outlet
+			</description>
+		</method>
+
+		<method name="reset (on the right inlet) --- NOT YET IMPLEMENTED!">
+			<arglist/>
+			<digest>
+				Reset to default value
+			</digest>
+			<description>
+				The message <m>reset</m> sent to the leftmost inlet reset the current value to the value defined by the <at>default</at> attribute
+			</description>
+		</method>
+
+	</methodlist>
+
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+		<attribute name="default" get="1" set="1" type="anything" size="1">
+			<digest>
+				Default value.
+			</digest>
+			<description>
+				The <at>default</at> attribute sets the value to output at the leftmost outlet on model initialization. The default value can be overridden by the default model preset
+			</description>
+		</attribute>	
+
+		<attribute name="description" get="1" set="1" type="symbol" size="1">
+			<digest>
+				Description of this state.
+			</digest>
+			<description>
+				The <at>description</at> attribute allows to agive a textual description for this node. This helps documenting the state and can be retrieved by GUI elements (e.g. <o>mvc.GUI.number</o>).
+			</description>
+		</attribute>
+		 
+		<attribute name="max" get="1" set="1" type="float" size="1">
+			<digest>
+				Value range maximum
+			</digest>
+			<description>
+				The <at>max</at> attribute defines the maximum value of expected range of possible values. Depending on the <at>clip</at> attribute, this might be a recommended or mandatory range.
+			</description>
+		</attribute>	
+
+		<attribute name="min" get="1" set="1" type="float" size="1">
+			<digest>
+				Value range minimum
+			</digest>
+			<description>
+				The <at>min</at> attribute defines the minimum value of expected range of possible values. Depending on the <at>clip</at> attribute, this might be a recommended or mandatory range.
+			</description>
+		</attribute>	
+		
+		<attribute name="type" get="1" set="1" type="symbol" size="1">
+			<digest>
+				Value type (integer, decimal, string, bool, list)
+			</digest>
+			<description>
+				The <at>type</at> attribute defines the type of the value. Possible types are:
+				<li><m>decimal</m> (default): a floating point value.</li>
+				<li><m>integer</m> : an integer value.</li>
+				<li><m>string</m> : a string value (aka "symbol" in Max).</li>
+				<li><m>bool</m> : boolean value. Implicitely clips value to 0/1</li>
+				<li><m>list</m> : a list of elements including numbers and symbols</li>
+				<li><m>dict</m> : a dictionary</li>
+			</description>
+		</attribute>
+
+		<attribute name="unit" get="1" set="1" type="symbol" size="1">
+			<digest>
+				Unit used by the state
+			</digest>
+			<description>
+				The <at>unit</at> attribute defines the unit used by this state. It can be retrieved and displayed by GUI (and could possibly allow for dynamic unit conversion in the future).
+			</description>
+		</attribute>
+
+		<attribute name="range" get="1" set="1" type="list" size="2">
+			<digest>
+				Value range
+			</digest>
+			<description>
+				The <at>range</at> attribute defines the expected range of possible values. Depending on the <at>clip</at> attribute, this might be a recommended or mandatory range.
+			</description>
+		</attribute>		
+
+	</attributelist>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mvc.model"/>
+		<seealso name="mvc.device"/>
+		<seealso name="mvc.state.remote"/>
+		<seealso name="mvc.parameter"/>
+		<seealso name="mvc.remote"/>
+		<seealso name="mvc.message"/>
+		<seealso name="mvc.message.remote"/>
+	</seealsolist>
+	
+</c74object>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.snapshots" module="aim" kind="patcher" category="library">
+
+	<digest>
+		Store snapshots of some parameters.
+	</digest>
+	
+	<description>
+		mvc.snapshots provides a way to store partial presets, with a faster loading time.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>
+		<metadata name="aim-type">core</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="device-UID" optional="0" type="symbol">
+			<digest>The device UID, to which this <o>mvc.snapshots</o> instance is bound.</digest>
+		</objarg>
+	</objarglist>
+	
+			<!--ATTRIBUTES-->
+	<attributelist>
+		<attribute name="warning" get="1" set="1" type="symbol" size="1">
+			<digest>
+				Set the warning dialog on/off.
+			</digest>
+			<description>
+				When a snapshot is recalled, some of its parameters may not exist in the current namespace (for instance, recalling values on parameters on channels beyond the current channel count of a multichannel component). If warning is enabled, a dialog box will pop up if this happens to notify the user.
+			</description>
+		</attribute>
+	</attributelist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="GUI">
+			<arglist>
+				<arg name="parameter-settings" optional="0" type="float" />
+			</arglist>
+			<digest>
+				GUI: Opens the GUI.
+			</digest>
+			<description>
+				The <o>mvc.snapshots</o>' GUI shows the available namespace in which a series of parameters can be selected to be saved as a snapshot. It also shows the missing parameters, that were featured in the last recalled snapshot, but are missing from the available namespace.
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+	</seealsolist>
+	
+</c74object>

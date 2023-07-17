@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.model.initialized" module="aim" kind="patcher" category="library">
+
+	<digest>
+		Monitor a model initialization state.
+	</digest>
+	
+	<description>
+		<o>mvc.model.initialized</o> enables to check a model's initialization state. 
+	</description>
+	
+	<discussion>
+		The <o>mvc.model.initialized</o> is typically used inside <o>mvc.parameter</o>, <o>mvc.state</o> or <o>mvc.message</o>, to ensure the correct order in the initilization sequence. So, this does *not* mean that the parameters attached to this model are ready too.
+	</discussion>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>
+		<metadata name="aim-type">component</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="anything">
+			<digest>Set the model's UID or send a bang to report currently monitored.</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="bool">
+			<digest>Initialisation state : 0 or 1</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="Initialisation-name" optional="1" type="symbol">
+			<digest>The <o>mvc.model</o>'s UID.</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+	</seealsolist>
+	
+</c74object>

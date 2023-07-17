@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.mc.dynaverage~" module="aim" kind="patcher" category="library">
+
+	<digest>
+		Resettable (mc) signal average.
+	</digest>
+	
+	<description>
+		mvc.mc.dynaverage~ performs the averaging of a (MC) signal, with the possibility to reset the averaging buffer.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>
+		<metadata name="aim-type">component</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>audio input (multichannel)</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>averaging interval in samples</digest>
+		</inlet>
+		<inlet id="2" type="signal">
+			<digest>a non-zero signal resets the internal memory</digest>
+		</inlet>
+</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="float">
+			<digest>averaged signal</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="average"/>
+	</seealsolist>
+	
+</c74object>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.mc.gain~" module="aim" kind="patcher" category="library">
+
+	<digest>
+		Constant power xfade of mc signals.
+	</digest>
+	
+	<description>
+		Really just a MC version of the <i>pan2s.maxpat</i> abstraction in Max.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>
+		<metadata name="aim-type">component</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>audio input</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>panning value (-1, 1)</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>left channel audio output</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>right channel audio output</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mvc.gain~"/>
+		<seealso name="mvc.mc.gain~"/>
+		<seealso name="mvc.mixermatrix~"/>
+	</seealsolist>
+	
+</c74object>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.pub" module="aim" kind="patcher" category="library">
+
+	<digest>
+		Mini-publisher in the publish/subscribe pattern.
+	</digest>
+	
+	<description>
+		<o>mvc.pub</o> allows to count receivers when they subscribe to it.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>$
+		<metadata name="tag">library</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="symbol">
+			<digest>
+				Publisher name
+			</digest>
+			<description>
+				The publisher name can be set dynamically on the first inlet.
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="int">
+			<digest>
+				The number of subscribers.
+			</digest>
+			<description>
+				The number of subscribers is automatically updated here.
+			</description>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="publisherName" optional="0" type="symbol">
+			<digest>The name of the publisher.</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mvc.sub"/>
+		<seealso name="mvc.publish"/>
+		<seealso name="mvc.subscribe"/>
+		<seealso name="mvc.message"/>
+	</seealsolist>
+</c74object>

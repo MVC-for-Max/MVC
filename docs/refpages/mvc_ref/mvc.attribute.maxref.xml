@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+
+<c74object name="mvc.attribute" module="aim" kind="patcher" category="library">
+
+	<digest>
+		Access a parameter's attributes remotely
+	</digest>
+
+	<description>
+		<o>mvc.attribute</o> allows to get or set a parameter's attribute remotely 
+	</description>
+	<discussion>
+    The attribute is an access point for controlling the processing of the patch. 
+    The attribute enables inter-application communication. The attribute is provided with a unique global OSC address. attributes can also be declared on the network in order for other applications such as score to inspect and control models.
+  </discussion>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">aim</metadata>
+		<metadata name="tag">aim</metadata>
+		<metadata name="tag">Network</metadata>
+	</metadatalist>
+
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" name="Value input" type="any">
+			<digest>Get or set a parameter attribute</digest>
+			<description>Get or set a parameter attribute</description>
+		</inlet>
+	</inletlist>
+
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" name="Value output" type="any">
+			<digest>Parameter attribute value</digest>
+			<description>Parameter attribute value</description>
+		</outlet>
+		<outlet id="1" name="Address output" type="any">
+			<digest>output the address and index</digest>
+			<description>Since mvc.attribute can target multiple addresses thanks to the brace-expansion notation, this outlet provides the specific address for which we are receiving a value on the first outlet.</description>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="parent_path" optional="0" type="symbol">
+			<digest>
+				Context to which this mvc.parameter is attached.
+			</digest>
+			<description>
+				The context can either be :
+				<ul>
+					<li><b>a device</b> : in this case, one should provide the device name (which is its own UID).</li>
+					<li><b>a model</b> : in this case, one should provide the model's UID.</li>
+				</ul>
+			</description>
+		</objarg>
+		<objarg name="parameter_name" optional="0" type="symbol">
+			<digest>
+				The parameter name.
+			</digest>
+			<description>
+				Note that the use of slashes (like "cutoff/frequency") in the name will create sub-nodes accordingly.
+			</description>
+		</objarg>
+
+	</objarglist>
+
+	<!--METHODS-->	
+	<methodlist>
+
+		<method name="anything (on the left inlet)">
+			<arglist>
+				<arg name="input" optional="0" type="list"/>
+			</arglist>
+			<digest> Feed values to mvc.parameter.
+			</digest>
+		</method>
+
+		<method name="get (on the left inlet)">
+			<arglist>
+				<arg name="attribute_name" optional="1" type="list"/>
+			</arglist>
+			<digest>
+				Output the attribute for the desired argument.
+			</digest>
+			<description>
+				If not argument is provided, all attributes are being output.
+			</description>
+		</method>
+
+		<method name="name">
+			<arglist>
+				<arg name="node address" type="symbol" optional="0"/>
+			</arglist>
+			<digest>
+				Set node name
+			</digest>
+			<description>
+
+			</description>
+		</method> 
+
+	
+	</methodlist>
+
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+	</attributelist>
+
+
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mvc.parameter"/>
+		<seealso name="mvc.remote"/>
+	</seealsolist>
+
+	
+</c74object>

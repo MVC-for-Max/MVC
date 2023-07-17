@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.brace.expansion" module="aim" kind="patcher" category="library">
+
+	<digest>
+		Performs brace-expansion on input strings.
+	</digest>
+	
+	<description>
+		<o>mvc.brace.expansion</o> expand input strings to a series of output strings. It uses nodeJS with the brace package. It also outputs a destination address that allows mvc.brace.expansion to be used remotely and asynchronously, without getting confused. Brace expansions may be nested. The results of each expanded string are not sorted; left to right order is preserved.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="INLET_TYPE">
+			<digest>
+				Input string to expand.
+			</digest>
+			<description>
+				The input string can contain special characters between curly braces, that will be interpreted by the brace expansion. Syntax is:
+				- {some|words|or|others} wil create one instance per word between the '|' (pipe)
+				- {1..12} wil create instances for all numbers between 1 and 12 
+				- {3..13..3} will create instances for all numbers between 3 and 13, with a step of 3 (i.e. 3, 6, 9, 12
+				- {A,b,some,things} will create an instance for each string between commas (avoid spaces)
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mvc.model"/>
+		<seealso name="mvc.parameter"/>
+		<seealso name="mvc.device"/>
+		<seealso name="mvc.gui.number"/>
+	</seealsolist>
+	
+</c74object>

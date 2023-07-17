@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+<!-- <link type="vignette" module="aim" name="brace_expansion">brace expansion notation</link> : add a link to a vignette -->
+<!-- <img src="images/image137.png" /> : put an image -->
+
+<c74object name="mvc.device" module="aim" kind="patcher" category="library">
+
+	<digest>
+		Create a local device.
+	</digest>
+	
+	<description>
+		<o>mvc.device</o> creates a local device to which any <o>mvc.model</o>, <o>mvc.parameter</o>, <o>mvc.state</o> and <o>mvc.message</o>can register. <br />
+		It is at the root of the namespace and can be considered as a top-level <o>mvc.model</o> in the <link type="vignette" module="aim" name="MVC_principles">MVC model</link> used in the MVC package.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="message">
+			<digest>init: re-initialize the device.</digest>
+		</inlet>
+		<inlet id="1" type="message">
+			<digest>Opens the device's GUI.</digest>
+		</inlet>
+		<inlet id="2" type="message">
+			<digest>debug 0/1: enable the debug prints</digest>
+			<description>This opens a gate in various MVC objects for more verbose.</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="message">
+			<digest>init done: output when init is done.</digest>
+		</outlet>
+		<outlet id="1" type="message">
+			<digest>Info message in response to various queries</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="name" optional="0" type="symbol">
+			<digest>The device's name, to which other MVC objects can subscribe.</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="GUI">
+			<arglist>
+			</arglist>
+			<digest>
+				Opens the device's GUI.
+			</digest>
+			<description>
+				The device's GUI contains a preset menu which allows to store global presets for all models and parameters attached to this device.
+			</description>
+		</method>
+		<method name="init">
+			<arglist>
+			</arglist>
+			<digest>
+				Triggers the mvc.device initilization.
+			</digest>
+			<description>
+				This action is performed by the mvc.device internally with a loadbang, but you can also manually trigger it, for instance if you need to re-initialize all your MVC components.
+			</description>
+		</method>
+		<method name="namespace">
+			<arglist>
+			</arglist>
+			<digest>
+				Dump out the namespace from the right outlet.
+			</digest>
+			<description>
+			</description>
+		</method>
+		<method name="param">
+			<arglist>
+				<arg name="parameter-name" optional="0" type="symbol" />
+				<arg name="parameter-values" optional="0" type="anything" />
+			</arglist>
+			<digest>
+				Pass a value value to a parameter of this model (or submodel).
+			</digest>
+			<description>
+				Passing a parameter's value with the <m>param</m> message allows to easily connect with the rest of the patcher.
+			</description>
+		</method>
+		<method name="preset">
+			<arglist>
+				<arg name="preset-name" optional="0" type="symbol" />
+				<arg name="submodel-address" optional="1" type="symbol"/>
+			</arglist>
+			<digest>
+				Recall a preset from the mvc.device or from any component in the patch.
+			</digest>
+			<description>
+				The preset message followed by a preset name will recall the corresponding preset (if it exists) on the mvc.device. It is also possible to recall a preset of a sub-component (that is, just anywhere in your patcher really) by providing a third argument which is the sub-model address, relative to <o>the mvc.device.</o>
+			</description>
+		</method>
+		<method name="debug">
+			<arglist>
+			</arglist>
+			<digest>
+				Enable the debug prints.
+			</digest>
+			<description>
+				This opens a gate in various MVC objects for more verbose.
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mvc.model"/>
+		<seealso name="mvc.parameter"/>
+		<seealso name="mvc.remote"/>
+		<seealso name="mvc.state"/>
+		<seealso name="mvc.state.remote"/>
+		<seealso name="mvc.message"/>
+		<seealso name="mvc.message.remote"/>
+	</seealsolist>
+	
+</c74object>

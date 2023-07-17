@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.GUI.listselector" module="aim" kind="patcher" category="library">
+
+	<digest>
+		A GUI utility to select items in a list.
+	</digest>
+	
+	<description>
+		This objects allows to select multiple items in a table.
+	</description>
+
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>$
+		<metadata name="tag">utilities</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="list">
+			<digest>List of items to display in the table</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="anything">
+			<digest>List of selected items</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+	</objarglist>
+
+	<!--ATTRIBUTES-->	
+	<attributelist>
+		<attribute name="tablesize" get="0" set="1" type="list" size="2">
+			<digest>
+				The GUI element width and height.
+			</digest>
+			<description>
+				Set the table width and height in pixels.
+			</description>
+		</attribute>
+		<attribute name="sync" get="0" set="1" type="bool" size="1">
+			<digest>
+				Enable jit.cellblock sync on right outlet.
+			</digest>
+			<description>
+			</description>
+		</attribute>
+	</attributelist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="clear (on right inlet)">
+			<arglist>
+			</arglist>
+			<digest>
+				Clear the table.
+			</digest>
+			<description>
+			</description>
+		</method>
+		<method name="select (on right inlet)">
+			<arglist>
+				<arg name="values" optional="0" type="list" />
+			</arglist>
+			<digest>
+				Select one or multiple items in the list.
+			</digest>
+			<description>
+				You can select items with the following keywords and/or item/value pair :
+				<ul>
+					<li><b>all</b> : Select all items</li>
+					<li><b>none</b> : Unselect all items</li>				
+					<li><b>list</b> : Select the corresponding items indices (if integer) or element (if symbols) according to the last element in the list (1 to select, 0 to unselect).</li>
+				</ul>
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+	</seealsolist>
+</c74object>

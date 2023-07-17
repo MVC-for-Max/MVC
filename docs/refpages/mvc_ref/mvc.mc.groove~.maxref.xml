@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.groove~" module="aim" kind="patcher" category="component">
+
+	<digest>
+		Variable-rate looping sample playback (multichannel).
+	</digest>
+	
+	<description>
+		<o>mvc.mc.groove~</o> provides an aim wrapper around the <o>mc.groove~</o> object.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		TEXT_HERE
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		TEXT_HERE
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="parent-UID" optional="0" type="symbol">
+			<digest>The device or model's name, to which this component's model is bound.</digest>
+		</objarg>
+		<objarg name="component-name" optional="0" type="symbol">
+			<digest>The component's (model) name.</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="GUI">
+			<digest>
+				Opens the device's GUI.
+			</digest>
+			<description>
+				The device's GUI contains a preset menu which allows to store global presets for all models and parameters attached to this device.
+			</description>
+		</method>
+		<method name="param">
+			<arglist>
+				<arg name="parameter-name" optional="0" type="symbol" />
+				<arg name="parameter-values" optional="0" type="list" />
+			</arglist>
+			<digest>
+				Set a specific parameter's value of this component.
+			</digest>
+			<description>
+				You can set any parameter's value belonging to your model by sending the message <m>param</m> followed by the parameter name and the value(s).
+				The syntax also allows to address sub-model parameters with the correct prefix.
+				You can also use the brace-expansion syntax to address multiple parameters.
+			</description>
+		</method>
+		<method name="preset">
+			<arglist>
+				<arg name="preset-name" optional="0" type="symbol" />
+			</arglist>
+			<digest>
+				Recalls a preset.
+			</digest>
+			<description>
+				You can recall a specific preset for your model, by sending the message <m>preset</m> followed by the preset name.
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mvc.groove~"/>
+		<seealso name="mc.groove~"/>
+		<seealso name="mvc.mc.poly.sfplay~"/>
+		<seealso name="mvc.mc.sfplay~"/>
+	</seealsolist>
+	
+</c74object>

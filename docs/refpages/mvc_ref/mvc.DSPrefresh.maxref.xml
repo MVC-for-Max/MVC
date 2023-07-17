@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.DSPrefresh" module="aim" kind="patcher" category="library">
+
+	<digest>
+		Refresh DSP (to update MC channels).
+	</digest>
+	
+	<description>
+		<o>mvc.DSPrefresh</o> will restart the DSP if DSP was ON, so that MC channelcount are refreshed. If DSP was off, it will leave it off.
+	</description>
+
+	<discussion>
+		The DSP restart function is actually located in the <o>mvc.device</o>, so there needs to be a device in the patcher.
+	</discussion>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>$
+		<metadata name="tag">utilities</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="anything">
+			<digest>Deferlowed thoughput inlet</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="anything">
+			<digest>Deferlowed thoughput outlet</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="parent-uid" optional="0" type="symbol">
+			<digest>
+				Parent node's UID to which this <o>mvc.parameter</o> is attached.
+			</digest>
+			<description>
+				The parent node can either be :
+				<ul>
+					<li>an <b><o>mvc.device</o></b> : in this case, one should provide the device name (which is its own UID).</li>
+					<li>an <b><o>mvc.model</o></b> : in this case, one should provide the model's UID (see <o>mvc.model</o> reference).</li>
+				</ul>
+			</description>
+		</objarg>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="adstatus"/>
+	</seealsolist>
+</c74object>

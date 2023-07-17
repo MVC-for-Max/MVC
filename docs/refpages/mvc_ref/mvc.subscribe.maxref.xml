@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.subscribe" module="aim" kind="patcher" category="library">
+
+	<digest>
+		Subscriber in the publish/subscribe pattern.
+	</digest>
+	
+	<description>
+		<o>mvc.subscribe</o> allows to receive data from <o>mvc.publisher</o> when they subscribe to it.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>
+		<metadata name="tag">library</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="toggle">
+			<digest>
+				Subscribe/unsubscribe.
+			</digest>
+			<description>
+				Subscribe/unsubscribe to the publisher.
+			</description>
+		</inlet>
+		<inlet id="1" type="symbol">
+			<digest>
+				Publisher name
+			</digest>
+			<description>
+				The publisher name can be set dynamically on the 2nd inlet.
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="anything">
+			<digest>
+				Data sent by the <o>mvc.publisher</o>.
+			</digest>
+			<description>
+				The data sent by the <o>mvc.publisher</o>, as soon as it publishes it.
+			</description>
+		</outlet>
+		<outlet id="1" type="anything">
+			<digest>
+				Latest data sent by the <o>mvc.publisher</o>.
+			</digest>
+			<description>
+				This data is being output when subscribing.
+			</description>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mvc.publish"/>
+		<seealso name="mvc.pub"/>
+		<seealso name="mvc.sub"/>
+		<seealso name="mvc.message"/>
+	</seealsolist>
+</c74object>

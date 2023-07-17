@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.GUI.textinput" module="aim" kind="patcher" category="library">
+
+	<digest>
+		A GUI utility for text input.
+	</digest>
+	
+	<description>
+		Provides a prompt when no text has been input. Note that it does *not* contain an <o>mvc.remote</o>.
+	</description>
+
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>$
+		<metadata name="tag">utilities</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="bool">
+			<digest>Text input</digest>
+		</inlet>
+		<inlet id="1" type="settings">
+			<digest>Settings to the object.</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="bool">
+			<digest>Text output</digest>
+		</outlet>
+		<outlet id="1" type="anything">
+			<digest>Dump out</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="caption">
+			<arglist>
+				<arg name="caption" optional="0" type="symbol" />
+			</arglist>
+			<digest>
+				Sets the prompt when no text has been input.
+			</digest>
+			<description>
+			</description>
+		</method>
+		<method name="textinput">
+			<digest>
+				Pass any setting to the interal <o>textedit</o> object.
+			</digest>
+			<description>
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mvc.GUI.number"/>
+		<seealso name="textedit"/>
+	</seealsolist>
+</c74object>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.mc.freqshift~" module="aim" kind="patcher" category="component">
+
+	<digest>
+		Time-domain frequency shifter (multichannel).
+	</digest>
+	
+	<description>
+		mvc.mc.freqshift~ provides the <o>mc.freqshift~</o> object as an MVC component.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>
+		<metadata name="aim-type">component</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>audio input</digest>
+		</inlet>
+		<inlet id="1" type="message">
+			<digest>control messages to the component</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>audio output</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="parent-UID" optional="0" type="symbol">
+			<digest>The device or model's name, to which this component's model is bound.</digest>
+		</objarg>
+		<objarg name="component-name" optional="0" type="symbol">
+			<digest>The component's (model) name.</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="GUI">
+			<digest>
+				Opens the device's GUI.
+			</digest>
+			<description>
+				The device's GUI contains a preset menu which allows to store global presets for all models and parameters attached to this device.
+			</description>
+		</method>
+		<method name="param">
+			<arglist>
+				<arg name="parameter-name" optional="0" type="symbol" />
+				<arg name="parameter-values" optional="0" type="list" />
+			</arglist>
+			<digest>
+				Set a specific parameter's value of this component.
+			</digest>
+			<description>
+				You can set any parameter's value belonging to your model by sending the message <m>param</m> followed by the parameter name and the value(s).
+				The syntax also allows to address sub-model parameters with the correct prefix.
+				You can also use the brace-expansion syntax to address multiple parameters.
+
+				The list of parameters for the <o>mvc.mc.freqshift~</o> object is :
+				<ul>
+					<li><b>channelcount</b> : the number of channel or channel-layout.</li>			
+					<li><b>channel.N/freqshift</b> : the frequency shift for the Nth channel.</li>			
+				</ul>
+			</description>
+		</method>
+		<method name="preset">
+			<arglist>
+				<arg name="preset-name" optional="0" type="symbol" />
+			</arglist>
+			<digest>
+				Recalls a preset.
+			</digest>
+			<description>
+				You can recall a specific preset for your model, by sending the message <m>preset</m> followed by the preset name.
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mvc.biquad~"/>
+		<seealso name="mvc.cascade~"/>
+		<seealso name="mvc.mc.cascade~"/>
+	</seealsolist>
+	
+</c74object>

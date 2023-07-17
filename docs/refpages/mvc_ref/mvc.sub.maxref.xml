@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.sub" module="aim" kind="patcher" category="library">
+
+	<digest>
+		Mini-subscriber in the publish/subscribe pattern.
+	</digest>
+	
+	<description>
+		<o>mvc.sub</o> allows to subscribe to a <o>mvc.pub</o> or a <o>mvc.publisher</o>.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>
+		<metadata name="tag">library</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="toggle">
+			<digest>
+				Subscribe/unsubscribe.
+			</digest>
+			<description>
+				Subscribe/unsubscribe to the publisher.
+			</description>
+		</inlet>
+		<inlet id="1" type="symbol">
+			<digest>
+				Publisher name
+			</digest>
+			<description>
+				The publisher name can be set dynamically on the 2nd inlet.
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="publisherName" optional="0" type="symbol">
+			<digest>The name of the publisher.</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mvc.pub"/>
+		<seealso name="mvc.publish"/>
+		<seealso name="mvc.subscribe"/>
+		<seealso name="mvc.message"/>
+	</seealsolist>
+</c74object>

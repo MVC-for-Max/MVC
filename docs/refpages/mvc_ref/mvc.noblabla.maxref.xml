@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.noblabla" module="aim" kind="patcher" category="library">
+
+	<digest>
+		Queue/delay based message limiter, get only last word.
+	</digest>
+	
+	<description>
+		<o>mvc.noblabla</o> filters the stream of messages, so that only the last event (after a predefined delay) will be output. It makes use of an internal delay, that is reset every times a new event arrives. Last received event will be output when no new event has arrived, and the delay has elapsed.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>
+		<metadata name="tag">library</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" name="Value input" type="any">
+			<digest>Message input to be filtered.</digest>
+			<description>Message input to be filtered.</description>
+		</inlet>
+		<inlet id="1" name="delay time" type="any">
+			<digest>Delay before which nothing will be output.</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" name="Value output" type="any">
+			<digest>Filtered message stream.</digest>
+			<description>Filtered message stream.</description>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="delay-time" optional="0" type="float">
+			<digest>
+				Internal delay time.
+			</digest>
+			<description>
+			</description>
+		</objarg>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="qlim"/>
+		<seealso name="mvc.qlow"/>
+	</seealsolist>
+</c74object>

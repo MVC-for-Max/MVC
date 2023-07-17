@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.mc.subscribe~" module="aim" kind="patcher" category="library">
+
+	<digest>
+		Audio subscriber in the publish/subscribe pattern (multichannel).
+	</digest>
+	
+	<description>
+		<o>mvc.mc.subscribe~</o> allows to receive data from <o>mvc.mc.publisher~</o> when they subscribe to it.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>
+		<metadata name="tag">library</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="toggle">
+			<digest>
+				Subscribe/unsubscribe.
+			</digest>
+			<description>
+				Subscribe/unsubscribe to the publisher.
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="anything">
+			<digest>
+				Audio sent by the <o>mvc.publisher</o>.
+			</digest>
+			<description>
+				The audio sent by the <o>mvc.mc.publisher~</o>.
+			</description>
+		</outlet>
+		<outlet id="1" type="anything">
+			<digest>
+				dumpout
+			</digest>
+			<description>
+			</description>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mvc.subscribe"/>
+		<seealso name="mvc.mc.publish~"/>
+		<seealso name="mvc.subscribe"/>
+	</seealsolist>
+</c74object>
