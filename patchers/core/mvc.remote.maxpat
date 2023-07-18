@@ -6326,15 +6326,15 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 5,
 																	"outlettype" : [ "dictionary", "", "", "", "" ],
-																	"patching_rect" : [ 50.0, 127.206554878048777, 161.0, 22.0 ],
+																	"patching_rect" : [ 50.0, 127.206554878048777, 162.0, 22.0 ],
 																	"saved_object_attributes" : 																	{
 																		"embed" : 0,
-																		"legacy" : 1,
+																		"legacy" : 0,
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict mvc.inputs.dict @quiet 1"
+																	"text" : "dict mvc.nodes.dict @quiet 1"
 																}
 
 															}
@@ -7797,7 +7797,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 841.0, 348.0, 720.0, 325.0 ],
+						"rect" : [ 840.0, 348.0, 720.0, 325.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -7971,7 +7971,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 243.0, 121.0, 562.0, 476.0 ],
+										"rect" : [ 1014.0, 161.0, 562.0, 476.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -8516,7 +8516,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 111.0, 105.0, 75.0, 22.0 ],
+																	"patching_rect" : [ 111.0, 105.0, 75.0, 35.0 ],
 																	"text" : "mvc.osc2dict"
 																}
 
@@ -8643,20 +8643,19 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-1",
-																					"linecount" : 2,
 																					"maxclass" : "newobj",
 																					"numinlets" : 2,
 																					"numoutlets" : 5,
 																					"outlettype" : [ "dictionary", "", "", "", "" ],
-																					"patching_rect" : [ 107.5, 171.114951327545668, 107.0, 22.0 ],
+																					"patching_rect" : [ 107.5, 171.114951327545668, 111.0, 22.0 ],
 																					"saved_object_attributes" : 																					{
 																						"embed" : 0,
-																						"legacy" : 1,
+																						"legacy" : 0,
 																						"parameter_enable" : 0,
 																						"parameter_mappable" : 0
 																					}
 ,
-																					"text" : "dict mvc.inputs.dict"
+																					"text" : "dict mvc.nodes.dict"
 																				}
 
 																			}
@@ -9344,7 +9343,7 @@
 																					"numinlets" : 1,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 55.5, 59.0, 106.0, 22.0 ],
+																					"patching_rect" : [ 55.5, 59.0, 106.0, 35.0 ],
 																					"saved_object_attributes" : 																					{
 																						"filename" : "mvc.wildcard2.js",
 																						"parameter_enable" : 0
@@ -10806,13 +10805,12 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-1",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "int" ],
-																	"patching_rect" : [ 31.0, 226.84955752212386, 117.0, 35.0 ],
-																	"text" : "mvc.model.initialized"
+																	"patching_rect" : [ 31.0, 226.84955752212386, 113.0, 22.0 ],
+																	"text" : "mvc.node.initialized"
 																}
 
 															}
@@ -11830,8 +11828,8 @@
 																					"numinlets" : 0,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 86.333333333333371, 91.0, 156.0, 22.0 ],
-																					"text" : "r MVC.parameter.initializers"
+																					"patching_rect" : [ 86.333333333333371, 91.0, 128.0, 22.0 ],
+																					"text" : "r MVC.input.initializers"
 																				}
 
 																			}
@@ -12211,15 +12209,15 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 5,
 																	"outlettype" : [ "dictionary", "", "", "", "" ],
-																	"patching_rect" : [ 156.0, 296.0, 161.0, 22.0 ],
+																	"patching_rect" : [ 156.0, 296.0, 162.0, 22.0 ],
 																	"saved_object_attributes" : 																	{
 																		"embed" : 0,
-																		"legacy" : 1,
+																		"legacy" : 0,
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
 																	}
 ,
-																	"text" : "dict mvc.inputs.dict @quiet 1"
+																	"text" : "dict mvc.nodes.dict @quiet 1"
 																}
 
 															}

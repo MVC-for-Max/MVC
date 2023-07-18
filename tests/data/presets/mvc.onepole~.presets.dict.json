@@ -1,0 +1,38 @@
+{
+	"_metadata" : 	{
+		"package-version" : 0.4
+	}
+,
+	"half-devil" : 	{
+		"preset-editflag" : 0,
+		"preset-name" : "half-devil",
+		"preset-description" : "undefined",
+		"ON" : 1,
+		"frequency" : 3333.0
+	}
+,
+	"devil" : 	{
+		"preset-editflag" : 0,
+		"preset-name" : "devil",
+		"preset-description" : "undefined",
+		"ON" : 1,
+		"frequency" : 666.0
+	}
+,
+	"take five" : 	{
+		"preset-editflag" : 0,
+		"preset-name" : "take five",
+		"preset-description" : "undefined",
+		"ON" : 1,
+		"frequency" : 555.0
+	}
+,
+	"two" : 	{
+		"preset-editflag" : 0,
+		"preset-name" : "two",
+		"preset-description" : "undefined",
+		"ON" : 1,
+		"frequency" : 20.0
+	}
+
+}

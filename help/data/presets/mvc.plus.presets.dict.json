@@ -1,0 +1,20 @@
+{
+	"_metadata" : 	{
+		"package-version" : 0.4
+	}
+,
+	"123" : 	{
+		"preset-description" : "undefined",
+		"ON" : 1,
+		"preset-name" : "123",
+		"offset" : 123.0
+	}
+,
+	"456" : 	{
+		"preset-description" : "undefined",
+		"ON" : 1,
+		"preset-name" : "456",
+		"offset" : 456.0
+	}
+
+}

@@ -2,5 +2,36 @@
 	"_metadata" : 	{
 		"package-version" : 0.4
 	}
+,
+	"test" : 	{
+		"preset-description" : "undefined",
+		"ON" : 1,
+		"preset-name" : "test",
+		"preset-editflag" : 0,
+		"test" : 1234.0,
+		"mc.cas" : 		{
+			"preset-description" : "undefined",
+			"ON" : 1,
+			"preset-name" : "none",
+			"preset-editflag" : 0,
+			"channelcount" : "Mono"
+		}
+,
+		"testingName" : 		{
+			"preset-description" : "undefined",
+			"ON" : 1,
+			"preset-name" : "none",
+			"preset-editflag" : 0
+		}
+,
+		"myOnepole" : 		{
+			"preset-editflag" : 1,
+			"preset-name" : "two",
+			"preset-description" : "undefined",
+			"ON" : 1,
+			"frequency" : 176.0
+		}
+
+	}
 
 }

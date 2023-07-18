@@ -1,0 +1,34 @@
+{
+	"_metadata" : 	{
+		"package-version" : 0.4
+	}
+,
+	"testPi" : 	{
+		"preset-description" : "undefined",
+		"ON" : 1,
+		"preset-name" : "testPi",
+		"myFunkyOnePole" : 		{
+			"preset-description" : "undefined",
+			"ON" : 1,
+			"preset-name" : "pi",
+			"frequency" : 314.0,
+			"preset-editflag" : 0
+		}
+
+	}
+,
+	"modPi" : 	{
+		"preset-description" : "undefined",
+		"ON" : 1,
+		"preset-name" : "modPi",
+		"myFunkyOnePole" : 		{
+			"preset-description" : "undefined",
+			"ON" : 1,
+			"preset-name" : "pi",
+			"frequency" : 320.0,
+			"preset-editflag" : 0
+		}
+
+	}
+
+}

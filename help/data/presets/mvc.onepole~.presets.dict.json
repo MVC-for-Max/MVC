@@ -12,11 +12,11 @@
 	}
 ,
 	"toutout" : 	{
-		"frequency" : 2222.0,
-		"ON" : 1,
 		"preset-description" : "undefined",
-		"preset-editflag" : 0,
-		"preset-name" : "toutout"
+		"ON" : 1,
+		"preset-name" : "toutout",
+		"frequency" : 2222.0,
+		"preset-editflag" : 0
 	}
 ,
 	"trois" : 	{
@@ -36,11 +36,10 @@
 	}
 ,
 	"cinq" : 	{
-		"frequency" : 5555.0,
-		"ON" : 1,
 		"preset-description" : "undefined",
-		"preset-editflag" : 0,
-		"preset-name" : "cinq"
+		"ON" : 1,
+		"preset-name" : "cinq",
+		"frequency" : 5555.0
 	}
 ,
 	"devil" : 	{
@@ -60,11 +59,11 @@
 	}
 ,
 	"pi" : 	{
-		"frequency" : 314.0,
-		"ON" : 1,
 		"preset-description" : "undefined",
-		"preset-editflag" : 0,
-		"preset-name" : "pi"
+		"ON" : 1,
+		"preset-name" : "pi",
+		"frequency" : 314.0,
+		"preset-editflag" : 0
 	}
 ,
 	"what" : 	{
