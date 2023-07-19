@@ -2,5 +2,96 @@
 	"_metadata" : 	{
 		"package-version" : 0.4
 	}
+,
+	"StereoPeakNotch" : 	{
+		"preset-description" : "undefined",
+		"ON" : 1,
+		"preset-name" : "StereoPeakNotch",
+		"channelcount" : "Stereo",
+		"channel.1" : 		{
+			"nfilters" : 3,
+			"ON" : 1,
+			"preset-name" : "none",
+			"filter.1" : 			{
+				"gain" : -12.126923116760882,
+				"frequency" : 62.75164262269702,
+				"preset-name" : "none",
+				"filtermode" : "peaknotch",
+				"ON" : 1,
+				"preset-description" : "undefined",
+				"Q" : 1.0
+			}
+,
+			"preset-description" : "undefined",
+			"filter.2" : 			{
+				"gain" : -12.126923116760882,
+				"filtermode" : "peaknotch",
+				"ON" : 1,
+				"preset-name" : "none",
+				"frequency" : 282.521427137099693,
+				"preset-description" : "undefined",
+				"Q" : 1.0
+			}
+,
+			"filter.3" : 			{
+				"gain" : -11.352927065954699,
+				"filtermode" : "peaknotch",
+				"ON" : 1,
+				"preset-name" : "none",
+				"frequency" : 3123.667030872143641,
+				"preset-description" : "undefined",
+				"Q" : 1.0
+			}
+
+		}
+,
+		"channel.2" : 		{
+			"nfilters" : 4,
+			"ON" : 1,
+			"preset-name" : "none",
+			"preset-description" : "undefined",
+			"filter.1" : 			{
+				"gain" : 13.695679157260807,
+				"preset-name" : "none",
+				"frequency" : 48.003990267467564,
+				"filtermode" : "peaknotch",
+				"ON" : 1,
+				"preset-description" : "undefined",
+				"Q" : 1.0
+			}
+,
+			"filter.2" : 			{
+				"gain" : 0.0,
+				"filtermode" : "peaknotch",
+				"preset-description" : "undefined",
+				"ON" : 1,
+				"preset-name" : "none",
+				"frequency" : 1000.0,
+				"Q" : 1.0
+			}
+,
+			"filter.3" : 			{
+				"gain" : 0.0,
+				"filtermode" : "peaknotch",
+				"preset-description" : "undefined",
+				"ON" : 1,
+				"preset-name" : "none",
+				"frequency" : 1000.0,
+				"Q" : 1.0
+			}
+,
+			"filter.4" : 			{
+				"gain" : 0.0,
+				"filtermode" : "peaknotch",
+				"preset-description" : "undefined",
+				"ON" : 1,
+				"preset-name" : "none",
+				"frequency" : 1000.0,
+				"Q" : 1.0
+			}
+
+		}
+
+	}
 
 }
