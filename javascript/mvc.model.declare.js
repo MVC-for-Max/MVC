@@ -1,6 +1,4 @@
-	// mvc.dict.flatten.js : output each node of a dictionary tree
-// This version of flatten will output *both* the dictionary at intermediate levels and the leaf at the end of the tree.
-// This enables to have parameter stored as dictionary.
+// mvc.parameter.declare.js
 
 inlets = 1;
 outlets = 2;
@@ -10,10 +8,6 @@ _MVC_VERSION = 0.4;
 var modelDict = new Dict();
 modelDict.quiet = 1;
 modelDict.name = "mvc.models.dict";
-
-// var parametersDict = new Dict();
-// parametersDict.quiet = 1;
-// parametersDict.name = "mvc.parameters.dict";
 	
 var inputsDict = new Dict();
 inputsDict.quiet = 1;
@@ -22,11 +16,6 @@ inputsDict.name = "mvc.inputs.dict";
 var parametersValuesDict = new Dict();
 parametersValuesDict.quiet = 1;
 parametersValuesDict.name = "mvc.parameters.values.dict";
-
-// var paramAttrDict = new Dict();
-
-// var modelDefDict = new Dict();
-// modelDefDict.name = "mvc.model-definitions.dict";
 
 var model_UID = 0;
 
@@ -109,7 +98,7 @@ function updateDictionaries(){
 }
 
 function declare(){
-	//just pass arguments to updtaeDictionaries
+	//just pass arguments to updateDictionaries
 	// (see https://stackoverflow.com/questions/3914557/passing-arguments-forward-to-another-javascript-function)
 	//post("model args in declare", JSON.stringify(arguments), "\n");
 	updateDictionaries.apply(null, arguments);

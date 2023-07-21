@@ -17,7 +17,6 @@ var parametersValuesDict = new Dict();
 parametersValuesDict.quiet = 1;
 parametersValuesDict.name = "mvc.parameters.values.dict";
 
-var parameter_type;
 var parameter_UID = 0;
 
 var previousAddresses = [];
@@ -97,7 +96,7 @@ function updateDictionaries(){
 }
 
 function declare(){
-	//just pass arguments to updtaeDictionaries
+	//just pass arguments to updateDictionaries
 	// (see https://stackoverflow.com/questions/3914557/passing-arguments-forward-to-another-javascript-function)
 	//post("model args in declare", JSON.stringify(arguments), "\n");
 	updateDictionaries.apply(null, arguments);
