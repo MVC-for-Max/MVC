@@ -3,7 +3,7 @@
 // This enables to have parameter stored as dictionary.
 
 inlets = 1;
-outlets = 3;
+outlets = 2;
 
 _MVC_VERSION = 0.4;
 
@@ -106,13 +106,6 @@ function updateDictionaries(){
 		modelDict.replace(theAdd + "::uid", addressUID);
 	}
 	
-	// *First*, send initializers to private (param and states)
-	outlet(1, model_UID.toString()+".i", 1);
-
-	// *Then*, send initializers to public (remotes)
-	for (var i = 0; i < (currentAddresses.length); i++) {
-		outlet(2, currentAddresses[i], 1);	
-	}
 }
 
 function declare(){
@@ -120,8 +113,18 @@ function declare(){
 	// (see https://stackoverflow.com/questions/3914557/passing-arguments-forward-to-another-javascript-function)
 	//post("model args in declare", JSON.stringify(arguments), "\n");
 	updateDictionaries.apply(null, arguments);
-	// bang when done
+	
 	var initState = arrayfromargs(arguments).length;
+	
+	// *First*, send initializers to private (param and states)
+	outlet(1, model_UID.toString()+".i", initState);
+
+	// *Then*, send initializers to public (remotes)
+	for (var i = 0; i < (currentAddresses.length); i++) {
+		outlet(1, currentAddresses[i], 1);	
+	}
+	
+	// bang when done
 	var sendAddress = model_UID + ".model.declare.done";
 	outlet(0, "send", sendAddress);
 	outlet(0, initState>0);
