@@ -3,7 +3,7 @@
 // This enables to have parameter stored as dictionary.
 
 inlets = 1;
-outlets = 2;
+outlets = 3;
 
 _MVC_VERSION = 0.4;
 
@@ -101,13 +101,17 @@ function updateDictionaries(){
 	for (var i = 0; i < (currentAddresses.length); i++) {
 		var theAdd = currentAddresses[i].replace(/\//g, '::');
     	//post('add', i, model_UID, theAdd, "\n");
-    	var addressUID = [model_UID, i + 1];
+    var addressUID = [model_UID, i + 1];
 		// parametersDict.replace(theAdd + "::uid", addressUID);
 		modelDict.replace(theAdd + "::uid", addressUID);
-		
-		//outlet(1, currentAddresses[i], 1);
-		outlet(1, model_UID.toString(), 1);
+	}
+	
+	// *First*, send initializers to private (param and states)
+	outlet(1, model_UID.toString()+".i", 1);
 
+	// *Then*, send initializers to public (remotes)
+	for (var i = 0; i < (currentAddresses.length); i++) {
+		outlet(2, currentAddresses[i], 1);	
 	}
 }
 
