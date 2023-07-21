@@ -1,4 +1,4 @@
-
+// mvc.state.declare.js
 
 inlets = 1;
 outlets = 4;
@@ -25,7 +25,6 @@ var currentAddresses = ["dummy"];
 var stateAddressDict = new Dict();
 stateAddressDict.name = "stateAddressDict";
 stateAddressDict.quiet = 1;
-// var parentUID;
 
 function updateDictionaries(){
 	
