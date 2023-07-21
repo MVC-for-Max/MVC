@@ -117,7 +117,7 @@ function declare(){
 	var initState = arrayfromargs(arguments).length;
 	
 	// *First*, send initializers to private (param and states)
-	outlet(1, model_UID.toString()+".i", initState);
+	outlet(1, model_UID.toString()+".i", initState>0);
 
 	// *Then*, send initializers to public (remotes)
 	for (var i = 0; i < (currentAddresses.length); i++) {
