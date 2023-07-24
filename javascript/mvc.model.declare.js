@@ -17,6 +17,10 @@ var parametersValuesDict = new Dict();
 parametersValuesDict.quiet = 1;
 parametersValuesDict.name = "mvc.parameters.values.dict";
 
+var statesValuesDict = new Dict();
+statesValuesDict.quiet = 1;
+statesValuesDict.name = "mvc.states.values.dict";
+
 var model_UID = 0;
 
 var previousAddresses = [];
@@ -28,8 +32,14 @@ modelAddressDict.quiet = 1;
 
 function updateDictionaries(){
 	
+	// new addresses provided as args
+	currentAddresses = arrayfromargs(arguments);
+
+	model_UID = currentAddresses[0];
+	currentAddresses.shift();
+	
+	// fetch previous addresses for this model UID
 	var test = modelAddressDict.get(model_UID);
-	//post("test", test, "\n");
 	if (test != null) {
 		if (Array.isArray(test)) {
 			previousAddresses = test;
@@ -43,14 +53,9 @@ function updateDictionaries(){
 	}
 	else {
 		previousAddresses = [];
-	}
-	
-	//post("pa", previousAddresses, "\n");
-	//previousAddresses = currentAddresses;
-	currentAddresses = arrayfromargs(arguments);
-	// currentAddresses.push("dummy");
-	
-	
+	}	
+
+	// update nondeUID / address storage for this node
 	if (currentAddresses.length == 0) {
 		modelAddressDict.remove(model_UID.toString());
 	}
@@ -58,20 +63,15 @@ function updateDictionaries(){
 		modelAddressDict.set(model_UID, currentAddresses);
 	} 
 
-	//post("isarray", Array.isArray(currentAddresses), "\n");
-	//post("currentAddresses[0]", currentAddresses[0], "\n");
-
-	//post("received list " + currentAddresses + "\n");
-
+	// compare new addresses with previous addresses for this node
 	var missingAdresses = findGoneItems(currentAddresses, previousAddresses);
-	//post('missingAdresses', missingAdresses, '\n');
-	//post("missingAdresses isarray", Array.isArray(currentAddresses), "\n");
 
 	// remove gone addresses only for values
 	for (var i = 0; i < (missingAdresses.length); i++) {
 		var theAdd = missingAdresses[i].replace(/\//g, '::');
 		//post('removing', theAdd, '\n')
 		parametersValuesDict.remove(theAdd);
+		statesValuesDict.remove(theAdd);
 		inputsDict.remove(theAdd);
 		//outlet(1, model_UID.toString(), 0); // no need to uninitialize as they will be remove
 	}
@@ -97,10 +97,26 @@ function updateDictionaries(){
 	
 }
 
+function test(addresses){
+	post("add", addresses, "\n");
+
+}
+
+
 function declare(){
 	//just pass arguments to updateDictionaries
 	// (see https://stackoverflow.com/questions/3914557/passing-arguments-forward-to-another-javascript-function)
 	//post("model args in declare", JSON.stringify(arguments), "\n");
+//
+	//model_UID = arguments[0];
+	//post("model_UID", model_UID, "\n");
+//
+	//var _a_args = arrayfromargs(arguments);
+	//_a_args.shift();
+	//post("_a_args", JSON.stringify(_a_args), "\n");
+
+	//updateDictionaries(_a_args);
+
 	updateDictionaries.apply(null, arguments);
 	
 	var initState = arrayfromargs(arguments).length;

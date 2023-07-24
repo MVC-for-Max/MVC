@@ -15,48 +15,48 @@ inputsDict.name = "mvc.inputs.dict";
 
 var statesValuesDict = new Dict();
 statesValuesDict.quiet = 1;
-statesValuesDict.name = "mvc.statess.values.dict";
+statesValuesDict.name = "mvc.states.values.dict";
 
 var states_UID = 0;
 
 var previousAddresses = [];
-var currentAddresses = ["dummy"];
+var currentAddresses = [];
 var stateAddressDict = new Dict();
 stateAddressDict.name = "stateAddressDict";
 stateAddressDict.quiet = 1;
 
 function updateDictionaries(){
 	
-	var test = stateAddressDict.get(state_UID);
-	//post(test);
-	if (test != null) {
-		previousAddresses = test;
-		}
-	else {
-		previousAddresses= [];
-		}
-	//post("pa", previousAddresses, "\n");
-	//previousAddresses = currentAddresses;
 	currentAddresses = arrayfromargs(arguments);
-	currentAddresses.push("dummy");
-	//post("isarray", Array.isArray(previousAddresses), "\n");
-	//post("currentAddresses[0]", currentAddresses[0], "\n");
 
-	//post("received list " + currentAddresses + "\n");
-
-	var missingAdresses = findGoneItems(currentAddresses, previousAddresses);
-	//post('missingAdresses', missingAdresses, '\n');
+	// compare new addresses with previous addresses for this node
+	var test = stateAddressDict.get(state_UID);
+	if (test != null) {
+		if (Array.isArray(test)) {
+			previousAddresses = test;
+			//post("previous address is an array \n");
+		}
+		else {
+			previousAddresses = [];
+			previousAddresses.push(test);
+			//post("previous address is a solo \n");
+		}
+	}
+	else {
+		previousAddresses = [];
+	}
 	
-	// if only dummy is in the new address, remove from the cached addresses dict
-	if (currentAddresses.length == 1){
-		//post("removing from stateAddressDict", state_UID , "\n");
+	// update nodeUID / address storage for this node
+	if (currentAddresses.length == 0){
 		stateAddressDict.remove(state_UID.toString());
 	}
-	else{
-		//post("new addresses fro stateAddressDict", state_UID , "\n");
+	else {
 		stateAddressDict.set(state_UID, currentAddresses);
 	}
-	
+
+	// compare new addresses with previous addresses for this node
+	var missingAdresses = findGoneItems(currentAddresses, previousAddresses);
+
 	// remove gone addresses only for values
 	for (var i = 0; i < (missingAdresses.length); i++) {
 		var theAdd = missingAdresses[i].replace(/\//g, '::');
@@ -72,8 +72,9 @@ function updateDictionaries(){
 		inputsDict.remove(theAdd);
 		//post("removing state:", theAdd, "\n");
 	}
+
 	// add new addresses in model dict
-	for (var i = 0; i < (currentAddresses.length-1); i++) {
+	for (var i = 0; i < (currentAddresses.length); i++) {
 		var theAdd = currentAddresses[i].replace(/\//g, '::');
     	//post('add', i, theAdd, "\n");
     	var addressUID = [state_UID, i + 1];
@@ -90,8 +91,7 @@ function updateDictionaries(){
 			//outlet(3, i+1);
 			outlet(3, i + 1, state_UID);
 		}
-		outlet(1, currentAddresses[i], 1);
-
+		//outlet(1, currentAddresses[i], 1); // now done in declare
 	}
 }
 
@@ -100,10 +100,17 @@ function declare(){
 	// (see https://stackoverflow.com/questions/3914557/passing-arguments-forward-to-another-javascript-function)
 	//post("model args in declare", JSON.stringify(arguments), "\n");
 	updateDictionaries.apply(null, arguments);
+
+	// Send initializers to public (remotes)
+	for (var i = 0; i < (currentAddresses.length); i++) {
+		outlet(1, currentAddresses[i], 1);	
+	}
+
 	// bang when done
 	var sendAddress = state_UID + ".state.declare.done";
+	var initState = arrayfromargs(arguments).length;
 	outlet(0, "send", sendAddress)
-	outlet(0, "bang")
+	outlet(0, (initState > 0));
 }
 
 function setStateUID(uid){

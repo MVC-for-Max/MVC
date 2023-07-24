@@ -1,4 +1,24 @@
 {
+	"3" : 	{
+		"gain" : 3.0,
+		"Q" : 3.0,
+		"filtermode" : "bandpass",
+		"preset-description" : "undefined",
+		"ON" : 1,
+		"preset-name" : "3",
+		"frequency" : 3333.0
+	}
+,
+	"5" : 	{
+		"gain" : 5.0,
+		"Q" : 5.0,
+		"filtermode" : "peaknotch",
+		"preset-description" : "undefined",
+		"ON" : 1,
+		"preset-name" : "5",
+		"frequency" : 555.0
+	}
+,
 	"_metadata" : 	{
 		"package-version" : 0.4
 	}

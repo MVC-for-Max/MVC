@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 58.0, 211.0, 955.0, 636.0 ],
+		"rect" : [ 55.0, 195.0, 871.0, 636.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -113,7 +113,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 955.0, 610.0 ],
+						"rect" : [ 0.0, 26.0, 871.0, 610.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -175,7 +175,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 58.0, 237.0, 955.0, 610.0 ],
+						"rect" : [ 55.0, 221.0, 871.0, 610.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -212,21 +212,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 27.0, 279.0, 191.0, 22.0 ],
-									"text" : "mvc.onepole~ onepoleHelper One",
+									"patching_rect" : [ 21.5, 279.0, 212.0, 22.0 ],
+									"text" : "mvc.mc.cascade~ onepoleHelper One",
 									"varname" : "mvc.mc.cascade~"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-24",
-									"maxclass" : "newobj",
-									"numinlets" : 0,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 627.5, 448.0, 128.0, 22.0 ],
-									"text" : "r MVC.state.initializers"
 								}
 
 							}
@@ -266,29 +254,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-9",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 620.25, 566.0, 56.0, 22.0 ],
-									"text" : "print +++"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-10",
-									"maxclass" : "newobj",
-									"numinlets" : 0,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 627.5, 491.0, 156.0, 22.0 ],
-									"text" : "r MVC.parameter.initializers"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-19",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -296,29 +261,6 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 633.5, 183.5, 29.5, 22.0 ],
 									"text" : "init"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-17",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 462.75, 566.0, 47.0, 22.0 ],
-									"text" : "print ---"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-13",
-									"maxclass" : "newobj",
-									"numinlets" : 0,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 470.0, 491.0, 141.0, 22.0 ],
-									"text" : "r MVC.models.initializers"
 								}
 
 							}
@@ -1005,7 +947,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 706.5, 255.5, 65.0, 22.0 ],
+									"patching_rect" : [ 710.5, 254.5, 65.0, 22.0 ],
 									"text" : "print MAIN"
 								}
 
@@ -1172,14 +1114,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-16",
-									"lastchannelcount" : 3,
+									"lastchannelcount" : 2,
 									"maxclass" : "mc.live.gain~",
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"orientation" : 1,
 									"outlettype" : [ "multichannelsignal", "", "float", "list" ],
 									"parameter_enable" : 1,
-									"patching_rect" : [ 21.5, 318.5, 136.0, 42.0 ],
+									"patching_rect" : [ 21.5, 318.5, 136.0, 36.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "mc.live.gain~[3]",
@@ -1254,6 +1196,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-28", 0 ],
+									"source" : [ "obj-26", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-37", 1 ],
 									"midpoints" : [ 720.0, 213.5, 720.0, 213.5 ],
 									"source" : [ "obj-27", 0 ]
@@ -1262,15 +1211,15 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-31", 0 ],
-									"source" : [ "obj-33", 0 ]
+									"destination" : [ "obj-16", 0 ],
+									"source" : [ "obj-28", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-15", 0 ],
-									"source" : [ "obj-37", 1 ]
+									"destination" : [ "obj-31", 0 ],
+									"source" : [ "obj-33", 0 ]
 								}
 
 							}
