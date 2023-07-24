@@ -32,12 +32,11 @@ modelAddressDict.quiet = 1;
 
 function updateDictionaries(){
 	
-	// new addresses provided as args
+	// model_UID is the 1st arg, followed by addresses 
 	currentAddresses = arrayfromargs(arguments);
-
 	model_UID = currentAddresses[0];
 	currentAddresses.shift();
-	
+
 	// fetch previous addresses for this model UID
 	var test = modelAddressDict.get(model_UID);
 	if (test != null) {

@@ -27,7 +27,10 @@ paramAddressDict.quiet = 1;
 
 function updateDictionaries(){
 
+	// parameter_UID is the 1st arg, followed by addresses 
 	currentAddresses = arrayfromargs(arguments);
+	parameter_UID = currentAddresses[0];
+	currentAddresses.shift();
 
 	// compare new addresses with previous addresses for this node
 	var test = paramAddressDict.get(parameter_UID);
@@ -116,10 +119,6 @@ function declare(){
 	outlet(0, (initState > 0));
 }
 
-function setParameterUID(uid){
-	parameter_UID = uid;
-}
-
 function findGoneItems(CurrentArray, PreviousArray) {
    var CurrentArrSize = CurrentArray.length;
    var PreviousArrSize = PreviousArray.length;
@@ -144,15 +143,3 @@ function empty(){
 function clear(){
 	previousAddresses = [];
 }
-
-
-// function setParamDict(paramDict){
-// 	paramAttrDict.name = paramDict;
-// 	var parentModelType = modelDict
-// }
-
-
-// function setParentUID(uid){
-// 		parentUID = uid;
-// }
-

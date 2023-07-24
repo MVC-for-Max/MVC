@@ -17,7 +17,7 @@ var statesValuesDict = new Dict();
 statesValuesDict.quiet = 1;
 statesValuesDict.name = "mvc.states.values.dict";
 
-var states_UID = 0;
+var state_UID = 0;
 
 var previousAddresses = [];
 var currentAddresses = [];
@@ -27,7 +27,10 @@ stateAddressDict.quiet = 1;
 
 function updateDictionaries(){
 	
+	// state_UID is the 1st arg, followed by addresses 
 	currentAddresses = arrayfromargs(arguments);
+	state_UID = currentAddresses[0];
+	currentAddresses.shift();
 
 	// compare new addresses with previous addresses for this node
 	var test = stateAddressDict.get(state_UID);
@@ -113,10 +116,6 @@ function declare(){
 	outlet(0, (initState > 0));
 }
 
-function setStateUID(uid){
-	state_UID = uid;
-}
-
 function findGoneItems(CurrentArray, PreviousArray) {
    var CurrentArrSize = CurrentArray.length;
    var PreviousArrSize = PreviousArray.length;
@@ -141,15 +140,3 @@ function empty(){
 function clear(){
 	previousAddresses = [];
 }
-
-
-// function setParamDict(stateDict){
-// 	stateAttrDict.name = stateDict;
-// 	var parentModelType = modelDict
-// }
-
-
-// function setParentUID(uid){
-// 		parentUID = uid;
-// }
-
