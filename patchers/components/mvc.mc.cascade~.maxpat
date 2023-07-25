@@ -40,6 +40,18 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 612.0, 278.0, 120.0, 22.0 ],
+					"text" : "prepend mc.cascade"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-23",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -47,18 +59,6 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 545.0, 58.0, 29.5, 22.0 ],
 					"text" : "init"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-8",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 530.0, 340.0, 94.0, 22.0 ],
-					"text" : "name channel.1"
 				}
 
 			}
@@ -847,7 +847,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 232.0, 205.0, 54.0, 22.0 ],
+									"patching_rect" : [ 153.0, 164.0, 54.0, 22.0 ],
 									"text" : "deferlow"
 								}
 
@@ -859,7 +859,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 137.0, 104.0, 141.0, 33.0 ],
+									"patching_rect" : [ 137.0, 65.0, 141.0, 33.0 ],
 									"text" : "avoid brace expansion if not needed"
 								}
 
@@ -871,7 +871,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 28.0, 140.0, 61.0, 22.0 ],
+									"patching_rect" : [ 28.0, 101.0, 61.0, 22.0 ],
 									"text" : "channel.1"
 								}
 
@@ -883,7 +883,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 28.0, 104.0, 100.0, 22.0 ],
+									"patching_rect" : [ 28.0, 65.0, 100.0, 22.0 ],
 									"text" : "routepass 1"
 								}
 
@@ -895,7 +895,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 110.0, 173.0, 77.0, 22.0 ],
+									"patching_rect" : [ 110.0, 134.0, 77.0, 22.0 ],
 									"text" : "name $1, init"
 								}
 
@@ -907,7 +907,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 110.0, 140.0, 173.0, 22.0 ],
+									"patching_rect" : [ 110.0, 101.0, 173.0, 22.0 ],
 									"text" : "sprintf symout channel.{1..%ld}"
 								}
 
@@ -921,7 +921,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 28.0, 32.0, 30.0, 30.0 ]
+									"patching_rect" : [ 28.0, 23.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -933,7 +933,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 110.0, 239.0, 30.0, 30.0 ]
+									"patching_rect" : [ 110.0, 174.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -1293,7 +1293,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-5", 0 ],
+					"destination" : [ "obj-7", 0 ],
 					"source" : [ "obj-3", 1 ]
 				}
 
@@ -1339,8 +1339,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-19", 1 ],
-					"source" : [ "obj-8", 0 ]
+					"destination" : [ "obj-5", 0 ],
+					"source" : [ "obj-7", 0 ]
 				}
 
 			}
