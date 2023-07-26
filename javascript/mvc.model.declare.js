@@ -17,14 +17,18 @@ var parametersValuesDict = new Dict();
 parametersValuesDict.quiet = 1;
 parametersValuesDict.name = "mvc.parameters.values.dict";
 
+var attrDict = new Dict();
+
 var statesValuesDict = new Dict();
 statesValuesDict.quiet = 1;
 statesValuesDict.name = "mvc.states.values.dict";
 
 var model_UID = 0;
 
+var parentAddresses = [];
 var previousAddresses = [];
-var currentAddresses = [];
+var expandedNames = [];
+var newAddresses = [];
 var modelAddressDict = new Dict();
 modelAddressDict.name = "modelAddressDict";
 modelAddressDict.quiet = 1;
@@ -33,37 +37,81 @@ modelAddressDict.quiet = 1;
 function updateDictionaries(){
 	
 	// model_UID is the 1st arg, followed by addresses 
-	currentAddresses = arrayfromargs(arguments);
-	model_UID = currentAddresses[0];
-	currentAddresses.shift();
+	var _args = arrayfromargs(arguments);
+	model_UID = _args[0];
+	post("model_UID", model_UID, "\n");
+	post("--args", _args, "\n");
+	expandedNames = _args;
+	expandedNames.shift();
+	post("expandedNames", expandedNames, "\n");
+
+	attrDict.name = model_UID + ".attr";
+	
+	var parent_model_UID = attrDict.get("parent");
+	post("parent_model_UID", parent_model_UID, "\n");
+
+
+	// if no expanded names is provided, remove this model
+	if (expandedNames.length == 0) {
+		modelAddressDict.remove(model_UID.toString());
+	}
+	else { // else we need to concatenate with parent model
+		// special case : this is the top level model
+		if (parent_model_UID == model_UID){ 
+				newAddresses = [];
+				newAddresses.push(model_UID);
+				post("top level model", newAddresses, "\n");
+		}
+		// fetch parent addresses for this model UID
+		else {
+			var parentAddressesTest = modelAddressDict.get(parent_model_UID);
+			if (parentAddressesTest != null) {
+				if (Array.isArray(parentAddressesTest)) {
+					parentAddresses = parentAddressesTest;
+					post("parentAddresses is an array \n");
+				}
+				else {
+					parentAddresses = [];
+					parentAddresses.push(parentAddressesTest);
+					post("previous address is a solo \n");
+				}
+			}
+			else {
+				parentAddresses = [];
+			}	
+			// concatenate paths for this model
+			newAddresses = [];
+			for (var i = 0; i < (parentAddresses.length); i++) {
+				var concatAddress = parentAddresses[i] + "/" + expandedNames[(i%(parentAddresses.length))];
+				post("---concatAddress", concatAddress, "\n");
+				newAddresses.push(concatAddress);
+			}
+		}
+	} 
+
+	post("parentAddresses", parentAddresses, "\n");
+	post("newAddresses", newAddresses, "\n");
 
 	// fetch previous addresses for this model UID
 	var test = modelAddressDict.get(model_UID);
 	if (test != null) {
 		if (Array.isArray(test)) {
 			previousAddresses = test;
-			//post("previous address is an array \n");
+			post("previous address is an array:", previousAddresses, "\n");
 		}
 		else {
 			previousAddresses = [];
 			previousAddresses.push(test);
-			//post("previous address is a solo \n");
+			post("previous address is a solo", previousAddresses, "\n");
 		}
 	}
 	else {
 		previousAddresses = [];
+		post("previous address did not exist", previousAddresses, "\n");
 	}	
 
-	// update nondeUID / address storage for this node
-	if (currentAddresses.length == 0) {
-		modelAddressDict.remove(model_UID.toString());
-	}
-	else {
-		modelAddressDict.set(model_UID, currentAddresses);
-	} 
-
 	// compare new addresses with previous addresses for this node
-	var missingAdresses = findGoneItems(currentAddresses, previousAddresses);
+	var missingAdresses = findGoneItems(newAddresses, previousAddresses);
 
 	// remove gone addresses only for values
 	for (var i = 0; i < (missingAdresses.length); i++) {
@@ -86,21 +134,17 @@ function updateDictionaries(){
 		//outlet(1, model_UID.toString(), 0);
 	}
 	// add new addresses in model dict
-	for (var i = 0; i < (currentAddresses.length); i++) {
-		var theAdd = currentAddresses[i].replace(/\//g, '::');
+	for (var i = 0; i < (newAddresses.length); i++) {
+		var theAdd = newAddresses[i].replace(/\//g, '::');
     	//post('add', i, model_UID, theAdd, "\n");
     var addressUID = [model_UID, i + 1];
 		// parametersDict.replace(theAdd + "::uid", addressUID);
 		modelDict.replace(theAdd + "::uid", addressUID);
 	}
 	
-}
-
-function test(addresses){
-	post("add", addresses, "\n");
+	modelAddressDict.set(model_UID, newAddresses);
 
 }
-
 
 function declare(){
 	//just pass arguments to updateDictionaries
@@ -124,8 +168,8 @@ function declare(){
 	outlet(1, model_UID.toString()+".i", initState>0);
 
 	// *Then*, send initializers to public (remotes)
-	for (var i = 0; i < (currentAddresses.length); i++) {
-		outlet(1, currentAddresses[i], 1);	
+	for (var i = 0; i < (newAddresses.length); i++) {
+		outlet(1, newAddresses[i], 1);	
 	}
 	
 	// bang when done
@@ -134,9 +178,6 @@ function declare(){
 	outlet(0, initState>0);
 }
 
-function setModelUID(uid){
-	model_UID = uid;
-}
 
 function findGoneItems(CurrentArray, PreviousArray) {
 	
