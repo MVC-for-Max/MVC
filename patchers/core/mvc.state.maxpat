@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 351.0, -765.0, 638.0, 485.0 ],
+		"rect" : [ 596.0, 278.0, 638.0, 485.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -11365,7 +11365,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 292.0, -933.0, 1100.0, 687.0 ],
+						"rect" : [ 301.0, 259.0, 1100.0, 687.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -12248,11 +12248,12 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-17",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
 													"outlettype" : [ "", "", "", "" ],
-													"patching_rect" : [ 50.0, 71.201913748248586, 168.0, 22.0 ],
+													"patching_rect" : [ 50.0, 71.201913748248586, 140.0, 35.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 0,
 														"precision" : 6
@@ -13740,7 +13741,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 787.0, -545.0, 637.0, 382.0 ],
+						"rect" : [ 134.0, 159.0, 637.0, 382.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -13770,13 +13771,25 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-12",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 234.0, 160.0, 90.0, 22.0 ],
+									"text" : "zl.change #1"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-9",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 207.0, 160.0, 131.0, 22.0 ],
-									"text" : "refer $1.pendingNodes"
+									"patching_rect" : [ 234.0, 192.999999999999943, 207.0, 22.0 ],
+									"text" : "remove #0, refer $1.pendingNodes"
 								}
 
 							}
@@ -13811,7 +13824,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 112.0, 329.282190132370658, 144.0, 22.0 ],
+									"patching_rect" : [ 112.0, 329.282190132370658, 183.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"precision" : 6
@@ -13840,7 +13853,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 53.0, 144.999999999999943, 29.5, 22.0 ],
+									"patching_rect" : [ 53.0, 124.999999999999943, 29.5, 22.0 ],
 									"text" : "$2"
 								}
 
@@ -13852,7 +13865,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 24.666666666666686, 91.999999999999943, 63.0, 22.0 ],
+									"patching_rect" : [ 23.75, 73.999999999999943, 63.0, 22.0 ],
 									"text" : "get parent"
 								}
 
@@ -13864,7 +13877,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 5,
 									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 24.666666666666686, 118.999999999999943, 136.0, 22.0 ],
+									"patching_rect" : [ 23.75, 100.999999999999943, 136.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"legacy" : 1,
@@ -14082,7 +14095,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 348.0, 108.999999999999943, 211.0, 74.0 ],
+									"patching_rect" : [ 286.0, 55.999999999999943, 211.0, 74.0 ],
 									"text" : "If we receive a 0 to the init, it may be so that the preset has been removed from the dictionaries by the model (when changing type or unloading). Hence we do need to redeclare them."
 								}
 
@@ -14141,8 +14154,24 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-16", 0 ],
+									"destination" : [ "obj-12", 0 ],
+									"order" : 0,
 									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-16", 0 ],
+									"order" : 1,
+									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-9", 0 ],
+									"source" : [ "obj-12", 0 ]
 								}
 
 							}
@@ -14177,15 +14206,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-11", 0 ],
-									"order" : 1,
-									"source" : [ "obj-3", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-9", 0 ],
-									"order" : 0,
 									"source" : [ "obj-3", 1 ]
 								}
 
