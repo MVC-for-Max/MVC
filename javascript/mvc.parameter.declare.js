@@ -131,15 +131,3 @@ function findGoneItems(CurrentArray, PreviousArray) {
    }
    return missingItems;
 }
-
-function loadbang(	) {
-	outlet(3, 'bang');
-}
-
-function empty(){
-	updateDictionaries();
-}
-
-function clear(){
-	previousAddresses = [];
-}
