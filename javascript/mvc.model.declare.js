@@ -39,16 +39,16 @@ function updateDictionaries(){
 	// model_UID is the 1st arg, followed by addresses 
 	var _args = arrayfromargs(arguments);
 	model_UID = _args[0];
-	post("model_UID", model_UID, "\n");
-	post("--args", _args, "\n");
+	// post("model_UID", model_UID, "\n");
+	// post("--args", _args, "\n");
 	expandedNames = _args;
 	expandedNames.shift();
-	post("expandedNames", expandedNames, "\n");
+	// post("expandedNames", expandedNames, "\n");
 
 	attrDict.name = model_UID + ".attr";
 	
 	var parent_model_UID = attrDict.get("parent");
-	post("parent_model_UID", parent_model_UID, "\n");
+	// post("parent_model_UID", parent_model_UID, "\n");
 
 
 	// if no expanded names is provided, remove this model
@@ -60,7 +60,7 @@ function updateDictionaries(){
 		if (parent_model_UID == model_UID){ 
 				newAddresses = [];
 				newAddresses.push(model_UID);
-				post("top level model", newAddresses, "\n");
+				// post("top level model", newAddresses, "\n");
 		}
 		// fetch parent addresses for this model UID
 		else {
@@ -68,12 +68,12 @@ function updateDictionaries(){
 			if (parentAddressesTest != null) {
 				if (Array.isArray(parentAddressesTest)) {
 					parentAddresses = parentAddressesTest;
-					post("parentAddresses is an array \n");
+					// post("parentAddresses is an array \n");
 				}
 				else {
 					parentAddresses = [];
 					parentAddresses.push(parentAddressesTest);
-					post("previous address is a solo \n");
+					// post("previous address is a solo \n");
 				}
 			}
 			else {
@@ -83,31 +83,31 @@ function updateDictionaries(){
 			newAddresses = [];
 			for (var i = 0; i < (parentAddresses.length); i++) {
 				var concatAddress = parentAddresses[i] + "/" + expandedNames[(i%(parentAddresses.length))];
-				post("---concatAddress", concatAddress, "\n");
+				// post("---concatAddress", concatAddress, "\n");
 				newAddresses.push(concatAddress);
 			}
 		}
 	} 
 
-	post("parentAddresses", parentAddresses, "\n");
-	post("newAddresses", newAddresses, "\n");
+	// post("parentAddresses", parentAddresses, "\n");
+	// post("newAddresses", newAddresses, "\n");
 
 	// fetch previous addresses for this model UID
 	var test = modelAddressDict.get(model_UID);
 	if (test != null) {
 		if (Array.isArray(test)) {
 			previousAddresses = test;
-			post("previous address is an array:", previousAddresses, "\n");
+			// post("previous address is an array:", previousAddresses, "\n");
 		}
 		else {
 			previousAddresses = [];
 			previousAddresses.push(test);
-			post("previous address is a solo", previousAddresses, "\n");
+			// post("previous address is a solo", previousAddresses, "\n");
 		}
 	}
 	else {
 		previousAddresses = [];
-		post("previous address did not exist", previousAddresses, "\n");
+		// post("previous address did not exist", previousAddresses, "\n");
 	}	
 
 	// compare new addresses with previous addresses for this node
@@ -192,27 +192,3 @@ function findGoneItems(CurrentArray, PreviousArray) {
    }
    return missingItems;
 }
-
-function loadbang(	) {
-	//outlet(3, 'bang');
-}
-
-function empty(){
-	updateDictionaries();
-}
-
-function clear(){
-	previousAddresses = [];
-}
-
-
-// function setParamDict(paramDict){
-// 	paramAttrDict.name = paramDict;
-// 	var parentModelType = modelDict
-// }
-
-
-// function setParentUID(uid){
-// 		parentUID = uid;
-// }
-
