@@ -13,11 +13,14 @@ var inputsDict = new Dict();
 inputsDict.quiet = 1;
 inputsDict.name = "mvc.inputs.dict";
 
+var expandedDict = new Dict();
+expandedDict.quiet = 1;
+
+var attrDict = new Dict();
+
 var parametersValuesDict = new Dict();
 parametersValuesDict.quiet = 1;
 parametersValuesDict.name = "mvc.parameters.values.dict";
-
-var attrDict = new Dict();
 
 var parameter_UID = 0;
 
@@ -41,9 +44,11 @@ function updateDictionaries(){
 	param_UID = _args[0];
 	// post("param_UID", param_UID, "\n");
 	// post("--args", _args, "\n");
-	expandedNames = _args;
-	expandedNames.shift();
+	expandedDict.name = param_UID + ".expanded";
 	// post("expandedNames", expandedNames, "\n");
+
+	var expandedKeys = expandedDict.getkeys();
+	//post("expandedKeys", expandedKeys, "\n");
 
 	attrDict.name = param_UID + ".attr";
 	
@@ -52,7 +57,7 @@ function updateDictionaries(){
 
 
 	// if no expanded names is provided, remove this param
-	if (expandedNames.length == 0) {
+	if (!(expandedDict.contains("1"))) {
 		paramAddressDict.remove(param_UID.toString());
 	}
 	else { // else we need to concatenate with parent model
@@ -74,14 +79,38 @@ function updateDictionaries(){
 		// concatenate paths for this model
 		newAddresses = [];
 		for (var i = 0; i < (parentAddresses.length); i++) {
-			var concatAddress = parentAddresses[i] + "/" + expandedNames[(i%(parentAddresses.length))];
-			// post("---concatAddress", concatAddress, "\n");
-			newAddresses.push(concatAddress);
+
+			var expandedNames = [];
+			var expandedNamesTest = expandedDict.get((i % expandedKeys.length) + 1);
+			if (expandedNamesTest != null) {
+				if (Array.isArray(expandedNamesTest)) {
+					expandedNames = expandedNamesTest;
+					// post("parentAddresses is an array \n");
+				}
+				else {
+					expandedNames.push(expandedNamesTest);
+					// post("previous address is a solo \n");
+				}
+			}
+
+			for (var j = 0; j < (expandedNames.length); j++) {
+				var concatAddress = parentAddresses[i] + "/" + expandedNames[j];
+				//post("---concatAddress", concatAddress, "\n");
+				newAddresses.push(concatAddress);
+			}
 		}
 	} 
 
-	// post("parentAddresses", parentAddresses, "\n");
-	// post("newAddresses", newAddresses, "\n");
+	//post("parentAddresses", parentAddresses, "\n");
+	//post("newAddresses", newAddresses, "\n");
+
+	paramAddressDict.set(param_UID, newAddresses);
+
+	// notify expansion done
+	var sendAddress = param_UID + ".param.expand.done";
+	outlet(0, "send", sendAddress);
+	outlet(0, newAddresses.length);
+
 
 	// fetch previous addresses for this model UID
 	var test = paramAddressDict.get(param_UID);
@@ -103,8 +132,6 @@ function updateDictionaries(){
 
 	// compare new addresses with previous addresses for this node
 	var missingAdresses = findGoneItems(newAddresses, previousAddresses);
-	
-	paramAddressDict.set(param_UID, newAddresses);
 
 	// remove gone addresses only for values
 	for (var i = 0; i < (missingAdresses.length); i++) {
@@ -125,14 +152,14 @@ function updateDictionaries(){
 	// add new addresses in inputs dict
 	for (var i = 0; i < (newAddresses.length); i++) {
 		var theAdd = newAddresses[i].replace(/\//g, '::');
-    	post('add', i, theAdd, "\n");
+    	//post('add', i, theAdd, "\n");
     	var addressUID = [param_UID, i + 1];
 		// parametersDict.replace(theAdd + "::uid", addressUID);
 		inputsDict.replace(theAdd + "::uid", addressUID);
 		
 		if (!(parametersValuesDict.contains(theAdd))){
 			// if param does not have a value, recall default
-			post("parametersValues does not contain", theAdd, "\n");
+			//post("parametersValues does not contain", theAdd, "\n");
 			//outlet(2, i+1);
 			outlet(2, i + 1, param_UID);
 			}

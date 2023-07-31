@@ -13,11 +13,14 @@ var inputsDict = new Dict();
 inputsDict.quiet = 1;
 inputsDict.name = "mvc.inputs.dict";
 
+var expandedDict = new Dict();
+expandedDict.quiet = 1;
+
+var attrDict = new Dict();
+
 var parametersValuesDict = new Dict();
 parametersValuesDict.quiet = 1;
 parametersValuesDict.name = "mvc.parameters.values.dict";
-
-var attrDict = new Dict();
 
 var statesValuesDict = new Dict();
 statesValuesDict.quiet = 1;
@@ -41,9 +44,12 @@ function updateDictionaries(){
 	model_UID = _args[0];
 	// post("model_UID", model_UID, "\n");
 	// post("--args", _args, "\n");
-	expandedNames = _args;
-	expandedNames.shift();
+
+	expandedDict.name = model_UID + ".expanded";
 	// post("expandedNames", expandedNames, "\n");
+
+	var expandedKeys = expandedDict.getkeys();
+	//post("expandedKeys", expandedKeys, "\n");
 
 	attrDict.name = model_UID + ".attr";
 	
@@ -52,7 +58,7 @@ function updateDictionaries(){
 
 
 	// if no expanded names is provided, remove this model
-	if (expandedNames.length == 0) {
+	if (!(expandedDict.contains("1"))) {
 		modelAddressDict.remove(model_UID.toString());
 	}
 	else { // else we need to concatenate with parent model
@@ -82,9 +88,26 @@ function updateDictionaries(){
 			// concatenate paths for this model
 			newAddresses = [];
 			for (var i = 0; i < (parentAddresses.length); i++) {
-				var concatAddress = parentAddresses[i] + "/" + expandedNames[(i%(parentAddresses.length))];
-				// post("---concatAddress", concatAddress, "\n");
-				newAddresses.push(concatAddress);
+
+				var expandedNames = [];
+				var expandedNamesTest = expandedDict.get((i % expandedKeys.length) + 1);
+
+				if (expandedNamesTest != null) {
+					if (Array.isArray(expandedNamesTest)) {
+						expandedNames = expandedNamesTest;
+						// post("parentAddresses is an array \n");
+					}
+					else {
+						expandedNames.push(expandedNamesTest);
+						// post("previous address is a solo \n");
+					}
+				}
+
+				for (var j = 0; j < (expandedNames.length); j++) {
+					var concatAddress = parentAddresses[i] + "/" + expandedNames[j];
+					//post("---concatAddress", concatAddress, "\n");
+					newAddresses.push(concatAddress);
+				}
 			}
 		}
 	} 
