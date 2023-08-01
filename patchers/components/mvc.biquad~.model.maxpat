@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 199.0, 323.0, 906.0, 578.0 ],
+		"rect" : [ 491.0, 323.0, 1101.0, 693.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-18",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 733.0, 610.0, 150.0, 20.0 ],
+					"text" : "function harmonic 10"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -47,19 +58,6 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 792.5, 458.0, 92.0, 22.0 ],
 					"text" : "prepend biquad"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-10",
-					"linecount" : 3,
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 94.0, 216.0, 50.0, 49.0 ],
-					"text" : "setvalue 1 ON 1"
 				}
 
 			}
@@ -1735,8 +1733,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 262.333333333333314, 298.0, 237.166666666666686, 62.0 ],
-					"text" : "mvc.parameter #1 frequency @description \"filter frequency\" @unit Hz @type decimal @default 1000 @min 0.001 @max 20000 @clip both"
+					"patching_rect" : [ 262.333333333333314, 298.0, 248.999999999999943, 62.0 ],
+					"text" : "mvc.parameter #1 frequency @description \"filter frequency\" @unit Hz @type decimal @default 1000. @min 0.001 @max 20000 @clip both"
 				}
 
 			}
@@ -1792,7 +1790,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 521.083333333333371, 190.0, 234.5, 62.0 ],
-					"text" : "mvc.parameter #1 gain @description \"filter gain\" @unit dB @type decimal @default 0 @min -24 @max 24 @clip both"
+					"text" : "mvc.parameter #1 gain @description \"filter gain\" @unit dB @type decimal @default 0. @min -24 @max 24 @clip both"
 				}
 
 			}
@@ -1996,17 +1994,9 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-6", 1 ],
-					"midpoints" : [ 776.5, 175.5, 490.0, 175.5 ],
+					"midpoints" : [ 776.5, 175.5, 501.833333333333258, 175.5 ],
 					"order" : 2,
 					"source" : [ "obj-45", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-10", 1 ],
-					"order" : 1,
-					"source" : [ "obj-5", 0 ]
 				}
 
 			}
@@ -2030,7 +2020,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
-					"order" : 2,
+					"order" : 1,
 					"source" : [ "obj-5", 0 ]
 				}
 
