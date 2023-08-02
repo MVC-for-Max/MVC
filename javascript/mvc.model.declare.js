@@ -56,16 +56,19 @@ function updateDictionaries(){
 	var parent_model_UID = attrDict.get("parent");
 	// post("parent_model_UID", parent_model_UID, "\n");
 
+	var parentPosition = [1];
+	var newPositions = [];
 
 	// if no expanded names is provided, remove this model
 	if (!(expandedDict.contains("1"))) {
 		modelAddressDict.remove(model_UID.toString());
 	}
 	else { // else we need to concatenate with parent model
-		// special case : this is the top level model
+		// special case : this is the top level model, aka device
 		if (parent_model_UID == model_UID){ 
 				newAddresses = [];
 				newAddresses.push(model_UID);
+				newPositions.push(parentPosition);
 				// post("top level model", newAddresses, "\n");
 		}
 		// fetch parent addresses for this model UID
@@ -87,11 +90,27 @@ function updateDictionaries(){
 			}	
 			// concatenate paths for this model
 			newAddresses = [];
+			
 			for (var i = 0; i < (parentAddresses.length); i++) {
+
+				// get parent position
+				var parent_position_address = parentAddresses[i].replace(/\//g, '::') + "::position";
+				parentPosition = [];
+				var parentPositionTest = modelDict.get(parent_position_address);
+				if (parentPositionTest != null) {
+					if (Array.isArray(parentPositionTest)) {
+						parentPosition = parentPositionTest;
+						// post("parentAddresses is an array \n");
+					}
+					else {
+						parentPosition = [];
+						parentPosition.push(parentPositionTest);
+						// post("previous address is a solo \n");
+					}
+				}
 
 				var expandedNames = [];
 				var expandedNamesTest = expandedDict.get((i % expandedKeys.length) + 1);
-
 				if (expandedNamesTest != null) {
 					if (Array.isArray(expandedNamesTest)) {
 						expandedNames = expandedNamesTest;
@@ -105,15 +124,19 @@ function updateDictionaries(){
 
 				for (var j = 0; j < (expandedNames.length); j++) {
 					var concatAddress = parentAddresses[i] + "/" + expandedNames[j];
-					//post("---concatAddress", concatAddress, "\n");
 					newAddresses.push(concatAddress);
+
+					var childPosition = parentPosition.slice(); // clone array
+					childPosition.push(j+1);
+					newPositions.push(childPosition);
 				}
 			}
 		}
 	} 
 
 	// post("parentAddresses", parentAddresses, "\n");
-	// post("newAddresses", newAddresses, "\n");
+	 // post("newAddresses", newAddresses, "\n");
+	 // post("newPositions", newPositions, "\n");
 
 	// fetch previous addresses for this model UID
 	var test = modelAddressDict.get(model_UID);
@@ -163,6 +186,7 @@ function updateDictionaries(){
     var addressUID = [model_UID, i + 1];
 		// parametersDict.replace(theAdd + "::uid", addressUID);
 		modelDict.replace(theAdd + "::uid", addressUID);
+		modelDict.replace(theAdd + "::position", newPositions[i]);
 	}
 	
 	modelAddressDict.set(model_UID, newAddresses);

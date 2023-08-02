@@ -55,6 +55,8 @@ function updateDictionaries(){
 	var parent_model_UID = attrDict.get("parent");
 	// post("parent_model_UID", parent_model_UID, "\n");
 
+	var parentPosition = [1];
+	var newPositions = [];
 
 	// if no expanded names is provided, remove this param
 	if (!(expandedDict.contains("1"))) {
@@ -78,7 +80,24 @@ function updateDictionaries(){
 		}	
 		// concatenate paths for this model
 		newAddresses = [];
+
 		for (var i = 0; i < (parentAddresses.length); i++) {
+
+			// get parent position
+			var parent_position_address = parentAddresses[i].replace(/\//g, '::') + "::position";
+			parentPosition = [];
+			var parentPositionTest = modelDict.get(parent_position_address);
+			if (parentPositionTest != null) {
+				if (Array.isArray(parentPositionTest)) {
+					parentPosition = parentPositionTest;
+					// post("parentAddresses is an array \n");
+				}
+				else {
+					parentPosition = [];
+					parentPosition.push(parentPositionTest);
+					// post("previous address is a solo \n");
+				}
+			}
 
 			var expandedNames = [];
 			var expandedNamesTest = expandedDict.get((i % expandedKeys.length) + 1);
@@ -95,8 +114,11 @@ function updateDictionaries(){
 
 			for (var j = 0; j < (expandedNames.length); j++) {
 				var concatAddress = parentAddresses[i] + "/" + expandedNames[j];
-				//post("---concatAddress", concatAddress, "\n");
 				newAddresses.push(concatAddress);
+
+				var childPosition = parentPosition.slice(); // clone array
+				childPosition.push(j+1);
+				newPositions.push(childPosition);				
 			}
 		}
 	} 
@@ -156,6 +178,7 @@ function updateDictionaries(){
     	var addressUID = [param_UID, i + 1];
 		// parametersDict.replace(theAdd + "::uid", addressUID);
 		inputsDict.replace(theAdd + "::uid", addressUID);
+		inputsDict.replace(theAdd + "::position", newPositions[i]);
 		
 		if (!(parametersValuesDict.contains(theAdd))){
 			// if param does not have a value, recall default
