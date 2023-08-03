@@ -1,4 +1,4 @@
-// mvc.parameter.declare.js
+// mvc.model.declare.js
 
 inlets = 1;
 outlets = 2;
