@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 216.0, -962.0, 568.0, 752.0 ],
+		"rect" : [ 216.0, -962.0, 827.0, 752.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,63 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-20",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 5,
+					"outlettype" : [ "dictionary", "", "", "", "" ],
+					"patching_rect" : [ 556.0, 198.0, 121.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"embed" : 0,
+						"legacy" : 0,
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
+					}
+,
+					"text" : "dict stateAddressDict"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 5,
+					"outlettype" : [ "dictionary", "", "", "", "" ],
+					"patching_rect" : [ 556.0, 140.0, 129.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"embed" : 0,
+						"legacy" : 0,
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
+					}
+,
+					"text" : "dict paramAddressDict"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-17",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 5,
+					"outlettype" : [ "dictionary", "", "", "", "" ],
+					"patching_rect" : [ 556.0, 102.0, 128.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"embed" : 0,
+						"legacy" : 0,
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
+					}
+,
+					"text" : "dict modelAddressDict"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "button",
 					"numinlets" : 1,
@@ -57,7 +114,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 336.0, 618.070566412767448, 148.0, 22.0 ],
+					"patching_rect" : [ 333.0, 624.070566412767448, 148.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 0,
@@ -77,7 +134,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 353.0, 47.0, 190.0, 47.0 ],
-					"presentation_linecount" : 3,
 					"text" : "models. Plan to use this to avoid declaring model type at each instance."
 				}
 
@@ -115,7 +171,6 @@
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 336.0, 102.0, 114.0, 35.0 ],
-					"presentation_linecount" : 2,
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 1,
@@ -136,7 +191,6 @@
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 336.0, 687.0, 159.0, 35.0 ],
-					"presentation_linecount" : 2,
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 1,
@@ -156,7 +210,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 353.0, 521.070566412767334, 157.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "All instanciated parameters and their values."
 				}
 
@@ -169,7 +222,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 353.0, 438.65645313021389, 157.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "Plan to use this one for connection"
 				}
 
@@ -182,7 +234,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 353.0, 341.242339847660446, 157.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "All instanciated states and their description."
 				}
 
@@ -195,7 +246,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 353.0, 264.414113282553444, 190.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "All available outputs (in order to be able to store connections)"
 				}
 
@@ -208,7 +258,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 353.0, 133.0, 190.0, 74.0 ],
-					"presentation_linecount" : 5,
 					"text" : "All available inputs (in order to be able to store connections and be able to send to an input without having to check in each param/state/message dictionary)"
 				}
 
@@ -367,7 +416,6 @@
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 336.0, 556.070566412767448, 174.0, 35.0 ],
-					"presentation_linecount" : 2,
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 1,
@@ -400,7 +448,6 @@
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 336.0, 473.65645313021389, 152.0, 35.0 ],
-					"presentation_linecount" : 2,
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 1,
@@ -479,7 +526,6 @@
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 336.0, 376.242339847660446, 107.0, 35.0 ],
-					"presentation_linecount" : 2,
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 1,
@@ -500,7 +546,6 @@
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 336.0, 300.414113282553444, 115.0, 35.0 ],
-					"presentation_linecount" : 2,
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 1,
@@ -521,7 +566,6 @@
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 336.0, 209.0, 107.0, 35.0 ],
-					"presentation_linecount" : 2,
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 1,
@@ -626,7 +670,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
-					"midpoints" : [ 345.5, 650.070566412767448, 292.5, 650.070566412767448, 292.5, 41.0, 21.5, 41.0 ],
+					"midpoints" : [ 342.5, 650.070566412767448, 292.5, 650.070566412767448, 292.5, 41.0, 21.5, 41.0 ],
 					"source" : [ "obj-5", 0 ]
 				}
 
@@ -650,7 +694,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
-					"order" : 5,
+					"order" : 8,
 					"source" : [ "obj-8", 0 ]
 				}
 
@@ -658,38 +702,14 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
-					"order" : 6,
+					"order" : 9,
 					"source" : [ "obj-8", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-2", 0 ],
-					"order" : 4,
-					"source" : [ "obj-8", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 0 ],
-					"order" : 1,
-					"source" : [ "obj-8", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
-					"order" : 3,
-					"source" : [ "obj-8", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
+					"destination" : [ "obj-17", 0 ],
 					"order" : 2,
 					"source" : [ "obj-8", 0 ]
 				}
@@ -697,8 +717,64 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
+					"destination" : [ "obj-19", 0 ],
+					"order" : 1,
+					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"order" : 7,
+					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-20", 0 ],
 					"order" : 0,
+					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-29", 0 ],
+					"order" : 4,
+					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"order" : 6,
+					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"order" : 10,
+					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"order" : 5,
+					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"order" : 3,
 					"source" : [ "obj-8", 0 ]
 				}
 
