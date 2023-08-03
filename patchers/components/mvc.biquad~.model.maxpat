@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 257.0, 517.0, 906.0, 578.0 ],
+		"rect" : [ 148.0, 438.0, 869.0, 582.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,8 +57,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 298.0, 541.0, 383.0, 22.0 ],
-					"text" : "mvc.parameter #1 test @type decimal @default 1000 "
+					"patching_rect" : [ 275.0, 544.0, 508.0, 22.0 ],
+					"text" : "mvc.parameter #1 test @type decimal @default function harmonic 1000 100 3"
 				}
 
 			}
@@ -83,7 +83,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 94.0, 216.0, 50.0, 49.0 ],
-					"text" : "setvalue 8 ON 1"
+					"text" : "setvalue 6 ON 1"
 				}
 
 			}
