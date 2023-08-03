@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 135.0, 323.0, 1101.0, 693.0 ],
+		"rect" : [ 135.0, 323.0, 923.0, 573.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,65 +39,6 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
-				"box" : 				{
-					"id" : "obj-20",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 853.5, 542.0, 29.5, 22.0 ],
-					"text" : "init"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-10",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 894.0, 546.0, 196.0, 22.0 ],
-					"text" : "loadmess name foo.{1..3} bar.{1..2}"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-19",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 240.0, 617.0, 50.0, 22.0 ],
-					"text" : "520."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-15",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 271.0, 579.0, 627.0, 22.0 ],
-					"text" : "mvc.parameter #1 test @description \"test param\" @type decimal @default  function harmonic 10 100"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-18",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 733.0, 610.0, 150.0, 20.0 ],
-					"text" : "function harmonic 10"
-				}
-
-			}
-, 			{
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
@@ -457,7 +398,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-3",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -620,7 +561,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-11",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -1739,7 +1680,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-4",
-					"index" : 3,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -1751,7 +1692,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-90",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -1763,11 +1704,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-1",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "init" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 792.5, 46.0, 30.0, 30.0 ]
 				}
 
@@ -1823,7 +1764,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 551.5, 298.0, 234.5, 62.0 ],
+					"patching_rect" : [ 551.5, 298.0, 237.0, 62.0 ],
 					"text" : "mvc.parameter #1 Q @description \"filter resonance\" @unit none @type decimal @default 1. @min 0.001 @max 100 @clip both"
 				}
 
@@ -1864,13 +1805,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-15", 1 ],
-					"source" : [ "obj-10", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
 					"source" : [ "obj-12", 0 ]
 				}
@@ -1885,13 +1819,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-19", 1 ],
-					"source" : [ "obj-15", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
 					"source" : [ "obj-16", 0 ]
 				}
@@ -1901,13 +1828,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
 					"source" : [ "obj-2", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-15", 1 ],
-					"source" : [ "obj-20", 0 ]
 				}
 
 			}
@@ -2144,7 +2064,8 @@
 				}
 
 			}
- ]
+ ],
+		"autosave" : 0
 	}
 
 }
