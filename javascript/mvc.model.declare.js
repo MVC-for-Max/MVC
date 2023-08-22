@@ -36,6 +36,7 @@ function updateDictionaries(){
 	currentAddresses = arrayfromargs(arguments);
 	model_UID = currentAddresses[0];
 	currentAddresses.shift();
+	//post("currentAddresses", currentAddresses, "\n");
 
 	// fetch previous addresses for this model UID
 	var test = modelAddressDict.get(model_UID);
@@ -118,10 +119,11 @@ function declare(){
 
 	updateDictionaries.apply(null, arguments);
 	
-	var initState = arrayfromargs(arguments).length;
+	var initState = (arrayfromargs(arguments).length) > 1;
+	//post("initState", initState, "\n");
 	
 	// *First*, send initializers to private (param and states)
-	outlet(1, model_UID.toString()+".i", initState>0);
+	outlet(1, model_UID.toString()+".i", initState);
 
 	// *Then*, send initializers to public (remotes)
 	for (var i = 0; i < (currentAddresses.length); i++) {
@@ -131,7 +133,7 @@ function declare(){
 	// bang when done
 	var sendAddress = model_UID + ".model.declare.done";
 	outlet(0, "send", sendAddress);
-	outlet(0, initState>0);
+	outlet(0, initState);
 }
 
 function setModelUID(uid){
