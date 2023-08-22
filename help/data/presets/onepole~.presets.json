@@ -1,0 +1,13 @@
+{
+	"_metadata" : 	{
+		"package-version" : 0.4
+	}
+,
+	"Devil's frequency" : 	{
+		"preset-description" : "undefined",
+		"ON" : 1,
+		"preset-name" : "Devil's frequency",
+		"frequency" : 666.0
+	}
+
+}

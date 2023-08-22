@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 193.0, 871.0, 636.0 ],
+		"rect" : [ 61.0, 308.0, 818.0, 511.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -113,7 +113,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 871.0, 610.0 ],
+						"rect" : [ 0.0, 26.0, 818.0, 485.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -175,7 +175,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 219.0, 871.0, 610.0 ],
+						"rect" : [ 61.0, 334.0, 818.0, 485.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -206,172 +206,39 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"color" : [ 0.501961, 0.501961, 0.501961, 1.0 ],
-									"id" : "obj-17",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 28.0, 278.0, 208.0, 22.0 ],
-									"text" : "mvc.mc.cascade~ onepoleHelper cas",
-									"varname" : "mvc.mc.cascade~"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"format" : 6,
-									"id" : "obj-23",
-									"maxclass" : "flonum",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 498.75, 449.0, 50.0, 22.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-12",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "initialized" ],
-									"patching_rect" : [ 498.75, 477.0, 302.0, 22.0 ],
-									"text" : "mvc.remote onepoleHelper/One/channel.2/filter.2/test.b"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-34",
+									"id" : "obj-10",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 276.5, 358.5, 148.0, 22.0 ],
-									"text" : "refer $1.OSCaddresses, 1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-30",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 5,
-									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 276.5, 441.0, 117.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"embed" : 0,
-										"legacy" : 0,
-										"parameter_enable" : 0,
-										"parameter_mappable" : 0
-									}
-,
-									"text" : "dict mvc.models.dict"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-29",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 272.0, 280.0, 29.5, 22.0 ],
+									"patching_rect" : [ 262.5, 303.5, 29.5, 22.0 ],
 									"text" : "init"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-13",
+									"id" : "obj-9",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 216.5, 379.0, 45.0, 22.0 ],
-									"text" : "get uid"
+									"patching_rect" : [ 493.5, 416.0, 30.0, 22.0 ],
+									"text" : "GUI"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-10",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 5,
-									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 520.5, 533.0, 177.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"embed" : 0,
-										"legacy" : 0,
-										"parameter_enable" : 0,
-										"parameter_mappable" : 0
-									}
-,
-									"text" : "dict mvc.parameters.values.dict"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-9",
+									"color" : [ 0.501961, 0.501961, 0.501961, 1.0 ],
+									"id" : "obj-17",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 216.5, 338.5, 34.0, 22.0 ],
-									"text" : "sel 1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-3",
-									"maxclass" : "newobj",
-									"numinlets" : 3,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 216.5, 310.5, 139.0, 22.0 ],
-									"text" : "route initialized uid"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-22",
-									"linecount" : 9,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 829.0, 108.0, 351.0, 127.0 ],
-									"text" : "when child node has finished internal init, it send back initialized to parent node, which remove it from pending nodes.\nThe parent check at each steps whether there are remaining pending nodes to be initialized\n\nWhen no pending child node is left to initialize, the parent model send initialized to its parent node\n\nand so on"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-20",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 829.0, 59.25, 421.0, 20.0 ],
-									"text" : "child nodes register themselves to parent node, as \"new\" pending child nodes"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-18",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 829.0, 84.0, 203.0, 20.0 ],
-									"text" : "node send internal init to child nodes"
+									"outlettype" : [ "multichannelsignal", "" ],
+									"patching_rect" : [ 21.5, 280.0, 230.0, 22.0 ],
+									"text" : "mvc.onepole~ onepoleHelper myOnepole",
+									"varname" : "mvc.mc.cascade~"
 								}
 
 							}
@@ -396,7 +263,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 479.5, 293.5, 136.0, 39.0 ],
+									"patching_rect" : [ 375.5, 286.5, 136.0, 39.0 ],
 									"text" : "... or using a remote."
 								}
 
@@ -725,7 +592,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 449.0, 377.0, 754.0, 380.0 ],
+										"rect" : [ 598.0, -863.0, 398.0, 380.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -753,6 +620,7 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
+										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"bubble" : 1,
@@ -945,8 +813,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 23.0, 80.0, 158.0, 22.0 ],
-													"text" : "preset \"my very own preset\""
+													"patching_rect" : [ 23.0, 80.0, 145.0, 22.0 ],
+													"text" : "preset \"Devil's frequency\""
 												}
 
 											}
@@ -1061,17 +929,6 @@
 ,
 									"text" : "p presets",
 									"varname" : "presets"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-15",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 710.5, 254.5, 65.0, 22.0 ],
-									"text" : "print MAIN"
 								}
 
 							}
@@ -1206,7 +1063,7 @@
 									"orientation" : 0,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 455.5, 344.5, 215.0, 16.0 ],
+									"patching_rect" : [ 351.5, 337.5, 215.0, 16.0 ],
 									"setminmax" : [ 20.0, 20000.0 ]
 								}
 
@@ -1218,7 +1075,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "initialized" ],
-									"patching_rect" : [ 455.5, 367.016890080428993, 307.0, 22.0 ],
+									"patching_rect" : [ 351.5, 360.016890080428993, 307.0, 22.0 ],
 									"text" : "mvc.remote onepoleHelper/myFunkyOnePole/frequency"
 								}
 
@@ -1288,6 +1145,13 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-17", 1 ],
+									"source" : [ "obj-10", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 1 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -1301,6 +1165,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-16", 0 ],
+									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-37", 1 ],
 									"source" : [ "obj-19", 0 ]
 								}
@@ -1308,8 +1179,15 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-12", 0 ],
-									"source" : [ "obj-23", 0 ]
+									"destination" : [ "obj-17", 1 ],
+									"source" : [ "obj-21", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"source" : [ "obj-26", 0 ]
 								}
 
 							}
@@ -1323,15 +1201,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-34", 0 ],
-									"source" : [ "obj-3", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-9", 0 ],
-									"source" : [ "obj-3", 0 ]
+									"destination" : [ "obj-17", 1 ],
+									"source" : [ "obj-31", 0 ]
 								}
 
 							}
@@ -1367,13 +1238,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
 									"source" : [ "obj-8", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-13", 0 ],
-									"source" : [ "obj-9", 0 ]
 								}
 
 							}
@@ -1498,9 +1362,7 @@
  ],
 		"parameters" : 		{
 			"obj-51::obj-16" : [ "mc.live.gain~[3]", "mc.live.gain~", 0 ],
-			"obj-51::obj-17::obj-3::obj-61::obj-20.1::obj-16::obj-8::obj-7" : [ "live.toggle[4]", "live.toggle", 0 ],
-			"obj-51::obj-17::obj-3::obj-61::obj-20.1::obj-5::obj-49::obj-8::obj-7" : [ "live.toggle[3]", "live.toggle", 0 ],
-			"obj-51::obj-17::obj-3::obj-61::obj-20.1::obj-5::obj-5::obj-12::obj-8::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
+			"obj-51::obj-17::obj-8::obj-5::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
 			"obj-51::obj-21::obj-12::obj-8::obj-7" : [ "live.toggle[5]", "live.toggle", 0 ],
 			"obj-51::obj-7::obj-21::obj-6" : [ "live.tab[4]", "live.tab[1]", 0 ],
 			"obj-51::obj-7::obj-35" : [ "[1]", "Level", 0 ],
@@ -1509,14 +1371,6 @@
 			}
 ,
 			"parameter_overrides" : 			{
-				"obj-51::obj-17::obj-3::obj-61::obj-20.1::obj-16::obj-8::obj-7" : 				{
-					"parameter_longname" : "live.toggle[4]"
-				}
-,
-				"obj-51::obj-17::obj-3::obj-61::obj-20.1::obj-5::obj-49::obj-8::obj-7" : 				{
-					"parameter_longname" : "live.toggle[3]"
-				}
-,
 				"obj-51::obj-21::obj-12::obj-8::obj-7" : 				{
 					"parameter_longname" : "live.toggle[5]"
 				}
