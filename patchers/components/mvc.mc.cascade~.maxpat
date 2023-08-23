@@ -40,18 +40,6 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-7",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 612.0, 278.0, 120.0, 22.0 ],
-					"text" : "prepend mc.cascade"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-23",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -741,7 +729,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 105.0, 289.0, 195.0, 22.0 ],
+					"patching_rect" : [ 105.0, 289.0, 198.0, 22.0 ],
 					"text" : "mvc.DSPrefresh #1"
 				}
 
@@ -1078,7 +1066,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 75.5, 90.0, 560.0, 24.0 ],
+					"patching_rect" : [ 75.5, 90.0, 579.0, 24.0 ],
 					"text" : "mvc.model #0 #1 #2 @type mc.cascade~ @autoinit 1",
 					"varname" : "mvc.model"
 				}
@@ -1227,13 +1215,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-5", 0 ],
-					"source" : [ "obj-19", 3 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
 					"source" : [ "obj-20", 0 ]
 				}
@@ -1293,7 +1274,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
+					"destination" : [ "obj-5", 0 ],
 					"source" : [ "obj-3", 1 ]
 				}
 
@@ -1334,13 +1315,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-27", 0 ],
 					"source" : [ "obj-6", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-5", 0 ],
-					"source" : [ "obj-7", 0 ]
 				}
 
 			}
