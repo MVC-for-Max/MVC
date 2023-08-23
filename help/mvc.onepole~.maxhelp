@@ -620,7 +620,6 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
-										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"bubble" : 1,
@@ -731,8 +730,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 103.807760141093468, 242.971537721537686, 138.0, 22.0 ],
-													"text" : "preset \"Rename Preset\""
+													"patching_rect" : [ 103.807760141093468, 242.971537721537686, 91.0, 22.0 ],
+													"text" : "preset Rename"
 												}
 
 											}
@@ -743,8 +742,8 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 242.977072310405674, 266.957306582306558, 102.0, 24.0 ],
-													"text" : "don't do that :)"
+													"patching_rect" : [ 197.977072310405646, 266.957306582306558, 108.0, 24.0 ],
+													"text" : "Mind your step."
 												}
 
 											}
@@ -765,8 +764,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 115.977072310405646, 266.957306582306558, 125.0, 22.0 ],
-													"text" : "preset \"Delete preset\""
+													"patching_rect" : [ 115.977072310405646, 266.957306582306558, 80.0, 22.0 ],
+													"text" : "preset Delete"
 												}
 
 											}
@@ -1083,14 +1082,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-16",
-									"lastchannelcount" : 2,
+									"lastchannelcount" : 3,
 									"maxclass" : "mc.live.gain~",
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"orientation" : 1,
 									"outlettype" : [ "multichannelsignal", "", "float", "list" ],
 									"parameter_enable" : 1,
-									"patching_rect" : [ 21.5, 318.5, 136.0, 36.0 ],
+									"patching_rect" : [ 21.5, 318.5, 136.0, 42.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "mc.live.gain~[3]",
@@ -1362,7 +1361,6 @@
  ],
 		"parameters" : 		{
 			"obj-51::obj-16" : [ "mc.live.gain~[3]", "mc.live.gain~", 0 ],
-			"obj-51::obj-17::obj-8::obj-5::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
 			"obj-51::obj-21::obj-12::obj-8::obj-7" : [ "live.toggle[5]", "live.toggle", 0 ],
 			"obj-51::obj-7::obj-21::obj-6" : [ "live.tab[4]", "live.tab[1]", 0 ],
 			"obj-51::obj-7::obj-35" : [ "[1]", "Level", 0 ],
