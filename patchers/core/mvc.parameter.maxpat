@@ -380,7 +380,6 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-3",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 0,
 									"numoutlets" : 1,
@@ -8716,8 +8715,6 @@
 													"format" : 6,
 													"id" : "obj-49",
 													"maxclass" : "flonum",
-													"maximum" : 22000.0,
-													"minimum" : 20.0,
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
@@ -8731,7 +8728,6 @@
 													"format" : 6,
 													"id" : "obj-48",
 													"maxclass" : "flonum",
-													"maximum" : 22000.0,
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
@@ -8745,7 +8741,6 @@
 													"format" : 6,
 													"id" : "obj-47",
 													"maxclass" : "flonum",
-													"minimum" : 20.0,
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
@@ -10216,7 +10211,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 168.0, 266.0, 91.0, 22.0 ],
+									"patching_rect" : [ 168.0, 234.0, 91.0, 22.0 ],
 									"text" : "zl 32000 ecils 1"
 								}
 
@@ -10446,7 +10441,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 188.0, 217.0, 271.0, 22.0 ],
+									"patching_rect" : [ 168.0, 207.0, 271.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -10841,7 +10836,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 240.0, 292.0, 91.0, 22.0 ],
+									"patching_rect" : [ 240.0, 260.0, 91.0, 22.0 ],
 									"text" : "prepend set set"
 								}
 
@@ -10853,7 +10848,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 168.0, 330.0, 53.0, 22.0 ],
+									"patching_rect" : [ 168.0, 298.0, 53.0, 22.0 ],
 									"text" : "prepend"
 								}
 
@@ -10865,7 +10860,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 5,
 									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 168.0, 358.0, 228.0, 22.0 ],
+									"patching_rect" : [ 168.0, 326.0, 228.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"legacy" : 0,
@@ -10885,7 +10880,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 20.0, 262.0, 77.5, 49.0 ],
+									"patching_rect" : [ 20.0, 260.0, 77.5, 49.0 ],
 									"text" : "zl join @zlmaxsize 16384"
 								}
 
@@ -10896,7 +10891,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 20.0, 328.0, 99.0, 22.0 ],
+									"patching_rect" : [ 20.0, 326.0, 99.0, 22.0 ],
 									"text" : "s #0.r.remote"
 								}
 
@@ -10971,7 +10966,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-44", 1 ],
-									"midpoints" : [ 146.5, 153.5, 323.5, 153.5 ],
+									"midpoints" : [ 146.5, 153.5, 303.5, 153.5 ],
 									"source" : [ "obj-23", 2 ]
 								}
 
@@ -11020,6 +11015,13 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
+									"source" : [ "obj-44", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-44", 0 ],
 									"source" : [ "obj-5", 0 ]
 								}
 
@@ -11325,7 +11327,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-22",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 5,
@@ -11996,7 +11997,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-13",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -13334,7 +13334,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "none" ],
 					"patching_rect" : [ 43.0, 69.571801386903871, 30.0, 30.0 ]
 				}
 
