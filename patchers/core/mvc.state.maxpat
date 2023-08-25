@@ -3914,7 +3914,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 365.25, 254.459117106846577, 151.0, 22.0 ],
+									"patching_rect" : [ 365.25, 252.459117106846577, 151.0, 22.0 ],
 									"text" : "r #0.state.expand.done"
 								}
 
@@ -3926,8 +3926,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 427.0, 312.0, 127.0, 22.0 ],
-									"text" : "send $2.param.concat"
+									"patching_rect" : [ 427.0, 282.0, 119.0, 22.0 ],
+									"text" : "send $2.state.concat"
 								}
 
 							}
@@ -4734,7 +4734,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-13",
-													"linecount" : 2,
+													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
