@@ -58,7 +58,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 269.738095238095241, 164.053941908713682, 211.833333333333258, 89.0 ],
+					"patching_rect" : [ 269.738095238095241, 164.053941908713682, 216.0, 89.0 ],
 					"text" : "replace uid #0,\nreplace parent #1,\nreplace name chained-ON,\nreplace mvc-type state,\nreplace type bool,\nreplace description \"Chained ON value\",\nreplace default 1,\nreplace unit none"
 				}
 
@@ -628,7 +628,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 5,
 									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 168.0, 257.0, 193.0, 22.0 ],
+									"patching_rect" : [ 168.0, 257.0, 199.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"legacy" : 0,
@@ -636,7 +636,7 @@
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict mvc.state.values.dict @quiet 1"
+									"text" : "dict mvc.states.values.dict @quiet 1"
 								}
 
 							}
