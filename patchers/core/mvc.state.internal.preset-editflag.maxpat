@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 576.0, -913.0, 574.0, 428.0 ],
+		"rect" : [ 714.0, 519.0, 574.0, 428.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -58,7 +58,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 290.738095238095184, 155.0, 144.261904761904816, 129.0 ],
+					"patching_rect" : [ 290.738095238095184, 155.0, 146.261904761904816, 129.0 ],
 					"text" : "replace uid #0,\nreplace parent #1,\nreplace name preset-editflag,\nreplace mvc-type state,\nreplace type bool,\nreplace description \"This model's edit flag\",\nreplace default 0,\nreplace unit none"
 				}
 
@@ -628,7 +628,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 5,
 									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 168.0, 257.0, 193.0, 22.0 ],
+									"patching_rect" : [ 168.0, 257.0, 199.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"legacy" : 0,
@@ -636,7 +636,7 @@
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict mvc.state.values.dict @quiet 1"
+									"text" : "dict mvc.states.values.dict @quiet 1"
 								}
 
 							}
@@ -1655,6 +1655,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-13",
+													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -2424,6 +2425,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-17",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -3779,6 +3781,7 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-12",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
@@ -3827,6 +3830,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-39",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
