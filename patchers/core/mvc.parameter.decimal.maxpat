@@ -808,8 +808,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 400.0, 308.14538095359319, 168.0, 22.0 ],
-									"text" : "uid #0, mvc-type parameter"
+									"patching_rect" : [ 400.0, 308.14538095359319, 241.0, 22.0 ],
+									"text" : "uid #0, mvc-type parameter, type decimal"
 								}
 
 							}
@@ -4120,6 +4120,8 @@
 													"format" : 6,
 													"id" : "obj-49",
 													"maxclass" : "flonum",
+													"maximum" : 20000.0,
+													"minimum" : 0.001,
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
@@ -4133,6 +4135,7 @@
 													"format" : 6,
 													"id" : "obj-48",
 													"maxclass" : "flonum",
+													"maximum" : 20000.0,
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
@@ -4146,6 +4149,7 @@
 													"format" : 6,
 													"id" : "obj-47",
 													"maxclass" : "flonum",
+													"minimum" : 0.001,
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
@@ -6464,7 +6468,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-13",
-													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -7270,7 +7273,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-17",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -8775,7 +8777,6 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-12",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
@@ -8824,7 +8825,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-39",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
