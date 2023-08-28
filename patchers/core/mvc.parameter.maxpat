@@ -2673,7 +2673,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "bang" ],
-													"patching_rect" : [ 49.999999333333342, 84.0, 32.0, 22.0 ],
+													"patching_rect" : [ 49.999999333333342, 84.0, 135.000000666666665, 22.0 ],
 													"text" : "t b b"
 												}
 
@@ -3260,6 +3260,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-43", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 1 ],
+									"source" : [ "obj-6", 1 ]
 								}
 
 							}
@@ -5053,6 +5060,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-13",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
