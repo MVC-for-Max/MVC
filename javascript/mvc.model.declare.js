@@ -68,7 +68,7 @@ function updateDictionaries(){
 
 	// remove gone addresses only for values
 	for (var i = 0; i < (missingAdresses.length); i++) {
-		var theAdd = missingAdresses[i].replace(/\//g, '::');
+		var theAdd = missingAdresses[i];//.replace(/\//g, '::');
 		//post('removing', theAdd, '\n')
 		parametersValuesDict.remove(theAdd);
 		statesValuesDict.remove(theAdd);
@@ -78,7 +78,7 @@ function updateDictionaries(){
 
 	// remove all previous addresses in parameters (to rebuild all indices)
 	for (var i = 0; i < (previousAddresses.length); i++) {
-		var theAdd = previousAddresses[i].replace(/\//g, '::');
+		var theAdd = previousAddresses[i];//.replace(/\//g, '::');
 		// parametersDict.remove(theAdd);
 		//inputsDict.remove(theAdd);
 		modelDict.remove(theAdd);
@@ -88,7 +88,7 @@ function updateDictionaries(){
 	}
 	// add new addresses in model dict
 	for (var i = 0; i < (currentAddresses.length); i++) {
-		var theAdd = currentAddresses[i].replace(/\//g, '::');
+		var theAdd = currentAddresses[i];//.replace(/\//g, '::');
     	//post('add', i, model_UID, theAdd, "\n");
     var addressUID = [model_UID, i + 1];
 		// parametersDict.replace(theAdd + "::uid", addressUID);
