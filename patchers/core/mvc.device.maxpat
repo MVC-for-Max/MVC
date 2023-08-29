@@ -18569,12 +18569,13 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-11",
+																					"linecount" : 3,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 132.0, 55.0, 50.0, 22.0 ],
-																					"text" : "\"6956\""
+																					"text" : "3929.channel.filter"
 																				}
 
 																			}
@@ -64891,8 +64892,6 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 0,
 																		"defer" : 0,
-																		"node_bin_path" : "",
-																		"npm_bin_path" : "",
 																		"watch" : 0
 																	}
 ,
@@ -67616,8 +67615,6 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 0,
 																		"defer" : 0,
-																		"node_bin_path" : "",
-																		"npm_bin_path" : "",
 																		"watch" : 0
 																	}
 ,
@@ -68548,15 +68545,15 @@
 									"numinlets" : 2,
 									"numoutlets" : 5,
 									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 328.0, 247.5, 128.0, 22.0 ],
+									"patching_rect" : [ 328.0, 247.5, 121.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
-										"legacy" : 1,
+										"legacy" : 0,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict modelAddressDict"
+									"text" : "dict stateAddressDict"
 								}
 
 							}
@@ -68579,7 +68576,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 5,
 									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 328.0, 207.5, 132.0, 22.0 ],
+									"patching_rect" : [ 328.0, 207.5, 129.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"legacy" : 0,
@@ -68587,7 +68584,7 @@
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict paramlAddressDict"
+									"text" : "dict paramAddressDict"
 								}
 
 							}
@@ -69048,6 +69045,14 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"midpoints" : [ 337.5, 239.5, 286.5, 239.5, 286.5, 42.0, 13.5, 42.0 ],
+									"source" : [ "obj-23", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-29", 0 ],
 									"source" : [ "obj-24", 0 ]
 								}
@@ -69057,6 +69062,14 @@
 								"patchline" : 								{
 									"destination" : [ "obj-26", 0 ],
 									"source" : [ "obj-25", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"midpoints" : [ 337.5, 279.5, 284.5, 279.5, 284.5, 42.0, 13.5, 42.0 ],
+									"source" : [ "obj-26", 0 ]
 								}
 
 							}
@@ -69094,6 +69107,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-10", 0 ],
+									"midpoints" : [ 337.5, 187.5, 287.5, 187.5, 287.5, 42.0, 13.5, 42.0 ],
 									"source" : [ "obj-6", 0 ]
 								}
 
@@ -71102,6 +71116,8 @@
 													"saved_object_attributes" : 													{
 														"autostart" : 0,
 														"defer" : 0,
+														"node_bin_path" : "",
+														"npm_bin_path" : "",
 														"watch" : 0
 													}
 ,
