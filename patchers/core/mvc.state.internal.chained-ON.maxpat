@@ -58,7 +58,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 269.738095238095241, 164.053941908713682, 216.0, 89.0 ],
+					"patching_rect" : [ 269.738095238095241, 164.053941908713682, 217.0, 89.0 ],
 					"text" : "replace uid #0,\nreplace parent #1,\nreplace name chained-ON,\nreplace mvc-type state,\nreplace type bool,\nreplace description \"Chained ON value\",\nreplace default 1,\nreplace unit none"
 				}
 
@@ -646,8 +646,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 53.0, 257.0, 99.0, 22.0 ],
-									"text" : "s #0.r.remote"
+									"patching_rect" : [ 53.0, 257.0, 81.0, 22.0 ],
+									"text" : "s mvc.remote"
 								}
 
 							}

@@ -58,7 +58,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 290.738095238095184, 155.0, 146.261904761904816, 129.0 ],
+					"patching_rect" : [ 290.738095238095184, 155.0, 144.261904761904816, 129.0 ],
 					"text" : "replace uid #0,\nreplace parent #1,\nreplace name preset-editflag,\nreplace mvc-type state,\nreplace type bool,\nreplace description \"This model's edit flag\",\nreplace default 0,\nreplace unit none"
 				}
 
@@ -646,8 +646,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 53.0, 257.0, 99.0, 22.0 ],
-									"text" : "s #0.r.remote"
+									"patching_rect" : [ 53.0, 257.0, 81.0, 22.0 ],
+									"text" : "s mvc.remote"
 								}
 
 							}
@@ -1655,7 +1655,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-13",
-													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -2425,7 +2424,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-17",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -3781,7 +3779,6 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-12",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
@@ -3830,7 +3827,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-39",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
