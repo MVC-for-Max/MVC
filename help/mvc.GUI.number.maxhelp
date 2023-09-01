@@ -2,15 +2,15 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 5,
+			"major" : 9,
+			"minor" : 0,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 63.0, 99.0, 809.0, 754.0 ],
+		"rect" : [ 583.0, 87.0, 809.0, 754.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -60,8 +60,8 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 5,
+							"major" : 9,
+							"minor" : 0,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -122,15 +122,15 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 5,
+							"major" : 9,
+							"minor" : 0,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 63.0, 125.0, 809.0, 728.0 ],
+						"rect" : [ 583.0, 113.0, 809.0, 728.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -193,8 +193,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 371.75, 478.861139112220599, 233.0, 22.0 ],
-									"text" : "myGUInumberHelperContext/myBiquad/Q"
+									"patching_rect" : [ 371.75, 478.861139112220599, 191.0, 22.0 ],
+									"text" : "myGUInumberHelper/myBiquad/Q"
 								}
 
 							}
@@ -205,8 +205,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 378.5, 502.782337224441108, 276.0, 22.0 ],
-									"text" : "myGUInumberHelperContext/myBiquad/frequency"
+									"patching_rect" : [ 378.5, 502.782337224441108, 235.0, 22.0 ],
+									"text" : "myGUInumberHelper/myBiquad/frequency"
 								}
 
 							}
@@ -217,8 +217,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 358.75, 454.939940999999976, 246.0, 22.0 ],
-									"text" : "myGUInumberHelperContext/myBiquad/gain"
+									"patching_rect" : [ 358.75, 454.939940999999976, 205.0, 22.0 ],
+									"text" : "myGUInumberHelper/myBiquad/gain"
 								}
 
 							}
@@ -341,7 +341,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 81.75, 599.939940999999976, 296.0, 22.0 ],
+									"patching_rect" : [ 81.75, 599.939940999999976, 299.0, 22.0 ],
 									"text" : "mvc.GUI.number myGUInumberHelper/myBiquad/gain"
 								}
 
@@ -352,7 +352,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 14.5, 138.439941000000005, 636.0, 20.0 ],
+									"patching_rect" : [ 14.5, 138.439941000000005, 642.0, 20.0 ],
 									"text" : "GUI objects : a series of patcher to be instanciated in a bpatcher that allow to control an MVC component's parameters."
 								}
 
@@ -469,7 +469,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 32.0, 245.939940999999976, 248.0, 22.0 ],
+									"patching_rect" : [ 32.0, 245.939940999999976, 250.0, 22.0 ],
 									"text" : "mvc.biquad~ myGUInumberHelper myBiquad",
 									"varname" : "mvc.biquad~"
 								}
@@ -483,7 +483,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 32.0, 219.939940999999976, 183.0, 22.0 ],
+									"patching_rect" : [ 32.0, 219.939940999999976, 185.0, 22.0 ],
 									"text" : "mvc.device myGUInumberHelper",
 									"varname" : "mvc.device"
 								}
@@ -576,7 +576,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 1 ],
-									"midpoints" : [ 368.25, 635.939940999999976, 388.25, 635.939940999999976, 388.25, 564.141298524886679, 368.25, 564.141298524886679 ],
+									"midpoints" : [ 371.25, 635.939940999999976, 388.25, 635.939940999999976, 388.25, 564.141298524886679, 368.25, 564.141298524886679 ],
 									"source" : [ "obj-3", 1 ]
 								}
 
@@ -720,27 +720,6 @@
 			}
  ],
 		"lines" : [  ],
-		"parameters" : 		{
-			"obj-24::obj-14::obj-35::obj-30::obj-18::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
-			"parameterbanks" : 			{
-				"0" : 				{
-					"index" : 0,
-					"name" : "",
-					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
-				}
-
-			}
-,
-			"parameter_overrides" : 			{
-				"obj-24::obj-14::obj-35::obj-30::obj-18::obj-7" : 				{
-					"parameter_longname" : "live.toggle[2]"
-				}
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
