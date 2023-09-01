@@ -294,7 +294,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "37832.focus" ],
+					"outlettype" : [ "", "43760.focus" ],
 					"patching_rect" : [ 245.5, 239.0, 98.0, 22.0 ],
 					"text" : "mvc.GUI.tabbing"
 				}
@@ -3328,6 +3328,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-1",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 3,
@@ -3543,7 +3544,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
-					"outputonclick" : 1,
 					"parameter_enable" : 0,
 					"patching_rect" : [ 123.0, 208.5, 128.0, 22.0 ],
 					"presentation" : 1,
@@ -3579,7 +3579,7 @@
 					"bgfillcolor_proportion" : 0.5,
 					"bgfillcolor_type" : "color",
 					"fontface" : 2,
-					"hint" : "/frequency : no target",
+					"hint" : "/gain : no target",
 					"id" : "obj-14",
 					"ignoreclick" : 1,
 					"items" : "no target",
