@@ -58,7 +58,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 271.738095238095241, 100.053941908713682, 217.0, 89.0 ],
+					"patching_rect" : [ 271.738095238095241, 100.053941908713682, 221.0, 89.0 ],
 					"text" : "replace uid #0,\nreplace parent #1,\nreplace name chained-ON,\nreplace mvc-type state,\nreplace type bool,\nreplace description \"Chained ON value\",\nreplace default 1,\nreplace unit none"
 				}
 
@@ -555,7 +555,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 4,
 													"outlettype" : [ "", "", "", "" ],
-													"patching_rect" : [ 50.0, 164.0, 103.0, 22.0 ],
+													"patching_rect" : [ 50.0, 164.0, 103.0, 35.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 0,
 														"precision" : 6
@@ -1121,7 +1121,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 5,
 									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 189.0, 273.0, 228.0, 22.0 ],
+									"patching_rect" : [ 189.0, 273.0, 199.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"legacy" : 0,
@@ -1129,7 +1129,7 @@
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict mvc.parameters.values.dict @quiet 1"
+									"text" : "dict mvc.states.values.dict @quiet 1"
 								}
 
 							}
@@ -2230,7 +2230,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-13",
-													"linecount" : 2,
+													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
