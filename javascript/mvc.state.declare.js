@@ -4,10 +4,6 @@ inlets = 1;
 outlets = 4;
 
 _MVC_VERSION = 0.4;
-
-var modelDict = new Dict();
-modelDict.quiet = 1;
-modelDict.name = "mvc.models.dict";
 	
 var inputsDict = new Dict();
 inputsDict.quiet = 1;
@@ -62,7 +58,7 @@ function updateDictionaries(){
 
 	// remove gone addresses only for values
 	for (var i = 0; i < (missingAdresses.length); i++) {
-		var theAdd = missingAdresses[i].replace(/\//g, '::');
+		var theAdd = missingAdresses[i];//.replace(/\//g, '::');
 		//post('removing', theAdd, '\n')
 		statesValuesDict.remove(theAdd);
 		outlet(1, missingAdresses[i], 0);
@@ -70,15 +66,15 @@ function updateDictionaries(){
 
 	// remove all previous addresses in states (to rebuild all indices)
 	for (var i = 0; i < (previousAddresses.length); i++) {
-		var theAdd = previousAddresses[i].replace(/\//g, '::');
+		var theAdd = previousAddresses[i];//.replace(/\//g, '::');
 		// statesDict.remove(theAdd);
 		inputsDict.remove(theAdd);
 		//post("removing state:", theAdd, "\n");
 	}
 
-	// add new addresses in model dict
+	// add new addresses in inputs dict
 	for (var i = 0; i < (currentAddresses.length); i++) {
-		var theAdd = currentAddresses[i].replace(/\//g, '::');
+		var theAdd = currentAddresses[i];//.replace(/\//g, '::');
     	//post('add', i, theAdd, "\n");
     	var addressUID = [state_UID, i + 1];
 		// statesDict.replace(theAdd + "::uid", addressUID);
@@ -127,10 +123,6 @@ function findGoneItems(CurrentArray, PreviousArray) {
          missingItems.push(PreviousArray[j]);
    }
    return missingItems;
-}
-
-function loadbang(	) {
-	outlet(3, 'bang');
 }
 
 function empty(){
