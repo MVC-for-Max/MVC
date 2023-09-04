@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 477.0, 293.0, 503.0, 419.0 ],
+		"rect" : [ 225.0, 451.0, 503.0, 419.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -82,7 +82,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 330.738095238095184, 146.107883817427364, 130.0, 143.0 ],
+					"patching_rect" : [ 330.738095238095184, 146.107883817427364, 140.0, 143.0 ],
 					"text" : "replace uid #0,\nreplace parent #1,\nreplace name ON,\nreplace mvc-type parameter,\nreplace type bool,\nreplace description \"Activate component\",\nreplace default 1,\nreplace unit none"
 				}
 
@@ -267,7 +267,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 240.500010666666753, 333.0, 30.0, 30.0 ]
+													"patching_rect" : [ 253.500010666666753, 283.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -279,7 +279,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 161.500010666666753, 333.0, 30.0, 30.0 ]
+													"patching_rect" : [ 174.500010666666753, 283.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -290,7 +290,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 89.500010666666753, 300.0, 91.0, 22.0 ],
+													"patching_rect" : [ 102.500010666666753, 250.0, 91.0, 22.0 ],
 													"text" : "zl 32000 slice 1"
 												}
 
@@ -302,7 +302,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 5,
 													"outlettype" : [ "dictionary", "", "", "", "" ],
-													"patching_rect" : [ 50.000010666666753, 264.857142857142776, 177.0, 22.0 ],
+													"patching_rect" : [ 50.000010666666753, 218.857142857142776, 228.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 0,
 														"legacy" : 0,
@@ -310,7 +310,7 @@
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict mvc.parameters.values.dict"
+													"text" : "dict mvc.parameters.values.dict @quiet 1"
 												}
 
 											}
@@ -321,7 +321,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.000010666666753, 233.0, 42.0, 22.0 ],
+													"patching_rect" : [ 50.000010666666753, 187.0, 42.0, 22.0 ],
 													"text" : "get $2"
 												}
 
@@ -2667,6 +2667,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-13",
+													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -3460,6 +3461,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-17",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -4442,6 +4444,7 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-12",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
@@ -4490,6 +4493,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-39",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
