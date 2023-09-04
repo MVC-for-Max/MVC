@@ -19,6 +19,9 @@ Max.addHandler("expand-old", (...args) => {
 	// else {
 	// 	msg = args[0];
 	// 	}
+	
+	// expand only once if all elements are the same ?
+	// const allEqual = arr => arr.every( v => v === arr[0] )
 
 	var result = [];
 	var expansion = [];
