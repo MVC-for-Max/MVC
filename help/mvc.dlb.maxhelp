@@ -2,8 +2,8 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 2,
+			"major" : 9,
+			"minor" : 0,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
@@ -36,7 +36,7 @@
 		"digest" : "",
 		"tags" : "",
 		"style" : "",
-		"subpatcher_template" : "aim_help-file_template",
+		"subpatcher_template" : "mvc_help-file_template",
 		"showrootpatcherontab" : 0,
 		"showontab" : 0,
 		"assistshowspatchername" : 0,
@@ -60,8 +60,8 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 2,
+							"major" : 9,
+							"minor" : 0,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -94,7 +94,7 @@
 						"digest" : "",
 						"tags" : "",
 						"style" : "",
-						"subpatcher_template" : "aim_help-file_template",
+						"subpatcher_template" : "mvc_help-file_template",
 						"showontab" : 2,
 						"assistshowspatchername" : 0,
 						"boxes" : [  ],
@@ -166,8 +166,8 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 2,
+							"major" : 9,
+							"minor" : 0,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -200,7 +200,7 @@
 						"digest" : "",
 						"tags" : "",
 						"style" : "",
-						"subpatcher_template" : "aim_help-file_template",
+						"subpatcher_template" : "mvc_help-file_template",
 						"showontab" : 2,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
@@ -246,7 +246,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 603.0, 218.0, 47.0, 22.0 ],
+									"patching_rect" : [ 603.0, 218.0, 50.0, 22.0 ],
 									"text" : "mvc.dlb"
 								}
 
@@ -294,7 +294,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 441.0, 218.0, 47.0, 22.0 ],
+									"patching_rect" : [ 441.0, 218.0, 50.0, 22.0 ],
 									"text" : "mvc.dlb"
 								}
 
@@ -342,7 +342,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 271.0, 218.0, 47.0, 22.0 ],
+									"patching_rect" : [ 271.0, 218.0, 50.0, 22.0 ],
 									"text" : "mvc.dlb"
 								}
 
@@ -390,7 +390,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 103.0, 218.0, 47.0, 22.0 ],
+									"patching_rect" : [ 103.0, 218.0, 50.0, 22.0 ],
 									"text" : "mvc.dlb"
 								}
 
@@ -529,13 +529,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -591,10 +591,10 @@
 , 							{
 								"name" : "tap-dark",
 								"default" : 								{
-									"fontname" : [ "Ableton Sans Light Regular" ],
-									"textcolor" : [ 0.847058823529412, 0.847058823529412, 0.847058823529412, 1.0 ],
 									"editing_bgcolor" : [ 0.133333, 0.133333, 0.133333, 1.0 ],
-									"locked_bgcolor" : [ 0.133333, 0.133333, 0.133333, 1.0 ]
+									"fontname" : [ "Ableton Sans Light Regular" ],
+									"locked_bgcolor" : [ 0.133333, 0.133333, 0.133333, 1.0 ],
+									"textcolor" : [ 0.847058823529412, 0.847058823529412, 0.847058823529412, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -633,52 +633,18 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "helpdetails.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.dlb.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.helpfiller.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.helpinfos.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}
@@ -734,10 +700,10 @@
 , 			{
 				"name" : "tap-dark",
 				"default" : 				{
-					"fontname" : [ "Ableton Sans Light Regular" ],
-					"textcolor" : [ 0.847058823529412, 0.847058823529412, 0.847058823529412, 1.0 ],
 					"editing_bgcolor" : [ 0.133333, 0.133333, 0.133333, 1.0 ],
-					"locked_bgcolor" : [ 0.133333, 0.133333, 0.133333, 1.0 ]
+					"fontname" : [ "Ableton Sans Light Regular" ],
+					"locked_bgcolor" : [ 0.133333, 0.133333, 0.133333, 1.0 ],
+					"textcolor" : [ 0.847058823529412, 0.847058823529412, 0.847058823529412, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
