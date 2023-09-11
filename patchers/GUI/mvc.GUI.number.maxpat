@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 200.0, 200.0, 279.0, 17.0 ],
+		"rect" : [ 200.0, 200.0, 890.0, 603.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -294,7 +294,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "2015.focus" ],
+					"outlettype" : [ "", "5328.focus" ],
 					"patching_rect" : [ 245.5, 239.0, 98.0, 22.0 ],
 					"text" : "mvc.GUI.tabbing"
 				}
@@ -665,18 +665,6 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-3",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 69.0, 133.0, 34.0, 22.0 ],
-									"text" : "sel 1"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"comment" : "",
 									"id" : "obj-21",
@@ -3106,13 +3094,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-14", 0 ],
-									"source" : [ "obj-3", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-21", 0 ],
 									"source" : [ "obj-43", 0 ]
 								}
@@ -3148,15 +3129,15 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-17", 1 ],
-									"source" : [ "obj-8", 1 ]
+									"destination" : [ "obj-14", 0 ],
+									"source" : [ "obj-8", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
-									"source" : [ "obj-8", 0 ]
+									"destination" : [ "obj-17", 1 ],
+									"source" : [ "obj-8", 1 ]
 								}
 
 							}
@@ -3484,7 +3465,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 191.0, 115.0, 67.0, 22.0 ],
-					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "nogrow", "close", "nozoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 200, 200, 479, 217, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
+					"save" : [ "#N", "thispatcher", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
 
