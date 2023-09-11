@@ -11446,7 +11446,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 399.666666333333012, 275.35166826689715, 148.0, 22.0 ],
-									"text" : "sprintf symout mvc.%s.gui"
+									"text" : "sprintf symout %s.gui"
 								}
 
 							}
@@ -16854,7 +16854,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-34",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 2,
@@ -16879,7 +16878,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-19",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -17942,7 +17940,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-43",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 2,
@@ -18811,7 +18808,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-59",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 2,
