@@ -1,7 +1,7 @@
 # MVC
 <!-- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) -->
 
-A [Max](https://cycling74.com) package providing a modular standard for structuring patches, following the Model-View-Controler design pattern (aka MVC). It is very similar to (and inspired by) [libossia](https://ossia.io/site-libossia/about.html) and [Jamoma](http://jamoma.org/), but based on vanilla-Max objects.
+A [Max](https://cycling74.com) package providing a modular standard for structuring patches, following the Model-View-Controller design pattern (aka MVC). It is very similar to (and inspired by) [libossia](https://ossia.io/site-libossia/about.html) and [Jamoma](http://jamoma.org/), but based on vanilla-Max objects.
 
 ![alt text](screenshot.png "Screenshot of a Max patcher with MVC components.")
 
