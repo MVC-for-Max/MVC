@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "braces": "^3.0.2"
+    "braces": "^3.0.2",
+    "convert": "^4.13.2"
   }
 }

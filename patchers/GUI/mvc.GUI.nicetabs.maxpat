@@ -262,7 +262,7 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "aim.GUI.nicetabs.bp.maxpat",
+					"name" : "mvc.GUI.nicetabs.bp.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
