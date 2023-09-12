@@ -1,4 +1,4 @@
-# MVX
+# MVC
 <!-- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) -->
 
 A [Max](https://cycling74.com) package providing a modular standard for structuring patches, similar to [libossia](https://ossia.io/site-libossia/about.html) and [Jamoma](http://jamoma.org/), but based on vanilla-Max objects.
