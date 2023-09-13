@@ -57,8 +57,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 192.0, 181.79916317991632, 141.0, 22.0 ],
-					"text" : "r MVC.models.initializers"
+					"patching_rect" : [ 192.0, 181.79916317991632, 147.0, 22.0 ],
+					"text" : "r MVC.models.i.initializers"
 				}
 
 			}
