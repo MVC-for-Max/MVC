@@ -1,7 +1,7 @@
 // mvc.parameter.declare.js
 
 inlets = 1;
-outlets = 2;
+outlets = 3;
 
 _MVC_VERSION = 0.4;
 
@@ -127,7 +127,7 @@ function declare(){
 
 	// *Then*, send initializers to public (remotes)
 	for (var i = 0; i < (currentAddresses.length); i++) {
-		outlet(1, currentAddresses[i], 1);	
+		outlet(2, currentAddresses[i], 1);	
 	}
 	
 	// bang when done
