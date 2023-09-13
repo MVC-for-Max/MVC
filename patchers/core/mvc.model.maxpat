@@ -263,6 +263,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-32",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 2,
@@ -337,6 +338,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-29",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
@@ -10438,6 +10440,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-8",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -13805,7 +13808,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 88.5, 43.5, 223.0, 35.0 ],
+					"patching_rect" : [ 88.5, 43.5, 255.0, 35.0 ],
 					"text" : "patcherargs @type #3 @uid #1 @channel-layout none @autoinit 0"
 				}
 
@@ -13949,7 +13952,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+										"rect" : [ 59.0, 106.0, 453.0, 316.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -13979,12 +13982,24 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-2",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 54.0, 16.0, 225.0, 33.0 ],
+													"text" : "Add model to mvc.models.dict and send initialization notification to child nodes."
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-58",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 81.375, 128.666666666666629, 57.0, 22.0 ],
+													"patching_rect" : [ 54.0, 135.0, 57.0, 22.0 ],
 													"text" : "tosymbol"
 												}
 
@@ -13995,7 +14010,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 81.375, 162.836921224606499, 49.0, 22.0 ],
+													"patching_rect" : [ 54.0, 169.0, 49.0, 22.0 ],
 													"text" : "forward"
 												}
 
@@ -14007,20 +14022,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
-													"patching_rect" : [ 81.375, 100.0, 120.0, 22.0 ],
+													"patching_rect" : [ 54.0, 106.0, 181.0, 22.0 ],
 													"text" : "t #1"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-40",
-													"maxclass" : "button",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
-													"parameter_enable" : 0,
-													"patching_rect" : [ 50.0, 239.333333333333371, 24.0, 24.0 ]
 												}
 
 											}
@@ -14031,7 +14034,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "" ],
-													"patching_rect" : [ 81.375, 239.333333333333371, 97.0, 22.0 ],
+													"patching_rect" : [ 54.0, 237.0, 34.0, 22.0 ],
 													"text" : "sel 1"
 												}
 
@@ -14043,7 +14046,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 81.375, 207.333333333333371, 229.0, 22.0 ],
+													"patching_rect" : [ 54.0, 213.0, 151.0, 22.0 ],
 													"text" : "r #1.model.declare.done"
 												}
 
@@ -14055,7 +14058,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 140.375, 128.666666666666629, 130.0, 22.0 ],
+													"patching_rect" : [ 113.0, 135.0, 130.0, 22.0 ],
 													"text" : "send $1.model.declare"
 												}
 
@@ -14069,7 +14072,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 81.375, 40.000009226486725, 30.0, 30.0 ]
+													"patching_rect" : [ 54.0, 69.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -14082,7 +14085,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 140.375, 40.000009226486725, 30.0, 30.0 ]
+													"patching_rect" : [ 113.0, 69.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -14094,7 +14097,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 81.375, 323.333322226486757, 30.0, 30.0 ]
+													"patching_rect" : [ 54.0, 262.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -14109,15 +14112,6 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-15", 0 ],
-													"order" : 0,
-													"source" : [ "obj-33", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-40", 0 ],
-													"order" : 1,
 													"source" : [ "obj-33", 0 ]
 												}
 
@@ -14160,7 +14154,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 162.0, 374.0, 109.0, 24.0 ],
+									"patching_rect" : [ 162.0, 374.0, 118.0, 24.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -14168,7 +14162,7 @@
 										"tags" : ""
 									}
 ,
-									"text" : "p declare-model"
+									"text" : "p \"declare model\""
 								}
 
 							}
@@ -14203,7 +14197,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 84.0, 131.0, 640.0, 480.0 ],
+										"rect" : [ 84.0, 131.0, 470.0, 299.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -14232,6 +14226,18 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-3",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 50.25, 18.0, 387.0, 33.0 ],
+													"text" : "Distribute each of the expanded addresses on the parent's addresses.\nResult is in the \"coll #1.OSCaddresses\""
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-59",
 													"maxclass" : "newobj",
@@ -14299,7 +14305,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 50.25, 40.000013276715038, 30.0, 30.0 ]
+													"patching_rect" : [ 50.25, 65.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -14312,7 +14318,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 109.0, 40.000013276715038, 30.0, 30.0 ]
+													"patching_rect" : [ 109.25, 65.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -14374,7 +14380,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 162.0, 294.0, 128.0, 24.0 ],
+									"patching_rect" : [ 162.0, 294.0, 150.0, 24.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -14382,7 +14388,7 @@
 										"tags" : ""
 									}
 ,
-									"text" : "p \"add parent path\""
+									"text" : "p \"distribute on parent\""
 								}
 
 							}
@@ -14405,7 +14411,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 84.0, 131.0, 640.0, 480.0 ],
+										"rect" : [ 84.0, 131.0, 403.0, 309.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -14434,6 +14440,18 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-3",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 54.0, 19.0, 209.0, 33.0 ],
+													"text" : "Send to mvc.device to expand name. \nResult is in the \"coll #1.expanded\""
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-1",
 													"maxclass" : "newobj",
@@ -14501,7 +14519,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
+													"patching_rect" : [ 50.0, 64.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -14514,7 +14532,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 109.25, 40.0, 30.0, 30.0 ]
+													"patching_rect" : [ 109.0, 64.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -14526,7 +14544,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 50.0, 263.0, 30.0, 30.0 ]
+													"patching_rect" : [ 50.0, 250.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -14576,7 +14594,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 162.0, 221.0, 106.0, 24.0 ],
+									"patching_rect" : [ 162.0, 221.0, 115.0, 24.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -14584,7 +14602,7 @@
 										"tags" : ""
 									}
 ,
-									"text" : "p expand-name"
+									"text" : "p \"expand name\""
 								}
 
 							}
@@ -15691,6 +15709,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-34",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 2,
@@ -15715,6 +15734,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-19",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -16777,6 +16797,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-43",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 2,
@@ -17645,6 +17666,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-59",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 2,
@@ -20408,7 +20430,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-17",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
