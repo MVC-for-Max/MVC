@@ -52,18 +52,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-3",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 45.0, 55.0, 41.0, 22.0 ],
-					"text" : "qlim 1"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"comment" : "Unknown channel layout",
 					"id" : "obj-2",
 					"index" : 2,
@@ -760,7 +748,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 45.0, 17.0, 30.0, 30.0 ]
+					"patching_rect" : [ 45.0, 48.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -821,13 +809,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-13", 0 ],
-					"source" : [ "obj-3", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-4", 0 ]
 				}
@@ -835,7 +816,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-3", 0 ],
+					"destination" : [ "obj-13", 0 ],
 					"source" : [ "obj-56", 0 ]
 				}
 
