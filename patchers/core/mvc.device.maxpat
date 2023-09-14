@@ -64786,6 +64786,22 @@
 																		"assistshowspatchername" : 0,
 																		"boxes" : [ 																			{
 																				"box" : 																				{
+																					"bubble" : 1,
+																					"bubblepoint" : 0.0,
+																					"bubbleside" : 3,
+																					"id" : "obj-92",
+																					"linecount" : 4,
+																					"maxclass" : "comment",
+																					"numinlets" : 1,
+																					"numoutlets" : 0,
+																					"patching_rect" : [ 181.0, 580.0, 194.0, 64.0 ],
+																					"presentation_linecount" : 4,
+																					"text" : "Compare dict allow to merge only if data differs, and to recall init only on those targets which needed update."
+																				}
+
+																			}
+, 																			{
+																				"box" : 																				{
 																					"id" : "obj-91",
 																					"maxclass" : "newobj",
 																					"numinlets" : 1,
