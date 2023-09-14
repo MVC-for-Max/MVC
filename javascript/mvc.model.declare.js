@@ -126,9 +126,9 @@ function declare(){
 	outlet(1, model_UID.toString()+".i", initState);
 
 	// *Then*, send initializers to public (remotes)
-	for (var i = 0; i < (currentAddresses.length); i++) {
-		outlet(2, currentAddresses[i], 1);	
-	}
+	// for (var i = 0; i < (currentAddresses.length); i++) {
+	//	outlet(2, currentAddresses[i], 1);	
+	// }
 	
 	// bang when done
 	var sendAddress = model_UID + ".model.declare.done";
