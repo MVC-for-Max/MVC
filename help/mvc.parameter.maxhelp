@@ -2,15 +2,15 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 5,
+			"major" : 9,
+			"minor" : 0,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 91.0, 216.0, 1130.0, 736.0 ],
+		"rect" : [ 91.0, 100.0, 1130.0, 736.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -58,7 +58,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 430.0, 166.0, 121.0, 22.0 ],
+					"patching_rect" : [ 430.0, 166.0, 124.0, 22.0 ],
 					"text" : "jsargs mvc.parameter"
 				}
 
@@ -104,8 +104,8 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 5,
+							"major" : 9,
+							"minor" : 0,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -185,15 +185,15 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 5,
+							"major" : 9,
+							"minor" : 0,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 91.0, 242.0, 1130.0, 710.0 ],
+						"rect" : [ 91.0, 126.0, 1130.0, 710.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -247,24 +247,12 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-2",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 461.5, 158.0, 71.0, 22.0 ],
-									"text" : "namespace"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-33",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 425.0, 158.0, 30.0, 22.0 ],
+									"patching_rect" : [ 647.0, 159.0, 30.0, 22.0 ],
 									"text" : "GUI"
 								}
 
@@ -326,7 +314,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 657.0, 453.939940999999976, 238.5, 22.0 ],
-									"text" : "ParameterHelper/another_parameter3 3"
+									"text" : "3"
 								}
 
 							}
@@ -338,7 +326,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 111.0, 350.939940999999976, 235.0, 22.0 ],
-									"text" : "ParameterHelper/another_parameter3 3"
+									"text" : "3"
 								}
 
 							}
@@ -354,7 +342,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 410.5, 217.0, 218.0, 64.0 ],
+									"patching_rect" : [ 410.5, 217.0, 222.0, 64.0 ],
 									"text" : "Parameters need a parent node, either an mvc.device or an mvc.model.",
 									"textcolor" : [ 0.3, 0.3, 0.3, 1.0 ]
 								}
@@ -369,7 +357,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 425.0, 186.0, 237.0, 29.0 ],
+									"patching_rect" : [ 425.0, 186.0, 241.0, 29.0 ],
 									"text" : "mvc.device ParameterHelper",
 									"varname" : "mvc.device"
 								}
@@ -413,7 +401,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
+									"outlettype" : [ "", "int", "" ],
 									"patching_rect" : [ 53.5, 484.939940999999976, 261.0, 35.0 ],
 									"text" : "mvc.parameter ParameterHelper myLoadmess @type decimal @default 1.23"
 								}
@@ -500,7 +488,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "initialized" ],
+									"outlettype" : [ "", "int", "initialized" ],
 									"patching_rect" : [ 601.5, 425.939940999999976, 331.5, 22.0 ],
 									"text" : "mvc.remote ParameterHelper/another_parameter{1..19}"
 								}
@@ -514,8 +502,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 53.5, 303.939940999999976, 473.0, 35.0 ],
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 53.5, 303.939940999999976, 475.0, 35.0 ],
 									"text" : "mvc.parameter ParameterHelper another_parameter{1..3} @default 1024 @description \"Futile resistance\" @unit Ω @type decimal @range 1 1000000 @clip both"
 								}
 
@@ -527,8 +515,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 53.5, 185.939940999999976, 261.0, 22.0 ],
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 53.5, 185.939940999999976, 264.0, 22.0 ],
 									"text" : "mvc.parameter ParameterHelper my_parameter"
 								}
 
@@ -542,8 +530,8 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 8,
-											"minor" : 5,
+											"major" : 9,
+											"minor" : 0,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -581,7 +569,7 @@
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-28",
-													"linecount" : 2,
+													"linecount" : 3,
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
@@ -834,8 +822,8 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 8,
-											"minor" : 5,
+											"major" : 9,
+											"minor" : 0,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -938,10 +926,11 @@
 												"box" : 												{
 													"color" : [ 0.407843137254902, 0.529411764705882, 0.36078431372549, 1.0 ],
 													"id" : "obj-9",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "", "initialized" ],
+													"outlettype" : [ "", "int", "initialized" ],
 													"patching_rect" : [ 902.0, 226.0, 273.0, 22.0 ],
 													"text" : "mvc.remote ParameterHelper/myPolyParam.{1..4}"
 												}
@@ -1025,10 +1014,11 @@
 												"box" : 												{
 													"color" : [ 0.407843137254902, 0.529411764705882, 0.36078431372549, 1.0 ],
 													"id" : "obj-4",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "", "initialized" ],
+													"outlettype" : [ "", "int", "initialized" ],
 													"patching_rect" : [ 580.0, 266.0, 251.0, 22.0 ],
 													"text" : "mvc.remote ParameterHelper/myPolyParam.3"
 												}
@@ -1051,10 +1041,11 @@
 												"box" : 												{
 													"color" : [ 0.407843137254902, 0.529411764705882, 0.36078431372549, 1.0 ],
 													"id" : "obj-6",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "", "initialized" ],
+													"outlettype" : [ "", "int", "initialized" ],
 													"patching_rect" : [ 580.0, 326.0, 251.0, 22.0 ],
 													"text" : "mvc.remote ParameterHelper/myPolyParam.4"
 												}
@@ -1129,10 +1120,11 @@
 												"box" : 												{
 													"color" : [ 0.407843137254902, 0.529411764705882, 0.36078431372549, 1.0 ],
 													"id" : "obj-2",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "", "initialized" ],
+													"outlettype" : [ "", "int", "initialized" ],
 													"patching_rect" : [ 576.0, 146.0, 251.0, 22.0 ],
 													"text" : "mvc.remote ParameterHelper/myPolyParam.1"
 												}
@@ -1146,7 +1138,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 293.0, 169.0, 198.0, 22.0 ],
-													"text" : "ParameterHelper/myPolyParam.4 4"
+													"text" : "4"
 												}
 
 											}
@@ -1167,10 +1159,11 @@
 												"box" : 												{
 													"color" : [ 0.407843137254902, 0.529411764705882, 0.36078431372549, 1.0 ],
 													"id" : "obj-13",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "", "initialized" ],
+													"outlettype" : [ "", "int", "initialized" ],
 													"patching_rect" : [ 576.0, 206.0, 251.0, 22.0 ],
 													"text" : "mvc.remote ParameterHelper/myPolyParam.2"
 												}
@@ -1184,7 +1177,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "", "" ],
+													"outlettype" : [ "", "int", "" ],
 													"patching_rect" : [ 170.0, 118.0, 237.0, 35.0 ],
 													"text" : "mvc.parameter ParameterHelper myPolyParam.{1..4} @default 12."
 												}
@@ -1193,6 +1186,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-31",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
@@ -1375,8 +1369,8 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 8,
-											"minor" : 5,
+											"major" : 9,
+											"minor" : 0,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -1428,10 +1422,11 @@
 												"box" : 												{
 													"color" : [ 0.749019607843137, 0.513725490196078, 0.294117647058824, 1.0 ],
 													"id" : "obj-24",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "", "initialized" ],
+													"outlettype" : [ "", "int", "initialized" ],
 													"patching_rect" : [ 408.0, 107.0, 228.0, 22.0 ],
 													"text" : "mvc.remote ParameterHelper/frequency.1"
 												}
@@ -1445,7 +1440,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 173.0, 129.0, 176.0, 22.0 ],
-													"text" : "ParameterHelper/frequency.4 4"
+													"text" : "4"
 												}
 
 											}
@@ -1457,7 +1452,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 69.0, 266.0, 173.0, 22.0 ],
-													"text" : "setvalue 4 cutoff 440."
+													"text" : "setvalue 0 cutoff 440."
 												}
 
 											}
@@ -1491,10 +1486,11 @@
 												"box" : 												{
 													"color" : [ 0.749019607843137, 0.513725490196078, 0.294117647058824, 1.0 ],
 													"id" : "obj-13",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "", "initialized" ],
+													"outlettype" : [ "", "int", "initialized" ],
 													"patching_rect" : [ 408.0, 189.0, 228.0, 22.0 ],
 													"text" : "mvc.remote ParameterHelper/frequency.2"
 												}
@@ -1579,7 +1575,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "", "" ],
+													"outlettype" : [ "", "int", "" ],
 													"patching_rect" : [ 51.0, 66.0, 237.0, 35.0 ],
 													"text" : "mvc.parameter ParameterHelper frequency.{1..4} @default 440"
 												}
@@ -1724,7 +1720,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-15", 1 ],
-									"midpoints" : [ 290.0, 345.189940999999976, 336.5, 345.189940999999976 ],
+									"midpoints" : [ 291.0, 345.189940999999976, 336.5, 345.189940999999976 ],
 									"source" : [ "obj-16", 1 ]
 								}
 
@@ -1755,13 +1751,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-22", 0 ],
 									"source" : [ "obj-17", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-8", 0 ],
-									"source" : [ "obj-2", 0 ]
 								}
 
 							}
@@ -1798,7 +1787,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-8", 0 ],
+									"destination" : [ "obj-8", 1 ],
 									"source" : [ "obj-33", 0 ]
 								}
 
@@ -1918,8 +1907,8 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 5,
+							"major" : 9,
+							"minor" : 0,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -2077,8 +2066,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "initialized" ],
-									"patching_rect" : [ 130.0, 559.0, 324.0, 22.0 ],
+									"outlettype" : [ "", "int", "initialized" ],
+									"patching_rect" : [ 130.0, 559.0, 326.0, 22.0 ],
 									"text" : "mvc.remote ParameterHelper speaker.{front_left|front_right}"
 								}
 
@@ -2091,7 +2080,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 130.0, 345.0, 324.0, 22.0 ],
-									"text" : "ParameterHelper/dummy 0"
+									"text" : "1"
 								}
 
 							}
@@ -2176,7 +2165,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "initialized" ],
+									"outlettype" : [ "", "int", "initialized" ],
 									"patching_rect" : [ 137.0, 456.0, 270.0, 22.0 ],
 									"text" : "mvc.remote ParameterHelper lowpass.{4..7}"
 								}
@@ -2295,7 +2284,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
+									"outlettype" : [ "", "int", "" ],
 									"patching_rect" : [ 125.0, 306.0, 324.0, 22.0 ],
 									"text" : "mvc.parameter ParameterHelper dummy @default 13.7"
 								}
@@ -2478,8 +2467,8 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 5,
+							"major" : 9,
+							"minor" : 0,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -2778,8 +2767,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "initialized" ],
-									"patching_rect" : [ 714.0, 576.0, 342.0, 22.0 ],
+									"outlettype" : [ "", "int", "initialized" ],
+									"patching_rect" : [ 714.0, 576.0, 345.0, 22.0 ],
 									"text" : "mvc.remote ParameterHelper/{float_with_min|float_with_range}"
 								}
 
@@ -2864,7 +2853,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "initialized" ],
+									"outlettype" : [ "", "int", "initialized" ],
 									"patching_rect" : [ 433.0, 576.0, 257.0, 22.0 ],
 									"text" : "mvc.remote ParameterHelper/some_choices"
 								}
@@ -2890,7 +2879,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
+									"outlettype" : [ "", "int", "" ],
 									"patching_rect" : [ 38.0, 576.0, 313.0, 35.0 ],
 									"text" : "mvc.parameter ParameterHelper some_choices @type string @options lowpass highpass bandpass"
 								}
@@ -2915,7 +2904,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "initialized" ],
+									"outlettype" : [ "", "int", "initialized" ],
 									"patching_rect" : [ 733.0, 422.0, 257.0, 22.0 ],
 									"text" : "mvc.remote ParameterHelper/float_with_range"
 								}
@@ -2940,7 +2929,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "initialized" ],
+									"outlettype" : [ "", "int", "initialized" ],
 									"patching_rect" : [ 433.0, 422.0, 257.0, 22.0 ],
 									"text" : "mvc.remote ParameterHelper/float_with_range"
 								}
@@ -2979,7 +2968,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
+									"outlettype" : [ "", "int", "" ],
 									"patching_rect" : [ 39.0, 424.0, 279.5, 35.0 ],
 									"text" : "mvc.parameter ParameterHelper float_with_range @type decimal @range 0 127 @clip wrap"
 								}
@@ -3004,8 +2993,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "initialized" ],
-									"patching_rect" : [ 838.5, 305.0, 249.0, 22.0 ],
+									"outlettype" : [ "", "int", "initialized" ],
+									"patching_rect" : [ 838.5, 305.0, 251.0, 22.0 ],
 									"text" : "mvc.remote ParameterHelper/boundedParam"
 								}
 
@@ -3029,8 +3018,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "initialized" ],
-									"patching_rect" : [ 538.5, 305.0, 249.0, 22.0 ],
+									"outlettype" : [ "", "int", "initialized" ],
+									"patching_rect" : [ 538.5, 305.0, 251.0, 22.0 ],
 									"text" : "mvc.remote ParameterHelper/boundedParam"
 								}
 
@@ -3068,7 +3057,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
+									"outlettype" : [ "", "int", "" ],
 									"patching_rect" : [ 39.0, 305.0, 344.0, 35.0 ],
 									"text" : "mvc.parameter ParameterHelper boundedParam @type decimal @default 4 @min -2 @max 4 @clip both"
 								}
@@ -3502,8 +3491,8 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 5,
+							"major" : 9,
+							"minor" : 0,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -3571,7 +3560,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 337.0, 239.0, 433.0, 24.0 ],
+									"patching_rect" : [ 337.0, 239.0, 436.0, 24.0 ],
 									"text" : "The mvc.GUI.number abstraction automatically retrieves description and unit."
 								}
 
@@ -3606,8 +3595,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 103.0, 164.0, 494.0, 35.0 ],
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 103.0, 164.0, 496.0, 35.0 ],
 									"text" : "mvc.parameter ParameterHelper pole_temperature @description \"Temperature at the pole\" @unit °C @default -83 @type decimal @range -200 100 @clip both"
 								}
 
@@ -3703,8 +3692,8 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 5,
+							"major" : 9,
+							"minor" : 0,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -3845,7 +3834,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
+									"outlettype" : [ "", "int", "" ],
 									"patching_rect" : [ 682.0, 83.5, 461.0, 22.0 ],
 									"text" : "mvc.parameter ParameterHelper my_vector @type vector @default -7 2 3 4"
 								}
@@ -3898,7 +3887,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "initialized" ],
+									"outlettype" : [ "", "int", "initialized" ],
 									"patching_rect" : [ 682.0, 306.5, 211.0, 22.0 ],
 									"text" : "mvc.remote ParameterHelper/my_dict"
 								}
@@ -3942,11 +3931,12 @@
 									"id" : "obj-33",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
-									"numoutlets" : 4,
-									"outlettype" : [ "dictionary", "", "", "" ],
+									"numoutlets" : 5,
+									"outlettype" : [ "dictionary", "", "", "", "" ],
 									"patching_rect" : [ 776.0, 222.5, 111.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 1,
+										"legacy" : 1,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
@@ -3962,7 +3952,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
+									"outlettype" : [ "", "int", "" ],
 									"patching_rect" : [ 682.0, 262.0, 310.0, 22.0 ],
 									"text" : "mvc.parameter ParameterHelper my_dict @type dict"
 								}
@@ -4027,11 +4017,12 @@
 									"id" : "obj-22",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
-									"numoutlets" : 4,
-									"outlettype" : [ "dictionary", "", "", "" ],
+									"numoutlets" : 5,
+									"outlettype" : [ "dictionary", "", "", "", "" ],
 									"patching_rect" : [ 682.0, 222.5, 81.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 1,
+										"legacy" : 1,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
@@ -4221,8 +4212,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 178.0, 132.0, 396.0, 22.0 ],
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 178.0, 132.0, 399.0, 22.0 ],
 									"text" : "mvc.parameter ParameterHelper my_list @type list @default foo bar 3.14"
 								}
 
@@ -4275,8 +4266,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 178.0, 599.5, 411.0, 22.0 ],
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 178.0, 599.5, 413.0, 22.0 ],
 									"text" : "mvc.parameter ParameterHelper my_boolean @type bool @min -3 @max 8"
 								}
 
@@ -4319,8 +4310,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 178.0, 449.5, 310.0, 35.0 ],
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 178.0, 449.5, 313.0, 35.0 ],
 									"text" : "mvc.parameter ParameterHelper my_string @type string @default dos @options uno dos tres"
 								}
 
@@ -4401,8 +4392,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 178.0, 345.5, 359.0, 22.0 ],
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 178.0, 345.5, 362.0, 22.0 ],
 									"text" : "mvc.parameter ParameterHelper my_int @type integer @default 3"
 								}
 
@@ -4457,8 +4448,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 178.0, 243.0, 312.0, 22.0 ],
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 178.0, 243.0, 315.0, 22.0 ],
 									"text" : "mvc.parameter ParameterHelper my_float @type decimal"
 								}
 
@@ -4825,22 +4816,6 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-68::obj-8::obj-35::obj-30::obj-18::obj-7" : [ "live.toggle[9]", "live.toggle", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
-			"parameter_overrides" : 			{
-				"obj-68::obj-8::obj-35::obj-30::obj-18::obj-7" : 				{
-					"parameter_longname" : "live.toggle[9]"
-				}
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
