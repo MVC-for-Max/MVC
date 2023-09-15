@@ -5697,7 +5697,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 711.0, 242.0, 1101.0, 710.0 ],
+						"rect" : [ 545.0, 242.0, 1101.0, 710.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -6227,7 +6227,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 68.25, 40.0, 30.0, 30.0 ]
 												}
 
@@ -7693,13 +7693,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-37", 0 ],
 									"source" : [ "obj-24", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-41", 0 ],
-									"source" : [ "obj-24", 2 ]
 								}
 
 							}
