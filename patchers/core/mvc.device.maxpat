@@ -40408,18 +40408,6 @@
 											}
 , 											{
 												"box" : 												{
-													"id" : "obj-64",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 538.0, 23.0, 311.0, 22.0 ],
-													"text" : "test mcCascadeHelper/myFunkyMcCascade/channel.2"
-												}
-
-											}
-, 											{
-												"box" : 												{
 													"id" : "obj-13",
 													"maxclass" : "message",
 													"numinlets" : 2,
@@ -56559,26 +56547,24 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-8",
-																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 222.5, 433.0, 81.0, 22.0 ],
-																	"text" : "3541.channel.filter"
+																	"text" : "3541.channel"
 																}
 
 															}
 , 															{
 																"box" : 																{
 																	"id" : "obj-7",
-																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 239.0, 340.0, 81.0, 22.0 ],
-																	"text" : "3541.channel.filter"
+																	"text" : "3541.channel"
 																}
 
 															}
@@ -63874,7 +63860,7 @@
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 1045.0, 173.0, 29.5, 22.0 ],
+																					"patching_rect" : [ 724.0, 179.0, 29.5, 22.0 ],
 																					"text" : "$2"
 																				}
 
@@ -63885,7 +63871,7 @@
 																					"maxclass" : "comment",
 																					"numinlets" : 1,
 																					"numoutlets" : 0,
-																					"patching_rect" : [ 692.0, 248.0, 150.0, 20.0 ],
+																					"patching_rect" : [ 669.0, 212.0, 150.0, 20.0 ],
 																					"text" : "preset-name"
 																				}
 
@@ -63897,7 +63883,7 @@
 																					"numinlets" : 1,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 676.0, 221.0, 57.0, 22.0 ],
+																					"patching_rect" : [ 605.0, 208.0, 57.0, 22.0 ],
 																					"text" : "tosymbol"
 																				}
 
@@ -63909,7 +63895,7 @@
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 676.0, 192.0, 29.5, 22.0 ],
+																					"patching_rect" : [ 605.0, 179.0, 29.5, 22.0 ],
 																					"text" : "$1"
 																				}
 
@@ -64729,7 +64715,7 @@
  ]
 																					}
 ,
-																					"patching_rect" : [ 476.0, 351.0, 167.5, 22.0 ],
+																					"patching_rect" : [ 476.0, 351.0, 148.0, 22.0 ],
 																					"saved_object_attributes" : 																					{
 																						"description" : "",
 																						"digest" : "",
@@ -64982,7 +64968,7 @@
 																					"numinlets" : 2,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "" ],
-																					"patching_rect" : [ 446.0, 236.0, 197.0, 22.0 ],
+																					"patching_rect" : [ 446.0, 236.0, 169.0, 22.0 ],
 																					"text" : "zl reg"
 																				}
 
@@ -65006,7 +64992,7 @@
 																					"numinlets" : 1,
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "" ],
-																					"patching_rect" : [ 72.0, 128.0, 1008.0, 22.0 ],
+																					"patching_rect" : [ 72.0, 128.0, 671.0, 22.0 ],
 																					"text" : "t l l l"
 																				}
 
@@ -65264,7 +65250,7 @@
 																									"numinlets" : 2,
 																									"numoutlets" : 5,
 																									"outlettype" : [ "dictionary", "", "", "", "" ],
-																									"patching_rect" : [ 57.0, 168.0, 117.0, 35.0 ],
+																									"patching_rect" : [ 57.0, 168.0, 120.0, 35.0 ],
 																									"saved_object_attributes" : 																									{
 																										"embed" : 0,
 																										"legacy" : 0,
@@ -65312,7 +65298,7 @@
 , 																							{
 																								"patchline" : 																								{
 																									"destination" : [ "obj-18", 0 ],
-																									"midpoints" : [ 115.5, 209.0, 196.0, 209.0, 196.0, 125.0, 66.5, 125.0 ],
+																									"midpoints" : [ 117.0, 209.0, 196.0, 209.0, 196.0, 125.0, 66.5, 125.0 ],
 																									"source" : [ "obj-13", 2 ]
 																								}
 
@@ -65411,7 +65397,7 @@
  ]
 																					}
 ,
-																					"patching_rect" : [ 446.0, 208.0, 177.0, 22.0 ],
+																					"patching_rect" : [ 446.0, 208.0, 138.0, 22.0 ],
 																					"saved_object_attributes" : 																					{
 																						"description" : "",
 																						"digest" : "",
@@ -65754,7 +65740,7 @@
 																					"maxclass" : "comment",
 																					"numinlets" : 1,
 																					"numoutlets" : 0,
-																					"patching_rect" : [ 803.0, 398.0, 194.0, 146.0 ],
+																					"patching_rect" : [ 658.0, 262.0, 194.0, 146.0 ],
 																					"text" : "Replace each target model in the mvc.parameters.values.dict dictionary by the content of the preset, so that these value can be fetched if some parameters addresses do not yet exist.\n\nMerge data rather than replace it to avoid removing addresses"
 																				}
 
@@ -71749,15 +71735,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-40", 0 ],
-													"order" : 2,
-													"source" : [ "obj-33", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-64", 1 ],
-													"order" : 0,
+													"order" : 1,
 													"source" : [ "obj-33", 0 ]
 												}
 
@@ -71765,7 +71743,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-79", 0 ],
-													"order" : 1,
+													"order" : 0,
 													"source" : [ "obj-33", 0 ]
 												}
 
