@@ -2,15 +2,15 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 6,
+			"major" : 9,
+			"minor" : 0,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 104.0, 384.0, 219.0 ],
+		"rect" : [ 59.0, 104.0, 605.0, 231.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -69,7 +69,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 209.0, 10.0, 125.0, 22.0 ],
+					"patching_rect" : [ 209.0, 10.0, 336.0, 22.0 ],
 					"text" : "loadmess #1"
 				}
 
@@ -101,7 +101,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "value otuput",
+					"comment" : "value output",
 					"id" : "obj-2",
 					"index" : 1,
 					"maxclass" : "outlet",
