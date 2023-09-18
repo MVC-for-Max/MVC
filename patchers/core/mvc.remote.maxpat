@@ -5431,7 +5431,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 53.0, 46.007691493303696, 30.0, 30.0 ]
 				}
 
@@ -10118,6 +10118,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-109",
+																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
@@ -10789,6 +10790,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-1",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 5,
@@ -10808,6 +10810,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-3",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -11769,8 +11772,8 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "" ],
-																	"patching_rect" : [ 1021.0, 248.977712222944547, 61.0, 22.0 ],
-																	"text" : "zl group 3"
+																	"patching_rect" : [ 1021.0, 248.977712222944547, 98.0, 22.0 ],
+																	"text" : "zl 32000 group 3"
 																}
 
 															}
@@ -11803,7 +11806,7 @@
 																		}
 ,
 																		"classnamespace" : "box",
-																		"rect" : [ 447.0, -716.0, 647.0, 738.0 ],
+																		"rect" : [ 447.0, -772.0, 647.0, 738.0 ],
 																		"bglocked" : 0,
 																		"openinpresentation" : 0,
 																		"default_fontsize" : 12.0,
@@ -12469,6 +12472,7 @@
 																		"boxes" : [ 																			{
 																				"box" : 																				{
 																					"id" : "obj-6",
+																					"linecount" : 2,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
@@ -13469,6 +13473,13 @@
 																"patchline" : 																{
 																	"destination" : [ "obj-31", 1 ],
 																	"source" : [ "obj-34", 1 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-27", 0 ],
+																	"source" : [ "obj-35", 0 ]
 																}
 
 															}
