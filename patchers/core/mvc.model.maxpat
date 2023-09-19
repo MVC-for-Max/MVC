@@ -7026,7 +7026,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 376.0, 384.0, 1045.0, 557.0 ],
+						"rect" : [ 560.0, 351.0, 1045.0, 557.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -8575,7 +8575,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 57.5, 384.0, 135.5, 22.0 ],
-									"text" : "gate 1 0"
+									"text" : "gate 1 1"
 								}
 
 							}
