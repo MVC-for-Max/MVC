@@ -2,8 +2,8 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 6,
+			"major" : 9,
+			"minor" : 0,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
@@ -40,12 +40,23 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-16",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 124.0, 83.0, 176.0, 22.0 ],
+					"text" : "s testingSpeed2-MVC-dumpout"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-14",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 222.0, 65.0, 30.0, 22.0 ],
+					"patching_rect" : [ 221.0, 168.0, 30.0, 22.0 ],
 					"text" : "GUI"
 				}
 
@@ -57,7 +68,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 280.0, 51.0, 30.0, 22.0 ],
+					"patching_rect" : [ 279.0, 154.0, 30.0, 22.0 ],
 					"text" : "GUI"
 				}
 
@@ -70,7 +81,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 59.0, 335.142857142857167, 205.0, 22.0 ],
+					"patching_rect" : [ 58.0, 438.0, 205.0, 22.0 ],
 					"text" : "mvc.mc.cascade~ ts mcCascade10"
 				}
 
@@ -83,7 +94,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 59.0, 309.238095238095241, 198.0, 22.0 ],
+					"patching_rect" : [ 58.0, 412.0, 198.0, 22.0 ],
 					"text" : "mvc.mc.cascade~ ts mcCascade9"
 				}
 
@@ -96,7 +107,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 59.0, 283.333333333333314, 198.0, 22.0 ],
+					"patching_rect" : [ 58.0, 386.0, 198.0, 22.0 ],
 					"text" : "mvc.mc.cascade~ ts mcCascade8"
 				}
 
@@ -109,7 +120,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 59.0, 257.428571428571388, 198.0, 22.0 ],
+					"patching_rect" : [ 58.0, 360.0, 198.0, 22.0 ],
 					"text" : "mvc.mc.cascade~ ts mcCascade7"
 				}
 
@@ -122,7 +133,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 59.0, 231.52380952380949, 198.0, 22.0 ],
+					"patching_rect" : [ 58.0, 335.0, 198.0, 22.0 ],
 					"text" : "mvc.mc.cascade~ ts mcCascade6"
 				}
 
@@ -135,7 +146,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 59.0, 205.619047619047592, 198.0, 22.0 ],
+					"patching_rect" : [ 58.0, 309.0, 198.0, 22.0 ],
 					"text" : "mvc.mc.cascade~ ts mcCascade5"
 				}
 
@@ -148,7 +159,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 59.0, 179.714285714285694, 198.0, 22.0 ],
+					"patching_rect" : [ 58.0, 283.0, 198.0, 22.0 ],
 					"text" : "mvc.mc.cascade~ ts mcCascade4"
 				}
 
@@ -161,7 +172,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 59.0, 153.809523809523796, 198.0, 22.0 ],
+					"patching_rect" : [ 58.0, 257.0, 198.0, 22.0 ],
 					"text" : "mvc.mc.cascade~ ts mcCascade3"
 				}
 
@@ -174,7 +185,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 59.0, 127.904761904761898, 198.0, 22.0 ],
+					"patching_rect" : [ 58.0, 231.0, 198.0, 22.0 ],
 					"text" : "mvc.mc.cascade~ ts mcCascade2"
 				}
 
@@ -187,7 +198,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 59.0, 102.0, 198.0, 22.0 ],
+					"patching_rect" : [ 58.0, 205.0, 198.0, 22.0 ],
 					"text" : "mvc.mc.cascade~ ts mcCascade1",
 					"varname" : "mvc.mc.cascade~"
 				}
@@ -209,6 +220,13 @@
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-16", 0 ],
+					"source" : [ "obj-1", 1 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-10", 1 ],
 					"order" : 1,
@@ -296,27 +314,6 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-1::obj-35::obj-30::obj-18::obj-7" : [ "live.toggle[1]", "live.toggle", 0 ],
-			"parameterbanks" : 			{
-				"0" : 				{
-					"index" : 0,
-					"name" : "",
-					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
-				}
-
-			}
-,
-			"parameter_overrides" : 			{
-				"obj-1::obj-35::obj-30::obj-18::obj-7" : 				{
-					"parameter_longname" : "live.toggle[1]"
-				}
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
 		"autosave" : 0
 	}
 
