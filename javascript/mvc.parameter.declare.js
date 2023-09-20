@@ -28,6 +28,18 @@ function updateDictionaries(){
 	parameter_UID = currentAddresses[0];
 	currentAddresses.shift();
 
+	// check if any of these addresses is already in namespace
+	var already_in_namespace = 0;
+	for (var i = 0; i < (currentAddresses.length); i++) {
+		var theAdd = currentAddresses[i];//.replace(/\//g, '::');
+		//post('removing', theAdd, '\n')
+		if (inputsDict.contains(theAdd)){
+			already_in_namespace = 1;
+			break;
+		}
+	}
+	if (already_in_namespace) return;
+	
 	// compare new addresses with previous addresses for this node
 	var test = paramAddressDict.get(parameter_UID);
 	if (test != null) {
