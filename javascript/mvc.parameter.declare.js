@@ -25,20 +25,8 @@ function updateDictionaries(){
 
 	// parameter_UID is the 1st arg, followed by addresses 
 	currentAddresses = arrayfromargs(arguments);
-	parameter_UID = currentAddresses[0];
+	//parameter_UID = currentAddresses[0];
 	currentAddresses.shift();
-
-	// check if any of these addresses is already in namespace
-	var already_in_namespace = 0;
-	for (var i = 0; i < (currentAddresses.length); i++) {
-		var theAdd = currentAddresses[i];//.replace(/\//g, '::');
-		//post('removing', theAdd, '\n')
-		if (inputsDict.contains(theAdd)){
-			already_in_namespace = 1;
-			break;
-		}
-	}
-	if (already_in_namespace) return;
 	
 	// compare new addresses with previous addresses for this node
 	var test = paramAddressDict.get(parameter_UID);
@@ -110,6 +98,26 @@ function updateDictionaries(){
 }
 
 function declare(){
+	
+	parameter_UID = arrayfromargs(arguments)[0];
+	var sendAddress = parameter_UID + ".param.declare.done";
+	
+	// check if any of these addresses is already in namespace
+	var already_in_namespace = 0;
+	for (var i = 0; i < (arguments.length); i++) {
+		var theAdd = arguments[i];//.replace(/\//g, '::');
+		//post('removing', theAdd, '\n')
+		if (inputsDict.contains(theAdd)){
+			already_in_namespace = 1;
+			break;
+		}
+	}
+	if (already_in_namespace) {
+		outlet(0, "send", sendAddress);
+		outlet(0, 2); // error code when address already exists
+		return;
+	}
+	
 	//just pass arguments to updateDictionaries
 	// (see https://stackoverflow.com/questions/3914557/passing-arguments-forward-to-another-javascript-function)
 	//post("model args in declare", JSON.stringify(arguments), "\n");
@@ -121,7 +129,6 @@ function declare(){
 	}
 	
 	// bang when done
-	var sendAddress = parameter_UID + ".param.declare.done";
 	var initState = arrayfromargs(arguments).length;
 	outlet(0, "send", sendAddress);
 	outlet(0, (initState > 0));
