@@ -30741,7 +30741,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 525.0, 234.0, 852.0, 736.0 ],
+														"rect" : [ 351.0, -891.0, 852.0, 736.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 12.0,
@@ -32244,12 +32244,12 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-13",
-																	"linecount" : 3,
+																	"linecount" : 4,
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 26.25, 370.950395160000426, 152.5, 47.0 ],
-																	"text" : "Send back to parameter: \n- 1 if param is declared\n- 0 if param is undeclared"
+																	"patching_rect" : [ 34.5, 403.0, 252.0, 60.0 ],
+																	"text" : "Send back to parameter: \n- 0 if param is undeclared\n- 1 if param is declared\n- 2 if param was already declared (error code)"
 																}
 
 															}
@@ -32493,7 +32493,7 @@
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 96.0, 344.950395160000426, 49.0, 22.0 ],
+																	"patching_rect" : [ 96.0, 359.0, 49.0, 22.0 ],
 																	"text" : "forward"
 																}
 
@@ -75183,6 +75183,8 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 0,
 																		"defer" : 0,
+																		"node_bin_path" : "",
+																		"npm_bin_path" : "",
 																		"watch" : 0
 																	}
 ,
@@ -77906,6 +77908,8 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 0,
 																		"defer" : 0,
+																		"node_bin_path" : "",
+																		"npm_bin_path" : "",
 																		"watch" : 0
 																	}
 ,
@@ -81297,8 +81301,6 @@
 													"saved_object_attributes" : 													{
 														"autostart" : 0,
 														"defer" : 0,
-														"node_bin_path" : "",
-														"npm_bin_path" : "",
 														"watch" : 0
 													}
 ,
