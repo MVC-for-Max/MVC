@@ -342,7 +342,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 410.5, 217.0, 222.0, 64.0 ],
+									"patching_rect" : [ 410.5, 217.0, 225.0, 64.0 ],
 									"text" : "Parameters need a parent node, either an mvc.device or an mvc.model.",
 									"textcolor" : [ 0.3, 0.3, 0.3, 1.0 ]
 								}
@@ -538,7 +538,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 351.0, 171.0, 636.0, 631.0 ],
+										"rect" : [ 351.0, 171.0, 488.0, 623.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -573,7 +573,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 15.0, 42.0, 451.0, 33.0 ],
+													"patching_rect" : [ 15.0, 42.0, 325.0, 47.0 ],
 													"text" : "Note : this attribute can be retrieved for designing the GUI.\nThe range and type attributes also constrains the output on the mvc.parameter side."
 												}
 
@@ -597,7 +597,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 15.0, 498.666666666666742, 159.0, 20.0 ],
+													"patching_rect" : [ 15.0, 529.0, 159.0, 20.0 ],
 													"text" : "@default : the default value"
 												}
 
@@ -608,7 +608,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 19.0, 548.0, 305.0, 20.0 ],
+													"patching_rect" : [ 19.0, 578.0, 305.0, 20.0 ],
 													"text" : "@decription : a short text decscription for the parameter"
 												}
 
@@ -620,7 +620,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 25.0, 362.0, 159.0, 114.0 ],
+													"patching_rect" : [ 25.0, 392.0, 159.0, 114.0 ],
 													"text" : "@clip : clipping the paraleter's value\n- free\n- low\n- high\n- both\n- wrap\n- fold"
 												}
 
@@ -631,7 +631,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 44.0, 321.0, 236.0, 20.0 ],
+													"patching_rect" : [ 44.0, 351.0, 236.0, 20.0 ],
 													"text" : "eg : @options lowpass bandpass highpass"
 												}
 
@@ -643,7 +643,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 25.0, 273.0, 262.0, 33.0 ],
+													"patching_rect" : [ 25.0, 303.0, 262.0, 33.0 ],
 													"text" : "@options : \nset of possible options for a parameter value"
 												}
 
@@ -654,7 +654,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 38.0, 232.0, 159.0, 20.0 ],
+													"patching_rect" : [ 38.0, 262.0, 159.0, 20.0 ],
 													"text" : "eg : @range 0 1"
 												}
 
@@ -665,7 +665,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 19.0, 210.0, 250.0, 20.0 ],
+													"patching_rect" : [ 19.0, 240.0, 250.0, 20.0 ],
 													"text" : "@range, @min, @max : min and max values"
 												}
 
@@ -673,12 +673,12 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-2",
-													"linecount" : 7,
+													"linecount" : 8,
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 19.0, 88.0, 150.0, 100.0 ],
-													"text" : "@type :\n- decimal\n- integer\n- bool\n- string\n- vector\n- list/undefined (default)"
+													"patching_rect" : [ 19.0, 103.0, 150.0, 114.0 ],
+													"text" : "@type :\n- decimal\n- integer\n- bool\n- string\n- vector\n- dict\n- list/undefined (default)"
 												}
 
 											}
@@ -693,7 +693,7 @@
 													"mode" : 0,
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 15.0, 534.000000000000114, 316.0, 48.0 ],
+													"patching_rect" : [ 15.0, 564.0, 316.0, 48.0 ],
 													"proportion" : 0.5
 												}
 
@@ -709,7 +709,7 @@
 													"mode" : 0,
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 15.0, 490.166666666666742, 316.0, 37.0 ],
+													"patching_rect" : [ 15.0, 520.0, 316.0, 37.0 ],
 													"proportion" : 0.5
 												}
 
@@ -725,7 +725,7 @@
 													"mode" : 0,
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 15.0, 353.5, 316.0, 122.0 ],
+													"patching_rect" : [ 15.0, 384.0, 316.0, 122.0 ],
 													"proportion" : 0.5
 												}
 
@@ -741,7 +741,7 @@
 													"mode" : 0,
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 15.0, 265.666666666666686, 316.0, 81.0 ],
+													"patching_rect" : [ 15.0, 296.0, 316.0, 81.0 ],
 													"proportion" : 0.5
 												}
 
@@ -757,7 +757,7 @@
 													"mode" : 0,
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 15.0, 201.833333333333343, 316.0, 57.000000000000028 ],
+													"patching_rect" : [ 15.0, 232.0, 316.0, 57.000000000000028 ],
 													"proportion" : 0.5
 												}
 
@@ -773,7 +773,7 @@
 													"mode" : 0,
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 15.0, 77.0, 316.0, 119.0 ],
+													"patching_rect" : [ 15.0, 92.0, 316.0, 134.0 ],
 													"proportion" : 0.5
 												}
 
@@ -931,7 +931,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "int", "initialized" ],
-													"patching_rect" : [ 902.0, 226.0, 273.0, 22.0 ],
+													"patching_rect" : [ 902.0, 226.0, 273.0, 35.0 ],
 													"text" : "mvc.remote ParameterHelper/myPolyParam.{1..4}"
 												}
 
@@ -993,7 +993,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 279.0, 196.0, 41.0, 22.0 ],
-													"text" : "set $2"
+													"text" : "set $1"
 												}
 
 											}
@@ -1019,7 +1019,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "int", "initialized" ],
-													"patching_rect" : [ 580.0, 266.0, 251.0, 22.0 ],
+													"patching_rect" : [ 580.0, 266.0, 251.0, 35.0 ],
 													"text" : "mvc.remote ParameterHelper/myPolyParam.3"
 												}
 
@@ -1046,7 +1046,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "int", "initialized" ],
-													"patching_rect" : [ 580.0, 326.0, 251.0, 22.0 ],
+													"patching_rect" : [ 580.0, 326.0, 251.0, 35.0 ],
 													"text" : "mvc.remote ParameterHelper/myPolyParam.4"
 												}
 
@@ -1125,7 +1125,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "int", "initialized" ],
-													"patching_rect" : [ 576.0, 146.0, 251.0, 22.0 ],
+													"patching_rect" : [ 576.0, 146.0, 251.0, 35.0 ],
 													"text" : "mvc.remote ParameterHelper/myPolyParam.1"
 												}
 
@@ -1164,7 +1164,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "int", "initialized" ],
-													"patching_rect" : [ 576.0, 206.0, 251.0, 22.0 ],
+													"patching_rect" : [ 576.0, 206.0, 251.0, 35.0 ],
 													"text" : "mvc.remote ParameterHelper/myPolyParam.2"
 												}
 
@@ -1190,7 +1190,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 170.0, 326.0, 378.0, 22.0 ],
+													"patching_rect" : [ 170.0, 326.0, 378.0, 35.0 ],
 													"text" : "poly~ mvc.parameter.helper.polyexample.p 4 @args ParameterHelper"
 												}
 
@@ -1427,7 +1427,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "int", "initialized" ],
-													"patching_rect" : [ 408.0, 107.0, 228.0, 22.0 ],
+													"patching_rect" : [ 408.0, 107.0, 228.0, 35.0 ],
 													"text" : "mvc.remote ParameterHelper/frequency.1"
 												}
 
@@ -1452,7 +1452,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 69.0, 266.0, 173.0, 22.0 ],
-													"text" : "setvalue 0 cutoff 440."
+													"text" : "setvalue 4 cutoff 440."
 												}
 
 											}
@@ -1491,7 +1491,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "int", "initialized" ],
-													"patching_rect" : [ 408.0, 189.0, 228.0, 22.0 ],
+													"patching_rect" : [ 408.0, 189.0, 228.0, 35.0 ],
 													"text" : "mvc.remote ParameterHelper/frequency.2"
 												}
 
@@ -1552,7 +1552,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 160.0, 161.0, 41.0, 22.0 ],
-													"text" : "set $2"
+													"text" : "set $1"
 												}
 
 											}
