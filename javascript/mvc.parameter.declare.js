@@ -105,12 +105,15 @@ function declare(){
 	// check if any of these addresses is already in namespace
 	var already_in_namespace = 0;
 	for (var i = 0; i < (arguments.length); i++) {
-		var theAdd = arguments[i];//.replace(/\//g, '::');
-		//post('removing', theAdd, '\n')
-		if (inputsDict.contains(theAdd)){
-			already_in_namespace = 1;
-			break;
-		}
+		var theAdd = arguments[i];
+		var theUID = 0;
+		var theUIDIDX = inputsDict.get(theAdd+"::uid");				
+		if (theUIDIDX !== null) {
+			if (parameter_UID != theUIDIDX[0]){
+				already_in_namespace = 1;
+				break;
+			}
+		}	
 	}
 	if (already_in_namespace) {
 		outlet(0, "send", sendAddress);
