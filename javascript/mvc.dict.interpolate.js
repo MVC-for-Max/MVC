@@ -26,7 +26,7 @@ function msg_float(v){
 	interpolatingDict = leftDict;
 	var interpolatingDictObj = JSON.parse(interpolatingDict.stringify());
 	
-	mergeDeep(interpolatingDictObj, rightDictObj, interpValue);
+	mergeDeep(interpolatingDictObj, rightDictObj,  interpValue);
 	resultDict.parse(JSON.stringify(interpolatingDictObj));
 	outlet(0, "dictionary", resultDict.name);
 }
@@ -63,23 +63,42 @@ isObject.local = 1;
  */
 function mergeDeep(target, source, v) {
   if (isObject(target) && isObject(source)) {
+	
+	var theOne = (v > 0.5) ? source : target;
+	
     for (var key in source) {
       if (isObject(source[key])) {
 		if (!target[key]) target[key] = {};
         mergeDeep(target[key], source[key], v);
       } else {
 		post("types:", typeof target[key], typeof source[key], "\n")
-		if (typeof target[key] === "number"){
-			post("number", v, target[key], source[key], "\n");
-			target[key] = (1.-v)*target[key] + v*source[key];
+		switch (typeof target[key]) {
+			case "number":
+				post("number", v, target[key], source[key], "\n");
+				target[key] = (1.-v)*target[key] + v*source[key];
+				break;
+			case "string":
+				post("string", v, target[key], source[key], "\n");
+				post("which", v > 0.5, "\n");
+				target[key] = (v > 0.5) ? source[key] : target[key];
+				post("=>", target[key], "\n");
+				break;
+			case "object":
+				if (Array.isArray(target[key])){
+					for (var i = 0; (i < target[key].length); i++) {
+						if ((typeof target[key][i] == "number")&&(typeof source[key][i] == "number")) {
+							post("item", target[key][i], "is a number\n")
+        					target[key][i] = (1.-v)*target[key][i] + v*source[key][i];
+						}
+						else target[key][i] = (v > 0.5) ? source[key][i] : target[key][i];
+    				}
+					post("array", v, target[key], source[key], "\n");
+				}
+				else target[key] = (v > 0.5) ? source[key] : target[key];
+				break;
+			default:
+				target[key] = (v > 0.5) ? source[key] : target[key];
 		}
-		else if (Array.isArray(target[key])){
-			for (var i = 0; (i < target[key].length); i++) {
-        		target[key][i] = (1.-v)*target[key][i] + v*source[key][i];
-    		}
-			post("array", v, target[key], source[key], "\n");
-		}
-		else target[key] = source[key];
       }
     }
   }
