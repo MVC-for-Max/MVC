@@ -17809,7 +17809,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 313.0, 41.0, 34.0, 22.0 ],
+									"patching_rect" : [ 274.0, 123.0, 34.0, 22.0 ],
 									"text" : "sel 1"
 								}
 
@@ -17821,7 +17821,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 313.0, 80.0, 176.0, 22.0 ],
+									"patching_rect" : [ 274.0, 149.0, 176.0, 22.0 ],
 									"text" : "initialiazed model #1"
 								}
 
@@ -17832,7 +17832,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 314.0, 124.0, 93.0, 22.0 ],
+									"patching_rect" : [ 274.0, 177.0, 93.0, 22.0 ],
 									"text" : "print mvc.model"
 								}
 
@@ -17856,7 +17856,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "dump", "int" ],
-									"patching_rect" : [ 50.0, 100.0, 90.0, 22.0 ],
+									"patching_rect" : [ 50.0, 84.0, 90.0, 22.0 ],
 									"text" : "t dump i"
 								}
 
@@ -17920,6 +17920,15 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-21", 1 ],
+									"order" : 1,
+									"source" : [ "obj-19", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"order" : 0,
 									"source" : [ "obj-19", 1 ]
 								}
 
@@ -17948,15 +17957,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
-									"order" : 1,
-									"source" : [ "obj-7", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"order" : 0,
 									"source" : [ "obj-7", 0 ]
 								}
 
