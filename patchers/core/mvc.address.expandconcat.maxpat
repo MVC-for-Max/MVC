@@ -45,8 +45,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 54.0, 19.0, 209.0, 33.0 ],
-					"text" : "Send to mvc.device to expand name. \nResult is in the \"coll #1.expanded\""
+					"patching_rect" : [ 54.0, 19.0, 222.0, 33.0 ],
+					"text" : "Send to mvc.device to expand address. \nResult is in the \"coll #1.expanded\""
 				}
 
 			}
@@ -92,7 +92,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "mcCascadeHelper" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 50.0, 102.0, 186.0, 22.0 ],
 					"text" : "t #1"
 				}

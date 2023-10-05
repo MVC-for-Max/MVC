@@ -141,8 +141,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 419.166666666666686, 154.0, 139.0, 35.0 ],
-									"text" : "prepend name contains illegal characters:"
+									"patching_rect" : [ 419.166666666666686, 154.0, 155.0, 35.0 ],
+									"text" : "prepend parent contains illegal characters:"
 								}
 
 							}
@@ -382,7 +382,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 360.0, 685.0, 632.0, 331.0 ],
+						"rect" : [ 363.0, 531.0, 969.0, 341.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -412,14 +412,38 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 488.0, 215.5, 60.0, 22.0 ],
+									"text" : "zl change"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 529.0, 276.0, 189.0, 22.0 ],
+									"text" : "replace address_has_changed $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-39",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 308.0, 215.5, 139.0, 35.0 ],
-									"text" : "prepend name contains illegal characters:"
+									"patching_rect" : [ 308.0, 215.5, 141.0, 49.0 ],
+									"text" : "prepend address contains illegal characters:"
 								}
 
 							}
@@ -456,8 +480,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 455.0, 215.5, 129.0, 22.0 ],
-									"text" : "prepend replace name"
+									"patching_rect" : [ 488.0, 247.0, 141.0, 22.0 ],
+									"text" : "prepend replace address"
 								}
 
 							}
@@ -468,8 +492,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 86.0, 179.0, 155.0, 22.0 ],
-									"text" : "append is not a valid name."
+									"patching_rect" : [ 86.0, 179.0, 168.0, 22.0 ],
+									"text" : "append is not a valid address."
 								}
 
 							}
@@ -519,7 +543,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 455.0, 249.5, 30.0, 30.0 ]
+									"patching_rect" : [ 488.0, 281.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -610,15 +634,15 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-25", 0 ],
-									"source" : [ "obj-21", 3 ]
+									"destination" : [ "obj-39", 0 ],
+									"source" : [ "obj-21", 2 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-39", 0 ],
-									"source" : [ "obj-21", 2 ]
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-21", 3 ]
 								}
 
 							}
@@ -638,8 +662,29 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-27", 0 ],
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
 									"source" : [ "obj-39", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-25", 0 ],
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-4", 1 ]
 								}
 
 							}
@@ -725,8 +770,8 @@
 					"numinlets" : 16,
 					"numoutlets" : 16,
 					"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
-					"patching_rect" : [ 50.0, 100.0, 567.0, 22.0 ],
-					"text" : "routepass int float uid parent name description clip type range min max default unit options isdefaultname"
+					"patching_rect" : [ 50.0, 100.0, 592.0, 22.0 ],
+					"text" : "routepass int float uid parent address description clip type range min max default unit options isdefaultaddress"
 				}
 
 			}

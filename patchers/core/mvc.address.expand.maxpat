@@ -588,8 +588,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 58.0, 81.0, 59.0, 22.0 ],
-									"text" : "get name"
+									"patching_rect" : [ 58.0, 81.0, 71.0, 22.0 ],
+									"text" : "get address"
 								}
 
 							}
@@ -705,12 +705,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-3",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 54.0, 19.0, 209.0, 33.0 ],
-					"text" : "Send to mvc.device to expand name. \nResult is in the \"coll #1.expanded\""
+					"patching_rect" : [ 54.0, 19.0, 209.0, 47.0 ],
+					"text" : "Send to mvc.device to expand address. \nResult is in the \"coll #1.expanded\""
 				}
 
 			}
