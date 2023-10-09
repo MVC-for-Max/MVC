@@ -725,7 +725,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-20",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -1540,7 +1539,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-20",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -2163,7 +2161,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-20",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -5714,7 +5711,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-20",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -6346,7 +6342,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-20",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -17709,7 +17704,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-74",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
@@ -18618,7 +18612,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-10",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -18998,7 +18991,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-18",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
@@ -24172,7 +24164,6 @@
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-3",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -25740,7 +25731,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-12",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 5,
@@ -26914,7 +26904,6 @@
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-3",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
@@ -28157,13 +28146,40 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-15",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 1016.0, 353.5, 335.0, 20.0 ],
+									"text" : "the local dictionary"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-24",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 4,
+									"outlettype" : [ "", "", "", "" ],
+									"patching_rect" : [ 848.0, 353.5, 160.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"embed" : 0,
+										"precision" : 6
+									}
+,
+									"text" : "coll #1.addresses.abs.dict"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-20",
 									"linecount" : 7,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 1021.0, 103.0, 335.0, 100.0 ],
-									"presentation_linecount" : 9,
 									"text" : "the list of dict-style relative addresses, expanded, indexed at parent address index they are bound to.\nE.g. an address like filter.{1..3} filter.1 filter.{1..2} would give:\n\n1, filter.1 filter.2 filter.3\n2, filter.1 \n3, filter.1 filter.2"
 								}
 
@@ -28192,8 +28208,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1016.0, 270.0, 335.0, 33.0 ],
-									"text" : "the list of all dict-style absolute addresses, followed by the parent-address index they are bound to."
+									"patching_rect" : [ 1016.0, 270.0, 401.0, 33.0 ],
+									"presentation_linecount" : 3,
+									"text" : "the list of all dict-style absolute addresses, followed by the parent-address index they are bound to. Can be used for index to address conversion"
 								}
 
 							}
