@@ -18995,7 +18995,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 50.0, 110.0, 143.0, 35.0 ],
+									"patching_rect" : [ 50.0, 110.0, 143.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"precision" : 6
@@ -22301,7 +22301,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-6",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -24004,7 +24003,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "int", "" ],
-					"patching_rect" : [ 77.0, 442.0, 192.0, 35.0 ],
+					"patching_rect" : [ 77.0, 442.0, 188.0, 35.0 ],
 					"text" : "mvc.parameter.internal.ON #1 ON "
 				}
 
@@ -28055,7 +28054,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 77.0, 63.0, 217.0, 49.0 ],
+					"patching_rect" : [ 77.0, 63.0, 191.0, 49.0 ],
 					"text" : "patcherargs @type #3 @uid #1 @channel-layout none @autoinit 1"
 				}
 
@@ -28208,8 +28207,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1016.0, 270.0, 401.0, 33.0 ],
-									"presentation_linecount" : 3,
+									"patching_rect" : [ 1016.0, 270.0, 404.0, 33.0 ],
 									"text" : "the list of all dict-style absolute addresses, followed by the parent-address index they are bound to. Can be used for index to address conversion"
 								}
 
@@ -28940,7 +28938,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 76.0, 265.0, 166.0, 40.0 ],
+									"patching_rect" : [ 76.0, 265.0, 150.0, 40.0 ],
 									"text" : "mvc.address.concat #1"
 								}
 
@@ -28954,7 +28952,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 76.0, 196.0, 171.0, 40.0 ],
+									"patching_rect" : [ 76.0, 196.0, 155.0, 40.0 ],
 									"text" : "mvc.address.expand #1"
 								}
 
@@ -29700,7 +29698,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-14",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -30063,7 +30060,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-34",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 2,
@@ -30088,7 +30084,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-19",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -30702,7 +30697,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 776.0, 311.0, 557.0, 360.0 ],
+										"rect" : [ 899.0, 572.0, 557.0, 360.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -30749,7 +30744,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 111.0, 54.0, 22.0 ],
+													"patching_rect" : [ 108.0, 174.0, 54.0, 22.0 ],
 													"text" : "deferlow"
 												}
 
@@ -30914,15 +30909,15 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-40", 0 ],
-													"source" : [ "obj-48", 1 ]
+													"destination" : [ "obj-23", 0 ],
+													"source" : [ "obj-48", 0 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-8", 0 ],
-													"source" : [ "obj-48", 0 ]
+													"destination" : [ "obj-40", 0 ],
+													"source" : [ "obj-48", 1 ]
 												}
 
 											}
@@ -30937,13 +30932,6 @@
 												"patchline" : 												{
 													"destination" : [ "obj-4", 0 ],
 													"source" : [ "obj-6", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-23", 0 ],
-													"source" : [ "obj-8", 0 ]
 												}
 
 											}
@@ -31532,7 +31520,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-24", 0 ],
-					"midpoints" : [ 284.5, 149.5, 86.5, 149.5 ],
+					"midpoints" : [ 258.5, 149.5, 86.5, 149.5 ],
 					"source" : [ "obj-12", 1 ]
 				}
 
