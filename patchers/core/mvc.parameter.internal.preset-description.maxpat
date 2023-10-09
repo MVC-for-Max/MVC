@@ -681,7 +681,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-21",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -1469,6 +1468,23 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-15",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 4,
+									"outlettype" : [ "", "", "", "" ],
+									"patching_rect" : [ 49.0, 405.0, 164.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"embed" : 0,
+										"precision" : 6
+									}
+,
+									"text" : "coll #0.mvc.parentmap.coll"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-53",
 									"maxclass" : "button",
 									"numinlets" : 1,
@@ -1486,7 +1502,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "bang" ],
 									"patching_rect" : [ 279.0, 170.0, 175.0, 24.0 ],
 									"text" : "mvc.address.concat #0"
 								}
@@ -1691,7 +1707,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-14",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -3479,7 +3494,6 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-12",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
@@ -3528,7 +3542,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-39",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
