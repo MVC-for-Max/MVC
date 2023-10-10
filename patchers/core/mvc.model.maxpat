@@ -25115,13 +25115,13 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
-													"id" : "obj-11",
-													"maxclass" : "button",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
-													"parameter_enable" : 0,
-													"patching_rect" : [ 134.0, 71.0, 24.0, 24.0 ]
+													"id" : "obj-8",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 75.0, 193.0, 91.0, 22.0 ],
+													"text" : "zl.reg address /"
 												}
 
 											}
@@ -25132,7 +25132,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 136.0, 112.0, 22.0 ],
+													"patching_rect" : [ 50.0, 158.0, 112.0, 22.0 ],
 													"text" : "zl.reg parent #1"
 												}
 
@@ -25395,7 +25395,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 63.0, 273.0, 30.0, 30.0 ]
+													"patching_rect" : [ 50.0, 288.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -25409,13 +25409,6 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-6", 0 ],
-													"source" : [ "obj-11", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-3", 0 ],
 													"source" : [ "obj-13", 0 ]
 												}
@@ -25424,6 +25417,15 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-6", 0 ],
+													"order" : 1,
+													"source" : [ "obj-15", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-8", 0 ],
+													"order" : 0,
 													"source" : [ "obj-15", 0 ]
 												}
 
@@ -25502,6 +25504,13 @@
 												"patchline" : 												{
 													"destination" : [ "obj-1", 0 ],
 													"source" : [ "obj-7", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-22", 0 ],
+													"source" : [ "obj-8", 0 ]
 												}
 
 											}
