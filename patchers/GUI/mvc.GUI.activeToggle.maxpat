@@ -2189,7 +2189,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "initialized" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 44.0, 42.0, 30.0, 30.0 ]
 								}
 
@@ -2418,7 +2418,7 @@
 				"box" : 				{
 					"comment" : "value in",
 					"id" : "obj-4",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -2431,7 +2431,7 @@
 				"box" : 				{
 					"comment" : "value out",
 					"id" : "obj-3",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -2443,7 +2443,7 @@
 				"box" : 				{
 					"comment" : "dumpout",
 					"id" : "obj-2",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -2455,12 +2455,12 @@
 				"box" : 				{
 					"comment" : "settings",
 					"id" : "obj-1",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 175.0, 55.0, 30.0, 30.0 ]
+					"patching_rect" : [ 190.0, 55.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -2470,9 +2470,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 3,
-					"outlettype" : [ "", "int", "initialized" ],
-					"patching_rect" : [ 40.0, 117.5, 154.0, 22.0 ],
-					"text" : "mvc.remote @sendrate 0"
+					"outlettype" : [ "", "int", "" ],
+					"patching_rect" : [ 40.0, 117.5, 169.0, 22.0 ],
+					"text" : "mvc.remote.new @sendrate 0"
 				}
 
 			}
@@ -2515,7 +2515,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-74", 1 ],
-					"midpoints" : [ 184.5, 179.0, 167.5, 179.0, 167.5, 106.5, 184.5, 106.5 ],
+					"midpoints" : [ 184.5, 179.0, 167.5, 179.0, 167.5, 106.5, 199.5, 106.5 ],
 					"source" : [ "obj-34", 0 ]
 				}
 
@@ -2572,7 +2572,22 @@
 				}
 
 			}
- ]
+ ],
+		"parameters" : 		{
+			"obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
+		"autosave" : 0
 	}
 
 }
