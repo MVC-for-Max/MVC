@@ -3128,7 +3128,7 @@
 										"precision" : 6
 									}
 ,
-									"text" : "coll 6588.OSCaddresses"
+									"text" : "coll #1.OSCaddresses"
 								}
 
 							}
@@ -3337,6 +3337,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-6",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -5340,7 +5341,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "int", "" ],
-					"patching_rect" : [ 77.0, 442.0, 189.0, 35.0 ],
+					"patching_rect" : [ 77.0, 442.0, 192.0, 35.0 ],
 					"text" : "mvc.parameter.internal.ON #1 ON "
 				}
 
@@ -5500,6 +5501,7 @@
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-3",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -7047,6 +7049,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-12",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 5,
@@ -8220,6 +8223,7 @@
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-3",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
@@ -9380,7 +9384,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 77.0, 63.0, 191.0, 49.0 ],
+					"patching_rect" : [ 77.0, 63.0, 193.0, 49.0 ],
 					"text" : "patcherargs @type #3 @uid #1 @channel-layout none @autoinit 1"
 				}
 
@@ -9626,6 +9630,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-33",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -14150,7 +14155,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-24", 0 ],
-					"midpoints" : [ 258.5, 149.5, 86.5, 149.5 ],
+					"midpoints" : [ 260.5, 149.5, 86.5, 149.5 ],
 					"source" : [ "obj-12", 1 ]
 				}
 
