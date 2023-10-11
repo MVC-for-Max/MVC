@@ -24,11 +24,11 @@ function msg_float(v){
 	var interpolatingDictObj;
 	
 	if (interpValue<0.5) {
-		interpolatingDictObj = JSON.parse(leftDict.stringify());
+		interpolatingDictObj = JSON.parse(leftDict.stringify()); // could be interpolatingDictObj = leftDictObj ?
 		mergeDeep(interpolatingDictObj, rightDictObj,  interpValue);
 	}
 	else {
-		interpolatingDictObj = JSON.parse(rightDict.stringify());
+		interpolatingDictObj = JSON.parse(rightDict.stringify()); // could be interpolatingDictObj = rightDictObj ?
 		mergeDeep(interpolatingDictObj, leftDictObj, 1.-interpValue);
 	}
 			
