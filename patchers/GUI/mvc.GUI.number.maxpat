@@ -294,7 +294,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "17463.focus" ],
+					"outlettype" : [ "", "3326.focus" ],
 					"patching_rect" : [ 245.5, 239.0, 98.0, 22.0 ],
 					"text" : "mvc.GUI.tabbing"
 				}
@@ -3532,7 +3532,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 123.0, 208.5, 128.0, 22.0 ],
+					"patching_rect" : [ 142.0, 215.0, 128.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 170.0, -2.0, 60.0, 22.0 ],
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -3745,14 +3745,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-3", 0 ],
-					"order" : 0,
-					"source" : [ "obj-73", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-30", 0 ],
 					"source" : [ "obj-73", 1 ]
 				}
@@ -3761,9 +3753,16 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-74", 0 ],
-					"midpoints" : [ 132.5, 258.5, 59.5, 258.5, 59.5, 162.5, 132.5, 162.5 ],
-					"order" : 1,
+					"midpoints" : [ 151.5, 258.5, 59.5, 258.5, 59.5, 162.5, 132.5, 162.5 ],
 					"source" : [ "obj-73", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"order" : 1,
+					"source" : [ "obj-74", 0 ]
 				}
 
 			}
@@ -3777,6 +3776,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-73", 0 ],
+					"order" : 0,
 					"source" : [ "obj-74", 0 ]
 				}
 

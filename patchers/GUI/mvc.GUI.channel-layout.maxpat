@@ -2907,7 +2907,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "19533.focus" ],
+					"outlettype" : [ "", "2954.focus" ],
 					"patching_rect" : [ 463.75, 306.0, 98.0, 22.0 ],
 					"text" : "mvc.GUI.tabbing"
 				}
@@ -3840,7 +3840,7 @@
 									"hint" : "Filter mode",
 									"id" : "obj-9",
 									"ignoreclick" : 1,
-									"items" : [ "Mono", ",", "Stereo", ",", "5.1 surround", ",", "7.1 surround", ",", "Custom..." ],
+									"items" : "<empty>",
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -4664,7 +4664,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 349.75, 276.5, 222.0, 22.0 ],
+					"patching_rect" : [ 349.75, 276.5, 292.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 132.0, -2.0, 31.0, 22.0 ],
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -4706,7 +4706,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 240.75, 416.0, 30.0, 30.0 ]
+					"patching_rect" : [ 165.75, 407.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -4768,7 +4768,7 @@
 					"hint" : "Channel layout",
 					"id" : "obj-9",
 					"ignoreclick" : 1,
-					"items" : [ "Mono", ",", "Stereo", ",", "5.1 surround", ",", "7.1 surround", ",", "Custom..." ],
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -4804,7 +4804,6 @@
 					"fontsize" : 12.0,
 					"hint" : "Channel count",
 					"id" : "obj-38",
-					"ignoreclick" : 1,
 					"maxclass" : "number",
 					"maximum" : 128,
 					"minimum" : 1,
@@ -4841,17 +4840,8 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"order" : 0,
-					"source" : [ "obj-16", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-21", 0 ],
 					"midpoints" : [ 250.25, 378.0, 154.25, 378.0, 154.25, 167.0, 175.25, 167.0 ],
-					"order" : 1,
 					"source" : [ "obj-16", 0 ]
 				}
 
@@ -4907,7 +4897,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"order" : 0,
+					"source" : [ "obj-21", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-22", 0 ],
+					"order" : 1,
 					"source" : [ "obj-21", 0 ]
 				}
 
@@ -5069,17 +5068,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"order" : 0,
-					"source" : [ "obj-38", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-21", 0 ],
 					"midpoints" : [ 315.25, 446.0, 147.25, 446.0, 147.25, 162.0, 175.25, 162.0 ],
-					"order" : 1,
 					"source" : [ "obj-38", 0 ]
 				}
 
