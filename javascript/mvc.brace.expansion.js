@@ -4,6 +4,10 @@ const braces = require('braces');
 // This will be printed directly to the Max console
 // Max.post(`Loaded the ${path.basename(__filename)} script`);
 
+Max.addHandler("parsedict", (...args) => {
+		Max.post("args", args);
+});
+
 
 // Use the 'outlet' function to send messages out of node.script's outlet
 Max.addHandler("expand-old", (...args) => {
@@ -160,7 +164,7 @@ Max.addHandler("expand-brackets-first", (...args) => {
 });
 
 
-Max.addHandler("expandNew", (...args) => {
+Max.addHandler("expand-new", (...args) => {
 	
 	// callback return address is last argument
 	var addr = args[args.length - 1];
@@ -242,13 +246,14 @@ function distributeArray(inputs) {
  	  for (let inputInnerIndex = 0; inputInnerIndex < result.length; inputInnerIndex++) {
  	    const stringExisting = result[inputInnerIndex]
  	    const inputArray = input[inputInnerIndex%input.length]
- 	    const inputArrayMerged = inputArray.map((string) => stringExisting + '/' + string)	
+ 	    const inputArrayMerged = inputArray.map((string) => stringExisting + '::' + string)	
  	    resultNew.push(...inputArrayMerged)
  	  }	
  	  result = resultNew
  	}
  	return result
 }
+
 
 
 // braces(patterns[, options]);
