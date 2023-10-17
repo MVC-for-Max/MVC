@@ -5,7 +5,14 @@ const braces = require('braces');
 // Max.post(`Loaded the ${path.basename(__filename)} script`);
 
 Max.addHandler("parsedict", (...args) => {
-		Max.post("args", args);
+		//Max.post("args", args);
+
+		var childNode = args[0];
+		var parentNode = args[1];
+
+		Max.post("childNode", childNode);
+		Max.post("parentNode", parentNode);
+
 });
 
 
@@ -164,7 +171,7 @@ Max.addHandler("expand-brackets-first", (...args) => {
 });
 
 
-Max.addHandler("expand-new", (...args) => {
+Max.addHandler("expandnew", (...args) => {
 	
 	// callback return address is last argument
 	var addr = args[args.length - 1];
