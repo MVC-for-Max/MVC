@@ -4,15 +4,71 @@ const braces = require('braces');
 // This will be printed directly to the Max console
 // Max.post(`Loaded the ${path.basename(__filename)} script`);
 
-Max.addHandler("parsedict", (...args) => {
+Max.addHandler("expandonparent", (...args) => {
 		//Max.post("args", args);
+	var addr = args[args.length - 1]; //callback address
+	var uid = args[args.length - 2]; // uid of caller
 
-		var childNode = args[0];
-		var parentNode = args[1];
+	const childdict = args[0];
+	const parentdict = args[1];
 
-		Max.post("childNode", childNode);
-		Max.post("parentNode", parentNode);
+	Max.outlet("send", addr);
+	Max.outlet("uid", uid);
 
+	var target = {};
+  tableize(target, childdict, '');
+  Max.post("target", target);
+
+	const addressToExpand = childdict.address;
+	//Max.post("addressToExpand", addressToExpand);
+
+	const parentAddresses = parentdict.addresslist ?? [];
+	//Max.post("parentAddresses", parentAddresses);
+	if (!Array.isArray(parentAddresses)) {
+			var tmp = [];
+			tmp.push(parentAddresses);
+			parentAddresses = tmp;
+		}
+	//Max.post("parentAddresses", parentAddresses);
+	var expandedAddresses;
+	//if (childdict.expandedAddresses == null){
+			expandedAddresses = braceExpandArray(addressToExpand);
+			childdict.expandedAddresses = expandedAddresses;
+	// }
+	// else{
+	// 	expandedAddresses = childdict.expandedAddresses;
+	// }
+	//Max.post("expandedAddresses", expandedAddresses);
+
+	var adddressIndex = 0;
+	var parentmap = [];
+	var addresslist = [];
+	if (parentdict.uid != childdict.uid){ //concat on parent address
+		for (let i = 0; i < parentAddresses.length; i++) {
+			var childIndexArray = [];
+			var addressesArrayForThisParentAddress = expandedAddresses[i%expandedAddresses.length];
+			for (let j = 0; j < addressesArrayForThisParentAddress.length; j++) {
+				var concatAddress = parentAddresses[i] + '::' + addressesArrayForThisParentAddress[j];
+				addresslist.push(concatAddress);
+				adddressIndex++;
+				childIndexArray.push(adddressIndex);
+			}
+			parentmap.push(childIndexArray);
+		}
+		//addresslist = ["addresslist"].concat(addresslist);
+	}
+	else { //this is the device
+		//addresslist = ["addresslist"].concat(expandedAddresses[0]);
+		addresslist = expandedAddresses[0];
+		parentmap = [0];
+	}
+
+	childdict.addresslist = addresslist;
+	childdict.parentmap = parentmap;
+
+	Max.outlet(childdict);
+	//Max.outlet('addresslist', addresslist);
+	//Max.outlet('parentmap', Object.values(parentmap));
 });
 
 
@@ -212,7 +268,8 @@ Max.addHandler("expandnew", (...args) => {
 function braceExpandArray(arr) {
   // Check if the input is an array
   if (!Array.isArray(arr)) {
-    return arr;
+    //return arr;
+    arr = [arr];
   }
 
   // Initialize an empty result array
@@ -286,5 +343,78 @@ function escapeMultiSlashes(string) {
   //return string.replace(/[.*+?^${}()|[\]\\]/g, '\\\\$&'); // $& means the whole matched string
 	return string.replace(/\/+/g, '/'); // $& means the whole matched string
 
+}
+
+
+/**
+ * Recursively flatten object keys to use dot-notation.
+ *
+ * @param {Object} `target`
+ * @param {Object} `obj`
+ * @param {String} `parent`
+ */
+function tableize(target, obj, parent) {
+  for (var key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      var val = obj[key];
+
+      key = parent + key;
+      if (isObject(val)) {
+        flatten(target, val, key + '.');
+      } else {
+        target[key] = val;
+      }
+    }
+  }
+}
+
+function isObject(val) {
+  return val != null && typeof val === 'object' && Array.isArray(val) === false;
+};
+
+
+
+
+/**
+ * Recursively flatten keys for dictionary
+ *
+ * Params : dictionary, uid, return-address
+ * e.g. for use with dict mvc.models.dict or dict mvc.inputs.dict
+ */
+Max.addHandler("flattenDictKeys", (...args) => {
+
+	var addr = args[args.length - 1]; //callback address
+	var uid = args[args.length - 2]; // uid of caller
+
+	const childdict = args[0];
+
+	Max.outlet("send", addr);
+	Max.outlet("uid", uid);
+
+	var target = [];
+  flattenkeys(target, childdict, '', '/');
+  Max.post("target", target);
+	})
+
+
+/**
+ * Recursively flatten object keys to use dot-notation.
+ *
+ * @param {Array} `target`
+ * @param {Object} `obj`
+ * @param {String} `parent`
+ * @param {String} `separator`
+ */
+function flattenkeys(target, obj, parent, separator) {
+  for (var key in obj) {
+		if (obj.hasOwnProperty(key)) {
+     	var val = obj[key];
+      if (isObject(val)) {
+        flattenkeys(target, val, parent + key + separator, separator);
+      } else {
+        target.push(parent); //we push only parent because the last key will always be uid
+      }
+    }
+  }
 }
 
