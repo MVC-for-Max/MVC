@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 63.0, 87.0, 1494.0, 929.0 ],
+		"rect" : [ 152.0, 87.0, 1494.0, 929.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,30 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "multichannelsignal", "" ],
+					"patching_rect" : [ 602.0, 487.0, 195.0, 22.0 ],
+					"text" : "mvc.mc.cascade~ toto myCascade"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 602.0, 425.0, 165.0, 22.0 ],
+					"text" : "mvc.model 123 toto MyModel"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-188",
 					"maxclass" : "newobj",
@@ -1969,42 +1993,6 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1477.0, 417.0, 206.0, 24.0 ],
 					"text" : "mvc.address.expandconcat 777"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-11",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 1079.0, 722.0, 538.0, 22.0 ],
-					"text" : "mvc.model 789 456 filter.1 filter.{1..2} filter.{1..6} filter.{1..24} filter.{1..24} filter.{1..3} filter.{1..2} filter.1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-9",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 1095.0, 653.0, 267.0, 22.0 ],
-					"text" : "mvc.model 456 123 channel.{1..2} channel.{1..6}"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-6",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 1100.0, 594.0, 208.0, 22.0 ],
-					"text" : "mvc.model 123 toto {stereo|surround}"
 				}
 
 			}

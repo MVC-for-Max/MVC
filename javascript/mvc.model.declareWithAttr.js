@@ -65,6 +65,7 @@ function declaremodel(dictname){
 
 		// model_UID is the 1st arg, followed by addresses 
 	currentAddresses = attrDict.get('addresslist');
+	currentAddresses = Array.isArray(currentAddresses) ? currentAddresses : [currentAddresses]; //make sure it's an array
 	post('currentAddresses', currentAddresses.toString(), '\n');
 
 	if (currentAddresses == null){
@@ -99,8 +100,12 @@ function declaremodel(dictname){
 		// compare new addresses with previous addresses for this node
 		var missingAdresses = findGoneItems(currentAddresses, previousAddresses);
 
+		post('missingAdresses', missingAdresses.toString(), '\n');
+
+
 		// remove gone addresses only for values
 		for (var i = 0; i < (missingAdresses.length); i++) {
+			post('Removing old model address', missingAdresses[i], '\n');
 			var theAdd = missingAdresses[i].replace(/\//g, '::');
 			//post('removing', theAdd, '\n')
 			parametersValuesDict.remove(theAdd);

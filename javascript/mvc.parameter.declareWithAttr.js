@@ -23,21 +23,21 @@ paramAddressDict.quiet = 1;
 
 function declare(dictname){
 	
-	post("toto");
+	//post("toto");
 	var attrDict = new Dict();
 	var initState = 0;
 
 	attrDict.name = dictname;
 	
 	parameter_UID = attrDict.get('uid');
-	post('parameter_UID',parameter_UID, '\n');
+	//post('parameter_UID',parameter_UID, '\n');
 	var sendAddress = parameter_UID + ".param.declareWithAttr.done";
 	
 
 	currentAddresses = attrDict.get('addresslist');
 	currentAddresses = Array.isArray(currentAddresses) ? currentAddresses : [currentAddresses]; //make sure it's an array
 
-	post('currentAddresses', currentAddresses, '\n');
+	//post('currentAddresses', currentAddresses, '\n');
 
 	// check if any of these addresses is already in namespace
 	var already_in_namespace = 0;
@@ -58,21 +58,14 @@ function declare(dictname){
 		return;
 	}
 	else{
-		// compare new addresses with previous addresses for this node
-		var test = paramAddressDict.get(parameter_UID);
-		if (test != null) {
-			if (Array.isArray(test)) {
-				previousAddresses = test;
-				//post("previous address is an array \n");
-			}
-			else {
-				previousAddresses = [];
-				previousAddresses.push(test);
-				//post("previous address is a solo \n");
-			}
-		}
-		else {
+		// compare new addresses with previous addresses for this node...
+		previousAddresses = paramAddressDict.get(parameter_UID);
+		// ... and make sure it's an array
+		if (previousAddresses == null) {
 			previousAddresses = [];
+		}
+		else {	
+			previousAddresses = Array.isArray(previousAddresses) ? previousAddresses : [previousAddresses]; 
 		}
 
 		// update nodeUID / address storage for this node

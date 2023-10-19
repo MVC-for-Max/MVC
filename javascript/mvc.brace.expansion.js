@@ -42,6 +42,7 @@ Max.addHandler("expandonparent", (...args) => {
 
 	var adddressIndex = 0;
 	var parentmap = [];
+	var childrenmap = [];
 	var addresslist = [];
 	if (parentdict.uid != childdict.uid){ //concat on parent address
 		for (let i = 0; i < parentAddresses.length; i++) {
@@ -50,6 +51,7 @@ Max.addHandler("expandonparent", (...args) => {
 			for (let j = 0; j < addressesArrayForThisParentAddress.length; j++) {
 				var concatAddress = parentAddresses[i] + '::' + addressesArrayForThisParentAddress[j];
 				addresslist.push(concatAddress);
+				childrenmap.push(i+1);
 				adddressIndex++;
 				childIndexArray.push(adddressIndex);
 			}
@@ -60,13 +62,84 @@ Max.addHandler("expandonparent", (...args) => {
 	else { //this is the device
 		//addresslist = ["addresslist"].concat(expandedAddresses[0]);
 		addresslist = expandedAddresses[0];
-		parentmap = [0];
+		parentmap = [1];
+		childrenmap = [1];
 	}
 
 	childdict.addresslist = addresslist;
 	childdict.parentmap = parentmap;
+	childdict.childrenmap = childrenmap;
 
 	Max.outlet(childdict);
+	//Max.outlet('addresslist', addresslist);
+	//Max.outlet('parentmap', Object.values(parentmap));
+});
+
+Max.addHandler("expandonparent-noarray", (...args) => {
+		//Max.post("args", args);
+	var addr = args[args.length - 1]; //callback address
+	var uid = args[args.length - 2]; // uid of caller
+
+	const childdict = args[0];
+	const parentdict = args[1];
+
+	Max.outlet("send", addr);
+	Max.outlet("uid", uid);
+
+	// var target = {};
+  // tableize(target, childdict, '');
+  // Max.post("target", target);
+
+	const addressToExpand = childdict.address;
+	//Max.post("addressToExpand", addressToExpand);
+
+	const parentAddresses = parentdict.addresslist ?? [];
+	//Max.post("parentAddresses", parentAddresses);
+	if (!Array.isArray(parentAddresses)) {
+			var tmp = [];
+			tmp.push(parentAddresses);
+			parentAddresses = tmp;
+		}
+	//Max.post("parentAddresses", parentAddresses);
+	var expandedAddresses;
+	//if (childdict.expandedAddresses == null){
+			expandedAddresses = braceExpandArray(addressToExpand);
+			childdict.expandedAddresses = expandedAddresses;
+	// }
+	// else{
+	// 	expandedAddresses = childdict.expandedAddresses;
+	// }
+	//Max.post("expandedAddresses", expandedAddresses);
+
+	var adddressIndex = 0;
+	var parentmap = [];
+	var addresslist = [];
+	if (parentdict.uid != childdict.uid){ //concat on parent address
+		for (let i = 0; i < parentAddresses.length; i++) {
+			var childIndexArray = [];
+			var addressesArrayForThisParentAddress = expandedAddresses[i%expandedAddresses.length];
+			for (let j = 0; j < addressesArrayForThisParentAddress.length; j++) {
+				var concatAddress = parentAddresses[i] + '::' + addressesArrayForThisParentAddress[j];
+				//addresslist.push(concatAddress);
+				adddressIndex++;
+				var result = ["result"].concat(adddressIndex, concatAddress, i);
+				Max.outlet(result);
+				childIndexArray.push(adddressIndex);
+			}
+			var parentmapout = ["parentmap"].concat(i+1, childIndexArray);
+			Max.outlet(parentmapout);
+			//parentmap.push(childIndexArray);
+		}
+		//addresslist = ["addresslist"].concat(addresslist);
+	}
+	else { //this is the device
+		//addresslist = ["addresslist"].concat(expandedAddresses[0]);
+		addresslist = expandedAddresses[0];
+		parentmap = [0];
+	}
+
+
+	//Max.outlet(childdict);
 	//Max.outlet('addresslist', addresslist);
 	//Max.outlet('parentmap', Object.values(parentmap));
 });
