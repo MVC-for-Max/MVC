@@ -209,7 +209,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 31.0, 211.0, 61.0, 22.0 ],
+					"patching_rect" : [ 31.0, 211.0, 79.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 0,
@@ -217,7 +217,7 @@
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "dict"
+					"text" : "dict @quiet 1"
 				}
 
 			}
