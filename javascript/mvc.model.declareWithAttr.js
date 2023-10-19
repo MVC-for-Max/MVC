@@ -30,10 +30,9 @@ modelAddressDict.name = "modelAddressDict";
 modelAddressDict.quiet = 1;
 // var parentUID;
 
-function test(addresses){
-	post("add", addresses, "\n");
-
-}
+// function test(addresses){
+	// post("add", addresses, "\n");
+// }
 
 function declaremodel(dictname){
 	//just pass arguments to updateDictionaries
@@ -58,7 +57,7 @@ function declaremodel(dictname){
 	// post(attrDict.stringify());
 	
 	model_UID = attrDict.get('uid');
-	post('model_UID',model_UID, '\n');
+	//post('model_UID',model_UID, '\n');
 	var sendAddress = model_UID + ".model.declareWithAttr.done";
 	outlet(0, "send", sendAddress); // prepare return address
 
@@ -66,7 +65,7 @@ function declaremodel(dictname){
 		// model_UID is the 1st arg, followed by addresses 
 	currentAddresses = attrDict.get('addresslist');
 	currentAddresses = Array.isArray(currentAddresses) ? currentAddresses : [currentAddresses]; //make sure it's an array
-	post('currentAddresses', currentAddresses.toString(), '\n');
+	//post('currentAddresses', currentAddresses.toString(), '\n');
 
 	if (currentAddresses == null){
 		outlet(1, model_UID.toString()+".i", 0);
@@ -100,12 +99,12 @@ function declaremodel(dictname){
 		// compare new addresses with previous addresses for this node
 		var missingAdresses = findGoneItems(currentAddresses, previousAddresses);
 
-		post('missingAdresses', missingAdresses.toString(), '\n');
+		//post('missingAdresses', missingAdresses.toString(), '\n');
 
 
 		// remove gone addresses only for values
 		for (var i = 0; i < (missingAdresses.length); i++) {
-			post('Removing old model address', missingAdresses[i], '\n');
+			//post('Removing old model address', missingAdresses[i], '\n');
 			var theAdd = missingAdresses[i].replace(/\//g, '::');
 			//post('removing', theAdd, '\n')
 			parametersValuesDict.remove(theAdd);

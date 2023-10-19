@@ -82,7 +82,7 @@ function declare(dictname){
 		
 		// compare new addresses with previous addresses for this node
 		var missingAdresses = findGoneItems(currentAddresses, previousAddresses);
-		post('missingAdresses', missingAdresses, '\n')
+		//post('missingAdresses', missingAdresses, '\n')
 
 		// remove gone addresses only for values
 		for (var i = 0; i < (missingAdresses.length); i++) {

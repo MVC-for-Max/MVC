@@ -23,21 +23,21 @@ stateAddressDict.quiet = 1;
 
 function declare(dictname){
 	
-	post("toto");
+	//post("toto");
 	var attrDict = new Dict();
 	var initState = 0;
 
 	attrDict.name = dictname;
 	
 	state_UID = attrDict.get('uid');
-	post('state_UID',state_UID, '\n');
+	//post('state_UID',state_UID, '\n');
 	var sendAddress = state_UID + ".state.declareWithAttr.done";
 	
 
 	currentAddresses = attrDict.get('addresslist');
 	currentAddresses = Array.isArray(currentAddresses) ? currentAddresses : [currentAddresses]; //make sure it's an array
 
-	post('currentAddresses', currentAddresses, '\n');
+	//post('currentAddresses', currentAddresses, '\n');
 
 	// check if any of these addresses is already in namespace
 	var already_in_namespace = 0;
@@ -82,7 +82,7 @@ function declare(dictname){
 		
 		// compare new addresses with previous addresses for this node
 		var missingAdresses = findGoneItems(currentAddresses, previousAddresses);
-		post('missingAdresses', missingAdresses, '\n')
+		//post('missingAdresses', missingAdresses, '\n')
 
 		// remove gone addresses only for values
 		for (var i = 0; i < (missingAdresses.length); i++) {
