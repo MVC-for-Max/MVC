@@ -15,9 +15,9 @@ Max.addHandler("expandonparent", (...args) => {
 	Max.outlet("send", addr);
 	Max.outlet("uid", uid);
 
-	var target = {};
-  tableize(target, childdict, '');
-  Max.post("target", target);
+	// var target = {};
+  // tableize(target, childdict, '');
+  // Max.post("target", target);
 
 	const addressToExpand = childdict.address;
 	//Max.post("addressToExpand", addressToExpand);
