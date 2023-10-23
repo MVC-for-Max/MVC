@@ -2,8 +2,8 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 9,
-			"minor" : 0,
+			"major" : 8,
+			"minor" : 6,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
@@ -45,8 +45,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 62.0, 276.0, 225.0, 22.0 ],
-					"text" : "mvc.model 123 ts myModel.5 @type test"
+					"patching_rect" : [ 62.0, 276.0, 212.0, 22.0 ],
+					"text" : "mvc.model 5 ts myModel.5 @type test"
 				}
 
 			}
@@ -57,8 +57,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 62.0, 240.721854304635769, 225.0, 22.0 ],
-					"text" : "mvc.model 123 ts myModel.4 @type test"
+					"patching_rect" : [ 62.0, 240.721854304635769, 212.0, 22.0 ],
+					"text" : "mvc.model 4 ts myModel.4 @type test"
 				}
 
 			}
@@ -69,8 +69,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 62.0, 212.814569536423846, 225.0, 22.0 ],
-					"text" : "mvc.model 123 ts myModel.3 @type test"
+					"patching_rect" : [ 62.0, 212.814569536423846, 212.0, 22.0 ],
+					"text" : "mvc.model 3 ts myModel.3 @type test"
 				}
 
 			}
@@ -81,8 +81,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 62.0, 184.907284768211923, 225.0, 22.0 ],
-					"text" : "mvc.model 123 ts myModel.2 @type test"
+					"patching_rect" : [ 62.0, 184.907284768211923, 212.0, 22.0 ],
+					"text" : "mvc.model 2 ts myModel.2 @type test"
 				}
 
 			}
@@ -93,8 +93,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 62.0, 157.0, 225.0, 22.0 ],
-					"text" : "mvc.model 123 ts myModel.1 @type test"
+					"patching_rect" : [ 62.0, 157.0, 212.0, 22.0 ],
+					"text" : "mvc.model 1 ts myModel.1 @type test"
 				}
 
 			}
