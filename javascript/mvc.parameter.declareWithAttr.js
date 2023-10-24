@@ -39,89 +39,87 @@ function declare(dictname){
 
 	//post('currentAddresses', currentAddresses, '\n');
 
-	// check if any of these addresses is already in namespace
-	var already_in_namespace = 0;
-	for (var i = 0; i < (arguments.length); i++) {
-		var theAdd = arguments[i];
-		var theUID = 0;
-		var theUIDIDX = inputsDict.get(theAdd+"::uid");				
-		if (theUIDIDX !== null) {
-			if (parameter_UID != theUIDIDX[0]){
-				already_in_namespace = 1;
-				break;
-			}
+	// Check if any of these addresses has already been registered in namespace
+	// from a different parameter instance (different UID).
+	// Return with exit code if this is the case.
+	for (var i = 0; i < (currentAddresses.length); i++) {
+		var theAdd = currentAddresses[i];
+		var theUID = inputsDict.get(theAdd+"::uid");
+		if (theUID == null) break;	
+		else if (parameter_UID != theUID[0]) {
+				//post('Parameter', currentAddresses[i].replace(/::/g, '/'), 'is already in the namespace.\n')
+				outlet(0, 'send', sendAddress);
+				outlet(0, -1); // error code when address already exists
+				return;
 		}	
 	}
-	if (already_in_namespace) {
-		outlet(0, "send", sendAddress);
-		outlet(0, 2); // error code when address already exists
-		return;
-	}
-	else{
-		// compare new addresses with previous addresses for this node...
-		previousAddresses = paramAddressDict.get(parameter_UID);
-		// ... and make sure it's an array
-		if (previousAddresses == null) {
-			previousAddresses = [];
-		}
-		else {	
-			previousAddresses = Array.isArray(previousAddresses) ? previousAddresses : [previousAddresses]; 
-		}
 
-		// update nodeUID / address storage for this node
-		if (currentAddresses.length == 0){
-			//post("removing from paramAddressDict", parameter_UID , "\n");
-			initState = 0;
-			paramAddressDict.remove(parameter_UID.toString());
-		}
-		else {
-			initState = 1;
-			//post("new addresses fro paramAddressDict", parameter_UID , "\n");
-			paramAddressDict.set(parameter_UID, currentAddresses);
-		}
+	// compare new addresses with previous addresses for this node...
+	previousAddresses = paramAddressDict.get(parameter_UID);
+	// ... and make sure it's an array
+	// if (previousAddresses == null) {
+		// previousAddresses = [];
+	// }
+	// else {	
+		// previousAddresses = Array.isArray(previousAddresses) ? previousAddresses : [previousAddresses]; 
+	// }
+	// make sure previous array is an array, make it an empty array if null
+	previousAddresses = (previousAddresses == null) ? [] : (Array.isArray(previousAddresses) ? previousAddresses : [previousAddresses]);
+
+
+	// update nodeUID / address storage for this node
+	if (currentAddresses.length == 0){
+		//post("removing from paramAddressDict", parameter_UID , "\n");
+		initState = 0;
+		paramAddressDict.remove(parameter_UID.toString());
+	}
+	else {
+		initState = 1;
+		//post("new addresses fro paramAddressDict", parameter_UID , "\n");
+		paramAddressDict.set(parameter_UID, currentAddresses);
+	}
 		
-		// compare new addresses with previous addresses for this node
-		var missingAdresses = findGoneItems(currentAddresses, previousAddresses);
-		//post('missingAdresses', missingAdresses, '\n')
+	// compare new addresses with previous addresses for this node
+	var missingAdresses = findGoneItems(currentAddresses, previousAddresses);
+	//post('missingAdresses', missingAdresses, '\n')
 
-		// remove gone addresses only for values
-		for (var i = 0; i < (missingAdresses.length); i++) {
-			var theAdd = missingAdresses[i];//.replace(/\//g, '::');
-			//post('removing', theAdd, '\n')
-			parametersValuesDict.remove(theAdd);
-			outlet(1, missingAdresses[i], 0);
-		}
-
-		// remove all previous addresses in parameters (to rebuild all indices)
-		for (var i = 0; i < (previousAddresses.length); i++) {
-			var theAdd = previousAddresses[i];//.replace(/\//g, '::');
-			// parametersDict.remove(theAdd);
-			inputsDict.remove(theAdd);
-			//post("removing param:", theAdd, "\n");
-		}
-
-		// add new addresses in inputs dict
-		for (var i = 0; i < (currentAddresses.length); i++) {
-			var theAdd = currentAddresses[i];//.replace(/\//g, '::');
-	    	//post('add', i, theAdd, "\n");
-	    	var addressUID = [parameter_UID, i + 1];
-			// parametersDict.replace(theAdd + "::uid", addressUID);
-			inputsDict.replace(theAdd + "::uid", addressUID);
-			
-			if (!(parametersValuesDict.contains(currentAddresses[i]))){
-				// if param does not have a value, recall default
-				//outlet(2, i+1);
-				outlet(2, i + 1, parameter_UID);
-				}
-			else {
-				// else, recall current
-				//outlet(3, i+1);
-				outlet(3, i + 1, parameter_UID);
-			}
-			//outlet(1, currentAddresses[i], 1); // now done in declare
-
-		}
+	// remove gone addresses only for values
+	for (var i = 0; i < (missingAdresses.length); i++) {
+		var theAdd = missingAdresses[i];//.replace(/\//g, '::');
+		//post('removing', theAdd, '\n')
+		parametersValuesDict.remove(theAdd);
+		outlet(1, missingAdresses[i], 0);
 	}
+
+	// remove all previous addresses in parameters (to rebuild all indices)
+	for (var i = 0; i < (previousAddresses.length); i++) {
+		var theAdd = previousAddresses[i];//.replace(/\//g, '::');
+		// parametersDict.remove(theAdd);
+		inputsDict.remove(theAdd);
+		//post("removing param:", theAdd, "\n");
+	}
+
+	// add new addresses in inputs dict
+	for (var i = 0; i < (currentAddresses.length); i++) {
+		var theAdd = currentAddresses[i];//.replace(/\//g, '::');
+		//post('add', i, theAdd, "\n");
+		var addressUID = [parameter_UID, i + 1];
+		// parametersDict.replace(theAdd + "::uid", addressUID);
+		inputsDict.replace(theAdd + "::uid", addressUID);
+		
+		if (!(parametersValuesDict.contains(currentAddresses[i]))){
+			// if param does not have a value, recall default
+			//outlet(2, i+1);
+			outlet(2, i + 1, parameter_UID);
+			}
+		else {
+			// else, recall current
+			//outlet(3, i+1);
+			outlet(3, i + 1, parameter_UID);
+		}
+		//outlet(1, currentAddresses[i], 1); // now done in declare
+	}
+	
 	
 
 	// Send initializers to public (remotes)

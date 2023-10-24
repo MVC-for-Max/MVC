@@ -19,32 +19,34 @@ Max.addHandler("expandonparent", (...args) => {
   // tableize(target, childdict, '');
   // Max.post("target", target);
 
-	const addressToExpand = childdict.address;
-	//Max.post("addressToExpand", addressToExpand);
+	// fetch address to expand make sure it's an array
+	var addressToExpand = childdict.address ?? [];
+	addressToExpand = Array.isArray(addressToExpand) ? addressToExpand : [addressToExpand];
 
-	const parentAddresses = parentdict.addresslist ?? [];
-	//Max.post("parentAddresses", parentAddresses);
-	if (!Array.isArray(parentAddresses)) {
-			var tmp = [];
-			tmp.push(parentAddresses);
-			parentAddresses = tmp;
-		}
-	//Max.post("parentAddresses", parentAddresses);
+	// fetch parent addresses and make sure it's an array
+	var parentAddresses = parentdict.addresslist ?? [];
+	parentAddresses = Array.isArray(parentAddresses) ? parentAddresses : [parentAddresses];
+
 	var expandedAddresses;
-	//if (childdict.expandedAddresses == null){
 			expandedAddresses = braceExpandArray(addressToExpand);
 			childdict.expandedAddresses = expandedAddresses;
-	// }
-	// else{
-	// 	expandedAddresses = childdict.expandedAddresses;
-	// }
-	//Max.post("expandedAddresses", expandedAddresses);
 
-	var adddressIndex = 0;
-	var parentmap = [];
-	var childrenmap = [];
-	var addresslist = [];
-	if (parentdict.uid != childdict.uid){ //concat on parent address
+
+	var adddressIndex = 0; //the address index in the final addresslist
+	var addresslist = []; // the final address list
+	var parentmap = [];		// an array mapping each address to the index of the parent addresses
+	var childrenmap = []; // a nested array mapping parent index to an array of corresponding child addresses indices
+
+	if (parentdict.uid == null){ // If no parent, consider the relative address as absolute
+		addresslist = expandedAddresses.flat();
+		var tmpArray = [];
+		for (var i = 0; i < addresslist.length; i++) {
+   		parentmap.push(1);
+   		tmpArray.push(i+1);
+		}
+		childrenmap.push(tmpArray);
+	}	
+	else if (parentdict.uid != childdict.uid){ //concat on parent address
 		for (let i = 0; i < parentAddresses.length; i++) {
 			var childIndexArray = [];
 			var addressesArrayForThisParentAddress = expandedAddresses[i%expandedAddresses.length];
@@ -71,8 +73,10 @@ Max.addHandler("expandonparent", (...args) => {
 	childdict.childrenmap = childrenmap;
 
 	Max.outlet(childdict);
-	//Max.outlet('addresslist', addresslist);
-	//Max.outlet('parentmap', Object.values(parentmap));
+	// Max.outlet(['addresslist'].concat(addresslist));
+	// Max.outlet(['parentmap'].concat(Object.values(parentmap[0])));
+	// Max.outlet(['childrenmap'].concat(childrenmap));
+	// Max.outlet('done');
 });
 
 Max.addHandler("expandonparent-noarray", (...args) => {
