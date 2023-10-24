@@ -42,6 +42,20 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
+					"id" : "obj-7",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 443.5, 153.0, 191.0, 23.0 ],
+					"text" : "load testingSpeed2-DeviceOnly"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
 					"id" : "obj-6",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -354,7 +368,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 80.0, 118.0, 191.0, 23.0 ],
-					"text" : "load testingSpeed2-DeviceOnly"
+					"text" : "load testingSpeed2-MVC"
 				}
 
 			}
