@@ -20,7 +20,7 @@
 				"preset-description" : "undefined",
 				"ON" : 1,
 				"preset-name" : "none",
-				"frequency" : 1000.0
+				"frequency" : 303.0
 			}
 
 		}
@@ -256,6 +256,30 @@
 				"ON" : 1,
 				"preset-name" : "none",
 				"frequency" : 1000.0
+			}
+
+		}
+
+	}
+,
+	"tutu" : 	{
+		"preset-description" : "undefined",
+		"ON" : 1,
+		"preset-name" : "tutu",
+		"channelcount" : "Mono",
+		"channel.1" : 		{
+			"nfilters" : 1,
+			"preset-description" : "undefined",
+			"ON" : 1,
+			"preset-name" : "none",
+			"filter.1" : 			{
+				"gain" : 0.0,
+				"Q" : 1.0,
+				"filtermode" : "peaknotch",
+				"preset-description" : "undefined",
+				"ON" : 1,
+				"preset-name" : "none",
+				"frequency" : 777.0
 			}
 
 		}
