@@ -2,8 +2,8 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 9,
-			"minor" : 0,
+			"major" : 8,
+			"minor" : 6,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
@@ -44,9 +44,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 209.0, 39.0, 46.0, 22.0 ],
-					"text" : "route 0"
+					"outlettype" : [ "bang", "" ],
+					"patching_rect" : [ 209.0, 39.0, 34.0, 22.0 ],
+					"text" : "sel 0"
 				}
 
 			}
