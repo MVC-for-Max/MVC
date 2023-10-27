@@ -23,21 +23,16 @@ paramAddressDict.quiet = 1;
 
 function declare(dictname){
 	
-	//post("toto");
 	var attrDict = new Dict();
-	var initState = 0;
-
 	attrDict.name = dictname;
 	
 	parameter_UID = attrDict.get('uid');
-	//post('parameter_UID',parameter_UID, '\n');
-	var sendAddress = parameter_UID + ".param.declareWithAttr.done";
-	
+	// set callback return address on outlet 0
+	outlet(0, 'send', parameter_UID + ".param.declareWithAttr.done");
 
+	// get new addresslist and make sure it's an array
 	currentAddresses = attrDict.get('addresslist');
 	currentAddresses = Array.isArray(currentAddresses) ? currentAddresses : [currentAddresses]; //make sure it's an array
-
-	//post('currentAddresses', currentAddresses, '\n');
 
 	// Check if any of these addresses has already been registered in namespace
 	// from a different parameter instance (different UID).
@@ -48,36 +43,17 @@ function declare(dictname){
 		if (theUID == null) break;	
 		else if (parameter_UID != theUID[0]) {
 				//post('Parameter', currentAddresses[i].replace(/::/g, '/'), 'is already in the namespace.\n')
-				outlet(0, 'send', sendAddress);
 				outlet(0, -1); // error code when address already exists
 				return;
 		}	
 	}
 
-	// compare new addresses with previous addresses for this node...
+	// get previous addresslist and make sure it's an array
 	previousAddresses = paramAddressDict.get(parameter_UID);
-	// ... and make sure it's an array
-	// if (previousAddresses == null) {
-		// previousAddresses = [];
-	// }
-	// else {	
-		// previousAddresses = Array.isArray(previousAddresses) ? previousAddresses : [previousAddresses]; 
-	// }
-	// make sure previous array is an array, make it an empty array if null
 	previousAddresses = (previousAddresses == null) ? [] : (Array.isArray(previousAddresses) ? previousAddresses : [previousAddresses]);
 
-
-	// update nodeUID / address storage for this node
-	if (currentAddresses.length == 0){
-		//post("removing from paramAddressDict", parameter_UID , "\n");
-		initState = 0;
-		paramAddressDict.remove(parameter_UID.toString());
-	}
-	else {
-		initState = 1;
-		//post("new addresses fro paramAddressDict", parameter_UID , "\n");
-		paramAddressDict.set(parameter_UID, currentAddresses);
-	}
+	// update nodeUID / address storage for this node 
+	(currentAddresses.length == 0) ? paramAddressDict.remove(parameter_UID.toString()) : paramAddressDict.set(parameter_UID, currentAddresses);
 		
 	// compare new addresses with previous addresses for this node
 	var missingAdresses = findGoneItems(currentAddresses, previousAddresses);
@@ -86,49 +62,34 @@ function declare(dictname){
 	// remove gone addresses only for values
 	for (var i = 0; i < (missingAdresses.length); i++) {
 		var theAdd = missingAdresses[i];//.replace(/\//g, '::');
-		//post('removing', theAdd, '\n')
 		parametersValuesDict.remove(theAdd);
-		outlet(1, missingAdresses[i], 0);
-	}
-
-	// remove all previous addresses in parameters (to rebuild all indices)
-	for (var i = 0; i < (previousAddresses.length); i++) {
-		var theAdd = previousAddresses[i];//.replace(/\//g, '::');
-		// parametersDict.remove(theAdd);
 		inputsDict.remove(theAdd);
-		//post("removing param:", theAdd, "\n");
+		outlet(1, theAdd, 0);
+		//post('removing', theAdd, '\n')
 	}
 
 	// add new addresses in inputs dict
 	for (var i = 0; i < (currentAddresses.length); i++) {
-		var theAdd = currentAddresses[i];//.replace(/\//g, '::');
-		//post('add', i, theAdd, "\n");
+		var theAdd = currentAddresses[i];
 		var addressUID = [parameter_UID, i + 1];
-		// parametersDict.replace(theAdd + "::uid", addressUID);
 		inputsDict.replace(theAdd + "::uid", addressUID);
 		
 		if (!(parametersValuesDict.contains(currentAddresses[i]))){
 			// if param does not have a value, recall default
-			//outlet(2, i+1);
 			outlet(2, i + 1, parameter_UID);
 			}
 		else {
 			// else, recall current
-			//outlet(3, i+1);
 			outlet(3, i + 1, parameter_UID);
 		}
-		//outlet(1, currentAddresses[i], 1); // now done in declare
 	}
 	
-	
-
 	// Send initializers to public (remotes)
 	for (var i = 0; i < (currentAddresses.length); i++) {
-		outlet(1, currentAddresses[i], initState);	
+		outlet(1, currentAddresses[i], 1);	
 	}
 	
-	// bang when done
-	outlet(0, "send", sendAddress);
+	// return 1 if init succeed
 	outlet(0, 1);
 }
 
