@@ -106,8 +106,6 @@ function findGoneItems(CurrentArray, PreviousArray) {
    return missingItems;
 }
 
-
-
 function clear(){
 	previousAddresses = [];
 }

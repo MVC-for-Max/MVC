@@ -1,14 +1,13 @@
 // mvc.message.declare.js
 
 inlets = 1;
-outlets = 2;
+outlets = 4;
 
 _MVC_VERSION = 0.4;
 	
 var inputsDict = new Dict();
 inputsDict.quiet = 1;
 inputsDict.name = "mvc.inputs.dict";
-
 
 var message_UID = 0;
 
@@ -18,83 +17,66 @@ var messageAddressDict = new Dict();
 messageAddressDict.name = "messageAddressDict";
 messageAddressDict.quiet = 1;
 
-function updateDictionaries(){
+function declare(dictname){
 	
-	// message_UID is the 1st arg, followed by addresses 
-	currentAddresses = arrayfromargs(arguments);
-	message_UID = currentAddresses[0];
-	currentAddresses.shift();
+	var attrDict = new Dict();
+	attrDict.name = dictname;
+	
+	message_UID = attrDict.get('uid');
+	// set callback return address on outlet 0
+	outlet(0, 'send', message_UID + ".message.declareWithAttr.done");
 
-	// compare new addresses with previous addresses for this node
-	var test = messageAddressDict.get(message_UID);
-	if (test != null) {
-		if (Array.isArray(test)) {
-			previousAddresses = test;
-			//post("previous address is an array \n");
-		}
-		else {
-			previousAddresses = [];
-			previousAddresses.push(test);
-			//post("previous address is a solo \n");
-		}
-	}
-	else {
-		previousAddresses = [];
-	}
-	
-	// update nodeUID / address storage for this node
-	if (currentAddresses.length == 0){
-		messageAddressDict.remove(message_UID.toString());
-	}
-	else {
-		messageAddressDict.set(message_UID, currentAddresses);
+	// get new addresslist and make sure it's an array
+	currentAddresses = attrDict.get('addresslist');
+	currentAddresses = Array.isArray(currentAddresses) ? currentAddresses : [currentAddresses]; //make sure it's an array
+
+	// Check if any of these addresses has already been registered in namespace
+	// from a different message instance (different UID).
+	// Return with exit code if this is the case.
+	for (var i = 0; i < (currentAddresses.length); i++) {
+		var theAdd = currentAddresses[i];
+		var theUID = inputsDict.get(theAdd+"::uid");
+		if (theUID == null) break;	
+		else if (message_UID != theUID[0]) {
+				//post('Parameter', currentAddresses[i].replace(/::/g, '/'), 'is already in the namespace.\n')
+				outlet(0, -1); // error code when address already exists
+				return;
+		}	
 	}
 
+	// get previous addresslist and make sure it's an array
+	previousAddresses = messageAddressDict.get(message_UID);
+	previousAddresses = (previousAddresses == null) ? [] : (Array.isArray(previousAddresses) ? previousAddresses : [previousAddresses]);
+
+	// update nodeUID / address storage for this node 
+	(currentAddresses.length == 0) ? messageAddressDict.remove(message_UID.toString()) : messageAddressDict.set(message_UID, currentAddresses);
+		
 	// compare new addresses with previous addresses for this node
 	var missingAdresses = findGoneItems(currentAddresses, previousAddresses);
+	//post('missingAdresses', missingAdresses, '\n')
 
 	// remove gone addresses only for values
 	for (var i = 0; i < (missingAdresses.length); i++) {
 		var theAdd = missingAdresses[i];//.replace(/\//g, '::');
-		//post('removing', theAdd, '\n')
-		outlet(1, missingAdresses[i], 0);
-	}
-
-	// remove all previous addresses in messages (to rebuild all indices)
-	for (var i = 0; i < (previousAddresses.length); i++) {
-		var theAdd = previousAddresses[i];//.replace(/\//g, '::');
-		// messagesDict.remove(theAdd);
 		inputsDict.remove(theAdd);
-		//post("removing message:", theAdd, "\n");
+		outlet(1, theAdd, 0); // public un-init this address
+		//post('removing', theAdd, '\n')
 	}
 
 	// add new addresses in inputs dict
 	for (var i = 0; i < (currentAddresses.length); i++) {
-		var theAdd = currentAddresses[i];//.replace(/\//g, '::');
-    	//post('add', i, theAdd, "\n");
-    	var addressUID = [message_UID, i + 1];
-		// messagesDict.replace(theAdd + "::uid", addressUID);
+		var theAdd = currentAddresses[i];
+		var addressUID = [message_UID, i + 1];
 		inputsDict.replace(theAdd + "::uid", addressUID);
-		
 	}
-}
-
-function declare(){
-	//just pass arguments to updateDictionaries
-	// (see https://stackoverflow.com/questions/3914557/passing-arguments-forward-to-another-javascript-function)
-	//post("model args in declare", JSON.stringify(arguments), "\n");
-	updateDictionaries.apply(null, arguments);
-
+	
 	// Send initializers to public (remotes)
 	for (var i = 0; i < (currentAddresses.length); i++) {
 		outlet(1, currentAddresses[i], 1);	
 	}
-
-	// bang when done
-	var sendAddress = message_UID + ".message.declare.done";
-	var initState = arrayfromargs(arguments).length;
-	outlet(0, "send", sendAddress)
-	outlet(0, (initState > 0));
+	
+	// return 1 if init succeed
+	outlet(0, 1);
 }
 
 function findGoneItems(CurrentArray, PreviousArray) {
@@ -110,9 +92,7 @@ function findGoneItems(CurrentArray, PreviousArray) {
    return missingItems;
 }
 
-function empty(){
-	updateDictionaries();
-}
+
 
 function clear(){
 	previousAddresses = [];

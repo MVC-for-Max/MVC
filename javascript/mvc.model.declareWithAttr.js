@@ -94,13 +94,12 @@ function declaremodel(dictname){
 	// *First*, send initializers to private (param and states)
 	outlet(2, model_UID.toString()+".i", currentAddresses.length > 0);
 
-
 	// *Then*, send initializers to public (remotes)
 	for (var i = 0; i < (currentAddresses.length); i++) {
 		outlet(1, currentAddresses[i], 1);	
 	}
 	
-	// bang when done
+	// return 1 if init succeed
 	outlet(0, 1);
 }
 
