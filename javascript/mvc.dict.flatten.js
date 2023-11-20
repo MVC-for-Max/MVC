@@ -109,9 +109,9 @@ function flattenSimple(d) {
 
 
 function separator(sep) {
-	_separator = sep;
+	_separator = (sep === undefined) ? '' : sep;
 }
 
-function prefix(pfx) {
-	_prefix = pfx;
+function prefix(pfx) {	
+	_prefix = (pfx === undefined) ? '' : pfx;
 }
