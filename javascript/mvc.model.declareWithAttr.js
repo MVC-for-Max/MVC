@@ -1,7 +1,7 @@
 // mvc.parameter.declare.js
 
 inlets = 1;
-outlets = 3;
+outlets = 4;
 
 _MVC_VERSION = 0.4;
 
@@ -91,7 +91,10 @@ function declaremodel(dictname){
 		// parametersDict.replace(theAdd + "::uid", addressUID);
 		modelDict.replace(theAdd + "::uid", addressUID);
 	}
-	// *First*, send initializers to private (param and states)
+	// *First*, send private init to inputs (param, states and messages)
+	outlet(3, model_UID.toString()+".i", currentAddresses.length > 0);
+
+	// *First*, send private init to (sub)models
 	outlet(2, model_UID.toString()+".i", currentAddresses.length > 0);
 
 	// *Then*, send initializers to public (remotes)
