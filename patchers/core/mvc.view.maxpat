@@ -3574,7 +3574,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-8",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 5,
@@ -3594,7 +3593,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-10",
-																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
@@ -3697,7 +3695,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
-													"outlettype" : [ "bang", "clear", "bang", "18439.view" ],
+													"outlettype" : [ "bang", "clear", "bang", "int" ],
 													"patching_rect" : [ 50.0, 100.0, 170.0, 22.0 ],
 													"text" : "t b clear b #1"
 												}
@@ -5066,7 +5064,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-3",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
@@ -6324,7 +6321,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
-									"outlettype" : [ "18439.view", "int" ],
+									"outlettype" : [ "int", "int" ],
 									"patching_rect" : [ 68.0, 181.0, 126.0, 22.0 ],
 									"text" : "t  #1 i"
 								}
@@ -7004,7 +7001,7 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-2",
+									"id" : "obj-3",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
@@ -7480,6 +7477,203 @@
  ]
 									}
 ,
+									"patching_rect" : [ 378.0, 469.0, 81.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"description" : "",
+										"digest" : "",
+										"globalpatchername" : "",
+										"tags" : ""
+									}
+,
+									"text" : "p \"get parent\""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patcher" : 									{
+										"fileversion" : 1,
+										"appversion" : 										{
+											"major" : 8,
+											"minor" : 6,
+											"revision" : 0,
+											"architecture" : "x64",
+											"modernui" : 1
+										}
+,
+										"classnamespace" : "box",
+										"rect" : [ 696.0, 459.0, 950.0, 557.0 ],
+										"bglocked" : 0,
+										"openinpresentation" : 0,
+										"default_fontsize" : 12.0,
+										"default_fontface" : 0,
+										"default_fontname" : "Arial",
+										"gridonopen" : 1,
+										"gridsize" : [ 15.0, 15.0 ],
+										"gridsnaponopen" : 1,
+										"objectsnaponopen" : 1,
+										"statusbarvisible" : 2,
+										"toolbarvisible" : 1,
+										"lefttoolbarpinned" : 0,
+										"toptoolbarpinned" : 0,
+										"righttoolbarpinned" : 0,
+										"bottomtoolbarpinned" : 0,
+										"toolbars_unpinned_last_save" : 0,
+										"tallnewobj" : 0,
+										"boxanimatetime" : 200,
+										"enablehscroll" : 1,
+										"enablevscroll" : 1,
+										"devicewidth" : 0.0,
+										"description" : "",
+										"digest" : "",
+										"tags" : "",
+										"style" : "",
+										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
+										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-12",
+													"linecount" : 4,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 538.0, 42.0, 390.0, 60.0 ],
+													"text" : "if parent and address, wait for parent init\nif parent and no address, wait for a name (disable mvc.model.initialized)\nif no parent and address, wait for device public init\nif no parent and no address, wait for any (disable mvc.model.initialized)"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "parent model UID",
+													"id" : "obj-2",
+													"index" : 2,
+													"maxclass" : "outlet",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 182.5, 184.0, 30.0, 30.0 ],
+													"varname" : "u551066473[1]"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-10",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 94.5, 149.0, 73.0, 22.0 ],
+													"text" : "route parent"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-8",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 58.0, 80.0, 63.0, 22.0 ],
+													"text" : "get parent"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-9",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 5,
+													"outlettype" : [ "dictionary", "", "", "", "" ],
+													"patching_rect" : [ 58.0, 119.0, 165.0, 22.0 ],
+													"saved_object_attributes" : 													{
+														"embed" : 0,
+														"legacy" : 0,
+														"parameter_enable" : 0,
+														"parameter_mappable" : 0
+													}
+,
+													"text" : "dict #1.attr @quiet 1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-5",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 213.5, 65.0, 201.0, 33.0 ],
+													"text" : "If parent, watch parent init state.\nElse, wait for device to be initialized."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-50",
+													"index" : 1,
+													"maxclass" : "inlet",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 58.0, 42.0, 30.0, 30.0 ],
+													"varname" : "u059066475"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "parent model UID",
+													"id" : "obj-51",
+													"index" : 1,
+													"maxclass" : "outlet",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 94.5, 184.0, 30.0, 30.0 ],
+													"varname" : "u551066473"
+												}
+
+											}
+ ],
+										"lines" : [ 											{
+												"patchline" : 												{
+													"destination" : [ "obj-51", 0 ],
+													"source" : [ "obj-10", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-8", 0 ],
+													"source" : [ "obj-50", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-9", 0 ],
+													"source" : [ "obj-8", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-10", 0 ],
+													"source" : [ "obj-9", 1 ]
+												}
+
+											}
+ ]
+									}
+,
 									"patching_rect" : [ 226.5, 250.0, 81.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
@@ -7892,7 +8086,6 @@
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-3",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
@@ -9034,7 +9227,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 77.0, 67.0, 136.0, 22.0 ],
+					"patching_rect" : [ 77.0, 57.0, 136.0, 22.0 ],
 					"text" : "patcherargs @autoinit 1"
 				}
 
@@ -9312,12 +9505,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-20",
-									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 5,
 									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 79.0, 566.0, 65.0, 22.0 ],
+									"patching_rect" : [ 79.0, 566.0, 71.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"legacy" : 0,
@@ -10319,7 +10511,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 291.0, 275.0, 222.0, 24.0 ],
+									"patching_rect" : [ 291.0, 275.0, 194.0, 40.0 ],
 									"text" : "mvc.core.address.expand #1"
 								}
 
@@ -10547,7 +10739,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-8",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 5,
@@ -10567,7 +10758,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-10",
-																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
@@ -10670,7 +10860,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
-													"outlettype" : [ "bang", "clear", "bang", "18439.view" ],
+													"outlettype" : [ "bang", "clear", "bang", "int" ],
 													"patching_rect" : [ 50.0, 100.0, 170.0, 22.0 ],
 													"text" : "t b clear b #1"
 												}
@@ -10935,7 +11125,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 215.0, 418.0, 30.0, 30.0 ]
+													"patching_rect" : [ 215.0, 413.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -11366,7 +11556,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 437.0, 349.0, 150.0, 33.0 ],
+													"patching_rect" : [ 437.0, 385.0, 150.0, 33.0 ],
 													"text" : "TODO : apply WC only on parent branch namespace"
 												}
 
@@ -11450,7 +11640,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-62",
-																	"linecount" : 3,
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 5,
@@ -12535,7 +12725,7 @@
  ]
 													}
 ,
-													"patching_rect" : [ 215.0, 322.0, 168.0, 24.0 ],
+													"patching_rect" : [ 215.0, 358.0, 168.0, 24.0 ],
 													"saved_object_attributes" : 													{
 														"description" : "",
 														"digest" : "",
@@ -12816,7 +13006,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 79.0, 418.0, 30.0, 30.0 ]
+													"patching_rect" : [ 79.0, 413.0, 30.0, 30.0 ]
 												}
 
 											}
