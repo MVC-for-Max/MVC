@@ -68,7 +68,8 @@ function declare(dictname){
 		//post('removing', theAdd, '\n')
 	}
 
-	// add new addresses in inputs dict
+	// Replace **all** current addresses in inputs dict, 
+	// as their index might have changed if some intermediate addresses were removed.
 	for (var i = 0; i < (currentAddresses.length); i++) {
 		var theAdd = currentAddresses[i];
 		var addressUID = [parameter_UID, i + 1];
