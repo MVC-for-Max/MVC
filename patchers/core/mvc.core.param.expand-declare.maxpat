@@ -403,8 +403,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 163.0, 185.0, 125.0, 22.0 ],
-									"text" : "mvc.model.i.initialized"
+									"patching_rect" : [ 163.0, 185.0, 119.0, 22.0 ],
+									"text" : "mvc.input.i.initialized"
 								}
 
 							}
@@ -1492,7 +1492,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 30.0, 155.0, 54.0, 22.0 ],
+									"patching_rect" : [ 54.0, 155.0, 54.0, 22.0 ],
 									"text" : "deferlow"
 								}
 
@@ -1534,15 +1534,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-7", 0 ],
-									"source" : [ "obj-48", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"source" : [ "obj-7", 0 ]
+									"source" : [ "obj-48", 0 ]
 								}
 
 							}
