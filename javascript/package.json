@@ -1,9 +1,7 @@
 {
   "dependencies": {
     "braces": "^3.0.2",
-    "convert": "^4.13.2",
     "expand-braces": "^0.1.2",
-    "micromatch": "^4.0.5",
-    "minimatch": "^9.0.3"
+    "micromatch": "^4.0.5"
   }
 }
