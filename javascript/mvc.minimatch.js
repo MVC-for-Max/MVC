@@ -4,8 +4,6 @@ const { braces } = require('micromatch');
 // This will be printed directly to the Max console
 // Max.post(`Loaded the ${path.basename(__filename)} script`);
 
-var expand = require('expand-braces');
-
 
 // Use the 'outlet' function to send messages out of node.script's outlet
 Max.addHandler("expand", (...args) => {
@@ -23,23 +21,24 @@ Max.addHandler("expand", (...args) => {
 	// 	msg = args[0];
 	// 	}
 
-	var myNamespace = ['foo', 'bar','ga','bu','zo', 'meu.{1..10}'];
-	var expandedNamespace = expand(myNamespace);
+	// expand namespace
+	var myNamespace = ['foo.{1..10}', ['bar','ga'],'bu','zo', 'meu.{1..9}'];
+	var expandedNamespace = braceExpandArray(myNamespace);
 	//Max.post("expandedNamespace", expandedNamespace);
-	
-	var myWildcard = ['meu.{5..7}'];
-	var expandedWildcard = expand(myWildcard);
+
+	// expand wildcard
+	var myWildcard = ['foo.4', ['bar'], 'meu.{5..7}'];
+	var expandedWildcard = braceExpandArray(myWildcard);
 	//Max.post("expandedWildcard", expandedWildcard);
 	
-	
-	//Max.post(braces('{01..05}', { expand: true, maxLength: 1000, rangeLimit:1000 }));
-	
-	var filteredResult = micromatch(expandedNamespace, ['foo', 'meu*']);
+	// Parse namespace though wildcard
+	var filteredResult = micromatch(expandedNamespace, expandedWildcard);
 	//Max.post(Object.values(filteredResult));
 
+	// output result
 	filteredResult = ["filteredResult"].concat(Object.values(filteredResult));
 	Max.outlet(filteredResult);
-	
+
 });
 
 // braces(patterns[, options]);
@@ -67,3 +66,35 @@ function escapeMultiSlashes(string) {
 
 }
 
+function braceExpandArray(arr) {
+  // Check if the input is an array
+  if (!Array.isArray(arr)) {
+    //return arr;
+    arr = [arr];
+  }
+
+  // Initialize an empty result array
+  var result = [];
+
+  // Iterate through the elements in the input array
+  for (const element of arr) {
+    if (typeof element === 'string') {
+      // If the element is a string, brace expand its
+      var escaped = escapeMultiSlashes(element);
+			escaped = escapePipeSign(escaped);
+			escaped = escapeRegExp(String(escaped));
+			var expandedElement = braces(escaped, { expand: true, maxLength: 1000, rangeLimit:1000 });
+      result = result.concat(expandedElement);
+    } else if (Array.isArray(element)) {
+      // If the element is another array, recursively call the function
+      // to process the nested array
+      const nestedResult = braceExpandArray(element);
+      result = result.concat(nestedResult);
+    } else {
+      // If the element is not a string or array, push it as is
+      result.push(element);
+    }
+  }
+
+  return result;
+}
