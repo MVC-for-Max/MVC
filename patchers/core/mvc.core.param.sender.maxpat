@@ -2,8 +2,8 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 9,
-			"minor" : 0,
+			"major" : 8,
+			"minor" : 6,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
@@ -39,6 +39,18 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 449.0, 181.0, 78.0, 22.0 ],
+					"text" : "mvc.osc2dict"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-5",
 					"maxclass" : "newobj",
@@ -81,15 +93,15 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 431.5, 123.0, 85.0, 22.0 ],
+					"patching_rect" : [ 431.5, 123.0, 138.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
-						"legacy" : 0,
+						"legacy" : 1,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "dict #1.attr"
+					"text" : "dict #1.attr @legacy 1"
 				}
 
 			}
@@ -103,8 +115,8 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 9,
-							"minor" : 0,
+							"major" : 8,
+							"minor" : 6,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -347,7 +359,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 331.0, 188.0, 197.833333333333371, 22.0 ],
+					"patching_rect" : [ 331.0, 218.0, 197.833333333333371, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -368,8 +380,8 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 9,
-							"minor" : 0,
+							"major" : 8,
+							"minor" : 6,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -677,7 +689,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 53.0, 259.0, 113.0, 22.0 ],
+					"patching_rect" : [ 53.0, 289.0, 113.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -708,7 +720,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 509.833333333333371, 221.0, 87.0, 22.0 ],
+					"patching_rect" : [ 510.0, 251.0, 87.0, 22.0 ],
 					"text" : "setvalue $1 $1"
 				}
 
@@ -720,7 +732,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 604.0, 221.0, 87.0, 22.0 ],
+					"patching_rect" : [ 604.0, 251.0, 87.0, 22.0 ],
 					"text" : "send $1.edited"
 				}
 
@@ -731,7 +743,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 509.833333333333371, 259.0, 49.0, 22.0 ],
+					"patching_rect" : [ 510.0, 289.0, 49.0, 22.0 ],
 					"text" : "forward"
 				}
 
@@ -757,7 +769,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 331.0, 30.0, 30.0, 30.0 ]
 				}
 
@@ -772,8 +784,8 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 9,
-							"minor" : 0,
+							"major" : 8,
+							"minor" : 6,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -1025,7 +1037,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 331.0, 221.0, 61.0, 22.0 ],
+					"patching_rect" : [ 331.0, 251.0, 61.0, 22.0 ],
 					"text" : "set set $1"
 				}
 
@@ -1037,7 +1049,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 189.0, 231.0, 53.0, 22.0 ],
+					"patching_rect" : [ 189.0, 261.0, 53.0, 22.0 ],
 					"text" : "prepend"
 				}
 
@@ -1049,7 +1061,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 189.0, 259.0, 228.0, 22.0 ],
+					"patching_rect" : [ 189.0, 289.0, 228.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 0,
@@ -1115,7 +1127,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-34", 1 ],
+					"destination" : [ "obj-8", 0 ],
 					"source" : [ "obj-16", 0 ]
 				}
 
@@ -1210,6 +1222,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-44", 2 ],
 					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-34", 1 ],
+					"source" : [ "obj-8", 0 ]
 				}
 
 			}
