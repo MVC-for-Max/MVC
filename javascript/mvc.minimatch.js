@@ -68,10 +68,10 @@ function escapeMultiSlashes(string) {
 
 function braceExpandArray(arr) {
   // Check if the input is an array
-  if (!Array.isArray(arr)) {
-    //return arr;
-    arr = [arr];
-  }
+  //if (!Array.isArray(arr)) {
+  //  //return arr;
+  //  arr = [arr];
+  //}
 
   // Initialize an empty result array
   var result = [];
@@ -80,10 +80,8 @@ function braceExpandArray(arr) {
   for (const element of arr) {
     if (typeof element === 'string') {
       // If the element is a string, brace expand its
-      var escaped = escapeMultiSlashes(element);
-			escaped = escapePipeSign(escaped);
-			escaped = escapeRegExp(String(escaped));
-			var expandedElement = braces(escaped, { expand: true, maxLength: 1000, rangeLimit:1000 });
+      const escaped = escapeRegExp(escapePipeSign(escapeMultiSlashes(element)));
+			const expandedElement = braces(escaped, { expand: true, maxLength: 1000, rangeLimit:1000 });
       result = result.concat(expandedElement);
     } else if (Array.isArray(element)) {
       // If the element is another array, recursively call the function

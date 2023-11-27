@@ -314,7 +314,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 368.0, 535.0, 833.0, 448.0 ],
+						"rect" : [ 368.0, 535.0, 567.0, 379.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -344,12 +344,24 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 62.0, 168.0, 89.0, 22.0 ],
+									"text" : "string.tosymbol"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-3",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 317.0, 228.0, 242.0, 22.0 ],
+									"patching_rect" : [ 232.0, 248.0, 242.0, 22.0 ],
 									"text" : "t l l"
 								}
 
@@ -362,7 +374,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 540.0, 312.0, 30.0, 30.0 ]
+									"patching_rect" : [ 455.0, 332.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -386,7 +398,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 147.0, 312.0, 30.0, 30.0 ]
+									"patching_rect" : [ 62.0, 332.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -397,7 +409,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 232.0, 283.0, 249.0, 22.0 ],
+									"patching_rect" : [ 147.0, 303.0, 249.0, 22.0 ],
 									"text" : "zl.reg store #1 #1"
 								}
 
@@ -409,7 +421,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "bang", "" ],
-									"patching_rect" : [ 147.0, 177.0, 189.0, 22.0 ],
+									"patching_rect" : [ 62.0, 197.0, 189.0, 22.0 ],
 									"text" : "t b b l"
 								}
 
@@ -421,7 +433,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 317.0, 205.0, 60.0, 22.0 ],
+									"patching_rect" : [ 232.0, 225.0, 60.0, 22.0 ],
 									"text" : "zl.change"
 								}
 
@@ -433,7 +445,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 317.0, 256.0, 225.0, 22.0 ],
+									"patching_rect" : [ 232.0, 276.0, 225.0, 22.0 ],
 									"text" : "remove #1, refer $1.pendingNodes"
 								}
 
@@ -445,7 +457,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 317.0, 321.0, 50.5, 22.0 ],
+									"patching_rect" : [ 232.0, 341.0, 50.5, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"precision" : 6
@@ -472,11 +484,11 @@
 								"box" : 								{
 									"id" : "obj-38",
 									"maxclass" : "newobj",
-									"numinlets" : 1,
+									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 62.0, 141.0, 104.0, 22.0 ],
-									"text" : "unpack parent uid"
+									"patching_rect" : [ 62.0, 141.0, 73.0, 22.0 ],
+									"text" : "route parent"
 								}
 
 							}
@@ -584,8 +596,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-11", 0 ],
-									"source" : [ "obj-38", 1 ]
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-38", 0 ]
 								}
 
 							}
@@ -593,6 +605,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-38", 0 ],
 									"source" : [ "obj-40", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-11", 0 ],
+									"source" : [ "obj-6", 0 ]
 								}
 
 							}

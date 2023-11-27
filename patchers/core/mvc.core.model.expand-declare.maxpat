@@ -57,7 +57,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 572.0, 589.0, 155.0, 22.0 ],
+					"patching_rect" : [ 572.0, 589.0, 181.0, 22.0 ],
 					"text" : "loadmess uid #1"
 				}
 
@@ -643,7 +643,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "int" ],
+									"outlettype" : [ "toto" ],
 									"patching_rect" : [ 50.0, 180.0, 113.0, 22.0 ],
 									"text" : "t #1"
 								}
@@ -942,6 +942,30 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 62.0, 174.0, 89.0, 22.0 ],
+									"text" : "string.tosymbol"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 62.0, 141.0, 73.0, 22.0 ],
+									"text" : "route parent"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-13",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -1108,7 +1132,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 221.0, 345.0, 165.0, 35.0 ],
+									"patching_rect" : [ 221.0, 345.0, 271.0, 22.0 ],
 									"text" : "zl.reg store #1 #1"
 								}
 
@@ -1198,20 +1222,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 62.0, 174.0, 131.0, 22.0 ],
+									"patching_rect" : [ 62.0, 210.0, 131.0, 22.0 ],
 									"text" : "sel #1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-38",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 62.0, 146.0, 29.5, 22.0 ],
-									"text" : "$2"
 								}
 
 							}
@@ -1321,15 +1333,22 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-8", 0 ],
-									"source" : [ "obj-38", 0 ]
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-3", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-38", 0 ],
+									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-40", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"source" : [ "obj-6", 0 ]
 								}
 
 							}
@@ -1379,7 +1398,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 77.0, 368.0, 730.0, 648.0 ],
+						"rect" : [ 77.0, 368.0, 451.0, 457.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1622,8 +1641,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 280.0, 223.0, 232.0, 22.0 ],
-									"text" : "initialiazed model #1"
+									"patching_rect" : [ 280.0, 223.0, 117.0, 22.0 ],
+									"text" : "initialized model #1"
 								}
 
 							}
@@ -1844,7 +1863,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "int" ],
+									"outlettype" : [ "toto" ],
 									"patching_rect" : [ 50.0, 172.0, 136.0, 22.0 ],
 									"text" : "t #1"
 								}
@@ -3517,7 +3536,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-14",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -4038,7 +4056,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
-									"outlettype" : [ "bang", "clear", "bang", "int" ],
+									"outlettype" : [ "bang", "clear", "bang", "toto" ],
 									"patching_rect" : [ 50.0, 100.0, 181.000000000000028, 22.0 ],
 									"text" : "t b clear b #1"
 								}
@@ -4251,7 +4269,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "int" ],
+									"outlettype" : [ "toto" ],
 									"patching_rect" : [ 50.0, 70.0, 120.0, 22.0 ],
 									"text" : "t #1"
 								}

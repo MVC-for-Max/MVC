@@ -40,6 +40,30 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-16",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 44.0, 121.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 95.0, 296.0, 78.0, 22.0 ],
+					"text" : "mvc.osc2dict"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-29",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -117,7 +141,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 207.0, 455.0, 135.0, 22.0 ],
+					"patching_rect" : [ 207.0, 489.0, 135.0, 22.0 ],
 					"text" : "s #1.r"
 				}
 
@@ -129,7 +153,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 95.0, 316.0, 198.0, 22.0 ],
+					"patching_rect" : [ 95.0, 350.0, 198.0, 22.0 ],
 					"text" : "t l l"
 				}
 
@@ -141,7 +165,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "list" ],
-					"patching_rect" : [ 95.0, 292.0, 66.0, 22.0 ],
+					"patching_rect" : [ 95.0, 326.0, 66.0, 22.0 ],
 					"text" : "listfunnel 1"
 				}
 
@@ -177,15 +201,15 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 78.0, 242.0, 85.0, 22.0 ],
+					"patching_rect" : [ 78.0, 242.0, 138.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
-						"legacy" : 0,
+						"legacy" : 1,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "dict #1.attr"
+					"text" : "dict #1.attr @legacy 1"
 				}
 
 			}
@@ -196,7 +220,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 274.0, 390.0, 41.0, 22.0 ],
+					"patching_rect" : [ 274.0, 424.0, 41.0, 22.0 ],
 					"text" : "set $1"
 				}
 
@@ -208,7 +232,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 207.0, 430.0, 49.0, 22.0 ],
+					"patching_rect" : [ 207.0, 464.0, 49.0, 22.0 ],
 					"text" : "append"
 				}
 
@@ -220,7 +244,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 135.0, 390.0, 91.0, 22.0 ],
+					"patching_rect" : [ 135.0, 424.0, 91.0, 22.0 ],
 					"text" : "zl 32000 slice 1"
 				}
 
@@ -232,7 +256,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 95.0, 365.0, 177.0, 22.0 ],
+					"patching_rect" : [ 95.0, 399.0, 177.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 0,
@@ -251,7 +275,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 95.0, 341.0, 42.0, 22.0 ],
+					"patching_rect" : [ 95.0, 375.0, 42.0, 22.0 ],
 					"text" : "get $2"
 				}
 
@@ -314,7 +338,14 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-18", 0 ],
+					"destination" : [ "obj-13", 0 ],
+					"source" : [ "obj-16", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-17", 0 ]
 				}
 
@@ -323,6 +354,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-21", 0 ],
 					"source" : [ "obj-18", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-18", 0 ],
+					"source" : [ "obj-2", 0 ]
 				}
 
 			}

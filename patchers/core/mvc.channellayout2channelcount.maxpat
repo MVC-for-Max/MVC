@@ -2,8 +2,8 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 9,
-			"minor" : 0,
+			"major" : 8,
+			"minor" : 6,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
@@ -85,8 +85,8 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 9,
-							"minor" : 0,
+							"major" : 8,
+							"minor" : 6,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -156,8 +156,8 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 9,
-											"minor" : 0,
+											"major" : 8,
+											"minor" : 6,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -332,15 +332,15 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 9,
-											"minor" : 0,
+											"major" : 8,
+											"minor" : 6,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 59.0, 104.0, 220.0, 295.0 ],
+										"rect" : [ 59.0, 104.0, 332.0, 500.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -459,15 +459,15 @@
 													"numinlets" : 2,
 													"numoutlets" : 5,
 													"outlettype" : [ "dictionary", "", "", "", "" ],
-													"patching_rect" : [ 41.0, 157.367135455218374, 162.0, 22.0 ],
+													"patching_rect" : [ 41.0, 157.367135455218374, 222.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 0,
-														"legacy" : 0,
+														"legacy" : 1,
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict mvc.channel-layouts.dict"
+													"text" : "dict mvc.channel-layouts.dict @legacy 1"
 												}
 
 											}

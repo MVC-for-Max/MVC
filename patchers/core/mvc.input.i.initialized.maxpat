@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 207.0, 238.0, 483.0, 508.0 ],
+		"rect" : [ 207.0, 238.0, 470.0, 490.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -190,7 +190,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 46.0, 338.0, 93.0, 22.0 ],
+					"patching_rect" : [ 61.0, 342.0, 93.0, 22.0 ],
 					"text" : "contains $2::uid"
 				}
 
@@ -202,7 +202,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 46.0, 362.0, 117.0, 22.0 ],
+					"patching_rect" : [ 61.0, 366.0, 117.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 0,
@@ -233,15 +233,15 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 31.0, 310.0, 79.0, 22.0 ],
+					"patching_rect" : [ 31.0, 310.0, 139.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
-						"legacy" : 0,
+						"legacy" : 1,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "dict @quiet 1"
+					"text" : "dict @quiet 1 @legacy 1"
 				}
 
 			}

@@ -2,15 +2,15 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 9,
-			"minor" : 0,
+			"major" : 8,
+			"minor" : 6,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 84.0, 131.0, 1299.0, 696.0 ],
+		"rect" : [ 34.0, 97.0, 1233.0, 681.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,29 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 167.0, 354.0, 32.0, 22.0 ],
+					"text" : "print"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 137.0, 211.0, 174.0, 22.0 ],
+					"text" : "script npm install --save braces"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"format" : 6,
 					"id" : "obj-39",
 					"maxclass" : "flonum",
@@ -47,7 +70,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 564.5, 122.0, 50.0, 22.0 ]
+					"patching_rect" : [ 460.0, 126.0, 75.0, 22.0 ]
 				}
 
 			}
@@ -59,7 +82,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 495.0, 122.0, 24.0, 24.0 ]
+					"patching_rect" : [ 390.0, 126.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -71,7 +94,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 151.0, 353.0, 24.0, 24.0 ]
+					"patching_rect" : [ 46.0, 357.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -82,7 +105,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 355.0, 111.0, 48.0, 22.0 ],
+					"patching_rect" : [ 250.0, 115.0, 48.0, 22.0 ],
 					"text" : "expand"
 				}
 
@@ -94,7 +117,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 524.0, 53.0, 29.5, 22.0 ],
+					"patching_rect" : [ 419.0, 57.0, 35.0, 22.0 ],
 					"text" : "100"
 				}
 
@@ -106,7 +129,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "float", "bang" ],
-					"patching_rect" : [ 522.0, 93.0, 104.0, 22.0 ],
+					"patching_rect" : [ 417.0, 97.0, 104.0, 22.0 ],
 					"text" : "mvc.benchmarker"
 				}
 
@@ -118,7 +141,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 145.0, 300.0, 109.0, 22.0 ],
+					"patching_rect" : [ 40.0, 304.0, 109.0, 22.0 ],
 					"text" : "route filteredResult"
 				}
 
@@ -130,8 +153,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 242.0, 155.0, 217.0, 22.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 137.0, 159.0, 217.0, 22.0 ],
 					"text" : "script npm install --save expand-braces"
 				}
 
@@ -152,7 +174,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 829.0, 283.0, 400.0, 220.0 ],
+					"patching_rect" : [ 724.0, 287.0, 400.0, 220.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -164,7 +186,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 198.0, 79.0, 127.0, 22.0 ],
+					"patching_rect" : [ 93.0, 83.0, 127.0, 22.0 ],
 					"text" : "expand tralala dummy"
 				}
 
@@ -176,7 +198,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "int", "bang" ],
-					"patching_rect" : [ 671.0, 382.0, 86.0, 22.0 ],
+					"patching_rect" : [ 566.0, 386.0, 86.0, 22.0 ],
 					"text" : "t b 1 b"
 				}
 
@@ -188,7 +210,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 671.0, 354.0, 54.0, 22.0 ],
+					"patching_rect" : [ 566.0, 358.0, 54.0, 22.0 ],
 					"text" : "deferlow"
 				}
 
@@ -201,7 +223,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 671.0, 409.0, 24.0, 24.0 ]
+					"patching_rect" : [ 566.0, 413.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -212,7 +234,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 671.0, 326.0, 85.0, 22.0 ],
+					"patching_rect" : [ 566.0, 330.0, 85.0, 22.0 ],
 					"text" : "route success"
 				}
 
@@ -224,7 +246,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 545.0, 382.966796875, 95.0, 22.0 ],
+					"patching_rect" : [ 440.0, 387.0, 95.0, 22.0 ],
 					"text" : "route completed"
 				}
 
@@ -237,7 +259,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 545.0, 414.0, 24.0, 24.0 ]
+					"patching_rect" : [ 440.0, 418.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -248,7 +270,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 242.0, 198.0, 200.0, 22.0 ],
+					"patching_rect" : [ 137.0, 187.0, 200.0, 22.0 ],
 					"text" : "script npm install --save micromatch"
 				}
 
@@ -260,7 +282,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 545.0, 443.966796875, 66.0, 22.0 ],
+					"patching_rect" : [ 440.0, 448.0, 66.0, 22.0 ],
 					"text" : "script start"
 				}
 
@@ -272,7 +294,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 545.0, 339.966796875, 110.0, 22.0 ],
+					"patching_rect" : [ 440.0, 344.0, 110.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"legacy" : 1
 					}
@@ -288,7 +310,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 545.0, 313.966796875, 85.0, 22.0 ],
+					"patching_rect" : [ 440.0, 318.0, 85.0, 22.0 ],
 					"text" : "route success"
 				}
 
@@ -300,7 +322,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 545.0, 289.966796875, 271.0, 22.0 ],
+					"patching_rect" : [ 440.0, 294.0, 271.0, 22.0 ],
 					"text" : "route npm start"
 				}
 
@@ -313,7 +335,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 145.0, 253.466796875, 342.0, 24.0 ],
+					"patching_rect" : [ 40.0, 257.0, 342.0, 24.0 ],
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
@@ -334,7 +356,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 671.0, 448.000000093750032, 30.0, 30.0 ]
+					"patching_rect" : [ 566.0, 452.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -363,7 +385,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
-					"midpoints" : [ 554.5, 483.966796875, 126.5, 483.966796875, 126.5, 242.466796875, 154.5, 242.466796875 ],
+					"midpoints" : [ 449.5, 487.966796875, 21.5, 487.966796875, 21.5, 246.466796875, 49.5, 246.466796875 ],
 					"source" : [ "obj-12", 0 ]
 				}
 
@@ -423,6 +445,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-23", 0 ],
 					"source" : [ "obj-17", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-16", 0 ],
+					"source" : [ "obj-2", 0 ]
 				}
 
 			}
@@ -511,19 +540,6 @@
 
 			}
  ],
-		"parameters" : 		{
-			"parameterbanks" : 			{
-				"0" : 				{
-					"index" : 0,
-					"name" : "",
-					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
-				}
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
 		"autosave" : 0
 	}
 

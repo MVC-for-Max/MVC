@@ -38,6 +38,7 @@ function declare(dictname){
 	// from a different parameter instance (different UID).
 	// Return with exit code if this is the case.
 	for (var i = 0; i < (currentAddresses.length); i++) {
+		currentAddresses[i] = currentAddresses[i].replace(/\//g, '::');
 		var theAdd = currentAddresses[i];
 		var theUID = inputsDict.get(theAdd+"::uid");
 		if (theUID == null) break;	
