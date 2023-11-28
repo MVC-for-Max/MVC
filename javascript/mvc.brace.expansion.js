@@ -168,6 +168,9 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 	//Max.post("addresslist",addresslist)
 	expandedAddresses = addresslist;
 
+	//Max.post("common path on expanded addresses", commonPath(expandedAddresses));
+	childdict.initpath = commonPath(expandedAddresses);
+	//Max.outlet("initpath", commonPath(expandedAddresses));
 
 	// Does the address contain a wildcard ?
 	const wildcardChar = /[*?]/;
@@ -187,6 +190,18 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 
 	}
 
+	//const addressAsArray = splitStrings(addresslist, '/');
+	//const test = getValueFromPath(inputsdict, addresslist[0] + '/uid');
+	//Max.post("addressAsArray", test)
+	// build the remote address list
+	var remotelist = [];
+	for (let i = 0; i < addresslist.length; i++) {
+		var uidIndex = getValueFromPath(inputsdict, addresslist[i] + '/uid')
+		remotelist.push([i+1].concat(uidIndex));
+	}
+	//Max.post("remotelist", remotelist)
+
+	childdict.remotelist = remotelist;
 	childdict.expandedAddresses = expandedAddresses;
 	childdict.addresslist = addresslist;
 	//childdict.parentmap = parentmap;
@@ -419,6 +434,10 @@ function isObject(val) {
 };
 
 
+/**********************************************
+ * Series of functions for finding common path
+ **********************************************/
+
 /**
  * Given an array of strings, return an array of arrays, containing the
  * strings split at the given separator
@@ -428,5 +447,79 @@ function isObject(val) {
  */
 const splitStrings = (a, sep = '/') => a.map(i => i.split(sep));
 
+/**
+ * Given an index number, return a function that takes an array and returns the
+ * element at the given index
+ * @param {number} i
+ * @return {function(!Array<*>): *}
+ */
+const elAt = i => a => a[i];
 
+/**
+ * Transpose an array of arrays:
+ * Example:
+ * [['a', 'b', 'c'], ['A', 'B', 'C'], [1, 2, 3]] ->
+ * [['a', 'A', 1], ['b', 'B', 2], ['c', 'C', 3]]
+ * @param {!Array<!Array<*>>} a
+ * @return {!Array<!Array<*>>}
+ */
+const rotate = a => a[0].map((e, i) => a.map(elAt(i)));
+
+/**
+ * Checks of all the elements in the array are the same.
+ * @param {!Array<*>} arr
+ * @return {boolean}
+ */
+const allElementsEqual = arr => arr.every(e => e === arr[0]);
+
+/**
+ * Checks that no element have wildcard
+ * @param {!Array<*>} arr
+ * @return {boolean}
+ */
+const noWildcardInElement = arr => arr.some(e => {
+	// Define the special characters to check for
+  const specialCharacters = ['*', '?'];
+  // Check if the current string contains any special characters
+ 	for (let j = 0; j < specialCharacters.length; j++) {
+ 	  if (e.includes(specialCharacters[j])) {
+ 	    return false; // Found a special character, return true
+ 	  }
+ 	}
+	// No special characters found in any of the strings
+  return true;
+});
+
+/**
+ * Returns the longest common path without wildcard in it
+ * @param {!Array<*>} input : the array of paths
+ * @return {string} : the longest path
+ */
+const commonPath = (input, sep = '/') => rotate(splitStrings(input, sep))
+		.filter(noWildcardInElement)
+    .filter(allElementsEqual)
+    .map(elAt(0)).join(sep);
+
+/**
+ * Returns the value at path defined by array
+ * @param {object} obj : the input object
+ * @param {array} pathArray : the path to value
+ * @return {string} : the longest path
+ */
+function getValueFromPath(obj, path) {
+  const pathArray = path.split('/').filter(Boolean); // Split the path into an array
+
+  let currentObj = obj;
+
+  for (let key of pathArray) {
+    if (currentObj && typeof currentObj === 'object' && key in currentObj) {
+      currentObj = currentObj[key];
+    } else {
+      // If key is not found or the value is not an object, return undefined
+      return undefined;
+    }
+  }
+
+  return currentObj;
+}
 

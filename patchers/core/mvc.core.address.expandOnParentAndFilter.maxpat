@@ -359,12 +359,11 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-27",
-					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 9,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 47.0, 154.0, 462.0, 35.0 ],
+					"patching_rect" : [ 47.0, 154.0, 496.0, 22.0 ],
 					"text" : "pack expandOnParentAndFilter dict dictname dict dictname dict namespaceDict #1 #0-"
 				}
 
@@ -458,7 +457,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 523.0, 56.0, 30.0, 30.0 ]
+					"patching_rect" : [ 658.0, 48.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -469,7 +468,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 523.0, 135.0, 169.0, 22.0 ],
+					"patching_rect" : [ 658.0, 127.0, 169.0, 22.0 ],
 					"text" : "$1/node/printwildcard.callback"
 				}
 
@@ -481,7 +480,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 523.0, 167.0, 82.0, 22.0 ],
+					"patching_rect" : [ 658.0, 159.0, 82.0, 22.0 ],
 					"text" : "prepend send"
 				}
 
