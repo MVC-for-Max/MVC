@@ -42,18 +42,16 @@
 				"box" : 				{
 					"id" : "obj-13",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 5,
-					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 38.0, 272.0, 128.0, 22.0 ],
+					"numinlets" : 1,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 38.0, 270.0, 127.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
-						"legacy" : 0,
-						"parameter_enable" : 0,
-						"parameter_mappable" : 0
+						"precision" : 6
 					}
 ,
-					"text" : "dict modelAddressDict"
+					"text" : "coll mvc.public-init.coll"
 				}
 
 			}
@@ -76,8 +74,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 38.0, 240.0, 101.0, 22.0 ],
-					"text" : "prepend contains"
+					"patching_rect" : [ 38.0, 240.0, 94.0, 22.0 ],
+					"text" : "prepend symbol"
 				}
 
 			}
@@ -189,7 +187,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
-					"source" : [ "obj-13", 2 ]
+					"source" : [ "obj-13", 0 ]
 				}
 
 			}

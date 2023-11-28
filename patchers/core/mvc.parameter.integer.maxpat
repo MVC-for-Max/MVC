@@ -1582,7 +1582,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "bang" ],
-									"patching_rect" : [ 149.0, 90.0, 32.0, 22.0 ],
+									"patching_rect" : [ 101.0, 90.0, 32.0, 22.0 ],
 									"text" : "t b b"
 								}
 
@@ -1594,7 +1594,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 149.0, 159.0, 73.0, 22.0 ],
+									"patching_rect" : [ 101.0, 159.0, 73.0, 22.0 ],
 									"text" : "prepend get"
 								}
 
@@ -1606,15 +1606,15 @@
 									"numinlets" : 2,
 									"numoutlets" : 5,
 									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 149.0, 190.0, 129.0, 22.0 ],
+									"patching_rect" : [ 101.0, 190.0, 190.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
-										"legacy" : 0,
+										"legacy" : 1,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict #0.attr @quiet 1"
+									"text" : "dict #0.attr @quiet 1 @legacy 1"
 								}
 
 							}
@@ -1625,7 +1625,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 149.0, 125.0, 165.0, 22.0 ],
+									"patching_rect" : [ 101.0, 125.0, 165.0, 22.0 ],
 									"text" : "clip, range, min, max, options"
 								}
 
@@ -3535,7 +3535,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 149.0, 52.0, 30.0, 30.0 ]
+									"patching_rect" : [ 101.0, 52.0, 30.0, 30.0 ]
 								}
 
 							}

@@ -1527,20 +1527,19 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-2",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 5,
 									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 126.458333333333343, 151.0, 127.0, 35.0 ],
+									"patching_rect" : [ 126.458333333333343, 151.0, 190.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
-										"legacy" : 0,
+										"legacy" : 1,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict #0.attr @quiet 1"
+									"text" : "dict #0.attr @quiet 1 @legacy 1"
 								}
 
 							}

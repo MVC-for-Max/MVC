@@ -1733,15 +1733,15 @@
 									"numinlets" : 2,
 									"numoutlets" : 5,
 									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 228.458333333333343, 188.0, 136.0, 22.0 ],
+									"patching_rect" : [ 228.458333333333343, 188.0, 190.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
-										"legacy" : 0,
+										"legacy" : 1,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict #0.attr @quiet 1"
+									"text" : "dict #0.attr @quiet 1 @legacy 1"
 								}
 
 							}
