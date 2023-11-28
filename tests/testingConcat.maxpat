@@ -156,7 +156,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 631.5, 612.0, 50.0, 22.0 ]
+					"patching_rect" : [ 708.0, 612.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -179,7 +179,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 584.0, 546.0, 29.5, 22.0 ],
+					"patching_rect" : [ 660.0, 546.0, 29.5, 22.0 ],
 					"text" : "1"
 				}
 
@@ -191,7 +191,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "float", "bang" ],
-					"patching_rect" : [ 589.0, 580.0, 104.0, 22.0 ],
+					"patching_rect" : [ 665.0, 580.0, 104.0, 22.0 ],
 					"text" : "mvc.benchmarker"
 				}
 
@@ -203,8 +203,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 352.0, 594.0, 187.0, 22.0 ],
-					"text" : "address channel.1/filter.1/{f*|gain}"
+					"patching_rect" : [ 352.0, 594.0, 185.0, 22.0 ],
+					"text" : "address channel.*/filter.1/{f*|gain}"
 				}
 
 			}
@@ -262,8 +262,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "int", "" ],
-					"patching_rect" : [ 78.0, 633.0, 293.0, 22.0 ],
-					"text" : "mvc.remote4 channel.1/filter.1/{f*|gain} @parent 3833"
+					"patching_rect" : [ 78.0, 633.0, 291.0, 22.0 ],
+					"text" : "mvc.remote4 channel.*/filter.1/{f*|gain} @parent 4750"
 				}
 
 			}
@@ -274,9 +274,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 358.0, 331.0, 187.0, 22.0 ],
-					"presentation_linecount" : 5,
-					"text" : "address channel.1/filter.1/{f*|gain}"
+					"patching_rect" : [ 358.0, 331.0, 185.0, 22.0 ],
+					"text" : "address channel.*/filter.1/{f*|gain}"
 				}
 
 			}
@@ -300,7 +299,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 325.0, 468.0, 293.0, 22.0 ],
-					"presentation_linecount" : 7,
 					"text" : "address toto/myMcCascade/channel.1/filter.1/{f*|gain}"
 				}
 
@@ -374,7 +372,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 402.0, 228.0, 35.0, 22.0 ],
-					"text" : "3833"
+					"text" : "4750"
 				}
 
 			}
@@ -491,8 +489,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "int", "" ],
-					"patching_rect" : [ 84.0, 407.0, 293.0, 22.0 ],
-					"text" : "mvc.remote5 channel.1/filter.1/{f*|gain} @parent 3833"
+					"patching_rect" : [ 84.0, 407.0, 291.0, 22.0 ],
+					"text" : "mvc.remote5 channel.*/filter.1/{f*|gain} @parent 4750"
 				}
 
 			}
@@ -888,7 +886,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-28", 1 ],
-					"midpoints" : [ 219.0, 625.5, 361.5, 625.5 ],
+					"midpoints" : [ 219.0, 625.5, 359.5, 625.5 ],
 					"source" : [ "obj-20", 0 ]
 				}
 
@@ -1077,7 +1075,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-51", 1 ],
-					"midpoints" : [ 454.5, 399.5, 367.5, 399.5 ],
+					"midpoints" : [ 454.5, 399.5, 365.5, 399.5 ],
 					"source" : [ "obj-45", 0 ]
 				}
 

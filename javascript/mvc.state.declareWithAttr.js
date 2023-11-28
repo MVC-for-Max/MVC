@@ -71,7 +71,7 @@ function declare(dictname){
 
 	// add new addresses in inputs dict
 	for (var i = 0; i < (currentAddresses.length); i++) {
-		var theAdd = currentAddresses[i];
+		var theAdd = currentAddresses[i].replace(/\//g, '::');
 		var addressUID = [state_UID, i + 1];
 		inputsDict.replace(theAdd + "::uid", addressUID);
 		

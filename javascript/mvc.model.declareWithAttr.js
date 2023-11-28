@@ -86,7 +86,7 @@ function declaremodel(dictname){
 	
 	// add new addresses in model dict
 	for (var i = 0; i < (currentAddresses.length); i++) {
-		var theAdd = currentAddresses[i];
+		var theAdd = currentAddresses[i].replace(/\//g, '::');
 		//post('add', i, model_UID, theAdd, "\n");
 		var addressUID = [model_UID, i + 1];
 		// parametersDict.replace(theAdd + "::uid", addressUID);

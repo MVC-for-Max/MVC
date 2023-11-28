@@ -120,7 +120,6 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 	//const address_has_changed = childdict.address_has_changed ?? 1;
 	//Max.post("address_has_changed",address_has_changed)
 	expandedAddresses = braceExpandArray(addressToExpand);
-	childdict.expandedAddresses = expandedAddresses;
 
 	//Max.post('parentAddresses', parentAddresses);
 
@@ -130,19 +129,19 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 
 	var adddressIndex = 0; //the address index in the final addresslist
 	var addresslist = []; // the final address list
-	var parentmap = [];		// an array mapping each address to the index of the parent addresses
-	var childrenmap = []; // a nested array mapping parent index to an array of corresponding child addresses indices
+	//var parentmap = [];		// an array mapping each address to the index of the parent addresses
+	//var childrenmap = []; // a nested array mapping parent index to an array of corresponding child addresses indices
 
 	// distribute arrays
 	if (parentdict.uid == null){ // If no parent, consider the relative address as absolute
-		addresslist = expandedAddresses.flat();
+		addresslist = expandedAddresses.flat()
 		//sMax.post('addresslist flattened', addresslist);
-		var tmpArray = [];
-		for (var i = 0; i < addresslist.length; i++) {
-   		parentmap.push(1);
-   		tmpArray.push(i+1);
-		}
-		childrenmap.push(tmpArray);
+		// var tmpArray = [];
+		// for (var i = 0; i < addresslist.length; i++) {
+   	// 	parentmap.push(1);
+   	// 	tmpArray.push(i+1);
+		// }
+		// childrenmap.push(tmpArray);
 	}	
 	else if (parentdict.uid != childdict.uid){ //concat on parent address
 		for (let i = 0; i < parentAddresses.length; i++) {
@@ -167,6 +166,8 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 		//childrenmap = [1];
 	}
 	//Max.post("addresslist",addresslist)
+	expandedAddresses = addresslist;
+
 
 	// Does the address contain a wildcard ?
 	const wildcardChar = /[*?]/;
@@ -186,9 +187,10 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 
 	}
 
+	childdict.expandedAddresses = expandedAddresses;
 	childdict.addresslist = addresslist;
-	childdict.parentmap = parentmap;
-	childdict.childrenmap = childrenmap;
+	//childdict.parentmap = parentmap;
+	//childdict.childrenmap = childrenmap;
 
 	Max.outlet(childdict);
 	// Max.outlet(['addresslist'].concat(addresslist));
