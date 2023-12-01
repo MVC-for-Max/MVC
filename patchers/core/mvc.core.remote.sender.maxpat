@@ -246,9 +246,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "send rate",
+					"comment" : "options",
 					"id" : "obj-40",
-					"index" : 0,
+					"index" : 3,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -497,7 +497,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "int" ],
 									"patching_rect" : [ 241.0, 57.0, 30.0, 30.0 ]
 								}
 
@@ -702,11 +702,11 @@
 				"box" : 				{
 					"comment" : "address count",
 					"id" : "obj-23",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 197.0, 88.0, 30.0, 30.0 ]
 				}
 
@@ -754,7 +754,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 353.5, 384.0, 59.0, 22.0 ],
+					"patching_rect" : [ 352.0, 384.0, 59.0, 22.0 ],
 					"text" : "send $1.r"
 				}
 
@@ -775,7 +775,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-4",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -813,7 +813,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-21",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -950,7 +950,7 @@
 				"box" : 				{
 					"comment" : "value input",
 					"id" : "obj-13",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -1167,9 +1167,7 @@
 				}
 
 			}
- ],
-		"dependency_cache" : [  ],
-		"autosave" : 0
+ ]
 	}
 
 }

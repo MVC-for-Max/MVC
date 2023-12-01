@@ -188,8 +188,8 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 		// flatten the input dict to get all possible addresses
 		var namespace = [];
  		flattenInputs(namespace, inputsdict, '', '/');
- 		// Max.post("fullAddressList",fullAddressList)
- 		// Max.post("fullAddressList-size",fullAddressList.length)
+ 		// Max.post("fullAddressList",namespace)
+ 		// Max.post("fullAddressList-size",namespace.length)
  		// Max.post("addresslist",addresslist)
  		// Parse namespace though wildcard
 		addresslist = micromatch(namespace, absoluteAddresslist);
@@ -218,7 +218,7 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 	Max.outlet("send", addr);
 	Max.outlet("uid", uid);
 	Max.outlet(childdict);
-	//Max.outlet("initpath", commonPath(absoluteAddresslist));
+	Max.outlet("initpath", commonPath(absoluteAddresslist));
 
 });
 

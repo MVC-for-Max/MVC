@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 148.0, 626.0, 984.0, 352.0 ],
+		"rect" : [ 43.0, 190.0, 618.0, 314.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -55,7 +55,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 128.0, 228.0, 891.0, 707.0 ],
+						"rect" : [ 755.0, 263.0, 891.0, 707.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -83,7 +83,130 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-33",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 731.0, 441.0, 88.0, 22.0 ],
+									"presentation_linecount" : 2,
+									"text" : "parent myView"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-32",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 721.0, 414.0, 66.0, 22.0 ],
+									"text" : "parent 123"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-31",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 699.0, 387.0, 66.0, 22.0 ],
+									"text" : "parent toto"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-29",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 680.0, 352.0, 43.0, 22.0 ],
+									"text" : "parent"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-26",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 499.0, 467.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-27",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 557.0, 467.0, 148.0, 22.0 ],
+									"text" : "mvc.remote5 TestParam.2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-25",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 320.0, 401.0, 43.0, 22.0 ],
+									"text" : "parent"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-24",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 85.0, 643.0, 185.0, 22.0 ],
+									"text" : "mvc.view5 myView toto/myModel"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-23",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 61.0, 187.0, 145.0, 22.0 ],
+									"text" : "address toto/TestParam.2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-22",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 374.5, 337.0, 224.0, 22.0 ],
+									"text" : "parent myView, address myModelParam"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-19",
 									"maxclass" : "message",
@@ -91,7 +214,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 447.0, 285.0, 214.0, 22.0 ],
-									"presentation_linecount" : 3,
 									"text" : "address toto/myModel/myModelParam"
 								}
 
@@ -128,8 +250,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "int", "" ],
-									"patching_rect" : [ 174.0, 502.0, 277.0, 22.0 ],
-									"text" : "mvc.parameter 123 myModelParam @default 3.14"
+									"patching_rect" : [ 174.0, 502.0, 261.0, 22.0 ],
+									"text" : "mvc.parameter 123 TestParam.2 @default 3.14"
 								}
 
 							}
@@ -451,6 +573,48 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 1 ],
+									"source" : [ "obj-22", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 1 ],
+									"source" : [ "obj-23", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 1 ],
+									"source" : [ "obj-25", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-27", 0 ],
+									"source" : [ "obj-26", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-26", 0 ],
+									"source" : [ "obj-27", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-27", 1 ],
+									"source" : [ "obj-29", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 1 ],
 									"source" : [ "obj-3", 0 ]
 								}
 
@@ -459,6 +623,27 @@
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-30", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-27", 1 ],
+									"source" : [ "obj-31", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-27", 1 ],
+									"source" : [ "obj-32", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-27", 1 ],
+									"source" : [ "obj-33", 0 ]
 								}
 
 							}
@@ -567,6 +752,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "mvc.array.filter2d.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
+				"patcherrelativepath" : "../patchers/core",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "mvc.brace.expansion.js",
 				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
 				"patcherrelativepath" : "../javascript",
@@ -610,6 +802,13 @@
 			}
 , 			{
 				"name" : "mvc.core.param.sender.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
+				"patcherrelativepath" : "../patchers/core",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mvc.core.remote.sender.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
 				"patcherrelativepath" : "../patchers/core",
 				"type" : "JSON",
@@ -890,6 +1089,13 @@
 			}
 , 			{
 				"name" : "mvc.type.undefined.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
+				"patcherrelativepath" : "../patchers/core",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mvc.view5.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
 				"patcherrelativepath" : "../patchers/core",
 				"type" : "JSON",
