@@ -107,88 +107,97 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 	const parentdict = args[1]; // parent attribute dict, from which we retrieve parent addresses to expand on
 	const inputsdict = args[2]; // input dictionary, from which we can (wildcard-)filter existing addresses
 
-	//Max.post("inputsdict", inputsdict);
-
-	Max.outlet("send", addr);
-	Max.outlet("uid", uid);
-
-	// fetch address to expand make sure it's an array
-	var addressToExpand = childdict.address ?? [];
-	addressToExpand = Array.isArray(addressToExpand) ? addressToExpand : [addressToExpand];
-
-	// expand address if it has changed
-	//const address_has_changed = childdict.address_has_changed ?? 1;
-	//Max.post("address_has_changed",address_has_changed)
-	expandedAddresses = braceExpandArray(addressToExpand);
-
-	//Max.post('parentAddresses', parentAddresses);
-
-	// fetch parent addresses and make sure it's an array
-	var parentAddresses = parentdict.addresslist ?? [];
-	parentAddresses = Array.isArray(parentAddresses) ? parentAddresses : [parentAddresses];
-
-	var adddressIndex = 0; //the address index in the final addresslist
+	var expandedAddresses = []; // the expanded address list (may be relative ones)
+	var absoluteAddresslist = []; // the list of absolute addresses
 	var addresslist = []; // the final address list
-	//var parentmap = [];		// an array mapping each address to the index of the parent addresses
-	//var childrenmap = []; // a nested array mapping parent index to an array of corresponding child addresses indices
 
-	// distribute arrays
-	if (parentdict.uid == null){ // If no parent, consider the relative address as absolute
-		addresslist = expandedAddresses.flat()
-		//sMax.post('addresslist flattened', addresslist);
-		// var tmpArray = [];
-		// for (var i = 0; i < addresslist.length; i++) {
-   	// 	parentmap.push(1);
-   	// 	tmpArray.push(i+1);
-		// }
-		// childrenmap.push(tmpArray);
-	}	
-	else if (parentdict.uid != childdict.uid){ //concat on parent address
-		for (let i = 0; i < parentAddresses.length; i++) {
-			//var childIndexArray = [];
-			var addressesArrayForThisParentAddress = expandedAddresses[i%expandedAddresses.length];
-			//Max.post('addressesArrayForThisParentAddress', addressesArrayForThisParentAddress);
-			for (let j = 0; j < addressesArrayForThisParentAddress.length; j++) {
-				var concatAddress = parentAddresses[i] + '/' + addressesArrayForThisParentAddress[j];
-				addresslist.push(concatAddress);
-				//childrenmap.push(i+1);
-				adddressIndex++;
-				//childIndexArray.push(adddressIndex);
+	/*********************************************************
+	 * 
+	 *  Expand addresses
+	 *  (if address changed)
+	 * 
+	 *********************************************************/
+
+	const address_changed = childdict.address_changed ?? 0;
+	Max.post("address_changed", address_changed)
+	if (address_changed){
+		// fetch address to expand make sure it's an array
+		var addressToExpand = childdict.address ?? [];
+		addressToExpand = Array.isArray(addressToExpand) ? addressToExpand : [addressToExpand];
+		expandedAddresses = braceExpandArray(addressToExpand);
+		delete childdict.address_changed;
+	}
+	else {
+		expandedAddresses = childdict.expandedAddresses ?? [];
+	}
+	Max.post("expandedAddresses", expandedAddresses);
+
+
+	/*********************************************************
+	 * 
+	 *  Distribute expanded addresses over parent addresses
+	 *  (if parent addresslist changed)
+	 * 
+	 *********************************************************/
+
+	const parent_addresslist_changed = childdict.parent_addresslist_changed ?? 0;
+	Max.post("parent_addresslist_changed", parent_addresslist_changed)
+	if (parent_addresslist_changed||address_changed){
+		Max.post("redistributing addresses...");
+		// fetch parent addresses and make sure it's an array
+		var parentAddresses = parentdict.addresslist ?? [];
+		parentAddresses = Array.isArray(parentAddresses) ? parentAddresses : [parentAddresses];
+		if (parentdict.uid == null){ // If no parent, consider the relative address as absolute
+			absoluteAddresslist = expandedAddresses.flat();
+			Max.post("Absolute address spotted...");
+		}	
+		else if (parentdict.uid != childdict.uid){ //concat on parent address
+			Max.post("Relative address spotted...");
+			for (let i = 0; i < parentAddresses.length; i++) {
+				var addressesArrayForThisParentAddress = expandedAddresses[i%expandedAddresses.length];
+				for (let j = 0; j < addressesArrayForThisParentAddress.length; j++) {
+					var concatAddress = parentAddresses[i] + '/' + addressesArrayForThisParentAddress[j];
+					absoluteAddresslist.push(concatAddress);
+				}
 			}
-			//parentmap.push(childIndexArray);
 		}
-		//addresslist = ["addresslist"].concat(addresslist);
+		delete childdict.parent_addresslist_changed;
 	}
-	else { //this is the device
-		//addresslist = ["addresslist"].concat(expandedAddresses[0]);
-		addresslist = expandedAddresses[0];
-		//parentmap = [1];
-		//childrenmap = [1];
+	else {
+		// grabbing previous addresses
+		absoluteAddresslist = childdict.absoluteAddresslist ?? [];
 	}
-	//Max.post("addresslist",addresslist)
-	expandedAddresses = addresslist;
+	Max.post("absolute Addresslist", absoluteAddresslist);
 
-	//Max.post("common path on expanded addresses", commonPath(expandedAddresses));
-	childdict.initpath = commonPath(expandedAddresses);
-	//Max.outlet("initpath", commonPath(expandedAddresses));
+	//childdict.initpath = commonPath(addresslist);
+
+	/*********************************************************
+	 * 
+	 *  Evaluate addresses against current namespace
+	 *  (if namespace changed)
+	 *********************************************************/
 
 	// Does the address contain a wildcard ?
-	const wildcardChar = /[*?]/;
-	const addressContainsWildcard = addressToExpand.some(letter => wildcardChar.test(letter));
+	// const wildcardChar = /[*?]/;
+	// const addressContainsWildcard = addressToExpand.some(letter => wildcardChar.test(letter));
 
 	// If address contains a wildcard, filter addresslist against parent namespace
-	if (1){
+	const namespace_changed = childdict.namespace_changed ?? 0;
+	Max.post("namespace_changed", namespace_changed)
+	if (namespace_changed){
 		// flatten the input dict to get all possible addresses
-		var fullAddressList = [];
- 		flattenInputs(fullAddressList, inputsdict, '', '/');
+		var namespace = [];
+ 		flattenInputs(namespace, inputsdict, '', '/');
  		// Max.post("fullAddressList",fullAddressList)
  		// Max.post("fullAddressList-size",fullAddressList.length)
  		// Max.post("addresslist",addresslist)
  		// Parse namespace though wildcard
-		addresslist = micromatch(fullAddressList, addresslist);
+		addresslist = micromatch(namespace, absoluteAddresslist);
  		// Max.post("filteredResult", addresslist)
-
+ 		delete childdict.namespace_changed;
 	}
+
+	Max.post("filteredAddresses", addresslist);
 
 	//const addressAsArray = splitStrings(addresslist, '/');
 	//const test = getValueFromPath(inputsdict, addresslist[0] + '/uid');
@@ -199,19 +208,18 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 		var uidIndex = getValueFromPath(inputsdict, addresslist[i] + '/uid')
 		remotelist.push([i+1].concat(uidIndex));
 	}
-	//Max.post("remotelist", remotelist)
+	Max.post("remotelist", remotelist)
 
-	childdict.remotelist = remotelist;
+	// Return request UID and updated dictionary
 	childdict.expandedAddresses = expandedAddresses;
+	childdict.absoluteAddresslist = absoluteAddresslist;
 	childdict.addresslist = addresslist;
-	//childdict.parentmap = parentmap;
-	//childdict.childrenmap = childrenmap;
-
+	childdict.remotelist = remotelist;
+	Max.outlet("send", addr);
+	Max.outlet("uid", uid);
 	Max.outlet(childdict);
-	// Max.outlet(['addresslist'].concat(addresslist));
-	// Max.outlet(['parentmap'].concat(Object.values(parentmap[0])));
-	// Max.outlet(['childrenmap'].concat(childrenmap));
-	// Max.outlet('done');
+	//Max.outlet("initpath", commonPath(absoluteAddresslist));
+
 });
 
 
