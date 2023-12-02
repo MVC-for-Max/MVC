@@ -55,7 +55,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 755.0, 263.0, 891.0, 707.0 ],
+						"rect" : [ 275.0, 235.0, 891.0, 707.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -86,13 +86,61 @@
 						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-37",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 299.0, 652.0, 103.0, 22.0 ],
+									"text" : "address myModel"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-36",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 289.0, 628.0, 127.0, 22.0 ],
+									"presentation_linecount" : 5,
+									"text" : "address toto/myModel"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-35",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 271.5, 596.0, 43.0, 22.0 ],
+									"text" : "parent"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-34",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 247.0, 568.0, 66.0, 22.0 ],
+									"text" : "parent 123"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-33",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 731.0, 441.0, 88.0, 22.0 ],
-									"presentation_linecount" : 2,
 									"text" : "parent myView"
 								}
 
@@ -177,7 +225,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "int", "" ],
-									"patching_rect" : [ 85.0, 643.0, 185.0, 22.0 ],
+									"patching_rect" : [ 81.0, 665.0, 185.0, 22.0 ],
 									"text" : "mvc.view5 myView toto/myModel"
 								}
 
@@ -644,6 +692,34 @@
 								"patchline" : 								{
 									"destination" : [ "obj-27", 1 ],
 									"source" : [ "obj-33", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 1 ],
+									"source" : [ "obj-34", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 1 ],
+									"source" : [ "obj-35", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 1 ],
+									"source" : [ "obj-36", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 1 ],
+									"source" : [ "obj-37", 0 ]
 								}
 
 							}
