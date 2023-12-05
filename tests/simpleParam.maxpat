@@ -55,7 +55,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 184.0, 251.0, 1026.0, 718.0 ],
+						"rect" : [ 186.0, 201.0, 1026.0, 718.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -83,7 +83,45 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-28",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 664.0, 159.0, 71.0, 22.0 ],
+									"text" : "mvc.remote"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-42",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 299.0, 683.0, 122.0, 22.0 ],
+									"text" : "address TestParam.2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-41",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 83.0, 625.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-39",
 									"maxclass" : "message",
@@ -102,7 +140,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 299.0, 686.0, 51.0, 22.0 ],
+									"patching_rect" : [ 299.0, 711.0, 51.0, 22.0 ],
 									"text" : "address"
 								}
 
@@ -223,8 +261,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "int", "" ],
-									"patching_rect" : [ 557.0, 467.0, 148.0, 22.0 ],
-									"text" : "mvc.remote5 TestParam.2"
+									"patching_rect" : [ 557.0, 467.0, 142.0, 22.0 ],
+									"text" : "mvc.remote TestParam.2"
 								}
 
 							}
@@ -247,8 +285,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "int", "" ],
-									"patching_rect" : [ 81.0, 665.0, 185.0, 22.0 ],
-									"text" : "mvc.view5 myView toto/myModel"
+									"patching_rect" : [ 81.0, 665.0, 178.0, 22.0 ],
+									"text" : "mvc.view myView toto/myModel"
 								}
 
 							}
@@ -332,8 +370,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 100.0, 449.0, 246.0, 22.0 ],
-									"text" : "mvc.model 123 toto myModel @type dummy"
+									"patching_rect" : [ 100.0, 449.0, 284.0, 22.0 ],
+									"text" : "mvc.model 123 toto myModel.{1..12} @type dummy"
 								}
 
 							}
@@ -519,7 +557,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "int", "" ],
 									"patching_rect" : [ 111.0, 270.0, 172.0, 22.0 ],
-									"text" : "mvc.remote5 toto/TestParam.2"
+									"text" : "mvc.remote toto/TestParam.2"
 								}
 
 							}
@@ -768,6 +806,20 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"source" : [ "obj-41", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 1 ],
+									"source" : [ "obj-42", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-2", 1 ],
 									"source" : [ "obj-5", 0 ]
 								}
@@ -798,7 +850,8 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p simple-param-remote"
+					"text" : "p simple-param-remote",
+					"varname" : "simple-param-remote"
 				}
 
 			}
@@ -885,13 +938,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "mvc.core.address.expandOnParentAndFilter.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
-				"patcherrelativepath" : "../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "mvc.core.model.expand-declare.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
 				"patcherrelativepath" : "../patchers/core",
@@ -920,6 +966,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "mvc.core.remote.declare.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
+				"patcherrelativepath" : "../patchers/core",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "mvc.core.remote.sender.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
 				"patcherrelativepath" : "../patchers/core",
@@ -942,6 +995,20 @@
 			}
 , 			{
 				"name" : "mvc.core.state.sender.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
+				"patcherrelativepath" : "../patchers/core",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mvc.core.view.declare.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
+				"patcherrelativepath" : "../patchers/core",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mvc.core.view.sender.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
 				"patcherrelativepath" : "../patchers/core",
 				"type" : "JSON",
@@ -1165,7 +1232,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "mvc.remote5.maxpat",
+				"name" : "mvc.remote.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
 				"patcherrelativepath" : "../patchers/core",
 				"type" : "JSON",
@@ -1207,7 +1274,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "mvc.view5.maxpat",
+				"name" : "mvc.view.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
 				"patcherrelativepath" : "../patchers/core",
 				"type" : "JSON",

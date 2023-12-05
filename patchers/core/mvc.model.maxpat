@@ -3681,7 +3681,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 47.0, 136.0, 85.0, 49.0 ],
+									"patching_rect" : [ 47.0, 136.0, 85.0, 22.0 ],
 									"text" : "append #1"
 								}
 
@@ -4012,6 +4012,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-7",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 5,
@@ -6295,6 +6296,18 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-12",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 122.0, 320.0, 51.0, 22.0 ],
+													"text" : "address"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-11",
 													"maxclass" : "button",
 													"numinlets" : 1,
@@ -6324,7 +6337,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 120.0, 240.0, 91.0, 22.0 ],
+													"patching_rect" : [ 80.0, 244.0, 91.0, 22.0 ],
 													"text" : "zl.reg address /"
 												}
 
@@ -6336,7 +6349,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 95.0, 205.0, 125.0, 22.0 ],
+													"patching_rect" : [ 50.0, 205.0, 125.0, 22.0 ],
 													"text" : "zl.reg parent #1"
 												}
 
@@ -6620,6 +6633,13 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-22", 0 ],
+													"source" : [ "obj-12", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-3", 0 ],
 													"source" : [ "obj-13", 0 ]
 												}
@@ -6719,15 +6739,6 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-6", 0 ],
-													"order" : 1,
-													"source" : [ "obj-9", 1 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-8", 0 ],
-													"order" : 0,
 													"source" : [ "obj-9", 1 ]
 												}
 

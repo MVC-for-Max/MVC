@@ -141,7 +141,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 207.0, 489.0, 135.0, 22.0 ],
+					"patching_rect" : [ 283.0, 496.0, 135.0, 22.0 ],
 					"text" : "s #1.r"
 				}
 
@@ -153,7 +153,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 95.0, 350.0, 198.0, 22.0 ],
+					"patching_rect" : [ 95.0, 350.0, 207.0, 22.0 ],
 					"text" : "t l l"
 				}
 
@@ -201,7 +201,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 78.0, 242.0, 138.0, 22.0 ],
+					"patching_rect" : [ 78.0, 242.0, 196.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 1,
@@ -209,7 +209,7 @@
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "dict #1.attr @legacy 1"
+					"text" : "dict #1.attr @legacy 1 @quiet 1"
 				}
 
 			}
@@ -220,7 +220,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 274.0, 424.0, 41.0, 22.0 ],
+					"patching_rect" : [ 283.0, 412.0, 41.0, 22.0 ],
 					"text" : "set $1"
 				}
 
@@ -232,7 +232,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 207.0, 464.0, 49.0, 22.0 ],
+					"patching_rect" : [ 283.0, 471.0, 49.0, 22.0 ],
 					"text" : "append"
 				}
 
@@ -244,7 +244,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 135.0, 424.0, 91.0, 22.0 ],
+					"patching_rect" : [ 135.0, 440.0, 91.0, 22.0 ],
 					"text" : "zl 32000 slice 1"
 				}
 
@@ -252,11 +252,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-4",
+					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 95.0, 399.0, 177.0, 22.0 ],
+					"patching_rect" : [ 95.0, 399.0, 179.0, 35.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 0,
@@ -264,7 +265,7 @@
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "dict mvc.parameters.values.dict"
+					"text" : "dict mvc.parameters.values.dict @quiet 1"
 				}
 
 			}
