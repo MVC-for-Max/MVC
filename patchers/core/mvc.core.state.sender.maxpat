@@ -93,7 +93,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 431.5, 123.0, 138.0, 22.0 ],
+					"patching_rect" : [ 431.5, 123.0, 145.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 1,
@@ -616,12 +616,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-7",
-					"maxclass" : "message",
-					"numinlets" : 2,
+					"maxclass" : "newobj",
+					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 331.0, 97.0, 57.0, 22.0 ],
-					"text" : "chans $1"
+					"patching_rect" : [ 331.0, 97.0, 88.0, 22.0 ],
+					"text" : "prepend chans"
 				}
 
 			}
@@ -910,12 +910,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-3",
-					"maxclass" : "message",
-					"numinlets" : 2,
+					"maxclass" : "newobj",
+					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 331.5, 239.0, 61.0, 22.0 ],
-					"text" : "set set $2"
+					"patching_rect" : [ 331.5, 239.0, 91.0, 22.0 ],
+					"text" : "prepend set set"
 				}
 
 			}
@@ -938,7 +938,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 189.5, 277.0, 228.0, 22.0 ],
+					"patching_rect" : [ 189.5, 277.0, 199.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 0,
@@ -946,7 +946,7 @@
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "dict mvc.state.values.dict @quiet 1"
+					"text" : "dict mvc.states.values.dict @quiet 1"
 				}
 
 			}

@@ -141,18 +141,18 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 	 *********************************************************/
 
 	const parent_addresslist_changed = childdict.parent_addresslist_changed ?? 0;
-	Max.post("parent_addresslist_changed", parent_addresslist_changed)
+	//Max.post("parent_addresslist_changed", parent_addresslist_changed)
 	if (parent_addresslist_changed||address_changed){
-		Max.post("redistributing addresses...");
+		//Max.post("redistributing addresses...");
 		// fetch parent addresses and make sure it's an array
 		var parentAddresses = parentdict.addresslist ?? [];
 		parentAddresses = Array.isArray(parentAddresses) ? parentAddresses : [parentAddresses];
 		if (parentdict.uid == null){ // If no parent, consider the relative address as absolute
 			absoluteAddresslist = expandedAddresses.flat();
-			Max.post("Absolute address spotted...");
+			//Max.post("Absolute address spotted...");
 		}	
 		else if (parentdict.uid != childdict.uid){ //concat on parent address
-			Max.post("Relative address spotted...");
+			//Max.post("Relative address spotted...");
 			for (let i = 0; i < parentAddresses.length; i++) {
 				var addressesArrayForThisParentAddress = expandedAddresses[i%expandedAddresses.length];
 				if (addressesArrayForThisParentAddress != null){
@@ -172,7 +172,7 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 		// grabbing previous addresses
 		absoluteAddresslist = childdict.absoluteAddresslist ?? [];
 	}
-	Max.post("absolute Addresslist", absoluteAddresslist);
+	//Max.post("absolute Addresslist", absoluteAddresslist);
 
 	//childdict.initpath = commonPath(addresslist);
 
