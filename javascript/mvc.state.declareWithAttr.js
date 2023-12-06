@@ -18,7 +18,7 @@ var state_UID = 0;
 var previousAddresses = [];
 var currentAddresses = [];
 var stateAddressDict = new Dict();
-stateAddressDict.name = "stateAddressDict";
+stateAddressDict.name = "inputAddressDict";
 stateAddressDict.quiet = 1;
 
 function declare(dictname){

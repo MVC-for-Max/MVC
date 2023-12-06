@@ -18,7 +18,7 @@ var parameter_UID = 0;
 var previousAddresses = [];
 var currentAddresses = [];
 var paramAddressDict = new Dict();
-paramAddressDict.name = "paramAddressDict";
+paramAddressDict.name = "inputAddressDict";
 paramAddressDict.quiet = 1;
 
 function declare(dictname){

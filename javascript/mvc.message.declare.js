@@ -14,7 +14,7 @@ var message_UID = 0;
 var previousAddresses = [];
 var currentAddresses = [];
 var messageAddressDict = new Dict();
-messageAddressDict.name = "messageAddressDict";
+messageAddressDict.name = "inputAddressDict";
 messageAddressDict.quiet = 1;
 
 function declare(dictname){
