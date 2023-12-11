@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 200.0, 200.0, 1110.0, 741.0 ],
+		"rect" : [ 223.0, 240.0, 1110.0, 741.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -47,17 +47,6 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 464.0, 247.0, 35.0, 22.0 ],
 					"text" : "clear"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-37",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 207.0, 518.0, 32.0, 22.0 ],
-					"text" : "print"
 				}
 
 			}
@@ -2059,7 +2048,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "15829.focus" ],
+					"outlettype" : [ "", "1514.focus" ],
 					"patching_rect" : [ 464.0, 396.0, 98.0, 22.0 ],
 					"text" : "mvc.GUI.tabbing"
 				}
@@ -2608,10 +2597,11 @@
 									"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1.0 ],
 									"bgfillcolor_proportion" : 0.5,
 									"bgfillcolor_type" : "color",
-									"fontface" : 0,
+									"fontface" : 2,
 									"fontsize" : 11.0,
 									"hint" : "Filter mode",
 									"id" : "obj-9",
+									"ignoreclick" : 1,
 									"items" : [ "Mono", ",", "Stereo", ",", "5.1 surround", ",", "7.1 surround", ",", "Custom..." ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
@@ -2621,7 +2611,7 @@
 									"patching_rect" : [ 394.0, 163.5, 169.0, 21.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 180.0, -3.5, 70.0, 21.0 ],
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
 							}
@@ -3414,10 +3404,11 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.658823529411765, 0.647058823529412, 0.63921568627451, 0.0 ],
-					"fontface" : 0,
+					"fontface" : 2,
 					"fontname" : "Ableton Sans Medium",
 					"fontsize" : 11.0,
 					"id" : "obj-6",
+					"ignoreclick" : 1,
 					"maxclass" : "number",
 					"maximum" : 5,
 					"minimum" : 1,
@@ -3426,10 +3417,10 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 350.0, 367.0, 361.0, 22.0 ],
+					"patching_rect" : [ 350.0, 367.0, 363.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 132.0, -2.0, 31.0, 22.0 ],
-					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
 					"tricolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 0.0 ],
 					"triscale" : 0.8
 				}
@@ -3485,11 +3476,11 @@
 					"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"bgfillcolor_proportion" : 0.5,
 					"bgfillcolor_type" : "color",
-					"fontface" : 0,
-					"hint" : "Number of channels",
+					"fontface" : 2,
+					"hint" : "no target",
 					"id" : "obj-7",
 					"ignoreclick" : 1,
-					"items" : "Number of channels",
+					"items" : "no target",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -3498,7 +3489,7 @@
 					"patching_rect" : [ 669.75, 318.0, 100.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, -3.0, 131.0, 22.0 ],
-					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
 					"textjustification" : 2
 				}
 
@@ -3525,11 +3516,12 @@
 					"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"bgfillcolor_proportion" : 0.5,
 					"bgfillcolor_type" : "color",
-					"fontface" : 0,
+					"fontface" : 2,
 					"fontsize" : 12.0,
 					"hint" : "Channel layout",
 					"id" : "obj-9",
-					"items" : [ "Mono", ",", "Stereo", ",", "5.1 surround", ",", "7.1 surround", ",", "Custom..." ],
+					"ignoreclick" : 1,
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -3538,7 +3530,7 @@
 					"patching_rect" : [ 166.0, 367.0, 169.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 152.0, -3.0, 89.0, 22.0 ],
-					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
 
 			}
@@ -3561,10 +3553,11 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.0, 0.0, 0.0, 0.0 ],
-					"fontface" : 0,
+					"fontface" : 2,
 					"fontsize" : 12.0,
 					"hint" : "Channel count",
 					"id" : "obj-38",
+					"ignoreclick" : 1,
 					"maxclass" : "number",
 					"maximum" : 5,
 					"minimum" : 1,
@@ -3575,7 +3568,7 @@
 					"patching_rect" : [ 306.0, 464.0, 64.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 242.0, -3.0, 40.0, 22.0 ],
-					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
 					"triangle" : 0
 				}
 
@@ -3836,16 +3829,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-37", 0 ],
-					"order" : 0,
-					"source" : [ "obj-31", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
-					"order" : 1,
 					"source" : [ "obj-31", 0 ]
 				}
 
