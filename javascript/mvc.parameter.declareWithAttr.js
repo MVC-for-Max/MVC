@@ -38,8 +38,7 @@ function declare(dictname){
 	// from a different parameter instance (different UID).
 	// Return with exit code if this is the case.
 	for (var i = 0; i < (currentAddresses.length); i++) {
-		currentAddresses[i] = currentAddresses[i].replace(/\//g, '::');
-		var theAdd = currentAddresses[i];
+		var theAdd = currentAddresses[i].replace(/\//g, '::');
 		var theUID = inputsDict.get(theAdd+"::uid");
 		if (theUID == null) break;	
 		else if (parameter_UID != theUID[0]) {
@@ -66,7 +65,7 @@ function declare(dictname){
 		parametersValuesDict.remove(theAdd);
 		inputsDict.remove(theAdd);
 		outlet(1, theAdd, 0);
-		//post('removing', theAdd, '\n')
+		post('removing', theAdd, '\n')
 	}
 
 	// Replace **all** current addresses in inputs dict, 
@@ -79,10 +78,12 @@ function declare(dictname){
 		if (!(parametersValuesDict.contains(currentAddresses[i]))){
 			// if param does not have a value, recall default
 			outlet(2, i + 1, parameter_UID);
+			//post("Recalling default for ", theAdd,'@',parameter_UID, i+1, "\n")
 			}
 		else {
 			// else, recall current
 			outlet(3, i + 1, parameter_UID);
+			//post("Recalling current for ", theAdd,'@',parameter_UID, i+1, "\n")
 		}
 	}
 	

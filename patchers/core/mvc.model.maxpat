@@ -6229,6 +6229,30 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "parent" ],
+									"patching_rect" : [ 204.666666666666515, 260.0, 49.0, 22.0 ],
+									"text" : "t parent"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
+									"patching_rect" : [ 204.666666666666515, 230.0, 64.0, 22.0 ],
+									"text" : "sel wclose"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-23",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -7424,9 +7448,10 @@
 									"id" : "obj-20",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 204.666666666666515, 196.0, 42.0, 24.0 ],
-									"text" : "poly~",
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 204.666666666666515, 196.0, 143.0, 24.0 ],
+									"text" : "poly~ mvc.dummy.gui",
 									"varname" : "poly~"
 								}
 
@@ -7489,6 +7514,20 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-20", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
 									"source" : [ "obj-21", 0 ]
 								}
@@ -7498,6 +7537,14 @@
 								"patchline" : 								{
 									"destination" : [ "obj-20", 0 ],
 									"source" : [ "obj-23", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-20", 0 ],
+									"midpoints" : [ 214.166666666666515, 292.0, 185.166666666666515, 292.0, 185.166666666666515, 185.0, 214.166666666666515, 185.0 ],
+									"source" : [ "obj-3", 0 ]
 								}
 
 							}

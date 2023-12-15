@@ -38,8 +38,7 @@ function declare(dictname){
 	// from a different state instance (different UID).
 	// Return with exit code if this is the case.
 	for (var i = 0; i < (currentAddresses.length); i++) {
-		currentAddresses[i] = currentAddresses[i].replace(/\//g, '::');
-		var theAdd = currentAddresses[i];
+		var theAdd = currentAddresses[i].replace(/\//g, '::');
 		var theUID = inputsDict.get(theAdd+"::uid");
 		if (theUID == null) break;	
 		else if (state_UID != theUID[0]) {
@@ -62,7 +61,7 @@ function declare(dictname){
 
 	// remove gone addresses only for values
 	for (var i = 0; i < (missingAdresses.length); i++) {
-		var theAdd = missingAdresses[i];//.replace(/\//g, '::');
+		var theAdd = missingAdresses[i].replace(/\//g, '::');
 		statesValuesDict.remove(theAdd);
 		inputsDict.remove(theAdd);
 		outlet(1, theAdd, 0);
