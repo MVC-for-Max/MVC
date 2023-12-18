@@ -75,12 +75,18 @@ function declaremodel(dictname){
 	// remove gone addresses only for values
 	for (var i = 0; i < (missingAdresses.length); i++) {
 		var theAdd = missingAdresses[i].replace(/\//g, '::');
-		modelDict.remove(theAdd);
+		//modelDict.remove(theAdd);
 		parametersValuesDict.remove(theAdd);
 		statesValuesDict.remove(theAdd);
-		inputsDict.remove(theAdd);
+		//inputsDict.remove(theAdd);
 		outlet(1, missingAdresses[i], 0); // public un-init signal to missing addresses (for views)
 		//post('removing', theAdd, '\n')
+	}
+
+	for (var i = 0; i < (previousAddresses.length); i++) {
+		var theAdd = previousAddresses[i].replace(/\//g, '::');
+		modelDict.remove(theAdd);
+		inputsDict.remove(theAdd);
 	}
 	
 	// add new addresses in model dict
