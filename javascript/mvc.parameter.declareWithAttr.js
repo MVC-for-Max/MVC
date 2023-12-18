@@ -75,15 +75,15 @@ function declare(dictname){
 		var addressUID = [parameter_UID, i + 1];
 		inputsDict.replace(theAdd + "::uid", addressUID);
 		
-		if (!(parametersValuesDict.contains(currentAddresses[i]))){
+		if (!(parametersValuesDict.contains(theAdd))){
 			// if param does not have a value, recall default
 			outlet(2, i + 1, parameter_UID);
-			//post("Recalling default for ", theAdd,'@',parameter_UID, i+1, "\n")
+			post("Recalling default for ", theAdd,'@',parameter_UID, i+1, "\n")
 			}
 		else {
 			// else, recall current
 			outlet(3, i + 1, parameter_UID);
-			//post("Recalling current for ", theAdd,'@',parameter_UID, i+1, "\n")
+			post("Recalling current for ", theAdd,'@',parameter_UID, i+1, "\n")
 		}
 	}
 	

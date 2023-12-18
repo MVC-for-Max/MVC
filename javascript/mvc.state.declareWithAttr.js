@@ -74,7 +74,7 @@ function declare(dictname){
 		var addressUID = [state_UID, i + 1];
 		inputsDict.replace(theAdd + "::uid", addressUID);
 		
-		if (!(statesValuesDict.contains(currentAddresses[i]))){
+		if (!(statesValuesDict.contains(theAdd))){
 			// if state does not have a value, recall default
 			outlet(2, i + 1, state_UID);
 			}
