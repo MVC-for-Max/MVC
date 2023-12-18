@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 19.0, 89.0, 401.0, 176.0 ],
+		"rect" : [ 406.0, 642.0, 401.0, 176.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -103,8 +103,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 117.0, 313.512820512820497, 330.0, 22.0 ],
-									"text" : "mvc.model subModelUID myModel subModel.1 @type woop"
+									"patching_rect" : [ 117.0, 343.0, 335.0, 22.0 ],
+									"text" : "mvc.model subModelUID modelUID subModel.1 @type woop"
 								}
 
 							}
@@ -127,8 +127,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 117.0, 260.256410256410277, 162.0, 22.0 ],
-									"text" : "sprintf symout subModel.%ld"
+									"patching_rect" : [ 117.0, 260.256410256410277, 183.0, 22.0 ],
+									"text" : "sprintf symout subModel.{1..%ld}"
 								}
 
 							}
@@ -151,8 +151,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "int", "" ],
-									"patching_rect" : [ 116.0, 201.0, 273.0, 22.0 ],
-									"text" : "mvc.parameter myModel modelParam @default 2"
+									"patching_rect" : [ 116.0, 201.0, 278.0, 22.0 ],
+									"text" : "mvc.parameter modelUID modelParam @default 2"
 								}
 
 							}
@@ -378,7 +378,7 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-11", 0 ],
+									"destination" : [ "obj-11", 1 ],
 									"source" : [ "obj-10", 0 ]
 								}
 
