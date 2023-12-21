@@ -31,6 +31,7 @@ var _tabnames = [];
 var previousHoveredCell = -1;
 var _active = 1;
 
+
 function loadbang(){
   	selectedCells.push(0);
 	ntabs(1);
@@ -53,17 +54,18 @@ function paint()
         stroke();
         
 
-      	selectedCellColor = (_active ? activeSelectedCellColor : passiveSelectedCellColor);			
-      	textColor = (_active ? activeTextColor : passiveTextColor);			
-		cellColor = (_active ? activeCellColor : passiveCellColor);		
+      	selectedCellColor = ((_active && (_ntabs>0)) ? activeSelectedCellColor : passiveSelectedCellColor);			
+      	textColor = ((_active && (_ntabs>0)) ? activeTextColor : passiveTextColor);			
+		cellColor = ((_active && (_ntabs>0)) ? activeCellColor : passiveCellColor);		
 
         var fontmeasure = font_extents();
         var baselineoffset = -fontmeasure[1] + (fontmeasure[0]+fontmeasure[1]) / 2;
 
-        for (var i=0;i<_ntabs;i++)
+        var minTab = Math.max(_ntabs,1);
+        for (var i=0;i<minTab;i++)
         {
 
-            var halfcellwidth = aspect/_ntabs;
+            var halfcellwidth = aspect/minTab;
             var cellposition = (2*i + 1)*halfcellwidth - aspect;
         
             var cellheight = 0.95;
@@ -144,7 +146,7 @@ function paint()
 
 function onclick(x,y,but,cmd,shift,capslock,option,ctrl)
 {
-	if (!_active) return;
+	if (!_active || (_ntabs==0)) return;
 
     //var pos = sketch.screentoworld(x,y)[0];
 
@@ -175,7 +177,7 @@ function extclick(x,y,but,cmd,shift,capslock,option,ctrl)
 
 function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 {
-	if (!_active) return;
+    if (!_active || (_ntabs==0)) return;
 	
     //var pos = sketch.screentoworld(x,y)[0];
     //pos /= aspect;
@@ -252,14 +254,16 @@ function calcAspect() {
 
 function ntabs(val){
 	
-	val = Math.max(val,1);
+	val = Math.max(val,0);
 
-	if (val == _ntabs) return;
+	if (val == _ntabs) return; // do nothing if the same as before
 	
+
 	var sizeDiff = (val - _ntabs);	
 	if (sizeDiff >= 0) {
+        var valueToPush = (val==1) ? 1 : 0; // if we change from 0 to 1 tab, make this one active
 		for (var i=0;i<sizeDiff;i++){
-        	selectedCells.push(0);
+        	selectedCells.push(valueToPush);
     	}
 	}
 	else  {
