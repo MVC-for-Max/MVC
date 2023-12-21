@@ -57,9 +57,16 @@ Max.addHandler("expandonparent", (...args) => {
 			var addressesArrayForThisParentAddress = expandedAddresses[i%expandedAddresses.length];
 			//Max.post('addressesArrayForThisParentAddress', addressesArrayForThisParentAddress);
 			for (let j = 0; j < addressesArrayForThisParentAddress.length; j++) {
-				var concatAddress = parentAddresses[i] + '/' + addressesArrayForThisParentAddress[j];
-				//Max.post('concatAddress', concatAddress);
-				addresslist.push(concatAddress);
+				var childAdd = addressesArrayForThisParentAddress[j];
+				if (childAdd!= 'none'){
+					var concatAddress = parentAddresses[i] + '/' + childAdd;
+					//Max.post('concatAddress', concatAddress);
+					addresslist.push(concatAddress);					
+				}
+				else{
+					//Max.post("youhou",childAdd )
+				}
+
 				childrenmap.push(i+1);
 				adddressIndex++;
 				childIndexArray.push(adddressIndex);
