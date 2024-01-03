@@ -207,6 +207,9 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 		addresslist = micromatch(namespace, absoluteAddresslist);
  		// Max.post("filteredResult", addresslist)
  		delete childdict.namespace_changed;
+	} 
+	else {
+		addresslist = absoluteAddresslist;
 	}
 
 	//Max.post("filteredAddresses", addresslist);
@@ -217,7 +220,7 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 	// build the remote address list
 	var remotelist = [];
 	for (let i = 0; i < addresslist.length; i++) {
-		var uidIndex = getValueFromPath(inputsdict, addresslist[i] + '/uid')
+		const uidIndex = getValueFromPath(inputsdict, addresslist[i] + '/uid') ?? -1;
 		remotelist.push([i+1].concat(uidIndex));
 	}
 	//Max.post("remotelist", remotelist)
@@ -274,7 +277,7 @@ Max.addHandler("expand", (...args) => {
 				if (!addr) addr = 'none';
 				// expand with output limit set to 1000 (default)
 				// see https://www.npmjs.com/package/braces for more info
-				result = braces([escaped], { expand: true, maxLength: 1000, rangeLimit:1000 });
+				result = braces(escaped, { expand: true, maxLength: 1000, rangeLimit:1000 });
 			}
 			else {
 				result = [msg];
