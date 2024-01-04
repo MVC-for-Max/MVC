@@ -193,7 +193,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-25",
-													"items" : [ "dummy", ",", "C" ],
+													"items" : [ "dummy", ",", "L", ",", "R" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -540,11 +540,12 @@
 													"id" : "obj-27",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
-													"numoutlets" : 4,
-													"outlettype" : [ "dictionary", "", "", "" ],
+													"numoutlets" : 5,
+													"outlettype" : [ "dictionary", "", "", "", "" ],
 													"patching_rect" : [ 50.0, 228.0, 213.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 0,
+														"legacy" : 1,
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
@@ -904,11 +905,12 @@
 									"id" : "obj-34",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
-									"numoutlets" : 4,
-									"outlettype" : [ "dictionary", "", "", "" ],
+									"numoutlets" : 5,
+									"outlettype" : [ "dictionary", "", "", "", "" ],
 									"patching_rect" : [ 134.0, 247.0, 162.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
+										"legacy" : 1,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
@@ -1889,12 +1891,12 @@
 					"comment" : "",
 					"hidden" : 1,
 					"id" : "obj-37",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 66.0, 85.0, 30.0, 30.0 ]
+					"outlettype" : [ "all" ],
+					"patching_rect" : [ 66.0, 33.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -1903,7 +1905,7 @@
 					"comment" : "",
 					"hidden" : 1,
 					"id" : "obj-38",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -1917,7 +1919,7 @@
 					"comment" : "",
 					"hidden" : 1,
 					"id" : "obj-39",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -1930,7 +1932,7 @@
 					"comment" : "",
 					"hidden" : 1,
 					"id" : "obj-40",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -2063,8 +2065,7 @@
 				}
 
 			}
- ],
-		"autosave" : 0
+ ]
 	}
 
 }
