@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 223.0, 240.0, 1110.0, 741.0 ],
+		"rect" : [ 521.0, 207.0, 1110.0, 741.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -2048,7 +2048,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "1514.focus" ],
+					"outlettype" : [ "", "6219.focus" ],
 					"patching_rect" : [ 464.0, 396.0, 98.0, 22.0 ],
 					"text" : "mvc.GUI.tabbing"
 				}
@@ -3120,15 +3120,15 @@
 													"numinlets" : 2,
 													"numoutlets" : 5,
 													"outlettype" : [ "dictionary", "", "", "", "" ],
-													"patching_rect" : [ 50.0, 131.695906432748529, 213.0, 22.0 ],
+													"patching_rect" : [ 50.0, 131.695906432748529, 274.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 0,
-														"legacy" : 0,
+														"legacy" : 1,
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict mvc.channel-layouts.dict @quiet 1"
+													"text" : "dict mvc.channel-layouts.dict @quiet 1 @legacy 1"
 												}
 
 											}
@@ -3417,7 +3417,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 350.0, 367.0, 363.0, 22.0 ],
+					"patching_rect" : [ 350.0, 367.0, 365.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 132.0, -2.0, 31.0, 22.0 ],
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -3521,7 +3521,7 @@
 					"hint" : "Channel layout",
 					"id" : "obj-9",
 					"ignoreclick" : 1,
-					"items" : "<empty>",
+					"items" : [ "Mono", ",", "Stereo", ",", "5.1 surround", ",", "7.1 surround", ",", "Custom..." ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -3565,7 +3565,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 306.0, 464.0, 64.0, 22.0 ],
+					"patching_rect" : [ 494.0, 467.0, 64.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 242.0, -3.0, 40.0, 22.0 ],
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -3852,7 +3852,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-21", 0 ],
-					"midpoints" : [ 315.5, 495.0, 147.25, 495.0, 147.25, 162.0, 175.25, 162.0 ],
+					"midpoints" : [ 503.5, 495.0, 147.25, 495.0, 147.25, 162.0, 175.25, 162.0 ],
 					"source" : [ "obj-38", 0 ]
 				}
 
