@@ -33,7 +33,7 @@ var _active = 1;
 
 
 function loadbang(){
-  	selectedCells.push(0);
+  	//selectedCells.push(0);
 	ntabs(1);
 }
 
