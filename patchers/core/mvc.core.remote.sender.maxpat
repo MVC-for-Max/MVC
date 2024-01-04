@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 700.0, 204.0, 819.0, 604.0 ],
+		"rect" : [ 612.0, 203.0, 660.0, 604.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -276,7 +276,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1050.0, 180.0, 501.0, 639.0 ],
+						"rect" : [ 1022.0, 183.0, 501.0, 639.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -433,7 +433,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 166.0, 327.0, 53.0, 22.0 ],
+									"patching_rect" : [ 166.0, 314.0, 53.0, 22.0 ],
 									"text" : "prepend"
 								}
 
@@ -458,8 +458,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 241.0, 327.0, 88.0, 22.0 ],
-									"text" : "prepend chans"
+									"patching_rect" : [ 241.0, 327.0, 90.0, 22.0 ],
+									"text" : "prepend voices"
 								}
 
 							}
@@ -471,7 +471,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 166.0, 360.0, 146.0, 22.0 ],
-									"text" : "mc.qlim @chans 1"
+									"text" : "poly~ mvc.mc.qlim.p"
 								}
 
 							}
