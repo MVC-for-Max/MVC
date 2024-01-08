@@ -40,7 +40,7 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "thinned list",
 					"id" : "obj-3",
 					"index" : 2,
 					"maxclass" : "outlet",
@@ -52,7 +52,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "list of indices of first appearance in full list",
 					"id" : "obj-2",
 					"index" : 1,
 					"maxclass" : "outlet",
@@ -64,7 +64,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "list",
 					"id" : "obj-1",
 					"index" : 1,
 					"maxclass" : "inlet",
