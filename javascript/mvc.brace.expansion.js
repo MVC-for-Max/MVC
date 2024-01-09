@@ -182,7 +182,7 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 		// grabbing previous addresses
 		absoluteAddresslist = childdict.absoluteAddresslist ?? [];
 	}
-	Max.post("addressToExpand", addressToExpand);
+	//Max.post("addressToExpand", addressToExpand);
 
 	//childdict.initpath = commonPath(addresslist);
 
@@ -196,7 +196,7 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 	//const wildcardChar = /[*?]/;
 	//const addressContainsWildcard = addressToExpand.some(letter => wildcardChar.test(c));
 	const addressContainsWildcard = containsWildchar(addressToExpand);
- 	Max.post("addressContainsWildcard", addressContainsWildcard)
+ 	//Max.post("addressContainsWildcard", addressContainsWildcard)
 
 	// If namespace_changed or address contains a wildcard, filter addresslist against parent namespace
 	const namespace_changed = childdict.namespace_changed ?? 0;
