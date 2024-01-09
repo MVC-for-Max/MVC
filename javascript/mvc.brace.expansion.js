@@ -125,12 +125,15 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 	 * 
 	 *********************************************************/
 
+	// fetch address to expand make sure it's an array
+	var addressToExpand = childdict.address ?? [];
+	addressToExpand = Array.isArray(addressToExpand) ? addressToExpand : [addressToExpand];
+
 	const address_changed = childdict.address_changed ?? 0;
 	//Max.post("address_changed", address_changed)
+	// If address changed, brace-expand it, 
+	// otherwise, just read it from the attr dictionary
 	if (address_changed){
-		// fetch address to expand make sure it's an array
-		var addressToExpand = childdict.address ?? [];
-		addressToExpand = Array.isArray(addressToExpand) ? addressToExpand : [addressToExpand];
 		expandedAddresses = braceExpandArray(addressToExpand);
 		delete childdict.address_changed;
 	}
@@ -179,7 +182,7 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 		// grabbing previous addresses
 		absoluteAddresslist = childdict.absoluteAddresslist ?? [];
 	}
-	//Max.post("absolute Addresslist", absoluteAddresslist);
+	Max.post("addressToExpand", addressToExpand);
 
 	//childdict.initpath = commonPath(addresslist);
 
@@ -190,13 +193,15 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 	 *********************************************************/
 
 	// Does the address contain a wildcard ?
-	// const wildcardChar = /[*?]/;
-	// const addressContainsWildcard = addressToExpand.some(letter => wildcardChar.test(letter));
+	//const wildcardChar = /[*?]/;
+	//const addressContainsWildcard = addressToExpand.some(letter => wildcardChar.test(c));
+	const addressContainsWildcard = containsWildchar(addressToExpand);
+ 	Max.post("addressContainsWildcard", addressContainsWildcard)
 
-	// If address contains a wildcard, filter addresslist against parent namespace
+	// If namespace_changed or address contains a wildcard, filter addresslist against parent namespace
 	const namespace_changed = childdict.namespace_changed ?? 0;
 	//Max.post("namespace_changed", namespace_changed)
-	if (namespace_changed){
+	if (namespace_changed||addressContainsWildcard){
 		// flatten the input dict to get all possible addresses
 		var namespace = [];
  		flattenInputs(namespace, inputsdict, '', '/');
@@ -205,7 +210,7 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
  		// Max.post("addresslist",addresslist)
  		// Parse namespace though wildcard
 		addresslist = micromatch(namespace, absoluteAddresslist);
- 		// Max.post("filteredResult", addresslist)
+ 		//Max.post("filteredResult", addresslist)
  		delete childdict.namespace_changed;
 	} 
 	else {
@@ -544,5 +549,15 @@ function getValueFromPath(obj, path) {
   }
 
   return currentObj;
+}
+
+// does any item in array contains wildchar ?
+function containsWildchar(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].includes('*') || arr[i].includes('?')) {
+      return 1;
+    }
+  }
+  return 0;
 }
 
