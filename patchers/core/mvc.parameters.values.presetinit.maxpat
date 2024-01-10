@@ -272,12 +272,12 @@
 					"patching_rect" : [ 122.25, 446.0, 180.0, 35.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
-						"legacy" : 0,
+						"legacy" : 1,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "dict mvc.parameters.values.dict @quiet 1"
+					"text" : "dict mvc.parameters.values.dict @quiet 1 @legacy 1"
 				}
 
 			}
