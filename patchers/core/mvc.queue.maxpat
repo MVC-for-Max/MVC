@@ -40,7 +40,7 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "current queue size",
 					"id" : "obj-2",
 					"index" : 2,
 					"maxclass" : "outlet",
@@ -151,7 +151,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "bang to output next queued item",
 					"id" : "obj-57",
 					"index" : 2,
 					"maxclass" : "inlet",
@@ -164,7 +164,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "current item",
 					"id" : "obj-58",
 					"index" : 1,
 					"maxclass" : "outlet",
