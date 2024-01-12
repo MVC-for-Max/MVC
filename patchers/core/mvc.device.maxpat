@@ -5226,6 +5226,8 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 1,
 																		"defer" : 1,
+																		"node_bin_path" : "",
+																		"npm_bin_path" : "",
 																		"watch" : 1
 																	}
 ,
@@ -19119,11 +19121,12 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-18",
+																	"linecount" : 4,
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 262.0, 230.0, 169.0, 20.0 ],
-																	"text" : "public (for views and remotes)"
+																	"patching_rect" : [ 262.0, 230.0, 169.0, 60.0 ],
+																	"text" : "public (for views and remotes) // disabled for now as view and remotes rely on UID, not addresses"
 																}
 
 															}
@@ -19395,13 +19398,6 @@
 																"patchline" : 																{
 																	"destination" : [ "obj-9", 0 ],
 																	"source" : [ "obj-13", 0 ]
-																}
-
-															}
-, 															{
-																"patchline" : 																{
-																	"destination" : [ "obj-2", 0 ],
-																	"source" : [ "obj-15", 1 ]
 																}
 
 															}
@@ -30100,8 +30096,6 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 0,
 																		"defer" : 0,
-																		"node_bin_path" : "",
-																		"npm_bin_path" : "",
 																		"watch" : 0
 																	}
 ,
@@ -33495,6 +33489,8 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 1,
 																		"defer" : 1,
+																		"node_bin_path" : "",
+																		"npm_bin_path" : "",
 																		"watch" : 1
 																	}
 ,
@@ -37182,6 +37178,8 @@
 													"saved_object_attributes" : 													{
 														"autostart" : 0,
 														"defer" : 0,
+														"node_bin_path" : "",
+														"npm_bin_path" : "",
 														"watch" : 0
 													}
 ,
