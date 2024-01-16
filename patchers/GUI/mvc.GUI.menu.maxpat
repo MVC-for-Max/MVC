@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 491.0, 544.0, 897.0, 514.0 ],
+		"rect" : [ 550.0, 290.0, 897.0, 514.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -263,7 +263,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 447.0, 152.0, 115.0, 102.0 ],
+									"patching_rect" : [ 447.0, 152.0, 116.0, 102.0 ],
 									"text" : "active 0, options, clip both, min bang, clip free, type decimal, hetero 0, unit none, description \"no target\""
 								}
 
@@ -922,7 +922,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 391.0, 182.0, 53.0, 35.0 ],
+									"patching_rect" : [ 391.0, 182.0, 56.0, 35.0 ],
 									"text" : "prepend hidden"
 								}
 
@@ -1736,7 +1736,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "3449.focus" ],
+					"outlettype" : [ "", "4589.focus" ],
 					"patching_rect" : [ 636.0, 355.0, 98.0, 22.0 ],
 					"text" : "mvc.GUI.tabbing"
 				}
@@ -2814,7 +2814,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 44.0, 182.0, 30.0, 30.0 ]
+									"patching_rect" : [ 50.0, 144.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -2843,7 +2843,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 231.0, 383.0, 84.0, 22.0 ],
+					"patching_rect" : [ 231.0, 383.0, 29.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -2851,7 +2851,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p routesymbol"
+					"text" : "p rs"
 				}
 
 			}
@@ -2871,7 +2871,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 340.0, 326.0, 336.0, 22.0 ],
+					"patching_rect" : [ 340.0, 326.0, 351.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 132.0, -2.0, 31.0, 22.0 ],
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
