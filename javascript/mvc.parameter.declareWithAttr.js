@@ -21,11 +21,12 @@ var paramAddressDict = new Dict();
 paramAddressDict.name = "inputAddressDict";
 paramAddressDict.quiet = 1;
 
-function declare(dictname){
+
+function declare(uid){
 	
 	var attrDict = new Dict();
-	attrDict.name = dictname;
-	
+	attrDict.name = uid + '.attr';
+
 	parameter_UID = attrDict.get('uid');
 	// set callback return address on outlet 0
 	outlet(0, 'send', parameter_UID + ".param.declareWithAttr.done");
