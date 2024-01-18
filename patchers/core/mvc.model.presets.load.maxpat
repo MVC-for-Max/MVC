@@ -2,8 +2,8 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 9,
-			"minor" : 0,
+			"major" : 8,
+			"minor" : 6,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
@@ -40,6 +40,18 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 88.0, 135.0, 62.0, 22.0 ],
+					"text" : "route type"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-8",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -68,8 +80,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 152.0, 316.0, 118.0, 22.0 ],
+					"outlettype" : [ "23042.channel.filter" ],
+					"patching_rect" : [ 152.0, 316.0, 120.0, 22.0 ],
 					"text" : "t #1"
 				}
 
@@ -106,7 +118,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 281.0, 41.0, 30.0, 30.0 ]
+					"patching_rect" : [ 281.0, 23.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -129,7 +141,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 54.0, 74.0, 22.0, 22.0 ],
+					"patching_rect" : [ 49.0, 52.0, 22.0, 22.0 ],
 					"text" : "t b"
 				}
 
@@ -140,7 +152,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 159.0, 428.0, 77.0, 20.0 ],
+					"patching_rect" : [ 161.0, 425.0, 77.0, 20.0 ],
 					"text" : "done loading"
 				}
 
@@ -153,7 +165,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 129.0, 457.0, 30.0, 30.0 ]
+					"patching_rect" : [ 129.0, 425.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -166,7 +178,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 54.0, 41.0, 30.0, 30.0 ]
+					"patching_rect" : [ 49.0, 19.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -209,7 +221,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 122.0, 190.0, 120.0, 22.0 ],
-					"text" : "name $2.presets.dict"
+					"text" : "name $1.presets.dict"
 				}
 
 			}
@@ -220,7 +232,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 54.0, 102.0, 84.0, 22.0 ],
+					"patching_rect" : [ 49.0, 80.0, 84.0, 22.0 ],
 					"text" : "zl reg get type"
 				}
 
@@ -232,15 +244,15 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 54.0, 129.0, 155.0, 22.0 ],
+					"patching_rect" : [ 49.0, 107.0, 176.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
-						"legacy" : 0,
+						"legacy" : 1,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "dict #1.attr"
+					"text" : "dict #1.attr @legacy 1 @quiet 1"
 				}
 
 			}
@@ -254,7 +266,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
+					"destination" : [ "obj-3", 0 ],
 					"source" : [ "obj-12", 1 ]
 				}
 
@@ -284,6 +296,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-28", 0 ],
 					"source" : [ "obj-29", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"source" : [ "obj-3", 0 ]
 				}
 
 			}
