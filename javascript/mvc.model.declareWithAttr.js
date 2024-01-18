@@ -99,11 +99,11 @@ function declaremodel(dictname){
 	}
 	// *First*, send private init to inputs (param, states and messages)
 	// so that they can preempt sub-models initialization
-	outlet(3, model_UID.toString()+".i", currentAddresses.length > 0);
+	outlet(3, model_UID.toString(), currentAddresses.length > 0);
 
 	// *Then*, send private init to (sub)models
 	// so that submodels not depending on model parameters will be initialized too
-	outlet(2, model_UID.toString()+".i", currentAddresses.length > 0);
+	outlet(2, model_UID.toString(), currentAddresses.length > 0);
 
 	// *Finally*, send initializers to public (remotes and views)
 	for (var i = 0; i < (currentAddresses.length); i++) {
