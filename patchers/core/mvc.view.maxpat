@@ -6266,7 +6266,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 974.0, 127.0, 619.0, 684.0 ],
+						"rect" : [ 974.0, 127.0, 560.0, 392.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -7345,6 +7345,18 @@
 														"assistshowspatchername" : 0,
 														"boxes" : [ 															{
 																"box" : 																{
+																	"id" : "obj-3",
+																	"linecount" : 4,
+																	"maxclass" : "comment",
+																	"numinlets" : 1,
+																	"numoutlets" : 0,
+																	"patching_rect" : [ 110.0, 40.0, 150.0, 60.0 ],
+																	"text" : "don't send to addresses in view  (we might feedback loop init in case the address is the root model)"
+																}
+
+															}
+, 															{
+																"box" : 																{
 																	"id" : "obj-5",
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
@@ -7387,7 +7399,7 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 5,
 																	"outlettype" : [ "dictionary", "", "", "", "" ],
-																	"patching_rect" : [ 50.0, 127.0, 144.0, 22.0 ],
+																	"patching_rect" : [ 50.0, 127.0, 144.0, 35.0 ],
 																	"saved_object_attributes" : 																	{
 																		"embed" : 0,
 																		"legacy" : 0,
@@ -7407,7 +7419,7 @@
 																	"maxclass" : "inlet",
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
-																	"outlettype" : [ "bang" ],
+																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
@@ -7463,7 +7475,7 @@
  ]
 													}
 ,
-													"patching_rect" : [ 104.0, 314.0, 90.0, 22.0 ],
+													"patching_rect" : [ 100.5, 308.0, 90.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"description" : "",
 														"digest" : "",
@@ -7879,7 +7891,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
-													"outlettype" : [ "15104.view", "bang" ],
+													"outlettype" : [ "5618.view", "bang" ],
 													"patching_rect" : [ 40.0, 279.0, 100.0, 22.0 ],
 													"text" : "t #1 b"
 												}
@@ -8076,13 +8088,6 @@
 												"patchline" : 												{
 													"destination" : [ "obj-15", 0 ],
 													"source" : [ "obj-4", 1 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-24", 0 ],
-													"source" : [ "obj-6", 1 ]
 												}
 
 											}
