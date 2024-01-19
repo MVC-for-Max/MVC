@@ -1,7 +1,7 @@
 // mvc.parameter.declare.js
 
 inlets = 1;
-outlets = 4;
+outlets = 1;
 
 _MVC_VERSION = 0.4;
 
@@ -79,7 +79,6 @@ function declaremodel(dictname){
 		parametersValuesDict.remove(theAdd);
 		statesValuesDict.remove(theAdd);
 		//inputsDict.remove(theAdd);
-		outlet(1, missingAdresses[i], 0); // public un-init signal to missing addresses (for views)
 		//post('removing', theAdd, '\n')
 	}
 
@@ -96,18 +95,6 @@ function declaremodel(dictname){
 		var addressUID = [model_UID, i + 1];
 		// parametersDict.replace(theAdd + "::uid", addressUID);
 		modelDict.replace(theAdd + "::uid", addressUID);
-	}
-	// *First*, send private init to inputs (param, states and messages)
-	// so that they can preempt sub-models initialization
-	outlet(3, model_UID.toString(), currentAddresses.length > 0);
-
-	// *Then*, send private init to (sub)models
-	// so that submodels not depending on model parameters will be initialized too
-	outlet(2, model_UID.toString(), currentAddresses.length > 0);
-
-	// *Finally*, send initializers to public (remotes and views)
-	for (var i = 0; i < (currentAddresses.length); i++) {
-		outlet(1, currentAddresses[i], 1);	
 	}
 	
 	// return 1 if init succeed
