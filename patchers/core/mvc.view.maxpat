@@ -56,7 +56,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 216.0, 87.0, 345.0, 247.0 ],
+						"rect" : [ 216.0, 87.0, 321.0, 249.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -242,7 +242,7 @@
 										"lines" : [  ]
 									}
 ,
-									"patching_rect" : [ 278.0, 59.0, 37.0, 22.0 ],
+									"patching_rect" : [ 140.0, 77.0, 37.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -261,7 +261,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 185.0, 142.0, 130.0, 22.0 ],
+									"patching_rect" : [ 47.0, 119.0, 130.0, 22.0 ],
 									"text" : "append #1"
 								}
 
@@ -272,44 +272,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 52.0, 214.0, 221.0, 20.0 ],
+									"patching_rect" : [ 37.0, 189.0, 221.0, 20.0 ],
 									"text" : "recall preset-name addresses @options"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-16",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 42.0, 93.0, 34.0, 22.0 ],
-									"text" : "sel 1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-21",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 42.0, 117.0, 137.0, 22.0 ],
-									"text" : "v mvc.is_master_device"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-28",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 42.0, 142.0, 139.0, 22.0 ],
-									"text" : "send $1.preset-manager"
 								}
 
 							}
@@ -319,8 +283,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 185.0, 184.0, 49.0, 22.0 ],
-									"text" : "forward"
+									"patching_rect" : [ 47.0, 161.0, 166.0, 22.0 ],
+									"text" : "s mvc.device.preset-manager"
 								}
 
 							}
@@ -344,7 +308,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 42.0, 55.0, 30.0, 30.0 ]
+									"patching_rect" : [ 47.0, 55.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -355,7 +319,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 185.0, 117.0, 52.0, 22.0 ],
+									"patching_rect" : [ 47.0, 94.0, 52.0, 22.0 ],
 									"text" : "gate 1 0"
 								}
 
@@ -369,7 +333,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 218.0, 55.0, 30.0, 30.0 ]
+									"patching_rect" : [ 80.0, 55.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -383,38 +347,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-21", 0 ],
-									"source" : [ "obj-16", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-28", 0 ],
-									"source" : [ "obj-21", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-11", 0 ],
-									"midpoints" : [ 51.5, 173.0, 194.5, 173.0 ],
-									"source" : [ "obj-28", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-16", 0 ],
-									"order" : 1,
-									"source" : [ "obj-38", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"order" : 0,
 									"source" : [ "obj-38", 0 ]
 								}
 
@@ -6478,6 +6411,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-96",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
@@ -7990,7 +7924,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
-													"outlettype" : [ "ttt", "bang" ],
+													"outlettype" : [ "int", "bang" ],
 													"patching_rect" : [ 40.0, 279.0, 100.0, 22.0 ],
 													"text" : "t #1 b"
 												}

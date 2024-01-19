@@ -373,8 +373,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 292.0, 305.0, 131.0, 22.0 ],
-									"text" : "refer $1.pendingNodes"
+									"patching_rect" : [ 292.0, 305.0, 129.0, 22.0 ],
+									"text" : "refer $1.pendingInputs"
 								}
 
 							}
@@ -703,7 +703,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 69.0, 114.0, 111.0, 22.0 ],
+									"patching_rect" : [ 69.0, 114.0, 111.0, 35.0 ],
 									"text" : "zl.reg remove #1"
 								}
 
@@ -727,8 +727,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 226.0, 114.0, 131.0, 22.0 ],
-									"text" : "refer $1.pendingNodes"
+									"patching_rect" : [ 226.0, 114.0, 129.0, 22.0 ],
+									"text" : "refer $1.pendingInputs"
 								}
 
 							}
@@ -757,7 +757,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 214.0, 488.0, 22.0 ],
+									"patching_rect" : [ 50.0, 214.0, 488.0, 35.0 ],
 									"text" : "zl.reg couldn't initialize message with uid #0 as its address is already in the namespace."
 								}
 
@@ -1111,8 +1111,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 235.0, 125.0, 131.0, 22.0 ],
-									"text" : "refer $1.pendingNodes"
+									"patching_rect" : [ 235.0, 125.0, 129.0, 22.0 ],
+									"text" : "refer $1.pendingInputs"
 								}
 
 							}
@@ -1350,8 +1350,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 143.75, 155.0, 98.0, 22.0 ],
-									"text" : "send $1.updated"
+									"patching_rect" : [ 143.75, 155.0, 159.0, 22.0 ],
+									"text" : "send $1.childInput.initialized"
 								}
 
 							}
