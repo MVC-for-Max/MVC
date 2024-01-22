@@ -496,7 +496,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "int" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 241.0, 57.0, 30.0, 30.0 ]
 								}
 
@@ -705,7 +705,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 197.0, 88.0, 30.0, 30.0 ]
 				}
 
@@ -717,7 +717,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "int", "int" ],
-					"patching_rect" : [ 352.0, 359.0, 48.0, 22.0 ],
+					"patching_rect" : [ 383.0, 359.0, 48.0, 22.0 ],
 					"text" : "change"
 				}
 
@@ -729,7 +729,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "int" ],
-					"patching_rect" : [ 222.0, 335.0, 149.0, 22.0 ],
+					"patching_rect" : [ 222.0, 335.0, 180.0, 22.0 ],
 					"text" : "t b i"
 				}
 
@@ -753,7 +753,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 352.0, 384.0, 59.0, 22.0 ],
+					"patching_rect" : [ 383.0, 384.0, 59.0, 22.0 ],
 					"text" : "send $1.r"
 				}
 
@@ -761,12 +761,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-22",
-					"maxclass" : "message",
-					"numinlets" : 2,
+					"linecount" : 2,
+					"maxclass" : "newobj",
+					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 307.0, 384.0, 41.0, 22.0 ],
-					"text" : "set $1"
+					"patching_rect" : [ 307.0, 371.0, 55.0, 35.0 ],
+					"text" : "prepend set"
 				}
 
 			}
@@ -827,20 +828,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 424.0, 385.0, 22.0, 22.0 ],
+					"patching_rect" : [ 455.0, 385.0, 22.0, 22.0 ],
 					"text" : "t 1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-11",
-					"maxclass" : "button",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 424.0, 331.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -899,7 +888,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 448.0, 364.0, 114.0, 64.0 ],
+					"patching_rect" : [ 479.0, 364.0, 114.0, 64.0 ],
 					"text" : "If we set all mvc.remote's namespace, set hetero to 0."
 				}
 
@@ -935,7 +924,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 222.0, 270.0, 220.999999999999943, 22.0 ],
+					"patching_rect" : [ 222.0, 270.0, 252.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"precision" : 6
@@ -984,13 +973,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-20", 0 ],
 					"source" : [ "obj-10", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-2", 0 ],
-					"source" : [ "obj-11", 0 ]
 				}
 
 			}
@@ -1154,7 +1136,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
+					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-53", 3 ]
 				}
 
