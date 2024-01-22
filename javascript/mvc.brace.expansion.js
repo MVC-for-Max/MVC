@@ -140,7 +140,7 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 	else {
 		expandedAddresses = childdict.expandedAddresses ?? [];
 	}
-	//Max.post("expandedAddresses", expandedAddresses);
+	//Max.post("expandedAddresses", uid, expandedAddresses);
 
 
 	/*********************************************************
@@ -182,7 +182,7 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 		// grabbing previous addresses
 		absoluteAddresslist = childdict.absoluteAddresslist ?? [];
 	}
-	//Max.post("addressToExpand", addressToExpand);
+	//Max.post("absoluteAddresslist", uid, absoluteAddresslist);
 
 	//childdict.initpath = commonPath(addresslist);
 
@@ -217,7 +217,7 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 		addresslist = absoluteAddresslist;
 	}
 
-	//Max.post("filteredAddresses", addresslist);
+	//Max.post("filteredAddresses", uid, addresslist);
 
 	//const addressAsArray = splitStrings(addresslist, '/');
 	//const test = getValueFromPath(inputsdict, addresslist[0] + '/uid');
