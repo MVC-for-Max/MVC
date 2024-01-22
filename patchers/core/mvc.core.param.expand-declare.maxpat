@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 374.0, 202.0, 934.0, 775.0 ],
+		"rect" : [ 632.0, 207.0, 934.0, 775.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -1174,24 +1174,23 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-23",
-									"maxclass" : "message",
+									"maxclass" : "newobj",
 									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 109.0, 222.0, 109.0, 22.0 ],
-									"text" : "remove addresslist"
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 109.0, 222.0, 142.0, 22.0 ],
+									"text" : "zl.reg remove addresslist"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-24",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 5,
 									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 109.0, 252.0, 129.0, 35.0 ],
+									"patching_rect" : [ 109.0, 252.0, 178.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"legacy" : 1,
