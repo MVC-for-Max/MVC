@@ -437,7 +437,7 @@
 					"fontsize" : 10.0,
 					"hint" : "mcCascadeHelper/myFunkyMcCascade",
 					"id" : "obj-19",
-					"items" : "<empty>",
+					"items" : [ "(ADDRESS", "LIST)", ",", "<separator>", ",", "mcCascadeHelper/myFunkyMcCascade/channel.1" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -5404,7 +5404,7 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "mvc.GUI.activeToggle.maxpat",
+					"name" : "mvc.GUI.ON.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
@@ -6175,12 +6175,12 @@
 					"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"bgfillcolor_proportion" : 0.5,
 					"bgfillcolor_type" : "color",
-					"fontface" : 3,
+					"fontface" : 1,
 					"fontname" : "Arial Bold",
-					"hint" : "no target",
+					"hint" : "mcCascadeHelper/myFunkyMcCascade/channel.1",
 					"id" : "obj-23",
 					"ignoreclick" : 1,
-					"items" : "no target",
+					"items" : "channel.1",
 					"maxclass" : "umenu",
 					"menumode" : 1,
 					"numinlets" : 1,
@@ -6190,7 +6190,7 @@
 					"patching_rect" : [ 203.0, 340.5, 86.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 13.0, 0.0, 122.0, 22.0 ],
-					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
 			}
@@ -6221,7 +6221,7 @@
 , 			{
 				"box" : 				{
 					"angle" : 270.0,
-					"bgcolor" : [ 0.873, 0.866, 0.858, 1.0 ],
+					"bgcolor" : [ 0.8, 0.827, 0.859, 1.0 ],
 					"border" : 1,
 					"bordercolor" : [ 0.56078431372549, 0.619607843137255, 0.709803921568627, 1.0 ],
 					"id" : "obj-14",
