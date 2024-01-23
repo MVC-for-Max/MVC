@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 463.0, 491.0, 871.0, 398.0 ],
+		"rect" : [ 462.0, 491.0, 871.0, 398.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -8183,7 +8183,7 @@
 																		}
 ,
 																		"classnamespace" : "box",
-																		"rect" : [ 279.0, 236.0, 343.0, 313.0 ],
+																		"rect" : [ 279.0, 236.0, 595.0, 368.0 ],
 																		"bglocked" : 0,
 																		"openinpresentation" : 0,
 																		"default_fontsize" : 12.0,
@@ -8238,12 +8238,12 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-32",
-																					"maxclass" : "message",
+																					"maxclass" : "newobj",
 																					"numinlets" : 2,
-																					"numoutlets" : 1,
-																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 27.0, 90.0, 99.0, 22.0 ],
-																					"text" : "contains address"
+																					"numoutlets" : 2,
+																					"outlettype" : [ "", "" ],
+																					"patching_rect" : [ 27.0, 90.0, 132.0, 22.0 ],
+																					"text" : "zl.reg contains address"
 																				}
 
 																			}
