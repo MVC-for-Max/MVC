@@ -437,7 +437,7 @@
 					"fontsize" : 10.0,
 					"hint" : "mcCascadeHelper/myFunkyMcCascade",
 					"id" : "obj-19",
-					"items" : [ "(ADDRESS", "LIST)", ",", "<separator>", ",", "mcCascadeHelper/myFunkyMcCascade/channel.1" ],
+					"items" : [ "(ADDRESS", "LIST)", ",", "<separator>", ",", "mcCascadeHelper/myFunkyMcCascade" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -5434,7 +5434,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 109.0, 154.0, 431.0, 307.0 ],
+						"rect" : [ 109.0, 154.0, 452.0, 430.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5463,6 +5463,30 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-7",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 145.0, 250.0, 183.0, 22.0 ],
+									"text" : "prepend thispatcher window size"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
+									"patching_rect" : [ 42.0, 217.0, 122.0, 22.0 ],
+									"text" : "t b l"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-1",
 									"maxclass" : "newobj",
@@ -5547,23 +5571,11 @@
 								"box" : 								{
 									"id" : "obj-58",
 									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 42.0, 240.266717325227972, 115.0, 22.0 ],
-									"text" : "prepend thispatcher"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-53",
-									"maxclass" : "message",
 									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 42.0, 214.177811550152001, 215.0, 22.0 ],
-									"text" : "window size $1 $2 $3 $4, window exec"
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 42.0, 277.0, 172.0, 22.0 ],
+									"text" : "zl.reg thispatcher window exec"
 								}
 
 							}
@@ -5613,7 +5625,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 42.0, 266.355623100304001, 30.0, 30.0 ]
+									"patching_rect" : [ 42.0, 324.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -5643,15 +5655,22 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-20", 0 ],
-									"source" : [ "obj-5", 0 ]
+									"destination" : [ "obj-58", 0 ],
+									"source" : [ "obj-4", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-58", 0 ],
-									"source" : [ "obj-53", 0 ]
+									"destination" : [ "obj-7", 0 ],
+									"source" : [ "obj-4", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-20", 0 ],
+									"source" : [ "obj-5", 0 ]
 								}
 
 							}
@@ -5664,6 +5683,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-93", 0 ],
+									"source" : [ "obj-7", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-74", 1 ],
 									"source" : [ "obj-73", 0 ]
 								}
@@ -5671,7 +5697,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-53", 0 ],
+									"destination" : [ "obj-4", 0 ],
 									"source" : [ "obj-74", 0 ]
 								}
 
@@ -6175,12 +6201,12 @@
 					"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"bgfillcolor_proportion" : 0.5,
 					"bgfillcolor_type" : "color",
-					"fontface" : 1,
+					"fontface" : 3,
 					"fontname" : "Arial Bold",
-					"hint" : "mcCascadeHelper/myFunkyMcCascade/channel.1",
+					"hint" : "no target",
 					"id" : "obj-23",
 					"ignoreclick" : 1,
-					"items" : "channel.1",
+					"items" : "no target",
 					"maxclass" : "umenu",
 					"menumode" : 1,
 					"numinlets" : 1,
@@ -6190,7 +6216,7 @@
 					"patching_rect" : [ 203.0, 340.5, 86.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 13.0, 0.0, 122.0, 22.0 ],
-					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
 
 			}
@@ -6221,7 +6247,7 @@
 , 			{
 				"box" : 				{
 					"angle" : 270.0,
-					"bgcolor" : [ 0.8, 0.827, 0.859, 1.0 ],
+					"bgcolor" : [ 0.873, 0.866, 0.858, 1.0 ],
 					"border" : 1,
 					"bordercolor" : [ 0.56078431372549, 0.619607843137255, 0.709803921568627, 1.0 ],
 					"id" : "obj-14",
