@@ -28,3 +28,5 @@ Max.addHandler("createfolder", (thepath, foldername) => {
 	})
 
 });
+
+Max.outlet('ready');
