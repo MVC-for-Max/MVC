@@ -133,11 +133,23 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-1",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 75.0, 118.0, 41.0, 22.0 ],
+													"text" : "qlim 0"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-2",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 42.0, 173.0, 166.0, 22.0 ],
+													"patching_rect" : [ 42.0, 196.0, 166.0, 22.0 ],
 													"text" : "s mvc.device.preset-manager"
 												}
 
@@ -149,7 +161,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 42.0, 144.0, 159.0, 22.0 ],
+													"patching_rect" : [ 42.0, 167.0, 159.0, 22.0 ],
 													"text" : "append #1"
 												}
 
@@ -160,7 +172,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 42.0, 199.0, 221.0, 20.0 ],
+													"patching_rect" : [ 42.0, 222.0, 221.0, 20.0 ],
 													"text" : "recall preset-name addresses @options"
 												}
 
@@ -195,7 +207,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 42.0, 119.0, 52.0, 22.0 ],
+													"patching_rect" : [ 42.0, 142.0, 52.0, 22.0 ],
 													"text" : "gate 1 0"
 												}
 
@@ -216,6 +228,13 @@
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
+													"destination" : [ "obj-9", 1 ],
+													"source" : [ "obj-1", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-2", 0 ],
 													"source" : [ "obj-10", 0 ]
 												}
@@ -230,7 +249,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-9", 1 ],
+													"destination" : [ "obj-1", 0 ],
 													"source" : [ "obj-42", 0 ]
 												}
 
@@ -1595,6 +1614,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-38",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 5,
@@ -8579,6 +8599,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-4",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 5,
