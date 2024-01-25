@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 859.0, 384.0, 640.0, 480.0 ],
+		"rect" : [ 774.0, 430.0, 640.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -367,8 +367,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 80.0, 118.0, 191.0, 23.0 ],
-					"text" : "load testingSpeed2-MVC"
+					"patching_rect" : [ 80.0, 118.0, 120.0, 23.0 ],
+					"text" : "load testingSpeed2"
 				}
 
 			}
