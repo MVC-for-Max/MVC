@@ -71,6 +71,7 @@ function declare(uid){
 
 	// Replace **all** current addresses in inputs dict, 
 	// as their index might have changed if some intermediate addresses were removed.
+	// and initialize their value to default if they did not exist previously
 	for (var i = 0; i < (currentAddresses.length); i++) {
 		var theAdd = currentAddresses[i].replace(/\//g, '::');
 		var addressUID = [parameter_UID, i + 1];
@@ -79,12 +80,8 @@ function declare(uid){
 		if (!(parametersValuesDict.contains(theAdd))){
 			// if param does not have a value, recall default
 			outlet(2, i + 1, parameter_UID);
+			// parametersValuesDict.replace(theAdd)
 			//post("Recalling default for ", theAdd,'@',parameter_UID, i+1, "\n")
-			}
-		else {
-			// else, recall current
-			outlet(3, i + 1, parameter_UID);
-			//post("Recalling current for ", theAdd,'@',parameter_UID, i+1, "\n")
 		}
 	}
 	
