@@ -40,6 +40,42 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-17",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 39.25, 334.0, 133.0, 22.0 ],
+					"text" : "prepend replace parent"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 39.25, 304.0, 57.0, 22.0 ],
+					"text" : "tosymbol"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 39.25, 278.0, 133.0, 22.0 ],
+					"text" : "zl.reg #1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-5",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -57,45 +93,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "int" ],
+					"outlettype" : [ "int", "" ],
 					"patching_rect" : [ 250.0, 106.0, 203.0, 35.0 ],
 					"text" : "mvc.core.state.expand-declare #0"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-16",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 39.5, 338.0, 102.0, 22.0 ],
-					"text" : "replace parent $1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-11",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 39.5, 312.0, 57.0, 22.0 ],
-					"text" : "tosymbol"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-10",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 39.5, 282.0, 107.0, 22.0 ],
-					"text" : "#1"
 				}
 
 			}
@@ -119,7 +119,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 192.5, 278.0, 234.0, 89.0 ],
+					"patching_rect" : [ 192.5, 278.0, 246.0, 89.0 ],
 					"text" : "replace uid #0,\nreplace parent #1,\nreplace address chained-ON,\nreplace mvc-type state,\nreplace type bool,\nreplace description \"Chained ON value\",\nreplace default 1,\nreplace unit none,\nreplace address_has_changed 1"
 				}
 
@@ -384,7 +384,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "int" ],
 									"patching_rect" : [ 194.5, 21.0, 30.0, 30.0 ]
 								}
 
@@ -479,7 +479,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"outlettype" : [ "int" ],
 													"patching_rect" : [ 176.0, 66.0, 30.0, 30.0 ]
 												}
 
@@ -746,7 +746,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"outlettype" : [ "int" ],
 													"patching_rect" : [ 173.5, 66.0, 30.0, 30.0 ]
 												}
 
@@ -1050,7 +1050,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-16", 0 ],
+					"destination" : [ "obj-17", 0 ],
 					"source" : [ "obj-11", 0 ]
 				}
 
@@ -1072,7 +1072,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
-					"source" : [ "obj-16", 0 ]
+					"source" : [ "obj-17", 0 ]
 				}
 
 			}
