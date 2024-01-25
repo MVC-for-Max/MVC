@@ -34,10 +34,10 @@ modelAddressDict.quiet = 1;
 	// post("add", addresses, "\n");
 // }
 
-function declaremodel(dictname){
+function declaremodel(uid){
 
 	var attrDict = new Dict();
-	attrDict.name = dictname;
+	attrDict.name = uid + '.attr';
 	
 	model_UID = attrDict.get('uid');
 	// set callback return address on outlet 0
@@ -98,7 +98,7 @@ function declaremodel(dictname){
 	}
 	
 	// return 1 if init succeed
-	outlet(0, 1);
+	outlet(0, currentAddresses.length);
 }
 
 

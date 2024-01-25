@@ -5209,6 +5209,8 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 1,
 																		"defer" : 1,
+																		"node_bin_path" : "",
+																		"npm_bin_path" : "",
 																		"watch" : 1
 																	}
 ,
@@ -12124,7 +12126,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-22",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 2,
@@ -22274,7 +22275,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 218.0, 693.0, 830.0, 690.0 ],
+														"rect" : [ 218.0, 326.0, 830.0, 690.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 12.0,
@@ -22381,20 +22382,8 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 180.0, 66.0, 49.0, 22.0 ],
+																	"patching_rect" : [ 103.0, 40.0, 49.0, 22.0 ],
 																	"text" : "toto.attr"
-																}
-
-															}
-, 															{
-																"box" : 																{
-																	"id" : "obj-17",
-																	"maxclass" : "newobj",
-																	"numinlets" : 2,
-																	"numoutlets" : 2,
-																	"outlettype" : [ "", "" ],
-																	"patching_rect" : [ 60.0, 68.0, 91.0, 22.0 ],
-																	"text" : "route dictionary"
 																}
 
 															}
@@ -22458,7 +22447,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 60.0, 112.0, 128.0, 22.0 ],
+																	"patching_rect" : [ 60.0, 77.0, 128.0, 22.0 ],
 																	"text" : "prepend declaremodel"
 																}
 
@@ -22482,7 +22471,7 @@
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 60.0, 170.0, 49.0, 22.0 ],
+																	"patching_rect" : [ 60.0, 135.0, 49.0, 22.0 ],
 																	"text" : "forward"
 																}
 
@@ -22494,7 +22483,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 60.0, 141.0, 175.0, 22.0 ],
+																	"patching_rect" : [ 60.0, 106.0, 175.0, 22.0 ],
 																	"saved_object_attributes" : 																	{
 																		"filename" : "mvc.model.declareWithAttr.js",
 																		"parameter_enable" : 0
@@ -22507,7 +22496,7 @@
  ],
 														"lines" : [ 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-17", 0 ],
+																	"destination" : [ "obj-34", 0 ],
 																	"source" : [ "obj-1", 0 ]
 																}
 
@@ -22551,13 +22540,6 @@
 																"patchline" : 																{
 																	"destination" : [ "obj-11", 0 ],
 																	"source" : [ "obj-16", 0 ]
-																}
-
-															}
-, 															{
-																"patchline" : 																{
-																	"destination" : [ "obj-34", 0 ],
-																	"source" : [ "obj-17", 0 ]
 																}
 
 															}
@@ -22651,7 +22633,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 84.0, 277.0, 767.0, 550.0 ],
+										"rect" : [ 811.0, 466.0, 767.0, 550.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -24305,7 +24287,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-22",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 2,
@@ -30410,8 +30391,6 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 0,
 																		"defer" : 0,
-																		"node_bin_path" : "",
-																		"npm_bin_path" : "",
 																		"watch" : 0
 																	}
 ,
@@ -33022,7 +33001,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-22",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 2,
@@ -33975,6 +33953,8 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 1,
 																		"defer" : 1,
+																		"node_bin_path" : "",
+																		"npm_bin_path" : "",
 																		"watch" : 1
 																	}
 ,
@@ -34870,7 +34850,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 32.0, 87.0, 733.0, 739.0 ],
+						"rect" : [ 245.0, -900.0, 733.0, 739.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -34898,6 +34878,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-4",
@@ -36358,7 +36339,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "bang", "mvc.root", "mcCascadeHelper" ],
+													"outlettype" : [ "bang", "mvc.root", "mcbiquadHelper" ],
 													"patching_rect" : [ 57.0, 73.0, 212.0, 22.0 ],
 													"text" : "t b mvc.root #1"
 												}
@@ -36852,7 +36833,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"outlettype" : [ "mcCascadeHelper" ],
+													"outlettype" : [ "mcbiquadHelper" ],
 													"patching_rect" : [ 50.0, 124.891358024691357, 278.0, 22.0 ],
 													"text" : "t #1"
 												}
@@ -37685,8 +37666,6 @@
 													"saved_object_attributes" : 													{
 														"autostart" : 0,
 														"defer" : 0,
-														"node_bin_path" : "",
-														"npm_bin_path" : "",
 														"watch" : 0
 													}
 ,
