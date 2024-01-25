@@ -58,7 +58,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "int" ],
+					"outlettype" : [ "int", "" ],
 					"patching_rect" : [ 203.0, 158.0, 114.0, 49.0 ],
 					"text" : "mvc.core.param.expand-declare #0"
 				}
@@ -94,7 +94,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 724.0, 475.0, 701.0, 501.0 ],
+						"rect" : [ 724.0, 475.0, 474.0, 294.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -125,12 +125,12 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-1",
-									"maxclass" : "message",
-									"numinlets" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 55.166666666666742, 171.0, 102.0, 22.0 ],
-									"text" : "replace parent $1"
+									"patching_rect" : [ 50.0, 159.0, 133.0, 22.0 ],
+									"text" : "prepend replace parent"
 								}
 
 							}
@@ -141,7 +141,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 55.166666666666742, 145.0, 57.0, 22.0 ],
+									"patching_rect" : [ 50.0, 129.0, 57.0, 22.0 ],
 									"text" : "tosymbol"
 								}
 
@@ -149,12 +149,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-10",
-									"maxclass" : "message",
+									"maxclass" : "newobj",
 									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 55.166666666666742, 115.0, 107.0, 22.0 ],
-									"text" : "#1"
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 50.0, 103.0, 133.0, 22.0 ],
+									"text" : "zl.reg #1"
 								}
 
 							}
@@ -165,7 +165,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 55.166666666666742, 58.229412213934779, 58.0, 22.0 ],
+									"patching_rect" : [ 50.0, 65.0, 58.0, 22.0 ],
 									"text" : "loadbang"
 								}
 
@@ -173,12 +173,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-16",
-									"linecount" : 3,
+									"linecount" : 8,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 174.0, 115.0, 525.0, 49.0 ],
+									"patching_rect" : [ 199.0, 103.0, 195.0, 116.0 ],
 									"text" : "replace uid #0,\nreplace address preset-description,\nreplace mvc-type parameter,\nreplace type string,\nreplace description \"this model's preset description\",\nreplace default undefined,\nreplace unit none,\nreplace address_has_changed 1"
 								}
 
@@ -190,7 +190,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 5,
 									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 55.0, 238.0, 85.0, 22.0 ],
+									"patching_rect" : [ 50.0, 211.0, 85.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"legacy" : 1,
@@ -455,7 +455,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "int" ],
 									"patching_rect" : [ 165.5, 22.0, 30.0, 30.0 ]
 								}
 
@@ -550,7 +550,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"outlettype" : [ "int" ],
 													"patching_rect" : [ 173.5, 66.0, 30.0, 30.0 ]
 												}
 
