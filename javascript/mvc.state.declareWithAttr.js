@@ -1,7 +1,7 @@
 // mvc.state.declare.js
 
 inlets = 1;
-outlets = 4;
+outlets = 3;
 
 _MVC_VERSION = 0.4;
 	
@@ -21,10 +21,10 @@ var stateAddressDict = new Dict();
 stateAddressDict.name = "inputAddressDict";
 stateAddressDict.quiet = 1;
 
-function declare(dictname){
+function declare(uid){
 	
 	var attrDict = new Dict();
-	attrDict.name = dictname;
+	attrDict.name = uid + '.attr';
 	
 	state_UID = attrDict.get('uid');
 	// set callback return address on outlet 0
@@ -77,10 +77,6 @@ function declare(dictname){
 		if (!(statesValuesDict.contains(theAdd))){
 			// if state does not have a value, recall default
 			outlet(2, i + 1, state_UID);
-			}
-		else {
-			// else, recall current
-			outlet(3, i + 1, state_UID);
 		}
 	}
 	

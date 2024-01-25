@@ -1,7 +1,7 @@
 // mvc.parameter.declare.js
 
 inlets = 1;
-outlets = 4;
+outlets = 3;
 
 _MVC_VERSION = 0.4;
 	

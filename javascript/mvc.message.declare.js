@@ -17,10 +17,10 @@ var messageAddressDict = new Dict();
 messageAddressDict.name = "inputAddressDict";
 messageAddressDict.quiet = 1;
 
-function declare(dictname){
+function declare(uid){
 	
 	var attrDict = new Dict();
-	attrDict.name = dictname;
+	attrDict.name = uid + '.attr';
 	
 	message_UID = attrDict.get('uid');
 	// set callback return address on outlet 0
