@@ -226,7 +226,9 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 	var remotelist = [];
 	for (let i = 0; i < addresslist.length; i++) {
 		const uidIndex = getValueFromPath(inputsdict, addresslist[i] + '/uid') ?? -1;
-		remotelist.push([i+1].concat(uidIndex));
+		if (uidIndex != -1){
+			remotelist.push([i+1].concat(uidIndex));
+		}
 	}
 	//Max.post("remotelist", remotelist)
 
