@@ -104,5 +104,46 @@
 		}
 
 	}
+,
+	"Four filters on channel 1" : 	{
+		"snapshotHelper" : 		{
+			"myFunkyCascade" : 			{
+				"channel.1" : 				{
+					"nfilters" : 4
+				}
+
+			}
+
+		}
+
+	}
+,
+	"Four harmonics 350Hz" : 	{
+		"snapshotHelper" : 		{
+			"myFunkyCascade" : 			{
+				"channel.1" : 				{
+					"filter.1" : 					{
+						"frequency" : 350.0
+					}
+,
+					"filter.2" : 					{
+						"frequency" : 700.0
+					}
+,
+					"filter.3" : 					{
+						"frequency" : 1400.0
+					}
+,
+					"filter.4" : 					{
+						"frequency" : 2800.0
+					}
+
+				}
+
+			}
+
+		}
+
+	}
 
 }
