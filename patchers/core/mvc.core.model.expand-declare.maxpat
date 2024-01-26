@@ -87,12 +87,12 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-7",
-									"linecount" : 8,
+									"linecount" : 13,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 108.0, 66.0, 242.0, 114.0 ],
-									"text" : "Deferlow so that all pending nodes can register before we continue the init. \nMaybe unnecessary, as the name expansion in node is asynchronous and cause a defer, but this is safer to have it there in case name expansion becomes a synchronous process.\nAlso qlim to avoid multiple iterative init"
+									"patching_rect" : [ 108.0, 66.0, 242.0, 181.0 ],
+									"text" : "Deferlow so that all pending nodes can register before we continue the init. \nMaybe unnecessary, as the name expansion in node is asynchronous and cause a defer, but this is safer to have it there in case name expansion becomes a synchronous process.\nAlso qlim to avoid multiple iterative init.\n\nShould only be in the \"init 1\" case, so that model can properly unregister in the parent's pending node and notify it (the branch \"init 0\" is synchronous)"
 								}
 
 							}
@@ -116,7 +116,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "int" ],
+									"outlettype" : [ "bang" ],
 									"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 								}
 
@@ -151,7 +151,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 134.0, 431.0, 41.0, 22.0 ],
+					"patching_rect" : [ 219.0, 459.0, 41.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -344,7 +344,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-15",
-													"linecount" : 3,
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
@@ -866,7 +866,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-15",
-													"linecount" : 3,
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
@@ -1035,7 +1035,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-13",
-													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -2095,7 +2094,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 70.0, 136.0, 157.0, 22.0 ],
+									"patching_rect" : [ 86.0, 133.0, 157.0, 22.0 ],
 									"text" : "zl.reg replace address none"
 								}
 
@@ -2103,12 +2102,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-62",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 5,
 									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 70.0, 183.0, 188.0, 35.0 ],
+									"patching_rect" : [ 86.0, 165.0, 242.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"legacy" : 1,
@@ -2129,7 +2127,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
+									"patching_rect" : [ 50.0, 62.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -2141,7 +2139,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 50.0, 278.0, 30.0, 30.0 ]
+									"patching_rect" : [ 50.0, 157.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -2422,7 +2420,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 5,
-									"outlettype" : [ "bang", "bang", "bang", "mcCascadeHelper", "clear" ],
+									"outlettype" : [ "bang", "bang", "bang", "int", "clear" ],
 									"patching_rect" : [ 26.0, 74.0, 318.0, 22.0 ],
 									"text" : "t b b b #1 clear"
 								}
@@ -2436,7 +2434,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 366.0, 156.0, 155.0, 22.0 ],
+									"patching_rect" : [ 366.0, 156.0, 109.0, 35.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"precision" : 6
@@ -2823,7 +2821,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-4",
-									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
@@ -3045,7 +3042,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "bang", "" ],
-					"patching_rect" : [ 134.0, 459.0, 189.0, 22.0 ],
+					"patching_rect" : [ 134.0, 431.0, 189.0, 22.0 ],
 					"text" : "sel 0 1"
 				}
 
@@ -3159,7 +3156,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-3",
-									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -4601,7 +4597,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-5",
-													"linecount" : 3,
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 5,
@@ -4932,7 +4928,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
-									"outlettype" : [ "mcCascadeHelper", "bang" ],
+									"outlettype" : [ "int", "bang" ],
 									"patching_rect" : [ 40.0, 353.0, 177.0, 22.0 ],
 									"text" : "t #1 b"
 								}
@@ -5554,7 +5550,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "mcCascadeHelper" ],
+									"outlettype" : [ "int" ],
 									"patching_rect" : [ 50.0, 70.0, 200.0, 22.0 ],
 									"text" : "t #1"
 								}
@@ -5701,7 +5697,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-23", 0 ],
+					"destination" : [ "obj-16", 0 ],
 					"source" : [ "obj-10", 1 ]
 				}
 
@@ -5736,7 +5732,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-10", 0 ],
+					"destination" : [ "obj-23", 0 ],
 					"source" : [ "obj-16", 0 ]
 				}
 
@@ -5852,7 +5848,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-16", 0 ],
+					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-34", 0 ]
 				}
 
