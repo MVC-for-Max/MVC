@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
+			"minor" : 6,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 359.0, 450.0, 801.0, 468.0 ],
+		"rect" : [ 445.0, 313.0, 874.0, 643.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -46,7 +46,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 27.0, 234.0, 157.0, 22.0 ],
+					"patching_rect" : [ 27.0, 234.0, 162.0, 22.0 ],
 					"text" : "mvc.helpfiller mvc.snapshots"
 				}
 
@@ -58,7 +58,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 346.0, 159.0, 121.0, 22.0 ],
+					"patching_rect" : [ 346.0, 159.0, 124.0, 22.0 ],
 					"text" : "jsargs mvc.snapshots"
 				}
 
@@ -105,14 +105,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 801.0, 442.0 ],
+						"rect" : [ 0.0, 26.0, 874.0, 617.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -167,14 +167,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 359.0, 476.0, 801.0, 442.0 ],
+						"rect" : [ 445.0, 339.0, 874.0, 617.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -205,13 +205,148 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-28",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 620.0, 226.0, 170.0, 22.0 ],
+									"text" : "recall \"Four harmonics 350Hz\""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-14",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 604.0, 195.0, 178.0, 22.0 ],
+									"presentation_linecount" : 2,
+									"text" : "recall \"Four filters on channel 1\""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "multichannelsignal" ],
+									"patching_rect" : [ 54.0, 472.0, 68.0, 22.0 ],
+									"text" : "mc.stereo~"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"lastchannelcount" : 1,
+									"maxclass" : "mc.live.gain~",
+									"numinlets" : 1,
+									"numoutlets" : 4,
+									"orientation" : 1,
+									"outlettype" : [ "multichannelsignal", "", "float", "list" ],
+									"parameter_enable" : 1,
+									"patching_rect" : [ 54.0, 420.0, 97.0, 30.0 ],
+									"saved_attribute_attributes" : 									{
+										"valueof" : 										{
+											"parameter_longname" : "mc.live.gain~[3]",
+											"parameter_mmax" : 6.0,
+											"parameter_mmin" : -70.0,
+											"parameter_shortname" : "mc.live.gain~",
+											"parameter_type" : 0,
+											"parameter_unitstyle" : 4
+										}
+
+									}
+,
+									"showname" : 0,
+									"varname" : "mc.live.gain~"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"local" : 1,
+									"maxclass" : "mc.ezdac~",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 54.0, 500.0, 45.0, 45.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"args" : [ "@file", "brushes.aif", "@loop", 1 ],
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-7",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "demosound.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"offset" : [ 0.0, 0.0 ],
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 54.0, 281.0, 225.0, 95.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 265.0, 168.0, 30.0, 22.0 ],
+									"text" : "GUI"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 327.0, 354.0, 30.0, 22.0 ],
+									"text" : "GUI"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "multichannelsignal", "" ],
+									"patching_rect" : [ 54.0, 386.0, 292.0, 22.0 ],
+									"text" : "mvc.mc.cascade~ snapshotHelper myFunkyCascade",
+									"varname" : "mvc.mc.cascade~"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"bubble" : 1,
 									"id" : "obj-19",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 595.0, 200.5, 168.0, 37.0 ],
+									"patching_rect" : [ 646.0, 315.0, 168.0, 37.0 ],
 									"text" : "enable warning of missing params (default 1)"
 								}
 
@@ -224,7 +359,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 569.0, 207.0, 24.0, 24.0 ]
+									"patching_rect" : [ 620.0, 321.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -235,7 +370,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 569.0, 239.5, 67.0, 22.0 ],
+									"patching_rect" : [ 620.0, 354.0, 67.0, 22.0 ],
 									"text" : "warning $1"
 								}
 
@@ -247,7 +382,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 585.0, 171.0, 114.0, 24.0 ],
+									"patching_rect" : [ 636.0, 285.0, 114.0, 24.0 ],
 									"text" : "open the GUI"
 								}
 
@@ -259,7 +394,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 341.0, 306.0, 252.0, 100.0 ],
+									"patching_rect" : [ 392.0, 420.0, 252.0, 100.0 ],
 									"text" : "Beware that a snapshot may try to recall non-existing parameters.\nFor instance, if you first recall \"6 frequencies\" without prior setting of the channelcount, theses frequencies won't be able to be set. \nYou will be warned in the GUI windows in the case such parameters are missing."
 								}
 
@@ -271,7 +406,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 553.0, 173.0, 30.0, 22.0 ],
+									"patching_rect" : [ 604.0, 287.0, 30.0, 22.0 ],
 									"text" : "GUI"
 								}
 
@@ -285,7 +420,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 407.0, 112.0, 114.0, 51.0 ],
+									"patching_rect" : [ 461.0, 124.0, 114.0, 51.0 ],
 									"text" : "Recall snapshot with the load message."
 								}
 
@@ -297,8 +432,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 523.0, 113.0, 107.0, 22.0 ],
-									"text" : "load \"go surround\""
+									"patching_rect" : [ 577.0, 138.0, 116.0, 22.0 ],
+									"text" : "recall \"Go surround\""
 								}
 
 							}
@@ -309,21 +444,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 535.0, 137.0, 115.0, 22.0 ],
-									"text" : "load \"6 frequencies\""
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bgcolor" : [ 1.0, 0.196078431372549, 0.196078431372549, 0.58 ],
-									"fontsize" : 18.0,
-									"id" : "obj-6",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 42.0, 127.0, 290.0, 27.0 ],
-									"text" : "Warning : mvc.snapshots is a draft !"
+									"patching_rect" : [ 593.0, 165.0, 121.0, 22.0 ],
+									"text" : "recall \"6 frequencies\""
 								}
 
 							}
@@ -345,52 +467,14 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-2",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 292.0, 351.5, 30.0, 22.0 ],
-									"text" : "GUI"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"color" : [ 0.501961, 0.501961, 0.501961, 1.0 ],
-									"id" : "obj-1",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 3,
-									"outlettype" : [ "multichannelsignal", "multichannelsignal", "" ],
-									"patching_rect" : [ 24.0, 379.0, 287.0, 22.0 ],
-									"text" : "mvc.mc.cross~ snapshotHelper Xfilter",
-									"varname" : "mvc.mc.LRcrossfilter~"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"fontsize" : 14.0,
 									"id" : "obj-34",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 341.0, 270.5, 201.0, 24.0 ],
+									"patching_rect" : [ 392.0, 385.0, 204.0, 24.0 ],
 									"text" : "mvc.snapshots snapshotHelper"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-5",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 24.0, 195.0, 30.0, 22.0 ],
-									"text" : "GUI"
 								}
 
 							}
@@ -403,40 +487,21 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 24.0, 226.0, 226.0, 29.0 ],
+									"patching_rect" : [ 54.0, 198.0, 230.0, 29.0 ],
 									"text" : "mvc.device snapshotHelper",
 									"varname" : "mvc.device"
 								}
 
 							}
-, 							{
-								"box" : 								{
-									"id" : "obj-14",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 292.0, 276.0, 30.0, 22.0 ],
-									"text" : "GUI"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"color" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
-									"id" : "obj-3",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 24.0, 306.0, 287.0, 22.0 ],
-									"text" : "mvc.mc.cascade~ snapshotHelper TheCascadeFilter",
-									"varname" : "mvc.mc.cascade~"
-								}
-
-							}
  ],
 						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
 								"patchline" : 								{
 									"destination" : [ "obj-34", 1 ],
 									"source" : [ "obj-13", 0 ]
@@ -445,7 +510,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 1 ],
+									"destination" : [ "obj-34", 1 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -466,15 +531,43 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-1", 1 ],
+									"destination" : [ "obj-37", 1 ],
 									"source" : [ "obj-2", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-37", 0 ],
+									"destination" : [ "obj-34", 1 ],
+									"source" : [ "obj-28", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 1 ],
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
 									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-7", 0 ]
 								}
 
 							}
@@ -603,14 +696,28 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-51::obj-37::obj-35::obj-30::obj-18::obj-7" : [ "live.toggle[3]", "live.toggle", 0 ],
+			"obj-51::obj-1::obj-3::obj-25::obj-61::obj-20.1::obj-16::obj-8::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
+			"obj-51::obj-1::obj-3::obj-25::obj-61::obj-20.1::obj-5::obj-49::obj-8::obj-7" : [ "live.toggle[1]", "live.toggle", 0 ],
+			"obj-51::obj-1::obj-3::obj-25::obj-61::obj-20.1::obj-5::obj-5::obj-12::obj-8::obj-7" : [ "live.toggle[7]", "live.toggle", 0 ],
+			"obj-51::obj-5" : [ "mc.live.gain~[3]", "mc.live.gain~", 0 ],
+			"obj-51::obj-7::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
+			"obj-51::obj-7::obj-35" : [ "[5]", "Level", 0 ],
 			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
 
 			}
 ,
 			"parameter_overrides" : 			{
-				"obj-51::obj-37::obj-35::obj-30::obj-18::obj-7" : 				{
-					"parameter_longname" : "live.toggle[3]"
+				"obj-51::obj-1::obj-3::obj-25::obj-61::obj-20.1::obj-16::obj-8::obj-7" : 				{
+					"parameter_longname" : "live.toggle[2]"
+				}
+,
+				"obj-51::obj-1::obj-3::obj-25::obj-61::obj-20.1::obj-5::obj-49::obj-8::obj-7" : 				{
+					"parameter_longname" : "live.toggle[1]"
 				}
 
 			}

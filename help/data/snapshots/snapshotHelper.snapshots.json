@@ -1,0 +1,149 @@
+{
+	"_metadata" : 	{
+		"package-version" : 0.4
+	}
+,
+	"missing param demo" : 	{
+		"snapshotHelper" : 		{
+			"myFunkyCascade" : 			{
+				"channel.1" : 				{
+					"filter.3" : 					{
+						"frequency" : 2980.183238879828878
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+,
+	"tutu" : 	{
+		"snapshotHelper" : 		{
+			"myFunkyCascade" : 			{
+				"channel.1" : 				{
+					"nfilters" : 3,
+					"filter.1" : 					{
+						"frequency" : 1000
+					}
+,
+					"filter.2" : 					{
+						"frequency" : 1000
+					}
+,
+					"filter.3" : 					{
+						"frequency" : 1000
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+,
+	"Go surround" : 	{
+		"snapshotHelper" : 		{
+			"myFunkyCascade" : 			{
+				"channelcount" : "5.1 surround"
+			}
+
+		}
+
+	}
+,
+	"6 frequencies" : 	{
+		"snapshotHelper" : 		{
+			"myFunkyCascade" : 			{
+				"channel.1" : 				{
+					"filter.1" : 					{
+						"frequency" : 109.159667692490459
+					}
+
+				}
+,
+				"channel.2" : 				{
+					"filter.1" : 					{
+						"frequency" : 366.435192270391781
+					}
+
+				}
+,
+				"channel.3" : 				{
+					"filter.1" : 					{
+						"frequency" : 743.567400522555545
+					}
+
+				}
+,
+				"channel.4" : 				{
+					"filter.1" : 					{
+						"frequency" : 1616.919651554276015
+					}
+
+				}
+,
+				"channel.5" : 				{
+					"filter.1" : 					{
+						"frequency" : 4240.259461473145166
+					}
+
+				}
+,
+				"channel.6" : 				{
+					"filter.1" : 					{
+						"frequency" : 8995.69811362182736
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+,
+	"Four filters on channel 1" : 	{
+		"snapshotHelper" : 		{
+			"myFunkyCascade" : 			{
+				"channel.1" : 				{
+					"nfilters" : 4
+				}
+
+			}
+
+		}
+
+	}
+,
+	"Four harmonics 350Hz" : 	{
+		"snapshotHelper" : 		{
+			"myFunkyCascade" : 			{
+				"channel.1" : 				{
+					"filter.1" : 					{
+						"frequency" : 350.0
+					}
+,
+					"filter.2" : 					{
+						"frequency" : 700.0
+					}
+,
+					"filter.3" : 					{
+						"frequency" : 1400.0
+					}
+,
+					"filter.4" : 					{
+						"frequency" : 2800.0
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
