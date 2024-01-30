@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 510.0, 369.0, 1062.0, 551.0 ],
+		"rect" : [ 148.0, 369.0, 955.0, 556.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -437,7 +437,7 @@
 					"fontsize" : 10.0,
 					"hint" : "mcCascadeHelper/myFunkyMcCascade",
 					"id" : "obj-19",
-					"items" : [ "(ADDRESS", "LIST)", ",", "<separator>", ",", "mcCascadeHelper/myFunkyMcCascade" ],
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -2191,20 +2191,6 @@
 					}
 ,
 					"text" : "p active?"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bubble" : 1,
-					"bubbleside" : 3,
-					"id" : "obj-16",
-					"linecount" : 4,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 189.0, 173.0, 64.0 ],
-					"text" : "First check existence on ON parameter, then pass address accordingly (faster if no active address)."
 				}
 
 			}
