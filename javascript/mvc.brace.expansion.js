@@ -62,14 +62,13 @@ Max.addHandler("expandonparent", (...args) => {
 					var concatAddress = parentAddresses[i] + '/' + childAdd;
 					//Max.post('concatAddress', concatAddress);
 					addresslist.push(concatAddress);					
+					childrenmap.push(i+1);
+					adddressIndex++;
+					childIndexArray.push(adddressIndex);
 				}
 				else{
 					//Max.post("youhou",childAdd )
 				}
-
-				childrenmap.push(i+1);
-				adddressIndex++;
-				childIndexArray.push(adddressIndex);
 			}
 			parentmap.push(childIndexArray);
 		}
