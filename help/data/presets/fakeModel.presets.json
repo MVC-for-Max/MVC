@@ -2,5 +2,37 @@
 	"_metadata" : 	{
 		"package-version" : 0.4
 	}
+,
+	"Devil's preset" : 	{
+		"frequency" : 666,
+		"helloParameter" : 666,
+		"preset-name" : "Devil's preset",
+		"ON" : 1,
+		"preset-description" : "undefined"
+	}
+,
+	"toto" : 	{
+		"frequency" : 142.0,
+		"helloParameter" : 142.0,
+		"preset-name" : "toto",
+		"ON" : 1,
+		"preset-description" : "142.0000"
+	}
+,
+	"1024" : 	{
+		"frequency" : 24,
+		"helloParameter" : 10,
+		"preset-name" : "1024",
+		"ON" : 1,
+		"preset-description" : "undefined"
+	}
+,
+	"the Pi-Preset" : 	{
+		"frequency" : 6.283185307179586,
+		"helloParameter" : 3.1415926535,
+		"preset-name" : "the Pi-Preset",
+		"ON" : 1,
+		"preset-description" : "undefined"
+	}
 
 }
