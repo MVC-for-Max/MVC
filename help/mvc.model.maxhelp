@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 89.0, 202.0, 990.0, 823.0 ],
+		"rect" : [ 68.0, 180.0, 805.0, 819.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -69,7 +69,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 990.0, 797.0 ],
+						"rect" : [ 0.0, 26.0, 805.0, 793.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -100,6 +100,28 @@
 						"assistshowspatchername" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"args" : [ "frequency", "@parent", "myGUIview" ],
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-6",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "mvc.GUI.number.maxpat",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"offset" : [ 0.0, 0.0 ],
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 125.0, 507.0, 233.0, 20.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"bubble" : 1,
 									"bubbleside" : 0,
 									"fontsize" : 10.0,
@@ -108,14 +130,14 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 465.0, 602.0, 302.0, 93.0 ],
+									"patching_rect" : [ 83.0, 622.0, 302.0, 93.0 ],
 									"text" : "Note :  the objects above are usually wrapped in a abstraction, whose filename follows the model's \"type\" attribute. (see inside component). For instance, the \"fake biquad\" component above is of type \"fakeBiquadFilterModel\". So, if you put these GUI objects in a file called \"fakeBiquadFilterModel.gui.maxpat\", the GUI message will try to open it."
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "filtermode", "@parent", "#0.view" ],
+									"args" : [ "filtermode", "@parent", "myGUIview" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -130,7 +152,7 @@
 									"numoutlets" : 2,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 492.0, 393.5, 233.0, 20.0 ],
+									"patching_rect" : [ 125.0, 402.0, 233.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -142,7 +164,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 748.0, 274.5, 99.0, 22.0 ],
+									"patching_rect" : [ 366.0, 295.0, 99.0, 22.0 ],
 									"text" : "prepend address"
 								}
 
@@ -158,7 +180,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 836.0, 190.5, 98.0, 48.0 ],
+									"patching_rect" : [ 454.0, 211.0, 98.0, 48.0 ],
 									"text" : "address \"none\" will disconnect the GUI"
 								}
 
@@ -170,7 +192,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 837.5, 240.5, 35.0, 22.0 ],
+									"patching_rect" : [ 456.0, 261.0, 35.0, 22.0 ],
 									"text" : "none"
 								}
 
@@ -180,12 +202,12 @@
 									"bubble" : 1,
 									"fontsize" : 10.0,
 									"id" : "obj-33",
-									"linecount" : 3,
+									"linecount" : 4,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 766.0, 359.5, 180.0, 44.0 ],
-									"text" : "The model's address is passed on the right outlet and can be used to set each mvc.remote's address"
+									"patching_rect" : [ 384.0, 379.0, 285.0, 55.0 ],
+									"text" : "The model's parameters can either be provided an absolute address, or more convenitently, be given the parameter name as argument with the attribute \"@parent\" followed by a parent model/view UID. "
 								}
 
 							}
@@ -200,7 +222,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 664.0, 190.5, 168.0, 48.0 ],
+									"patching_rect" : [ 282.0, 211.0, 168.0, 48.0 ],
 									"text" : "GUIs are being sent the model's address, so that they can load."
 								}
 
@@ -216,7 +238,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 465.0, 226.5, 165.0, 70.0 ],
+									"patching_rect" : [ 83.0, 247.0, 165.0, 70.0 ],
 									"text" : "A simple panel connected to mvc.model.gui will automatically appear a orange when the model is loading values."
 								}
 
@@ -230,7 +252,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 766.0, 493.0, 130.0, 66.0 ],
+									"patching_rect" : [ 384.0, 513.0, 130.0, 66.0 ],
 									"text" : "Dedicated GUI wrappers around mvc.remote automatically displays param info."
 								}
 
@@ -244,36 +266,14 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 673.5, 432.0, 209.0, 33.0 ],
+									"patching_rect" : [ 377.0, 446.5, 209.0, 33.0 ],
 									"text" : "The mvc.remote abstraction is the core abstraction to access any parameter."
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "filtermode" ],
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-27",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "mvc.GUI.menu.maxpat",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"offset" : [ 0.0, 0.0 ],
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 492.0, 565.0, 233.0, 20.0 ],
-									"viewvisibility" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"args" : [ "Q" ],
+									"args" : [ "Q", "@parent", "myGUIview" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -288,7 +288,7 @@
 									"numoutlets" : 2,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 492.0, 531.0, 233.0, 20.0 ],
+									"patching_rect" : [ 125.0, 551.0, 233.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -302,7 +302,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 473.5, 466.5, 50.0, 22.0 ]
+									"patching_rect" : [ 117.0, 480.0, 87.0, 22.0 ]
 								}
 
 							}
@@ -313,8 +313,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 678.0, 240.5, 154.0, 22.0 ],
-									"text" : "modelGuiHelper/GUI-demo"
+									"patching_rect" : [ 259.0, 261.0, 177.0, 22.0 ],
+									"text" : "modelHelperContext/GUI-demo"
 								}
 
 							}
@@ -325,8 +325,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "int", "" ],
-									"patching_rect" : [ 473.5, 437.5, 201.0, 22.0 ],
-									"text" : "mvc.remote @description frequency"
+									"patching_rect" : [ 117.0, 452.0, 241.0, 22.0 ],
+									"text" : "mvc.remote frequency @parent myGUIview"
 								}
 
 							}
@@ -340,7 +340,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 586.5, 156.5, 226.0, 22.0 ],
+									"patching_rect" : [ 205.0, 177.0, 226.0, 22.0 ],
 									"text" : "What you'll need to build your GUI."
 								}
 
@@ -355,7 +355,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 533.0, 35.5, 233.0, 64.0 ],
+									"patching_rect" : [ 151.0, 56.0, 233.0, 64.0 ],
 									"text" : "If no dedicated GUI exists for a model, it will load a generic GUI, only displaying parameters value, but without the possibility to tweak these."
 								}
 
@@ -367,7 +367,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 782.0, 83.0, 30.0, 22.0 ],
+									"patching_rect" : [ 501.0, 103.0, 30.0, 22.0 ],
 									"text" : "GUI"
 								}
 
@@ -379,8 +379,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 469.0, 116.0, 332.0, 22.0 ],
-									"text" : "mvc.fakeBiquadFilterModel~ modelHelperContext GUI-demo",
+									"patching_rect" : [ 87.0, 136.0, 433.0, 22.0 ],
+									"text" : "mvc.fakeBiquadFilterModel~ modelHelperContext GUI-demo @type fakeBiquad",
 									"varname" : "mvc.fakeBiquadFilterModel~"
 								}
 
@@ -394,14 +394,14 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 766.0, 300.0, 216.0, 55.0 ],
+									"patching_rect" : [ 384.0, 320.0, 216.0, 55.0 ],
 									"text" : "This generic model's GUI is given the model's address as argument. It wraps the internal model parameters and provide a menu interface to model's preset."
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "#0.view" ],
+									"args" : [ "myGUIview" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -416,7 +416,7 @@
 									"numoutlets" : 3,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 465.0, 318.0, 302.0, 23.0 ],
+									"patching_rect" : [ 83.0, 338.0, 302.0, 23.0 ],
 									"varname" : "mvc.model.gui",
 									"viewvisibility" : 1
 								}
@@ -440,7 +440,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "gain" ],
+									"args" : [ "gain", "@parent", "myGUIview" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -455,7 +455,7 @@
 									"numoutlets" : 2,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 492.0, 490.5, 233.0, 20.0 ],
+									"patching_rect" : [ 125.0, 529.0, 233.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -471,9 +471,9 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 456.0, 300.0, 319.0, 297.0 ],
+									"patching_rect" : [ 74.0, 320.0, 319.0, 297.0 ],
 									"proportion" : 0.5,
-									"varname" : "14270-bgpanel"
+									"varname" : "17498-bgpanel"
 								}
 
 							}
@@ -488,7 +488,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 434.5, 165.0, 582.0, 536.0 ],
+									"patching_rect" : [ 53.0, 185.0, 621.0, 536.0 ],
 									"proportion" : 0.5
 								}
 
@@ -497,7 +497,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-7", 0 ],
-									"midpoints" : [ 847.0, 268.0, 757.5, 268.0 ],
+									"midpoints" : [ 465.5, 288.0, 375.5, 288.0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -505,7 +505,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-28", 0 ],
-									"midpoints" : [ 616.0, 351.0, 449.75, 351.0, 449.75, 289.0, 465.5, 289.0 ],
+									"midpoints" : [ 234.0, 371.0, 67.75, 371.0, 67.75, 309.0, 83.5, 309.0 ],
 									"source" : [ "obj-13", 1 ]
 								}
 
@@ -520,7 +520,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-7", 0 ],
-									"midpoints" : [ 687.5, 268.0, 757.5, 268.0 ],
+									"midpoints" : [ 268.5, 288.0, 375.5, 288.0 ],
 									"source" : [ "obj-20", 0 ]
 								}
 
@@ -528,7 +528,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
-									"midpoints" : [ 483.0, 498.5, 464.5, 498.5, 464.5, 426.5, 483.0, 426.5 ],
+									"midpoints" : [ 126.5, 505.0, 109.0, 505.0, 109.0, 441.0, 126.5, 441.0 ],
 									"source" : [ "obj-24", 0 ]
 								}
 
@@ -656,7 +656,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 990.0, 797.0 ],
+						"rect" : [ 0.0, 26.0, 805.0, 793.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -687,13 +687,193 @@
 						"assistshowspatchername" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-9",
-									"maxclass" : "button",
+									"bubble" : 1,
+									"id" : "obj-28",
+									"maxclass" : "comment",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
+									"numoutlets" : 0,
+									"patching_rect" : [ 382.0, 523.0, 100.0, 24.0 ],
+									"text" : "address index"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-26",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 550.0, 252.0, 24.0, 24.0 ]
+									"patching_rect" : [ 191.0, 432.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-27",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 191.0, 459.0, 80.0, 22.0 ],
+									"text" : "setvalue 2 $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-24",
+									"maxclass" : "number",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 328.0, 524.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-21",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 107.0, 432.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-15",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 265.0, 458.0, 359.0, 24.0 ],
+									"presentation_linecount" : 4,
+									"text" : "Change a specific address in the parameter's list of addresses."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-13",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 107.0, 459.0, 80.0, 22.0 ],
+									"text" : "setvalue 1 $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-11",
+									"linecount" : 4,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 535.0, 304.0, 152.0, 64.0 ],
+									"presentation_linecount" : 4,
+									"text" : "Change the model's address using brace notation to see how it affects the namespace."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"bubbleside" : 3,
+									"id" : "obj-10",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 191.0, 331.0, 152.0, 37.0 ],
+									"presentation_linecount" : 2,
+									"text" : "Open the model's GUI to see its namespace!"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-8",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 352.0, 338.0, 30.0, 22.0 ],
+									"text" : "GUI"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 477.0, 107.0, 30.0, 22.0 ],
+									"text" : "GUI"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-37",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 25.0, 249.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-36",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 25.0, 221.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-34",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 55.0, 493.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"color" : [ 0.407843137254902, 0.529411764705882, 0.36078431372549, 1.0 ],
+									"id" : "obj-25",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 107.0, 493.0, 460.0, 22.0 ],
+									"text" : "mvc.parameter braceChildUID Pop @description \"the Crackle param!\" @default 3.14"
 								}
 
 							}
@@ -704,8 +884,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 373.0, 342.0, 73.0, 22.0 ],
-									"text" : "singleModel"
+									"patching_rect" : [ 430.0, 336.0, 101.0, 22.0 ],
+									"text" : "address chanel-1"
 								}
 
 							}
@@ -716,109 +896,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 390.0, 370.0, 111.0, 22.0 ],
-									"text" : "multipleModel{1..3}"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-7",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 373.0, 400.0, 99.0, 22.0 ],
-									"text" : "prepend address"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-31",
-									"maxclass" : "button",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 569.0, 222.0, 24.0, 24.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-29",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 657.5, 181.0, 55.0, 22.0 ],
-									"text" : "zl.slice 1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-28",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 525.0, 202.0, 34.0, 22.0 ],
-									"text" : "sel 1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-27",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 525.0, 165.0, 89.0, 22.0 ],
-									"text" : "route initialized"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-23",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 5,
-									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 618.0, 147.0, 177.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"embed" : 0,
-										"legacy" : 0,
-										"parameter_enable" : 0,
-										"parameter_mappable" : 0
-									}
-,
-									"text" : "dict mvc.parameters.values.dict"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-10",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 618.0, 104.0, 239.0, 22.0 ],
-									"text" : "get modelHelperContext::braceDemoModel"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-15",
-									"maxclass" : "dict.view",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 618.0, 262.0, 353.0, 359.0 ]
+									"patching_rect" : [ 399.0, 310.0, 129.0, 22.0 ],
+									"text" : "address channel-{1..3}"
 								}
 
 							}
@@ -828,7 +907,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 47.0, 327.0, 201.0, 20.0 ],
+									"patching_rect" : [ 77.0, 282.0, 201.0, 20.0 ],
 									"text" : "... or even sub-models and params !"
 								}
 
@@ -841,8 +920,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 47.0, 349.0, 313.0, 22.0 ],
-									"text" : "mvc.model braceChildUID braceParentUID aSingleModel"
+									"patching_rect" : [ 81.0, 380.0, 305.0, 22.0 ],
+									"text" : "mvc.model braceChildUID braceParentUID channel-1",
+									"varname" : "mvc.model[1]"
 								}
 
 							}
@@ -851,12 +931,12 @@
 									"bubble" : 1,
 									"bubbleside" : 3,
 									"id" : "obj-17",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 21.0, 118.0, 279.0, 51.0 ],
-									"text" : "change the model's name, then click the namespace message on the device to see how this does affects the namespace"
+									"patching_rect" : [ 316.0, 99.0, 152.0, 37.0 ],
+									"text" : "Open the model's GUI to see its namespace!"
 								}
 
 							}
@@ -868,7 +948,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "int", "" ],
-									"patching_rect" : [ 47.0, 294.0, 508.0, 22.0 ],
+									"patching_rect" : [ 77.0, 249.0, 508.0, 22.0 ],
 									"text" : "mvc.parameter braceParentUID Crackle @description \"the Crackle param!\" @default Crackle!"
 								}
 
@@ -895,7 +975,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 47.0, 244.0, 229.0, 20.0 ],
+									"patching_rect" : [ 77.0, 199.0, 229.0, 20.0 ],
 									"text" : "... and parameters attached to this model"
 								}
 
@@ -908,7 +988,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "int", "" ],
-									"patching_rect" : [ 47.0, 266.0, 470.0, 22.0 ],
+									"patching_rect" : [ 77.0, 221.0, 470.0, 22.0 ],
 									"text" : "mvc.parameter braceParentUID Snap @description \"the Snap param!\" @default Snap!"
 								}
 
@@ -921,81 +1001,115 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 17.0, 194.0, 479.0, 22.0 ],
-									"text" : "mvc.model braceParentUID modelHelperContext braceDemoModel @type typeOfParent"
+									"patching_rect" : [ 17.0, 149.0, 479.0, 22.0 ],
+									"text" : "mvc.model braceParentUID modelHelperContext braceDemoModel @type typeOfParent",
+									"varname" : "mvc.model"
 								}
 
 							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-7", 0 ],
+									"destination" : [ "obj-18", 1 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-23", 0 ],
-									"source" : [ "obj-10", 0 ]
+									"destination" : [ "obj-25", 0 ],
+									"source" : [ "obj-13", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-27", 0 ],
-									"source" : [ "obj-14", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-7", 0 ],
-									"source" : [ "obj-2", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-29", 0 ],
-									"source" : [ "obj-23", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-28", 0 ],
-									"source" : [ "obj-27", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-10", 0 ],
-									"order" : 0,
-									"source" : [ "obj-28", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-31", 0 ],
-									"order" : 1,
-									"source" : [ "obj-28", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-15", 0 ],
-									"source" : [ "obj-29", 1 ]
+									"destination" : [ "obj-36", 0 ],
+									"source" : [ "obj-16", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-18", 1 ],
-									"source" : [ "obj-7", 0 ]
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-13", 0 ],
+									"source" : [ "obj-21", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"source" : [ "obj-25", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-34", 0 ],
+									"source" : [ "obj-25", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-27", 0 ],
+									"source" : [ "obj-26", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-25", 0 ],
+									"source" : [ "obj-27", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-37", 0 ],
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-25", 0 ],
+									"source" : [ "obj-34", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-16", 0 ],
+									"source" : [ "obj-36", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-37", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-14", 1 ],
+									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-18", 1 ],
+									"source" : [ "obj-8", 0 ]
 								}
 
 							}
@@ -1108,7 +1222,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 990.0, 797.0 ],
+						"rect" : [ 0.0, 26.0, 805.0, 793.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1823,7 +1937,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 990.0, 797.0 ],
+						"rect" : [ 0.0, 26.0, 805.0, 793.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1886,7 +2000,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 89.0, 228.0, 990.0, 797.0 ],
+						"rect" : [ 68.0, 206.0, 805.0, 793.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2717,7 +2831,7 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-68::obj-14::obj-25::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[1]", "live.toggle", 0 ],
+			"obj-5::obj-14::obj-25::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[1]", "live.toggle", 0 ],
 			"obj-6::obj-13::obj-8::obj-7" : [ "live.toggle[5]", "live.toggle", 0 ],
 			"parameterbanks" : 			{
 
