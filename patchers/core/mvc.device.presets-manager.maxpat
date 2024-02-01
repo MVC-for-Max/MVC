@@ -5230,7 +5230,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 185.0, -962.0, 1094.0, 580.0 ],
+						"rect" : [ 134.0, 159.0, 1094.0, 580.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5258,7 +5258,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-17",
