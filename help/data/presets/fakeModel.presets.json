@@ -4,32 +4,56 @@
 	}
 ,
 	"Devil's preset" : 	{
+		"foo.1" : 666,
+		"foo.2" : 666,
+		"foo.3" : 666,
+		"foo.4" : 666,
+		"foo.5" : 666,
+		"foo.6" : 666,
+		"foo.7" : 666,
 		"frequency" : 666,
-		"helloParameter" : 666,
 		"preset-name" : "Devil's preset",
 		"ON" : 1,
 		"preset-description" : "undefined"
 	}
 ,
 	"toto" : 	{
-		"frequency" : 142.0,
-		"helloParameter" : 142.0,
+		"foo.1" : 666,
+		"foo.2" : 666,
+		"foo.3" : 666,
+		"foo.4" : 666,
+		"foo.5" : 666,
+		"foo.6" : 666,
+		"foo.7" : 666,
+		"frequency" : 142,
 		"preset-name" : "toto",
 		"ON" : 1,
 		"preset-description" : "142.0000"
 	}
 ,
 	"1024" : 	{
+		"foo.1" : 666,
+		"foo.2" : 666,
+		"foo.3" : 666,
+		"foo.4" : 666,
+		"foo.5" : 666,
+		"foo.6" : 666,
+		"foo.7" : 666,
 		"frequency" : 24,
-		"helloParameter" : 10,
 		"preset-name" : "1024",
 		"ON" : 1,
 		"preset-description" : "undefined"
 	}
 ,
 	"the Pi-Preset" : 	{
+		"foo.1" : 666,
+		"foo.2" : 666,
+		"foo.3" : 666,
+		"foo.4" : 666,
+		"foo.5" : 666,
+		"foo.6" : 666,
+		"foo.7" : 666,
 		"frequency" : 6.283185307179586,
-		"helloParameter" : 3.1415926535,
 		"preset-name" : "the Pi-Preset",
 		"ON" : 1,
 		"preset-description" : "undefined"
