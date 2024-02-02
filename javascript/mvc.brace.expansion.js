@@ -62,14 +62,13 @@ Max.addHandler("expandonparent", (...args) => {
 					var concatAddress = parentAddresses[i] + '/' + childAdd;
 					//Max.post('concatAddress', concatAddress);
 					addresslist.push(concatAddress);					
+					childrenmap.push(i+1);
+					adddressIndex++;
+					childIndexArray.push(adddressIndex);
 				}
 				else{
 					//Max.post("youhou",childAdd )
 				}
-
-				childrenmap.push(i+1);
-				adddressIndex++;
-				childIndexArray.push(adddressIndex);
 			}
 			parentmap.push(childIndexArray);
 		}
@@ -112,7 +111,8 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 
 	const childdict = args[0]; // this node dict attribute dict, from which we retrieve parent addresses to expand on
 	const parentdict = args[1]; // parent attribute dict, from which we retrieve parent addresses to expand on
-	const inputsdict = args[2]; // input dictionary, from which we can (wildcard-)filter existing addresses
+	const parentAddressIndex = args[2]; // the index of address to expand onto (0 = all)
+	const inputsdict = args[3]; // input dictionary, from which we can (wildcard-)filter existing addresses
 
 	var expandedAddresses = []; // the expanded address list (may be relative ones)
 	var absoluteAddresslist = []; // the list of absolute addresses
@@ -157,6 +157,12 @@ Max.addHandler("expandOnParentAndFilter", (...args) => {
 		// fetch parent addresses and make sure it's an array
 		var parentAddresses = parentdict.addresslist ?? [];
 		parentAddresses = Array.isArray(parentAddresses) ? parentAddresses : [parentAddresses];
+
+		if (parentAddressIndex!=0){
+			parentAddresses = [parentAddresses[parentAddressIndex-1]] ??[];
+			//Max.post("Expand on index", parentAddressIndex, parentAddresses);
+		}
+
 		if (parentdict.uid == null){ // If no parent, consider the relative address as absolute
 			absoluteAddresslist = expandedAddresses.flat();
 			//Max.post("Absolute address spotted...");
@@ -553,7 +559,7 @@ function getValueFromPath(obj, path) {
   return currentObj;
 }
 
-// does any item in array contains wildchar ?
+// does any item in array contains wildchar ?s
 function containsWildchar(arr) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].includes('*') || arr[i].includes('?')) {

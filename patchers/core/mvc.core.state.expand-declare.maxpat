@@ -178,7 +178,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 75.0, 567.0, 638.0, 421.0 ],
+						"rect" : [ 674.0, -529.0, 638.0, 421.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2013,7 +2013,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 181.0, 155.0, 159.0, 22.0 ],
+									"patching_rect" : [ 181.0, 127.341209453684769, 159.0, 22.0 ],
 									"text" : "send $1.childInput.initialized"
 								}
 
@@ -2025,7 +2025,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 226.0, 82.0, 98.0, 47.0 ],
+									"patching_rect" : [ 226.0, 73.5, 98.0, 47.0 ],
 									"text" : "Notify model, so it can prebuild address list."
 								}
 
@@ -2036,21 +2036,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 51.0, 201.0, 49.0, 22.0 ],
+									"patching_rect" : [ 51.0, 179.0, 49.0, 22.0 ],
 									"text" : "forward"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"color" : [ 0.658823529411765, 0.372549019607843, 0.007843137254902, 1.0 ],
-									"id" : "obj-7",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.75, 155.0, 54.0, 22.0 ],
-									"text" : "deferlow"
 								}
 
 							}
@@ -2091,15 +2078,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-7", 0 ],
-									"source" : [ "obj-48", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"source" : [ "obj-7", 0 ]
+									"source" : [ "obj-48", 0 ]
 								}
 
 							}

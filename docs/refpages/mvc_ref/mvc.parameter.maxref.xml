@@ -362,9 +362,7 @@
 		<seealso name="mvc.device"/>
 		<seealso name="mvc.remote"/>
 		<seealso name="mvc.state"/>
-		<seealso name="mvc.state.remote"/>
 		<seealso name="mvc.message"/>
-		<seealso name="mvc.message.remote"/>
 	</seealsolist>
 	
 </c74object>

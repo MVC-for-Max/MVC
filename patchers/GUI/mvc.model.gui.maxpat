@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 510.0, 369.0, 1062.0, 551.0 ],
+		"rect" : [ 825.0, 339.0, 955.0, 556.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -437,7 +437,7 @@
 					"fontsize" : 10.0,
 					"hint" : "mcCascadeHelper/myFunkyMcCascade",
 					"id" : "obj-19",
-					"items" : [ "(ADDRESS", "LIST)", ",", "<separator>", ",", "mcCascadeHelper/myFunkyMcCascade" ],
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -790,7 +790,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 172.0, 118.0, 47.0, 22.0 ],
-									"text" : "zl.nth 2"
+									"text" : "zl.nth 1"
 								}
 
 							}
@@ -824,7 +824,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 159.0, 448.0, 342.0, 348.0 ],
+										"rect" : [ 910.0, 180.0, 342.0, 348.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -943,15 +943,15 @@
 													"numinlets" : 2,
 													"numoutlets" : 5,
 													"outlettype" : [ "dictionary", "", "", "", "" ],
-													"patching_rect" : [ 50.0, 196.087654601240502, 168.0, 22.0 ],
+													"patching_rect" : [ 50.0, 196.087654601240502, 228.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 0,
-														"legacy" : 0,
+														"legacy" : 1,
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict mvc.models.dict @quiet 1"
+													"text" : "dict mvc.models.dict @quiet 1 @legacy 1"
 												}
 
 											}
@@ -2196,20 +2196,6 @@
 			}
 , 			{
 				"box" : 				{
-					"bubble" : 1,
-					"bubbleside" : 3,
-					"id" : "obj-16",
-					"linecount" : 4,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 189.0, 173.0, 64.0 ],
-					"text" : "First check existence on ON parameter, then pass address accordingly (faster if no active address)."
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-96",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -2254,6 +2240,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-17",

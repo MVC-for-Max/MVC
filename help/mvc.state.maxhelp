@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
+			"minor" : 6,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 129.0, 259.0, 1122.0, 603.0 ],
+		"rect" : [ 230.0, 219.0, 1122.0, 603.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -105,14 +105,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1122.0, 577.0 ],
+						"rect" : [ 0.0, 26.0, 1122.0, 551.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -186,14 +186,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 129.0, 285.0, 1122.0, 577.0 ],
+						"rect" : [ 230.0, 271.0, 1122.0, 551.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -257,7 +257,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
+											"minor" : 6,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -307,6 +307,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-24",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
@@ -355,13 +356,15 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-18",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
-													"numoutlets" : 4,
-													"outlettype" : [ "dictionary", "", "", "" ],
+													"numoutlets" : 5,
+													"outlettype" : [ "dictionary", "", "", "", "" ],
 													"patching_rect" : [ 50.0, 226.875000000000028, 107.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 0,
+														"legacy" : 1,
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
@@ -474,7 +477,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "initialized" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 												}
 
@@ -678,7 +681,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 636.0, 427.939940999999976, 238.5, 22.0 ],
-									"text" : "StateHelper/another_state3 3"
+									"text" : "3"
 								}
 
 							}
@@ -706,7 +709,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 428.5, 217.0, 218.0, 64.0 ],
+									"patching_rect" : [ 428.5, 217.0, 225.0, 64.0 ],
 									"text" : "Parameters need a parent node, either an mvc.device or an mvc.model.",
 									"textcolor" : [ 0.3, 0.3, 0.3, 1.0 ]
 								}
@@ -750,12 +753,12 @@
 									"fontname" : "Lato Regular",
 									"fontsize" : 12.0,
 									"id" : "obj-24",
-									"linecount" : 4,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 628.5, 304.939940999999976, 195.0, 93.0 ],
-									"text" : "Access a state remotely using mvc.state.remote (see mvc.state.remote maxhelp for further information)",
+									"patching_rect" : [ 628.5, 304.939940999999976, 195.0, 79.0 ],
+									"text" : "Access a state remotely using mvc.remote (see mvc.remote maxhelp for further information)",
 									"textcolor" : [ 0.3, 0.3, 0.3, 1.0 ]
 								}
 
@@ -808,9 +811,9 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "initialized" ],
+									"outlettype" : [ "", "int", "" ],
 									"patching_rect" : [ 580.5, 399.939940999999976, 333.0, 22.0 ],
-									"text" : "mvc.state.remote StateHelper/another_state{1..19}"
+									"text" : "mvc.remote StateHelper/another_state{1..19}"
 								}
 
 							}
@@ -822,7 +825,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
+									"outlettype" : [ "", "int", "" ],
 									"patching_rect" : [ 53.5, 303.939940999999976, 416.0, 36.0 ],
 									"text" : "mvc.state StateHelper another_state{1..3} @default 10 @description \"Some temporary acceleration\" @unit m.s⁻² @type decimal @range 1 1000"
 								}
@@ -835,7 +838,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
+									"outlettype" : [ "", "int", "" ],
 									"patching_rect" : [ 53.5, 185.939940999999976, 261.0, 22.0 ],
 									"text" : "mvc.state StaterHelper my_state"
 								}
@@ -851,7 +854,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
+											"minor" : 6,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -893,7 +896,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 15.0, 42.0, 423.0, 33.0 ],
+													"patching_rect" : [ 15.0, 42.0, 425.0, 33.0 ],
 													"text" : "Note : this attribute can be retrieved for designing the GUI.\nThe range and type attributes also constrains the output on the mvc.state side."
 												}
 
@@ -1143,7 +1146,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
+											"minor" : 6,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -1259,9 +1262,9 @@
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "", "initialized" ],
-													"patching_rect" : [ 576.0, 266.0, 245.0, 22.0 ],
-													"text" : "mvc.state.remote StateHelper/myPolyState.3"
+													"outlettype" : [ "", "int", "" ],
+													"patching_rect" : [ 576.0, 266.0, 219.0, 22.0 ],
+													"text" : "mvc.remote StateHelper/myPolyState.3"
 												}
 
 											}
@@ -1285,9 +1288,9 @@
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "", "initialized" ],
-													"patching_rect" : [ 576.0, 326.0, 245.0, 22.0 ],
-													"text" : "mvc.state.remote StateHelper/myPolyState.4"
+													"outlettype" : [ "", "int", "" ],
+													"patching_rect" : [ 576.0, 326.0, 219.0, 22.0 ],
+													"text" : "mvc.remote StateHelper/myPolyState.4"
 												}
 
 											}
@@ -1363,9 +1366,9 @@
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "", "initialized" ],
-													"patching_rect" : [ 576.0, 146.0, 245.0, 22.0 ],
-													"text" : "mvc.state.remote StateHelper/myPolyState.1"
+													"outlettype" : [ "", "int", "" ],
+													"patching_rect" : [ 576.0, 146.0, 219.0, 22.0 ],
+													"text" : "mvc.remote StateHelper/myPolyState.1"
 												}
 
 											}
@@ -1401,9 +1404,9 @@
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "", "initialized" ],
-													"patching_rect" : [ 576.0, 206.0, 245.0, 22.0 ],
-													"text" : "mvc.state.remote StateHelper/myPolyState.2"
+													"outlettype" : [ "", "int", "" ],
+													"patching_rect" : [ 576.0, 206.0, 219.0, 22.0 ],
+													"text" : "mvc.remote StateHelper/myPolyState.2"
 												}
 
 											}
@@ -1415,7 +1418,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "", "" ],
+													"outlettype" : [ "", "int", "" ],
 													"patching_rect" : [ 170.0, 118.0, 237.0, 35.0 ],
 													"text" : "mvc.state StateHelper myPolyState.{1..4} @default 12."
 												}
@@ -1427,7 +1430,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 170.0, 326.0, 322.0, 22.0 ],
+													"patching_rect" : [ 170.0, 326.0, 325.0, 22.0 ],
 													"text" : "poly~ mvc.state.helper.polyexample.p 4 @args StateHelper"
 												}
 
@@ -1579,7 +1582,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
+											"minor" : 6,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -1634,9 +1637,9 @@
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "", "initialized" ],
-													"patching_rect" : [ 408.0, 107.0, 230.0, 22.0 ],
-													"text" : "mvc.state.remote StateHelper/frequency.1"
+													"outlettype" : [ "", "int", "" ],
+													"patching_rect" : [ 408.0, 107.0, 203.0, 22.0 ],
+													"text" : "mvc.remote StateHelper/frequency.1"
 												}
 
 											}
@@ -1660,7 +1663,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 69.0, 266.0, 173.0, 22.0 ],
-													"text" : "setvalue 4 cutoff 440."
+													"text" : "setvalue cutoff 440."
 												}
 
 											}
@@ -1697,9 +1700,9 @@
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "", "initialized" ],
-													"patching_rect" : [ 408.0, 167.0, 230.0, 22.0 ],
-													"text" : "mvc.state.remote StateHelper/frequency.2"
+													"outlettype" : [ "", "int", "" ],
+													"patching_rect" : [ 408.0, 167.0, 203.0, 22.0 ],
+													"text" : "mvc.remote StateHelper/frequency.2"
 												}
 
 											}
@@ -1782,7 +1785,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "", "" ],
+													"outlettype" : [ "", "int", "" ],
 													"patching_rect" : [ 51.0, 66.0, 237.0, 35.0 ],
 													"text" : "mvc.state StateHelper frequency.{1..4} @default 440"
 												}
@@ -2099,14 +2102,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1122.0, 577.0 ],
+						"rect" : [ 0.0, 26.0, 1122.0, 551.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2141,7 +2144,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 53.0, 114.0, 183.0, 20.0 ],
+									"patching_rect" : [ 53.0, 114.0, 185.0, 20.0 ],
 									"text" : "See mvc.parameter help patcher."
 								}
 
@@ -2158,7 +2161,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 195.272003173828125, 57.599853515625 ]
+									"patching_rect" : [ 10.0, 10.0, 206.408004760742188, 57.599853515625 ]
 								}
 
 							}
@@ -2264,14 +2267,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1122.0, 577.0 ],
+						"rect" : [ 0.0, 26.0, 1122.0, 551.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2306,7 +2309,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 53.0, 114.0, 183.0, 20.0 ],
+									"patching_rect" : [ 53.0, 114.0, 185.0, 20.0 ],
 									"text" : "See mvc.parameter help patcher."
 								}
 
@@ -2323,7 +2326,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 195.272003173828125, 57.599853515625 ]
+									"patching_rect" : [ 10.0, 10.0, 206.408004760742188, 57.599853515625 ]
 								}
 
 							}
@@ -2429,14 +2432,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1122.0, 577.0 ],
+						"rect" : [ 0.0, 26.0, 1122.0, 551.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2471,7 +2474,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 53.0, 114.0, 183.0, 20.0 ],
+									"patching_rect" : [ 53.0, 114.0, 185.0, 20.0 ],
 									"text" : "See mvc.parameter help patcher."
 								}
 
@@ -2488,7 +2491,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 195.272003173828125, 57.599853515625 ]
+									"patching_rect" : [ 10.0, 10.0, 206.408004760742188, 57.599853515625 ]
 								}
 
 							}
@@ -2594,14 +2597,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1122.0, 577.0 ],
+						"rect" : [ 0.0, 26.0, 1122.0, 551.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2636,7 +2639,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 53.0, 114.0, 183.0, 20.0 ],
+									"patching_rect" : [ 53.0, 114.0, 185.0, 20.0 ],
 									"text" : "See mvc.parameter help patcher."
 								}
 
@@ -2653,7 +2656,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 195.272003173828125, 57.599853515625 ]
+									"patching_rect" : [ 10.0, 10.0, 206.408004760742188, 57.599853515625 ]
 								}
 
 							}
@@ -2767,22 +2770,6 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-68::obj-8::obj-35::obj-30::obj-18::obj-7" : [ "live.toggle[9]", "live.toggle", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
-			"parameter_overrides" : 			{
-				"obj-68::obj-8::obj-35::obj-30::obj-18::obj-7" : 				{
-					"parameter_longname" : "live.toggle[9]"
-				}
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",

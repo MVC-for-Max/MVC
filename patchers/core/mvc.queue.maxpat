@@ -40,6 +40,18 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-3",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 173.0, 173.0, 106.0, 33.0 ],
+					"text" : "who needs an intermediate int?"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"comment" : "current queue size",
 					"id" : "obj-2",
 					"index" : 2,
@@ -47,18 +59,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 211.0, 228.0, 30.0, 30.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-1",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 159.0, 179.0, 29.5, 22.0 ],
-					"text" : "int"
 				}
 
 			}
@@ -117,7 +117,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 159.0, 208.0, 44.0, 22.0 ],
+					"patching_rect" : [ 159.0, 208.0, 33.0, 22.0 ],
 					"text" : "== 0"
 				}
 
@@ -176,13 +176,6 @@
 			}
  ],
 		"lines" : [ 			{
-				"patchline" : 				{
-					"destination" : [ "obj-34", 0 ],
-					"source" : [ "obj-1", 0 ]
-				}
-
-			}
-, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"order" : 0,
@@ -251,15 +244,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"source" : [ "obj-55", 1 ]
+					"destination" : [ "obj-127", 0 ],
+					"source" : [ "obj-55", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-127", 0 ],
-					"source" : [ "obj-55", 0 ]
+					"destination" : [ "obj-34", 0 ],
+					"source" : [ "obj-55", 1 ]
 				}
 
 			}

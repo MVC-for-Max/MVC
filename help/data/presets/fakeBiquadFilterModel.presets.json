@@ -2,5 +2,15 @@
 	"_metadata" : 	{
 		"package-version" : 0.4
 	}
+,
+	"Demo preset" : 	{
+		"frequency" : 1956.0,
+		"filtermode" : "bandstop",
+		"Q" : 2.45,
+		"gain" : 2,
+		"preset-name" : "Demo preset",
+		"ON" : 1,
+		"preset-description" : "undefined"
+	}
 
 }

@@ -145,5 +145,22 @@
 		}
 
 	}
+,
+	"john 165" : 	{
+		"snapshotHelper" : 		{
+			"john" : 165.0
+		}
+
+	}
+,
+	"three notes" : 	{
+		"snapshotHelper" : 		{
+			"note.1" : 60.0,
+			"NumberOfNotes" : 3,
+			"note.2" : 77.0,
+			"note.3" : 85.0
+		}
+
+	}
 
 }

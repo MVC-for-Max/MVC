@@ -219,11 +219,9 @@
 	<seealsolist>
 		<seealso name="mvc.model"/>
 		<seealso name="mvc.device"/>
-		<seealso name="mvc.message.remote"/>
 		<seealso name="mvc.parameter"/>
 		<seealso name="mvc.remote"/>
 		<seealso name="mvc.state"/>
-		<seealso name="mvc.state.remote"/>
 	</seealsolist>
 	
 </c74object>
