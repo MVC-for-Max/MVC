@@ -36,7 +36,7 @@
 		"digest" : "",
 		"tags" : "",
 		"style" : "",
-		"subpatcher_template" : "aim_help-file_template",
+		"subpatcher_template" : "mvc_help-file_template",
 		"showrootpatcherontab" : 0,
 		"showontab" : 0,
 		"assistshowspatchername" : 0,
@@ -83,7 +83,7 @@
 						"digest" : "",
 						"tags" : "",
 						"style" : "",
-						"subpatcher_template" : "aim_help-file_template",
+						"subpatcher_template" : "mvc_help-file_template",
 						"showontab" : 2,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
@@ -154,7 +154,7 @@
 										"digest" : "",
 										"tags" : "",
 										"style" : "",
-										"subpatcher_template" : "aim_help-file_template",
+										"subpatcher_template" : "mvc_help-file_template",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
@@ -644,7 +644,7 @@
 										"digest" : "",
 										"tags" : "",
 										"style" : "",
-										"subpatcher_template" : "aim_help-file_template",
+										"subpatcher_template" : "mvc_help-file_template",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
@@ -2559,7 +2559,7 @@
 						"digest" : "",
 						"tags" : "",
 						"style" : "",
-						"subpatcher_template" : "aim_help-file_template",
+						"subpatcher_template" : "mvc_help-file_template",
 						"showontab" : 2,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
@@ -2618,7 +2618,7 @@
 										"digest" : "",
 										"tags" : "",
 										"style" : "",
-										"subpatcher_template" : "aim_help-file_template",
+										"subpatcher_template" : "mvc_help-file_template",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
@@ -2664,7 +2664,7 @@
 														"digest" : "",
 														"tags" : "",
 														"style" : "",
-														"subpatcher_template" : "aim_help-file_template",
+														"subpatcher_template" : "mvc_help-file_template",
 														"assistshowspatchername" : 0,
 														"boxes" : [ 															{
 																"box" : 																{
@@ -4814,7 +4814,7 @@
 						"digest" : "",
 						"tags" : "",
 						"style" : "",
-						"subpatcher_template" : "aim_help-file_template",
+						"subpatcher_template" : "mvc_help-file_template",
 						"showontab" : 2,
 						"assistshowspatchername" : 0,
 						"boxes" : [  ],
@@ -4895,7 +4895,7 @@
 						"digest" : "",
 						"tags" : "",
 						"style" : "",
-						"subpatcher_template" : "aim_help-file_template",
+						"subpatcher_template" : "mvc_help-file_template",
 						"showontab" : 2,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{

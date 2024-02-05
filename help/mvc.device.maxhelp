@@ -205,7 +205,7 @@
 						"digest" : "",
 						"tags" : "",
 						"style" : "",
-						"subpatcher_template" : "aim_help-file_template",
+						"subpatcher_template" : "mvc_help-file_template",
 						"showontab" : 2,
 						"assistshowspatchername" : 1,
 						"boxes" : [ 							{

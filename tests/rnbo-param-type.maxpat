@@ -2,8 +2,8 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 9,
-			"minor" : 0,
+			"major" : 8,
+			"minor" : 6,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
@@ -119,8 +119,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "float", "bang" ],
-					"patching_rect" : [ 37.5, 43.0, 101.0, 22.0 ],
-					"text" : "aim.benchmarker"
+					"patching_rect" : [ 37.5, 43.0, 104.0, 22.0 ],
+					"text" : "mvc.benchmarker"
 				}
 
 			}
@@ -168,8 +168,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "float", "bang" ],
-					"patching_rect" : [ 427.0, 70.0, 101.0, 22.0 ],
-					"text" : "aim.benchmarker"
+					"patching_rect" : [ 427.0, 70.0, 104.0, 22.0 ],
+					"text" : "mvc.benchmarker"
 				}
 
 			}
@@ -209,8 +209,8 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 9,
-							"minor" : 0,
+							"major" : 8,
+							"minor" : 6,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -820,8 +820,8 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 9,
-							"minor" : 0,
+							"major" : 8,
+							"minor" : 6,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -1049,7 +1049,7 @@
 
 					}
 ,
-					"rnboversion" : "1.3.0-dev.2",
+					"rnboversion" : "1.2.4",
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
@@ -1187,8 +1187,8 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 9,
-							"minor" : 0,
+							"major" : 8,
+							"minor" : 6,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -1233,8 +1233,8 @@
 									"patching_rect" : [ 73.0, 222.0, 36.0, 23.0 ],
 									"rnbo_classname" : "out",
 									"rnbo_extra_attributes" : 									{
-										"comment" : "",
-										"meta" : ""
+										"meta" : "",
+										"comment" : ""
 									}
 ,
 									"rnbo_serial" : 1,
@@ -1318,10 +1318,10 @@
 									"patching_rect" : [ 148.0, 102.0, 50.0, 23.0 ],
 									"rnbo_classname" : "number",
 									"rnbo_extra_attributes" : 									{
-										"maximum" : "<none>",
 										"minimum" : "<none>",
-										"order" : "",
+										"maximum" : "<none>",
 										"preset" : 0,
+										"order" : "",
 										"initialFormat" : "float"
 									}
 ,
@@ -1340,8 +1340,8 @@
 									"patching_rect" : [ 148.0, 64.0, 28.0, 23.0 ],
 									"rnbo_classname" : "in",
 									"rnbo_extra_attributes" : 									{
-										"comment" : "",
-										"meta" : ""
+										"meta" : "",
+										"comment" : ""
 									}
 ,
 									"rnbo_serial" : 1,
@@ -1424,10 +1424,10 @@
 									"patching_rect" : [ 64.0, 102.0, 50.0, 23.0 ],
 									"rnbo_classname" : "number",
 									"rnbo_extra_attributes" : 									{
-										"maximum" : "<none>",
 										"minimum" : "<none>",
-										"order" : "",
+										"maximum" : "<none>",
 										"preset" : 0,
+										"order" : "",
 										"initialFormat" : "float"
 									}
 ,
@@ -1446,8 +1446,8 @@
 									"patching_rect" : [ 64.0, 64.0, 28.0, 23.0 ],
 									"rnbo_classname" : "in",
 									"rnbo_extra_attributes" : 									{
-										"comment" : "",
-										"meta" : ""
+										"meta" : "",
+										"comment" : ""
 									}
 ,
 									"rnbo_serial" : 2,
@@ -1561,7 +1561,7 @@
 
 					}
 ,
-					"rnboversion" : "1.3.0-dev.2",
+					"rnboversion" : "1.2.4",
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
@@ -1703,8 +1703,8 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 9,
-							"minor" : 0,
+							"major" : 8,
+							"minor" : 6,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -1761,8 +1761,8 @@
 									"patching_rect" : [ 357.0, 64.0, 28.0, 23.0 ],
 									"rnbo_classname" : "in",
 									"rnbo_extra_attributes" : 									{
-										"comment" : "",
-										"meta" : ""
+										"meta" : "",
+										"comment" : ""
 									}
 ,
 									"rnbo_serial" : 1,
@@ -1844,8 +1844,8 @@
 									"patching_rect" : [ 201.0, 68.0, 28.0, 23.0 ],
 									"rnbo_classname" : "in",
 									"rnbo_extra_attributes" : 									{
-										"comment" : "",
-										"meta" : ""
+										"meta" : "",
+										"comment" : ""
 									}
 ,
 									"rnbo_serial" : 2,
@@ -1961,10 +1961,10 @@
 									"patching_rect" : [ 63.0, 163.0, 50.0, 23.0 ],
 									"rnbo_classname" : "number",
 									"rnbo_extra_attributes" : 									{
-										"maximum" : "<none>",
 										"minimum" : "<none>",
-										"order" : "",
+										"maximum" : "<none>",
 										"preset" : 0,
+										"order" : "",
 										"initialFormat" : "float"
 									}
 ,
@@ -1984,10 +1984,10 @@
 									"patching_rect" : [ 63.0, 93.0, 50.0, 23.0 ],
 									"rnbo_classname" : "number",
 									"rnbo_extra_attributes" : 									{
-										"maximum" : "<none>",
 										"minimum" : "<none>",
-										"order" : "",
+										"maximum" : "<none>",
 										"preset" : 0,
+										"order" : "",
 										"initialFormat" : "float"
 									}
 ,
@@ -2168,8 +2168,8 @@
 									"patching_rect" : [ 64.0, 196.0, 36.0, 23.0 ],
 									"rnbo_classname" : "out",
 									"rnbo_extra_attributes" : 									{
-										"comment" : "",
-										"meta" : ""
+										"meta" : "",
+										"comment" : ""
 									}
 ,
 									"rnbo_serial" : 1,
@@ -2252,8 +2252,8 @@
 									"patching_rect" : [ 64.0, 64.0, 28.0, 23.0 ],
 									"rnbo_classname" : "in",
 									"rnbo_extra_attributes" : 									{
-										"comment" : "",
-										"meta" : ""
+										"meta" : "",
+										"comment" : ""
 									}
 ,
 									"rnbo_serial" : 3,
@@ -2388,7 +2388,7 @@
 
 					}
 ,
-					"rnboversion" : "1.3.0-dev.2",
+					"rnboversion" : "1.2.4",
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
@@ -2483,8 +2483,8 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 9,
-							"minor" : 0,
+							"major" : 8,
+							"minor" : 6,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -2658,8 +2658,8 @@
 									"patching_rect" : [ 193.0, 379.0, 36.0, 23.0 ],
 									"rnbo_classname" : "out",
 									"rnbo_extra_attributes" : 									{
-										"comment" : "",
-										"meta" : ""
+										"meta" : "",
+										"comment" : ""
 									}
 ,
 									"rnbo_serial" : 1,
@@ -2742,8 +2742,8 @@
 									"patching_rect" : [ 193.0, 95.0, 28.0, 23.0 ],
 									"rnbo_classname" : "in",
 									"rnbo_extra_attributes" : 									{
-										"comment" : "",
-										"meta" : ""
+										"meta" : "",
+										"comment" : ""
 									}
 ,
 									"rnbo_serial" : 1,
@@ -2850,7 +2850,7 @@
 
 					}
 ,
-					"rnboversion" : "1.3.0-dev.2",
+					"rnboversion" : "1.2.4",
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
@@ -3015,8 +3015,8 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 9,
-							"minor" : 0,
+							"major" : 8,
+							"minor" : 6,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -3063,10 +3063,10 @@
 									"patching_rect" : [ 376.119993400000055, 60.0, 50.0, 23.0 ],
 									"rnbo_classname" : "number",
 									"rnbo_extra_attributes" : 									{
-										"maximum" : "<none>",
 										"minimum" : "<none>",
-										"order" : "",
+										"maximum" : "<none>",
 										"preset" : 0,
+										"order" : "",
 										"initialFormat" : "float"
 									}
 ,
@@ -3086,10 +3086,10 @@
 									"patching_rect" : [ 244.0, 60.0, 50.0, 23.0 ],
 									"rnbo_classname" : "number",
 									"rnbo_extra_attributes" : 									{
-										"maximum" : "<none>",
 										"minimum" : "<none>",
-										"order" : "",
+										"maximum" : "<none>",
 										"preset" : 0,
+										"order" : "",
 										"initialFormat" : "float"
 									}
 ,
@@ -3138,8 +3138,8 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 9,
-											"minor" : 0,
+											"major" : 8,
+											"minor" : 6,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -3381,8 +3381,8 @@
 													"patching_rect" : [ 50.0, 40.0, 28.0, 23.0 ],
 													"rnbo_classname" : "in",
 													"rnbo_extra_attributes" : 													{
-														"comment" : "",
-														"meta" : ""
+														"meta" : "",
+														"comment" : ""
 													}
 ,
 													"rnbo_serial" : 1,
@@ -3464,8 +3464,8 @@
 													"patching_rect" : [ 225.0, 40.0, 28.0, 23.0 ],
 													"rnbo_classname" : "in",
 													"rnbo_extra_attributes" : 													{
-														"comment" : "",
-														"meta" : ""
+														"meta" : "",
+														"comment" : ""
 													}
 ,
 													"rnbo_serial" : 2,
@@ -3547,8 +3547,8 @@
 													"patching_rect" : [ 401.0, 40.0, 28.0, 23.0 ],
 													"rnbo_classname" : "in",
 													"rnbo_extra_attributes" : 													{
-														"comment" : "",
-														"meta" : ""
+														"meta" : "",
+														"comment" : ""
 													}
 ,
 													"rnbo_serial" : 3,
@@ -3629,8 +3629,8 @@
 													"patching_rect" : [ 50.0, 197.0, 36.0, 23.0 ],
 													"rnbo_classname" : "out",
 													"rnbo_extra_attributes" : 													{
-														"comment" : "",
-														"meta" : ""
+														"meta" : "",
+														"comment" : ""
 													}
 ,
 													"rnbo_serial" : 1,
@@ -3750,8 +3750,8 @@
 									"patching_rect" : [ 478.533322333333331, 164.0, 40.0, 23.0 ],
 									"rnbo_classname" : "p",
 									"rnbo_extra_attributes" : 									{
-										"polyphony" : -1.0,
 										"args" : [  ],
+										"polyphony" : -1.0,
 										"receivemode" : "local",
 										"voicecontrol" : "simple",
 										"notecontroller" : 0,
@@ -3975,8 +3975,8 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 9,
-											"minor" : 0,
+											"major" : 8,
+											"minor" : 6,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -4196,8 +4196,8 @@
 													"patching_rect" : [ 49.999999466666566, 40.0, 28.0, 23.0 ],
 													"rnbo_classname" : "in",
 													"rnbo_extra_attributes" : 													{
-														"comment" : "",
-														"meta" : ""
+														"meta" : "",
+														"comment" : ""
 													}
 ,
 													"rnbo_serial" : 1,
@@ -4279,8 +4279,8 @@
 													"patching_rect" : [ 215.999999466666509, 40.0, 28.0, 23.0 ],
 													"rnbo_classname" : "in",
 													"rnbo_extra_attributes" : 													{
-														"comment" : "",
-														"meta" : ""
+														"meta" : "",
+														"comment" : ""
 													}
 ,
 													"rnbo_serial" : 2,
@@ -4362,8 +4362,8 @@
 													"patching_rect" : [ 382.999999466666509, 40.0, 28.0, 23.0 ],
 													"rnbo_classname" : "in",
 													"rnbo_extra_attributes" : 													{
-														"comment" : "",
-														"meta" : ""
+														"meta" : "",
+														"comment" : ""
 													}
 ,
 													"rnbo_serial" : 3,
@@ -4444,8 +4444,8 @@
 													"patching_rect" : [ 49.999999466666566, 183.0, 36.0, 23.0 ],
 													"rnbo_classname" : "out",
 													"rnbo_extra_attributes" : 													{
-														"comment" : "",
-														"meta" : ""
+														"meta" : "",
+														"comment" : ""
 													}
 ,
 													"rnbo_serial" : 1,
@@ -4565,8 +4565,8 @@
 									"patching_rect" : [ 392.826658333333341, 164.0, 44.0, 23.0 ],
 									"rnbo_classname" : "p",
 									"rnbo_extra_attributes" : 									{
-										"polyphony" : -1.0,
 										"args" : [  ],
+										"polyphony" : -1.0,
 										"receivemode" : "local",
 										"voicecontrol" : "simple",
 										"notecontroller" : 0,
@@ -5286,8 +5286,8 @@
 									"patching_rect" : [ 50.0, 285.0, 36.0, 23.0 ],
 									"rnbo_classname" : "out",
 									"rnbo_extra_attributes" : 									{
-										"comment" : "",
-										"meta" : ""
+										"meta" : "",
+										"comment" : ""
 									}
 ,
 									"rnbo_serial" : 1,
@@ -5557,7 +5557,7 @@
 
 					}
 ,
-					"rnboversion" : "1.3.0-dev.2",
+					"rnboversion" : "1.2.4",
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
