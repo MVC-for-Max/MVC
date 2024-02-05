@@ -5,13 +5,13 @@ var dict;
 var shortDesc = "";
 var longDesc = "";
 var category = ""; 
-//var aimObjectsDict = new Dict("name");
+//var mvcObjectsDict = new Dict("name");
 
 
 function getInfos(objectName)
 {
 
-	//aimObjectsDict.readany("aim.helper.json");
+	//mvcObjectsDict.readany("mvc.helper.json");
 	dict = max.getrefdict(objectName);
 	if (typeof(dict) == "object") {
 		digest = dict.get("digest");

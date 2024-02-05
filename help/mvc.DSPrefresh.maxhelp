@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 2,
+			"minor" : 6,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -58,7 +58,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 38.5, 195.0, 164.0, 22.0 ],
+					"patching_rect" : [ 38.5, 195.0, 169.0, 22.0 ],
 					"text" : "mvc.helpfiller mvc.DSPrefresh"
 				}
 
@@ -105,8 +105,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 6,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -167,8 +167,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 6,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -214,7 +214,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 228.0, 162.0, 207.0, 79.0 ],
-									"presentation_linecount" : 7,
 									"text" : "Provide an mvc.device name or the UID of a model attached to an mvc.device, as the restart function happens in the mvc.device."
 								}
 
@@ -228,7 +227,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 468.0, 189.0, 131.0, 52.0 ],
+									"patching_rect" : [ 468.0, 189.0, 135.0, 52.0 ],
 									"text" : "mvc.DSPrefresh needs a device to work with."
 								}
 
@@ -241,7 +240,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 450.0, 238.0, 167.0, 22.0 ],
+									"patching_rect" : [ 450.0, 238.0, 169.0, 22.0 ],
 									"text" : "mvc.device DSPrefreshHelper",
 									"varname" : "mvc.device"
 								}
@@ -325,7 +324,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 129.0, 238.0, 194.0, 22.0 ],
+									"patching_rect" : [ 129.0, 238.0, 197.0, 22.0 ],
 									"text" : "mvc.DSPrefresh DSPrefreshHelper"
 								}
 
@@ -394,13 +393,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -466,9 +465,9 @@
 								"name" : "tap-dark",
 								"default" : 								{
 									"editing_bgcolor" : [ 0.133333, 0.133333, 0.133333, 1.0 ],
-									"textcolor" : [ 0.847058823529412, 0.847058823529412, 0.847058823529412, 1.0 ],
 									"fontname" : [ "Ableton Sans Light Regular" ],
-									"locked_bgcolor" : [ 0.133333, 0.133333, 0.133333, 1.0 ]
+									"locked_bgcolor" : [ 0.133333, 0.133333, 0.133333, 1.0 ],
+									"textcolor" : [ 0.847058823529412, 0.847058823529412, 0.847058823529412, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -508,268 +507,18 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "helpdetails.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.DSPrefresh.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/core",
-				"patcherrelativepath" : "../../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.device.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/core",
-				"patcherrelativepath" : "../../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.f.call.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/core",
-				"patcherrelativepath" : "../../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.createfolder.js",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.model.initialize.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/core",
-				"patcherrelativepath" : "../../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.f.io.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/core",
-				"patcherrelativepath" : "../../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.dict.flatten.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.brace.expansion.js",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.device.js",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.isloading.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/core",
-				"patcherrelativepath" : "../../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.setMaxObjColor.js",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.noblabla.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.presets.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/core",
-				"patcherrelativepath" : "../../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.dict.flatten2.js",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.remote.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/core",
-				"patcherrelativepath" : "../../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.parameter.initialized.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/core",
-				"patcherrelativepath" : "../../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.model.initialized.d.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/core",
-				"patcherrelativepath" : "../../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.paramreceiver.p.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/core",
-				"patcherrelativepath" : "../../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.dlb.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/core",
-				"patcherrelativepath" : "../../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.dict.keyrename.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.dict.filter.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.device.parameters.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.parameter.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/core",
-				"patcherrelativepath" : "../../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.newgone.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/core",
-				"patcherrelativepath" : "../../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.GUI.presets.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.stripes10.purple.png",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/media",
-				"patcherrelativepath" : "../../media",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "thru.maxpat",
-				"bootpath" : "C74:/patchers/m4l/Pluggo for Live resources/patches",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.qlow.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.locatePatcherWindow.js",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.GUI.preset.description.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.GUI.windowsettings.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "icon.png",
-				"bootpath" : "~/Documents/Max 8/Packages/aim",
-				"patcherrelativepath" : "../..",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.helpfiller.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.helpinfos.js",
-				"bootpath" : "~/Documents/Max 8/Packages/aim/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}
@@ -826,9 +575,9 @@
 				"name" : "tap-dark",
 				"default" : 				{
 					"editing_bgcolor" : [ 0.133333, 0.133333, 0.133333, 1.0 ],
-					"textcolor" : [ 0.847058823529412, 0.847058823529412, 0.847058823529412, 1.0 ],
 					"fontname" : [ "Ableton Sans Light Regular" ],
-					"locked_bgcolor" : [ 0.133333, 0.133333, 0.133333, 1.0 ]
+					"locked_bgcolor" : [ 0.133333, 0.133333, 0.133333, 1.0 ],
+					"textcolor" : [ 0.847058823529412, 0.847058823529412, 0.847058823529412, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

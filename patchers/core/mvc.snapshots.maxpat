@@ -551,7 +551,7 @@
 				"box" : 				{
 					"comment" : "dumpout",
 					"id" : "obj-21",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -563,7 +563,7 @@
 				"box" : 				{
 					"comment" : "current snapshot",
 					"id" : "obj-20",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -7060,7 +7060,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-48",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -8523,7 +8523,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-24",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 5,
@@ -8567,7 +8566,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-11",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
@@ -8596,7 +8594,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-1",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
@@ -8919,7 +8916,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-2",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -12415,7 +12412,6 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-61",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 5,
@@ -13183,8 +13179,8 @@
 																					"numinlets" : 3,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 40.0, 327.657894736842081, 325.0, 49.0 ],
-																					"text" : "sprintf symout Snapshot file \\\"%s\\\" is at version %s but package is at version %s. Please update your snapshot file first with the preset updater (located in AIM-package/tools)."
+																					"patching_rect" : [ 40.0, 327.657894736842081, 331.0, 49.0 ],
+																					"text" : "sprintf symout Snapshot file \\\"%s\\\" is at version %s but package is at version %s. Please update your snapshot file first with the preset updater (located in MVC-package/tools)."
 																				}
 
 																			}
@@ -15845,7 +15841,22 @@
 				}
 
 			}
- ]
+ ],
+		"parameters" : 		{
+			"obj-22::obj-8::obj-7" : [ "live.toggle[1]", "live.toggle", 0 ],
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
+		"autosave" : 0
 	}
 
 }

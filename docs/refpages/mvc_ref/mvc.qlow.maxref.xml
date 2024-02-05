@@ -7,7 +7,7 @@
 <!-- <i> mvc.overview.maxpat </i> : references a patcher -->
 <!-- <at>default</at> : references an attribute -->
 
-<c74object name="mvc.qlow" module="aim" kind="patcher" category="library">
+<c74object name="mvc.qlow" module="mvc" kind="patcher" category="library">
 
 	<digest>
 		Queue/delay based message limiter.

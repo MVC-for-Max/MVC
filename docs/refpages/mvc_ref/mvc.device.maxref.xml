@@ -6,10 +6,10 @@
 <!-- <o> loadbang </o> : references an object -->
 <!-- <i> mvc.overview.maxpat </i> : references a patcher -->
 <!-- <at>default</at> : references an attribute -->
-<!-- <link type="vignette" module="aim" name="brace_expansion">brace expansion notation</link> : add a link to a vignette -->
+<!-- <link type="vignette" module="mvc" name="brace_expansion">brace expansion notation</link> : add a link to a vignette -->
 <!-- <img src="images/image137.png" /> : put an image -->
 
-<c74object name="mvc.device" module="aim" kind="patcher" category="library">
+<c74object name="mvc.device" module="mvc" kind="patcher" category="library">
 
 	<digest>
 		Create a local device.
@@ -17,7 +17,7 @@
 	
 	<description>
 		<o>mvc.device</o> creates a local device to which any <o>mvc.model</o>, <o>mvc.parameter</o>, <o>mvc.state</o> and <o>mvc.message</o>can register. <br />
-		It is at the root of the namespace and can be considered as a top-level <o>mvc.model</o> in the <link type="vignette" module="aim" name="MVC_principles">MVC model</link> used in the MVC package.
+		It is at the root of the namespace and can be considered as a top-level <o>mvc.model</o> in the <link type="vignette" module="mvc" name="MVC_principles">MVC model</link> used in the MVC package.
 	</description>
 	
 	<!--METADATA-->

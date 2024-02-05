@@ -6,22 +6,22 @@
 <!-- <o> loadbang </o> : references an object -->
 <!-- <i> mvc.overview.maxpat </i> : references a patcher -->
 <!-- <at>default</at> : references an attribute -->
-<!-- <link type="vignette" module="aim" name="brace_expansion">brace expansion notation</link> : add a link to a vignette -->
+<!-- <link type="vignette" module="mvc" name="brace_expansion">brace expansion notation</link> : add a link to a vignette -->
 <!-- <img src="images/image137.png" /> : put an image -->
 
-<c74object name="mvc.message" module="aim" kind="patcher" category="library">
+<c74object name="mvc.message" module="mvc" kind="patcher" category="library">
 
 	<digest>
 		Declare a message and its attributes
 	</digest>
 
 	<description>
-		<o>mvc.message</o> declares a message in the aim namespace - it is somehow similar to the <o>mvc.parameter</o> object, except that it is state-less, that is, it has no memory and as such, it is not stored in preset and has no default value. For instance, a "clear" message to a filter could be represented as an <o>mvc.message</o>.
+		<o>mvc.message</o> declares a message in the MVC namespace - it is somehow similar to the <o>mvc.parameter</o> object, except that it is state-less, that is, it has no memory and as such, it is not stored in preset and has no default value. For instance, a "clear" message to a filter could be represented as an <o>mvc.message</o>.
 	</description>
 	<discussion>
     	An <o>mvc.message</o> object enable to define messages in a model (defined by an <o>mvc.model</o>) to which we'll be able to send data and consequently tweak a process. Since they are state-less, we can just send data to it or receive it, but not fetch it.<br />
 
-		<o>mvc.parameter</o> helps defining a model in the <link type="vignette" module="aim" name="MVC_principles">MVC model</link> used in the MVC package.
+		<o>mvc.parameter</o> helps defining a model in the <link type="vignette" module="mvc" name="MVC_principles">MVC model</link> used in the MVC package.
   </discussion>
 	
 	<!--METADATA-->
@@ -29,7 +29,7 @@
 		<metadata name="author">Vincent Goudard</metadata>
 		<metadata name="tag">MVC</metadata>
 		<metadata name="tag">mapping</metadata>
-		<metadata name="aim-type">core</metadata>
+		<metadata name="mvc-type">core</metadata>
 	</metadatalist>
 
 	
@@ -123,7 +123,7 @@
 				Set the message name.
 			</digest>
 			<description>
-				Multiple message addresses can be set with the <link type="vignette" module="aim" name="brace_expansion">brace expansion notation</link>.
+				Multiple message addresses can be set with the <link type="vignette" module="mvc" name="brace_expansion">brace expansion notation</link>.
 			</description>
 		</method> 
 

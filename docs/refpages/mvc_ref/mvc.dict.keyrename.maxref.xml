@@ -7,7 +7,7 @@
 <!-- <i> mvc.overview.maxpat </i> : references a patcher -->
 <!-- <at>default</at> : references an attribute -->
 
-<c74object name="mvc.dict.keyrename" module="aim" kind="patcher" category="library">
+<c74object name="mvc.dict.keyrename" module="mvc" kind="patcher" category="library">
 
 	<digest>
 		Facility to rename dict keys.

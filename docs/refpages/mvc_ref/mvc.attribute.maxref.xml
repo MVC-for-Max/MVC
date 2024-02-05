@@ -8,7 +8,7 @@
 <!-- <at>default</at> : references an attribute -->
 
 
-<c74object name="mvc.attribute" module="aim" kind="patcher" category="library">
+<c74object name="mvc.attribute" module="mvc" kind="patcher" category="library">
 
 	<digest>
 		Access a parameter's attributes remotely
@@ -24,8 +24,8 @@
 	
 	<!--METADATA-->
 	<metadatalist>
-		<metadata name="author">aim</metadata>
-		<metadata name="tag">aim</metadata>
+		<metadata name="author">mvc</metadata>
+		<metadata name="tag">mvc</metadata>
 		<metadata name="tag">Network</metadata>
 	</metadatalist>
 

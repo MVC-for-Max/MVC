@@ -2,8 +2,8 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 9,
-			"minor" : 0,
+			"major" : 8,
+			"minor" : 6,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
@@ -169,7 +169,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 73.0, 411.0, 173.0, 22.0 ],
+					"patching_rect" : [ 73.0, 411.0, 176.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 0,
@@ -177,7 +177,7 @@
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "dict mvc.helper aim.helper.json"
+					"text" : "dict mvc.helper mvc.helper.json"
 				}
 
 			}

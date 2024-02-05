@@ -7,7 +7,7 @@
 <!-- <i> mvc.overview.maxpat </i> : references a patcher -->
 <!-- <at>default</at> : references an attribute -->
 
-<c74object name="mvc.subscribe" module="aim" kind="patcher" category="library">
+<c74object name="mvc.subscribe" module="mvc" kind="patcher" category="library">
 
 	<digest>
 		Subscriber in the publish/subscribe pattern.
