@@ -7,7 +7,7 @@
 <!-- <i> mvc.overview.maxpat </i> : references a patcher -->
 <!-- <at>default</at> : references an attribute -->
 
-<c74object name="mvc.container" module="aim" kind="patcher" category="library">
+<c74object name="mvc.container" module="mvc" kind="patcher" category="library">
 
 	<digest>
 		A container for scripted objects.
@@ -22,7 +22,7 @@
 		<metadata name="author">Vincent Goudard</metadata>
 		<metadata name="tag">MVC</metadata>
 		<metadata name="tag">mapping</metadata>
-		<metadata name="aim-type">library</metadata>
+		<metadata name="mvc-type">library</metadata>
 	</metadatalist>
 	
 	<!--INLETS-->

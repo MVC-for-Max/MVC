@@ -7,14 +7,14 @@
 <!-- <i> mvc.overview.maxpat </i> : references a patcher -->
 <!-- <at>default</at> : references an attribute -->
 
-<c74object name="mvc.model" module="aim" kind="patcher" category="library">
+<c74object name="mvc.model" module="mvc" kind="patcher" category="library">
 
 	<digest>
 		Declare an MVC model.
 	</digest>
 	
 	<description>
-		The <o>mvc.model</o> helps declaring a model in the <link type="vignette" module="aim" name="MVC_principles">Model-View-Controller</link> scheme used in the MVC package.
+		The <o>mvc.model</o> helps declaring a model in the <link type="vignette" module="mvc" name="MVC_principles">Model-View-Controller</link> scheme used in the MVC package.
 		<br />
 		An <o>mvc.model</o> creates a node in the namespace to which several <o>mvc.parameter</o>, <o>mvc.state</o>, <o>mvc.message</o> or even <o>mvc.model</o> can register. It thus allows to create complex and nested address hierarchies describing your patcher's features as a namespace. An <o>mvc.model</o> can also declare a <at>type</at>, so that other instances of this model will share their presets.
 	</description>
@@ -90,7 +90,7 @@
 		<objarg name="name" optional="0" type="symbol">
 			<digest>The model's name, as seen in the namespace</digest>
 			<description>
-				The model's name is a symbol that defines the address in the <link type="vignette" module="aim" name="MVC_namespace">MVC namespace</link>. It can make use of the <link type="vignette" module="aim" name="brace_expansion">brace expansion notation</link>. Although multiple mvc.models cannot have the same UID, they can have the same name, as it may take place in a different place in the <link type="vignette" module="aim" name="MVC_namespace">MVC namespace</link>.
+				The model's name is a symbol that defines the address in the <link type="vignette" module="mvc" name="MVC_namespace">MVC namespace</link>. It can make use of the <link type="vignette" module="mvc" name="brace_expansion">brace expansion notation</link>. Although multiple mvc.models cannot have the same UID, they can have the same name, as it may take place in a different place in the <link type="vignette" module="mvc" name="MVC_namespace">MVC namespace</link>.
 			</description>
 		</objarg>
 	</objarglist>

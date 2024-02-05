@@ -8,20 +8,20 @@
 <!-- <at>default</at> : references an attribute -->
 
 
-<c74object name="mvc.state" module="aim" kind="patcher" category="library">
+<c74object name="mvc.state" module="mvc" kind="patcher" category="library">
 
 	<digest>
 		Declare a state and its attributes
 	</digest>
 
 	<description>
-		<o>mvc.state</o> declares a state in the aim namespace - it is very similar to the <o>mvc.parameter</o> object, except that its value is not stored in presets. It is typically used for internal values that need to be queried or set but not stored. For instance, you may want that for the playhead position of a sample player.
+		<o>mvc.state</o> declares a state in the MVC namespace - it is very similar to the <o>mvc.parameter</o> object, except that its value is not stored in presets. It is typically used for internal values that need to be queried or set but not stored. For instance, you may want that for the playhead position of a sample player.
 	</description>
 	<discussion>
 		An <o>mvc.state</o> object enable to define states in a model (defined by an <o>mvc.model</o>) to which we'll be able to send data and consequently tweak a process. We can also fetch its value, e.g. to display it in a GUI. Last, unlike <o>mvc.parameter</o>, <o>mvc.state</o>s can <b>not</b> be saved in presets.
     	... to be discussed if this should just be a flavour of <o>mvc.parameter</o>.<br />
 
-		<o>mvc.parameter</o> helps defining a model in the <link type="vignette" module="aim" name="MVC_principles">MVC model</link> used in the MVC package.
+		<o>mvc.parameter</o> helps defining a model in the <link type="vignette" module="mvc" name="MVC_principles">MVC model</link> used in the MVC package.
   	</discussion>
 	
 	<!--METADATA-->
@@ -29,7 +29,7 @@
 		<metadata name="author">Vincent Goudard</metadata>
 		<metadata name="tag">MVC</metadata>
 		<metadata name="tag">mapping</metadata>
-		<metadata name="aim-type">core</metadata>
+		<metadata name="mvc-type">core</metadata>
 	</metadatalist>
 
 	
@@ -122,7 +122,7 @@
 				Set the state name.
 			</digest>
 			<description>
-				Multiple state addresses can be set with the <link type="vignette" module="aim" name="brace_expansion">brace expansion notation</link>.
+				Multiple state addresses can be set with the <link type="vignette" module="mvc" name="brace_expansion">brace expansion notation</link>.
 			</description>
 		</method> 
 

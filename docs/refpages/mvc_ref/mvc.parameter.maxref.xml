@@ -6,22 +6,22 @@
 <!-- <o> loadbang </o> : references an object -->
 <!-- <i> mvc.overview.maxpat </i> : references a patcher -->
 <!-- <at>default</at> : references an attribute -->
-<!-- <link type="vignette" module="aim" name="brace_expansion">brace expansion notation</link> : add a link to a vignette -->
+<!-- <link type="vignette" module="mvc" name="brace_expansion">brace expansion notation</link> : add a link to a vignette -->
 <!-- <img src="images/image137.png" /> : put an image -->
 
-<c74object name="mvc.parameter" module="aim" kind="patcher" category="library">
+<c74object name="mvc.parameter" module="mvc" kind="patcher" category="library">
 
 	<digest>
 		Declare a parameter and its attributes
 	</digest>
 
 	<description>
-		<o>mvc.parameter</o> declares a parameter (or series of -) in the <link type="vignette" module="aim" name="MVC_namespace">MVC namespace</link>. It is somehow similar to the pattr object, while enabling a number of additional features offered by the aim environment.
+		<o>mvc.parameter</o> declares a parameter (or series of -) in the <link type="vignette" module="mvc" name="MVC_namespace">MVC namespace</link>. It is somehow similar to the pattr object, while enabling a number of additional features offered by the MVC environment.
 	</description>
 	<discussion>
     	An <o>mvc.parameter</o> object enable to define parameters in a model (defined by an <o>mvc.model</o> or simply an <o>mvc.device</o>) to which we'll be able to send data and consequently tweak a process. We can also fetch its value, e.g. to display it in a GUI. Last, <o>mvc.parameter</o>s can be saved in presets by the <o>mvc.model</o>) to which they are bound to.<br />
 
-		<o>mvc.parameter</o> helps defining a model in the <link type="vignette" module="aim" name="MVC_principles">MVC model</link> used in the MVC package.
+		<o>mvc.parameter</o> helps defining a model in the <link type="vignette" module="mvc" name="MVC_principles">MVC model</link> used in the MVC package.
   </discussion>
 	
 	<!--METADATA-->
@@ -29,7 +29,7 @@
 		<metadata name="author">Vincent Goudard</metadata>
 		<metadata name="tag">MVC</metadata>
 		<metadata name="tag">mapping</metadata>
-		<metadata name="aim-type">core</metadata>
+		<metadata name="mvc-type">core</metadata>
 	</metadatalist>
 
 	
@@ -80,7 +80,7 @@
 				The parameter name.
 			</digest>
 			<description>
-				The parameter name should be a symbol (that is, it can contain spaces, as long as it is surrounded by quotes). It can make use of the <link type="vignette" module="aim" name="brace_expansion">brace expansion notation</link>. Note that the use of slashes (like "cutoff/frequency") in the name is prohibited.
+				The parameter name should be a symbol (that is, it can contain spaces, as long as it is surrounded by quotes). It can make use of the <link type="vignette" module="mvc" name="brace_expansion">brace expansion notation</link>. Note that the use of slashes (like "cutoff/frequency") in the name is prohibited.
 			</description>
 		</objarg>
 
@@ -122,7 +122,7 @@
 				Set the parameter name.
 			</digest>
 			<description>
-				Multiple parameter addresses can be set with the <link type="vignette" module="aim" name="brace_expansion">brace expansion notation</link>.
+				Multiple parameter addresses can be set with the <link type="vignette" module="mvc" name="brace_expansion">brace expansion notation</link>.
 			</description>
 		</method> 
 

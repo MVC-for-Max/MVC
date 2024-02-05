@@ -7,7 +7,7 @@
 <!-- <i> mvc.overview.maxpat </i> : references a patcher -->
 <!-- <at>default</at> : references an attribute -->
 
-<c74object name="mvc.zl.split" module="aim" kind="patcher" category="library">
+<c74object name="mvc.zl.split" module="mvc" kind="patcher" category="library">
 
 	<digest>
 		Just like split, but for lists.

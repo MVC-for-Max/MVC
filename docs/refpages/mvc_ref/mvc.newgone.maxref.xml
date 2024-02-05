@@ -6,10 +6,10 @@
 <!-- <o> loadbang </o> : references an object -->
 <!-- <i> mvc.overview.maxpat </i> : references a patcher -->
 <!-- <at>default</at> : references an attribute -->
-<!-- <link type="vignette" module="aim" name="brace_expansion">brace expansion notation</link> : add a link to a vignette -->
+<!-- <link type="vignette" module="mvc" name="brace_expansion">brace expansion notation</link> : add a link to a vignette -->
 <!-- <img src="images/image137.png" /> : put an image -->
 
-<c74object name="mvc.newgone" module="aim" kind="patcher" category="library">
+<c74object name="mvc.newgone" module="mvc" kind="patcher" category="library">
 
 	<digest>
 		New and gone elements in a list.
@@ -24,7 +24,7 @@
 		<metadata name="author">Vincent Goudard</metadata>
 		<metadata name="tag">MVC</metadata>
 		<metadata name="tag">mapping</metadata>
-		<metadata name="aim-type">core</metadata>
+		<metadata name="mvc-type">core</metadata>
 	</metadatalist>
 	
 	<!--INLETS-->

@@ -7,7 +7,7 @@
 <!-- <i> mvc.overview.maxpat </i> : references a patcher -->
 <!-- <at>default</at> : references an attribute -->
 
-<c74object name="mvc.GUI.activeToggle" module="aim" kind="patcher" category="library">
+<c74object name="mvc.GUI.activeToggle" module="mvc" kind="patcher" category="library">
 
 	<digest>
 		A GUI interface for an <o>mvc.parameter</o> of type boolean.
@@ -52,7 +52,7 @@
 			<digest>The <o>mvc.parameter</o> or <o>mvc.state</o>'s address to monitor.</digest>
 		</objarg>
 			<description>
-				The address of a specific <o>mvc.parameter</o> or <o>mvc.state</o> can be given as an OSC formatted symbol. Multiple addresses can be set either as a list or using <link type="vignette" module="aim" name="MVC_brace_expansion_and_wildcards">brace expansion notation or wildcards</link>.
+				The address of a specific <o>mvc.parameter</o> or <o>mvc.state</o> can be given as an OSC formatted symbol. Multiple addresses can be set either as a list or using <link type="vignette" module="mvc" name="MVC_brace_expansion_and_wildcards">brace expansion notation or wildcards</link>.
 			</description>
 	</objarglist>
 
@@ -80,7 +80,7 @@
 			<description>
 				<m>address</m> is a possible method on the right inlet.<br />
 
-				The address of a specific <o>mvc.parameter</o> or <o>mvc.state</o> can be given as an OSC formatted symbol. Multiple addresses can be set either as a list or using <link type="vignette" module="aim" name="MVC_brace_expansion_and_wildcards">brace expansion notation or wildcards</link>.
+				The address of a specific <o>mvc.parameter</o> or <o>mvc.state</o> can be given as an OSC formatted symbol. Multiple addresses can be set either as a list or using <link type="vignette" module="mvc" name="MVC_brace_expansion_and_wildcards">brace expansion notation or wildcards</link>.
 			</description>
 		</method>
 	</methodlist>
