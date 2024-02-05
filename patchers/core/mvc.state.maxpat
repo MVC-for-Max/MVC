@@ -3059,7 +3059,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 115.0, 262.0, 65.0, 24.0 ],
+					"patching_rect" : [ 115.0, 262.0, 80.0, 24.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -3199,6 +3199,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-11", 1 ],
+					"order" : 1,
+					"source" : [ "obj-24", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-26", 0 ],
+					"order" : 0,
 					"source" : [ "obj-24", 1 ]
 				}
 
