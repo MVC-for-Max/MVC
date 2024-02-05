@@ -165,11 +165,14 @@
 		</method>
 
 		<method name="reset (on the right inlet)">
+			<arglist>
+				<arg name="index" type="number" optional="1"/>
+			</arglist>			
 			<digest>
 				Reset to default value
 			</digest>
 			<description>
-				The message <m>reset</m> sent to the leftmost inlet reset the current value to the value defined by the <at>default</at> attribute
+				The message <m>reset</m> sent to the leftmost inlet resets the current value to the value defined by the <at>default</at> attribute. It can be followed by an optional integer to reset only a specific address in the address space.
 			</description>
 		</method>
  
@@ -265,7 +268,7 @@
 				Default value.
 			</digest>
 			<description>
-				The <at>default</at> attribute sets the value to output at the leftmost outlet on model initialization. The default value can be overridden by the default model preset
+				The <at>default</at> attribute sets the value to output at the leftmost outlet on model initialization.
 			</description>
 		</attribute>	
 
@@ -290,6 +293,7 @@
 					<li><m>string</m> : a string value (aka "symbol" in Max).</li>
 					<li><m>bool</m> : boolean value. Implicitely clips value to 0/1</li>
 					<li><m>list</m> : a list of elements including numbers and symbols</li>
+					<li><m>vector</m> : an array of numbers</li>
 					<li><m>dict</m> : a dictionary</li>
 				</ul>
 			</description>
