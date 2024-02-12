@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 1028.0, 613.0 ],
+		"rect" : [ 92.0, 100.0, 932.0, 708.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -51,13 +51,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 1028.0, 587.0 ],
+						"rect" : [ 0.0, 26.0, 932.0, 682.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -254,6 +254,7 @@
 								"box" : 								{
 									"border" : 0,
 									"filename" : "mvc.hatches.UI.js",
+									"hidden" : 1,
 									"id" : "obj-41",
 									"ignoreclick" : 1,
 									"jsarguments" : [ 0.8, 0.6, 0.8, 0.75 ],
@@ -322,7 +323,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 145.5, 416.497845448368253, 170.0, 20.0 ],
-									"text" : "The Polux param"
+									"text" : "Temperature at the North pole"
 								}
 
 							}
@@ -735,7 +736,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"midpoints" : [ 473.5, 142.248922724184098, 418.5, 142.248922724184098 ],
+									"midpoints" : [ 473.5, 115.248922724184098, 418.5, 115.248922724184098 ],
 									"source" : [ "obj-7", 0 ]
 								}
 
@@ -743,7 +744,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"midpoints" : [ 435.5, 189.748922724184126, 418.5, 189.748922724184126 ],
+									"midpoints" : [ 435.5, 161.748922724184126, 418.5, 161.748922724184126 ],
 									"source" : [ "obj-8", 0 ]
 								}
 
@@ -1798,13 +1799,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1028.0, 587.0 ],
+						"rect" : [ 92.0, 126.0, 932.0, 682.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1933,6 +1934,7 @@
 								"box" : 								{
 									"border" : 0,
 									"filename" : "mvc.hatches.UI.js",
+									"hidden" : 1,
 									"id" : "obj-41",
 									"ignoreclick" : 1,
 									"jsarguments" : [ 0.8, 0.6, 0.8, 0.75 ],
@@ -2025,7 +2027,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 145.5, 416.497845448368253, 170.0, 20.0 ],
-									"text" : "Temperature at the South pole"
+									"text" : "Temperature at the North pole"
 								}
 
 							}
@@ -3481,13 +3483,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1028.0, 587.0 ],
+						"rect" : [ 0.0, 26.0, 932.0, 682.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3562,13 +3564,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1028.0, 587.0 ],
+						"rect" : [ 0.0, 26.0, 932.0, 682.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3617,7 +3619,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 681.0, 499.439940999999976, 50.0, 22.0 ]
+									"patching_rect" : [ 681.0, 484.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -3629,7 +3631,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 201.75, 499.439940999999976, 50.0, 22.0 ]
+									"patching_rect" : [ 202.0, 484.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -3639,10 +3641,11 @@
 									"bubblepoint" : 0.19,
 									"bubbleside" : 0,
 									"id" : "obj-23",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 119.5, 388.0, 240.0, 39.0 ],
+									"patching_rect" : [ 190.0, 387.0, 119.0, 52.0 ],
 									"text" : "... or changed later, with a message."
 								}
 
@@ -3654,7 +3657,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 816.0, 443.0, 99.0, 22.0 ],
+									"patching_rect" : [ 816.0, 428.0, 99.0, 22.0 ],
 									"text" : "prepend address"
 								}
 
@@ -3666,7 +3669,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 358.0, 416.0, 184.0, 22.0 ],
+									"patching_rect" : [ 358.0, 401.0, 184.0, 22.0 ],
 									"text" : "sprintf symout RemoteHelper/%s"
 								}
 
@@ -3680,7 +3683,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 526.0, 148.0, 52.0 ],
+									"patching_rect" : [ 148.0, 511.0, 148.0, 52.0 ],
 									"text" : "The index in the mvc.remote namespace."
 								}
 
@@ -3693,7 +3696,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 11.0, 526.0, 133.0, 39.0 ],
+									"patching_rect" : [ 11.0, 511.0, 133.0, 39.0 ],
 									"text" : "The parameter's value."
 								}
 
@@ -3704,10 +3707,11 @@
 									"bubblepoint" : 0.78,
 									"bubbleside" : 2,
 									"id" : "obj-20",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 21.5, 430.439940999999976, 240.0, 39.0 ],
+									"patching_rect" : [ 39.0, 401.0, 148.0, 52.0 ],
 									"text" : "Address can be provided as an argument..."
 								}
 
@@ -3724,7 +3728,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 4.0, 6.0, 584.0, 158.0 ]
+									"patching_rect" : [ 10.0, 10.0, 584.0, 158.0 ]
 								}
 
 							}
@@ -3747,8 +3751,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 919.5, 364.0, 108.0, 24.0 ],
-									"text" : "select param(s)"
+									"patching_rect" : [ 919.5, 364.0, 124.0, 24.0 ],
+									"text" : "select address(es)"
 								}
 
 							}
@@ -3795,7 +3799,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 816.0, 416.0, 184.0, 22.0 ],
+									"patching_rect" : [ 816.0, 401.0, 184.0, 22.0 ],
 									"text" : "sprintf symout RemoteHelper/%s"
 								}
 
@@ -3821,7 +3825,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 546.5, 499.439940999999976, 50.0, 22.0 ]
+									"patching_rect" : [ 547.0, 484.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -3833,7 +3837,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "int", "" ],
-									"patching_rect" : [ 546.5, 471.439940999999976, 288.5, 22.0 ],
+									"patching_rect" : [ 547.0, 456.0, 288.5, 22.0 ],
 									"text" : "mvc.remote RemoteHelper/Polux{1..19}"
 								}
 
@@ -3857,8 +3861,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 384.0, 364.0, 108.0, 24.0 ],
-									"text" : "select param(s)"
+									"patching_rect" : [ 384.0, 364.0, 124.0, 24.0 ],
+									"text" : "select address(es)"
 								}
 
 							}
@@ -3905,7 +3909,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 358.0, 443.0, 99.0, 22.0 ],
+									"patching_rect" : [ 358.0, 428.0, 99.0, 22.0 ],
 									"text" : "prepend address"
 								}
 
@@ -4007,7 +4011,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 45.5, 499.439940999999976, 50.0, 22.0 ]
+									"patching_rect" : [ 46.0, 484.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -4032,7 +4036,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "int", "" ],
-									"patching_rect" : [ 45.5, 471.439940999999976, 331.5, 22.0 ],
+									"patching_rect" : [ 46.0, 456.0, 331.5, 22.0 ],
 									"text" : "mvc.remote RemoteHelper/Castor1"
 								}
 
@@ -4164,7 +4168,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
-									"midpoints" : [ 55.0, 528.439940999999976, 37.5, 528.439940999999976, 37.5, 465.439940999999976, 55.0, 465.439940999999976 ],
+									"midpoints" : [ 55.5, 513.439940999999976, 37.5, 513.439940999999976, 37.5, 450.439940999999976, 55.5, 450.439940999999976 ],
 									"source" : [ "obj-22", 0 ]
 								}
 
@@ -4243,7 +4247,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-45", 0 ],
-									"midpoints" : [ 556.0, 528.439940999999976, 540.5, 528.439940999999976, 540.5, 465.439940999999976, 556.0, 465.439940999999976 ],
+									"midpoints" : [ 556.5, 513.0, 541.0, 513.0, 541.0, 450.0, 556.5, 450.0 ],
 									"source" : [ "obj-44", 0 ]
 								}
 
