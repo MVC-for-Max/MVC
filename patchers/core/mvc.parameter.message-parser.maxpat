@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -62,7 +62,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -444,7 +444,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -709,7 +709,7 @@
 				"box" : 				{
 					"comment" : "messages from input right inlet",
 					"id" : "obj-16",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -722,7 +722,7 @@
 				"box" : 				{
 					"comment" : "messages from input right inlet",
 					"id" : "obj-5",
-					"index" : 0,
+					"index" : 3,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -735,7 +735,7 @@
 				"box" : 				{
 					"comment" : "retrig type",
 					"id" : "obj-35",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -755,7 +755,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -886,7 +886,7 @@
 				"box" : 				{
 					"comment" : "retrig init",
 					"id" : "obj-3",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -931,7 +931,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -987,8 +987,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 5,
 									"outlettype" : [ "", "", "", "", "" ],
-									"patching_rect" : [ 419.166666666666686, 117.0, 225.0, 23.0 ],
-									"text" : "regexp :|/|\\\\\\\\|\\\\?|\\\\*|\\\\|\\\\s|\\\\t @tosymbol"
+									"patching_rect" : [ 419.166666666666686, 117.0, 228.0, 23.0 ],
+									"text" : "regexp :|/|\\\\\\\\|\\\\?|\\\\*|\\\\||\\\\s|\\\\t @tosymbol"
 								}
 
 							}
@@ -1208,13 +1208,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 363.0, 531.0, 969.0, 341.0 ],
+						"rect" : [ 50.0, 316.0, 771.0, 351.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1288,8 +1288,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 5,
 									"outlettype" : [ "", "", "", "", "" ],
-									"patching_rect" : [ 308.0, 179.0, 156.0, 23.0 ],
-									"text" : "regexp :|/|\\\\\\\\|\\\\?|\\\\*|\\\\|\\\\s|\\\\t"
+									"patching_rect" : [ 308.0, 179.0, 159.0, 23.0 ],
+									"text" : "regexp :|/|\\\\\\\\|\\\\?|\\\\*|\\\\||\\\\s|\\\\t"
 								}
 
 							}
@@ -1647,7 +1647,7 @@
 				"box" : 				{
 					"comment" : "messages from patcherargs",
 					"id" : "obj-17",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -1660,7 +1660,7 @@
 				"box" : 				{
 					"comment" : "to dictionary",
 					"id" : "obj-18",
-					"index" : 0,
+					"index" : 4,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -1672,7 +1672,7 @@
 				"box" : 				{
 					"comment" : "error message",
 					"id" : "obj-19",
-					"index" : 0,
+					"index" : 3,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -1975,8 +1975,7 @@
 				}
 
 			}
- ],
-		"autosave" : 0
+ ]
 	}
 
 }
