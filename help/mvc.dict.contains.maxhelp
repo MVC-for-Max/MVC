@@ -36,7 +36,7 @@
 		"digest" : "",
 		"tags" : "",
 		"style" : "",
-		"subpatcher_template" : "aim_help-file_template",
+		"subpatcher_template" : "mvc_help-file_template",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
