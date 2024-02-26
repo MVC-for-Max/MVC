@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 11,
+			"minor" : 6,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -36,17 +36,58 @@
 		"digest" : "",
 		"tags" : "",
 		"style" : "",
-		"subpatcher_template" : "aim_help-file_template",
+		"subpatcher_template" : "mvc_help-file_template",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 94.0, 214.0, 58.0, 22.0 ],
+					"text" : "loadbang"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 14.0,
 					"id" : "obj-9",
-					"linecount" : 2,
-					"maxclass" : "comment",
+					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 149.0, 81.0, 150.0, 33.0 ],
-					"text" : "utility to browse dictionary.\nWork in progress"
+					"patching_rect" : [ 258.0, 407.0, 104.0, 24.0 ],
+					"text" : "print @popup 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 14.0,
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 258.0, 367.0, 153.0, 24.0 ],
+					"text" : "tosymbol @separator ::"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"border" : 0,
+					"filename" : "helpdetails.js",
+					"id" : "obj-4",
+					"ignoreclick" : 1,
+					"jsarguments" : [ "mvc.dict.browse" ],
+					"maxclass" : "jsui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 4.0, 4.0, 566.0, 149.0 ]
 				}
 
 			}
@@ -56,8 +97,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 170.0, 289.0, 57.0, 20.0 ],
-					"text" : "full path :"
+					"patching_rect" : [ 166.0, 409.0, 79.0, 20.0 ],
+					"text" : "current path :"
 				}
 
 			}
@@ -67,7 +108,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 420.0, 233.0, 221.0, 20.0 ],
+					"patching_rect" : [ 445.0, 321.0, 221.0, 20.0 ],
 					"text" : "argument (optional) : name of dictionary"
 				}
 
@@ -81,7 +122,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 235.0, 189.0, 23.0, 22.0 ],
+					"patching_rect" : [ 260.0, 277.0, 23.0, 22.0 ],
 					"text" : "⇦",
 					"texton" : "⇦"
 				}
@@ -94,7 +135,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 260.0, 155.5, 50.0, 22.0 ],
+					"patching_rect" : [ 285.0, 244.0, 50.0, 22.0 ],
 					"text" : "clear"
 				}
 
@@ -107,7 +148,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 69.0, 121.5, 24.0, 24.0 ]
+					"patching_rect" : [ 94.0, 242.5, 24.0, 24.0 ]
 				}
 
 			}
@@ -150,11 +191,12 @@
 					"id" : "obj-49",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 4,
-					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 69.0, 155.5, 142.0, 23.0 ],
+					"numoutlets" : 5,
+					"outlettype" : [ "dictionary", "", "", "", "" ],
+					"patching_rect" : [ 94.0, 276.5, 142.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 1,
+						"legacy" : 1,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
@@ -171,33 +213,21 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "clear" ],
-					"patching_rect" : [ 233.0, 229.0, 152.0, 24.0 ],
+					"patching_rect" : [ 258.0, 317.0, 156.0, 24.0 ],
 					"text" : "mvc.dict.browse bicycle"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-63",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 233.0, 287.0, 238.0, 22.0 ],
-					"text" : "bicycle"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-40",
-					"items" : [ "wheels", ",", "drivetrain" ],
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 260.0, 189.0, 144.5, 22.0 ]
+					"patching_rect" : [ 285.0, 277.0, 144.5, 22.0 ]
 				}
 
 			}
@@ -206,6 +236,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-49", 0 ],
 					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-10", 0 ]
 				}
 
 			}
@@ -225,16 +262,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-40", 0 ],
-					"midpoints" : [ 375.5, 261.0, 411.75, 261.0, 411.75, 183.0, 269.5, 183.0 ],
+					"midpoints" : [ 404.5, 349.5, 436.75, 349.5, 436.75, 271.5, 294.5, 271.5 ],
 					"source" : [ "obj-64", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-63", 1 ],
-					"midpoints" : [ 242.5, 275.0, 461.5, 275.0 ],
+					"destination" : [ "obj-5", 0 ],
 					"source" : [ "obj-64", 0 ]
 				}
 
@@ -254,26 +297,18 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "mvc.dict.browse.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}
