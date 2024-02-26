@@ -46,18 +46,18 @@ duplicates
 
 # selected node modules #
 #########################
-javascript/node_modules/expand-ranges/
-javascript/node_modules/micromatch/
-javascript/node_modules/minimatch/
-javascript/node_modules/array-slice/
-javascript/node_modules/array-unique/
-javascript/node_modules/balanced-match/
-javascript/node_modules/brace-expansion/
-javascript/node_modules/convert/
-javascript/node_modules/expand-braces/
-javascript/node_modules/expand-range/
-javascript/node_modules/picomatch/
-javascript/node_modules/repeat-string/
+#javascript/node_modules/expand-ranges/
+#javascript/node_modules/micromatch/
+#javascript/node_modules/minimatch/
+#javascript/node_modules/array-slice/
+#javascript/node_modules/array-unique/
+#javascript/node_modules/balanced-match/
+#javascript/node_modules/brace-expansion/
+#javascript/node_modules/convert/
+#javascript/node_modules/expand-braces/
+#javascript/node_modules/expand-range/
+#javascript/node_modules/picomatch/
+#javascript/node_modules/repeat-string/
 
 
 # test folders #
