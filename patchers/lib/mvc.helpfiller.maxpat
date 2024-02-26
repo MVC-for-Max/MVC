@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 198.0, 357.0, 456.0, 509.0 ],
+		"rect" : [ 198.0, 357.0, 435.0, 430.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,19 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"comment" : "",
+					"id" : "obj-12",
+					"index" : 1,
+					"maxclass" : "inlet",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 160.0, 34.0, 30.0, 30.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-11",
@@ -47,7 +60,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 73.0, 315.0, 86.0, 22.0 ],
+					"patching_rect" : [ 73.0, 284.0, 86.0, 22.0 ],
 					"text" : "route notfound"
 				}
 
@@ -70,9 +83,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "bang", "bang" ],
+					"outlettype" : [ "mvc.helper.json", "bang" ],
 					"patching_rect" : [ 73.0, 221.0, 127.0, 22.0 ],
-					"text" : "t b b"
+					"text" : "t mvc.helper.json b"
 				}
 
 			}
@@ -133,7 +146,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 73.0, 354.0, 81.0, 22.0 ],
+					"patching_rect" : [ 73.0, 323.0, 81.0, 22.0 ],
 					"text" : "prepend write"
 				}
 
@@ -157,7 +170,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 181.0, 354.0, 100.0, 22.0 ],
+					"patching_rect" : [ 181.0, 323.0, 100.0, 22.0 ],
 					"text" : "prepend replace"
 				}
 
@@ -169,7 +182,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 73.0, 411.0, 176.0, 22.0 ],
+					"patching_rect" : [ 73.0, 370.0, 176.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 0,
@@ -184,12 +197,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-5",
-					"maxclass" : "message",
+					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 73.0, 114.0, 136.0, 22.0 ],
-					"text" : "getInfos #1"
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 73.0, 114.0, 167.0, 22.0 ],
+					"text" : "zl.reg getInfos #1"
 				}
 
 			}
@@ -214,26 +227,12 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"id" : "obj-14",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 73.0, 254.0, 92.0, 22.0 ],
-					"text" : "mvc.helper.json"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
 					"id" : "obj-15",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 73.0, 285.0, 77.0, 22.0 ],
+					"patching_rect" : [ 73.0, 254.0, 77.0, 22.0 ],
 					"text" : "absolutepath"
 				}
 
@@ -257,13 +256,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-11", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-15", 0 ],
-					"source" : [ "obj-14", 0 ]
 				}
 
 			}
@@ -318,7 +310,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-14", 0 ],
+					"destination" : [ "obj-15", 0 ],
 					"source" : [ "obj-4", 0 ]
 				}
 
