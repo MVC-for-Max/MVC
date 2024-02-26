@@ -246,21 +246,6 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "mvc.dict.contains.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.dict.flatten.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
