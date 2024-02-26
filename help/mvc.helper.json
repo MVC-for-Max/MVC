@@ -1,0 +1,8 @@
+{
+	"mvc.parameter" : 	{
+		"digest" : "Declare a parameter and its attributes",
+		"description" : "mvc.parameter declares a parameter (or series of -) in the MVC namespace. It is somehow similar to the pattr object, while enabling a number of additional features offered by the MVC environment.",
+		"category" : "library"
+	}
+
+}
