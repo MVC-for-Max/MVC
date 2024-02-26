@@ -25,6 +25,6 @@ Init sequence for an mvc.model :
 - mvc.model perform the following :
 	+ put its uid in its parent's "pendingNodes" coll
 	+ send its uid to the brace expander in the mvc.device
-	+ the model-declare add it in the aim.models dictionary and sends 1 to internal init which triggers initialization on child -models and -parameters/states/messages
+	+ the model-declare add it in the mvc.models dictionary and sends 1 to internal init which triggers initialization on child -models and -parameters/states/messages
 	+ those child node does the same and report back to parent when initialized
 	+ when all pending node have been initialized (and removed from the [coll pendingNode]), the mvc.model triggers its "external" initialization message. 
