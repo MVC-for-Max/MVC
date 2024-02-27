@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 6,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 562.0, 290.0, 843.0, 546.0 ],
+		"rect" : [ 372.0, 378.0, 843.0, 546.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -44,7 +44,7 @@
 				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
-					"numinlets" : 0,
+					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 58.5, 196.0, 180.0, 22.0 ],
 					"text" : "mvc.helpfiller mvc.mc.publish~"
@@ -61,8 +61,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -167,14 +167,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 562.0, 316.0, 843.0, 520.0 ],
+						"rect" : [ 372.0, 404.0, 843.0, 520.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -215,7 +215,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "multichannelsignal", "float", "int" ],
 									"patching_rect" : [ 476.0, 359.0, 95.0, 34.0 ],
-									"sig" : 0.0
+									"sig" : [ 0.0, 0.0, 0.0 ]
 								}
 
 							}
@@ -231,7 +231,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "multichannelsignal", "float", "int" ],
 									"patching_rect" : [ 308.0, 359.0, 95.0, 34.0 ],
-									"sig" : 0.0
+									"sig" : [ 0.0, 0.0, 0.0 ]
 								}
 
 							}
@@ -242,7 +242,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 476.0, 333.0, 162.0, 22.0 ],
+									"patching_rect" : [ 476.0, 333.0, 164.0, 22.0 ],
 									"text" : "mvc.mc.subscribe~ mySignal"
 								}
 
@@ -266,7 +266,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 308.0, 333.0, 162.0, 22.0 ],
+									"patching_rect" : [ 308.0, 333.0, 164.0, 22.0 ],
 									"text" : "mvc.mc.subscribe~ mySignal"
 								}
 
@@ -295,7 +295,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "multichannelsignal", "float", "int" ],
 									"patching_rect" : [ 476.0, 249.0, 95.0, 34.0 ],
-									"sig" : 0.0
+									"sig" : [ 0.0, 0.0, 0.0 ]
 								}
 
 							}
@@ -311,7 +311,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "multichannelsignal", "float", "int" ],
 									"patching_rect" : [ 308.0, 249.0, 95.0, 34.0 ],
-									"sig" : 0.0
+									"sig" : [ 0.0, 0.0, 0.0 ]
 								}
 
 							}
@@ -345,7 +345,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 55.0, 249.0, 148.0, 22.0 ],
+									"patching_rect" : [ 55.0, 249.0, 151.0, 22.0 ],
 									"text" : "mvc.mc.publish~ mySignal"
 								}
 
@@ -353,12 +353,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-1",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 55.0, 223.0, 153.0, 22.0 ],
-									"text" : "mc.cycle~ 0.3 @chans 64"
+									"patching_rect" : [ 55.0, 198.0, 151.0, 35.0 ],
+									"text" : "mc.cycle~ 0.3 @chans 3 @initialvalues 0.1 0.3 0.6"
 								}
 
 							}
@@ -369,7 +370,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 476.0, 223.0, 162.0, 22.0 ],
+									"patching_rect" : [ 476.0, 223.0, 164.0, 22.0 ],
 									"text" : "mvc.mc.subscribe~ mySignal"
 								}
 
@@ -393,7 +394,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 308.0, 223.0, 162.0, 22.0 ],
+									"patching_rect" : [ 308.0, 223.0, 164.0, 22.0 ],
 									"text" : "mvc.mc.subscribe~ mySignal"
 								}
 
@@ -502,13 +503,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -564,10 +565,10 @@
 , 							{
 								"name" : "tap-dark",
 								"default" : 								{
-									"fontname" : [ "Ableton Sans Light Regular" ],
-									"textcolor" : [ 0.847058823529412, 0.847058823529412, 0.847058823529412, 1.0 ],
 									"editing_bgcolor" : [ 0.133333, 0.133333, 0.133333, 1.0 ],
-									"locked_bgcolor" : [ 0.133333, 0.133333, 0.133333, 1.0 ]
+									"fontname" : [ "Ableton Sans Light Regular" ],
+									"locked_bgcolor" : [ 0.133333, 0.133333, 0.133333, 1.0 ],
+									"textcolor" : [ 0.847058823529412, 0.847058823529412, 0.847058823529412, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -606,87 +607,18 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "helpdetails.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.mc.subscribe~.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.mc.receive~.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.mc.receive~.p.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.mc.publish~.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.mc.send~.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.mc.send~.p.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.helpfiller.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.helpinfos.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}
@@ -742,10 +674,10 @@
 , 			{
 				"name" : "tap-dark",
 				"default" : 				{
-					"fontname" : [ "Ableton Sans Light Regular" ],
-					"textcolor" : [ 0.847058823529412, 0.847058823529412, 0.847058823529412, 1.0 ],
 					"editing_bgcolor" : [ 0.133333, 0.133333, 0.133333, 1.0 ],
-					"locked_bgcolor" : [ 0.133333, 0.133333, 0.133333, 1.0 ]
+					"fontname" : [ "Ableton Sans Light Regular" ],
+					"locked_bgcolor" : [ 0.133333, 0.133333, 0.133333, 1.0 ],
+					"textcolor" : [ 0.847058823529412, 0.847058823529412, 0.847058823529412, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
