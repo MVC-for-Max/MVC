@@ -250,5 +250,17 @@
 		"description" : "mvc.subscribe allows to receive data from mvc.publisher when they subscribe to it.",
 		"category" : "library"
 	}
+,
+	"mvc.qlow" : 	{
+		"digest" : "Queue/delay based message limiter.",
+		"description" : "mvc.qlow slows down throughput of messages. It is similar to qlim but avoids the duplicate when sending multiple messages in a row.",
+		"category" : "library"
+	}
+,
+	"mvc.remote" : 	{
+		"digest" : "Monitor and remote control values from an mvc.parameter, mvc.state and mvc.message, .",
+		"description" : "mvc.remote allows to bind to a component's input for remote control or monitoring. This can either be a mvc.parameter, an mvc.state or an mvc.message. The address it refers to can be set dynamically and multiple addresses can be provided, either as a list or through brace expansion notation and wildcards. The mvc.remote object helps implementing the view and controller part in the MVC model used in the MVC package.",
+		"category" : "library"
+	}
 
 }
