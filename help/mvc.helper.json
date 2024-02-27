@@ -226,5 +226,29 @@
 		"description" : "Wrapper around the mvc.nicetabs object. Usually loaded in a bpatcher.",
 		"category" : "library"
 	}
+,
+	"mvc.pub" : 	{
+		"digest" : "Mini-publisher in the publish/subscribe pattern.",
+		"description" : "mvc.pub allows to count receivers when they subscribe to it.",
+		"category" : "library"
+	}
+,
+	"mvc.publish" : 	{
+		"digest" : "Publisher in the publish/subscribe pattern.",
+		"description" : "mvc.publish allows to sends data to receivers when they subscribe to it. It will not send if no mvc.subscribe has subscribed (sparing CPU).",
+		"category" : "library"
+	}
+,
+	"mvc.sub" : 	{
+		"digest" : "Mini-subscriber in the publish/subscribe pattern.",
+		"description" : "mvc.sub allows to subscribe to a mvc.pub or a mvc.publisher.",
+		"category" : "library"
+	}
+,
+	"mvc.subscribe" : 	{
+		"digest" : "Subscriber in the publish/subscribe pattern.",
+		"description" : "mvc.subscribe allows to receive data from mvc.publisher when they subscribe to it.",
+		"category" : "library"
+	}
 
 }
