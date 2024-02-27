@@ -202,5 +202,23 @@
 		"description" : "mvc.message declares a message in the MVC namespace - it is somehow similar to the mvc.parameter object, except that it is state-less, that is, it has no memory and as such, it is not stored in preset and has no default value. For instance, a \"clear\" message to a filter could be represented as an mvc.message.",
 		"category" : "library"
 	}
+,
+	"mvc.model.initialized" : 	{
+		"digest" : "Monitor a model initialization state.",
+		"description" : "mvc.model.initialized enables to check a model's initialization state. ",
+		"category" : "library"
+	}
+,
+	"mvc.model.gui" : 	{
+		"digest" : "Monitor and remote control from an mvc.model.",
+		"description" : "mvc.model.gui allows to bind to an mvc.model for remote control or monitoring. The mvc.model it refers to can be set dynamically and multiple addresses can be provided through brace expansion notation.\nmvc.model.gui helps implementing the view and controller part in the MVC model used in the MVC package.",
+		"category" : "library"
+	}
+,
+	"mvc.model" : 	{
+		"digest" : "Declare an MVC model.",
+		"description" : "The mvc.model helps declaring a model in the Model-View-Controller scheme used in the MVC package.\nAn mvc.model creates a node in the namespace to which several mvc.parameter, mvc.state, mvc.message or even mvc.model can register. It thus allows to create complex and nested address hierarchies describing your patcher's features as a namespace. An mvc.model can also declare a type, so that other instances of this model will share their presets.",
+		"category" : "library"
+	}
 
 }
