@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 0,
+			"minor" : 6,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -44,9 +44,9 @@
 				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
-					"numinlets" : 0,
+					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 32.5, 306.0, 179.0, 22.0 ],
+					"patching_rect" : [ 32.5, 306.0, 184.0, 22.0 ],
 					"text" : "mvc.helpfiller mvc.GUI.texttoggle"
 				}
 
@@ -58,7 +58,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 11.0, 97.0, 143.0, 22.0 ],
+					"patching_rect" : [ 11.0, 97.0, 146.0, 22.0 ],
 					"text" : "jsargs mvc.GUI.texttoggle"
 				}
 
@@ -105,8 +105,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -167,8 +167,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -204,6 +204,18 @@
 						"showontab" : 2,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 239.0, 175.0, 30.0, 22.0 ],
+									"text" : "GUI"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-4",
 									"maxclass" : "message",
@@ -263,8 +275,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 114.0, 355.0, 559.0, 22.0 ],
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 114.0, 355.0, 561.0, 22.0 ],
 									"text" : "mvc.parameter texttoggleHelper helloToggle @default 1 @type bool @description \"Listening cat enable\""
 								}
 
@@ -304,18 +316,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-5",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 22.5, 172.0, 30.0, 22.0 ],
-									"text" : "GUI"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"border" : 0,
 									"filename" : "helpdetails.js",
 									"id" : "obj-53",
@@ -339,7 +339,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 22.5, 199.0, 231.0, 29.0 ],
+									"patching_rect" : [ 22.5, 199.0, 235.0, 29.0 ],
 									"text" : "mvc.device texttoggleHelper",
 									"varname" : "mvc.device"
 								}
@@ -378,7 +378,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-37", 0 ],
+									"destination" : [ "obj-37", 1 ],
 									"source" : [ "obj-5", 0 ]
 								}
 
@@ -500,22 +500,6 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-51::obj-37::obj-35::obj-30::obj-18::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
-			"parameter_overrides" : 			{
-				"obj-51::obj-37::obj-35::obj-30::obj-18::obj-7" : 				{
-					"parameter_longname" : "live.toggle[2]"
-				}
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
