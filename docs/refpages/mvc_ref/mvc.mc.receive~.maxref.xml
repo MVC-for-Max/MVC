@@ -32,12 +32,11 @@
 
 	<!--OUTLETS-->
 	<outletlist>
-		<inlet id="0" type="signal">
+		<outlet id="0" type="signal">
 			<digest>
 				Output for audio to receive
 			</digest>
-
-		</inlet>
+		</outlet>
 	</outletlist>
 	
 	<!--ARGUMENTS-->
