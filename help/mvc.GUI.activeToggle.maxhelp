@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 0,
+			"minor" : 6,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 350.0, 349.0, 796.0, 533.0 ],
+		"rect" : [ 427.0, 230.0, 787.0, 630.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -44,9 +44,9 @@
 				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
-					"numinlets" : 0,
+					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 32.5, 306.0, 193.0, 22.0 ],
+					"patching_rect" : [ 32.5, 306.0, 199.0, 22.0 ],
 					"text" : "mvc.helpfiller mvc.GUI.activeToggle"
 				}
 
@@ -58,7 +58,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 11.0, 97.0, 158.0, 22.0 ],
+					"patching_rect" : [ 11.0, 97.0, 161.0, 22.0 ],
 					"text" : "jsargs mvc.GUI.activeToggle"
 				}
 
@@ -105,14 +105,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 796.0, 507.0 ],
+						"rect" : [ 0.0, 26.0, 787.0, 604.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -167,14 +167,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 350.0, 375.0, 796.0, 507.0 ],
+						"rect" : [ 427.0, 256.0, 787.0, 604.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -205,6 +205,18 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 261.0, 172.0, 30.0, 22.0 ],
+									"text" : "GUI"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"bubble" : 1,
 									"id" : "obj-22",
 									"linecount" : 2,
@@ -212,7 +224,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 154.0, 314.5, 273.0, 37.0 ],
-									"presentation_linecount" : 4,
 									"text" : "As most GUI elements, mvc.GUI.activeToggle is expected to be loaded in a bpatcher."
 								}
 
@@ -262,7 +273,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 154.0, 280.0, 277.0, 22.0 ],
-									"presentation_linecount" : 3,
 									"text" : "address activeToggleHelper/anotherON-parameter"
 								}
 
@@ -273,8 +283,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 120.0, 387.0, 438.0, 22.0 ],
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 120.0, 387.0, 440.0, 22.0 ],
 									"text" : "mvc.parameter activeToggleHelper anotherON-parameter @default 1 @type bool"
 								}
 
@@ -307,20 +317,8 @@
 									"numoutlets" : 2,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 87.0, 328.0, 65.0, 24.0 ],
+									"patching_rect" : [ 95.0, 328.0, 57.0, 23.5 ],
 									"viewvisibility" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-5",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 22.5, 172.0, 30.0, 22.0 ],
-									"text" : "GUI"
 								}
 
 							}
@@ -349,7 +347,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 22.5, 199.0, 253.0, 29.0 ],
+									"patching_rect" : [ 22.5, 199.0, 257.0, 29.0 ],
 									"text" : "mvc.device activeToggleHelper",
 									"varname" : "mvc.device"
 								}
@@ -357,6 +355,13 @@
 							}
  ],
 						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-37", 1 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
 								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
 									"source" : [ "obj-11", 0 ]
@@ -374,13 +379,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-11", 0 ],
 									"source" : [ "obj-14", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-37", 0 ],
-									"source" : [ "obj-5", 0 ]
 								}
 
 							}
@@ -502,15 +500,15 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-51::obj-37::obj-35::obj-30::obj-18::obj-7" : [ "live.toggle[8]", "live.toggle", 0 ],
+			"obj-51::obj-37::obj-27::obj-25::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
 			"obj-51::obj-6::obj-7" : [ "live.toggle[1]", "live.toggle", 0 ],
 			"parameterbanks" : 			{
 
 			}
 ,
 			"parameter_overrides" : 			{
-				"obj-51::obj-37::obj-35::obj-30::obj-18::obj-7" : 				{
-					"parameter_longname" : "live.toggle[8]"
+				"obj-51::obj-37::obj-27::obj-25::obj-61::obj-20.1::obj-12::obj-8::obj-7" : 				{
+					"parameter_longname" : "live.toggle[2]"
 				}
 ,
 				"obj-51::obj-6::obj-7" : 				{
