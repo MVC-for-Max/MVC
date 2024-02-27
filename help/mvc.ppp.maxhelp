@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -45,7 +45,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 17.5, 67.0, 150.0, 20.0 ],
-					"text" : "Plain Path Prefix"
+					"text" : "Plain Path Prefix (DRAFT)"
 				}
 
 			}
@@ -85,7 +85,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 263.0, 209.0, 191.0, 22.0 ],
-					"presentation_linecount" : 2,
 					"text" : "my/somwhat{1..2}/long?/path{1..3}"
 				}
 
@@ -122,7 +121,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 253.0, 167.0, 163.0, 22.0 ],
-					"presentation_linecount" : 8,
 					"text" : "my/somwhat/long?/path{1..3}"
 				}
 
@@ -135,7 +133,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 187.0, 188.0, 31.0, 22.0 ],
-					"presentation_linecount" : 2,
 					"text" : "agr*"
 				}
 
