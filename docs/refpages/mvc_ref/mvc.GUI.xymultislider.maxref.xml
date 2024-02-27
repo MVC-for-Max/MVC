@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.GUI.xymultislider" module="mvc" kind="patcher" category="library">
+
+	<digest>
+		A multislider with draggable slider positions. 
+	</digest>
+	
+	<description>
+		A useful utility when adjusting gains in a frequency range.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>$
+		<metadata name="tag">library</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="message">
+			<digest>List of slider values</digest>
+			<description>Two lists are accepted: one preceeded by "x" reports the normalized position of each slider horizontal limit; the other preceeded by "y" reports the sliders (vertical) values.</description>
+		</inlet>
+		<inlet id="1" type="message">
+			<digest>Settings</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<inlet id="0" type="list">
+			<digest>List of slider values</digest>
+			<description>Two lists are output: one preceeded by "x" reports the normalized position of each slider horizontal limit; the other preceeded by "y" reports the sliders (vertical) values.</description>
+		</inlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="active">
+			<arglist>
+				<arg name="state" optional="0" type="bool" />
+			</arglist>
+			<digest>
+				Set the active state of the GUI.
+			</digest>
+			<description>
+				Inactive tabs will be greyed and ignore clicks.
+			</description>
+		</method>
+		<method name="ntabs">
+			<arglist>
+				<arg name="tabcount" optional="0" type="integer" />
+			</arglist>
+			<digest>
+				Set the number of tabs.
+			</digest>
+			<description>
+			</description>
+		</method>
+		<method name="htabcolor">
+			<arglist>
+				<arg name="color" optional="0" type="4 floats" />
+			</arglist>
+			<digest>
+				Sets the color of the selected tab(s) in RGBA format.
+			</digest>
+			<description>
+			</description>
+		</method>
+		<method name="tabcolor">
+			<arglist>
+				<arg name="color" optional="0" type="4 floats" />
+			</arglist>
+			<digest>
+				Sets the color of the unselected tab(s) in RGBA format.
+			</digest>
+			<description>
+			</description>
+		</method>
+		<method name="textcolor">
+			<arglist>
+				<arg name="color" optional="0" type="4 floats" />
+			</arglist>
+			<digest>
+				Sets the text color in RGBA format.
+			</digest>
+			<description>
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mvc.scrolltabs"/>
+		<seealso name="mvc.matrixtoggle"/>
+		<seealso name="mvc.nicetabs"/>
+		<seealso name="mvc.GUI.channeltabs"/>
+	</seealsolist>
+</c74object>
