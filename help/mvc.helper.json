@@ -274,5 +274,15 @@
 		"description" : "mvc.state declares a state in the MVC namespace - it is very similar to the mvc.parameter object, except that its value is not stored in presets. It is typically used for internal values that need to be queried or set but not stored. For instance, you may want that for the playhead position of a sample player.",
 		"category" : "library"
 	}
+,
+	"mvc.dict2osc" : 	{
+		"digest" : "Small utility to convert dict-style addresses to OSC-style.",
+		"category" : "library"
+	}
+,
+	"mvc.osc2dict" : 	{
+		"digest" : "Small utility to convert OSC-style addresses to dict-style.",
+		"category" : "library"
+	}
 
 }
