@@ -1,0 +1,1 @@
+max define mvc.GUI.xymultislider jsui @filename mvc.GUI.xymultislider;
