@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -46,7 +46,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 105.0, 61.0, 150.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "longest path without any wildcard or brace notation."
 				}
 
@@ -184,9 +183,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "address input (symbol)",
 					"id" : "obj-32",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -197,9 +196,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "bang if empty path",
 					"id" : "obj-33",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -209,9 +208,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "address output (symbol)",
 					"id" : "obj-34",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -334,8 +333,7 @@
 				}
 
 			}
- ],
-		"autosave" : 0
+ ]
 	}
 
 }
