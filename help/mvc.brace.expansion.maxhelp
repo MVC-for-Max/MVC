@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 160.0, 1018.0, 747.0 ],
+						"rect" : [ 0.0, 26.0, 1018.0, 747.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -876,7 +876,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 176.5, 537.0, 104.0, 22.0 ]
+									"patching_rect" : [ 176.5, 537.0, 104.0, 22.0 ],
+									"text" : "myUID"
 								}
 
 							}
@@ -888,7 +889,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 279.5, 386.0, 179.0, 22.0 ],
-									"presentation_linecount" : 2,
 									"text" : "lowpass[{-2..3}] lowpass[{4..12}]"
 								}
 
@@ -1047,7 +1047,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 98.0, 500.0, 104.0, 22.0 ]
+									"patching_rect" : [ 98.0, 500.0, 104.0, 22.0 ],
+									"text" : "{-2..3}"
 								}
 
 							}
@@ -1058,7 +1059,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 255.0, 562.0, 104.0, 22.0 ]
+									"patching_rect" : [ 255.0, 562.0, 104.0, 22.0 ],
+									"text" : "return_address"
 								}
 
 							}
@@ -1516,7 +1518,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1018.0, 747.0 ],
+						"rect" : [ 34.0, 160.0, 1018.0, 747.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1983,19 +1985,6 @@
 											}
 , 											{
 												"box" : 												{
-													"id" : "obj-47",
-													"linecount" : 2,
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 302.0, 437.009449694274622, 103.0, 35.0 ],
-													"text" : "toto/my_spat.3/source.2/gain.R"
-												}
-
-											}
-, 											{
-												"box" : 												{
 													"id" : "obj-44",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
@@ -2032,18 +2021,6 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 21.0, 262.009449694274622, 50.0, 22.0 ],
 													"text" : "open 1"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-28",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 100.0, 342.009449694274622, 50.0, 22.0 ],
-													"text" : "6.1"
 												}
 
 											}
@@ -2112,16 +2089,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-28", 1 ],
-													"order" : 0,
-													"source" : [ "obj-16", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-36", 0 ],
-													"order" : 1,
 													"source" : [ "obj-16", 0 ]
 												}
 
@@ -2237,15 +2205,6 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-39", 0 ],
-													"order" : 1,
-													"source" : [ "obj-9", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-47", 1 ],
-													"order" : 0,
 													"source" : [ "obj-9", 0 ]
 												}
 
@@ -2315,7 +2274,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 71.0, 540.0, 186.0, 22.0 ],
-									"text" : "toto/my_spat.3/source.2/gain.R"
+									"text" : "\"work1 withb spaces37\""
 								}
 
 							}
@@ -2327,7 +2286,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 30.0, 509.0, 127.0, 22.0 ],
-									"text" : "6.1"
+									"text" : "what else?"
 								}
 
 							}
