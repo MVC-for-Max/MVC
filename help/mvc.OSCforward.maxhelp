@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 0,
+			"minor" : 6,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -61,7 +61,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 351.416015625, 57.599853515625 ]
+					"patching_rect" : [ 10.0, 10.0, 362.551971435546875, 57.599853515625 ]
 				}
 
 			}
@@ -84,8 +84,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 232.5, 541.0, 339.0, 22.0 ],
+					"outlettype" : [ "", "int", "" ],
+					"patching_rect" : [ 232.5, 541.0, 341.0, 22.0 ],
 					"text" : "mvc.parameter OSCforward-helper myParameter.4 @default 4"
 				}
 
@@ -109,8 +109,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 174.5, 508.0, 339.0, 22.0 ],
+					"outlettype" : [ "", "int", "" ],
+					"patching_rect" : [ 174.5, 508.0, 341.0, 22.0 ],
 					"text" : "mvc.parameter OSCforward-helper myParameter.3 @default 3"
 				}
 
@@ -134,8 +134,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 117.5, 475.0, 339.0, 22.0 ],
+					"outlettype" : [ "", "int", "" ],
+					"patching_rect" : [ 117.5, 475.0, 341.0, 22.0 ],
 					"text" : "mvc.parameter OSCforward-helper myParameter.2 @default 2"
 				}
 
@@ -159,8 +159,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 62.5, 442.0, 339.0, 22.0 ],
+					"outlettype" : [ "", "int", "" ],
+					"patching_rect" : [ 62.5, 442.0, 341.0, 22.0 ],
 					"text" : "mvc.parameter OSCforward-helper myParameter.1 @default 1"
 				}
 
@@ -232,20 +232,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 298.5, 205.0, 32.0, 22.0 ],
+					"patching_rect" : [ 302.5, 205.0, 32.0, 22.0 ],
 					"text" : "print"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-10",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 102.0, 143.0, 71.0, 22.0 ],
-					"text" : "namespace"
 				}
 
 			}
@@ -256,7 +244,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 62.5, 143.0, 30.0, 22.0 ],
+					"patching_rect" : [ 302.5, 140.0, 30.0, 22.0 ],
 					"text" : "GUI"
 				}
 
@@ -270,7 +258,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 62.5, 170.0, 255.0, 29.0 ],
+					"patching_rect" : [ 62.5, 170.0, 259.0, 29.0 ],
 					"text" : "mvc.device OSCforward-helper",
 					"varname" : "mvc.device"
 				}
@@ -281,13 +269,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
 					"source" : [ "obj-1", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-37", 0 ],
-					"source" : [ "obj-10", 0 ]
 				}
 
 			}
@@ -335,7 +316,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-37", 0 ],
+					"destination" : [ "obj-37", 1 ],
 					"source" : [ "obj-5", 0 ]
 				}
 
@@ -353,327 +334,6 @@
 					"source" : [ "obj-8", 0 ]
 				}
 
-			}
- ],
-		"parameters" : 		{
-			"obj-37::obj-35::obj-30::obj-18::obj-7" : [ "live.toggle[8]", "live.toggle", 0 ],
-			"parameterbanks" : 			{
-				"0" : 				{
-					"index" : 0,
-					"name" : "",
-					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
-				}
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "mvc.GUI.activeToggle.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/GUI",
-				"patcherrelativepath" : "../patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.GUI.listselector.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/GUI",
-				"patcherrelativepath" : "../patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.GUI.preset.description.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/GUI",
-				"patcherrelativepath" : "../patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.GUI.presets.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/GUI",
-				"patcherrelativepath" : "../patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.GUI.windowsettings.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/GUI",
-				"patcherrelativepath" : "../patchers/GUI",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.OSCforward.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.brace.expansion.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.createfolder.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.device.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.device.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
-				"patcherrelativepath" : "../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.device.parameters.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.dict.flatten.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.dict.flatten.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
-				"patcherrelativepath" : "../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.dict.join.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.dict.keyrename.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.dict.route.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.dllb.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
-				"patcherrelativepath" : "../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.f.call.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
-				"patcherrelativepath" : "../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.f.dcall.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
-				"patcherrelativepath" : "../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.f.io.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
-				"patcherrelativepath" : "../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.import.presets.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
-				"patcherrelativepath" : "../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.intnogap.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
-				"patcherrelativepath" : "../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.isloading.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
-				"patcherrelativepath" : "../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.locatePatcherWindow.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.model.initialize.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
-				"patcherrelativepath" : "../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.model.initialized.d.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
-				"patcherrelativepath" : "../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.newgone.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
-				"patcherrelativepath" : "../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.noblabang.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.noblabla.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.osc2dict.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.parameter.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
-				"patcherrelativepath" : "../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.polyreceive.p.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
-				"patcherrelativepath" : "../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.presets.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
-				"patcherrelativepath" : "../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.qlow.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.remote.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
-				"patcherrelativepath" : "../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.setMaxObjColor.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.stripes10.purple.png",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/media",
-				"patcherrelativepath" : "../media",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.wildcard-node.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.wildcard.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.wildcard.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.wildcard2.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "icon.png",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC",
-				"patcherrelativepath" : "..",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "thru.maxpat",
-				"bootpath" : "C74:/patchers/m4l/Pluggo for Live resources/patches",
-				"type" : "JSON",
-				"implicit" : 1
 			}
  ],
 		"autosave" : 0,
