@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+
+<c74object name="mvc.list.iterasync" module="mvc" kind="patcher" category="library">
+
+	<digest>
+		Iterate list elements asynchronously.
+	</digest>
+
+	<description>
+		We may have to do this when (for instance) using aync elements such as dialog box.
+	</description>
+	
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>
+		<metadata name="tag">library</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" name="list input" type="list">
+			<digest>List to be processed.</digest>
+			<description>Each element will be processed asynchronously</description>
+		</inlet>
+		<inlet id="0" name="trigger next" type="bang">
+			<digest>Bang to notify done.</digest>
+			<description>Bang this inlet when the process is done to trigger next message in the queue.</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<inlet id="0" name="message output" type="any">
+			<digest>Message sent to the asynchronous process.</digest>
+			<description>Message will be passed when any previous message is done processing.</description>
+		</inlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mvc.queue"/>
+	</seealsolist>
+</c74object>
