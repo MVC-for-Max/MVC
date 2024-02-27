@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 295.0, 1097.0, 721.0 ],
+		"rect" : [ 40.0, 300.0, 1003.0, 716.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -112,7 +112,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1097.0, 695.0 ],
+						"rect" : [ 0.0, 26.0, 1003.0, 690.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -193,7 +193,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 321.0, 1097.0, 695.0 ],
+						"rect" : [ 40.0, 326.0, 1003.0, 690.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -223,6 +223,22 @@
 						"showontab" : 2,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"fontname" : "Lato Regular",
+									"fontsize" : 12.0,
+									"id" : "obj-6",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 89.0, 517.0, 290.0, 35.0 ],
+									"presentation_linecount" : 2,
+									"text" : "Access a parameter state remotely using mvc.remote (see mvc.remote maxhelp for further information)",
+									"textcolor" : [ 0.6, 0.6, 0.6, 1.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"bubble" : 1,
 									"fontname" : "Lato Regular",
@@ -281,7 +297,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 334.0, 390.0, 92.0, 24.0 ],
+									"patching_rect" : [ 337.0, 395.0, 92.0, 24.0 ],
 									"text" : "param index"
 								}
 
@@ -294,7 +310,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 282.0, 391.0, 50.0, 22.0 ]
+									"patching_rect" : [ 285.0, 396.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -437,26 +453,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 57.0, 180.0, 241.0, 35.0 ],
+									"patching_rect" : [ 68.5, 180.0, 241.0, 35.0 ],
 									"text" : "Set a parent node and a name as arguments to declare a parameter in the namespace",
 									"textcolor" : [ 0.6, 0.6, 0.6, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"bubbleside" : 2,
-									"fontname" : "Lato Regular",
-									"fontsize" : 12.0,
-									"id" : "obj-24",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 82.0, 507.0, 290.0, 54.0 ],
-									"text" : "Access a parameter state remotely using mvc.remote (see mvc.remote maxhelp for further information)",
-									"textcolor" : [ 0.3, 0.3, 0.3, 1.0 ]
 								}
 
 							}
@@ -469,7 +468,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 57.0, 309.5, 340.0, 35.0 ],
+									"patching_rect" : [ 73.0, 309.5, 340.0, 35.0 ],
 									"text" : "mvc.parameter can hold values for various manipulations such as mapping, storing & recalling presets, building GUI interfaces",
 									"textcolor" : [ 0.6, 0.6, 0.6, 1.0 ]
 								}
@@ -1978,7 +1977,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1097.0, 695.0 ],
+						"rect" : [ 0.0, 26.0, 1003.0, 690.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2871,7 +2870,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1097.0, 695.0 ],
+						"rect" : [ 0.0, 26.0, 1003.0, 690.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3895,7 +3894,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1097.0, 695.0 ],
+						"rect" : [ 0.0, 26.0, 1003.0, 690.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4077,7 +4076,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1097.0, 695.0 ],
+						"rect" : [ 0.0, 26.0, 1003.0, 690.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
