@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 106.0, 371.0, 287.0 ],
+		"rect" : [ 522.0, 466.0, 371.0, 287.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -52,13 +52,13 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "bang to get again",
 					"id" : "obj-1",
 					"index" : 3,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 247.0, 45.0, 30.0, 30.0 ]
 				}
 
@@ -113,7 +113,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "connect to thispatcher left outlet",
 					"id" : "obj-55",
 					"index" : 1,
 					"maxclass" : "inlet",
@@ -126,7 +126,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "connect to thispatcher right outlet",
 					"id" : "obj-56",
 					"index" : 2,
 					"maxclass" : "inlet",
@@ -139,7 +139,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "connect to thispatcher inlet",
 					"id" : "obj-57",
 					"index" : 1,
 					"maxclass" : "outlet",
@@ -151,7 +151,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "args output",
 					"id" : "obj-58",
 					"index" : 2,
 					"maxclass" : "outlet",
@@ -163,7 +163,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "attributes output",
 					"id" : "obj-59",
 					"index" : 3,
 					"maxclass" : "outlet",
