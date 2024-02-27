@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 0,
+			"minor" : 6,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -47,8 +47,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 381.0, 188.0, 111.0, 22.0 ],
-					"text" : "jsargs mvc.nicetabs"
+					"patching_rect" : [ 381.0, 188.0, 139.0, 22.0 ],
+					"text" : "jsargs mvc.GUI.nicetabs"
 				}
 
 			}
@@ -56,10 +56,10 @@
 				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
-					"numinlets" : 0,
+					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 38.5, 195.0, 147.0, 22.0 ],
-					"text" : "mvc.helpfiller mvc.nicetabs"
+					"patching_rect" : [ 38.5, 195.0, 177.0, 22.0 ],
+					"text" : "mvc.helpfiller mvc.GUI.nicetabs"
 				}
 
 			}
@@ -69,7 +69,7 @@
 					"filename" : "helpname.js",
 					"id" : "obj-55",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "mvc.nicetabs" ],
+					"jsarguments" : [ "mvc.GUI.nicetabs" ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -85,7 +85,7 @@
 					"filename" : "helpdetails.js",
 					"id" : "obj-53",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "mvc.nicetabs" ],
+					"jsarguments" : [ "mvc.GUI.nicetabs" ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -105,8 +105,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -167,8 +167,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -227,18 +227,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-31",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 643.0, 373.0, 50.0, 22.0 ],
-									"text" : "\"11\""
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-1",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -257,7 +245,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 415.25, 373.0, 50.0, 22.0 ]
+									"patching_rect" : [ 429.0, 373.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -269,7 +257,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 329.0, 373.0, 50.0, 22.0 ]
+									"patching_rect" : [ 343.0, 373.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -299,42 +287,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-45",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 415.25, 403.0, 364.0, 22.0 ],
-									"text" : "color 0 0.246154 0.154449 1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-37",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 531.75, 373.0, 75.0, 22.0 ],
-									"text" : "low mid high"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-36",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 470.5, 373.0, 50.0, 22.0 ],
-									"text" : "\"39\""
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-33",
 									"maxclass" : "newobj",
 									"numinlets" : 0,
@@ -344,14 +296,14 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 0,
+											"minor" : 6,
+											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 521.0, -920.0, 700.0, 260.0 ],
+										"rect" : [ 1068.0, 313.0, 700.0, 260.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -643,18 +595,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-43",
-									"maxclass" : "button",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 303.0, 345.0, 24.0, 24.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -664,12 +604,12 @@
 									"lockeddragscroll" : 1,
 									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
-									"name" : "mvc.nicetabs.maxpat",
+									"name" : "mvc.GUI.nicetabs.maxpat",
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 57.0, 297.0, 291.0, 39.0 ],
+									"patching_rect" : [ 57.0, 297.0, 305.0, 37.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -787,11 +727,11 @@
 								"box" : 								{
 									"id" : "obj-10",
 									"maxclass" : "newobj",
-									"numinlets" : 6,
-									"numoutlets" : 6,
-									"outlettype" : [ "", "", "", "", "", "" ],
-									"patching_rect" : [ 329.0, 345.0, 450.25, 22.0 ],
-									"text" : "route start current currenttabname tabnames hover"
+									"numinlets" : 3,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "" ],
+									"patching_rect" : [ 343.0, 345.0, 191.0, 22.0 ],
+									"text" : "route start current"
 								}
 
 							}
@@ -801,7 +741,7 @@
 									"filename" : "helpdetails.js",
 									"id" : "obj-53",
 									"ignoreclick" : 1,
-									"jsarguments" : [ "mvc.nicetabs" ],
+									"jsarguments" : [ "mvc.GUI.nicetabs" ],
 									"maxclass" : "jsui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -815,7 +755,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-41", 1 ],
-									"midpoints" : [ 557.0, 282.516666499999985, 338.5, 282.516666499999985 ],
+									"midpoints" : [ 557.0, 282.516666499999985, 352.5, 282.516666499999985 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -836,34 +776,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-31", 1 ],
-									"source" : [ "obj-10", 4 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-36", 1 ],
-									"source" : [ "obj-10", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-37", 1 ],
-									"source" : [ "obj-10", 3 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-45", 1 ],
-									"source" : [ "obj-10", 5 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-41", 0 ],
 									"source" : [ "obj-11", 0 ]
 								}
@@ -872,7 +784,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-41", 1 ],
-									"midpoints" : [ 585.0, 290.016666499999985, 338.5, 290.016666499999985 ],
+									"midpoints" : [ 585.0, 290.016666499999985, 352.5, 290.016666499999985 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -880,7 +792,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-41", 1 ],
-									"midpoints" : [ 297.5, 271.0, 338.5, 271.0 ],
+									"midpoints" : [ 297.5, 271.0, 352.5, 271.0 ],
 									"source" : [ "obj-16", 0 ]
 								}
 
@@ -888,7 +800,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-41", 1 ],
-									"midpoints" : [ 569.0, 286.016666499999985, 338.5, 286.016666499999985 ],
+									"midpoints" : [ 569.0, 286.016666499999985, 352.5, 286.016666499999985 ],
 									"source" : [ "obj-17", 0 ]
 								}
 
@@ -903,7 +815,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-41", 1 ],
-									"midpoints" : [ 425.75, 274.5, 338.5, 274.5 ],
+									"midpoints" : [ 425.75, 274.5, 352.5, 274.5 ],
 									"source" : [ "obj-19", 0 ]
 								}
 
@@ -925,7 +837,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-41", 1 ],
-									"midpoints" : [ 354.5, 271.5, 338.5, 271.5 ],
+									"midpoints" : [ 354.5, 271.5, 352.5, 271.5 ],
 									"source" : [ "obj-22", 0 ]
 								}
 
@@ -947,7 +859,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-41", 1 ],
-									"midpoints" : [ 238.5, 271.0, 338.5, 271.0 ],
+									"midpoints" : [ 238.5, 271.0, 352.5, 271.0 ],
 									"source" : [ "obj-26", 0 ]
 								}
 
@@ -962,7 +874,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-41", 1 ],
-									"midpoints" : [ 503.5, 278.0, 338.5, 278.0 ],
+									"midpoints" : [ 503.5, 278.0, 352.5, 278.0 ],
 									"source" : [ "obj-33", 0 ]
 								}
 
@@ -977,7 +889,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-10", 0 ],
-									"order" : 0,
 									"source" : [ "obj-41", 1 ]
 								}
 
@@ -986,14 +897,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
 									"source" : [ "obj-41", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-43", 0 ],
-									"order" : 1,
-									"source" : [ "obj-41", 1 ]
 								}
 
 							}
