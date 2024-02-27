@@ -1,4 +1,4 @@
-// aim.dict.brace.js : compress a dictionary hierarchy or a list of addresses into a brace-compressed string
+// mvc.brace.compression.js : compress a dictionary hierarchy or a list of addresses into a brace-compressed string
 
 inlets = 1;
 outlets = 2;
