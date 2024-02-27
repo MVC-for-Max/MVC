@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 0,
+			"minor" : 6,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 131.0, 95.0, 1096.0, 813.0 ],
+		"rect" : [ 131.0, 95.0, 1226.0, 813.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -44,9 +44,9 @@
 				"box" : 				{
 					"id" : "obj-7",
 					"maxclass" : "newobj",
-					"numinlets" : 0,
+					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 82.5, 315.0, 164.0, 22.0 ],
+					"patching_rect" : [ 82.5, 315.0, 169.0, 22.0 ],
 					"text" : "mvc.helpfiller mvc.GUI.remote"
 				}
 
@@ -58,7 +58,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 278.0, 113.0, 129.0, 22.0 ],
+					"patching_rect" : [ 278.0, 113.0, 131.0, 22.0 ],
 					"text" : "jsargs mvc.GUI.remote"
 				}
 
@@ -89,14 +89,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1096.0, 787.0 ],
+						"rect" : [ 0.0, 26.0, 1226.0, 787.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -170,14 +170,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 131.0, 121.0, 1096.0, 787.0 ],
+						"rect" : [ 131.0, 121.0, 1226.0, 787.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -244,8 +244,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 44.5, 543.0, 549.0, 22.0 ],
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 44.5, 543.0, 551.0, 22.0 ],
 									"text" : "mvc.parameter guiRemoteHelper someVector @type vector @default 1 2 3 @range -10 10 @clip both"
 								}
 
@@ -289,6 +289,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-6",
+									"keymode" : 1,
 									"maxclass" : "textedit",
 									"nosymquotes" : 1,
 									"numinlets" : 1,
@@ -309,7 +310,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 119.0, 657.410778724470106, 235.0, 22.0 ],
-									"text" : "guiRemoteHelper/someText 0"
+									"text" : "1"
 								}
 
 							}
@@ -320,8 +321,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 44.5, 629.84237795375725, 624.0, 22.0 ],
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 44.5, 629.84237795375725, 626.0, 22.0 ],
 									"text" : "mvc.parameter guiRemoteHelper someText @type string @default \"Hello world!\" @description \"Message in a bottle\""
 								}
 
@@ -368,7 +369,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 97.0, 493.939940999999976, 235.0, 22.0 ],
-									"text" : "guiRemoteHelper/someBool 0"
+									"text" : "1"
 								}
 
 							}
@@ -391,8 +392,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 44.5, 464.939940999999976, 540.0, 22.0 ],
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 44.5, 464.939940999999976, 543.0, 22.0 ],
 									"text" : "mvc.parameter guiRemoteHelper someBool @type bool @default 1 @description \"Activate Big muff\""
 								}
 
@@ -429,7 +430,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 102.0, 305.939940999999976, 235.0, 22.0 ],
-									"text" : "guiRemoteHelper/someInteger.10 10"
+									"text" : "2"
 								}
 
 							}
@@ -453,7 +454,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
+									"outlettype" : [ "", "int", "" ],
 									"patching_rect" : [ 44.5, 267.643214469229065, 443.0, 35.0 ],
 									"text" : "mvc.parameter guiRemoteHelper someInteger.{1..10} @type integer @default 12 @description \"Stair steps count\" @unit steps @min 1 @clip low"
 								}
@@ -510,7 +511,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"offset" : [ 0.0, 0.0 ],
-									"outlettype" : [ "", "", "" ],
+									"outlettype" : [ "", "int", "" ],
 									"patching_rect" : [ 673.25, 458.939940999999976, 228.5, 18.0 ],
 									"viewvisibility" : 1
 								}
@@ -565,7 +566,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 173.0, 396.060059000000024, 235.0, 22.0 ],
-									"text" : "guiRemoteHelper/filtermode 0"
+									"text" : "1"
 								}
 
 							}
@@ -577,7 +578,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
+									"outlettype" : [ "", "int", "" ],
 									"patching_rect" : [ 44.5, 354.0, 443.0, 35.0 ],
 									"text" : "mvc.parameter guiRemoteHelper filtermode @type symbol @options lowpass highpass bandpass lowshelf highshelf resonant @default bandpass"
 								}
@@ -591,7 +592,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 102.0, 229.939940999999976, 235.0, 22.0 ],
-									"text" : "guiRemoteHelper/someFloat.10 10"
+									"text" : "7"
 								}
 
 							}
@@ -604,7 +605,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 610.25, 117.0, 240.0, 29.0 ],
+									"patching_rect" : [ 610.25, 117.0, 244.0, 29.0 ],
 									"text" : "mvc.device guiRemoteHelper",
 									"varname" : "mvc.device"
 								}
@@ -631,7 +632,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
+									"outlettype" : [ "", "int", "" ],
 									"patching_rect" : [ 44.5, 183.939940999999976, 443.0, 35.0 ],
 									"text" : "mvc.parameter guiRemoteHelper someFloat.{1..10} @type decimal @default 1024 @description \"The distance\" @unit km"
 								}
@@ -805,7 +806,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-39", 1 ],
-									"midpoints" : [ 314.5, 489.939940999999976, 322.5, 489.939940999999976 ],
+									"midpoints" : [ 316.0, 489.939940999999976, 322.5, 489.939940999999976 ],
 									"source" : [ "obj-41", 1 ]
 								}
 
@@ -827,7 +828,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 1 ],
-									"midpoints" : [ 356.5, 654.126578339113621, 344.5, 654.126578339113621 ],
+									"midpoints" : [ 357.5, 654.126578339113621, 344.5, 654.126578339113621 ],
 									"source" : [ "obj-5", 1 ]
 								}
 
@@ -954,15 +955,6 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-1::obj-8::obj-35::obj-30::obj-18::obj-7" : [ "live.toggle[8]", "live.toggle", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
