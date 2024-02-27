@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 0,
+			"minor" : 6,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 980.0, 837.0 ],
+		"rect" : [ 100.0, 100.0, 596.0, 501.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -66,14 +66,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 980.0, 811.0 ],
+						"rect" : [ 0.0, 26.0, 596.0, 475.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -144,14 +144,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 980.0, 811.0 ],
+						"rect" : [ 100.0, 126.0, 596.0, 475.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -182,11 +182,22 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 60.0, 404.0, 91.0, 22.0 ],
+									"text" : "print @popup 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-4",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 92.0, 161.0, 150.0, 20.0 ],
+									"patching_rect" : [ 52.0, 79.0, 150.0, 20.0 ],
 									"text" : "This is a draft!"
 								}
 
@@ -198,7 +209,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 93.0, 401.0, 133.0, 22.0 ],
+									"patching_rect" : [ 60.0, 371.0, 135.0, 22.0 ],
 									"text" : "mvc.brace.compression"
 								}
 
@@ -214,14 +225,14 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 0,
+											"minor" : 6,
+											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+										"rect" : [ 59.0, 106.0, 640.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -256,7 +267,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 544.5, 427.0, 35.0, 22.0 ],
+													"patching_rect" : [ 324.0, 417.5, 35.0, 22.0 ],
 													"text" : "clear"
 												}
 
@@ -269,7 +280,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 379.5, 425.0, 24.0, 24.0 ]
+													"patching_rect" : [ 159.0, 415.5, 24.0, 24.0 ]
 												}
 
 											}
@@ -280,7 +291,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 428.5, 413.0, 59.0, 22.0 ],
+													"patching_rect" : [ 208.0, 403.5, 59.0, 22.0 ],
 													"text" : "append 1"
 												}
 
@@ -290,11 +301,12 @@
 													"id" : "obj-24",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
-													"numoutlets" : 4,
-													"outlettype" : [ "dictionary", "", "", "" ],
-													"patching_rect" : [ 428.5, 475.0, 50.5, 22.0 ],
+													"numoutlets" : 5,
+													"outlettype" : [ "dictionary", "", "", "", "" ],
+													"patching_rect" : [ 208.0, 465.5, 50.5, 22.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 0,
+														"legacy" : 1,
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
@@ -310,7 +322,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 428.5, 442.0, 95.0, 22.0 ],
+													"patching_rect" : [ 208.0, 432.5, 95.0, 22.0 ],
 													"text" : "prepend replace"
 												}
 
@@ -322,7 +334,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "" ],
-													"patching_rect" : [ 428.5, 381.0, 129.0, 22.0 ],
+													"patching_rect" : [ 208.0, 371.5, 129.0, 22.0 ],
 													"text" : "regexp / @substitute ::"
 												}
 
@@ -334,7 +346,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 428.5, 351.0, 25.0, 22.0 ],
+													"patching_rect" : [ 208.0, 341.5, 25.0, 22.0 ],
 													"text" : "iter"
 												}
 
@@ -347,7 +359,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 428.5, 224.0, 361.0, 116.0 ],
+													"patching_rect" : [ 208.0, 214.5, 361.0, 116.0 ],
 													"text" : "Animalia/Arthropoda/Insecta/Diptera/Muscidate/Musca/Domestica Animalia/Arthropoda/Insecta/Paleoptera/Odonatoptera Animalia/Chordate/Mammalia/Carnivora/Felidae/Panthera Animalia/Chordate/Mammalia/Carnivora/Felidae/Felis Animalia/Chordate/Mammalia/Primate/Pongidae/Pan/Troglodytes Animalia/Chordate/Mammalia/Primate/Hominidae/Homo/Sapiens Animalia/Chordate/Mammalia/Primate/Hominidae/Homo/Erectus Animalia/Chordate/Mammalia/Primate/Hominidae/Homo/Habilis"
 												}
 
@@ -361,7 +373,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 158.0, 115.0, 23.0 ],
+													"patching_rect" : [ 50.0, 522.0, 115.0, 23.0 ],
 													"text" : "prepend braceDict"
 												}
 
@@ -374,7 +386,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 50.0, 100.0, 24.0, 24.0 ]
+													"patching_rect" : [ 50.0, 436.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -422,11 +434,12 @@
 													"id" : "obj-104",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
-													"numoutlets" : 4,
-													"outlettype" : [ "dictionary", "", "", "" ],
-													"patching_rect" : [ 50.0, 129.0, 206.0, 23.0 ],
+													"numoutlets" : 5,
+													"outlettype" : [ "dictionary", "", "", "", "" ],
+													"patching_rect" : [ 50.0, 465.0, 139.0, 23.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 1,
+														"legacy" : 1,
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
@@ -528,7 +541,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 119.0, 355.0, 125.0, 22.0 ],
+									"patching_rect" : [ 86.0, 325.0, 125.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -542,85 +555,14 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-32",
-									"linecount" : 3,
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 108.0, 438.0, 432.0, 49.0 ],
-									"text" : "Animalia/{Arthropoda/Insecta/{Diptera/Muscidate/Musca/Domestica|Paleoptera/Odonatoptera}|Chordate/Mammalia/{Carnivora/Felidae/{Panthera|Felis}|Primate/{Pongidae/Pan/Troglodytes|Hominidae/Homo/{Sapiens|Erectus|Habilis}}}}"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-18",
 									"linecount" : 9,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 93.0, 205.345132999999976, 387.0, 129.0 ],
+									"patching_rect" : [ 60.0, 175.0, 387.0, 129.0 ],
 									"text" : "braceList Animalia/Arthropoda/Insecta/Diptera/Muscidate/Musca/Domestica Animalia/Arthropoda/Insecta/Paleoptera/Odonatoptera Animalia/Chordate/Mammalia/Carnivora/Felidae/Panthera Animalia/Chordate/Mammalia/Carnivora/Felidae/Felis Animalia/Chordate/Mammalia/Primate/Pongidae/Pan/Troglodytes Animalia/Chordate/Mammalia/Primate/Hominidae/Homo/Sapiens Animalia/Chordate/Mammalia/Primate/Hominidae/Homo/Erectus Animalia/Chordate/Mammalia/Primate/Hominidae/Homo/Habilis"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-8",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 93.0, 628.250412573213794, 32.0, 22.0 ],
-									"text" : "print"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-3",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 187.0, 588.528349082823866, 73.0, 20.0 ],
-									"text" : "check result"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-57",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 93.0, 603.333608382142529, 25.0, 22.0 ],
-									"text" : "iter"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-12",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 93.0, 578.416804191071265, 69.0, 22.0 ],
-									"text" : "route result"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-17",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 93.0, 553.5, 119.0, 22.0 ],
-									"text" : "mvc.brace.expansion"
 								}
 
 							}
@@ -643,20 +585,6 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-57", 0 ],
-									"source" : [ "obj-12", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-12", 0 ],
-									"source" : [ "obj-17", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-39", 0 ],
 									"source" : [ "obj-18", 0 ]
 								}
@@ -671,24 +599,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"order" : 1,
+									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-39", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-32", 1 ],
-									"order" : 0,
-									"source" : [ "obj-39", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-8", 0 ],
-									"source" : [ "obj-57", 0 ]
 								}
 
 							}
@@ -737,47 +649,6 @@
 			}
  ],
 		"lines" : [  ],
-		"dependency_cache" : [ 			{
-				"name" : "mvc.brace.compression.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.brace.compression.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.brace.expansion.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mvc.brace.expansion.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/lib",
-				"patcherrelativepath" : "../patchers/lib",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpdetails.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
