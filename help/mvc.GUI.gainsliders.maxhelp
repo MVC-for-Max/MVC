@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 0,
+			"minor" : 6,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -47,7 +47,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 396.0, 152.0, 149.0, 22.0 ],
+					"patching_rect" : [ 396.0, 152.0, 151.0, 22.0 ],
 					"text" : "jsargs mvc.GUI.gainsliders"
 				}
 
@@ -56,9 +56,9 @@
 				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
-					"numinlets" : 0,
+					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 38.5, 195.0, 184.0, 22.0 ],
+					"patching_rect" : [ 38.5, 195.0, 189.0, 22.0 ],
 					"text" : "mvc.helpfiller mvc.GUI.gainsliders"
 				}
 
@@ -105,8 +105,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -167,8 +167,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -204,6 +204,18 @@
 						"showontab" : 2,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 561.0, 143.0, 30.0, 22.0 ],
+									"text" : "GUI"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-6",
 									"maxclass" : "newobj",
@@ -243,7 +255,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"offset" : [ 0.0, 0.0 ],
-									"outlettype" : [ "", "" ],
+									"outlettype" : [ "", "int" ],
 									"patching_rect" : [ 430.0, 290.0, 278.0, 175.0 ],
 									"viewvisibility" : 1
 								}
@@ -255,20 +267,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 649.5, 112.0, 35.0, 22.0 ],
+									"patching_rect" : [ 561.0, 208.0, 35.0, 22.0 ],
 									"text" : "print"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-5",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 453.5, 50.0, 30.0, 22.0 ],
-									"text" : "GUI"
 								}
 
 							}
@@ -297,7 +297,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 453.5, 77.0, 271.0, 29.0 ],
+									"patching_rect" : [ 305.0, 172.0, 275.0, 29.0 ],
 									"text" : "mvc.device GUIgainslidersHelper",
 									"varname" : "mvc.device"
 								}
@@ -354,6 +354,7 @@
 											"parameter_longname" : "mc.live.gain~[3]",
 											"parameter_mmax" : 6.0,
 											"parameter_mmin" : -70.0,
+											"parameter_modmode" : 0,
 											"parameter_shortname" : "mc.live.gain~",
 											"parameter_type" : 0,
 											"parameter_unitstyle" : 4
@@ -407,7 +408,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 22.5, 308.5, 242.0, 22.0 ],
+									"patching_rect" : [ 22.5, 308.5, 245.0, 22.0 ],
 									"text" : "mvc.mc.gain~ GUIgainslidersHelper myGain",
 									"varname" : "mvc.limiter~"
 								}
@@ -425,6 +426,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-11", 0 ],
 									"source" : [ "obj-16", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-37", 1 ],
+									"source" : [ "obj-2", 0 ]
 								}
 
 							}
@@ -462,13 +470,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
 									"source" : [ "obj-4", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-37", 0 ],
-									"source" : [ "obj-5", 0 ]
 								}
 
 							}
@@ -598,7 +599,8 @@
  ],
 		"parameters" : 		{
 			"obj-51::obj-16" : [ "mc.live.gain~[3]", "mc.live.gain~", 0 ],
-			"obj-51::obj-37::obj-35::obj-30::obj-18::obj-7" : [ "live.toggle[3]", "live.toggle", 0 ],
+			"obj-51::obj-3::obj-5::obj-25::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[1]", "live.toggle", 0 ],
+			"obj-51::obj-3::obj-5::obj-25::obj-61::obj-20.1::obj-22::obj-12::obj-8::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
 			"obj-51::obj-7::obj-21::obj-6" : [ "live.tab[4]", "live.tab[1]", 0 ],
 			"obj-51::obj-7::obj-35" : [ "[1]", "Level", 0 ],
 			"parameterbanks" : 			{
@@ -606,8 +608,8 @@
 			}
 ,
 			"parameter_overrides" : 			{
-				"obj-51::obj-37::obj-35::obj-30::obj-18::obj-7" : 				{
-					"parameter_longname" : "live.toggle[3]"
+				"obj-51::obj-3::obj-5::obj-25::obj-61::obj-20.1::obj-22::obj-12::obj-8::obj-7" : 				{
+					"parameter_longname" : "live.toggle[2]"
 				}
 ,
 				"obj-51::obj-7::obj-21::obj-6" : 				{
