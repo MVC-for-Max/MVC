@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 106.0, 619.0, 301.0 ],
+		"rect" : [ 59.0, 106.0, 638.0, 447.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,13 +40,40 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 118.0, 81.0, 48.0, 20.0 ],
+					"text" : "DRAFT"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"border" : 0,
+					"filename" : "helpdetails.js",
+					"id" : "obj-40",
+					"ignoreclick" : 1,
+					"jsarguments" : [ "mvc.array.indexof2d" ],
+					"maxclass" : "jsui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 4.0, 4.0, 566.0, 149.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-47",
 					"maxclass" : "button",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 415.0, 121.0, 24.0, 24.0 ]
+					"patching_rect" : [ 415.0, 206.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -57,7 +84,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 415.0, 151.0, 77.0, 22.0 ],
+					"patching_rect" : [ 415.0, 236.0, 77.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -75,7 +102,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 345.0, 121.0, 24.0, 24.0 ]
+					"patching_rect" : [ 345.0, 206.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -86,7 +113,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 345.0, 151.0, 66.0, 22.0 ],
+					"patching_rect" : [ 345.0, 236.0, 66.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -104,7 +131,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 284.0, 121.0, 24.0, 24.0 ]
+					"patching_rect" : [ 284.0, 206.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -120,7 +147,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -185,8 +212,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 155.0, 64.0, 22.0 ],
-									"text" : "array.push"
+									"patching_rect" : [ 50.0, 155.0, 146.0, 22.0 ],
+									"text" : "array.push @wrapmode 1"
 								}
 
 							}
@@ -227,7 +254,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 113.0, 114.0, 34.0, 22.0 ],
+					"patching_rect" : [ 113.0, 199.0, 34.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -246,7 +273,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 83.0, 190.0, 220.0, 22.0 ],
+					"patching_rect" : [ 83.0, 275.0, 220.0, 22.0 ],
 					"text" : "mvc.array.indexof2d"
 				}
 
@@ -257,7 +284,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 83.0, 220.0, 32.0, 22.0 ],
+					"patching_rect" : [ 83.0, 305.0, 32.0, 22.0 ],
 					"text" : "print"
 				}
 
@@ -269,7 +296,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 284.0, 151.0, 56.0, 22.0 ],
+					"patching_rect" : [ 284.0, 236.0, 56.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -287,7 +314,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 83.0, 113.0, 24.0, 24.0 ]
+					"patching_rect" : [ 83.0, 198.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -298,7 +325,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 83.0, 151.0, 49.0, 22.0 ],
+					"patching_rect" : [ 83.0, 236.0, 49.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -314,8 +341,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 132.0, 151.0, 132.0, 20.0 ],
-					"presentation_linecount" : 3,
+					"patching_rect" : [ 132.0, 236.0, 132.0, 20.0 ],
 					"text" : "[[1,2], [3,4,5],[1,2],[1,2]]"
 				}
 
@@ -390,14 +416,6 @@
 					"source" : [ "obj-48", 0 ]
 				}
 
-			}
- ],
-		"dependency_cache" : [ 			{
-				"name" : "mvc.array.indexof2d.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MVC/patchers/core",
-				"patcherrelativepath" : "../patchers/core",
-				"type" : "JSON",
-				"implicit" : 1
 			}
  ],
 		"autosave" : 0
