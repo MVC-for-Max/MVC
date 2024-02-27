@@ -284,5 +284,11 @@
 		"digest" : "Small utility to convert OSC-style addresses to dict-style.",
 		"category" : "library"
 	}
+,
+	"mvc.queue" : 	{
+		"digest" : "Queue and process messages asynchronously.",
+		"description" : "A useful utility when one needs to process messages asynchronously, like dialog-boxes or file read/write operations.",
+		"category" : "library"
+	}
 
 }
