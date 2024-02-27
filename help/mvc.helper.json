@@ -263,15 +263,15 @@
 		"category" : "library"
 	}
 ,
-	"mvc.scrolltabs" : 	{
-		"digest" : "Scrollable tabs bar.",
-		"description" : "Provides a scrollable tabs bar of fixed width.",
-		"category" : "library"
-	}
-,
 	"mvc.snapshots" : 	{
 		"digest" : "Store snapshots of some parameters.",
 		"description" : "mvc.snapshots provides a way to store partial presets, with a faster loading time.",
+		"category" : "library"
+	}
+,
+	"mvc.state" : 	{
+		"digest" : "Declare a state and its attributes",
+		"description" : "mvc.state declares a state in the MVC namespace - it is very similar to the mvc.parameter object, except that its value is not stored in presets. It is typically used for internal values that need to be queried or set but not stored. For instance, you may want that for the playhead position of a sample player.",
 		"category" : "library"
 	}
 
