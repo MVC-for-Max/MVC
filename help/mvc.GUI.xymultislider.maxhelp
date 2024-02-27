@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 0,
+			"minor" : 6,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 184.0, 155.0, 835.0, 713.0 ],
+		"rect" : [ 184.0, 142.0, 719.0, 591.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -47,7 +47,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 11.0, 97.0, 157.0, 22.0 ],
+					"patching_rect" : [ 11.0, 97.0, 160.0, 22.0 ],
 					"text" : "jsargs mvc.GUI.xymultislider"
 				}
 
@@ -94,14 +94,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 835.0, 687.0 ],
+						"rect" : [ 0.0, 26.0, 719.0, 565.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -156,14 +156,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 184.0, 181.0, 835.0, 687.0 ],
+						"rect" : [ 184.0, 168.0, 719.0, 565.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -280,7 +280,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 585.0, 262.141176470588221, 100.0, 22.0 ],
+									"patching_rect" : [ 495.0, 272.0, 100.0, 22.0 ],
 									"text" : "loadmess 10"
 								}
 
@@ -308,8 +308,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 0,
+											"minor" : 6,
+											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -343,7 +343,6 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
-										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-6",
@@ -534,7 +533,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 464.0, 316.174509470588191, 51.0, 22.0 ],
+									"patching_rect" : [ 374.0, 326.0, 51.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -554,7 +553,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 523.0, 289.141176470588221, 24.0, 24.0 ]
+									"patching_rect" : [ 433.0, 299.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -565,7 +564,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 523.0, 316.141176470588221, 57.0, 22.0 ],
+									"patching_rect" : [ 433.0, 326.0, 57.0, 22.0 ],
 									"text" : "active $1"
 								}
 
@@ -579,7 +578,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 101.0, 355.0, 382.0, 128.0 ]
+									"patching_rect" : [ 101.0, 357.0, 382.0, 128.0 ]
 								}
 
 							}
@@ -591,7 +590,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 582.0, 290.141176470588221, 50.0, 22.0 ]
+									"patching_rect" : [ 492.0, 300.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -602,7 +601,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 582.0, 316.141176470588221, 55.0, 22.0 ],
+									"patching_rect" : [ 492.0, 326.0, 55.0, 22.0 ],
 									"text" : "ntabs $1"
 								}
 
