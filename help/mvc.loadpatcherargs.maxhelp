@@ -40,12 +40,62 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 352.0, 193.0, 101.0, 20.0 ],
+					"text" : "bang to get again"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 324.0, 191.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 34.0, 130.0, 318.0, 20.0 ],
+					"text" : "Load patcherargs at loadbang logical time (and only then)."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"border" : 0,
+					"filename" : "helpdetails.js",
+					"id" : "obj-1",
+					"ignoreclick" : 1,
+					"jsarguments" : [ "mvc.loadpatcherargs" ],
+					"maxclass" : "jsui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 15.0, 9.0, 458.0, 112.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-60",
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "", "" ],
-					"patching_rect" : [ 71.0, 107.0, 120.0, 22.0 ],
+					"patching_rect" : [ 68.0, 227.0, 275.0, 22.0 ],
 					"text" : "mvc.loadpatcherargs"
 				}
 
@@ -56,7 +106,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 121.5, 156.0, 59.0, 22.0 ],
+					"patching_rect" : [ 196.0, 257.0, 59.0, 22.0 ],
 					"text" : "print args"
 				}
 
@@ -67,7 +117,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 195.0, 156.0, 53.0, 22.0 ],
+					"patching_rect" : [ 324.0, 257.0, 53.0, 22.0 ],
 					"text" : "print attr"
 				}
 
@@ -79,7 +129,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 71.0, 71.0, 147.0, 22.0 ],
+					"patching_rect" : [ 68.0, 191.0, 147.0, 22.0 ],
 					"text" : "patcherargs test @foo bar"
 				}
 
@@ -101,8 +151,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-60", 2 ],
+					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
-					"midpoints" : [ 80.5, 139.0, 52.5, 139.0, 52.5, 60.124145999999996, 80.5, 60.124145999999996 ],
+					"midpoints" : [ 77.5, 259.0, 49.5, 259.0, 49.5, 180.124145999999996, 77.5, 180.124145999999996 ],
 					"source" : [ "obj-60", 0 ]
 				}
 
