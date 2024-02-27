@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 0,
+			"minor" : 6,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 253.0, 201.0, 800.0, 451.0 ],
+		"rect" : [ 100.0, 100.0, 800.0, 451.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -44,9 +44,9 @@
 				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
-					"numinlets" : 0,
+					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 38.5, 197.0, 189.0, 22.0 ],
+					"patching_rect" : [ 38.5, 197.0, 194.0, 22.0 ],
 					"text" : "mvc.helpfiller mvc.GUI.namespace"
 				}
 
@@ -58,7 +58,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 346.0, 159.0, 153.0, 22.0 ],
+					"patching_rect" : [ 346.0, 159.0, 156.0, 22.0 ],
 					"text" : "jsargs mvc.GUI.namespace"
 				}
 
@@ -105,8 +105,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -167,14 +167,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 253.0, 227.0, 800.0, 425.0 ],
+						"rect" : [ 100.0, 126.0, 800.0, 425.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -205,6 +205,18 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 287.0, 197.0, 30.0, 22.0 ],
+									"text" : "GUI"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-9",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -233,7 +245,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 121.0, 309.0, 356.0, 29.0 ],
+									"patching_rect" : [ 121.0, 309.0, 360.0, 29.0 ],
 									"text" : "mvc.GUI.namespace GUInamespaceHelper"
 								}
 
@@ -258,21 +270,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 383.0, 233.0, 322.0, 22.0 ],
+									"patching_rect" : [ 383.0, 233.0, 325.0, 22.0 ],
 									"text" : "mvc.mc.cascade~ GUInamespaceHelper TheCascadeFilter",
 									"varname" : "mvc.mc.cascade~"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-68",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 84.0, 195.0, 71.0, 22.0 ],
-									"text" : "namespace"
 								}
 
 							}
@@ -284,7 +284,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 42.0, 127.0, 338.0, 27.0 ],
+									"patching_rect" : [ 42.0, 127.0, 342.0, 27.0 ],
 									"text" : "Warning : mvc.GUI.namespace is a draft !"
 								}
 
@@ -325,21 +325,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "multichannelsignal", "multichannelsignal", "" ],
-									"patching_rect" : [ 383.0, 202.0, 242.0, 22.0 ],
+									"patching_rect" : [ 383.0, 202.0, 245.0, 22.0 ],
 									"text" : "mvc.mc.cross~ GUInamespaceHelper Xfilter",
 									"varname" : "mvc.mc.LRcrossfilter~"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-5",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 24.0, 195.0, 30.0, 22.0 ],
-									"text" : "GUI"
 								}
 
 							}
@@ -352,7 +340,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 24.0, 226.0, 278.0, 29.0 ],
+									"patching_rect" : [ 24.0, 226.0, 282.0, 29.0 ],
 									"text" : "mvc.device GUInamespaceHelper",
 									"varname" : "mvc.device"
 								}
@@ -368,22 +356,15 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-37", 1 ],
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-3", 1 ],
 									"source" : [ "obj-42", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-37", 0 ],
-									"source" : [ "obj-5", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-37", 0 ],
-									"source" : [ "obj-68", 0 ]
 								}
 
 							}
@@ -1445,8 +1426,26 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-51::obj-37::obj-35::obj-30::obj-18::obj-7" : [ "live.toggle[8]", "live.toggle", 0 ],
+			"obj-51::obj-37::obj-27::obj-25::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[4]", "live.toggle", 0 ],
+			"obj-51::obj-3::obj-3::obj-25::obj-61::obj-20.1::obj-16::obj-8::obj-7" : [ "live.toggle[3]", "live.toggle", 0 ],
+			"obj-51::obj-3::obj-3::obj-25::obj-61::obj-20.1::obj-5::obj-49::obj-8::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
+			"obj-51::obj-3::obj-3::obj-25::obj-61::obj-20.1::obj-5::obj-5::obj-12::obj-8::obj-7" : [ "live.toggle[1]", "live.toggle", 0 ],
 			"parameterbanks" : 			{
+
+			}
+,
+			"parameter_overrides" : 			{
+				"obj-51::obj-37::obj-27::obj-25::obj-61::obj-20.1::obj-12::obj-8::obj-7" : 				{
+					"parameter_longname" : "live.toggle[4]"
+				}
+,
+				"obj-51::obj-3::obj-3::obj-25::obj-61::obj-20.1::obj-16::obj-8::obj-7" : 				{
+					"parameter_longname" : "live.toggle[3]"
+				}
+,
+				"obj-51::obj-3::obj-3::obj-25::obj-61::obj-20.1::obj-5::obj-49::obj-8::obj-7" : 				{
+					"parameter_longname" : "live.toggle[2]"
+				}
 
 			}
 ,
