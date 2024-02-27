@@ -262,5 +262,17 @@
 		"description" : "mvc.remote allows to bind to a component's input for remote control or monitoring. This can either be a mvc.parameter, an mvc.state or an mvc.message. The address it refers to can be set dynamically and multiple addresses can be provided, either as a list or through brace expansion notation and wildcards. The mvc.remote object helps implementing the view and controller part in the MVC model used in the MVC package.",
 		"category" : "library"
 	}
+,
+	"mvc.scrolltabs" : 	{
+		"digest" : "Scrollable tabs bar.",
+		"description" : "Provides a scrollable tabs bar of fixed width.",
+		"category" : "library"
+	}
+,
+	"mvc.snapshots" : 	{
+		"digest" : "Store snapshots of some parameters.",
+		"description" : "mvc.snapshots provides a way to store partial presets, with a faster loading time.",
+		"category" : "library"
+	}
 
 }
