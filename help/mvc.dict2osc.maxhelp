@@ -233,8 +233,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 80.0, 169.0, 179.0, 22.0 ],
-									"text" : "owly::cow::has::wings::and::milk"
+									"patching_rect" : [ 80.0, 169.0, 187.0, 22.0 ],
+									"text" : "owly::cow::has::wings::and::horns"
 								}
 
 							}
