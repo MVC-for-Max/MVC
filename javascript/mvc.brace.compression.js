@@ -25,14 +25,15 @@ var d = new Dict();
 function braceList()
 {
 	var a = arrayfromargs(arguments);
+	//post("args", a);
 	dict_items = [];
-	//dictFromList.clear;
+	dictFromList.clear();
 
 	// clear dictionary
 	Object.keys(dictFromList).forEach(function (key) {
 		dictFromList.remove(key);
+		post("removing", key, "\n");
 	});
-	//post("hey");
 	//post("keys", dictFromList.getkeys(), "\n");
 	
 	// feed slash separated items into a dictionary
@@ -42,7 +43,7 @@ function braceList()
 		dictFromList.replace(aDictItem, 1);
 	});
 
-	//post("hey");
+	//post("hey", dictFromList.getkeys() ,"\n");
 	//post("keys", dictFromList.get("Animalia").get("Arthropoda").get("Insecta").getkeys(), "\n");
 	
 	// brace compress the dictionary
@@ -54,6 +55,9 @@ function braceDict(dummy, dictname) {
 	prefixConcat = [];
     d.name = dictname;
 
+
+	//post("heyyyy", d.getkeys() ,"\n");
+	
     //prefixConcat.push("{");
     var json_dict = JSON.parse(d.stringify());
 
