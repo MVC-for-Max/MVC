@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 1,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 596.0, 501.0 ],
+		"rect" : [ 85.0, 100.0, 532.0, 501.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -67,13 +67,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 1,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 596.0, 475.0 ],
+						"rect" : [ 0.0, 26.0, 532.0, 475.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -145,13 +145,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 1,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 596.0, 475.0 ],
+						"rect" : [ 85.0, 126.0, 532.0, 475.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -181,6 +181,44 @@
 						"showontab" : 2,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-5",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 262.0, 355.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-10",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 286.0, 317.5, 88.0, 37.0 ],
+									"text" : "edge case issue"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 224.0, 325.0, 66.0, 22.0 ],
+									"text" : "foo foo/bar"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-1",
 									"maxclass" : "newobj",
@@ -220,19 +258,19 @@
 									"maxclass" : "newobj",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "dictionary" ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 1,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 59.0, 106.0, 640.0, 480.0 ],
+										"rect" : [ 59.0, 106.0, 639.0, 550.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -267,7 +305,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 324.0, 417.5, 35.0, 22.0 ],
+													"patching_rect" : [ 324.0, 333.0, 35.0, 22.0 ],
 													"text" : "clear"
 												}
 
@@ -280,7 +318,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 159.0, 415.5, 24.0, 24.0 ]
+													"patching_rect" : [ 159.0, 331.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -291,7 +329,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 208.0, 403.5, 59.0, 22.0 ],
+													"patching_rect" : [ 208.0, 319.0, 59.0, 22.0 ],
 													"text" : "append 1"
 												}
 
@@ -303,7 +341,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 5,
 													"outlettype" : [ "dictionary", "", "", "", "" ],
-													"patching_rect" : [ 208.0, 465.5, 50.5, 22.0 ],
+													"patching_rect" : [ 208.0, 381.0, 50.5, 22.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 0,
 														"legacy" : 1,
@@ -322,7 +360,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 208.0, 432.5, 95.0, 22.0 ],
+													"patching_rect" : [ 208.0, 348.0, 95.0, 22.0 ],
 													"text" : "prepend replace"
 												}
 
@@ -334,7 +372,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "" ],
-													"patching_rect" : [ 208.0, 371.5, 129.0, 22.0 ],
+													"patching_rect" : [ 208.0, 287.0, 129.0, 22.0 ],
 													"text" : "regexp / @substitute ::"
 												}
 
@@ -346,7 +384,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 208.0, 341.5, 25.0, 22.0 ],
+													"patching_rect" : [ 208.0, 257.0, 25.0, 22.0 ],
 													"text" : "iter"
 												}
 
@@ -359,22 +397,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 208.0, 214.5, 361.0, 116.0 ],
+													"patching_rect" : [ 208.0, 130.0, 361.0, 116.0 ],
 													"text" : "Animalia/Arthropoda/Insecta/Diptera/Muscidate/Musca/Domestica Animalia/Arthropoda/Insecta/Paleoptera/Odonatoptera Animalia/Chordate/Mammalia/Carnivora/Felidae/Panthera Animalia/Chordate/Mammalia/Carnivora/Felidae/Felis Animalia/Chordate/Mammalia/Primate/Pongidae/Pan/Troglodytes Animalia/Chordate/Mammalia/Primate/Hominidae/Homo/Sapiens Animalia/Chordate/Mammalia/Primate/Hominidae/Homo/Erectus Animalia/Chordate/Mammalia/Primate/Hominidae/Homo/Habilis"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontname" : "Arial",
-													"fontsize" : 13.0,
-													"id" : "obj-11",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 522.0, 115.0, 23.0 ],
-													"text" : "prepend braceDict"
 												}
 
 											}
@@ -386,7 +410,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 50.0, 436.0, 24.0, 24.0 ]
+													"patching_rect" : [ 50.0, 351.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -397,12 +421,7 @@
 															"front" : 															{
 																"spokecount" : 24,
 																"lacing" : "radial",
-																"tirewidth" : 21,
-																"test" : 																{
-																	"yo" : 24,
-																	"ye" : 11
-																}
-
+																"tirewidth" : 21
 															}
 ,
 															"rear" : 															{
@@ -436,7 +455,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 5,
 													"outlettype" : [ "dictionary", "", "", "", "" ],
-													"patching_rect" : [ 50.0, 465.0, 139.0, 23.0 ],
+													"patching_rect" : [ 50.0, 380.0, 139.0, 23.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 1,
 														"legacy" : 1,
@@ -456,14 +475,14 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 50.0, 563.987304999999992, 30.0, 30.0 ]
+													"patching_rect" : [ 50.0, 479.0, 30.0, 30.0 ]
 												}
 
 											}
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
-													"destination" : [ "obj-11", 0 ],
+													"destination" : [ "obj-35", 0 ],
 													"source" : [ "obj-104", 0 ]
 												}
 
@@ -472,13 +491,6 @@
 												"patchline" : 												{
 													"destination" : [ "obj-104", 0 ],
 													"source" : [ "obj-106", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-35", 0 ],
-													"source" : [ "obj-11", 0 ]
 												}
 
 											}
@@ -512,7 +524,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-11", 0 ],
+													"destination" : [ "obj-35", 0 ],
 													"source" : [ "obj-24", 0 ]
 												}
 
@@ -556,13 +568,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-18",
-									"linecount" : 9,
+									"linecount" : 8,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 60.0, 175.0, 387.0, 129.0 ],
-									"text" : "braceList Animalia/Arthropoda/Insecta/Diptera/Muscidate/Musca/Domestica Animalia/Arthropoda/Insecta/Paleoptera/Odonatoptera Animalia/Chordate/Mammalia/Carnivora/Felidae/Panthera Animalia/Chordate/Mammalia/Carnivora/Felidae/Felis Animalia/Chordate/Mammalia/Primate/Pongidae/Pan/Troglodytes Animalia/Chordate/Mammalia/Primate/Hominidae/Homo/Sapiens Animalia/Chordate/Mammalia/Primate/Hominidae/Homo/Erectus Animalia/Chordate/Mammalia/Primate/Hominidae/Homo/Habilis"
+									"patching_rect" : [ 60.0, 175.0, 361.0, 116.0 ],
+									"text" : "Animalia/Arthropoda/Insecta/Diptera/Muscidate/Musca/Domestica Animalia/Arthropoda/Insecta/Paleoptera/Odonatoptera Animalia/Chordate/Mammalia/Carnivora/Felidae/Panthera Animalia/Chordate/Mammalia/Carnivora/Felidae/Felis Animalia/Chordate/Mammalia/Primate/Pongidae/Pan/Troglodytes Animalia/Chordate/Mammalia/Primate/Hominidae/Homo/Sapiens Animalia/Chordate/Mammalia/Primate/Hominidae/Homo/Erectus Animalia/Chordate/Mammalia/Primate/Hominidae/Homo/Habilis"
 								}
 
 							}
@@ -601,6 +613,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-39", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-39", 0 ],
+									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-39", 0 ],
+									"source" : [ "obj-6", 0 ]
 								}
 
 							}
