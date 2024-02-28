@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 217.0, 487.0, 801.0, 468.0 ],
+		"rect" : [ 34.0, 399.0, 583.0, 608.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -112,7 +112,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 801.0, 442.0 ],
+						"rect" : [ 0.0, 26.0, 583.0, 582.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -174,7 +174,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 217.0, 513.0, 801.0, 442.0 ],
+						"rect" : [ 34.0, 425.0, 583.0, 582.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -205,12 +205,25 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-11",
+									"linecount" : 4,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 388.0, 265.0, 130.0, 64.0 ],
+									"text" : "These components are available in the MVC-components package"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-4",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 252.0, 195.0, 30.0, 22.0 ],
+									"patching_rect" : [ 252.0, 181.0, 30.0, 22.0 ],
 									"text" : "GUI"
 								}
 
@@ -223,7 +236,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 440.0, 186.5, 169.0, 39.0 ],
+									"patching_rect" : [ 102.0, 407.0, 169.0, 39.0 ],
 									"text" : "Open the component browser"
 								}
 
@@ -264,7 +277,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 270.0, 350.5, 30.0, 22.0 ],
+									"patching_rect" : [ 270.0, 298.0, 30.0, 22.0 ],
 									"text" : "GUI"
 								}
 
@@ -277,7 +290,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "multichannelsignal", "multichannelsignal", "" ],
-									"patching_rect" : [ 24.0, 379.0, 268.0, 22.0 ],
+									"patching_rect" : [ 24.0, 326.0, 268.0, 22.0 ],
 									"text" : "mvc.mc.cross~ GUImulticomponentHelper Xfilter",
 									"varname" : "mvc.mc.LRcrossfilter~"
 								}
@@ -287,11 +300,12 @@
 								"box" : 								{
 									"fontsize" : 14.0,
 									"id" : "obj-34",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 0,
 									"numoutlets" : 0,
-									"patching_rect" : [ 300.0, 226.0, 335.0, 24.0 ],
-									"text" : "mvc.GUI.multicomponent GUImulticomponentHelper",
+									"patching_rect" : [ 28.0, 438.0, 291.0, 40.0 ],
+									"text" : "mvc.GUI.multicomponent GUImulticomponentHelper/TheCascadeFilter",
 									"varname" : "mvc.GUI.multicomponent"
 								}
 
@@ -305,7 +319,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 24.0, 226.0, 247.0, 24.0 ],
+									"patching_rect" : [ 24.0, 212.0, 247.0, 24.0 ],
 									"text" : "mvc.device GUImulticomponentHelper",
 									"varname" : "mvc.device"
 								}
@@ -318,7 +332,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 350.0, 276.0, 30.0, 22.0 ],
+									"patching_rect" : [ 350.0, 235.0, 30.0, 22.0 ],
 									"text" : "GUI"
 								}
 
@@ -331,7 +345,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 24.0, 306.0, 347.0, 22.0 ],
+									"patching_rect" : [ 24.0, 265.0, 347.0, 22.0 ],
 									"text" : "mvc.mc.cascade~ GUImulticomponentHelper TheCascadeFilter",
 									"varname" : "mvc.mc.cascade~"
 								}
@@ -470,12 +484,7 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-51::obj-1::obj-5::obj-25::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[3]", "live.toggle", 0 ],
-			"obj-51::obj-1::obj-5::obj-25::obj-61::obj-20.1::obj-67::obj-12::obj-8::obj-7" : [ "live.toggle[4]", "live.toggle", 0 ],
-			"obj-51::obj-34::obj-26.1::obj-16::obj-8::obj-7" : [ "live.toggle[9]", "live.toggle", 0 ],
-			"obj-51::obj-34::obj-26.1::obj-5::obj-49::obj-8::obj-7" : [ "live.toggle[5]", "live.toggle", 0 ],
-			"obj-51::obj-34::obj-26.1::obj-5::obj-5::obj-12::obj-8::obj-7" : [ "live.toggle[1]", "live.toggle", 0 ],
-			"obj-51::obj-37::obj-27::obj-25::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
+			"obj-51::obj-37::obj-27::obj-25::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[12]", "live.toggle", 0 ],
 			"obj-51::obj-3::obj-3::obj-25::obj-61::obj-20.1::obj-16::obj-8::obj-7" : [ "live.toggle[8]", "live.toggle", 0 ],
 			"obj-51::obj-3::obj-3::obj-25::obj-61::obj-20.1::obj-5::obj-49::obj-8::obj-7" : [ "live.toggle[7]", "live.toggle", 0 ],
 			"obj-51::obj-3::obj-3::obj-25::obj-61::obj-20.1::obj-5::obj-5::obj-12::obj-8::obj-7" : [ "live.toggle[6]", "live.toggle", 0 ],
@@ -484,24 +493,8 @@
 			}
 ,
 			"parameter_overrides" : 			{
-				"obj-51::obj-1::obj-5::obj-25::obj-61::obj-20.1::obj-12::obj-8::obj-7" : 				{
-					"parameter_longname" : "live.toggle[3]"
-				}
-,
-				"obj-51::obj-1::obj-5::obj-25::obj-61::obj-20.1::obj-67::obj-12::obj-8::obj-7" : 				{
-					"parameter_longname" : "live.toggle[4]"
-				}
-,
-				"obj-51::obj-34::obj-26.1::obj-16::obj-8::obj-7" : 				{
-					"parameter_longname" : "live.toggle[9]"
-				}
-,
-				"obj-51::obj-34::obj-26.1::obj-5::obj-49::obj-8::obj-7" : 				{
-					"parameter_longname" : "live.toggle[5]"
-				}
-,
 				"obj-51::obj-37::obj-27::obj-25::obj-61::obj-20.1::obj-12::obj-8::obj-7" : 				{
-					"parameter_longname" : "live.toggle[2]"
+					"parameter_longname" : "live.toggle[12]"
 				}
 ,
 				"obj-51::obj-3::obj-3::obj-25::obj-61::obj-20.1::obj-16::obj-8::obj-7" : 				{
