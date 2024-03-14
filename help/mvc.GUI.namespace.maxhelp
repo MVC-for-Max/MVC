@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 1,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 800.0, 451.0 ],
+		"rect" : [ 690.0, 189.0, 629.0, 582.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -106,13 +106,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 1,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 800.0, 425.0 ],
+						"rect" : [ 0.0, 26.0, 629.0, 556.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -168,13 +168,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 1,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 800.0, 425.0 ],
+						"rect" : [ 690.0, 215.0, 629.0, 556.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -205,24 +205,132 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-4",
-									"maxclass" : "message",
-									"numinlets" : 2,
+									"id" : "obj-8",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 287.0, 197.0, 30.0, 22.0 ],
-									"text" : "GUI"
+									"patching_rect" : [ 79.0, 474.0, 94.0, 22.0 ],
+									"text" : "prepend symbol"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"id" : "obj-1",
+									"items" : [ "lowpass", ",", "highpass", ",", "bandpass", ",", "lowshelf", ",", "highshelf", ",", "resonant" ],
+									"maxclass" : "umenu",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "int", "", "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 79.0, 498.0, 100.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"color" : [ 0.407843137254902, 0.529411764705882, 0.36078431372549, 1.0 ],
 									"id" : "obj-9",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 79.0, 436.0, 508.0, 35.0 ],
+									"text" : "mvc.parameter MyModelUniqueID filtermode @type symbol @options lowpass highpass bandpass lowshelf highshelf resonant @default bandpass"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-12",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 23.0, 341.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-11",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 23.0, 383.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"color" : [ 0.407843137254902, 0.529411764705882, 0.36078431372549, 1.0 ],
+									"id" : "obj-22",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 79.0, 383.0, 505.0, 35.0 ],
+									"text" : "mvc.parameter MyModelUniqueID frequency @description \"cutoff frequency\" @default 1000. @type decimal"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-20",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 393.0, 178.0, 150.0, 20.0 ],
-									"text" : "sample components"
+									"patching_rect" : [ 79.0, 319.0, 227.0, 20.0 ],
+									"text" : "... and parameters attached to this model"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"color" : [ 0.407843137254902, 0.529411764705882, 0.36078431372549, 1.0 ],
+									"id" : "obj-16",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "int", "" ],
+									"patching_rect" : [ 79.0, 341.0, 508.0, 35.0 ],
+									"text" : "mvc.parameter MyModelUniqueID foo.{1..7} @description \"The foo parameter!\" @type integer @default 22"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"color" : [ 0.631372549019608, 0.203921568627451, 0.196078431372549, 1.0 ],
+									"id" : "obj-14",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 23.0, 263.0, 559.0, 35.0 ],
+									"text" : "mvc.model MyModelUniqueID GUInamespaceHelper myModel @type fakeModel @description \"This is just a fake model\"",
+									"varname" : "mvc.model"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 451.0, 149.0, 30.0, 22.0 ],
+									"text" : "GUI"
 								}
 
 							}
@@ -233,7 +341,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 486.0, 310.0, 82.0, 24.0 ],
+									"patching_rect" : [ 475.0, 219.0, 82.0, 24.0 ],
 									"text" : "open me!"
 								}
 
@@ -245,34 +353,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 121.0, 309.0, 360.0, 29.0 ],
+									"patching_rect" : [ 110.0, 218.0, 360.0, 29.0 ],
 									"text" : "mvc.GUI.namespace GUInamespaceHelper"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-42",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 686.0, 203.0, 30.0, 22.0 ],
-									"text" : "GUI"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"color" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
-									"id" : "obj-3",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 383.0, 233.0, 325.0, 22.0 ],
-									"text" : "mvc.mc.cascade~ GUInamespaceHelper TheCascadeFilter",
-									"varname" : "mvc.mc.cascade~"
 								}
 
 							}
@@ -307,32 +389,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-2",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 606.0, 175.5, 30.0, 22.0 ],
-									"text" : "GUI"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"color" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
-									"id" : "obj-1",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 3,
-									"outlettype" : [ "multichannelsignal", "multichannelsignal", "" ],
-									"patching_rect" : [ 383.0, 202.0, 245.0, 22.0 ],
-									"text" : "mvc.mc.cross~ GUInamespaceHelper Xfilter",
-									"varname" : "mvc.mc.LRcrossfilter~"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"color" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"fontsize" : 18.0,
 									"id" : "obj-37",
@@ -340,7 +396,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 24.0, 226.0, 282.0, 29.0 ],
+									"patching_rect" : [ 188.0, 178.0, 282.0, 29.0 ],
 									"text" : "mvc.device GUInamespaceHelper",
 									"varname" : "mvc.device"
 								}
@@ -349,8 +405,37 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-1", 1 ],
-									"source" : [ "obj-2", 0 ]
+									"destination" : [ "obj-9", 0 ],
+									"midpoints" : [ 129.0, 524.0, 73.75, 524.0, 73.75, 425.0, 88.5, 425.0 ],
+									"source" : [ "obj-1", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-22", 0 ],
+									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-16", 0 ],
+									"source" : [ "obj-12", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-12", 0 ],
+									"source" : [ "obj-16", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-11", 0 ],
+									"source" : [ "obj-22", 0 ]
 								}
 
 							}
@@ -363,8 +448,15 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 1 ],
-									"source" : [ "obj-42", 0 ]
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-8", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"source" : [ "obj-9", 0 ]
 								}
 
 							}
@@ -1425,33 +1517,6 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-51::obj-37::obj-27::obj-25::obj-61::obj-20.1::obj-12::obj-8::obj-7" : [ "live.toggle[4]", "live.toggle", 0 ],
-			"obj-51::obj-3::obj-3::obj-25::obj-61::obj-20.1::obj-16::obj-8::obj-7" : [ "live.toggle[3]", "live.toggle", 0 ],
-			"obj-51::obj-3::obj-3::obj-25::obj-61::obj-20.1::obj-5::obj-49::obj-8::obj-7" : [ "live.toggle[2]", "live.toggle", 0 ],
-			"obj-51::obj-3::obj-3::obj-25::obj-61::obj-20.1::obj-5::obj-5::obj-12::obj-8::obj-7" : [ "live.toggle[1]", "live.toggle", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
-			"parameter_overrides" : 			{
-				"obj-51::obj-37::obj-27::obj-25::obj-61::obj-20.1::obj-12::obj-8::obj-7" : 				{
-					"parameter_longname" : "live.toggle[4]"
-				}
-,
-				"obj-51::obj-3::obj-3::obj-25::obj-61::obj-20.1::obj-16::obj-8::obj-7" : 				{
-					"parameter_longname" : "live.toggle[3]"
-				}
-,
-				"obj-51::obj-3::obj-3::obj-25::obj-61::obj-20.1::obj-5::obj-49::obj-8::obj-7" : 				{
-					"parameter_longname" : "live.toggle[2]"
-				}
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
 		"autosave" : 0
 	}
 
