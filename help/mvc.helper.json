@@ -290,5 +290,11 @@
 		"description" : "A useful utility when one needs to process messages asynchronously, like dialog-boxes or file read/write operations.",
 		"category" : "library"
 	}
+,
+	"mvc.device" : 	{
+		"digest" : "Create a local device.",
+		"description" : "mvc.device creates a local device to which any mvc.model, mvc.parameter, mvc.state and mvc.messagecan register. \nIt is at the root of the namespace and can be considered as a top-level mvc.model in the MVC model used in the MVC package.",
+		"category" : "library"
+	}
 
 }
