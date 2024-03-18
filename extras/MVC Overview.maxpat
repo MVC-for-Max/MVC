@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 1,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -72,7 +72,7 @@
 					"filename" : "helpdetails.js",
 					"id" : "obj-22",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "aim.cascade~" ],
+					"jsarguments" : [ "mvc.parameter" ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -126,7 +126,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 1,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
