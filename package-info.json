@@ -1,0 +1,40 @@
+{
+	"name" : "MVC",
+	"displayname" : "MVC",
+	"description" : "MVC core package",
+	"author" : "Vincent Goudard",
+	"authors" : [  ],
+	"extends" : "",
+	"extensible" : 0,
+	"homepatcher" : "mvc.overview.maxpat",
+	"max_version_max" : "none",
+	"max_version_min" : "8.2.1",
+	"os" : 	{
+		"macintosh" : 		{
+			"platform" : [ "ia32", "x64" ],
+			"min_version" : "none"
+		}
+,
+		"windows" : 		{
+			"platform" : [ "ia32", "x64" ],
+			"min_version" : "none"
+		}
+
+	}
+,
+	"package_extra" : 	{
+
+	}
+,
+	"tags" : ["interactive", "sound design", "framework", "mapping"],
+	"version" : "0.0.1",
+	"filelist" : 	{
+		"examples" : [],
+		"externals" : [],
+		"patchers" : [],
+		"help" : [],
+		"docs" : [],
+		"code" : [],
+		"extras" : [ "mvc.overview.maxpat" ]
+	}
+}
