@@ -1,14 +1,14 @@
 {
 	"name" : "MVC",
 	"displayname" : "MVC",
-	"description" : "MVC core package",
+	"description" : "MVC core package: a Model-View-Controler set of absractions for Max, that helps define parameters, models, and remote controlers for your Max patchers.",
 	"author" : "Vincent Goudard",
 	"authors" : [  ],
 	"extends" : "",
 	"extensible" : 0,
 	"homepatcher" : "mvc.overview.maxpat",
 	"max_version_max" : "none",
-	"max_version_min" : "8.2.1",
+	"max_version_min" : "8.6.1",
 	"os" : 	{
 		"macintosh" : 		{
 			"platform" : [ "ia32", "x64" ],
