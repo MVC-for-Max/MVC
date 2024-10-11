@@ -302,5 +302,11 @@
 		"description" : "mvc.clip~ provides the clip~ object as an MVC component.",
 		"category" : "component"
 	}
+,
+	"mvc.lores~" : 	{
+		"digest" : "Resonant lowpass filter.",
+		"description" : "The mvc.lores~ wraps Max's lores~ object, an inexpensive low-pass filter with resonance.",
+		"category" : "component"
+	}
 
 }
