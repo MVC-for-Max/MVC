@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 1,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 40.0, 300.0, 1003.0, 716.0 ],
+		"rect" : [ 40.0, 100.0, 1003.0, 716.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -106,7 +106,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 1,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -187,13 +187,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 1,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 40.0, 326.0, 1003.0, 690.0 ],
+						"rect" : [ 0.0, 26.0, 1003.0, 690.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -232,7 +232,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 89.0, 517.0, 290.0, 35.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Access a parameter state remotely using mvc.remote (see mvc.remote maxhelp for further information)",
 									"textcolor" : [ 0.6, 0.6, 0.6, 1.0 ]
 								}
@@ -551,7 +550,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -843,13 +842,13 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 116.0, 146.0, 1324.0, 398.0 ],
+										"rect" : [ 116.0, 146.0, 1099.0, 385.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -897,7 +896,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 999.0, 181.5, 176.0, 37.0 ],
+													"patching_rect" : [ 864.0, 182.0, 176.0, 37.0 ],
 													"text" : "... or use setvalue to chose which address to talk to."
 												}
 
@@ -911,7 +910,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 902.0, 135.0, 50.0, 22.0 ]
+													"patching_rect" : [ 767.0, 135.0, 50.0, 22.0 ]
 												}
 
 											}
@@ -925,7 +924,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 961.0, 135.0, 50.0, 22.0 ]
+													"patching_rect" : [ 826.0, 135.0, 50.0, 22.0 ]
 												}
 
 											}
@@ -936,7 +935,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 902.0, 164.0, 78.0, 22.0 ],
+													"patching_rect" : [ 767.0, 164.0, 78.0, 22.0 ],
 													"text" : "pack 0. 1"
 												}
 
@@ -948,7 +947,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 902.0, 196.0, 87.0, 22.0 ],
+													"patching_rect" : [ 767.0, 196.0, 87.0, 22.0 ],
 													"text" : "setvalue $2 $1"
 												}
 
@@ -957,12 +956,11 @@
 												"box" : 												{
 													"color" : [ 0.407843137254902, 0.529411764705882, 0.36078431372549, 1.0 ],
 													"id" : "obj-9",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "int", "" ],
-													"patching_rect" : [ 902.0, 226.0, 273.0, 35.0 ],
+													"patching_rect" : [ 767.0, 226.0, 275.0, 22.0 ],
 													"text" : "mvc.remote ParameterHelper/myPolyParam.{1..4}"
 												}
 
@@ -1025,7 +1023,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 580.0, 238.0, 50.0, 22.0 ]
+													"patching_rect" : [ 531.0, 216.0, 50.0, 22.0 ]
 												}
 
 											}
@@ -1038,7 +1036,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "int", "" ],
-													"patching_rect" : [ 580.0, 266.0, 251.0, 35.0 ],
+													"patching_rect" : [ 531.0, 240.0, 196.0, 35.0 ],
 													"text" : "mvc.remote ParameterHelper/myPolyParam.3"
 												}
 
@@ -1052,7 +1050,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 580.0, 298.0, 50.0, 22.0 ]
+													"patching_rect" : [ 531.0, 286.0, 50.0, 22.0 ]
 												}
 
 											}
@@ -1065,7 +1063,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "int", "" ],
-													"patching_rect" : [ 580.0, 326.0, 251.0, 35.0 ],
+													"patching_rect" : [ 531.0, 310.0, 196.0, 35.0 ],
 													"text" : "mvc.remote ParameterHelper/myPolyParam.4"
 												}
 
@@ -1079,7 +1077,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 492.5, 64.0, 210.0, 52.0 ],
+													"patching_rect" : [ 448.0, 19.0, 210.0, 52.0 ],
 													"text" : "Then tweak these values to see how they are forwarded into the poly~"
 												}
 
@@ -1131,7 +1129,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 576.0, 118.0, 50.0, 22.0 ]
+													"patching_rect" : [ 531.0, 73.0, 50.0, 22.0 ]
 												}
 
 											}
@@ -1144,7 +1142,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "int", "" ],
-													"patching_rect" : [ 576.0, 146.0, 251.0, 35.0 ],
+													"patching_rect" : [ 531.0, 97.0, 196.0, 35.0 ],
 													"text" : "mvc.remote ParameterHelper/myPolyParam.1"
 												}
 
@@ -1158,7 +1156,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 576.0, 178.0, 50.0, 22.0 ]
+													"patching_rect" : [ 531.0, 144.0, 50.0, 22.0 ]
 												}
 
 											}
@@ -1171,7 +1169,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "int", "" ],
-													"patching_rect" : [ 576.0, 206.0, 251.0, 35.0 ],
+													"patching_rect" : [ 531.0, 168.0, 196.0, 35.0 ],
 													"text" : "mvc.remote ParameterHelper/myPolyParam.2"
 												}
 
@@ -1368,7 +1366,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1509,7 +1507,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 69.0, 251.0, 173.0, 22.0 ],
-													"text" : "setvalue 4 cutoff 440."
+													"text" : "setvalue 2 cutoff 613."
 												}
 
 											}
@@ -1971,13 +1969,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 1,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1003.0, 690.0 ],
+						"rect" : [ 40.0, 126.0, 1003.0, 690.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2055,7 +2053,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2864,7 +2862,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 1,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3888,7 +3886,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 1,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4070,7 +4068,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 1,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
