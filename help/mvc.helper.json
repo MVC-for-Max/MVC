@@ -296,5 +296,11 @@
 		"description" : "mvc.device creates a local device to which any mvc.model, mvc.parameter, mvc.state and mvc.messagecan register. \nIt is at the root of the namespace and can be considered as a top-level mvc.model in the MVC model used in the MVC package.",
 		"category" : "library"
 	}
+,
+	"mvc.clip~" : 	{
+		"digest" : "Limit signal amplitude.",
+		"description" : "mvc.clip~ provides the clip~ object as an MVC component.",
+		"category" : "component"
+	}
 
 }
