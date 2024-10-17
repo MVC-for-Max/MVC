@@ -308,5 +308,11 @@
 		"description" : "The mvc.lores~ wraps Max's lores~ object, an inexpensive low-pass filter with resonance.",
 		"category" : "component"
 	}
+,
+	"mvc.mc.lores~" : 	{
+		"digest" : "Resonant lowpass filter (multichannel).",
+		"description" : "The mvc.mc.lores~ wraps Max's mc.lores~ object, an inexpensive low-pass filter with resonance.",
+		"category" : "component"
+	}
 
 }
