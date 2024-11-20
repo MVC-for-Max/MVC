@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 106.0, 640.0, 480.0 ],
+		"rect" : [ 59.0, 106.0, 217.0, 154.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -45,11 +45,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 172.0, 100.0, 28.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"attr_comment" : ""
-					}
-,
+					"patching_rect" : [ 83.0, 45.0, 28.0, 22.0 ],
 					"text" : "in 2"
 				}
 
@@ -60,11 +56,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 105.0, 185.0, 35.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"attr_comment" : ""
-					}
-,
+					"patching_rect" : [ 44.0, 103.0, 35.0, 22.0 ],
 					"text" : "out 1"
 				}
 
@@ -76,11 +68,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 105.0, 100.0, 28.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"attr_comment" : ""
-					}
-,
+					"patching_rect" : [ 44.0, 45.0, 28.0, 22.0 ],
 					"text" : "in 1"
 				}
 
@@ -92,7 +80,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 105.0, 144.0, 86.0, 22.0 ],
+					"patching_rect" : [ 44.0, 74.0, 58.0, 22.0 ],
 					"text" : "qlim"
 				}
 
@@ -119,9 +107,7 @@
 				}
 
 			}
- ],
-		"dependency_cache" : [  ],
-		"autosave" : 0
+ ]
 	}
 
 }

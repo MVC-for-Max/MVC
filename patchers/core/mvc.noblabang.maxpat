@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
+		"rect" : [ 59.0, 104.0, 270.0, 290.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -45,7 +45,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 163.0, 100.0, 100.0, 22.0 ],
+					"patching_rect" : [ 143.0, 100.0, 100.0, 22.0 ],
 					"text" : "patcherargs"
 				}
 
@@ -57,7 +57,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 50.0, 131.157539227196082, 54.0, 22.0 ],
+					"patching_rect" : [ 50.0, 132.0, 91.0, 22.0 ],
 					"text" : "qlim 500"
 				}
 
@@ -81,7 +81,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 50.0, 160.578769613598013, 67.0, 22.0 ],
+					"patching_rect" : [ 50.0, 160.578769613598013, 112.0, 22.0 ],
 					"text" : "delay 500"
 				}
 
