@@ -83,7 +83,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"patching_rect" : [ 467.0, 577.0, 94.0, 22.0 ],
-					"text" : "aim.visiblepatch"
+					"text" : "mvc.visiblepatch"
 				}
 
 			}
