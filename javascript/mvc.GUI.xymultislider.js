@@ -468,5 +468,5 @@ function findcell(num, arr){
 function anything()
 {
 	var a = arrayfromargs(messagename, arguments);
-	post('Function "' + a[0] + '" is not supported by aim.xymultislider.\n');
+	post('Function "' + a[0] + '" is not supported by mvc.xymultislider.\n');
 }
