@@ -314,5 +314,17 @@
 		"description" : "The mvc.mc.lores~ wraps Max's mc.lores~ object, an inexpensive low-pass filter with resonance.",
 		"category" : "component"
 	}
+,
+	"mvc.mc.dynaverage~" : 	{
+		"digest" : "Resettable (mc) signal average.",
+		"description" : "mvc.mc.dynaverage~ performs the averaging of a (MC) signal, with the possibility to reset the averaging buffer.",
+		"category" : "library"
+	}
+,
+	"mvc.mc.average~" : 	{
+		"digest" : "Multi-mode signal average (multichannel).",
+		"description" : "mvc.mc.average~ provides the mc.average~ filter object as an MVC component",
+		"category" : "component"
+	}
 
 }
