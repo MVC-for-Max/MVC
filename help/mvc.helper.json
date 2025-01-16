@@ -326,5 +326,11 @@
 		"description" : "mvc.mc.average~ provides the mc.average~ filter object as an MVC component",
 		"category" : "component"
 	}
+,
+	"mvc.overdrive~" : 	{
+		"digest" : "Soft clipping signal distortion.",
+		"description" : "The mvc.overdrive~ component wraps Max's overdrive~ object.",
+		"category" : "component"
+	}
 
 }
