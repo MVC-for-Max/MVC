@@ -2,9 +2,9 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 9,
-			"minor" : 0,
-			"revision" : 0,
+			"major" : 8,
+			"minor" : 6,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -102,7 +102,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "gone items",
+					"comment" : "new items",
 					"id" : "obj-3",
 					"index" : 2,
 					"maxclass" : "outlet",
@@ -114,7 +114,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "new items",
+					"comment" : "gone items",
 					"id" : "obj-2",
 					"index" : 1,
 					"maxclass" : "outlet",
