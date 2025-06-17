@@ -137,6 +137,7 @@
 		<seealso name="mvc.parameter"/>
 		<seealso name="mvc.state"/>
 		<seealso name="mvc.message"/>
+		<seealso name="mvc.send"/>
 		<seealso name="mvc.gui.number"/>
 	</seealsolist>
 	
