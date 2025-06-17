@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<!--MEMO-->
+<!-- <m> initwith </m> : references a message -->
+<!-- <o> loadbang </o> : references an object -->
+<!-- <i> mvc.overview.maxpat </i> : references a patcher -->
+<!-- <at>default</at> : references an attribute -->
+<!-- <link type="vignette" module="mvc" name="brace_expansion">brace expansion notation</link> : add a link to a vignette -->
+<!-- <img src="images/image137.png" /> : put an image -->
+
+<c74object name="mvc.send" module="mvc" kind="patcher" category="library">
+
+	<digest>
+		Simple sender to <o>mvc.parameter</o>, <o>mvc.state</o> and <o>mvc.message</o>.
+	</digest>
+	
+	<description>
+		<o>mvc.send</o> allows to send data to a component's input for remote control. This can either be a <o>mvc.parameter</o>, an <o>mvc.state</o> or an <o>mvc.message</o>.
+		The address should be stated as an OSC string. The <o>mvc.send</o> does not support braces and wildcard notation; you should use <o>mvc.remote</o> for that.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Vincent Goudard</metadata>
+		<metadata name="tag">MVC</metadata>
+		<metadata name="tag">mapping</metadata>
+		<metadata name="mvc-type">core</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="anything">
+			<digest>Messages to set the values (see below)</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="address" optional="0" type="symbol">
+			<digest>
+				Destination adress.
+			</digest>
+			<description>
+				The <m>address</m> of the monitored <o>mvc.parameter</o>, <o>mvc.state</o> or <o>mvc.message</o> should be expressed with slash-separated symbols (à la OSC).
+			</description>
+		</objarg>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="anything (on the left inlet)">
+			<arglist>
+				<arg name="values" optional="0" type="list"/>
+			</arglist>
+			<digest>
+				Feed values to <o>mvc.send</o> (on the left inlet).
+			</digest>
+			<description>
+				The values fed to the left inlet will be sent to the corresponding address in the namespace, provided a matching <o>mvc.parameter</o>, <o>mvc.state</o> or <o>mvc.message</o> address exists.
+			</description>
+		</method>
+
+		<method name="address (on the right inlet)">
+			<arglist>
+				<arg name="address" type="symbol" optional="0"/>
+			</arglist>
+			<digest>
+				Sets the address value of the <o>mvc.parameter</o>, <o>mvc.state</o> or <o>mvc.message</o> to monitor.
+			</digest>
+			<description>
+				<m>address</m> is a possible method on the right inlet.<br />
+
+				The address of a specific <o>mvc.parameter</o>, <o>mvc.state</o> or <o>mvc.message</o> can be given as an OSC formatted symbol. Brace expansion notation and wildcards are not supported by <o>mvc.send</o> .
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mvc.remote"/>
+		<seealso name="mvc.model"/>
+		<seealso name="mvc.device"/>
+		<seealso name="mvc.parameter"/>
+		<seealso name="mvc.state"/>
+		<seealso name="mvc.message"/>
+		<seealso name="mvc.gui.number"/>
+	</seealsolist>
+	
+</c74object>
