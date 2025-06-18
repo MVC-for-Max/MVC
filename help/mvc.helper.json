@@ -344,5 +344,11 @@
 		"description" : "mvc.model.gui allows to bind to an mvc.model for remote control or monitoring. The mvc.model it refers to can be set dynamically and multiple addresses can be provided through brace expansion notation.\nmvc.model.gui helps implementing the view and controller part in the MVC model used in the MVC package.",
 		"category" : "library"
 	}
+,
+	"mvc.send" : 	{
+		"digest" : "Simple sender to mvc.parameter, mvc.state and mvc.message.",
+		"description" : "mvc.send allows to send data to a component's input for remote control. This can either be a mvc.parameter, an mvc.state or an mvc.message. The address should be stated as an OSC string. The mvc.send does not support braces and wildcard notation; you should use mvc.remote for that.",
+		"category" : "library"
+	}
 
 }
