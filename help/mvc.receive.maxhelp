@@ -205,7 +205,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 403.0, 203.0, 85.0, 22.0 ],
+									"patching_rect" : [ 431.0, 203.0, 85.0, 22.0 ],
 									"text" : "address Polux"
 								}
 
