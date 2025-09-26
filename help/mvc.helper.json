@@ -1,354 +1,305 @@
 {
-	"mvc.parameter" : 	{
-		"digest" : "Declare a parameter and its attributes",
-		"description" : "mvc.parameter declares a parameter (or series of -) in the MVC namespace. It is somehow similar to the pattr object, while enabling a number of additional features offered by the MVC environment.",
-		"category" : "library"
-	}
-,
-	"mvc.GUI.namespace" : 	{
-		"digest" : "DRAFT! A GUI utility to monitor and control the namespace values.",
-		"description" : "Select parameters to display and control their values.",
-		"category" : "library"
-	}
-,
-	"mvc.jit.meterbar" : 	{
-		"digest" : "A VUmeter as a single line colored jit.matrix.",
-		"description" : "mvc.jit.meterbar provides a single-line VU display in a jitter window.",
-		"category" : "library"
-	}
-,
-	"mvc.change" : 	{
-		"digest" : "Evaluate changes in a series of input data.",
-		"description" : "Evaluate a stream of input (of any type) and report if one of the item was different. mvc.change is used when retrieving a series of parameters for multiple instances and checking if they are all the same or not.",
-		"category" : "library"
-	}
-,
-	"mvc.Bresenham" : 	{
-		"digest" : "Perform Bresenham's line algorithm. ",
-		"description" : "Bresenham's line algorithm allow to output all values between two points in space.",
-		"category" : "library"
-	}
-,
-	"mvc.container" : 	{
-		"digest" : "A container for scripted objects.",
-		"description" : "mvc.container provides an empty abstraction for dynamically scripted content.",
-		"category" : "library",
-		"tags" : "library"
-	}
-,
-	"mvc.dict.flatten" : 	{
-		"digest" : "Convert dictionary to flat address / values",
-		"description" : "Convert dictionary to flat address / values. Warning : fails at flattening arrays of dictionaries ",
-		"category" : "library"
-	}
-,
-	"mvc.cascade~" : 	{
-		"digest" : "Cascaded series of biquad filters.",
-		"description" : "mvc.cascade~ provides the cascade~ multi-filters object as an MVC component.",
-		"category" : "component"
-	}
-,
-	"mvc.mc.cascade~" : 	{
-		"digest" : "Cascaded series of biquad filters (multichannel).",
-		"description" : "mvc.mc.cascade~ provides the mc.cascade~ filter object as an MVC component",
-		"category" : "component"
-	}
-,
-	"mvc.dlb" : 	{
-		"digest" : "Anti-loopback utility.",
-		"description" : "mvc.dlb~ (\"Don't Loop Back\") is the trick used in Max's sw object to allow send/receive without stack overflow. Provided here as a separated to allow dynamic naming on send and receive.",
-		"category" : "library"
-	}
-,
-	"mvc.dllb" : 	{
-		"digest" : "Semi anti-loopback utility.",
-		"description" : "mvc.dllb (\"Do Lightly Loop Back\") is a half anti-loopback utility. Similar to the mvc.dlb, but allows a loop-back.",
-		"category" : "library"
-	}
-,
-	"mvc.f.call" : 	{
-		"digest" : "Callback function caller.",
-		"description" : "mvc.f.call works in pair with mvc.f.io, to provide callback functions anywhere in the patch.",
-		"category" : "library"
-	}
-,
-	"mvc.f.io" : 	{
-		"digest" : "Callback function respondant.",
-		"description" : "mvc.f.io works in pair with mvc.f.call, to provide callback functions anywhere in the patch.",
-		"category" : "library"
-	}
-,
-	"mvc.focus" : 	{
-		"digest" : "Utility for tabbing.",
-		"category" : "library"
-	}
-,
-	"mvc.GUI.activeToggle" : 	{
-		"digest" : "A GUI interface for an mvc.parameter of type boolean.",
-		"description" : "mvc.GUI.activeToggle is a wrapper around the more general mvc.remote objects. Use this to monitor a boolean, like an \"ON\" parameter.",
-		"category" : "library"
-	}
-,
-	"mvc.GUI.channel-layout" : 	{
-		"digest" : "A GUI interface for an mvc.parameter of type channel-layout.",
-		"description" : "mvc.GUI.channel-layout is a wrapper around the more general mvc.remote objects. It allows to select the a channel-layout among those available in the the file \"mvc.channel-layouts.factory.json\" (located in MVC/patchers/lib) or in the project file \"mvc.channel-layouts.json\" (located in the /data folder).",
-		"category" : "library"
-	}
-,
-	"mvc.GUI.IR.menu" : 	{
-		"digest" : "A GUI interface for an mvc.parameter of type Impulse Reponse buffer.",
-		"description" : "mvc.GUI.IR.menu is a wrapper around the more general mvc.remote objects. Use this to monitor a impulse response file parameter. It will automatically retrieve and display the list of impulse responses loaded by the mvc.device object from the \"data/IR/\" folder.",
-		"category" : "library"
-	}
-,
-	"mvc.GUI.listselector" : 	{
-		"digest" : "A GUI utility to select items in a list.",
-		"description" : "This objects allows to select multiple items in a table.",
-		"category" : "library"
-	}
-,
-	"mvc.GUI.menu" : 	{
-		"digest" : "A GUI interface for an mvc.parameter of type enumeration.",
-		"description" : "mvc.GUI.menu is a wrapper around the more general mvc.remote objects. It displays the output of mvc.remote, as well as description and unit and provides the various options declared by the corresponding mvc.parameter.",
-		"category" : "library"
-	}
-,
-	"mvc.GUI.number" : 	{
-		"digest" : "A GUI interface for an mvc.parameter of type int or float.",
-		"description" : "mvc.GUI.number is a wrapper around the more general mvc.remote objects. It displays the output of mvc.remote, as well as description and unit.",
-		"category" : "library"
-	}
-,
-	"mvc.GUI.remote" : 	{
-		"digest" : "A generic GUI interface for an mvc.remote.",
-		"description" : "mvc.GUI.remote is a wrapper around the mvc.remote object. It adapts to the type of the monitored address (provided it has been specified) and displays the output of mvc.remote, as well as description and unit.",
-		"category" : "library"
-	}
-,
-	"mvc.GUI.samples.menu" : 	{
-		"digest" : "A GUI interface for an mvc.parameter of type sample buffer.",
-		"description" : "mvc.GUI.samples.menu is a wrapper around the more general mvc.remote objects. Use this to monitor a parameter holding sample-buffer. It will automatically retrieve and display the list of samples loaded by the mvc.device object from the \"data/samples/\" folder.",
-		"category" : "library"
-	}
-,
-	"mvc.GUI.soundfiles.menu" : 	{
-		"digest" : "A GUI interface for an mvc.parameter of type sound files.",
-		"description" : "mvc.GUI.soundfiles.menu is a wrapper around the more general mvc.remote objects. Use this to monitor a sound file parameter. It will automatically retrieve and display the list of samples loaded by the mvc.device object from the \"data/samples/\" folder, the (longer) sound files located in the \"data/sounds/\" folder, and propose a \"Browse...\" option to load external files.",
-		"category" : "library"
-	}
-,
-	"mvc.GUI.textinput" : 	{
-		"digest" : "A GUI utility for text input.",
-		"description" : "Provides a prompt when no text has been input. Note that it does *not* contain an mvc.remote.",
-		"category" : "library"
-	}
-,
-	"mvc.GUI.texttoggle" : 	{
-		"digest" : "A GUI interface for an mvc.parameter of type boolean.",
-		"description" : "mvc.GUI.activeToggle is a wrapper around the more general mvc.remote objects. Use this to monitor a boolean, like an \"ON\" parameter.",
-		"category" : "library"
-	}
-,
-	"mvc.intnogap" : 	{
-		"digest" : "Don't miss any step.",
-		"description" : "Will output all number between your current value and the target value, at Uzi speed.",
-		"category" : "library"
-	}
-,
-	"mvc.jit.meter" : 	{
-		"digest" : "A VUmeter as a jit.matrix.",
-		"description" : "mvc.jit.meter provides a VU display in a jitter window.",
-		"category" : "library"
-	}
-,
-	"mvc.matrixtoggle" : 	{
-		"digest" : "Toggle-able grid.",
-		"description" : "Like a checkbox, but with continuous drag-editing.",
-		"category" : "library"
-	}
-,
-	"mvc.mc.minivu~" : 	{
-		"digest" : "Mini VU-meter (multichannel).",
-		"description" : "mvc.mc.minivu~ provides a single-line VU display in a jitter window for audio input.",
-		"category" : "library"
-	}
-,
-	"mvc.noblabla" : 	{
-		"digest" : "Queue/delay based message limiter, get only last word.",
-		"description" : "mvc.noblabla filters the stream of messages, so that only the last event (after a predefined delay) will be output. It makes use of an internal delay, that is reset every times a new event arrives. Last received event will be output when no new event has arrived, and the delay has elapsed.",
-		"category" : "library"
-	}
-,
-	"mvc.mc.publish~" : 	{
-		"digest" : "Audio publisher in the publish/subscribe pattern (multichannel)",
-		"description" : "mvc.mc.publish~ allows to sends audio to receivers when they subscribe to it. It will mute if no mvc.mc.subscribe~ is present (sparing CPU).",
-		"category" : "library"
-	}
-,
-	"mvc.mc.receive~" : 	{
-		"digest" : "MC wrapper for receive~ (multichannel)",
-		"description" : "... because there is no \"chans\" message for mc.send~ and mc.receive~.",
-		"category" : "library"
-	}
-,
-	"mvc.mc.subscribe~" : 	{
-		"digest" : "Audio subscriber in the publish/subscribe pattern (multichannel).",
-		"description" : "mvc.mc.subscribe~ allows to receive data from mvc.mc.publisher~ when they subscribe to it.",
-		"category" : "library"
-	}
-,
-	"mvc.message" : 	{
-		"digest" : "Declare a message and its attributes",
-		"description" : "mvc.message declares a message in the MVC namespace - it is somehow similar to the mvc.parameter object, except that it is state-less, that is, it has no memory and as such, it is not stored in preset and has no default value. For instance, a \"clear\" message to a filter could be represented as an mvc.message.",
-		"category" : "library"
-	}
-,
-	"mvc.model.initialized" : 	{
-		"digest" : "Monitor a model initialization state.",
-		"description" : "mvc.model.initialized enables to check a model's initialization state. ",
-		"category" : "library"
-	}
-,
-	"mvc.model" : 	{
-		"digest" : "Declare an MVC model.",
-		"description" : "The mvc.model helps declaring a model in the Model-View-Controller scheme used in the MVC package.\nAn mvc.model creates a node in the namespace to which several mvc.parameter, mvc.state, mvc.message or even mvc.model can register. It thus allows to create complex and nested address hierarchies describing your patcher's features as a namespace. An mvc.model can also declare a type, so that other instances of this model will share their presets.",
-		"category" : "library"
-	}
-,
-	"mvc.newgone" : 	{
-		"digest" : "New and gone elements in a list.",
-		"description" : "mvc.newgone allows to split incoming list between new elements and gone elements, with respect to previous inputs.",
-		"category" : "library"
-	}
-,
-	"mvc.GUI.nicetabs" : 	{
-		"digest" : "Scrollable tabs bar with continuous drag selection. ",
-		"description" : "Wrapper around the mvc.nicetabs object. Usually loaded in a bpatcher.",
-		"category" : "library"
-	}
-,
-	"mvc.pub" : 	{
-		"digest" : "Mini-publisher in the publish/subscribe pattern.",
-		"description" : "mvc.pub allows to count receivers when they subscribe to it.",
-		"category" : "library"
-	}
-,
-	"mvc.publish" : 	{
-		"digest" : "Publisher in the publish/subscribe pattern.",
-		"description" : "mvc.publish allows to sends data to receivers when they subscribe to it. It will not send if no mvc.subscribe has subscribed (sparing CPU).",
-		"category" : "library"
-	}
-,
-	"mvc.sub" : 	{
-		"digest" : "Mini-subscriber in the publish/subscribe pattern.",
-		"description" : "mvc.sub allows to subscribe to a mvc.pub or a mvc.publisher.",
-		"category" : "library"
-	}
-,
-	"mvc.subscribe" : 	{
-		"digest" : "Subscriber in the publish/subscribe pattern.",
-		"description" : "mvc.subscribe allows to receive data from mvc.publisher when they subscribe to it.",
-		"category" : "library"
-	}
-,
-	"mvc.qlow" : 	{
-		"digest" : "Queue/delay based message limiter.",
-		"description" : "mvc.qlow slows down throughput of messages. It is similar to qlim but avoids the duplicate when sending multiple messages in a row.",
-		"category" : "library"
-	}
-,
-	"mvc.remote" : 	{
-		"digest" : "Monitor and remote control values from an mvc.parameter, mvc.state and mvc.message, .",
-		"description" : "mvc.remote allows to bind to a component's input for remote control or monitoring. This can either be a mvc.parameter, an mvc.state or an mvc.message. The address it refers to can be set dynamically and multiple addresses can be provided, either as a list or through brace expansion notation and wildcards. The mvc.remote object helps implementing the view and controller part in the MVC model used in the MVC package.",
-		"category" : "library"
-	}
-,
-	"mvc.snapshots" : 	{
-		"digest" : "Store snapshots of some parameters.",
-		"description" : "mvc.snapshots provides a way to store partial presets, with a faster loading time.",
-		"category" : "library"
-	}
-,
-	"mvc.state" : 	{
-		"digest" : "Declare a state and its attributes",
-		"description" : "mvc.state declares a state in the MVC namespace - it is very similar to the mvc.parameter object, except that its value is not stored in presets. It is typically used for internal values that need to be queried or set but not stored. For instance, you may want that for the playhead position of a sample player.",
-		"category" : "library"
-	}
-,
-	"mvc.dict2osc" : 	{
-		"digest" : "Small utility to convert dict-style addresses to OSC-style.",
-		"category" : "library"
-	}
-,
-	"mvc.osc2dict" : 	{
-		"digest" : "Small utility to convert OSC-style addresses to dict-style.",
-		"category" : "library"
-	}
-,
-	"mvc.queue" : 	{
-		"digest" : "Queue and process messages asynchronously.",
-		"description" : "A useful utility when one needs to process messages asynchronously, like dialog-boxes or file read/write operations.",
-		"category" : "library"
-	}
-,
-	"mvc.device" : 	{
-		"digest" : "Create a local device.",
-		"description" : "mvc.device creates a local device to which any mvc.model, mvc.parameter, mvc.state and mvc.messagecan register. \nIt is at the root of the namespace and can be considered as a top-level mvc.model in the MVC model used in the MVC package.",
-		"category" : "library"
-	}
-,
-	"mvc.clip~" : 	{
-		"digest" : "Limit signal amplitude.",
-		"description" : "mvc.clip~ provides the clip~ object as an MVC component.",
-		"category" : "component"
-	}
-,
-	"mvc.lores~" : 	{
-		"digest" : "Resonant lowpass filter.",
-		"description" : "The mvc.lores~ wraps Max's lores~ object, an inexpensive low-pass filter with resonance.",
-		"category" : "component"
-	}
-,
-	"mvc.mc.lores~" : 	{
-		"digest" : "Resonant lowpass filter (multichannel).",
-		"description" : "The mvc.mc.lores~ wraps Max's mc.lores~ object, an inexpensive low-pass filter with resonance.",
-		"category" : "component"
-	}
-,
-	"mvc.mc.dynaverage~" : 	{
-		"digest" : "Resettable (mc) signal average.",
-		"description" : "mvc.mc.dynaverage~ performs the averaging of a (MC) signal, with the possibility to reset the averaging buffer.",
-		"category" : "library"
-	}
-,
-	"mvc.mc.average~" : 	{
-		"digest" : "Multi-mode signal average (multichannel).",
-		"description" : "mvc.mc.average~ provides the mc.average~ filter object as an MVC component",
-		"category" : "component"
-	}
-,
-	"mvc.overdrive~" : 	{
-		"digest" : "Soft clipping signal distortion.",
-		"description" : "The mvc.overdrive~ component wraps Max's overdrive~ object.",
-		"category" : "component"
-	}
-,
-	"mvc.mc.send~" : 	{
-		"digest" : "MC wrapper for send~ (multichannel)",
-		"description" : "... because there is no \"chans\" message for mc.send~ and mc.receive~.",
-		"category" : "library"
-	}
-,
-	"mvc.model.gui" : 	{
-		"digest" : "Monitor and remote control from an mvc.model.",
-		"description" : "mvc.model.gui allows to bind to an mvc.model for remote control or monitoring. The mvc.model it refers to can be set dynamically and multiple addresses can be provided through brace expansion notation.\nmvc.model.gui helps implementing the view and controller part in the MVC model used in the MVC package.",
-		"category" : "library"
-	}
-,
-	"mvc.send" : 	{
-		"digest" : "Simple sender to mvc.parameter, mvc.state and mvc.message.",
-		"description" : "mvc.send allows to send data to a component's input for remote control. This can either be a mvc.parameter, an mvc.state or an mvc.message. The address should be stated as an OSC string. The mvc.send does not support braces and wildcard notation; you should use mvc.remote for that.",
-		"category" : "library"
-	}
-
+    "mvc.parameter": {
+        "digest": "Declare a parameter and its attributes",
+        "description": "mvc.parameter declares a parameter (or series of -) in the MVC namespace. It is somehow similar to the pattr object, while enabling a number of additional features offered by the MVC environment.",
+        "category": "library"
+    },
+    "mvc.GUI.namespace": {
+        "digest": "DRAFT! A GUI utility to monitor and control the namespace values.",
+        "description": "Select parameters to display and control their values.",
+        "category": "library"
+    },
+    "mvc.jit.meterbar": {
+        "digest": "A VUmeter as a single line colored jit.matrix.",
+        "description": "mvc.jit.meterbar provides a single-line VU display in a jitter window.",
+        "category": "library"
+    },
+    "mvc.change": {
+        "digest": "Evaluate changes in a series of input data.",
+        "description": "Evaluate a stream of input (of any type) and report if one of the item was different. mvc.change is used when retrieving a series of parameters for multiple instances and checking if they are all the same or not.",
+        "category": "library"
+    },
+    "mvc.Bresenham": {
+        "digest": "Perform Bresenham's line algorithm. ",
+        "description": "Bresenham's line algorithm allow to output all values between two points in space.",
+        "category": "library"
+    },
+    "mvc.container": {
+        "digest": "A container for scripted objects.",
+        "description": "mvc.container provides an empty abstraction for dynamically scripted content.",
+        "category": "library",
+        "tags": "library"
+    },
+    "mvc.dict.flatten": {
+        "digest": "Convert dictionary to flat address / values",
+        "description": "Convert dictionary to flat address / values. Warning : fails at flattening arrays of dictionaries ",
+        "category": "library"
+    },
+    "mvc.cascade~": {
+        "digest": "Cascaded series of biquad filters.",
+        "description": "mvc.cascade~ provides the cascade~ multi-filters object as an MVC component.",
+        "category": "component"
+    },
+    "mvc.mc.cascade~": {
+        "digest": "Cascaded series of biquad filters (multichannel).",
+        "description": "mvc.mc.cascade~ provides the mc.cascade~ filter object as an MVC component",
+        "category": "component"
+    },
+    "mvc.dlb": {
+        "digest": "Anti-loopback utility.",
+        "description": "mvc.dlb~ (\"Don't Loop Back\") is the trick used in Max's sw object to allow send/receive without stack overflow. Provided here as a separated to allow dynamic naming on send and receive.",
+        "category": "library"
+    },
+    "mvc.dllb": {
+        "digest": "Semi anti-loopback utility.",
+        "description": "mvc.dllb (\"Do Lightly Loop Back\") is a half anti-loopback utility. Similar to the mvc.dlb, but allows a loop-back.",
+        "category": "library"
+    },
+    "mvc.f.call": {
+        "digest": "Callback function caller.",
+        "description": "mvc.f.call works in pair with mvc.f.io, to provide callback functions anywhere in the patch.",
+        "category": "library"
+    },
+    "mvc.f.io": {
+        "digest": "Callback function respondant.",
+        "description": "mvc.f.io works in pair with mvc.f.call, to provide callback functions anywhere in the patch.",
+        "category": "library"
+    },
+    "mvc.focus": {
+        "digest": "Utility for tabbing.",
+        "category": "library"
+    },
+    "mvc.GUI.activeToggle": {
+        "digest": "A GUI interface for an mvc.parameter of type boolean.",
+        "description": "mvc.GUI.activeToggle is a wrapper around the more general mvc.remote objects. Use this to monitor a boolean, like an \"ON\" parameter.",
+        "category": "library"
+    },
+    "mvc.GUI.channel-layout": {
+        "digest": "A GUI interface for an mvc.parameter of type channel-layout.",
+        "description": "mvc.GUI.channel-layout is a wrapper around the more general mvc.remote objects. It allows to select the a channel-layout among those available in the the file \"mvc.channel-layouts.factory.json\" (located in MVC/patchers/lib) or in the project file \"mvc.channel-layouts.json\" (located in the /data folder).",
+        "category": "library"
+    },
+    "mvc.GUI.IR.menu": {
+        "digest": "A GUI interface for an mvc.parameter of type Impulse Reponse buffer.",
+        "description": "mvc.GUI.IR.menu is a wrapper around the more general mvc.remote objects. Use this to monitor a impulse response file parameter. It will automatically retrieve and display the list of impulse responses loaded by the mvc.device object from the \"data/IR/\" folder.",
+        "category": "library"
+    },
+    "mvc.GUI.listselector": {
+        "digest": "A GUI utility to select items in a list.",
+        "description": "This objects allows to select multiple items in a table.",
+        "category": "library"
+    },
+    "mvc.GUI.menu": {
+        "digest": "A GUI interface for an mvc.parameter of type enumeration.",
+        "description": "mvc.GUI.menu is a wrapper around the more general mvc.remote objects. It displays the output of mvc.remote, as well as description and unit and provides the various options declared by the corresponding mvc.parameter.",
+        "category": "library"
+    },
+    "mvc.GUI.number": {
+        "digest": "A GUI interface for an mvc.parameter of type int or float.",
+        "description": "mvc.GUI.number is a wrapper around the more general mvc.remote objects. It displays the output of mvc.remote, as well as description and unit.",
+        "category": "library"
+    },
+    "mvc.GUI.remote": {
+        "digest": "A generic GUI interface for an mvc.remote.",
+        "description": "mvc.GUI.remote is a wrapper around the mvc.remote object. It adapts to the type of the monitored address (provided it has been specified) and displays the output of mvc.remote, as well as description and unit.",
+        "category": "library"
+    },
+    "mvc.GUI.samples.menu": {
+        "digest": "A GUI interface for an mvc.parameter of type sample buffer.",
+        "description": "mvc.GUI.samples.menu is a wrapper around the more general mvc.remote objects. Use this to monitor a parameter holding sample-buffer. It will automatically retrieve and display the list of samples loaded by the mvc.device object from the \"data/samples/\" folder.",
+        "category": "library"
+    },
+    "mvc.GUI.soundfiles.menu": {
+        "digest": "A GUI interface for an mvc.parameter of type sound files.",
+        "description": "mvc.GUI.soundfiles.menu is a wrapper around the more general mvc.remote objects. Use this to monitor a sound file parameter. It will automatically retrieve and display the list of samples loaded by the mvc.device object from the \"data/samples/\" folder, the (longer) sound files located in the \"data/sounds/\" folder, and propose a \"Browse...\" option to load external files.",
+        "category": "library"
+    },
+    "mvc.GUI.textinput": {
+        "digest": "A GUI utility for text input.",
+        "description": "Provides a prompt when no text has been input. Note that it does *not* contain an mvc.remote.",
+        "category": "library"
+    },
+    "mvc.GUI.texttoggle": {
+        "digest": "A GUI interface for an mvc.parameter of type boolean.",
+        "description": "mvc.GUI.activeToggle is a wrapper around the more general mvc.remote objects. Use this to monitor a boolean, like an \"ON\" parameter.",
+        "category": "library"
+    },
+    "mvc.intnogap": {
+        "digest": "Don't miss any step.",
+        "description": "Will output all number between your current value and the target value, at Uzi speed.",
+        "category": "library"
+    },
+    "mvc.jit.meter": {
+        "digest": "A VUmeter as a jit.matrix.",
+        "description": "mvc.jit.meter provides a VU display in a jitter window.",
+        "category": "library"
+    },
+    "mvc.matrixtoggle": {
+        "digest": "Toggle-able grid.",
+        "description": "Like a checkbox, but with continuous drag-editing.",
+        "category": "library"
+    },
+    "mvc.mc.minivu~": {
+        "digest": "Mini VU-meter (multichannel).",
+        "description": "mvc.mc.minivu~ provides a single-line VU display in a jitter window for audio input.",
+        "category": "library"
+    },
+    "mvc.noblabla": {
+        "digest": "Queue/delay based message limiter, get only last word.",
+        "description": "mvc.noblabla filters the stream of messages, so that only the last event (after a predefined delay) will be output. It makes use of an internal delay, that is reset every times a new event arrives. Last received event will be output when no new event has arrived, and the delay has elapsed.",
+        "category": "library"
+    },
+    "mvc.mc.publish~": {
+        "digest": "Audio publisher in the publish/subscribe pattern (multichannel)",
+        "description": "mvc.mc.publish~ allows to sends audio to receivers when they subscribe to it. It will mute if no mvc.mc.subscribe~ is present (sparing CPU).",
+        "category": "library"
+    },
+    "mvc.mc.receive~": {
+        "digest": "MC wrapper for receive~ (multichannel)",
+        "description": "... because there is no \"chans\" message for mc.send~ and mc.receive~.",
+        "category": "library"
+    },
+    "mvc.mc.subscribe~": {
+        "digest": "Audio subscriber in the publish/subscribe pattern (multichannel).",
+        "description": "mvc.mc.subscribe~ allows to receive data from mvc.mc.publisher~ when they subscribe to it.",
+        "category": "library"
+    },
+    "mvc.message": {
+        "digest": "Declare a message and its attributes",
+        "description": "mvc.message declares a message in the MVC namespace - it is somehow similar to the mvc.parameter object, except that it is state-less, that is, it has no memory and as such, it is not stored in preset and has no default value. For instance, a \"clear\" message to a filter could be represented as an mvc.message.",
+        "category": "library"
+    },
+    "mvc.model.initialized": {
+        "digest": "Monitor a model initialization state.",
+        "description": "mvc.model.initialized enables to check a model's initialization state. ",
+        "category": "library"
+    },
+    "mvc.model": {
+        "digest": "Declare an MVC model.",
+        "description": "The mvc.model helps declaring a model in the Model-View-Controller scheme used in the MVC package.\nAn mvc.model creates a node in the namespace to which several mvc.parameter, mvc.state, mvc.message or even mvc.model can register. It thus allows to create complex and nested address hierarchies describing your patcher's features as a namespace. An mvc.model can also declare a type, so that other instances of this model will share their presets.",
+        "category": "library"
+    },
+    "mvc.newgone": {
+        "digest": "New and gone elements in a list.",
+        "description": "mvc.newgone allows to split incoming list between new elements and gone elements, with respect to previous inputs.",
+        "category": "library"
+    },
+    "mvc.GUI.nicetabs": {
+        "digest": "Scrollable tabs bar with continuous drag selection. ",
+        "description": "Wrapper around the mvc.nicetabs object. Usually loaded in a bpatcher.",
+        "category": "library"
+    },
+    "mvc.pub": {
+        "digest": "Mini-publisher in the publish/subscribe pattern.",
+        "description": "mvc.pub allows to count receivers when they subscribe to it.",
+        "category": "library"
+    },
+    "mvc.publish": {
+        "digest": "Publisher in the publish/subscribe pattern.",
+        "description": "mvc.publish allows to sends data to receivers when they subscribe to it. It will not send if no mvc.subscribe has subscribed (sparing CPU).",
+        "category": "library"
+    },
+    "mvc.sub": {
+        "digest": "Mini-subscriber in the publish/subscribe pattern.",
+        "description": "mvc.sub allows to subscribe to a mvc.pub or a mvc.publisher.",
+        "category": "library"
+    },
+    "mvc.subscribe": {
+        "digest": "Subscriber in the publish/subscribe pattern.",
+        "description": "mvc.subscribe allows to receive data from mvc.publisher when they subscribe to it.",
+        "category": "library"
+    },
+    "mvc.qlow": {
+        "digest": "Queue/delay based message limiter.",
+        "description": "mvc.qlow slows down throughput of messages. It is similar to qlim but avoids the duplicate when sending multiple messages in a row.",
+        "category": "library"
+    },
+    "mvc.remote": {
+        "digest": "Monitor and remote control values from an mvc.parameter, mvc.state and mvc.message, .",
+        "description": "mvc.remote allows to bind to a component's input for remote control or monitoring. This can either be a mvc.parameter, an mvc.state or an mvc.message. The address it refers to can be set dynamically and multiple addresses can be provided, either as a list or through brace expansion notation and wildcards. The mvc.remote object helps implementing the view and controller part in the MVC model used in the MVC package.",
+        "category": "library"
+    },
+    "mvc.snapshots": {
+        "digest": "Store snapshots of some parameters.",
+        "description": "mvc.snapshots provides a way to store partial presets, with a faster loading time.",
+        "category": "library"
+    },
+    "mvc.state": {
+        "digest": "Declare a state and its attributes",
+        "description": "mvc.state declares a state in the MVC namespace - it is very similar to the mvc.parameter object, except that its value is not stored in presets. It is typically used for internal values that need to be queried or set but not stored. For instance, you may want that for the playhead position of a sample player.",
+        "category": "library"
+    },
+    "mvc.dict2osc": {
+        "digest": "Small utility to convert dict-style addresses to OSC-style.",
+        "category": "library"
+    },
+    "mvc.osc2dict": {
+        "digest": "Small utility to convert OSC-style addresses to dict-style.",
+        "category": "library"
+    },
+    "mvc.queue": {
+        "digest": "Queue and process messages asynchronously.",
+        "description": "A useful utility when one needs to process messages asynchronously, like dialog-boxes or file read/write operations.",
+        "category": "library"
+    },
+    "mvc.device": {
+        "digest": "Create a local device.",
+        "description": "mvc.device creates a local device to which any mvc.model, mvc.parameter, mvc.state and mvc.messagecan register. \nIt is at the root of the namespace and can be considered as a top-level mvc.model in the MVC model used in the MVC package.",
+        "category": "library"
+    },
+    "mvc.clip~": {
+        "digest": "Limit signal amplitude.",
+        "description": "mvc.clip~ provides the clip~ object as an MVC component.",
+        "category": "component"
+    },
+    "mvc.lores~": {
+        "digest": "Resonant lowpass filter.",
+        "description": "The mvc.lores~ wraps Max's lores~ object, an inexpensive low-pass filter with resonance.",
+        "category": "component"
+    },
+    "mvc.mc.lores~": {
+        "digest": "Resonant lowpass filter (multichannel).",
+        "description": "The mvc.mc.lores~ wraps Max's mc.lores~ object, an inexpensive low-pass filter with resonance.",
+        "category": "component"
+    },
+    "mvc.mc.dynaverage~": {
+        "digest": "Resettable (mc) signal average.",
+        "description": "mvc.mc.dynaverage~ performs the averaging of a (MC) signal, with the possibility to reset the averaging buffer.",
+        "category": "library"
+    },
+    "mvc.mc.average~": {
+        "digest": "Multi-mode signal average (multichannel).",
+        "description": "mvc.mc.average~ provides the mc.average~ filter object as an MVC component",
+        "category": "component"
+    },
+    "mvc.overdrive~": {
+        "digest": "Soft clipping signal distortion.",
+        "description": "The mvc.overdrive~ component wraps Max's overdrive~ object.",
+        "category": "component"
+    },
+    "mvc.mc.send~": {
+        "digest": "MC wrapper for send~ (multichannel)",
+        "description": "... because there is no \"chans\" message for mc.send~ and mc.receive~.",
+        "category": "library"
+    },
+    "mvc.model.gui": {
+        "digest": "Monitor and remote control from an mvc.model.",
+        "description": "mvc.model.gui allows to bind to an mvc.model for remote control or monitoring. The mvc.model it refers to can be set dynamically and multiple addresses can be provided through brace expansion notation.\nmvc.model.gui helps implementing the view and controller part in the MVC model used in the MVC package.",
+        "category": "library"
+    },
+    "mvc.send": {
+        "digest": "Simple sender to mvc.parameter, mvc.state and mvc.message.",
+        "description": "mvc.send allows to send data to a component's input for remote control. This can either be a mvc.parameter, an mvc.state or an mvc.message. The address should be stated as an OSC string. The mvc.send does not support braces and wildcard notation; you should use mvc.remote for that.",
+        "category": "library"
+    },
+    "mvc.mc.freqshift~": {
+        "digest": "Time-domain frequency shifter (multichannel).",
+        "description": "mvc.mc.freqshift~ provides the mc.freqshift~ object as an MVC component.",
+        "category": "component"
+    },
+    "mvc.mc.pitchshift~": {
+        "digest": "Ztx-based real-time pitchshifting (multichannel).",
+        "description": "The mvc.mc.pitchshift~ wraps Max's mc.pitchshift~ object, a Ztx-based real-time pitch shifter.",
+        "category": "component"
+    }
 }
