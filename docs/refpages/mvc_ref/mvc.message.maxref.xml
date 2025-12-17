@@ -64,7 +64,7 @@
 	
 	<!--ARGUMENTS-->
 	<objarglist>
-		<objarg name="parent-uid" optional="0" type="symbol">
+		<objarg name="parent-UID" optional="0" type="symbol">
 			<digest>
 				Parent node's UID to which this <o>mvc.message</o> is attached.
 			</digest>
@@ -76,7 +76,7 @@
 				</ul>
 			</description>
 		</objarg>
-		<objarg name="message-name" optional="0" type="symbol">
+		<objarg name="name" optional="0" type="symbol">
 			<digest>
 				The message name.
 			</digest>
