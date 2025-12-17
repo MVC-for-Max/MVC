@@ -63,7 +63,7 @@
 	
 	<!--ARGUMENTS-->
 	<objarglist>
-		<objarg name="parent-uid" optional="0" type="symbol">
+		<objarg name="parent-UID" optional="0" type="symbol">
 			<digest>
 				Parent node's UID to which this <o>mvc.state</o> is attached.
 			</digest>
