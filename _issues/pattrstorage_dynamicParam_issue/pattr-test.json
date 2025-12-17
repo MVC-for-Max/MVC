@@ -1,0 +1,50 @@
+{
+	"pattrstorage" : 	{
+		"name" : "pattr-test",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"data" : 				{
+					"voicecount" : [ 1 ],
+					"main-poly.1::subVoiceount" : [ 1 ],
+					"main-poly.1::subPoly.1::myParam" : [ 11 ]
+				}
+
+			}
+,
+			"2" : 			{
+				"id" : 2,
+				"data" : 				{
+					"voicecount" : [ 1 ],
+					"main-poly.1::subPoly.2::myParam" : [ 12 ],
+					"main-poly.1::subPoly.3::myParam" : [ 13 ],
+					"main-poly.1::subPoly.4::myParam" : [ 14 ],
+					"main-poly.1::subPoly.5::myParam" : [ 15 ],
+					"main-poly.1::subVoiceount" : [ 5 ],
+					"main-poly.1::subPoly.1::myParam" : [ 11 ]
+				}
+
+			}
+,
+			"3" : 			{
+				"id" : 3,
+				"data" : 				{
+					"voicecount" : [ 3 ],
+					"main-poly.1::subVoiceount" : [ 1 ],
+					"main-poly.1::subPoly.1::myParam" : [ 11 ],
+					"main-poly.2::subVoiceount" : [ 2 ],
+					"main-poly.2::subPoly.1::myParam" : [ 21 ],
+					"main-poly.2::subPoly.2::myParam" : [ 22 ],
+					"main-poly.3::subVoiceount" : [ 3 ],
+					"main-poly.3::subPoly.1::myParam" : [ 31 ],
+					"main-poly.3::subPoly.2::myParam" : [ 32 ],
+					"main-poly.3::subPoly.3::myParam" : [ 33 ]
+				}
+
+			}
+
+		}
+
+	}
+
+}

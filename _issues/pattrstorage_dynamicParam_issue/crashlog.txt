@@ -1,0 +1,1697 @@
+-------------------------------------
+Translated Report (Full Report Below)
+-------------------------------------
+
+Process:               Max [58396]
+Path:                  /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/MacOS/Max
+Identifier:            com.cycling74.Max
+Version:               9.0.6 (f6ea8bdb7c5) (9.0.6)
+Code Type:             ARM-64 (Native)
+Parent Process:        launchd [1]
+User ID:               501
+
+Date/Time:             2025-03-17 14:44:33.1950 +0100
+OS Version:            macOS 13.7.2 (22H313)
+Report Version:        12
+Anonymous UUID:        2E1AB186-AFD8-09C7-7730-C983E59F2A69
+
+Sleep/Wake UUID:       0E9BDF79-B941-453D-BFF4-1FDFB12A3D97
+
+Time Awake Since Boot: 2400000 seconds
+Time Since Wake:       2955 seconds
+
+System Integrity Protection: enabled
+
+Crashed Thread:        0  JUCE Message Thread  Dispatch queue: com.apple.main-thread
+
+Exception Type:        EXC_BAD_ACCESS (SIGSEGV)
+Exception Codes:       KERN_INVALID_ADDRESS at 0x0000000000000000
+Exception Codes:       0x0000000000000001, 0x0000000000000000
+
+Termination Reason:    Namespace SIGNAL, Code 11 Segmentation fault: 11
+Terminating Process:   exc handler [58396]
+
+VM Region Info: 0 is not in any region.  Bytes before following region: 4306731008
+      REGION TYPE                    START - END         [ VSIZE] PRT/MAX SHRMOD  REGION DETAIL
+      UNUSED SPACE AT START
+--->  
+      __TEXT                      100b38000-1034a0000    [ 41.4M] r-x/r-x SM=COW  ...nts/MacOS/Max
+
+Thread 0 Crashed:: JUCE Message Thread Dispatch queue: com.apple.main-thread
+0   libsystem_pthread.dylib                0x18c44e558 pthread_mutex_lock + 12
+1   Max                                    0x100e88110 systhread_mutex_lock + 12
+2   pattrstorage                           0x1489cfab8 pattrstorage_addnew(_pattrstorage*, object*, _pattritem*, unsigned char) + 172
+3   pattrstorage                           0x1489cb2dc pattrstorage_pattr_new + 756
+4   pattr                                  0x147be4468 pattr_common_bubbleup_impl + 252
+5   pattr                                  0x147be4330 pattr_common_bubble + 212
+6   pattr                                  0x147be14ec pattr_name + 496
+7   Max                                    0x100edcaf0 object_attr_setvalueof_imp + 488
+8   Max                                    0x100ebf928 typedmess_fun + 228
+9   Max                                    0x100ebf518 real_outlet_anything + 1356
+10  prepend                                0x1406efc6c prepend_anything + 392
+11  Max                                    0x100ebf928 typedmess_fun + 228
+12  Max                                    0x100ebf518 real_outlet_anything + 1356
+13  sprintf                                0x147ba757c sprint_outletatoms + 488
+14  sprintf                                0x147ba70ec sprint_xint + 348
+15  Max                                    0x100ebcf34 real_outlet_int + 1312
+16  Max                                    0x100ebd09c real_outlet_int + 1672
+17  Max                                    0x100ebc474 real_outlet_bang + 1700
+18  Max                                    0x100f9385c jpatcher_loadbangfun + 380
+19  Max                                    0x100ec816c linklist_funall_imp + 376
+20  Max                                    0x100f87d88 jpatcher_loadbang + 432
+21  Max                                    0x100f59a7c jpatcher_doloadbang_dequeue + 76
+22  Max                                    0x100f92450 jpatcher_traverse_flags + 120
+23  Max                                    0x100f59c40 loadbang_dequeue + 104
+24  poly~                                  0x147b844c0 poly_dovoices + 272
+25  Max                                    0x100efe514 defer + 68
+26  poly~                                  0x147b7fa40 poly_attr_setvoices + 108
+27  Max                                    0x100edcaf0 object_attr_setvalueof_imp + 488
+28  Max                                    0x100ebf928 typedmess_fun + 228
+29  Max                                    0x100ebf518 real_outlet_anything + 1356
+30  prepend                                0x1406ef954 prepend_list + 344
+31  prepend                                0x1406ef7ac prepend_int + 68
+32  Max                                    0x100ebcf34 real_outlet_int + 1312
+33  number                                 0x147bc0c0c jnumber_setvalueof + 204
+34  Max                                    0x100edb330 object_setvalueof + 128
+35  pattr                                  0x147be391c pattr_object_setvalueof + 488
+36  pattr                                  0x147be1de8 pattr_setvalueof + 620
+37  Max                                    0x100edb330 object_setvalueof + 128
+38  pattrstorage                           0x1489cf390 pattrstorage_setvalueof + 176
+39  pattrstorage                           0x1489d2860 pattrstorage_dorecall_int + 272
+40  pattrstorage                           0x1489d2888 pattrstorage_dorecall_int + 312
+41  pattrstorage                           0x1489d22b4 pattrstorage_recall_int + 252
+42  pattrstorage                           0x1489c6d38 pattrstorage_recall_gimme + 216
+43  pattrstorage                           0x1489c6c10 pattrstorage_int + 48
+44  Max                                    0x100ebcf34 real_outlet_int + 1312
+45  number                                 0x147bbf54c jnumber_enter + 140
+46  Max                                    0x100b87dc0 TextfieldComponent::endEdit() + 692
+47  Max                                    0x100c20e64 BoxComponent::endEdit() + 132
+48  Max                                    0x1013489a8 juce::TextEditor::handleCommandMessage(int) + 1996
+49  Max                                    0x10125d0e0 juce::MessageManager::callAsync(std::__1::function<void ()>)::AsyncCallInvoker::messageCallback() + 80
+50  Max                                    0x10125eef8 juce::MessageQueue::runLoopCallback() + 256
+51  CoreFoundation                         0x18c53255c __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 28
+52  CoreFoundation                         0x18c5324f0 __CFRunLoopDoSource0 + 176
+53  CoreFoundation                         0x18c532260 __CFRunLoopDoSources0 + 244
+54  CoreFoundation                         0x18c530e68 __CFRunLoopRun + 828
+55  CoreFoundation                         0x18c5303d8 CFRunLoopRunSpecific + 612
+56  HIToolbox                              0x195d89df0 RunCurrentEventLoopInMode + 292
+57  HIToolbox                              0x195d89a80 ReceiveNextEventCommon + 220
+58  HIToolbox                              0x195d89984 _BlockUntilNextEventMatchingListInModeWithFilter + 76
+59  AppKit                                 0x18f75b38c _DPSNextEvent + 636
+60  AppKit                                 0x18f75a528 -[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 716
+61  AppKit                                 0x18f74e98c -[NSApplication run] + 464
+62  Max                                    0x101258d38 juce::JUCEApplicationBase::main() + 192
+63  Max                                    0x101258c58 juce::JUCEApplicationBase::main(int, char const**) + 88
+64  dyld                                   0x18c0fbfd8 start + 2412
+
+Thread 1:
+0   libsystem_kernel.dylib                 0x18c4176f0 __psynch_cvwait + 8
+1   libsystem_pthread.dylib                0x18c454574 _pthread_cond_wait + 1232
+2   libc++.1.dylib                         0x18c37cf84 std::__1::condition_variable::__do_timed_wait(std::__1::unique_lock<std::__1::mutex>&, std::__1::chrono::time_point<std::__1::chrono::system_clock, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000000000l>>>) + 100
+3   Max                                    0x10142cf64 spdlog::details::mpmc_blocking_queue<spdlog::details::async_msg>::dequeue_for(spdlog::details::async_msg&, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000l>>) + 136
+4   Max                                    0x10142ce08 spdlog::details::thread_pool::process_next_msg_() + 128
+5   Max                                    0x10142cbc0 void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct>>, spdlog::details::thread_pool::thread_pool(unsigned long, unsigned long, std::__1::function<void ()>, std::__1::function<void ()>)::'lambda'()>>(void*) + 76
+6   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+7   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 2:: timer
+0   libsystem_kernel.dylib                 0x18c4176f0 __psynch_cvwait + 8
+1   libsystem_pthread.dylib                0x18c454574 _pthread_cond_wait + 1232
+2   libc++.1.dylib                         0x18c37cf84 std::__1::condition_variable::__do_timed_wait(std::__1::unique_lock<std::__1::mutex>&, std::__1::chrono::time_point<std::__1::chrono::system_clock, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000000000l>>>) + 100
+3   Max                                    0x100f4126c std::__1::cv_status std::__1::condition_variable_any::wait_until<(anonymous namespace)::SysthreadMutexAdapter, std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000000000l>>>((anonymous namespace)::SysthreadMutexAdapter&, std::__1::chrono::time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000000000l>>> const&) + 280
+4   Max                                    0x100f41088 (anonymous namespace)::Systimer::threadfun() + 584
+5   Max                                    0x100f41380 void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct>>, void ((anonymous namespace)::Systimer::*)(), (anonymous namespace)::Systimer*>>(void*) + 72
+6   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+7   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 3:
+0   libsystem_kernel.dylib                 0x18c41c814 poll + 8
+1   synophrys                              0x1190a6ef4 master_thread + 936
+2   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+3   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 4:
+0   libsystem_kernel.dylib                 0x18c4176f0 __psynch_cvwait + 8
+1   libsystem_pthread.dylib                0x18c454574 _pthread_cond_wait + 1232
+2   synophrys                              0x1190a739c worker_thread + 316
+3   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+4   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 5:
+0   libsystem_kernel.dylib                 0x18c4176f0 __psynch_cvwait + 8
+1   libsystem_pthread.dylib                0x18c454574 _pthread_cond_wait + 1232
+2   synophrys                              0x1190a739c worker_thread + 316
+3   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+4   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 6:
+0   libsystem_kernel.dylib                 0x18c4176f0 __psynch_cvwait + 8
+1   libsystem_pthread.dylib                0x18c454574 _pthread_cond_wait + 1232
+2   synophrys                              0x1190a739c worker_thread + 316
+3   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+4   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 7:
+0   libsystem_kernel.dylib                 0x18c41c814 poll + 8
+1   synophrys                              0x1190a6ef4 master_thread + 936
+2   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+3   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 8:
+0   libsystem_kernel.dylib                 0x18c4176f0 __psynch_cvwait + 8
+1   libsystem_pthread.dylib                0x18c454574 _pthread_cond_wait + 1232
+2   synophrys                              0x1190a739c worker_thread + 316
+3   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+4   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 9:
+0   libsystem_kernel.dylib                 0x18c4176f0 __psynch_cvwait + 8
+1   libsystem_pthread.dylib                0x18c454574 _pthread_cond_wait + 1232
+2   synophrys                              0x1190a739c worker_thread + 316
+3   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+4   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 10:
+0   libsystem_kernel.dylib                 0x18c4176f0 __psynch_cvwait + 8
+1   libsystem_pthread.dylib                0x18c454574 _pthread_cond_wait + 1232
+2   synophrys                              0x1190a739c worker_thread + 316
+3   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+4   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 11:
+0   libsystem_kernel.dylib                 0x18c41c814 poll + 8
+1   synophrys                              0x1190a6ef4 master_thread + 936
+2   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+3   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 12:
+0   libsystem_kernel.dylib                 0x18c4176f0 __psynch_cvwait + 8
+1   libsystem_pthread.dylib                0x18c454574 _pthread_cond_wait + 1232
+2   synophrys                              0x1190a739c worker_thread + 316
+3   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+4   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 13:
+0   libsystem_kernel.dylib                 0x18c4176f0 __psynch_cvwait + 8
+1   libsystem_pthread.dylib                0x18c454574 _pthread_cond_wait + 1232
+2   synophrys                              0x1190a739c worker_thread + 316
+3   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+4   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 14:
+0   libsystem_kernel.dylib                 0x18c4176f0 __psynch_cvwait + 8
+1   libsystem_pthread.dylib                0x18c454574 _pthread_cond_wait + 1232
+2   synophrys                              0x1190a739c worker_thread + 316
+3   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+4   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 15:
+0   libsystem_kernel.dylib                 0x18c41c814 poll + 8
+1   synophrys                              0x1190a6ef4 master_thread + 936
+2   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+3   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 16:
+0   libsystem_kernel.dylib                 0x18c4176f0 __psynch_cvwait + 8
+1   libsystem_pthread.dylib                0x18c454574 _pthread_cond_wait + 1232
+2   synophrys                              0x1190a739c worker_thread + 316
+3   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+4   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 17:
+0   libsystem_kernel.dylib                 0x18c4176f0 __psynch_cvwait + 8
+1   libsystem_pthread.dylib                0x18c454574 _pthread_cond_wait + 1232
+2   synophrys                              0x1190a739c worker_thread + 316
+3   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+4   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 18:
+0   libsystem_kernel.dylib                 0x18c4176f0 __psynch_cvwait + 8
+1   libsystem_pthread.dylib                0x18c454574 _pthread_cond_wait + 1232
+2   synophrys                              0x1190a739c worker_thread + 316
+3   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+4   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 19:
+0   libsystem_kernel.dylib                 0x18c413ef4 mach_msg2_trap + 8
+1   libsystem_kernel.dylib                 0x18c426220 mach_msg2_internal + 80
+2   libsystem_kernel.dylib                 0x18c41cb58 mach_msg_overwrite + 604
+3   libsystem_kernel.dylib                 0x18c414270 mach_msg + 24
+4   CoreMIDI                               0x1a493b6fc XServerMachPort::ReceiveMessage(int&, void*, int&) + 104
+5   CoreMIDI                               0x1a496fcf8 MIDIProcess::MIDIInPortThread::Run() + 164
+6   CoreMIDI                               0x1a49572d8 CADeprecated::XThread::RunHelper(void*) + 48
+7   CoreMIDI                               0x1a4958604 CADeprecated::CAPThread::Entry(CADeprecated::CAPThread*) + 92
+8   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+9   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 20:: caulk.messenger.shared:17
+0   libsystem_kernel.dylib                 0x18c413e70 semaphore_wait_trap + 8
+1   caulk                                  0x195a97024 caulk::semaphore::timed_wait(double) + 212
+2   caulk                                  0x195a96ed8 caulk::concurrent::details::worker_thread::run() + 36
+3   caulk                                  0x195a96bc8 void* caulk::thread_proxy<std::__1::tuple<caulk::thread::attributes, void (caulk::concurrent::details::worker_thread::*)(), std::__1::tuple<caulk::concurrent::details::worker_thread*>>>(void*) + 96
+4   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+5   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 21:
+0   libsystem_kernel.dylib                 0x18c41a040 kevent + 8
+1   link.clocksource                       0x127123c78 asio::detail::kqueue_reactor::run(long, asio::detail::op_queue<asio::detail::scheduler_operation>&) + 288
+2   link.clocksource                       0x12712374c asio::detail::scheduler::do_run_one(asio::detail::conditionally_enabled_mutex::scoped_lock&, asio::detail::scheduler_thread_info&, std::__1::error_code const&) + 248
+3   link.clocksource                       0x1271233d4 asio::detail::scheduler::run(std::__1::error_code&) + 220
+4   link.clocksource                       0x1271245e0 void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct>>, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::Context<ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler>(ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler)::'lambda'(asio::io_context&, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler), std::__1::reference_wrapper<asio::io_context>, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler>>(void*) + 116
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 22:
+0   libsystem_kernel.dylib                 0x18c4176f0 __psynch_cvwait + 8
+1   libsystem_pthread.dylib                0x18c454574 _pthread_cond_wait + 1232
+2   libc++.1.dylib                         0x18c37cf84 std::__1::condition_variable::__do_timed_wait(std::__1::unique_lock<std::__1::mutex>&, std::__1::chrono::time_point<std::__1::chrono::system_clock, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000000000l>>>) + 100
+3   link.clocksource                       0x127125bb8 ableton::platforms::asio::LockFreeCallbackDispatcher<std::__1::function<void ()>, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000l>>>::run() + 304
+4   link.clocksource                       0x127125a24 void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct>>, ableton::platforms::asio::LockFreeCallbackDispatcher<std::__1::function<void ()>, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000l>>>::LockFreeCallbackDispatcher(std::__1::function<void ()>, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000l>>)::'lambda'()>>(void*) + 44
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 23:
+0   libsystem_kernel.dylib                 0x18c41a040 kevent + 8
+1   link.clocksource                       0x127123c78 asio::detail::kqueue_reactor::run(long, asio::detail::op_queue<asio::detail::scheduler_operation>&) + 288
+2   link.clocksource                       0x12712374c asio::detail::scheduler::do_run_one(asio::detail::conditionally_enabled_mutex::scoped_lock&, asio::detail::scheduler_thread_info&, std::__1::error_code const&) + 248
+3   link.clocksource                       0x1271233d4 asio::detail::scheduler::run(std::__1::error_code&) + 220
+4   link.clocksource                       0x1271289a0 void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct>>, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::Context<ableton::link::Controller<std::__1::function<void (unsigned long)>, std::__1::function<void (ableton::link::Tempo)>, std::__1::function<void (bool)>, ableton::platforms::darwin::Clock, ableton::platforms::stl::Random, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>>::UdpSendExceptionHandler>(ableton::link::Controller<std::__1::function<void (unsigned long)>, std::__1::function<void (ableton::link::Tempo)>, std::__1::function<void (bool)>, ableton::platforms::darwin::Clock, ableton::platforms::stl::Random, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>>::UdpSendExceptionHandler)::'lambda'(asio::io_context&, ableton::link::Controller<std::__1::function<void (unsigned long)>, std::__1::function<void (ableton::link::Tempo)>, std::__1::function<void (bool)>, ableton::platforms::darwin::Clock, ableton::platforms::stl::Random, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>>::UdpSendExceptionHandler), std::__1::reference_wrapper<asio::io_context>, ableton::link::Controller<std::__1::function<void (unsigned long)>, std::__1::function<void (ableton::link::Tempo)>, std::__1::function<void (bool)>, ableton::platforms::darwin::Clock, ableton::platforms::stl::Random, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>>::UdpSendExceptionHandler>>(void*) + 124
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 24:
+0   libsystem_kernel.dylib                 0x18c41a040 kevent + 8
+1   link.clocksource                       0x127123c78 asio::detail::kqueue_reactor::run(long, asio::detail::op_queue<asio::detail::scheduler_operation>&) + 288
+2   link.clocksource                       0x12712374c asio::detail::scheduler::do_run_one(asio::detail::conditionally_enabled_mutex::scoped_lock&, asio::detail::scheduler_thread_info&, std::__1::error_code const&) + 248
+3   link.clocksource                       0x1271233d4 asio::detail::scheduler::run(std::__1::error_code&) + 220
+4   link.clocksource                       0x1271245e0 void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct>>, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::Context<ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler>(ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler)::'lambda'(asio::io_context&, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler), std::__1::reference_wrapper<asio::io_context>, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler>>(void*) + 116
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 25:
+0   libsystem_kernel.dylib                 0x18c41a040 kevent + 8
+1   link.clocksource                       0x127123c78 asio::detail::kqueue_reactor::run(long, asio::detail::op_queue<asio::detail::scheduler_operation>&) + 288
+2   link.clocksource                       0x12712374c asio::detail::scheduler::do_run_one(asio::detail::conditionally_enabled_mutex::scoped_lock&, asio::detail::scheduler_thread_info&, std::__1::error_code const&) + 248
+3   link.clocksource                       0x1271233d4 asio::detail::scheduler::run(std::__1::error_code&) + 220
+4   link.clocksource                       0x1271245e0 void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct>>, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::Context<ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler>(ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler)::'lambda'(asio::io_context&, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler), std::__1::reference_wrapper<asio::io_context>, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler>>(void*) + 116
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 26:
+0   libsystem_kernel.dylib                 0x18c4174ec __semwait_signal + 8
+1   libsystem_c.dylib                      0x18c2f82e8 nanosleep + 220
+2   libsystem_c.dylib                      0x18c2f8200 usleep + 68
+3   Max                                    0x100ef79e4 sysprocesswatcher_threadproc + 60
+4   Max                                    0x100ef88dc systhread_threadproc + 172
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 27:
+0   libsystem_kernel.dylib                 0x18c41c814 poll + 8
+1   Max                                    0x10121928c juce::SocketHelpers::waitForReadiness(std::__1::atomic<int>&, juce::CriticalSection&, bool, int) + 100
+2   Max                                    0x100fef0e4 tcpconnection_read + 52
+3   node.script                            0x127909fb8 maxnode_read_threadfn + 140
+4   Max                                    0x100ef88dc systhread_threadproc + 172
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 28:: tcp_listener
+0   libsystem_kernel.dylib                 0x18c41c7e8 __accept + 8
+1   Max                                    0x101219ff8 juce::StreamingSocket::waitForNextConnection() const + 92
+2   Max                                    0x100fef4dc tcpconnection_listenthread(_tcpconnection*) + 168
+3   Max                                    0x100ef88dc systhread_threadproc + 172
+4   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+5   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 29:: tcp_listener
+0   libsystem_kernel.dylib                 0x18c41c7e8 __accept + 8
+1   Max                                    0x101219ff8 juce::StreamingSocket::waitForNextConnection() const + 92
+2   Max                                    0x100fef4dc tcpconnection_listenthread(_tcpconnection*) + 168
+3   Max                                    0x100ef88dc systhread_threadproc + 172
+4   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+5   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 30:
+0   libsystem_kernel.dylib                 0x18c41c814 poll + 8
+1   Max                                    0x10121928c juce::SocketHelpers::waitForReadiness(std::__1::atomic<int>&, juce::CriticalSection&, bool, int) + 100
+2   Max                                    0x100fef1c0 tcpconnection_readline + 152
+3   node.script                            0x12790a970 maxnode_stdio_connection_readthread_fn + 100
+4   Max                                    0x100ef88dc systhread_threadproc + 172
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 31:
+0   libsystem_kernel.dylib                 0x18c41c814 poll + 8
+1   Max                                    0x10121928c juce::SocketHelpers::waitForReadiness(std::__1::atomic<int>&, juce::CriticalSection&, bool, int) + 100
+2   Max                                    0x100fef1c0 tcpconnection_readline + 152
+3   node.script                            0x12790a970 maxnode_stdio_connection_readthread_fn + 100
+4   Max                                    0x100ef88dc systhread_threadproc + 172
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 32:
+0   libsystem_kernel.dylib                 0x18c41c814 poll + 8
+1   Max                                    0x10121928c juce::SocketHelpers::waitForReadiness(std::__1::atomic<int>&, juce::CriticalSection&, bool, int) + 100
+2   Max                                    0x100fef0e4 tcpconnection_read + 52
+3   node.script                            0x127909fb8 maxnode_read_threadfn + 140
+4   Max                                    0x100ef88dc systhread_threadproc + 172
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 33:
+0   libsystem_kernel.dylib                 0x18c41c814 poll + 8
+1   Max                                    0x10121928c juce::SocketHelpers::waitForReadiness(std::__1::atomic<int>&, juce::CriticalSection&, bool, int) + 100
+2   Max                                    0x100fef0e4 tcpconnection_read + 52
+3   node.script                            0x127909fb8 maxnode_read_threadfn + 140
+4   Max                                    0x100ef88dc systhread_threadproc + 172
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 34:: com.apple.NSEventThread
+0   libsystem_kernel.dylib                 0x18c413ef4 mach_msg2_trap + 8
+1   libsystem_kernel.dylib                 0x18c426220 mach_msg2_internal + 80
+2   libsystem_kernel.dylib                 0x18c41cb58 mach_msg_overwrite + 604
+3   libsystem_kernel.dylib                 0x18c414270 mach_msg + 24
+4   CoreFoundation                         0x18c532704 __CFRunLoopServiceMachPort + 160
+5   CoreFoundation                         0x18c530fe4 __CFRunLoopRun + 1208
+6   CoreFoundation                         0x18c5303d8 CFRunLoopRunSpecific + 612
+7   AppKit                                 0x18f885a18 _NSEventThread + 172
+8   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+9   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 35:: JUCE Timer
+0   libsystem_kernel.dylib                 0x18c4176f0 __psynch_cvwait + 8
+1   libsystem_pthread.dylib                0x18c454574 _pthread_cond_wait + 1232
+2   libc++.1.dylib                         0x18c37cf84 std::__1::condition_variable::__do_timed_wait(std::__1::unique_lock<std::__1::mutex>&, std::__1::chrono::time_point<std::__1::chrono::system_clock, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000000000l>>>) + 100
+3   Max                                    0x101229be4 juce::WaitableEvent::wait(double) const + 544
+4   Max                                    0x10125da00 juce::Timer::TimerThread::run() + 140
+5   Max                                    0x10122a720 juce::Thread::threadEntryPoint() + 292
+6   Max                                    0x10124ca54 juce::Thread::createNativeThread(juce::Thread::Priority)::$_28::__invoke(void*) + 152
+7   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+8   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 36:: backgroundtask
+0   libsystem_kernel.dylib                 0x18c4174ec __semwait_signal + 8
+1   libsystem_c.dylib                      0x18c2f82e8 nanosleep + 220
+2   libsystem_c.dylib                      0x18c2f8200 usleep + 68
+3   Max                                    0x100e953e4 backgroundtask_threadproc + 100
+4   Max                                    0x100ef88dc systhread_threadproc + 172
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 37:: backgroundtask
+0   libsystem_kernel.dylib                 0x18c4174ec __semwait_signal + 8
+1   libsystem_c.dylib                      0x18c2f82e8 nanosleep + 220
+2   libsystem_c.dylib                      0x18c2f8200 usleep + 68
+3   Max                                    0x100e953e4 backgroundtask_threadproc + 100
+4   Max                                    0x100ef88dc systhread_threadproc + 172
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 38:: backgroundtask
+0   libsystem_kernel.dylib                 0x18c4174ec __semwait_signal + 8
+1   libsystem_c.dylib                      0x18c2f82e8 nanosleep + 220
+2   libsystem_c.dylib                      0x18c2f8200 usleep + 68
+3   Max                                    0x100e953e4 backgroundtask_threadproc + 100
+4   Max                                    0x100ef88dc systhread_threadproc + 172
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 39:: backgroundtask
+0   libsystem_kernel.dylib                 0x18c4174ec __semwait_signal + 8
+1   libsystem_c.dylib                      0x18c2f82e8 nanosleep + 220
+2   libsystem_c.dylib                      0x18c2f8200 usleep + 68
+3   Max                                    0x100e953e4 backgroundtask_threadproc + 100
+4   Max                                    0x100ef88dc systhread_threadproc + 172
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 40:: tcp_listener
+0   libsystem_kernel.dylib                 0x18c41c7e8 __accept + 8
+1   Max                                    0x101219ff8 juce::StreamingSocket::waitForNextConnection() const + 92
+2   Max                                    0x100fef4dc tcpconnection_listenthread(_tcpconnection*) + 168
+3   Max                                    0x100ef88dc systhread_threadproc + 172
+4   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+5   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 41:: maxurl_perform_request
+0   libsystem_kernel.dylib                 0x18c4176f0 __psynch_cvwait + 8
+1   libsystem_pthread.dylib                0x18c454574 _pthread_cond_wait + 1232
+2   Max                                    0x100ecd8a4 systhread_cond_wait + 12
+3   maxurl                                 0x124b28ad8 maxurl_perform_request + 556
+4   Max                                    0x100ef88dc systhread_threadproc + 172
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 42:: tcp_listener
+0   libsystem_kernel.dylib                 0x18c41c7e8 __accept + 8
+1   Max                                    0x101219ff8 juce::StreamingSocket::waitForNextConnection() const + 92
+2   Max                                    0x100fef4dc tcpconnection_listenthread(_tcpconnection*) + 168
+3   Max                                    0x100ef88dc systhread_threadproc + 172
+4   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+5   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 43:: tcp_listener
+0   libsystem_kernel.dylib                 0x18c41c7e8 __accept + 8
+1   Max                                    0x101219ff8 juce::StreamingSocket::waitForNextConnection() const + 92
+2   Max                                    0x100fef4dc tcpconnection_listenthread(_tcpconnection*) + 168
+3   Max                                    0x100ef88dc systhread_threadproc + 172
+4   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+5   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 44:: maxurl_perform_request
+0   libsystem_kernel.dylib                 0x18c4176f0 __psynch_cvwait + 8
+1   libsystem_pthread.dylib                0x18c454574 _pthread_cond_wait + 1232
+2   Max                                    0x100ecd8a4 systhread_cond_wait + 12
+3   maxurl                                 0x124b28ad8 maxurl_perform_request + 556
+4   Max                                    0x100ef88dc systhread_threadproc + 172
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 45:
+0   libsystem_kernel.dylib                 0x18c41c814 poll + 8
+1   Max                                    0x10121928c juce::SocketHelpers::waitForReadiness(std::__1::atomic<int>&, juce::CriticalSection&, bool, int) + 100
+2   Max                                    0x100fef1c0 tcpconnection_readline + 152
+3   node.script                            0x12790a970 maxnode_stdio_connection_readthread_fn + 100
+4   Max                                    0x100ef88dc systhread_threadproc + 172
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 46:
+0   libsystem_kernel.dylib                 0x18c41c814 poll + 8
+1   Max                                    0x10121928c juce::SocketHelpers::waitForReadiness(std::__1::atomic<int>&, juce::CriticalSection&, bool, int) + 100
+2   Max                                    0x100fef1c0 tcpconnection_readline + 152
+3   node.script                            0x12790a970 maxnode_stdio_connection_readthread_fn + 100
+4   Max                                    0x100ef88dc systhread_threadproc + 172
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 47:
+0   libsystem_kernel.dylib                 0x18c41c814 poll + 8
+1   Max                                    0x10121928c juce::SocketHelpers::waitForReadiness(std::__1::atomic<int>&, juce::CriticalSection&, bool, int) + 100
+2   Max                                    0x100fef0e4 tcpconnection_read + 52
+3   node.script                            0x127909fb8 maxnode_read_threadfn + 140
+4   Max                                    0x100ef88dc systhread_threadproc + 172
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 48:
+0   libsystem_pthread.dylib                0x18c44ed8c start_wqthread + 0
+
+Thread 49:: asyncfile
+0   libsystem_kernel.dylib                 0x18c4174ec __semwait_signal + 8
+1   libsystem_c.dylib                      0x18c2f82e8 nanosleep + 220
+2   libsystem_c.dylib                      0x18c2f8200 usleep + 68
+3   Max                                    0x100e87418 asyncfile_threadproc + 96
+4   Max                                    0x100ef88dc systhread_threadproc + 172
+5   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+6   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 50:: CVDisplayLink
+0   libsystem_kernel.dylib                 0x18c4176f0 __psynch_cvwait + 8
+1   libsystem_pthread.dylib                0x18c4545a0 _pthread_cond_wait + 1276
+2   CoreVideo                              0x1941eec68 CVDisplayLink::waitUntil(unsigned long long) + 324
+3   CoreVideo                              0x1941edd38 CVDisplayLink::runIOThread() + 504
+4   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+5   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 51:
+0   libsystem_pthread.dylib                0x18c44ed8c start_wqthread + 0
+
+Thread 52:: maxurl_perform_request
+0   libsystem_kernel.dylib                 0x18c4184dc getsockopt + 8
+1   maxurl                                 0x124b30160 Curl_is_connected + 664
+2   maxurl                                 0x124b5ad2c multi_runsingle + 784
+3   maxurl                                 0x124b5a988 curl_multi_perform + 128
+4   maxurl                                 0x124b3b448 curl_easy_perform + 364
+5   maxurl                                 0x124b289e4 maxurl_perform_request + 312
+6   Max                                    0x100ef88dc systhread_threadproc + 172
+7   libsystem_pthread.dylib                0x18c453fa8 _pthread_start + 148
+8   libsystem_pthread.dylib                0x18c44eda0 thread_start + 8
+
+Thread 53:
+0   libsystem_pthread.dylib                0x18c44ed8c start_wqthread + 0
+
+
+Thread 0 crashed with ARM Thread State (64-bit):
+    x0: 0x0000000000000000   x1: 0x000060000097a340   x2: 0x0000000000000001   x3: 0xfffffffffffffff6
+    x4: 0x0000000000000000   x5: 0x0000000000000000   x6: 0x0000000000000079   x7: 0x0000000000000270
+    x8: 0x0000000000000000   x9: 0x00000000000000ff  x10: 0x0000000000002340  x11: 0x00000000000007fb
+   x12: 0x00000000af4038fc  x13: 0x00000000000007fd  x14: 0x00000000af60408e  x15: 0x00000000af4038fc
+   x16: 0x000000018c44e54c  x17: 0x000000002f600000  x18: 0x0000000000000000  x19: 0x0000000140744b50
+   x20: 0x0000000140761260  x21: 0x0000000000000001  x22: 0x0000000000000000  x23: 0x0000000136238430
+   x24: 0x0000000000000000  x25: 0x000000013516fc40  x26: 0x000000013516feb0  x27: 0x0000000148a04d50
+   x28: 0x0000000140761260   fp: 0x000000016f2af590   lr: 0x807c000100e88110
+    sp: 0x000000016f2af590   pc: 0x000000018c44e558 cpsr: 0x60001000
+   far: 0x0000000000000000  esr: 0x92000006 (Data Abort) byte read Translation fault
+
+Binary Images:
+       0x100b38000 -        0x10349ffff com.cycling74.Max (9.0.6 (f6ea8bdb7c5)) <ef01ef40-1bb4-3814-b833-7abfc0d46dbb> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/MacOS/Max
+       0x119db8000 -        0x12398ffff org.cef.framework (122.1.13.0) <4c4c445f-5555-3144-a1a2-f22510e608b5> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Frameworks/Chromium Embedded Framework.framework/Chromium Embedded Framework
+       0x10739c000 -        0x10739ffff com.cycling74.fseventwatcher (9.0.6 (f6ea8bdb7c5)) <21d1ce4b-79c9-36ea-9d2e-49d8843b9f76> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/fseventwatcher.mxo/Contents/MacOS/fseventwatcher
+       0x11908c000 -        0x1190bbfff com.cycling74.synophrys (9.0.6 (f6ea8bdb7c5)) <c278dae1-d11c-376b-b6e7-7b732ecd9e37> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/synophrys.mxo/Contents/MacOS/synophrys
+       0x11902c000 -        0x11902ffff com.cycling74.augraph (9.0.6 (f6ea8bdb7c5)) <6d442736-5a32-3061-8c43-eed6ac85efa0> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/mididrivers/augraph.mxo/Contents/MacOS/augraph
+       0x119000000 -        0x119007fff com.cycling74.coremidi (9.0.6 (f6ea8bdb7c5)) <09e849ee-3501-34e0-b5f1-e6037867ea84> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/mididrivers/coremidi.mxo/Contents/MacOS/coremidi
+       0x119018000 -        0x11901bfff com.cycling74.MaxAudioAPI (*) <4f56d925-cc1a-345a-9f38-df723f6175e7> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Frameworks/MaxAudioAPI.framework/Versions/A/MaxAudioAPI
+       0x119b80000 -        0x119bf7fff com.cycling74.MaxAudioAPIImpl (*) <5fb36735-851b-3ad9-a12a-5227ab2343d4> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Frameworks/MaxAudioAPIImpl.framework/Versions/A/MaxAudioAPIImpl
+       0x119074000 -        0x11907bfff com.cycling74.ad-coreaudio (9.0.6 (f6ea8bdb7c5)) <2b962eb6-52e0-3148-989a-7f538811e1a2> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/ad/ad_coreaudio.mxo/Contents/MacOS/ad_coreaudio
+       0x1190d4000 -        0x1190d7fff com.cycling74.ad-nonreal (9.0.6 (f6ea8bdb7c5)) <20eaa50e-fd20-3edc-bdf7-5595aadb4650> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/ad/ad_nonreal.mxo/Contents/MacOS/ad_nonreal
+       0x119040000 -        0x119053fff com.cycling74.ad-portaudio (9.0.6 (f6ea8bdb7c5)) <09aa536e-3c8f-3e8d-ac3e-42ac69f15d78> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/ad/ad_portaudio.mxo/Contents/MacOS/ad_portaudio
+       0x1190e8000 -        0x1190ebfff com.cycling74.cefaudio (9.0.6 (f6ea8bdb7c5)) <7ca48c89-d341-37ed-980d-1cef562f3000> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/msp/cefaudio.mxo/Contents/MacOS/cefaudio
+       0x124d00000 -        0x124e37fff com.cycling74.gl2 (9.0.6 (f6ea8bdb7c5)) <4e7cb2d7-2d29-35a0-aa40-f3a36b132993> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/jitter/gl2.mxo/Contents/MacOS/gl2
+       0x119068000 -        0x11906bfff com.cycling74.JitterAPI (1.7.0) <22a2aee2-383c-317a-bdef-c0b99a459e29> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Frameworks/JitterAPI.framework/Versions/A/JitterAPI
+       0x119a2c000 -        0x119a2ffff com.cycling74.MaxLua (*) <8dcd9c4f-c7d7-3aae-9894-65ff549d114f> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Frameworks/MaxLua.framework/Versions/A/MaxLua
+       0x127314000 -        0x127427fff com.cycling74.JitterAPIImpl (1.7.0) <eb73be27-c373-3012-8c2a-87df119182e9> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Frameworks/JitterAPIImpl.framework/Versions/A/JitterAPIImpl
+       0x119a38000 -        0x119ac3fff com.cycling74.MaxLuaImpl (*) <f1a09173-bfe2-3fcc-a4d8-16c736bfd8c2> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Frameworks/MaxLuaImpl.framework/Versions/A/MaxLuaImpl
+       0x119c30000 -        0x119cd3fff com.cycling74.sketch (9.0.6 (f6ea8bdb7c5)) <ad424434-84a2-3b3f-95fd-0b5fd80f5e4a> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/jitter/sketch.mxo/Contents/MacOS/sketch
+       0x119af0000 -        0x119b27fff com.cycling74.live.guilib (9.0.6 (f6ea8bdb7c5)) <2f5ed3a7-8bcd-369b-8d6e-330ac2e06c2d> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/m4l/live.guilib.mxo/Contents/MacOS/live.guilib
+       0x119a10000 -        0x119a17fff com.cycling74.autohelp (9.0.6 (f6ea8bdb7c5)) <6a85940d-a6c3-3c7b-83ad-a9594e2a516e> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/autohelp.mxo/Contents/MacOS/autohelp
+       0x119d04000 -        0x119d07fff com.cycling74.debugwindow (9.0.6 (f6ea8bdb7c5)) <c05f164c-2898-3ee9-bd20-1112cb226b5d> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/debugwindow.mxo/Contents/MacOS/debugwindow
+       0x124ea0000 -        0x124f8bfff com.cycling74.genpatcher (9.0.6 (f6ea8bdb7c5)) <57659b96-7471-3e0c-902c-32d8e2547567> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/genpatcher.mxo/Contents/MacOS/genpatcher
+       0x119d18000 -        0x119d1bfff com.cycling74.jsrepl (9.0.6 (f6ea8bdb7c5)) <9d093fd9-335c-3f22-9e06-513ab299279e> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/jsrepl.mxo/Contents/MacOS/jsrepl
+       0x14906c000 -        0x14c1f3fff com.cycling74.maxclang (9.0.6 (f6ea8bdb7c5)) <37622245-5b39-333d-bc04-1a8cf81387a7> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/maxclang.mxo/Contents/MacOS/maxclang
+       0x124b24000 -        0x124bb3fff com.cycling74.maxurl (9.0.6 (f6ea8bdb7c5)) <38529482-7204-37b5-9000-d2b66ae5a25b> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/maxurl.mxo/Contents/MacOS/maxurl
+       0x130000000 -        0x131ecbfff com.cycling74.maxxslt (9.0.6 (f6ea8bdb7c5)) <c1eb4c91-83e7-3c7b-a234-a4331941d5b4> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/maxxslt.mxo/Contents/MacOS/maxxslt
+       0x119b44000 -        0x119b5bfff com.cycling74.maxzlib (9.0.6 (f6ea8bdb7c5)) <6dd0952b-f5f8-30a5-b47d-2243d2d17e51> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/maxzlib.mxo/Contents/MacOS/maxzlib
+       0x119b6c000 -        0x119b6ffff com.cycling74.objectview (9.0.6 (f6ea8bdb7c5)) <49fe8b49-a629-3833-b315-6b414300a378> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/objectview.mxo/Contents/MacOS/objectview
+       0x119d60000 -        0x119d67fff com.cycling74.palblocks (9.0.6 (f6ea8bdb7c5)) <c68e6a5f-80bd-3662-b837-cfd8275a7342> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/palblocks.mxo/Contents/MacOS/palblocks
+       0x119d78000 -        0x119d7ffff com.cycling74.paramview (9.0.6 (f6ea8bdb7c5)) <1702c166-2b64-30ce-925d-c8bfad05458f> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/paramview.mxo/Contents/MacOS/paramview
+       0x119d2c000 -        0x119d37fff com.cycling74.pianoroll (9.0.6 (f6ea8bdb7c5)) <ae43e3ff-6d8b-33ed-8a38-488be7f9566d> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/pianoroll.mxo/Contents/MacOS/pianoroll
+       0x119d48000 -        0x119d4ffff com.cycling74.querylib (9.0.6 (f6ea8bdb7c5)) <3ccf65e7-edbe-39d8-a439-cece09461fb0> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/querylib.mxo/Contents/MacOS/querylib
+       0x119d90000 -        0x119d97fff com.cycling74.setplugpath (9.0.6 (f6ea8bdb7c5)) <54adbd9a-4125-3976-be4f-f793dd79b3ca> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/setplugpath.mxo/Contents/MacOS/setplugpath
+       0x127500000 -        0x127643fff com.cycling74.sqlite (9.0.6 (f6ea8bdb7c5)) <bd9536ff-96a3-3f3c-855d-bfec7b3fb78a> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/sqlite.mxo/Contents/MacOS/sqlite
+       0x136800000 -        0x137727fff com.cycling74.v8 (9.0.6 (f6ea8bdb7c5)) <a009f961-a9af-3217-87b7-33ccfb67009b> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/v8.mxo/Contents/MacOS/v8
+       0x1270b8000 -        0x1270e7fff com.cycling74.yaml (9.0.6 (f6ea8bdb7c5)) <f55d5407-47a7-3beb-ab74-273416439b1c> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/yaml.mxo/Contents/MacOS/yaml
+       0x124bdc000 -        0x124bdffff com.cycling74.zoomer (9.0.6 (f6ea8bdb7c5)) <3bf1b8a0-5c1c-31c1-9007-b9e3baea5826> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/max/zoomer.mxo/Contents/MacOS/zoomer
+       0x127044000 -        0x12704ffff com.cycling74.max-tilde (9.0.6 (f6ea8bdb7c5)) <18f0eb06-9865-3c72-952d-41f35a4622da> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/msp/max~.mxo/Contents/MacOS/max~
+       0x127064000 -        0x12706ffff com.cycling74.polybuffer (9.0.6 (f6ea8bdb7c5)) <65d11a2d-4569-3df2-a42d-145b567dc951> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/msp/polybuffer.mxo/Contents/MacOS/polybuffer
+       0x12702c000 -        0x12702ffff com.cycling74.probe.history-tilde (9.0.6 (f6ea8bdb7c5)) <517a6822-8290-3b6b-bf75-cf8cd7676dc5> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/msp/probe.history~.mxo/Contents/MacOS/probe.history~
+       0x127080000 -        0x127083fff com.cycling74.probe.meter-tilde (9.0.6 (f6ea8bdb7c5)) <9bb3a25c-ae42-3746-9d0f-0a22ede04794> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/msp/probe.meter~.mxo/Contents/MacOS/probe.meter~
+       0x127000000 -        0x127003fff com.cycling74.probe.scope-tilde (9.0.6 (f6ea8bdb7c5)) <a9b3274a-0d9c-3e5c-84c9-8a971ed87567> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/extensions/msp/probe.scope~.mxo/Contents/MacOS/probe.scope~
+       0x131f54000 -        0x13216ffff com.cycling74.blocks.system (8.2.0 (666)) <037adff7-f29d-3ef1-85bf-1c6a7c8977d6> /Users/USER/Documents/*/blocks.system
+       0x127c3c000 -        0x127d7bfff com.cycling74.gl3 (9.0.6 (f6ea8bdb7c5)) <01603883-ac53-3453-9233-24829ea99cde> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/packages/Jitter Tools/extensions/gl3.mxo/Contents/MacOS/gl3
+       0x127110000 -        0x12715bfff com.cycling74.link-clocksource (1.5.5) <41bb1dae-31cb-39a8-a31c-1d10b29d567a> /Users/USER/Documents/*/link.clocksource
+       0x127014000 -        0x127017fff com.acme.${PRODUCT_NAME:rfc1034identifier} (8.2.0) <11e2f200-6641-3c87-b652-6fdc3b7afca1> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/packages/max-mxj/extensions/mxj_safe.mxo/Contents/MacOS/mxj_safe
+       0x127958000 -        0x12798ffff com.cycling74.mira-ws-server (8.5.0 (666)) <1d147408-d6dd-35a6-9a28-b8fc506d28cd> /Users/USER/Documents/*/mira_ws_server
+       0x140000000 -        0x1403a7fff com.cycling74.rnbopatcher (*) <de1ffce1-b977-36e2-870c-ac4dc80aec2e> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/packages/RNBO/extensions/rnbopatcher.mxo/Contents/MacOS/rnbopatcher
+       0x127094000 -        0x12709bfff com.cycling74.comment (9.0.6 (f6ea8bdb7c5)) <f769f45f-980f-3931-8f05-d5fffe6a1b21> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/max/comment.mxo/Contents/MacOS/comment
+       0x127904000 -        0x127913fff com.cycling74.node.script (9.0.6 (f6ea8bdb7c5)) <264a2450-4f28-3a9c-91a2-074037d3ffb5> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/packages/Node for Max/externals/node.script.mxo/Contents/MacOS/node.script
+       0x1278bc000 -        0x1278cffff com.cycling74.sysaudio (9.0.6 (f6ea8bdb7c5)) <c0d9d85f-80fa-383a-bd04-ff0b43b29392> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/packages/VIDDLL/extensions/sysaudio.mxo/Contents/MacOS/sysaudio
+       0x1278e4000 -        0x1278ebfff . (*) <a87b1b24-dad4-36d1-b117-e78bdd37a451> /Users/USER/Documents/*/zsa.descriptors
+       0x1271ec000 -        0x1271f7fff libobjc-trampolines.dylib (*) <4daa2f71-4c51-3179-9c85-34a3e49c7fc0> /usr/lib/libobjc-trampolines.dylib
+       0x147868000 -        0x147873fff com.cycling74.message (9.0.6 (f6ea8bdb7c5)) <df31d34d-d90a-3998-bfb9-2fbb643f598a> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/max/message.mxo/Contents/MacOS/message
+       0x147bbc000 -        0x147bc7fff com.cycling74.number (9.0.6 (f6ea8bdb7c5)) <8df5c240-dc91-372a-b411-fe6fafd51e12> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/max/number.mxo/Contents/MacOS/number
+       0x147bdc000 -        0x147be7fff com.cycling74.pattr (9.0.6 (f6ea8bdb7c5)) <91e3655b-555b-349d-b82b-83c338ff2ed8> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/max/pattr.mxo/Contents/MacOS/pattr
+       0x1489c0000 -        0x1489fffff com.cycling74.pattrstorage (9.0.6 (f6ea8bdb7c5)) <c80001cd-12ab-32a2-9f27-9575e928a5f8> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/max/pattrstorage.mxo/Contents/MacOS/pattrstorage
+       0x1406ec000 -        0x1406effff com.cycling74.prepend (9.0.6 (f6ea8bdb7c5)) <42c7f221-923a-3e22-a3b7-9f725b667906> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/max/prepend.mxo/Contents/MacOS/prepend
+       0x147b78000 -        0x147b87fff com.cycling74.poly-tilde (9.0.6 (f6ea8bdb7c5)) <b954fb62-81ba-3522-b899-470c9e80d319> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/msp/poly~.mxo/Contents/MacOS/poly~
+       0x147ba4000 -        0x147ba7fff com.cycling74.sprintf (9.0.6 (f6ea8bdb7c5)) <37634830-010b-3e00-9046-510a5f63be47> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/max/sprintf.mxo/Contents/MacOS/sprintf
+       0x14892c000 -        0x14892ffff com.cycling74.clip (9.0.6 (f6ea8bdb7c5)) <d98ea3d6-c5aa-3026-b1a4-2e5391fdc8a2> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/max/clip.mxo/Contents/MacOS/clip
+       0x148940000 -        0x148943fff com.cycling74.in (9.0.6 (f6ea8bdb7c5)) <1b2d2b25-3346-3142-ac53-e0c0991b513c> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/msp/in.mxo/Contents/MacOS/in
+       0x148954000 -        0x148957fff com.cycling74.thispoly-tilde (9.0.6 (f6ea8bdb7c5)) <627bebb2-46d0-34e9-846a-95a3e9975793> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/msp/thispoly~.mxo/Contents/MacOS/thispoly~
+       0x148900000 -        0x14890ffff com.cycling74.attrui (9.0.6 (f6ea8bdb7c5)) <424e62ec-03b3-35f7-b3ca-a1342fac7288> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/max/attrui.mxo/Contents/MacOS/attrui
+       0x148994000 -        0x148997fff com.cycling74.adoutput-tilde (9.0.6 (f6ea8bdb7c5)) <1a3b3b09-73fb-3c0c-8641-3e0bf6009141> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/msp/adoutput~.mxo/Contents/MacOS/adoutput~
+       0x148968000 -        0x14896ffff com.cycling74.sfrecord-tilde (9.0.6 (f6ea8bdb7c5)) <025cbb2c-0583-38a8-a619-1ccf0dc19bae> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/msp/sfrecord~.mxo/Contents/MacOS/sfrecord~
+       0x1489a8000 -        0x1489abfff com.cycling74.dac-tilde (9.0.6 (f6ea8bdb7c5)) <f1ffa6de-1ab1-30ec-8110-57ae47f4872d> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/msp/dac~.mxo/Contents/MacOS/dac~
+       0x148f98000 -        0x148fa3fff com.cycling74.number-tilde (9.0.6 (f6ea8bdb7c5)) <fcc102fa-3588-36da-88d4-8646a52fce68> /Applications/Max9/Max906_250314_f6ea8bd_beta_FAT.app/Contents/Resources/C74/externals/msp/number~.mxo/Contents/MacOS/number~
+       0x18c44d000 -        0x18c459fff libsystem_pthread.dylib (*) <e74e3db0-f8cb-34ab-831e-db30cbec154f> /usr/lib/system/libsystem_pthread.dylib
+       0x18c4b3000 -        0x18c98cfff com.apple.CoreFoundation (6.9) <4a35b66a-3b0e-34fd-811d-c44fb389ce8f> /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+       0x195d59000 -        0x19608cfff com.apple.HIToolbox (2.1.1) <c8970896-b9d1-3fd0-aa1e-99bc8ff4e84d> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+       0x18f722000 -        0x190632fff com.apple.AppKit (6.9) <8f65e267-53fb-35ce-92ec-f87c29886082> /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+       0x18c0f6000 -        0x18c184d13 dyld (*) <bffa4e04-be1b-3d76-891f-f501dfb9ee8b> /usr/lib/dyld
+       0x18c413000 -        0x18c44cff7 libsystem_kernel.dylib (*) <80b55a53-f2f1-3f29-9292-41845b7e9dc6> /usr/lib/system/libsystem_kernel.dylib
+       0x18c36a000 -        0x18c3f6ff7 libc++.1.dylib (*) <a1240ffc-a95a-3824-b47d-fb1ef6e55b9b> /usr/lib/libc++.1.dylib
+       0x1a4929000 -        0x1a499bfff com.apple.audio.midi.CoreMIDI (2.0) <faee716a-5e78-35fa-b3f9-77b3a2f130b3> /System/Library/Frameworks/CoreMIDI.framework/Versions/A/CoreMIDI
+       0x195a95000 -        0x195abdfff com.apple.audio.caulk (1.0) <8bb83838-fd70-3946-bbb5-716a45e60d03> /System/Library/PrivateFrameworks/caulk.framework/Versions/A/caulk
+       0x18c2eb000 -        0x18c369ff7 libsystem_c.dylib (*) <d76df494-de63-350c-9d1b-25581159a9b1> /usr/lib/system/libsystem_c.dylib
+       0x1941eb000 -        0x19424cfff com.apple.CoreVideo (1.8) <4562dea9-38b4-34a4-aa06-7171a7814f0a> /System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo
+
+External Modification Summary:
+  Calls made by other processes targeting this process:
+    task_for_pid: 0
+    thread_create: 0
+    thread_set_state: 0
+  Calls made by this process:
+    task_for_pid: 0
+    thread_create: 0
+    thread_set_state: 0
+  Calls made by all processes on this machine:
+    task_for_pid: 2
+    thread_create: 0
+    thread_set_state: 16
+
+VM Region Summary:
+ReadOnly portion of Libraries: Total=1.7G resident=0K(0%) swapped_out_or_unallocated=1.7G(100%)
+Writable regions: Total=2.8G written=0K(0%) resident=0K(0%) swapped_out=0K(0%) unallocated=2.8G(100%)
+
+                                VIRTUAL   REGION 
+REGION TYPE                        SIZE    COUNT (non-coalesced) 
+===========                     =======  ======= 
+Accelerate framework               256K        2 
+Activity Tracing                   256K        1 
+CG backing stores                 3520K        4 
+CG image                            96K        3 
+ColorSync                          656K       31 
+CoreAnimation                      608K       13 
+CoreGraphics                        32K        2 
+CoreServices                       624K        2 
+CoreUI image data                 1840K       11 
+Foundation                          16K        1 
+Kernel Alloc Once                   32K        1 
+MALLOC                             1.3G      123 
+MALLOC guard page                  192K       10 
+MALLOC_MEDIUM (reserved)           1.4G       12         reserved VM address space (unallocated)
+STACK GUARD                       56.8M       54 
+Stack                             36.6M       68 
+VM_ALLOCATE                        336K       15 
+__AUTH                            1930K      397 
+__AUTH_CONST                      29.1M      628 
+__CTF                               824        1 
+__DATA                            21.9M      689 
+__DATA_CONST                      45.3M      695 
+__DATA_DIRTY                      2011K      245 
+__FONT_DATA                        2352        1 
+__INFO_FILTER                         8        1 
+__LINKEDIT                       838.9M       69 
+__OBJC_RO                         66.4M        1 
+__OBJC_RW                         2012K        1 
+__TEXT                           929.6M      718 
+dyld private memory                272K        2 
+mapped file                      229.4M       77 
+shared memory                      944K       18 
+===========                     =======  ======= 
+TOTAL                              5.0G     3896 
+TOTAL, minus reserved VM space     3.6G     3896 
+
+
+
+-----------
+Full Report
+-----------
+
+{"app_name":"Max","timestamp":"2025-03-17 14:44:34.00 +0100","app_version":"9.0.6 (f6ea8bdb7c5)","slice_uuid":"ef01ef40-1bb4-3814-b833-7abfc0d46dbb","build_version":"9.0.6","platform":1,"bundleID":"com.cycling74.Max","share_with_app_devs":0,"is_first_party":0,"bug_type":"309","os_version":"macOS 13.7.2 (22H313)","roots_installed":0,"name":"Max","incident_id":"9A7D3BF0-B32E-449C-BA35-C2CB228D6C06"}
+{
+  "uptime" : 2400000,
+  "procRole" : "Foreground",
+  "version" : 2,
+  "userID" : 501,
+  "deployVersion" : 210,
+  "modelCode" : "Mac14,9",
+  "coalitionID" : 283095,
+  "osVersion" : {
+    "train" : "macOS 13.7.2",
+    "build" : "22H313",
+    "releaseType" : "User"
+  },
+  "captureTime" : "2025-03-17 14:44:33.1950 +0100",
+  "incident" : "9A7D3BF0-B32E-449C-BA35-C2CB228D6C06",
+  "pid" : 58396,
+  "translated" : false,
+  "cpuType" : "ARM-64",
+  "roots_installed" : 0,
+  "bug_type" : "309",
+  "procLaunch" : "2025-03-17 14:42:37.3984 +0100",
+  "procStartAbsTime" : 58542279992826,
+  "procExitAbsTime" : 58545058608607,
+  "procName" : "Max",
+  "procPath" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/MacOS\/Max",
+  "bundleInfo" : {"CFBundleShortVersionString":"9.0.6 (f6ea8bdb7c5)","CFBundleVersion":"9.0.6","CFBundleIdentifier":"com.cycling74.Max"},
+  "storeInfo" : {"deviceIdentifierForVendor":"C5E408BF-8336-5F44-A0BF-64D78FED3AF7","thirdParty":true},
+  "parentProc" : "launchd",
+  "parentPid" : 1,
+  "coalitionName" : "com.cycling74.Max",
+  "crashReporterKey" : "2E1AB186-AFD8-09C7-7730-C983E59F2A69",
+  "codeSigningID" : "com.cycling74.Max",
+  "codeSigningTeamID" : "GBXXCFCVW5",
+  "codeSigningFlags" : 570491653,
+  "codeSigningValidationCategory" : 6,
+  "codeSigningTrustLevel" : 0,
+  "wakeTime" : 2955,
+  "sleepWakeUUID" : "0E9BDF79-B941-453D-BFF4-1FDFB12A3D97",
+  "sip" : "enabled",
+  "vmRegionInfo" : "0 is not in any region.  Bytes before following region: 4306731008\n      REGION TYPE                    START - END         [ VSIZE] PRT\/MAX SHRMOD  REGION DETAIL\n      UNUSED SPACE AT START\n--->  \n      __TEXT                      100b38000-1034a0000    [ 41.4M] r-x\/r-x SM=COW  ...nts\/MacOS\/Max",
+  "exception" : {"codes":"0x0000000000000001, 0x0000000000000000","rawCodes":[1,0],"type":"EXC_BAD_ACCESS","signal":"SIGSEGV","subtype":"KERN_INVALID_ADDRESS at 0x0000000000000000"},
+  "termination" : {"flags":0,"code":11,"namespace":"SIGNAL","indicator":"Segmentation fault: 11","byProc":"exc handler","byPid":58396},
+  "vmregioninfo" : "0 is not in any region.  Bytes before following region: 4306731008\n      REGION TYPE                    START - END         [ VSIZE] PRT\/MAX SHRMOD  REGION DETAIL\n      UNUSED SPACE AT START\n--->  \n      __TEXT                      100b38000-1034a0000    [ 41.4M] r-x\/r-x SM=COW  ...nts\/MacOS\/Max",
+  "extMods" : {"caller":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"system":{"thread_create":0,"thread_set_state":16,"task_for_pid":2},"targeted":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"warnings":0},
+  "faultingThread" : 0,
+  "threads" : [{"triggered":true,"id":27153955,"threadState":{"x":[{"value":0},{"value":105553126204224},{"value":1},{"value":18446744073709551606},{"value":0},{"value":0},{"value":121},{"value":624},{"value":0},{"value":255},{"value":9024},{"value":2043},{"value":2940221692},{"value":2045},{"value":2942320782},{"value":2940221692},{"value":6648292684,"symbolLocation":0,"symbol":"pthread_mutex_lock"},{"value":794820608},{"value":0},{"value":5376330576},{"value":5376447072},{"value":1},{"value":0},{"value":5203264560},{"value":0},{"value":5185666112},{"value":5185666736},{"value":5513432400,"symbolLocation":0,"symbol":"ps_top"},{"value":5376447072}],"flavor":"ARM_THREAD_STATE64","lr":{"value":9258274938277101840},"cpsr":{"value":1610616832},"fp":{"value":6160053648},"sp":{"value":6160053648},"esr":{"value":2449473542,"description":"(Data Abort) byte read Translation fault"},"pc":{"value":6648292696,"matchesCrashFrame":1},"far":{"value":0}},"name":"JUCE Message Thread","queue":"com.apple.main-thread","frames":[{"imageOffset":5464,"symbol":"pthread_mutex_lock","symbolLocation":12,"imageIndex":68},{"imageOffset":3473680,"symbol":"systhread_mutex_lock","symbolLocation":12,"imageIndex":0},{"imageOffset":64184,"symbol":"pattrstorage_addnew(_pattrstorage*, object*, _pattritem*, unsigned char)","symbolLocation":172,"imageIndex":56},{"imageOffset":45788,"symbol":"pattrstorage_pattr_new","symbolLocation":756,"imageIndex":56},{"imageOffset":33896,"symbol":"pattr_common_bubbleup_impl","symbolLocation":252,"imageIndex":55},{"imageOffset":33584,"symbol":"pattr_common_bubble","symbolLocation":212,"imageIndex":55},{"imageOffset":21740,"symbol":"pattr_name","symbolLocation":496,"imageIndex":55},{"imageOffset":3820272,"symbol":"object_attr_setvalueof_imp","symbolLocation":488,"imageIndex":0},{"imageOffset":3701032,"symbol":"typedmess_fun","symbolLocation":228,"imageIndex":0},{"imageOffset":3699992,"symbol":"real_outlet_anything","symbolLocation":1356,"imageIndex":0},{"imageOffset":15468,"symbol":"prepend_anything","symbolLocation":392,"imageIndex":57},{"imageOffset":3701032,"symbol":"typedmess_fun","symbolLocation":228,"imageIndex":0},{"imageOffset":3699992,"symbol":"real_outlet_anything","symbolLocation":1356,"imageIndex":0},{"imageOffset":13692,"symbol":"sprint_outletatoms","symbolLocation":488,"imageIndex":59},{"imageOffset":12524,"symbol":"sprint_xint","symbolLocation":348,"imageIndex":59},{"imageOffset":3690292,"symbol":"real_outlet_int","symbolLocation":1312,"imageIndex":0},{"imageOffset":3690652,"symbol":"real_outlet_int","symbolLocation":1672,"imageIndex":0},{"imageOffset":3687540,"symbol":"real_outlet_bang","symbolLocation":1700,"imageIndex":0},{"imageOffset":4569180,"symbol":"jpatcher_loadbangfun","symbolLocation":380,"imageIndex":0},{"imageOffset":3735916,"symbol":"linklist_funall_imp","symbolLocation":376,"imageIndex":0},{"imageOffset":4521352,"symbol":"jpatcher_loadbang","symbolLocation":432,"imageIndex":0},{"imageOffset":4332156,"symbol":"jpatcher_doloadbang_dequeue","symbolLocation":76,"imageIndex":0},{"imageOffset":4564048,"symbol":"jpatcher_traverse_flags","symbolLocation":120,"imageIndex":0},{"imageOffset":4332608,"symbol":"loadbang_dequeue","symbolLocation":104,"imageIndex":0},{"imageOffset":50368,"symbol":"poly_dovoices","symbolLocation":272,"imageIndex":58},{"imageOffset":3958036,"symbol":"defer","symbolLocation":68,"imageIndex":0},{"imageOffset":31296,"symbol":"poly_attr_setvoices","symbolLocation":108,"imageIndex":58},{"imageOffset":3820272,"symbol":"object_attr_setvalueof_imp","symbolLocation":488,"imageIndex":0},{"imageOffset":3701032,"symbol":"typedmess_fun","symbolLocation":228,"imageIndex":0},{"imageOffset":3699992,"symbol":"real_outlet_anything","symbolLocation":1356,"imageIndex":0},{"imageOffset":14676,"symbol":"prepend_list","symbolLocation":344,"imageIndex":57},{"imageOffset":14252,"symbol":"prepend_int","symbolLocation":68,"imageIndex":57},{"imageOffset":3690292,"symbol":"real_outlet_int","symbolLocation":1312,"imageIndex":0},{"imageOffset":19468,"symbol":"jnumber_setvalueof","symbolLocation":204,"imageIndex":54},{"imageOffset":3814192,"symbol":"object_setvalueof","symbolLocation":128,"imageIndex":0},{"imageOffset":31004,"symbol":"pattr_object_setvalueof","symbolLocation":488,"imageIndex":55},{"imageOffset":24040,"symbol":"pattr_setvalueof","symbolLocation":620,"imageIndex":55},{"imageOffset":3814192,"symbol":"object_setvalueof","symbolLocation":128,"imageIndex":0},{"imageOffset":62352,"symbol":"pattrstorage_setvalueof","symbolLocation":176,"imageIndex":56},{"imageOffset":75872,"symbol":"pattrstorage_dorecall_int","symbolLocation":272,"imageIndex":56},{"imageOffset":75912,"symbol":"pattrstorage_dorecall_int","symbolLocation":312,"imageIndex":56},{"imageOffset":74420,"symbol":"pattrstorage_recall_int","symbolLocation":252,"imageIndex":56},{"imageOffset":27960,"symbol":"pattrstorage_recall_gimme","symbolLocation":216,"imageIndex":56},{"imageOffset":27664,"symbol":"pattrstorage_int","symbolLocation":48,"imageIndex":56},{"imageOffset":3690292,"symbol":"real_outlet_int","symbolLocation":1312,"imageIndex":0},{"imageOffset":13644,"symbol":"jnumber_enter","symbolLocation":140,"imageIndex":54},{"imageOffset":327104,"symbol":"TextfieldComponent::endEdit()","symbolLocation":692,"imageIndex":0},{"imageOffset":953956,"symbol":"BoxComponent::endEdit()","symbolLocation":132,"imageIndex":0},{"imageOffset":8456616,"symbol":"juce::TextEditor::handleCommandMessage(int)","symbolLocation":1996,"imageIndex":0},{"imageOffset":7491808,"symbol":"juce::MessageManager::callAsync(std::__1::function<void ()>)::AsyncCallInvoker::messageCallback()","symbolLocation":80,"imageIndex":0},{"imageOffset":7499512,"symbol":"juce::MessageQueue::runLoopCallback()","symbolLocation":256,"imageIndex":0},{"imageOffset":521564,"symbol":"__CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__","symbolLocation":28,"imageIndex":69},{"imageOffset":521456,"symbol":"__CFRunLoopDoSource0","symbolLocation":176,"imageIndex":69},{"imageOffset":520800,"symbol":"__CFRunLoopDoSources0","symbolLocation":244,"imageIndex":69},{"imageOffset":515688,"symbol":"__CFRunLoopRun","symbolLocation":828,"imageIndex":69},{"imageOffset":512984,"symbol":"CFRunLoopRunSpecific","symbolLocation":612,"imageIndex":69},{"imageOffset":200176,"symbol":"RunCurrentEventLoopInMode","symbolLocation":292,"imageIndex":70},{"imageOffset":199296,"symbol":"ReceiveNextEventCommon","symbolLocation":220,"imageIndex":70},{"imageOffset":199044,"symbol":"_BlockUntilNextEventMatchingListInModeWithFilter","symbolLocation":76,"imageIndex":70},{"imageOffset":234380,"symbol":"_DPSNextEvent","symbolLocation":636,"imageIndex":71},{"imageOffset":230696,"symbol":"-[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:]","symbolLocation":716,"imageIndex":71},{"imageOffset":182668,"symbol":"-[NSApplication run]","symbolLocation":464,"imageIndex":71},{"imageOffset":7474488,"symbol":"juce::JUCEApplicationBase::main()","symbolLocation":192,"imageIndex":0},{"imageOffset":7474264,"symbol":"juce::JUCEApplicationBase::main(int, char const**)","symbolLocation":88,"imageIndex":0},{"imageOffset":24536,"symbol":"start","symbolLocation":2412,"imageIndex":72}]},{"id":27153996,"frames":[{"imageOffset":18160,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":73},{"imageOffset":30068,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":68},{"imageOffset":77700,"symbol":"std::__1::condition_variable::__do_timed_wait(std::__1::unique_lock<std::__1::mutex>&, std::__1::chrono::time_point<std::__1::chrono::system_clock, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000000000l>>>)","symbolLocation":100,"imageIndex":74},{"imageOffset":9391972,"symbol":"spdlog::details::mpmc_blocking_queue<spdlog::details::async_msg>::dequeue_for(spdlog::details::async_msg&, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000l>>)","symbolLocation":136,"imageIndex":0},{"imageOffset":9391624,"symbol":"spdlog::details::thread_pool::process_next_msg_()","symbolLocation":128,"imageIndex":0},{"imageOffset":9391040,"symbol":"void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct>>, spdlog::details::thread_pool::thread_pool(unsigned long, unsigned long, std::__1::function<void ()>, std::__1::function<void ()>)::'lambda'()>>(void*)","symbolLocation":76,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154005,"name":"timer","frames":[{"imageOffset":18160,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":73},{"imageOffset":30068,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":68},{"imageOffset":77700,"symbol":"std::__1::condition_variable::__do_timed_wait(std::__1::unique_lock<std::__1::mutex>&, std::__1::chrono::time_point<std::__1::chrono::system_clock, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000000000l>>>)","symbolLocation":100,"imageIndex":74},{"imageOffset":4231788,"symbol":"std::__1::cv_status std::__1::condition_variable_any::wait_until<(anonymous namespace)::SysthreadMutexAdapter, std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000000000l>>>((anonymous namespace)::SysthreadMutexAdapter&, std::__1::chrono::time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000000000l>>> const&)","symbolLocation":280,"imageIndex":0},{"imageOffset":4231304,"symbol":"(anonymous namespace)::Systimer::threadfun()","symbolLocation":584,"imageIndex":0},{"imageOffset":4232064,"symbol":"void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct>>, void ((anonymous namespace)::Systimer::*)(), (anonymous namespace)::Systimer*>>(void*)","symbolLocation":72,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154047,"frames":[{"imageOffset":38932,"symbol":"poll","symbolLocation":8,"imageIndex":73},{"imageOffset":110324,"symbol":"master_thread","symbolLocation":936,"imageIndex":3},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154048,"frames":[{"imageOffset":18160,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":73},{"imageOffset":30068,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":68},{"imageOffset":111516,"symbol":"worker_thread","symbolLocation":316,"imageIndex":3},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154049,"frames":[{"imageOffset":18160,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":73},{"imageOffset":30068,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":68},{"imageOffset":111516,"symbol":"worker_thread","symbolLocation":316,"imageIndex":3},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154050,"frames":[{"imageOffset":18160,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":73},{"imageOffset":30068,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":68},{"imageOffset":111516,"symbol":"worker_thread","symbolLocation":316,"imageIndex":3},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154051,"frames":[{"imageOffset":38932,"symbol":"poll","symbolLocation":8,"imageIndex":73},{"imageOffset":110324,"symbol":"master_thread","symbolLocation":936,"imageIndex":3},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154052,"frames":[{"imageOffset":18160,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":73},{"imageOffset":30068,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":68},{"imageOffset":111516,"symbol":"worker_thread","symbolLocation":316,"imageIndex":3},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154053,"frames":[{"imageOffset":18160,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":73},{"imageOffset":30068,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":68},{"imageOffset":111516,"symbol":"worker_thread","symbolLocation":316,"imageIndex":3},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154054,"frames":[{"imageOffset":18160,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":73},{"imageOffset":30068,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":68},{"imageOffset":111516,"symbol":"worker_thread","symbolLocation":316,"imageIndex":3},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154055,"frames":[{"imageOffset":38932,"symbol":"poll","symbolLocation":8,"imageIndex":73},{"imageOffset":110324,"symbol":"master_thread","symbolLocation":936,"imageIndex":3},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154056,"frames":[{"imageOffset":18160,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":73},{"imageOffset":30068,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":68},{"imageOffset":111516,"symbol":"worker_thread","symbolLocation":316,"imageIndex":3},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154057,"frames":[{"imageOffset":18160,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":73},{"imageOffset":30068,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":68},{"imageOffset":111516,"symbol":"worker_thread","symbolLocation":316,"imageIndex":3},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154058,"frames":[{"imageOffset":18160,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":73},{"imageOffset":30068,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":68},{"imageOffset":111516,"symbol":"worker_thread","symbolLocation":316,"imageIndex":3},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154059,"frames":[{"imageOffset":38932,"symbol":"poll","symbolLocation":8,"imageIndex":73},{"imageOffset":110324,"symbol":"master_thread","symbolLocation":936,"imageIndex":3},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154060,"frames":[{"imageOffset":18160,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":73},{"imageOffset":30068,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":68},{"imageOffset":111516,"symbol":"worker_thread","symbolLocation":316,"imageIndex":3},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154061,"frames":[{"imageOffset":18160,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":73},{"imageOffset":30068,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":68},{"imageOffset":111516,"symbol":"worker_thread","symbolLocation":316,"imageIndex":3},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154062,"frames":[{"imageOffset":18160,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":73},{"imageOffset":30068,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":68},{"imageOffset":111516,"symbol":"worker_thread","symbolLocation":316,"imageIndex":3},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154063,"frames":[{"imageOffset":3828,"symbol":"mach_msg2_trap","symbolLocation":8,"imageIndex":73},{"imageOffset":78368,"symbol":"mach_msg2_internal","symbolLocation":80,"imageIndex":73},{"imageOffset":39768,"symbol":"mach_msg_overwrite","symbolLocation":604,"imageIndex":73},{"imageOffset":4720,"symbol":"mach_msg","symbolLocation":24,"imageIndex":73},{"imageOffset":75516,"symbol":"XServerMachPort::ReceiveMessage(int&, void*, int&)","symbolLocation":104,"imageIndex":75},{"imageOffset":290040,"symbol":"MIDIProcess::MIDIInPortThread::Run()","symbolLocation":164,"imageIndex":75},{"imageOffset":189144,"symbol":"CADeprecated::XThread::RunHelper(void*)","symbolLocation":48,"imageIndex":75},{"imageOffset":194052,"symbol":"CADeprecated::CAPThread::Entry(CADeprecated::CAPThread*)","symbolLocation":92,"imageIndex":75},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154091,"name":"caulk.messenger.shared:17","frames":[{"imageOffset":3696,"symbol":"semaphore_wait_trap","symbolLocation":8,"imageIndex":73},{"imageOffset":8228,"symbol":"caulk::semaphore::timed_wait(double)","symbolLocation":212,"imageIndex":76},{"imageOffset":7896,"symbol":"caulk::concurrent::details::worker_thread::run()","symbolLocation":36,"imageIndex":76},{"imageOffset":7112,"symbol":"void* caulk::thread_proxy<std::__1::tuple<caulk::thread::attributes, void (caulk::concurrent::details::worker_thread::*)(), std::__1::tuple<caulk::concurrent::details::worker_thread*>>>(void*)","symbolLocation":96,"imageIndex":76},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154199,"frames":[{"imageOffset":28736,"symbol":"kevent","symbolLocation":8,"imageIndex":73},{"imageOffset":81016,"symbol":"asio::detail::kqueue_reactor::run(long, asio::detail::op_queue<asio::detail::scheduler_operation>&)","symbolLocation":288,"imageIndex":44},{"imageOffset":79692,"symbol":"asio::detail::scheduler::do_run_one(asio::detail::conditionally_enabled_mutex::scoped_lock&, asio::detail::scheduler_thread_info&, std::__1::error_code const&)","symbolLocation":248,"imageIndex":44},{"imageOffset":78804,"symbol":"asio::detail::scheduler::run(std::__1::error_code&)","symbolLocation":220,"imageIndex":44},{"imageOffset":83424,"symbol":"void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct>>, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::Context<ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler>(ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler)::'lambda'(asio::io_context&, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler), std::__1::reference_wrapper<asio::io_context>, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler>>(void*)","symbolLocation":116,"imageIndex":44},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154200,"frames":[{"imageOffset":18160,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":73},{"imageOffset":30068,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":68},{"imageOffset":77700,"symbol":"std::__1::condition_variable::__do_timed_wait(std::__1::unique_lock<std::__1::mutex>&, std::__1::chrono::time_point<std::__1::chrono::system_clock, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000000000l>>>)","symbolLocation":100,"imageIndex":74},{"imageOffset":89016,"symbol":"ableton::platforms::asio::LockFreeCallbackDispatcher<std::__1::function<void ()>, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000l>>>::run()","symbolLocation":304,"imageIndex":44},{"imageOffset":88612,"symbol":"void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct>>, ableton::platforms::asio::LockFreeCallbackDispatcher<std::__1::function<void ()>, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000l>>>::LockFreeCallbackDispatcher(std::__1::function<void ()>, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000l>>)::'lambda'()>>(void*)","symbolLocation":44,"imageIndex":44},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154201,"frames":[{"imageOffset":28736,"symbol":"kevent","symbolLocation":8,"imageIndex":73},{"imageOffset":81016,"symbol":"asio::detail::kqueue_reactor::run(long, asio::detail::op_queue<asio::detail::scheduler_operation>&)","symbolLocation":288,"imageIndex":44},{"imageOffset":79692,"symbol":"asio::detail::scheduler::do_run_one(asio::detail::conditionally_enabled_mutex::scoped_lock&, asio::detail::scheduler_thread_info&, std::__1::error_code const&)","symbolLocation":248,"imageIndex":44},{"imageOffset":78804,"symbol":"asio::detail::scheduler::run(std::__1::error_code&)","symbolLocation":220,"imageIndex":44},{"imageOffset":100768,"symbol":"void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct>>, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::Context<ableton::link::Controller<std::__1::function<void (unsigned long)>, std::__1::function<void (ableton::link::Tempo)>, std::__1::function<void (bool)>, ableton::platforms::darwin::Clock, ableton::platforms::stl::Random, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>>::UdpSendExceptionHandler>(ableton::link::Controller<std::__1::function<void (unsigned long)>, std::__1::function<void (ableton::link::Tempo)>, std::__1::function<void (bool)>, ableton::platforms::darwin::Clock, ableton::platforms::stl::Random, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>>::UdpSendExceptionHandler)::'lambda'(asio::io_context&, ableton::link::Controller<std::__1::function<void (unsigned long)>, std::__1::function<void (ableton::link::Tempo)>, std::__1::function<void (bool)>, ableton::platforms::darwin::Clock, ableton::platforms::stl::Random, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>>::UdpSendExceptionHandler), std::__1::reference_wrapper<asio::io_context>, ableton::link::Controller<std::__1::function<void (unsigned long)>, std::__1::function<void (ableton::link::Tempo)>, std::__1::function<void (bool)>, ableton::platforms::darwin::Clock, ableton::platforms::stl::Random, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>>::UdpSendExceptionHandler>>(void*)","symbolLocation":124,"imageIndex":44},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154202,"frames":[{"imageOffset":28736,"symbol":"kevent","symbolLocation":8,"imageIndex":73},{"imageOffset":81016,"symbol":"asio::detail::kqueue_reactor::run(long, asio::detail::op_queue<asio::detail::scheduler_operation>&)","symbolLocation":288,"imageIndex":44},{"imageOffset":79692,"symbol":"asio::detail::scheduler::do_run_one(asio::detail::conditionally_enabled_mutex::scoped_lock&, asio::detail::scheduler_thread_info&, std::__1::error_code const&)","symbolLocation":248,"imageIndex":44},{"imageOffset":78804,"symbol":"asio::detail::scheduler::run(std::__1::error_code&)","symbolLocation":220,"imageIndex":44},{"imageOffset":83424,"symbol":"void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct>>, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::Context<ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler>(ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler)::'lambda'(asio::io_context&, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler), std::__1::reference_wrapper<asio::io_context>, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler>>(void*)","symbolLocation":116,"imageIndex":44},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154203,"frames":[{"imageOffset":28736,"symbol":"kevent","symbolLocation":8,"imageIndex":73},{"imageOffset":81016,"symbol":"asio::detail::kqueue_reactor::run(long, asio::detail::op_queue<asio::detail::scheduler_operation>&)","symbolLocation":288,"imageIndex":44},{"imageOffset":79692,"symbol":"asio::detail::scheduler::do_run_one(asio::detail::conditionally_enabled_mutex::scoped_lock&, asio::detail::scheduler_thread_info&, std::__1::error_code const&)","symbolLocation":248,"imageIndex":44},{"imageOffset":78804,"symbol":"asio::detail::scheduler::run(std::__1::error_code&)","symbolLocation":220,"imageIndex":44},{"imageOffset":83424,"symbol":"void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct>>, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::Context<ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler>(ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler)::'lambda'(asio::io_context&, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler), std::__1::reference_wrapper<asio::io_context>, ableton::platforms::asio::Context<ableton::platforms::posix::ScanIpIfAddrs, ableton::util::NullLog>::DefaultHandler>>(void*)","symbolLocation":116,"imageIndex":44},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154210,"frames":[{"imageOffset":17644,"symbol":"__semwait_signal","symbolLocation":8,"imageIndex":73},{"imageOffset":53992,"symbol":"nanosleep","symbolLocation":220,"imageIndex":77},{"imageOffset":53760,"symbol":"usleep","symbolLocation":68,"imageIndex":77},{"imageOffset":3930596,"symbol":"sysprocesswatcher_threadproc","symbolLocation":60,"imageIndex":0},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154296,"frames":[{"imageOffset":38932,"symbol":"poll","symbolLocation":8,"imageIndex":73},{"imageOffset":7213708,"symbol":"juce::SocketHelpers::waitForReadiness(std::__1::atomic<int>&, juce::CriticalSection&, bool, int)","symbolLocation":100,"imageIndex":0},{"imageOffset":4944100,"symbol":"tcpconnection_read","symbolLocation":52,"imageIndex":0},{"imageOffset":24504,"symbol":"maxnode_read_threadfn","symbolLocation":140,"imageIndex":49},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154351,"name":"tcp_listener","frames":[{"imageOffset":38888,"symbol":"__accept","symbolLocation":8,"imageIndex":73},{"imageOffset":7217144,"symbol":"juce::StreamingSocket::waitForNextConnection() const","symbolLocation":92,"imageIndex":0},{"imageOffset":4945116,"symbol":"tcpconnection_listenthread(_tcpconnection*)","symbolLocation":168,"imageIndex":0},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154353,"name":"tcp_listener","frames":[{"imageOffset":38888,"symbol":"__accept","symbolLocation":8,"imageIndex":73},{"imageOffset":7217144,"symbol":"juce::StreamingSocket::waitForNextConnection() const","symbolLocation":92,"imageIndex":0},{"imageOffset":4945116,"symbol":"tcpconnection_listenthread(_tcpconnection*)","symbolLocation":168,"imageIndex":0},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154355,"frames":[{"imageOffset":38932,"symbol":"poll","symbolLocation":8,"imageIndex":73},{"imageOffset":7213708,"symbol":"juce::SocketHelpers::waitForReadiness(std::__1::atomic<int>&, juce::CriticalSection&, bool, int)","symbolLocation":100,"imageIndex":0},{"imageOffset":4944320,"symbol":"tcpconnection_readline","symbolLocation":152,"imageIndex":0},{"imageOffset":26992,"symbol":"maxnode_stdio_connection_readthread_fn","symbolLocation":100,"imageIndex":49},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154356,"frames":[{"imageOffset":38932,"symbol":"poll","symbolLocation":8,"imageIndex":73},{"imageOffset":7213708,"symbol":"juce::SocketHelpers::waitForReadiness(std::__1::atomic<int>&, juce::CriticalSection&, bool, int)","symbolLocation":100,"imageIndex":0},{"imageOffset":4944320,"symbol":"tcpconnection_readline","symbolLocation":152,"imageIndex":0},{"imageOffset":26992,"symbol":"maxnode_stdio_connection_readthread_fn","symbolLocation":100,"imageIndex":49},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154417,"frames":[{"imageOffset":38932,"symbol":"poll","symbolLocation":8,"imageIndex":73},{"imageOffset":7213708,"symbol":"juce::SocketHelpers::waitForReadiness(std::__1::atomic<int>&, juce::CriticalSection&, bool, int)","symbolLocation":100,"imageIndex":0},{"imageOffset":4944100,"symbol":"tcpconnection_read","symbolLocation":52,"imageIndex":0},{"imageOffset":24504,"symbol":"maxnode_read_threadfn","symbolLocation":140,"imageIndex":49},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154711,"frames":[{"imageOffset":38932,"symbol":"poll","symbolLocation":8,"imageIndex":73},{"imageOffset":7213708,"symbol":"juce::SocketHelpers::waitForReadiness(std::__1::atomic<int>&, juce::CriticalSection&, bool, int)","symbolLocation":100,"imageIndex":0},{"imageOffset":4944100,"symbol":"tcpconnection_read","symbolLocation":52,"imageIndex":0},{"imageOffset":24504,"symbol":"maxnode_read_threadfn","symbolLocation":140,"imageIndex":49},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154731,"name":"com.apple.NSEventThread","frames":[{"imageOffset":3828,"symbol":"mach_msg2_trap","symbolLocation":8,"imageIndex":73},{"imageOffset":78368,"symbol":"mach_msg2_internal","symbolLocation":80,"imageIndex":73},{"imageOffset":39768,"symbol":"mach_msg_overwrite","symbolLocation":604,"imageIndex":73},{"imageOffset":4720,"symbol":"mach_msg","symbolLocation":24,"imageIndex":73},{"imageOffset":521988,"symbol":"__CFRunLoopServiceMachPort","symbolLocation":160,"imageIndex":69},{"imageOffset":516068,"symbol":"__CFRunLoopRun","symbolLocation":1208,"imageIndex":69},{"imageOffset":512984,"symbol":"CFRunLoopRunSpecific","symbolLocation":612,"imageIndex":69},{"imageOffset":1456664,"symbol":"_NSEventThread","symbolLocation":172,"imageIndex":71},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154734,"name":"JUCE Timer","frames":[{"imageOffset":18160,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":73},{"imageOffset":30068,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":68},{"imageOffset":77700,"symbol":"std::__1::condition_variable::__do_timed_wait(std::__1::unique_lock<std::__1::mutex>&, std::__1::chrono::time_point<std::__1::chrono::system_clock, std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000000000l>>>)","symbolLocation":100,"imageIndex":74},{"imageOffset":7281636,"symbol":"juce::WaitableEvent::wait(double) const","symbolLocation":544,"imageIndex":0},{"imageOffset":7494144,"symbol":"juce::Timer::TimerThread::run()","symbolLocation":140,"imageIndex":0},{"imageOffset":7284512,"symbol":"juce::Thread::threadEntryPoint()","symbolLocation":292,"imageIndex":0},{"imageOffset":7424596,"symbol":"juce::Thread::createNativeThread(juce::Thread::Priority)::$_28::__invoke(void*)","symbolLocation":152,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154735,"name":"backgroundtask","frames":[{"imageOffset":17644,"symbol":"__semwait_signal","symbolLocation":8,"imageIndex":73},{"imageOffset":53992,"symbol":"nanosleep","symbolLocation":220,"imageIndex":77},{"imageOffset":53760,"symbol":"usleep","symbolLocation":68,"imageIndex":77},{"imageOffset":3527652,"symbol":"backgroundtask_threadproc","symbolLocation":100,"imageIndex":0},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154736,"name":"backgroundtask","frames":[{"imageOffset":17644,"symbol":"__semwait_signal","symbolLocation":8,"imageIndex":73},{"imageOffset":53992,"symbol":"nanosleep","symbolLocation":220,"imageIndex":77},{"imageOffset":53760,"symbol":"usleep","symbolLocation":68,"imageIndex":77},{"imageOffset":3527652,"symbol":"backgroundtask_threadproc","symbolLocation":100,"imageIndex":0},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154737,"name":"backgroundtask","frames":[{"imageOffset":17644,"symbol":"__semwait_signal","symbolLocation":8,"imageIndex":73},{"imageOffset":53992,"symbol":"nanosleep","symbolLocation":220,"imageIndex":77},{"imageOffset":53760,"symbol":"usleep","symbolLocation":68,"imageIndex":77},{"imageOffset":3527652,"symbol":"backgroundtask_threadproc","symbolLocation":100,"imageIndex":0},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154738,"name":"backgroundtask","frames":[{"imageOffset":17644,"symbol":"__semwait_signal","symbolLocation":8,"imageIndex":73},{"imageOffset":53992,"symbol":"nanosleep","symbolLocation":220,"imageIndex":77},{"imageOffset":53760,"symbol":"usleep","symbolLocation":68,"imageIndex":77},{"imageOffset":3527652,"symbol":"backgroundtask_threadproc","symbolLocation":100,"imageIndex":0},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154743,"name":"tcp_listener","frames":[{"imageOffset":38888,"symbol":"__accept","symbolLocation":8,"imageIndex":73},{"imageOffset":7217144,"symbol":"juce::StreamingSocket::waitForNextConnection() const","symbolLocation":92,"imageIndex":0},{"imageOffset":4945116,"symbol":"tcpconnection_listenthread(_tcpconnection*)","symbolLocation":168,"imageIndex":0},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154744,"name":"maxurl_perform_request","frames":[{"imageOffset":18160,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":73},{"imageOffset":30068,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":68},{"imageOffset":3758244,"symbol":"systhread_cond_wait","symbolLocation":12,"imageIndex":0},{"imageOffset":19160,"symbol":"maxurl_perform_request","symbolLocation":556,"imageIndex":24},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154748,"name":"tcp_listener","frames":[{"imageOffset":38888,"symbol":"__accept","symbolLocation":8,"imageIndex":73},{"imageOffset":7217144,"symbol":"juce::StreamingSocket::waitForNextConnection() const","symbolLocation":92,"imageIndex":0},{"imageOffset":4945116,"symbol":"tcpconnection_listenthread(_tcpconnection*)","symbolLocation":168,"imageIndex":0},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154750,"name":"tcp_listener","frames":[{"imageOffset":38888,"symbol":"__accept","symbolLocation":8,"imageIndex":73},{"imageOffset":7217144,"symbol":"juce::StreamingSocket::waitForNextConnection() const","symbolLocation":92,"imageIndex":0},{"imageOffset":4945116,"symbol":"tcpconnection_listenthread(_tcpconnection*)","symbolLocation":168,"imageIndex":0},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154752,"name":"maxurl_perform_request","frames":[{"imageOffset":18160,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":73},{"imageOffset":30068,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":68},{"imageOffset":3758244,"symbol":"systhread_cond_wait","symbolLocation":12,"imageIndex":0},{"imageOffset":19160,"symbol":"maxurl_perform_request","symbolLocation":556,"imageIndex":24},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154753,"frames":[{"imageOffset":38932,"symbol":"poll","symbolLocation":8,"imageIndex":73},{"imageOffset":7213708,"symbol":"juce::SocketHelpers::waitForReadiness(std::__1::atomic<int>&, juce::CriticalSection&, bool, int)","symbolLocation":100,"imageIndex":0},{"imageOffset":4944320,"symbol":"tcpconnection_readline","symbolLocation":152,"imageIndex":0},{"imageOffset":26992,"symbol":"maxnode_stdio_connection_readthread_fn","symbolLocation":100,"imageIndex":49},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154754,"frames":[{"imageOffset":38932,"symbol":"poll","symbolLocation":8,"imageIndex":73},{"imageOffset":7213708,"symbol":"juce::SocketHelpers::waitForReadiness(std::__1::atomic<int>&, juce::CriticalSection&, bool, int)","symbolLocation":100,"imageIndex":0},{"imageOffset":4944320,"symbol":"tcpconnection_readline","symbolLocation":152,"imageIndex":0},{"imageOffset":26992,"symbol":"maxnode_stdio_connection_readthread_fn","symbolLocation":100,"imageIndex":49},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27154769,"frames":[{"imageOffset":38932,"symbol":"poll","symbolLocation":8,"imageIndex":73},{"imageOffset":7213708,"symbol":"juce::SocketHelpers::waitForReadiness(std::__1::atomic<int>&, juce::CriticalSection&, bool, int)","symbolLocation":100,"imageIndex":0},{"imageOffset":4944100,"symbol":"tcpconnection_read","symbolLocation":52,"imageIndex":0},{"imageOffset":24504,"symbol":"maxnode_read_threadfn","symbolLocation":140,"imageIndex":49},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27156096,"frames":[{"imageOffset":7564,"symbol":"start_wqthread","symbolLocation":0,"imageIndex":68}]},{"id":27156128,"name":"asyncfile","frames":[{"imageOffset":17644,"symbol":"__semwait_signal","symbolLocation":8,"imageIndex":73},{"imageOffset":53992,"symbol":"nanosleep","symbolLocation":220,"imageIndex":77},{"imageOffset":53760,"symbol":"usleep","symbolLocation":68,"imageIndex":77},{"imageOffset":3470360,"symbol":"asyncfile_threadproc","symbolLocation":96,"imageIndex":0},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27156131,"name":"CVDisplayLink","frames":[{"imageOffset":18160,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":73},{"imageOffset":30112,"symbol":"_pthread_cond_wait","symbolLocation":1276,"imageIndex":68},{"imageOffset":15464,"symbol":"CVDisplayLink::waitUntil(unsigned long long)","symbolLocation":324,"imageIndex":78},{"imageOffset":11576,"symbol":"CVDisplayLink::runIOThread()","symbolLocation":504,"imageIndex":78},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27156136,"frames":[{"imageOffset":7564,"symbol":"start_wqthread","symbolLocation":0,"imageIndex":68}]},{"id":27156139,"name":"maxurl_perform_request","frames":[{"imageOffset":21724,"symbol":"getsockopt","symbolLocation":8,"imageIndex":73},{"imageOffset":49504,"symbol":"Curl_is_connected","symbolLocation":664,"imageIndex":24},{"imageOffset":224556,"symbol":"multi_runsingle","symbolLocation":784,"imageIndex":24},{"imageOffset":223624,"symbol":"curl_multi_perform","symbolLocation":128,"imageIndex":24},{"imageOffset":95304,"symbol":"curl_easy_perform","symbolLocation":364,"imageIndex":24},{"imageOffset":18916,"symbol":"maxurl_perform_request","symbolLocation":312,"imageIndex":24},{"imageOffset":3934428,"symbol":"systhread_threadproc","symbolLocation":172,"imageIndex":0},{"imageOffset":28584,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":68},{"imageOffset":7584,"symbol":"thread_start","symbolLocation":8,"imageIndex":68}]},{"id":27156143,"frames":[{"imageOffset":7564,"symbol":"start_wqthread","symbolLocation":0,"imageIndex":68}]}],
+  "usedImages" : [
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4306731008,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.Max",
+    "size" : 43417600,
+    "uuid" : "ef01ef40-1bb4-3814-b833-7abfc0d46dbb",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/MacOS\/Max",
+    "name" : "Max",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4728782848,
+    "CFBundleShortVersionString" : "122.1.13.0",
+    "CFBundleIdentifier" : "org.cef.framework",
+    "size" : 163414016,
+    "uuid" : "4c4c445f-5555-3144-a1a2-f22510e608b5",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Frameworks\/Chromium Embedded Framework.framework\/Chromium Embedded Framework",
+    "name" : "Chromium Embedded Framework",
+    "CFBundleVersion" : "13.0"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4416192512,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.fseventwatcher",
+    "size" : 16384,
+    "uuid" : "21d1ce4b-79c9-36ea-9d2e-49d8843b9f76",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/fseventwatcher.mxo\/Contents\/MacOS\/fseventwatcher",
+    "name" : "fseventwatcher",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4714971136,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.synophrys",
+    "size" : 196608,
+    "uuid" : "c278dae1-d11c-376b-b6e7-7b732ecd9e37",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/synophrys.mxo\/Contents\/MacOS\/synophrys",
+    "name" : "synophrys",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4714577920,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.augraph",
+    "size" : 16384,
+    "uuid" : "6d442736-5a32-3061-8c43-eed6ac85efa0",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/mididrivers\/augraph.mxo\/Contents\/MacOS\/augraph",
+    "name" : "augraph",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4714397696,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.coremidi",
+    "size" : 32768,
+    "uuid" : "09e849ee-3501-34e0-b5f1-e6037867ea84",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/mididrivers\/coremidi.mxo\/Contents\/MacOS\/coremidi",
+    "name" : "coremidi",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4714496000,
+    "CFBundleIdentifier" : "com.cycling74.MaxAudioAPI",
+    "size" : 16384,
+    "uuid" : "4f56d925-cc1a-345a-9f38-df723f6175e7",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Frameworks\/MaxAudioAPI.framework\/Versions\/A\/MaxAudioAPI",
+    "name" : "MaxAudioAPI",
+    "CFBundleVersion" : "1.0"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4726456320,
+    "CFBundleIdentifier" : "com.cycling74.MaxAudioAPIImpl",
+    "size" : 491520,
+    "uuid" : "5fb36735-851b-3ad9-a12a-5227ab2343d4",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Frameworks\/MaxAudioAPIImpl.framework\/Versions\/A\/MaxAudioAPIImpl",
+    "name" : "MaxAudioAPIImpl",
+    "CFBundleVersion" : "1.0"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4714872832,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.ad-coreaudio",
+    "size" : 32768,
+    "uuid" : "2b962eb6-52e0-3148-989a-7f538811e1a2",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/ad\/ad_coreaudio.mxo\/Contents\/MacOS\/ad_coreaudio",
+    "name" : "ad_coreaudio",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4715266048,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.ad-nonreal",
+    "size" : 16384,
+    "uuid" : "20eaa50e-fd20-3edc-bdf7-5595aadb4650",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/ad\/ad_nonreal.mxo\/Contents\/MacOS\/ad_nonreal",
+    "name" : "ad_nonreal",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4714659840,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.ad-portaudio",
+    "size" : 81920,
+    "uuid" : "09aa536e-3c8f-3e8d-ac3e-42ac69f15d78",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/ad\/ad_portaudio.mxo\/Contents\/MacOS\/ad_portaudio",
+    "name" : "ad_portaudio",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4715347968,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.cefaudio",
+    "size" : 16384,
+    "uuid" : "7ca48c89-d341-37ed-980d-1cef562f3000",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/msp\/cefaudio.mxo\/Contents\/MacOS\/cefaudio",
+    "name" : "cefaudio",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4912578560,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.gl2",
+    "size" : 1277952,
+    "uuid" : "4e7cb2d7-2d29-35a0-aa40-f3a36b132993",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/jitter\/gl2.mxo\/Contents\/MacOS\/gl2",
+    "name" : "gl2",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4714823680,
+    "CFBundleShortVersionString" : "1.7.0",
+    "CFBundleIdentifier" : "com.cycling74.JitterAPI",
+    "size" : 16384,
+    "uuid" : "22a2aee2-383c-317a-bdef-c0b99a459e29",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Frameworks\/JitterAPI.framework\/Versions\/A\/JitterAPI",
+    "name" : "JitterAPI",
+    "CFBundleVersion" : "1.7.0"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4725063680,
+    "CFBundleIdentifier" : "com.cycling74.MaxLua",
+    "size" : 16384,
+    "uuid" : "8dcd9c4f-c7d7-3aae-9894-65ff549d114f",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Frameworks\/MaxLua.framework\/Versions\/A\/MaxLua",
+    "name" : "MaxLua",
+    "CFBundleVersion" : "1.0"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4952506368,
+    "CFBundleShortVersionString" : "1.7.0",
+    "CFBundleIdentifier" : "com.cycling74.JitterAPIImpl",
+    "size" : 1130496,
+    "uuid" : "eb73be27-c373-3012-8c2a-87df119182e9",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Frameworks\/JitterAPIImpl.framework\/Versions\/A\/JitterAPIImpl",
+    "name" : "JitterAPIImpl",
+    "CFBundleVersion" : "1.7.0"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4725112832,
+    "CFBundleIdentifier" : "com.cycling74.MaxLuaImpl",
+    "size" : 573440,
+    "uuid" : "f1a09173-bfe2-3fcc-a4d8-16c736bfd8c2",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Frameworks\/MaxLuaImpl.framework\/Versions\/A\/MaxLuaImpl",
+    "name" : "MaxLuaImpl",
+    "CFBundleVersion" : "1.0"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4727177216,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.sketch",
+    "size" : 671744,
+    "uuid" : "ad424434-84a2-3b3f-95fd-0b5fd80f5e4a",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/jitter\/sketch.mxo\/Contents\/MacOS\/sketch",
+    "name" : "sketch",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4725866496,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.live.guilib",
+    "size" : 229376,
+    "uuid" : "2f5ed3a7-8bcd-369b-8d6e-330ac2e06c2d",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/m4l\/live.guilib.mxo\/Contents\/MacOS\/live.guilib",
+    "name" : "live.guilib",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4724948992,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.autohelp",
+    "size" : 32768,
+    "uuid" : "6a85940d-a6c3-3c7b-83ad-a9594e2a516e",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/autohelp.mxo\/Contents\/MacOS\/autohelp",
+    "name" : "autohelp",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4728045568,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.debugwindow",
+    "size" : 16384,
+    "uuid" : "c05f164c-2898-3ee9-bd20-1112cb226b5d",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/debugwindow.mxo\/Contents\/MacOS\/debugwindow",
+    "name" : "debugwindow",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4914282496,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.genpatcher",
+    "size" : 966656,
+    "uuid" : "57659b96-7471-3e0c-902c-32d8e2547567",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/genpatcher.mxo\/Contents\/MacOS\/genpatcher",
+    "name" : "genpatcher",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4728127488,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.jsrepl",
+    "size" : 16384,
+    "uuid" : "9d093fd9-335c-3f22-9e06-513ab299279e",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/jsrepl.mxo\/Contents\/MacOS\/jsrepl",
+    "name" : "jsrepl",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5520146432,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.maxclang",
+    "size" : 51937280,
+    "uuid" : "37622245-5b39-333d-bc04-1a8cf81387a7",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/maxclang.mxo\/Contents\/MacOS\/maxclang",
+    "name" : "maxclang",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4910628864,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.maxurl",
+    "size" : 589824,
+    "uuid" : "38529482-7204-37b5-9000-d2b66ae5a25b",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/maxurl.mxo\/Contents\/MacOS\/maxurl",
+    "name" : "maxurl",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5100273664,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.maxxslt",
+    "size" : 32292864,
+    "uuid" : "c1eb4c91-83e7-3c7b-a234-a4331941d5b4",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/maxxslt.mxo\/Contents\/MacOS\/maxxslt",
+    "name" : "maxxslt",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4726210560,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.maxzlib",
+    "size" : 98304,
+    "uuid" : "6dd0952b-f5f8-30a5-b47d-2243d2d17e51",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/maxzlib.mxo\/Contents\/MacOS\/maxzlib",
+    "name" : "maxzlib",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4726374400,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.objectview",
+    "size" : 16384,
+    "uuid" : "49fe8b49-a629-3833-b315-6b414300a378",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/objectview.mxo\/Contents\/MacOS\/objectview",
+    "name" : "objectview",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4728422400,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.palblocks",
+    "size" : 32768,
+    "uuid" : "c68e6a5f-80bd-3662-b837-cfd8275a7342",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/palblocks.mxo\/Contents\/MacOS\/palblocks",
+    "name" : "palblocks",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4728520704,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.paramview",
+    "size" : 32768,
+    "uuid" : "1702c166-2b64-30ce-925d-c8bfad05458f",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/paramview.mxo\/Contents\/MacOS\/paramview",
+    "name" : "paramview",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4728209408,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.pianoroll",
+    "size" : 49152,
+    "uuid" : "ae43e3ff-6d8b-33ed-8a38-488be7f9566d",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/pianoroll.mxo\/Contents\/MacOS\/pianoroll",
+    "name" : "pianoroll",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4728324096,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.querylib",
+    "size" : 32768,
+    "uuid" : "3ccf65e7-edbe-39d8-a439-cece09461fb0",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/querylib.mxo\/Contents\/MacOS\/querylib",
+    "name" : "querylib",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4728619008,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.setplugpath",
+    "size" : 32768,
+    "uuid" : "54adbd9a-4125-3976-be4f-f793dd79b3ca",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/setplugpath.mxo\/Contents\/MacOS\/setplugpath",
+    "name" : "setplugpath",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4954521600,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.sqlite",
+    "size" : 1327104,
+    "uuid" : "bd9536ff-96a3-3f3c-855d-bfec7b3fb78a",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/sqlite.mxo\/Contents\/MacOS\/sqlite",
+    "name" : "sqlite",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5209325568,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.v8",
+    "size" : 15892480,
+    "uuid" : "a009f961-a9af-3217-87b7-33ccfb67009b",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/v8.mxo\/Contents\/MacOS\/v8",
+    "name" : "v8",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4950032384,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.yaml",
+    "size" : 196608,
+    "uuid" : "f55d5407-47a7-3beb-ab74-273416439b1c",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/yaml.mxo\/Contents\/MacOS\/yaml",
+    "name" : "yaml",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4911382528,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.zoomer",
+    "size" : 16384,
+    "uuid" : "3bf1b8a0-5c1c-31c1-9007-b9e3baea5826",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/max\/zoomer.mxo\/Contents\/MacOS\/zoomer",
+    "name" : "zoomer",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4949557248,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.max-tilde",
+    "size" : 49152,
+    "uuid" : "18f0eb06-9865-3c72-952d-41f35a4622da",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/msp\/max~.mxo\/Contents\/MacOS\/max~",
+    "name" : "max~",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4949688320,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.polybuffer",
+    "size" : 49152,
+    "uuid" : "65d11a2d-4569-3df2-a42d-145b567dc951",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/msp\/polybuffer.mxo\/Contents\/MacOS\/polybuffer",
+    "name" : "polybuffer",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4949458944,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.probe.history-tilde",
+    "size" : 16384,
+    "uuid" : "517a6822-8290-3b6b-bf75-cf8cd7676dc5",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/msp\/probe.history~.mxo\/Contents\/MacOS\/probe.history~",
+    "name" : "probe.history~",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4949803008,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.probe.meter-tilde",
+    "size" : 16384,
+    "uuid" : "9bb3a25c-ae42-3746-9d0f-0a22ede04794",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/msp\/probe.meter~.mxo\/Contents\/MacOS\/probe.meter~",
+    "name" : "probe.meter~",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4949278720,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.probe.scope-tilde",
+    "size" : 16384,
+    "uuid" : "a9b3274a-0d9c-3e5c-84c9-8a971ed87567",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/extensions\/msp\/probe.scope~.mxo\/Contents\/MacOS\/probe.scope~",
+    "name" : "probe.scope~",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5133123584,
+    "CFBundleShortVersionString" : "8.2.0 (666)",
+    "CFBundleIdentifier" : "com.cycling74.blocks.system",
+    "size" : 2211840,
+    "uuid" : "037adff7-f29d-3ef1-85bf-1c6a7c8977d6",
+    "path" : "\/Users\/USER\/Documents\/*\/blocks.system",
+    "name" : "blocks.system",
+    "CFBundleVersion" : "8.2.0"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4962107392,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.gl3",
+    "size" : 1310720,
+    "uuid" : "01603883-ac53-3453-9233-24829ea99cde",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/packages\/Jitter Tools\/extensions\/gl3.mxo\/Contents\/MacOS\/gl3",
+    "name" : "gl3",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4950392832,
+    "CFBundleShortVersionString" : "1.5.5",
+    "CFBundleIdentifier" : "com.cycling74.link-clocksource",
+    "size" : 311296,
+    "uuid" : "41bb1dae-31cb-39a8-a31c-1d10b29d567a",
+    "path" : "\/Users\/USER\/Documents\/*\/link.clocksource",
+    "name" : "link.clocksource",
+    "CFBundleVersion" : "1.5.5"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4949360640,
+    "CFBundleShortVersionString" : "8.2.0",
+    "CFBundleIdentifier" : "com.acme.${PRODUCT_NAME:rfc1034identifier}",
+    "size" : 16384,
+    "uuid" : "11e2f200-6641-3c87-b652-6fdc3b7afca1",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/packages\/max-mxj\/extensions\/mxj_safe.mxo\/Contents\/MacOS\/mxj_safe",
+    "name" : "mxj_safe",
+    "CFBundleVersion" : "8.2.0"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4959076352,
+    "CFBundleShortVersionString" : "8.5.0 (666)",
+    "CFBundleIdentifier" : "com.cycling74.mira-ws-server",
+    "size" : 229376,
+    "uuid" : "1d147408-d6dd-35a6-9a28-b8fc506d28cd",
+    "path" : "\/Users\/USER\/Documents\/*\/mira_ws_server",
+    "name" : "mira_ws_server",
+    "CFBundleVersion" : "8.5.0"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5368709120,
+    "CFBundleIdentifier" : "com.cycling74.rnbopatcher",
+    "size" : 3833856,
+    "uuid" : "de1ffce1-b977-36e2-870c-ac4dc80aec2e",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/packages\/RNBO\/extensions\/rnbopatcher.mxo\/Contents\/MacOS\/rnbopatcher",
+    "name" : "rnbopatcher",
+    "CFBundleVersion" : "1.3.4"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4949884928,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.comment",
+    "size" : 32768,
+    "uuid" : "f769f45f-980f-3931-8f05-d5fffe6a1b21",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/max\/comment.mxo\/Contents\/MacOS\/comment",
+    "name" : "comment",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4958732288,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.node.script",
+    "size" : 65536,
+    "uuid" : "264a2450-4f28-3a9c-91a2-074037d3ffb5",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/packages\/Node for Max\/externals\/node.script.mxo\/Contents\/MacOS\/node.script",
+    "name" : "node.script",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4958437376,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.sysaudio",
+    "size" : 81920,
+    "uuid" : "c0d9d85f-80fa-383a-bd04-ff0b43b29392",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/packages\/VIDDLL\/extensions\/sysaudio.mxo\/Contents\/MacOS\/sysaudio",
+    "name" : "sysaudio",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4958601216,
+    "CFBundleIdentifier" : ".",
+    "size" : 32768,
+    "uuid" : "a87b1b24-dad4-36d1-b117-e78bdd37a451",
+    "path" : "\/Users\/USER\/Documents\/*\/zsa.descriptors",
+    "name" : "zsa.descriptors"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 4951293952,
+    "size" : 49152,
+    "uuid" : "4daa2f71-4c51-3179-9c85-34a3e49c7fc0",
+    "path" : "\/usr\/lib\/libobjc-trampolines.dylib",
+    "name" : "libobjc-trampolines.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5494964224,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.message",
+    "size" : 49152,
+    "uuid" : "df31d34d-d90a-3998-bfb9-2fbb643f598a",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/max\/message.mxo\/Contents\/MacOS\/message",
+    "name" : "message",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5498454016,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.number",
+    "size" : 49152,
+    "uuid" : "8df5c240-dc91-372a-b411-fe6fafd51e12",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/max\/number.mxo\/Contents\/MacOS\/number",
+    "name" : "number",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5498585088,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.pattr",
+    "size" : 49152,
+    "uuid" : "91e3655b-555b-349d-b82b-83c338ff2ed8",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/max\/pattr.mxo\/Contents\/MacOS\/pattr",
+    "name" : "pattr",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5513150464,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.pattrstorage",
+    "size" : 262144,
+    "uuid" : "c80001cd-12ab-32a2-9f27-9575e928a5f8",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/max\/pattrstorage.mxo\/Contents\/MacOS\/pattrstorage",
+    "name" : "pattrstorage",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5375967232,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.prepend",
+    "size" : 16384,
+    "uuid" : "42c7f221-923a-3e22-a3b7-9f725b667906",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/max\/prepend.mxo\/Contents\/MacOS\/prepend",
+    "name" : "prepend",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5498175488,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.poly-tilde",
+    "size" : 65536,
+    "uuid" : "b954fb62-81ba-3522-b899-470c9e80d319",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/msp\/poly~.mxo\/Contents\/MacOS\/poly~",
+    "name" : "poly~",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5498355712,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.sprintf",
+    "size" : 16384,
+    "uuid" : "37634830-010b-3e00-9046-510a5f63be47",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/max\/sprintf.mxo\/Contents\/MacOS\/sprintf",
+    "name" : "sprintf",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5512544256,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.clip",
+    "size" : 16384,
+    "uuid" : "d98ea3d6-c5aa-3026-b1a4-2e5391fdc8a2",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/max\/clip.mxo\/Contents\/MacOS\/clip",
+    "name" : "clip",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5512626176,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.in",
+    "size" : 16384,
+    "uuid" : "1b2d2b25-3346-3142-ac53-e0c0991b513c",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/msp\/in.mxo\/Contents\/MacOS\/in",
+    "name" : "in",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5512708096,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.thispoly-tilde",
+    "size" : 16384,
+    "uuid" : "627bebb2-46d0-34e9-846a-95a3e9975793",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/msp\/thispoly~.mxo\/Contents\/MacOS\/thispoly~",
+    "name" : "thispoly~",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5512364032,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.attrui",
+    "size" : 65536,
+    "uuid" : "424e62ec-03b3-35f7-b3ca-a1342fac7288",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/max\/attrui.mxo\/Contents\/MacOS\/attrui",
+    "name" : "attrui",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5512970240,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.adoutput-tilde",
+    "size" : 16384,
+    "uuid" : "1a3b3b09-73fb-3c0c-8641-3e0bf6009141",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/msp\/adoutput~.mxo\/Contents\/MacOS\/adoutput~",
+    "name" : "adoutput~",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5512790016,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.sfrecord-tilde",
+    "size" : 32768,
+    "uuid" : "025cbb2c-0583-38a8-a619-1ccf0dc19bae",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/msp\/sfrecord~.mxo\/Contents\/MacOS\/sfrecord~",
+    "name" : "sfrecord~",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5513052160,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.dac-tilde",
+    "size" : 16384,
+    "uuid" : "f1ffa6de-1ab1-30ec-8110-57ae47f4872d",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/msp\/dac~.mxo\/Contents\/MacOS\/dac~",
+    "name" : "dac~",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 5519278080,
+    "CFBundleShortVersionString" : "9.0.6 (f6ea8bdb7c5)",
+    "CFBundleIdentifier" : "com.cycling74.number-tilde",
+    "size" : 49152,
+    "uuid" : "fcc102fa-3588-36da-88d4-8646a52fce68",
+    "path" : "\/Applications\/Max9\/Max906_250314_f6ea8bd_beta_FAT.app\/Contents\/Resources\/C74\/externals\/msp\/number~.mxo\/Contents\/MacOS\/number~",
+    "name" : "number~",
+    "CFBundleVersion" : "9.0.6"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6648287232,
+    "size" : 53248,
+    "uuid" : "e74e3db0-f8cb-34ab-831e-db30cbec154f",
+    "path" : "\/usr\/lib\/system\/libsystem_pthread.dylib",
+    "name" : "libsystem_pthread.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6648705024,
+    "CFBundleShortVersionString" : "6.9",
+    "CFBundleIdentifier" : "com.apple.CoreFoundation",
+    "size" : 5087232,
+    "uuid" : "4a35b66a-3b0e-34fd-811d-c44fb389ce8f",
+    "path" : "\/System\/Library\/Frameworks\/CoreFoundation.framework\/Versions\/A\/CoreFoundation",
+    "name" : "CoreFoundation",
+    "CFBundleVersion" : "1979.104.901"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6808768512,
+    "CFBundleShortVersionString" : "2.1.1",
+    "CFBundleIdentifier" : "com.apple.HIToolbox",
+    "size" : 3358720,
+    "uuid" : "c8970896-b9d1-3fd0-aa1e-99bc8ff4e84d",
+    "path" : "\/System\/Library\/Frameworks\/Carbon.framework\/Versions\/A\/Frameworks\/HIToolbox.framework\/Versions\/A\/HIToolbox",
+    "name" : "HIToolbox"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6701588480,
+    "CFBundleShortVersionString" : "6.9",
+    "CFBundleIdentifier" : "com.apple.AppKit",
+    "size" : 15798272,
+    "uuid" : "8f65e267-53fb-35ce-92ec-f87c29886082",
+    "path" : "\/System\/Library\/Frameworks\/AppKit.framework\/Versions\/C\/AppKit",
+    "name" : "AppKit",
+    "CFBundleVersion" : "2299.77.138"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6644785152,
+    "size" : 584980,
+    "uuid" : "bffa4e04-be1b-3d76-891f-f501dfb9ee8b",
+    "path" : "\/usr\/lib\/dyld",
+    "name" : "dyld"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6648049664,
+    "size" : 237560,
+    "uuid" : "80b55a53-f2f1-3f29-9292-41845b7e9dc6",
+    "path" : "\/usr\/lib\/system\/libsystem_kernel.dylib",
+    "name" : "libsystem_kernel.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6647357440,
+    "size" : 577528,
+    "uuid" : "a1240ffc-a95a-3824-b47d-fb1ef6e55b9b",
+    "path" : "\/usr\/lib\/libc++.1.dylib",
+    "name" : "libc++.1.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 7056035840,
+    "CFBundleShortVersionString" : "2.0",
+    "CFBundleIdentifier" : "com.apple.audio.midi.CoreMIDI",
+    "size" : 471040,
+    "uuid" : "faee716a-5e78-35fa-b3f9-77b3a2f130b3",
+    "path" : "\/System\/Library\/Frameworks\/CoreMIDI.framework\/Versions\/A\/CoreMIDI",
+    "name" : "CoreMIDI",
+    "CFBundleVersion" : "88"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6805868544,
+    "CFBundleShortVersionString" : "1.0",
+    "CFBundleIdentifier" : "com.apple.audio.caulk",
+    "size" : 167936,
+    "uuid" : "8bb83838-fd70-3946-bbb5-716a45e60d03",
+    "path" : "\/System\/Library\/PrivateFrameworks\/caulk.framework\/Versions\/A\/caulk",
+    "name" : "caulk"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6646837248,
+    "size" : 520184,
+    "uuid" : "d76df494-de63-350c-9d1b-25581159a9b1",
+    "path" : "\/usr\/lib\/system\/libsystem_c.dylib",
+    "name" : "libsystem_c.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6780006400,
+    "CFBundleShortVersionString" : "1.8",
+    "CFBundleIdentifier" : "com.apple.CoreVideo",
+    "size" : 401408,
+    "uuid" : "4562dea9-38b4-34a4-aa06-7171a7814f0a",
+    "path" : "\/System\/Library\/Frameworks\/CoreVideo.framework\/Versions\/A\/CoreVideo",
+    "name" : "CoreVideo",
+    "CFBundleVersion" : "560.2"
+  }
+],
+  "sharedCache" : {
+  "base" : 6644121600,
+  "size" : 3586424832,
+  "uuid" : "61399007-0047-30d8-9bb0-14e526b3aedf"
+},
+  "vmSummary" : "ReadOnly portion of Libraries: Total=1.7G resident=0K(0%) swapped_out_or_unallocated=1.7G(100%)\nWritable regions: Total=2.8G written=0K(0%) resident=0K(0%) swapped_out=0K(0%) unallocated=2.8G(100%)\n\n                                VIRTUAL   REGION \nREGION TYPE                        SIZE    COUNT (non-coalesced) \n===========                     =======  ======= \nAccelerate framework               256K        2 \nActivity Tracing                   256K        1 \nCG backing stores                 3520K        4 \nCG image                            96K        3 \nColorSync                          656K       31 \nCoreAnimation                      608K       13 \nCoreGraphics                        32K        2 \nCoreServices                       624K        2 \nCoreUI image data                 1840K       11 \nFoundation                          16K        1 \nKernel Alloc Once                   32K        1 \nMALLOC                             1.3G      123 \nMALLOC guard page                  192K       10 \nMALLOC_MEDIUM (reserved)           1.4G       12         reserved VM address space (unallocated)\nSTACK GUARD                       56.8M       54 \nStack                             36.6M       68 \nVM_ALLOCATE                        336K       15 \n__AUTH                            1930K      397 \n__AUTH_CONST                      29.1M      628 \n__CTF                               824        1 \n__DATA                            21.9M      689 \n__DATA_CONST                      45.3M      695 \n__DATA_DIRTY                      2011K      245 \n__FONT_DATA                        2352        1 \n__INFO_FILTER                         8        1 \n__LINKEDIT                       838.9M       69 \n__OBJC_RO                         66.4M        1 \n__OBJC_RW                         2012K        1 \n__TEXT                           929.6M      718 \ndyld private memory                272K        2 \nmapped file                      229.4M       77 \nshared memory                      944K       18 \n===========                     =======  ======= \nTOTAL                              5.0G     3896 \nTOTAL, minus reserved VM space     3.6G     3896 \n",
+  "legacyInfo" : {
+  "threadTriggered" : {
+    "name" : "JUCE Message Thread",
+    "queue" : "com.apple.main-thread"
+  }
+},
+  "logWritingSignature" : "09902a9b74043904733aa709040a0ab9636ab5a4",
+  "trialInfo" : {
+  "rollouts" : [
+    {
+      "rolloutId" : "5f72dc58705eff005a46b3a9",
+      "factorPackIds" : {
+
+      },
+      "deploymentId" : 240000015
+    },
+    {
+      "rolloutId" : "645c2d2f9e69a025b0a37e29",
+      "factorPackIds" : {
+
+      },
+      "deploymentId" : 240000003
+    }
+  ],
+  "experiments" : [
+
+  ]
+}
+}
+
