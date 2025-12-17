@@ -12,7 +12,7 @@
 <c74object name="mvc.remote" module="mvc" kind="patcher" category="library">
 
 	<digest>
-		Monitor and remote control values from an <o>mvc.parameter</o>, <o>mvc.state</o> and <o>mvc.message</o>, .
+		Monitor and remote control values from an <o>mvc.parameter</o>, <o>mvc.state</o> or <o>mvc.message</o>.
 	</digest>
 	
 	<description>
