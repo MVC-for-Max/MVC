@@ -81,7 +81,7 @@
 				The <m>#0</m> argument in Max, which is automatically replaced by an auto-incremental integer, can be used for the purpose of unicity.
 			</description>
 		</objarg>
-		<objarg name="parent-model" optional="0" type="symbol">
+		<objarg name="parent-UID" optional="0" type="symbol">
 			<digest>The UID of the parent model (or device).</digest>
 			<description>
 				The second argument to <o>mvc.model</o> defines which parent <o>mvc.model</o> or <o>mvc.device</o> we want to bind this <o>mvc.model</o> to, by providing its UID.
