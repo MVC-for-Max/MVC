@@ -28,3 +28,11 @@ Init sequence for an mvc.model :
 	+ the model-declare add it in the mvc.models dictionary and sends 1 to internal init which triggers initialization on child -models and -parameters/states/messages
 	+ those child node does the same and report back to parent when initialized
 	+ when all pending node have been initialized (and removed from the [coll pendingNode]), the mvc.model triggers its "external" initialization message. 
+	
+
+
+# why not using pattr?
+- pattr (and Jamoma/Ossia) are tied to the patcher hierarchy
+- they do not featyre rich meta-data, like parameter description, units, options
+- it does not support (well) dynamic instanciation
+- it does not support brace extension notation
