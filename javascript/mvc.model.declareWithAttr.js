@@ -42,6 +42,7 @@ function declaremodel(uid){
 	model_UID = attrDict.get('uid');
 	// set callback return address on outlet 0
 	outlet(0, "send", model_UID + ".model.declareWithAttr.done");
+    //post("model_UID:", model_UID, '\n');
 
 	// get new addresslist and make sure it's an array
 	currentAddresses = attrDict.get('addresslist');
@@ -52,7 +53,9 @@ function declaremodel(uid){
 	// Return with exit code if this is the case.
 	for (var i = 0; i < (currentAddresses.length); i++) {
 		var theAdd = currentAddresses[i].replace(/\//g, '::');
+        //post("current address:", theAdd + '\n');
 		var theUID = modelDict.get(theAdd+"::uid");
+        //post("current address UID :",theUID + '\n');
 		if (theUID == null) break;	
 		else if (model_UID != theUID[0]) {
 				//post('Model', currentAddresses[i], 'is already in the namespace.\n')
