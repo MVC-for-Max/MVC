@@ -1962,7 +1962,6 @@
                                                         ]
                                                     },
                                                     "patching_rect": [ 30.0, 333.0, 122.0, 22.0 ],
-                                                    "presentation_linecount": 2,
                                                     "text": "p \"receive from OSC\""
                                                 }
                                             },
@@ -2328,12 +2327,13 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-40",
+                                                                    "linecount": 2,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 134.0, 470.0, 279.0, 22.0 ],
-                                                                    "text": "set modelHelperContext::myModel::foo.4 839."
+                                                                    "text": "set modelHelperContext::test.3::preset-description undefined"
                                                                 }
                                                             },
                                                             {
@@ -5891,8 +5891,6 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 1,
-                                                                        "node_bin_path": "",
-                                                                        "npm_bin_path": "",
                                                                         "watch": 1
                                                                     },
                                                                     "text": "node.script mvc.wildcard-matching.js @autostart 1 @watch 1 @defer 1",
@@ -19482,17 +19480,23 @@
                                             },
                                             {
                                                 "box": {
+                                                    "filename": "mvc.model.declareWithAttr.js",
                                                     "id": "obj-15",
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 46.666667166666684, 169.0, 175.0, 22.0 ],
+                                                    "patching_rect": [ 46.666667166666684, 169.0, 179.0, 22.0 ],
                                                     "saved_object_attributes": {
-                                                        "filename": "mvc.model.declareWithAttr.js",
                                                         "parameter_enable": 0
                                                     },
-                                                    "text": "js mvc.model.declareWithAttr.js"
+                                                    "text": "v8 mvc.model.declareWithAttr.js",
+                                                    "textfile": {
+                                                        "filename": "mvc.model.declareWithAttr.js",
+                                                        "flags": 0,
+                                                        "embed": 0,
+                                                        "autowatch": 1
+                                                    }
                                                 }
                                             }
                                         ],
@@ -26005,6 +26009,8 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 0,
                                                                         "defer": 0,
+                                                                        "node_bin_path": "",
+                                                                        "npm_bin_path": "",
                                                                         "watch": 0
                                                                     },
                                                                     "text": "node.script mvc.wildcard-node.js",
@@ -28015,7 +28021,7 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 374.0, 511.0, 549.0, 505.0 ],
+                                        "rect": [ 374.0, 443.0, 549.0, 505.0 ],
                                         "boxes": [
                                             {
                                                 "box": {
@@ -28216,7 +28222,7 @@
                                                             "modernui": 1
                                                         },
                                                         "classnamespace": "box",
-                                                        "rect": [ 311.0, 209.0, 1222.0, 807.0 ],
+                                                        "rect": [ 256.0, 141.0, 1222.0, 807.0 ],
                                                         "boxes": [
                                                             {
                                                                 "box": {
@@ -28864,8 +28870,6 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 1,
-                                                                        "node_bin_path": "",
-                                                                        "npm_bin_path": "",
                                                                         "watch": 1
                                                                     },
                                                                     "text": "node.script mvc.brace.expansion.js @autostart 1 @watch 1 @defer 1",
@@ -32099,6 +32103,8 @@
                                                     "saved_object_attributes": {
                                                         "autostart": 0,
                                                         "defer": 0,
+                                                        "node_bin_path": "",
+                                                        "npm_bin_path": "",
                                                         "watch": 0
                                                     },
                                                     "text": "node.script mvc.createfolder.js",
