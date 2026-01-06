@@ -10,7 +10,7 @@ let parentdict = new Dict();
 
 function braceExpand(str) {
   const ast = parse(str);
-  post('the chain:', ast, '\n');
+  //post('the chain:', ast, '\n');
   outlet(0, expandSeq([""], ast)); 
   return;// expandSeq([""], ast);
 }
