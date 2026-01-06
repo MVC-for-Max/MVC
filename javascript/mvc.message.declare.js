@@ -79,17 +79,10 @@ function declare(uid){
 	outlet(0, 1);
 }
 
-function findGoneItems(CurrentArray, PreviousArray) {
-   var CurrentArrSize = CurrentArray.length;
-   var PreviousArrSize = PreviousArray.length;
-   var missingItems = [];
-   // loop through previous array
-   for(var j = 0; j < PreviousArrSize; j++) {
-      // look for same thing in new array
-      if (CurrentArray.indexOf(PreviousArray[j]) == -1)
-         missingItems.push(PreviousArray[j]);
-   }
-   return missingItems;
+function findGoneItems(currentArray, previousArray) {
+  const currentSet = new Set(currentArray);
+
+  return previousArray.filter(item => !currentSet.has(item));
 }
 
 

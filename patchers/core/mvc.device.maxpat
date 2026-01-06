@@ -500,7 +500,6 @@
                                     "fontname": "Arial",
                                     "fontsize": 13.0,
                                     "id": "obj-30",
-                                    "linecount": 2,
                                     "maxclass": "newobj",
                                     "numinlets": 1,
                                     "numoutlets": 0,
@@ -570,7 +569,6 @@
                                                     "fontname": "Arial",
                                                     "fontsize": 13.0,
                                                     "id": "obj-30",
-                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
@@ -1057,7 +1055,6 @@
                                                     "fontname": "Arial",
                                                     "fontsize": 13.0,
                                                     "id": "obj-30",
-                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
@@ -2327,13 +2324,12 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-40",
-                                                                    "linecount": 2,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 134.0, 470.0, 279.0, 22.0 ],
-                                                                    "text": "set modelHelperContext::test.3::preset-description undefined"
+                                                                    "text": "set testDevice::test.3::preset-description undefined"
                                                                 }
                                                             },
                                                             {
@@ -5406,7 +5402,6 @@
                                             {
                                                 "box": {
                                                     "id": "obj-3",
-                                                    "linecount": 3,
                                                     "maxclass": "newobj",
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
@@ -5891,6 +5886,8 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 1,
+                                                                        "node_bin_path": "",
+                                                                        "npm_bin_path": "",
                                                                         "watch": 1
                                                                     },
                                                                     "text": "node.script mvc.wildcard-matching.js @autostart 1 @watch 1 @defer 1",
@@ -6124,6 +6121,7 @@
                                             {
                                                 "box": {
                                                     "id": "obj-3",
+                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
@@ -6145,7 +6143,7 @@
                                             {
                                                 "box": {
                                                     "id": "obj-72",
-                                                    "linecount": 3,
+                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
@@ -6288,7 +6286,7 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-5",
-                                                                    "linecount": 5,
+                                                                    "linecount": 3,
                                                                     "maxclass": "newobj",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 2,
@@ -7147,7 +7145,6 @@
                                             {
                                                 "box": {
                                                     "id": "obj-3",
-                                                    "linecount": 3,
                                                     "maxclass": "newobj",
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
@@ -7268,7 +7265,6 @@
                                             {
                                                 "box": {
                                                     "id": "obj-3",
-                                                    "linecount": 3,
                                                     "maxclass": "newobj",
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
@@ -7309,6 +7305,7 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-2",
+                                                                    "linecount": 2,
                                                                     "maxclass": "newobj",
                                                                     "numinlets": 0,
                                                                     "numoutlets": 1,
@@ -7918,7 +7915,6 @@
                                                                             {
                                                                                 "box": {
                                                                                     "id": "obj-26",
-                                                                                    "linecount": 2,
                                                                                     "maxclass": "newobj",
                                                                                     "numinlets": 1,
                                                                                     "numoutlets": 4,
@@ -9127,7 +9123,6 @@
                                                                             {
                                                                                 "box": {
                                                                                     "id": "obj-3",
-                                                                                    "linecount": 2,
                                                                                     "maxclass": "newobj",
                                                                                     "numinlets": 1,
                                                                                     "numoutlets": 1,
@@ -10163,6 +10158,7 @@
                                                                             {
                                                                                 "box": {
                                                                                     "id": "obj-11",
+                                                                                    "linecount": 2,
                                                                                     "maxclass": "newobj",
                                                                                     "numinlets": 1,
                                                                                     "numoutlets": 1,
@@ -10611,7 +10607,6 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-22",
-                                                                    "linecount": 2,
                                                                     "maxclass": "newobj",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 2,
@@ -10747,17 +10742,23 @@
                                             },
                                             {
                                                 "box": {
+                                                    "filename": "mvc.message.declare.js",
                                                     "id": "obj-15",
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "", "" ],
-                                                    "patching_rect": [ 32.0, 175.0, 149.0, 22.0 ],
+                                                    "patching_rect": [ 32.0, 175.0, 153.0, 22.0 ],
                                                     "saved_object_attributes": {
-                                                        "filename": "mvc.message.declare.js",
                                                         "parameter_enable": 0
                                                     },
-                                                    "text": "js mvc.message.declare.js"
+                                                    "text": "v8 mvc.message.declare.js",
+                                                    "textfile": {
+                                                        "filename": "mvc.message.declare.js",
+                                                        "flags": 0,
+                                                        "embed": 0,
+                                                        "autowatch": 1
+                                                    }
                                                 }
                                             }
                                         ],
@@ -11191,7 +11192,6 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-22",
-                                                                    "linecount": 2,
                                                                     "maxclass": "newobj",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 2,
@@ -15754,7 +15754,6 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-22",
-                                                                    "linecount": 2,
                                                                     "maxclass": "newobj",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 2,
@@ -19244,6 +19243,7 @@
                                             },
                                             {
                                                 "box": {
+                                                    "filename": "mvc.state.declareWithAttr.js",
                                                     "id": "obj-15",
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
@@ -19251,10 +19251,15 @@
                                                     "outlettype": [ "", "", "" ],
                                                     "patching_rect": [ 37.66666750000002, 163.0, 202.0, 22.0 ],
                                                     "saved_object_attributes": {
-                                                        "filename": "mvc.state.declareWithAttr.js",
                                                         "parameter_enable": 0
                                                     },
-                                                    "text": "js mvc.state.declareWithAttr.js"
+                                                    "text": "v8 mvc.state.declareWithAttr.js",
+                                                    "textfile": {
+                                                        "filename": "mvc.state.declareWithAttr.js",
+                                                        "flags": 0,
+                                                        "embed": 0,
+                                                        "autowatch": 1
+                                                    }
                                                 }
                                             }
                                         ],
@@ -19365,7 +19370,6 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-22",
-                                                                    "linecount": 2,
                                                                     "maxclass": "newobj",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 2,
@@ -19548,7 +19552,7 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 811.0, 466.0, 767.0, 550.0 ],
+                                        "rect": [ 711.0, 398.0, 767.0, 550.0 ],
                                         "boxes": [
                                             {
                                                 "box": {
@@ -19594,7 +19598,6 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-22",
-                                                                    "linecount": 2,
                                                                     "maxclass": "newobj",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 2,
@@ -19785,6 +19788,7 @@
                                             },
                                             {
                                                 "box": {
+                                                    "filename": "mvc.parameter.declareWithAttr.js",
                                                     "id": "obj-19",
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
@@ -19792,10 +19796,15 @@
                                                     "outlettype": [ "", "", "" ],
                                                     "patching_rect": [ 55.16666666666666, 166.0, 201.0, 22.0 ],
                                                     "saved_object_attributes": {
-                                                        "filename": "mvc.parameter.declareWithAttr.js",
                                                         "parameter_enable": 0
                                                     },
-                                                    "text": "js mvc.parameter.declareWithAttr.js"
+                                                    "text": "v8 mvc.parameter.declareWithAttr.js",
+                                                    "textfile": {
+                                                        "filename": "mvc.parameter.declareWithAttr.js",
+                                                        "flags": 0,
+                                                        "embed": 0,
+                                                        "autowatch": 1
+                                                    }
                                                 }
                                             }
                                         ],
@@ -19927,7 +19936,6 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-22",
-                                                                    "linecount": 2,
                                                                     "maxclass": "newobj",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 2,
@@ -20975,7 +20983,6 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-22",
-                                                                    "linecount": 2,
                                                                     "maxclass": "newobj",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 2,
@@ -26009,8 +26016,6 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 0,
                                                                         "defer": 0,
-                                                                        "node_bin_path": "",
-                                                                        "npm_bin_path": "",
                                                                         "watch": 0
                                                                     },
                                                                     "text": "node.script mvc.wildcard-node.js",
@@ -26252,7 +26257,6 @@
                                             {
                                                 "box": {
                                                     "id": "obj-72",
-                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
@@ -27059,7 +27063,6 @@
                                             {
                                                 "box": {
                                                     "id": "obj-3",
-                                                    "linecount": 3,
                                                     "maxclass": "newobj",
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
@@ -27295,7 +27298,6 @@
                                             {
                                                 "box": {
                                                     "id": "obj-6",
-                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 2,
                                                     "numoutlets": 2,
@@ -27898,6 +27900,7 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-114",
+                                                                    "linecount": 2,
                                                                     "maxclass": "newobj",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 5,
@@ -28067,7 +28070,6 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-22",
-                                                                    "linecount": 2,
                                                                     "maxclass": "newobj",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 2,
@@ -28870,6 +28872,8 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 1,
+                                                                        "node_bin_path": "",
+                                                                        "npm_bin_path": "",
                                                                         "watch": 1
                                                                     },
                                                                     "text": "node.script mvc.brace.expansion.js @autostart 1 @watch 1 @defer 1",
@@ -30669,7 +30673,7 @@
                                             {
                                                 "box": {
                                                     "id": "obj-7",
-                                                    "linecount": 3,
+                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 2,
                                                     "numoutlets": 2,
@@ -30856,7 +30860,7 @@
                                             {
                                                 "box": {
                                                     "id": "obj-13",
-                                                    "linecount": 7,
+                                                    "linecount": 5,
                                                     "maxclass": "newobj",
                                                     "numinlets": 2,
                                                     "numoutlets": 2,
@@ -30934,11 +30938,11 @@
                                             {
                                                 "box": {
                                                     "id": "obj-6",
-                                                    "linecount": 3,
+                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 3,
-                                                    "outlettype": [ "bang", "mvc.root", "modelHelperContext" ],
+                                                    "outlettype": [ "bang", "mvc.root", "testDevice" ],
                                                     "patching_rect": [ 57.0, 73.0, 96.0, 35.0 ],
                                                     "text": "t b mvc.root #1"
                                                 }
@@ -31242,7 +31246,6 @@
                                             {
                                                 "box": {
                                                     "id": "obj-17",
-                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 2,
                                                     "numoutlets": 2,
@@ -31386,7 +31389,7 @@
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
-                                                    "outlettype": [ "modelHelperContext" ],
+                                                    "outlettype": [ "testDevice" ],
                                                     "patching_rect": [ 50.0, 124.89135802469136, 278.0, 22.0 ],
                                                     "text": "t #1"
                                                 }
@@ -31813,7 +31816,6 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-11",
-                                                                    "linecount": 2,
                                                                     "maxclass": "newobj",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 5,
@@ -32103,8 +32105,6 @@
                                                     "saved_object_attributes": {
                                                         "autostart": 0,
                                                         "defer": 0,
-                                                        "node_bin_path": "",
-                                                        "npm_bin_path": "",
                                                         "watch": 0
                                                     },
                                                     "text": "node.script mvc.createfolder.js",
@@ -32681,6 +32681,7 @@
                                             {
                                                 "box": {
                                                     "id": "obj-4",
+                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
@@ -32875,6 +32876,7 @@
                                             {
                                                 "box": {
                                                     "id": "obj-1",
+                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
@@ -34092,7 +34094,7 @@
                                                                     "fontname": "Arial",
                                                                     "fontsize": 12.0,
                                                                     "id": "obj-32",
-                                                                    "linecount": 3,
+                                                                    "linecount": 2,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
