@@ -4384,8 +4384,6 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 1,
-                                                                        "node_bin_path": "",
-                                                                        "npm_bin_path": "",
                                                                         "watch": 1
                                                                     },
                                                                     "text": "node.script mvc.wildcard-matching.js @autostart 1 @watch 1 @defer 1",
@@ -9241,17 +9239,23 @@
                                             },
                                             {
                                                 "box": {
+                                                    "filename": "mvc.message.declare.js",
                                                     "id": "obj-15",
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "", "" ],
-                                                    "patching_rect": [ 32.0, 175.0, 149.0, 22.0 ],
+                                                    "patching_rect": [ 32.0, 175.0, 153.0, 22.0 ],
                                                     "saved_object_attributes": {
-                                                        "filename": "mvc.message.declare.js",
                                                         "parameter_enable": 0
                                                     },
-                                                    "text": "js mvc.message.declare.js"
+                                                    "text": "v8 mvc.message.declare.js",
+                                                    "textfile": {
+                                                        "filename": "mvc.message.declare.js",
+                                                        "flags": 0,
+                                                        "embed": 0,
+                                                        "autowatch": 1
+                                                    }
                                                 }
                                             }
                                         ],
@@ -17738,6 +17742,7 @@
                                             },
                                             {
                                                 "box": {
+                                                    "filename": "mvc.state.declareWithAttr.js",
                                                     "id": "obj-15",
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
@@ -17745,10 +17750,15 @@
                                                     "outlettype": [ "", "", "" ],
                                                     "patching_rect": [ 37.66666750000002, 163.0, 202.0, 22.0 ],
                                                     "saved_object_attributes": {
-                                                        "filename": "mvc.state.declareWithAttr.js",
                                                         "parameter_enable": 0
                                                     },
-                                                    "text": "js mvc.state.declareWithAttr.js"
+                                                    "text": "v8 mvc.state.declareWithAttr.js",
+                                                    "textfile": {
+                                                        "filename": "mvc.state.declareWithAttr.js",
+                                                        "flags": 0,
+                                                        "embed": 0,
+                                                        "autowatch": 1
+                                                    }
                                                 }
                                             }
                                         ],
@@ -17974,17 +17984,23 @@
                                             },
                                             {
                                                 "box": {
+                                                    "filename": "mvc.model.declareWithAttr.js",
                                                     "id": "obj-15",
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 46.666667166666684, 169.0, 175.0, 22.0 ],
+                                                    "patching_rect": [ 46.666667166666684, 169.0, 179.0, 22.0 ],
                                                     "saved_object_attributes": {
-                                                        "filename": "mvc.model.declareWithAttr.js",
                                                         "parameter_enable": 0
                                                     },
-                                                    "text": "js mvc.model.declareWithAttr.js"
+                                                    "text": "v8 mvc.model.declareWithAttr.js",
+                                                    "textfile": {
+                                                        "filename": "mvc.model.declareWithAttr.js",
+                                                        "flags": 0,
+                                                        "embed": 0,
+                                                        "autowatch": 1
+                                                    }
                                                 }
                                             }
                                         ],
@@ -18036,7 +18052,7 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 811.0, 466.0, 767.0, 550.0 ],
+                                        "rect": [ 711.0, 398.0, 767.0, 550.0 ],
                                         "boxes": [
                                             {
                                                 "box": {
@@ -18273,6 +18289,7 @@
                                             },
                                             {
                                                 "box": {
+                                                    "filename": "mvc.parameter.declareWithAttr.js",
                                                     "id": "obj-19",
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
@@ -18280,10 +18297,15 @@
                                                     "outlettype": [ "", "", "" ],
                                                     "patching_rect": [ 55.16666666666666, 166.0, 201.0, 22.0 ],
                                                     "saved_object_attributes": {
-                                                        "filename": "mvc.parameter.declareWithAttr.js",
                                                         "parameter_enable": 0
                                                     },
-                                                    "text": "js mvc.parameter.declareWithAttr.js"
+                                                    "text": "v8 mvc.parameter.declareWithAttr.js",
+                                                    "textfile": {
+                                                        "filename": "mvc.parameter.declareWithAttr.js",
+                                                        "flags": 0,
+                                                        "embed": 0,
+                                                        "autowatch": 1
+                                                    }
                                                 }
                                             }
                                         ],
@@ -24496,6 +24518,8 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 0,
                                                                         "defer": 0,
+                                                                        "node_bin_path": "",
+                                                                        "npm_bin_path": "",
                                                                         "watch": 0
                                                                     },
                                                                     "text": "node.script mvc.wildcard-node.js",
@@ -27352,8 +27376,6 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 1,
-                                                                        "node_bin_path": "",
-                                                                        "npm_bin_path": "",
                                                                         "watch": 1
                                                                     },
                                                                     "text": "node.script mvc.brace.expansion.js @autostart 1 @watch 1 @defer 1",
@@ -30532,6 +30554,8 @@
                                                     "saved_object_attributes": {
                                                         "autostart": 0,
                                                         "defer": 0,
+                                                        "node_bin_path": "",
+                                                        "npm_bin_path": "",
                                                         "watch": 0
                                                     },
                                                     "text": "node.script mvc.createfolder.js",
