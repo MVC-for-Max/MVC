@@ -46,7 +46,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 50.0, 133.0, 100.0, 22.0 ],
+                                    "patching_rect": [ 50.0, 133.0, 53.0, 22.0 ],
                                     "text": "prepend"
                                 }
                             },
