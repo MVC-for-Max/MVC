@@ -2,10 +2,10 @@ inlets = 1;
 outlets = 1;
 
 let childdict = new Dict();
-//attrDict.quiet = 1;
+childdict.quiet = 1;
 
 let parentdict = new Dict();
-// parentDict.quiet = 1;
+parentdict.quiet = 1;
 
 
 function braceExpand(str) {
