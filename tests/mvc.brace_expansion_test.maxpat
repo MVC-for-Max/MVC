@@ -62,7 +62,6 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 809.0, 1479.0, 259.0, 22.0 ],
-                    "presentation_linecount": 2,
                     "text": "braceExpandOnParents testModel.attr"
                 }
             },
@@ -371,6 +370,8 @@
                     "saved_object_attributes": {
                         "autostart": 1,
                         "defer": 1,
+                        "node_bin_path": "",
+                        "npm_bin_path": "",
                         "watch": 1
                     },
                     "text": "node.script mvc.brace.expansion.js @autostart 1 @watch 1 @defer 1",
@@ -1796,27 +1797,6 @@
                     "text": "v8 mvc.brace.expansion.v4.js",
                     "textfile": {
                         "filename": "mvc.brace.expansion.v4.js",
-                        "flags": 0,
-                        "embed": 0,
-                        "autowatch": 1
-                    }
-                }
-            },
-            {
-                "box": {
-                    "filename": "mvc.brace.expansion.js",
-                    "id": "obj-2",
-                    "maxclass": "newobj",
-                    "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 410.0, 387.0, 150.0, 22.0 ],
-                    "saved_object_attributes": {
-                        "parameter_enable": 0
-                    },
-                    "text": "v8 mvc.brace.expansion.js",
-                    "textfile": {
-                        "filename": "mvc.brace.expansion.js",
                         "flags": 0,
                         "embed": 0,
                         "autowatch": 1
