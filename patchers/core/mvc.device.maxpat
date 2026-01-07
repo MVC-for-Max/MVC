@@ -1512,8 +1512,8 @@
                                     "maxclass": "newobj",
                                     "numinlets": 0,
                                     "numoutlets": 0,
-                                    "patching_rect": [ 46.0, 163.0, 129.0, 22.0 ],
-                                    "text": "mvc.core.remoterouter"
+                                    "patching_rect": [ 46.0, 163.0, 231.0, 22.0 ],
+                                    "text": "mvc.core.remoterouter #1"
                                 }
                             },
                             {
@@ -4384,6 +4384,8 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 1,
+                                                                        "node_bin_path": "",
+                                                                        "npm_bin_path": "",
                                                                         "watch": 1
                                                                     },
                                                                     "text": "node.script mvc.wildcard-matching.js @autostart 1 @watch 1 @defer 1",
@@ -24518,8 +24520,6 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 0,
                                                                         "defer": 0,
-                                                                        "node_bin_path": "",
-                                                                        "npm_bin_path": "",
                                                                         "watch": 0
                                                                     },
                                                                     "text": "node.script mvc.wildcard-node.js",
@@ -27376,6 +27376,8 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 1,
+                                                                        "node_bin_path": "",
+                                                                        "npm_bin_path": "",
                                                                         "watch": 1
                                                                     },
                                                                     "text": "node.script mvc.brace.expansion.js @autostart 1 @watch 1 @defer 1",
@@ -30554,8 +30556,6 @@
                                                     "saved_object_attributes": {
                                                         "autostart": 0,
                                                         "defer": 0,
-                                                        "node_bin_path": "",
-                                                        "npm_bin_path": "",
                                                         "watch": 0
                                                     },
                                                     "text": "node.script mvc.createfolder.js",
