@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 134.0, 100.0, 973.0, 848.0 ],
+        "rect": [ 244.0, 210.0, 973.0, 848.0 ],
         "boxes": [
             {
                 "box": {
@@ -175,7 +175,7 @@
                                     "maxclass": "comment",
                                     "numinlets": 1,
                                     "numoutlets": 0,
-                                    "patching_rect": [ 137.0, 26.0, 230.0, 60.0 ],
+                                    "patching_rect": [ 137.0, 26.0, 231.0, 60.0 ],
                                     "text": "Init child inputs first, so that inputs at this model's level can possibly trigger child nodes (eg. channelcount) preempting the following child-model init."
                                 }
                             },
@@ -1300,7 +1300,7 @@
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 1,
-                    "outlettype": [ "" ],
+                    "outlettype": [ "bang" ],
                     "patcher": {
                         "fileversion": 1,
                         "appversion": {
@@ -1311,15 +1311,27 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 59.0, 106.0, 640.0, 480.0 ],
+                        "rect": [ 59.0, 106.0, 725.0, 317.0 ],
                         "boxes": [
+                            {
+                                "box": {
+                                    "fontsize": 14.0,
+                                    "id": "obj-1",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 362.0, 211.0, 276.0, 24.0 ],
+                                    "text": "mvc.core.model.declare #1"
+                                }
+                            },
                             {
                                 "box": {
                                     "id": "obj-2",
                                     "maxclass": "comment",
                                     "numinlets": 1,
                                     "numoutlets": 0,
-                                    "patching_rect": [ 68.0, 239.0, 150.0, 20.0 ],
+                                    "patching_rect": [ 68.5, 194.0, 150.0, 20.0 ],
                                     "text": "return: addresscount"
                                 }
                             },
@@ -1331,7 +1343,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "bang" ],
-                                    "patching_rect": [ 50.0, 155.0, 288.0, 24.0 ],
+                                    "patching_rect": [ 362.0, 176.0, 288.0, 24.0 ],
                                     "text": "mvc.core.address.expand #1"
                                 }
                             },
@@ -1343,7 +1355,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "bang" ],
                                     "parameter_enable": 0,
-                                    "patching_rect": [ 50.0, 128.0, 24.0, 24.0 ]
+                                    "patching_rect": [ 362.0, 148.0, 24.0, 24.0 ]
                                 }
                             },
                             {
@@ -1353,9 +1365,9 @@
                                     "maxclass": "newobj",
                                     "numinlets": 1,
                                     "numoutlets": 1,
-                                    "outlettype": [ "" ],
-                                    "patching_rect": [ 50.0, 211.0, 276.0, 24.0 ],
-                                    "text": "mvc.core.model.declare #1"
+                                    "outlettype": [ "bang" ],
+                                    "patching_rect": [ 50.5, 166.0, 276.0, 24.0 ],
+                                    "text": "mvc.core.model.declare2 #1"
                                 }
                             },
                             {
@@ -1366,7 +1378,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "bang" ],
                                     "parameter_enable": 0,
-                                    "patching_rect": [ 50.0, 183.0, 24.0, 24.0 ]
+                                    "patching_rect": [ 50.5, 138.0, 24.0, 24.0 ]
                                 }
                             },
                             {
@@ -1401,7 +1413,7 @@
                                     "maxclass": "outlet",
                                     "numinlets": 1,
                                     "numoutlets": 0,
-                                    "patching_rect": [ 50.0, 261.0, 30.0, 30.0 ]
+                                    "patching_rect": [ 50.5, 216.0, 30.0, 30.0 ]
                                 }
                             }
                         ],
@@ -1432,14 +1444,8 @@
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-53", 0 ],
-                                    "source": [ "obj-7", 0 ]
-                                }
-                            },
-                            {
-                                "patchline": {
                                     "destination": [ "obj-46", 0 ],
-                                    "source": [ "obj-8", 0 ]
+                                    "source": [ "obj-7", 0 ]
                                 }
                             }
                         ]
