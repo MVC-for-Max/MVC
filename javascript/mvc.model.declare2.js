@@ -305,6 +305,7 @@ function declaremodel2(attrDictName)
     const key = replaceSlashes(currentAddresses[i]) + "::uid";
     //post("current address:", currentAddresses[i] + '\n');
     //post("current address UID :",key + '\n');
+    const existing = modelDict.get(key);
     if (existing && existing[0] !== uid) {
             outlet(0, -1);
             return;
