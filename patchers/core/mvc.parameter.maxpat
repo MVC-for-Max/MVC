@@ -944,17 +944,6 @@
                             },
                             {
                                 "box": {
-                                    "id": "obj-36",
-                                    "maxclass": "newobj",
-                                    "numinlets": 2,
-                                    "numoutlets": 2,
-                                    "outlettype": [ "", "" ],
-                                    "patching_rect": [ 457.0, 140.0, 163.0, 22.0 ],
-                                    "text": "zl.reg replace type undefined"
-                                }
-                            },
-                            {
-                                "box": {
                                     "id": "obj-35",
                                     "maxclass": "newobj",
                                     "numinlets": 2,
@@ -962,17 +951,6 @@
                                     "outlettype": [ "", "" ],
                                     "patching_rect": [ 469.0, 116.0, 191.0, 22.0 ],
                                     "text": "zl.reg replace mvc-type parameter"
-                                }
-                            },
-                            {
-                                "box": {
-                                    "id": "obj-34",
-                                    "maxclass": "newobj",
-                                    "numinlets": 2,
-                                    "numoutlets": 2,
-                                    "outlettype": [ "", "" ],
-                                    "patching_rect": [ 480.0, 92.0, 136.0, 22.0 ],
-                                    "text": "zl.reg replace uid #0"
                                 }
                             },
                             {
@@ -1062,7 +1040,7 @@
                                     "numinlets": 2,
                                     "numoutlets": 2,
                                     "outlettype": [ "", "" ],
-                                    "patching_rect": [ 667.0, 92.0, 94.0, 22.0 ],
+                                    "patching_rect": [ 666.0, 116.0, 94.0, 22.0 ],
                                     "text": "zl.reg uid #0"
                                 }
                             },
@@ -1149,22 +1127,8 @@
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-34", 0 ],
-                                    "order": 1,
-                                    "source": [ "obj-17", 0 ]
-                                }
-                            },
-                            {
-                                "patchline": {
                                     "destination": [ "obj-35", 0 ],
-                                    "order": 2,
-                                    "source": [ "obj-17", 0 ]
-                                }
-                            },
-                            {
-                                "patchline": {
-                                    "destination": [ "obj-36", 0 ],
-                                    "order": 3,
+                                    "order": 1,
                                     "source": [ "obj-17", 0 ]
                                 }
                             },
@@ -1196,19 +1160,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-4", 0 ],
-                                    "source": [ "obj-34", 0 ]
-                                }
-                            },
-                            {
-                                "patchline": {
-                                    "destination": [ "obj-4", 0 ],
                                     "source": [ "obj-35", 0 ]
-                                }
-                            },
-                            {
-                                "patchline": {
-                                    "destination": [ "obj-4", 0 ],
-                                    "source": [ "obj-36", 0 ]
                                 }
                             },
                             {
@@ -1798,8 +1750,8 @@
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 275.0, 65.0, 161.0, 35.0 ],
-                    "text": "patcherargs @description #2"
+                    "patching_rect": [ 275.0, 65.0, 163.0, 35.0 ],
+                    "text": "patcherargs @description #2 @default 0"
                 }
             },
             {
