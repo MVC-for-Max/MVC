@@ -31,111 +31,16 @@ let modelAddressDict = new Dict();
 modelAddressDict.name = "modelAddressDict";
 modelAddressDict.quiet = 1;
 
-
-function braceExpand(str) {
-  const ast = parse(str);
-  //post('the chain:', ast, '\n');
-  outlet(0, expandSeq([""], ast)); 
-  return;// expandSeq([""], ast);
-}
-
-function braceExpandArray(strArray){
-    
-    let resultArray = [];
-    strArray.forEach(function (item, index) {
-        const ast = parse(item);
-        //post('toto', ast, '\n');
-        var res = expandSeq([""], ast);
-        //post('res', res, '\n');
-        resultArray.push(res);
-    });
-    
-    return resultArray;
-}
-
-
-/* ---------------- EXPAND AND DISTRIBUTE OVER PARENT NAMESPACE ---------------- */
-
-function braceExpandOnParents(attrDictName)
-{
-	childdict.name = attrDictName;
-		
-    var uid = childdict.get('uid');;
-    //post('uid:', uid, '\n');
-    var parentUid = childdict.get('parent');
-    //post('parentuid:', uid, '\n');
-    
-    parentdict.name = parentUid + '.attr';
-    
-    // fetch address to expand make sure it's an array
-	var addressToExpand = childdict.get('address') ?? [];
-	addressToExpand = Array.isArray(addressToExpand) ? addressToExpand : [addressToExpand];
-    //post('addressToExpand:', addressToExpand, '\n');
-
-	// fetch parent addresses and make sure it's an array
-	var parentAddresses = parentdict.get('addresslist') ?? [];
-	parentAddresses = Array.isArray(parentAddresses) ? parentAddresses : [parentAddresses];
-	//post('parentAddresses', parentAddresses);
-
-	var expandedAddresses;
-	expandedAddresses = braceExpandArray(addressToExpand);
-    childdict.replace('expandedAddresses', expandedAddresses);
-	//post('expandedAddresses', expandedAddresses);
-    
-    // DISTRIBUTE EXPANDED ADDRESSES OVER PARENT NODE'S ADDRESSES
-    var adddressIndex = 0; //the address index in the final addresslist
-	var addresslist = []; // the final address list
-	var parentmap = [];		// an array mapping each address to the index of the parent addresses
-	var childrenmap = []; // a nested array mapping parent index to an array of corresponding child addresses indices
-
-	if (parentdict.get('uid') == null){ // If no parent, consider the relative address as absolute
-		addresslist = expandedAddresses.flat();
-		//Max.post('addresslist flattened', addresslist);
-		var tmpArray = [];
-		for (var i = 0; i < addresslist.length; i++) {
-   		parentmap.push(1);
-   		tmpArray.push(i+1);
-		}
-		childrenmap.push(tmpArray);
-	}	
-	else if (parentdict.get('uid') != childdict.get('uid')){ //concat on parent address
-		for (let i = 0; i < parentAddresses.length; i++) {
-			var childIndexArray = [];
-			var addressesArrayForThisParentAddress = expandedAddresses[i%expandedAddresses.length];
-			//Max.post('addressesArrayForThisParentAddress', addressesArrayForThisParentAddress);
-			for (let j = 0; j < addressesArrayForThisParentAddress.length; j++) {
-				var childAdd = addressesArrayForThisParentAddress[j];
-				if (childAdd!= 'none'){
-					var concatAddress = parentAddresses[i] + '/' + childAdd;
-					//Max.post('concatAddress', concatAddress);
-					addresslist.push(concatAddress);					
-					childrenmap.push(i+1);
-					adddressIndex++;
-					childIndexArray.push(adddressIndex);
-				}
-				else{
-					//Max.post("youhou",childAdd )
-				}
-			}
-			parentmap.push(childIndexArray);
-		}
-		//addresslist = ["addresslist"].concat(addresslist);
-	}
-	else { //this is the device
-		//addresslist = ["addresslist"].concat(expandedAddresses[0]);
-		addresslist = expandedAddresses[0];
-		parentmap = [1];
-		childrenmap = [1];
-	}
-
-	childdict.replace('addresslist', addresslist);
-    childdict.replace('parentmap', parentmap);
-    childdict.replace('childrenmap', childrenmap);
-
-	outlet(0, 'bang');
-}
-
 /* ---------------- PARSEUR ---------------- */
+
+function asArray(v) {
+    return v == null ? [] : (Array.isArray(v) ? v : [v]);
+}
+
+function replaceSlashes(str) {
+    return str.replace(/\//g, '::');
+}
+
 
 function parse(str) {
   let i = 0;
@@ -202,26 +107,34 @@ function normalize(choices) {
 /* ---------------- EXPANSION ---------------- */
 
 function expandSeq(list, seq) {
-  for (const node of seq) {
-    if (typeof node === "string") {
-      for (let i = 0; i < list.length; i++) list[i] += node;
+    for (let s = 0; s < seq.length; s++) {
+        const node = seq[s];
+
+        if (typeof node === "string") {
+            for (let i = 0; i < list.length; i++) {
+                list[i] += node;
+            }
+        }
+        else if (node.range) {
+            list = expandRange(list, node.range);
+        }
+        else if (node.choices) {
+            const out = [];
+            for (let c = 0; c < node.choices.length; c++) {
+                const expanded = expandSeq(list.slice(), node.choices[c]);
+                for (let i = 0; i < expanded.length; i++) {
+                    out.push(expanded[i]);
+                }
+            }
+            list = out;
+        }
+        else {
+            list = expandSeq(list, node);
+        }
     }
-    else if (node.range) {
-      list = expandRange(list, node.range);
-    }
-    else if (node.choices) {
-      let out = [];
-      for (const choice of node.choices) {
-        out = out.concat(expandSeq([...list], choice));
-      }
-      list = out;
-    }
-    else {
-      list = expandSeq(list, node);
-    }
-  }
-  return list;
+    return list;
 }
+
 
 /* ---------------- RANGES SANS ZERO-PADDING ---------------- */
 
@@ -287,163 +200,126 @@ function bashRangeNoPad(a, b, stepStr) {
   return null;
 }
 
+function braceExpandArray(strArray) {
+    const len = strArray.length;
+    const result = new Array(len);
+
+    for (let i = 0; i < len; i++) {
+        result[i] = expandSeq([""], parse(strArray[i]));
+    }
+    return result;
+}
+
+
 /* ----------------------- */
 /* declare the model */
 
 
-function declaremodel2(attrDictName)
-{
-	childdict.name = attrDictName;
-		
-  var uid = childdict.get('uid');;
-  //post('uid:', uid, '\n');
-  var parentUid = childdict.get('parent');
-  //post('parentuid:', uid, '\n');
-  
-  parentdict.name = parentUid + '.attr';
-    
-  // fetch address to expand make sure it's an array
-	var addressToExpand = childdict.get('address') ?? [];
-	addressToExpand = Array.isArray(addressToExpand) ? addressToExpand : [addressToExpand];
-  //post('addressToExpand:', addressToExpand, '\n');
+function declaremodel2(attrDictName) {
 
-	// fetch parent addresses and make sure it's an array
-	var parentAddresses = parentdict.get('addresslist') ?? [];
-	parentAddresses = Array.isArray(parentAddresses) ? parentAddresses : [parentAddresses];
-	//post('parentAddresses', parentAddresses, '\n');
+    childdict.name = attrDictName;
 
-	var expandedAddresses;
-	expandedAddresses = braceExpandArray(addressToExpand);
-  childdict.replace('expandedAddresses', expandedAddresses);
-	//post('expandedAddresses', expandedAddresses, '\n');
-    
-    // DISTRIBUTE EXPANDED ADDRESSES OVER PARENT NODE'S ADDRESSES
-  var adddressIndex = 0; //the address index in the final addresslist
-	var addresslist = []; // the final address list
-	var parentmap = [];		// an array mapping each address to the index of the parent addresses
-	var childrenmap = []; // a nested array mapping parent index to an array of corresponding child addresses indices
+    const uid = childdict.get('uid');
+    const parentUid = childdict.get('parent');
 
-	if (parentdict.get('uid') == null){ // If no parent, consider the relative address as absolute
-		addresslist = expandedAddresses.flat();
-		//post('addresslist flattened', addresslist, '\n');
-		var tmpArray = [];
-		for (var i = 0; i < addresslist.length; i++) {
-   		parentmap.push(1);
-   		tmpArray.push(i+1);
-		}
-		childrenmap.push(tmpArray);
-	}	
-	else if (parentdict.get('uid') != childdict.get('uid')){ //concat on parent address
-		for (let i = 0; i < parentAddresses.length; i++) {
-			var childIndexArray = [];
-			var addressesArrayForThisParentAddress = expandedAddresses[i%expandedAddresses.length];
-			//post('addressesArrayForThisParentAddress', addressesArrayForThisParentAddress, '\n');
-			for (let j = 0; j < addressesArrayForThisParentAddress.length; j++) {
-				var childAdd = addressesArrayForThisParentAddress[j];
-				if (childAdd!= 'none'){
-					var concatAddress = parentAddresses[i] + '/' + childAdd;
-					//post('concatAddress', concatAddress, '\n');
-					addresslist.push(concatAddress);					
-					childrenmap.push(i+1);
-					adddressIndex++;
-					childIndexArray.push(adddressIndex);
-				}
-				else{
-					//post("youhou",childAdd, '\n');
-				}
-			}
-			parentmap.push(childIndexArray);
-		}
-		//addresslist = ["addresslist"].concat(addresslist);
-	}
-	else { //this is the device
-		//addresslist = ["addresslist"].concat(expandedAddresses[0]);
-		addresslist = expandedAddresses[0];
-		parentmap = [1];
-		childrenmap = [1];
-	}
+    parentdict.name = parentUid + '.attr';
 
-	childdict.replace('addresslist', addresslist);
-  childdict.replace('parentmap', parentmap);
-  childdict.replace('childrenmap', childrenmap);
+    const addressToExpand = asArray(childdict.get('address'));
+    const parentAddresses = asArray(parentdict.get('addresslist'));
 
+    const expandedAddresses = braceExpandArray(addressToExpand);
+    childdict.replace('expandedAddresses', expandedAddresses);
 
-    //////////////////////////////////////////////////////////////
-	// DECLARE THE MODEL
+    let addresslist = [];
+    let parentmap = [];
+    let childrenmap = [];
 
+    if (parentdict.get('uid') == null) {
+        addresslist = expandedAddresses[0] || [];
+        const tmp = new Array(addresslist.length);
+        for (let i = 0; i < addresslist.length; i++) {
+            parentmap[i] = 1;
+            tmp[i] = i + 1;
+        }
+        childrenmap[0] = tmp;
+    }
+    else if (parentdict.get('uid') !== uid) {
 
-	currentAddresses = addresslist;
-	currentAddresses = (currentAddresses == null) ? [] : (Array.isArray(currentAddresses) ? currentAddresses : [currentAddresses]);
+        let addressIndex = 0;
 
-	// Check if any of these addresses has already been registered in namespace
-	// from a different parameter instance (different UID).
-	// Return with exit code if this is the case.
-	for (var i = 0; i < (currentAddresses.length); i++) {
-		var theAdd = currentAddresses[i].replace(/\//g, '::');
-        //post("current address:", theAdd + '\n');
-		var theUID = modelDict.get(theAdd+"::uid");
-        //post("current address UID :",theUID + '\n');
-		if (theUID == null) break;	
-		else if (uid != theUID[0]) {
-				//post('Model', currentAddresses[i], 'is already in the namespace.\n')
-				outlet(0, -1); // error code when address already exists
-				return;
-		}	
-	}
+        for (let i = 0; i < parentAddresses.length; i++) {
+            const childArray = [];
+            const exp = expandedAddresses[i % expandedAddresses.length];
 
-	// get previous addresslist and make sure it's an array
-	previousAddresses = modelAddressDict.get(uid);
-	previousAddresses = (previousAddresses == null) ? [] : (Array.isArray(previousAddresses) ? previousAddresses : [previousAddresses]);
-	
-	// update nodeUID / address storage for this node 
-	(currentAddresses.length == 0) ? modelAddressDict.remove(uid.toString()) : modelAddressDict.set(uid, currentAddresses);
-	
-	// compare new addresses with previous addresses for this node
-	var missingAdresses = findGoneItems(currentAddresses, previousAddresses);
-	//post('missingAdresses', missingAdresses.toString(), '\n');
-	
-	// remove gone addresses only for values
-	for (var i = 0; i < (missingAdresses.length); i++) {
-		var theAdd = missingAdresses[i].replace(/\//g, '::');
-		//modelDict.remove(theAdd);
-		parametersValuesDict.remove(theAdd);
-		statesValuesDict.remove(theAdd);
-		//inputsDict.remove(theAdd);
-		//post('removing', theAdd, '\n');
-	}
+            for (let j = 0; j < exp.length; j++) {
+                const childAdd = exp[j];
+                if (childAdd !== 'none') {
+                    addresslist.push(parentAddresses[i] + '/' + childAdd);
+                    childArray.push(++addressIndex);
+                }
+            }
+            parentmap.push(childArray);
+        }
+    }
+    else {
+        addresslist = expandedAddresses[0] || [];
+        parentmap = [1];
+        childrenmap = [1];
+    }
 
-	for (var i = 0; i < (previousAddresses.length); i++) {
-		var theAdd = previousAddresses[i].replace(/\//g, '::');
-		modelDict.remove(theAdd);
-		inputsDict.remove(theAdd);
-	}
-	
-	// add new addresses in model dict
-	for (var i = 0; i < (currentAddresses.length); i++) {
-		var theAdd = currentAddresses[i].replace(/\//g, '::');
-		//post('add', i, uid, theAdd, "\n");
-		var addressUID = [uid, i + 1];
-		// parametersDict.replace(theAdd + "::uid", addressUID);
-		modelDict.replace(theAdd + "::uid", addressUID);
-	}
-	
-	// return 1 if init succeed
-	outlet(0, currentAddresses.length);
+    childdict.replace('addresslist', addresslist);
+    childdict.replace('parentmap', parentmap);
+    childdict.replace('childrenmap', childrenmap);
+
+    /* -------- namespace registration -------- */
+
+    const currentAddresses = asArray(addresslist);
+
+    for (let i = 0; i < currentAddresses.length; i++) {
+        const key = replaceSlashes(currentAddresses[i]) + "::uid";
+        const existing = modelDict.get(key);
+        if (existing && existing[0] !== uid) {
+            outlet(0, -1);
+            return;
+        }
+    }
+
+    const previousAddresses = asArray(modelAddressDict.get(uid));
+    modelAddressDict.set(uid, currentAddresses);
+
+    const gone = findGoneItems(currentAddresses, previousAddresses);
+
+    for (let i = 0; i < gone.length; i++) {
+        const key = replaceSlashes(gone[i]);
+        parametersValuesDict.remove(key);
+        statesValuesDict.remove(key);
+    }
+
+    for (let i = 0; i < previousAddresses.length; i++) {
+        const key = replaceSlashes(previousAddresses[i]);
+        modelDict.remove(key);
+        inputsDict.remove(key);
+    }
+
+    for (let i = 0; i < currentAddresses.length; i++) {
+        const key = replaceSlashes(currentAddresses[i]) + "::uid";
+        modelDict.replace(key, [uid, i + 1]);
+    }
+
+    outlet(0, currentAddresses.length);
 }
 
 
-function findGoneItems(CurrentArray, PreviousArray) {
-	
-    var CurrentArrSize = CurrentArray.length;
-    var PreviousArrSize = PreviousArray.length;
-    var missingItems = [];
-    // loop through previous array
-    for(var j = 0; j < PreviousArrSize; j++) {
-      // look for same thing in new array
-      if (CurrentArray.indexOf(PreviousArray[j]) == -1)
-         missingItems.push(PreviousArray[j]);
-   }
-   return missingItems;
+function findGoneItems(current, previous) {
+    const currentSet = new Set(current);
+    const missing = [];
+
+    for (let i = 0; i < previous.length; i++) {
+        if (!currentSet.has(previous[i])) {
+            missing.push(previous[i]);
+        }
+    }
+    return missing;
 }
 
 
