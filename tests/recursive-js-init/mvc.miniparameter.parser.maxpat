@@ -2061,8 +2061,8 @@
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 146.0, 550.0, 91.0, 22.0 ],
-                    "text": "s declare-tester"
+                    "patching_rect": [ 146.0, 556.0, 112.0, 22.0 ],
+                    "text": "s mvc.input.declare"
                 }
             },
             {
