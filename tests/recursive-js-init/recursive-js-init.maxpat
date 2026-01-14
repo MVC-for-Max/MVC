@@ -13,6 +13,59 @@
         "boxes": [
             {
                 "box": {
+                    "id": "obj-17",
+                    "maxclass": "newobj",
+                    "numinlets": 0,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 11.0, 225.0, 110.0, 22.0 ],
+                    "text": "r mvc.input.declare"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-18",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 11.0, 289.0, 49.0, 22.0 ],
+                    "text": "forward"
+                }
+            },
+            {
+                "box": {
+                    "filename": "mvc.mini.input.declare.js",
+                    "id": "obj-23",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 11.0, 258.0, 156.0, 22.0 ],
+                    "saved_object_attributes": {
+                        "parameter_enable": 0
+                    },
+                    "text": "v8 mvc.mini.input.declare.js",
+                    "textfile": {
+                        "filename": "mvc.mini.input.declare.js",
+                        "flags": 0,
+                        "embed": 0,
+                        "autowatch": 1
+                    }
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-16",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 197.0, 291.0, 217.0, 22.0 ],
+                    "text": "mvc.miniparameter myModel myParam"
+                }
+            },
+            {
+                "box": {
                     "format": 6,
                     "id": "obj-61",
                     "maxclass": "flonum",
@@ -704,27 +757,6 @@
             },
             {
                 "box": {
-                    "id": "obj-30",
-                    "maxclass": "message",
-                    "numinlets": 2,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 10.0, 227.0, 68.0, 22.0 ],
-                    "text": "declare foo"
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-31",
-                    "maxclass": "newobj",
-                    "numinlets": 1,
-                    "numoutlets": 0,
-                    "patching_rect": [ 10.0, 254.0, 91.0, 22.0 ],
-                    "text": "s declare-tester"
-                }
-            },
-            {
-                "box": {
                     "id": "obj-27",
                     "maxclass": "newobj",
                     "numinlets": 1,
@@ -751,8 +783,8 @@
                     "numinlets": 0,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 11.0, 98.0, 89.0, 22.0 ],
-                    "text": "r declare-tester"
+                    "patching_rect": [ 11.0, 98.0, 117.0, 22.0 ],
+                    "text": "r mvc.model.declare"
                 }
             },
             {
@@ -767,19 +799,19 @@
             },
             {
                 "box": {
-                    "filename": "mvc.testing-recurse.js",
+                    "filename": "mvc.mini.model.declare.js",
                     "id": "obj-1",
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 11.0, 131.0, 141.0, 22.0 ],
+                    "patching_rect": [ 11.0, 131.0, 163.0, 22.0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0
                     },
-                    "text": "v8 mvc.testing-recurse.js",
+                    "text": "v8 mvc.mini.model.declare.js",
                     "textfile": {
-                        "filename": "mvc.testing-recurse.js",
+                        "filename": "mvc.mini.model.declare.js",
                         "flags": 0,
                         "embed": 0,
                         "autowatch": 1
@@ -814,6 +846,12 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-23", 0 ],
+                    "source": [ "obj-17", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-20", 0 ],
                     "source": [ "obj-19", 0 ]
                 }
@@ -828,6 +866,12 @@
                 "patchline": {
                     "destination": [ "obj-33", 0 ],
                     "source": [ "obj-22", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-18", 0 ],
+                    "source": [ "obj-23", 0 ]
                 }
             },
             {
@@ -874,12 +918,6 @@
                 "patchline": {
                     "destination": [ "obj-24", 0 ],
                     "source": [ "obj-29", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-31", 0 ],
-                    "source": [ "obj-30", 0 ]
                 }
             },
             {
