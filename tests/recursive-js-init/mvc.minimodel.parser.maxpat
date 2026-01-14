@@ -1618,7 +1618,7 @@
                 "box": {
                     "comment": "",
                     "id": "obj-2",
-                    "index": 0,
+                    "index": 1,
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
@@ -2026,8 +2026,8 @@
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 146.0, 550.0, 91.0, 22.0 ],
-                    "text": "s declare-tester"
+                    "patching_rect": [ 146.0, 550.0, 119.0, 22.0 ],
+                    "text": "s mvc.model.declare"
                 }
             },
             {
@@ -2361,7 +2361,7 @@
                 "box": {
                     "comment": "",
                     "id": "obj-7",
-                    "index": 0,
+                    "index": 1,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -2373,7 +2373,7 @@
                 "box": {
                     "comment": "",
                     "id": "obj-5",
-                    "index": 0,
+                    "index": 2,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -2385,7 +2385,7 @@
                 "box": {
                     "comment": "",
                     "id": "obj-39",
-                    "index": 0,
+                    "index": 3,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -2689,7 +2689,6 @@
                     "source": [ "obj-83", 1 ]
                 }
             }
-        ],
-        "autosave": 0
+        ]
     }
 }
