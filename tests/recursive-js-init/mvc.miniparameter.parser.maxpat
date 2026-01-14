@@ -2191,7 +2191,7 @@
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
                     "patching_rect": [ 656.0, 467.0, 167.0, 22.0 ],
-                    "text": "zl.reg punregister #1"
+                    "text": "zl.reg unregister #1"
                 }
             },
             {
