@@ -1,12 +1,17 @@
 let MVCnamespace = new Dict();
-MVCnamespace.name = "mvc.namespace";
+MVCnamespace.name = "mvc.models";
 MVCnamespace.quiet = 1;
+
+let MVCinputs = new Dict();
+MVCinputs.name = "mvc.inputs";
+MVCinputs.quiet = 1;
 
 function register(uid)
 {
+    post("-------register", uid, "\n");
     let thisNode = new Dict();
     thisNode.quiet = 1;
-    thisNode.name = uid;
+    thisNode.name = uid + ".attr";;
 
     let thisNodeAddress = thisNode.get("address");
     //post("thisNodeAddress:", thisNodeAddress, "\n");
@@ -32,7 +37,7 @@ function register(uid)
 
     let parentNode = new Dict();
     parentNode.quiet = 1;
-    parentNode.name = parentNodeUID;
+    parentNode.name = parentNodeUID + ".attr";;
 
     // create full address for this node and register in namespace
     if (parentNodeUID != "mvc.root") { // if not top level
@@ -63,35 +68,10 @@ function register(uid)
     // add this address to the namespace
     MVCnamespace.replace(fulladdress+"::uid", uid);
 
-    
-    // initialize pending nodes
-    let pendingNodes = thisNode.get("pendingNodes");
-    let thePendingNodes;
-    if (pendingNodes){
-        thePendingNodes = pendingNodes.getkeys();
-        //post("pendingNodes", thePendingNodes, "\n");
-    }
-    else{
-        thePendingNodes = null;
-    }
-    
-    // iterate over pending nodes and initialize them recursively down to the leaves
-    if (thePendingNodes == null){
-        //post("No (more) pending nodes in node:", uid, "\n");
-        // we are on a leaf, send public signal back recursively
-        messnamed(uid + ".init", "---private"); //send private init notif for this node
-        notifyParentNode(parentNodeUID, uid);
-        messnamed(uid + ".init", "++public");
-    }
-    else {
-        //Object.keys(pendingNodes); //pendingNodes.keys();
-        //post("There are",thePendingNodes.length, "pending nodes in", uid, ":", thePendingNodes, "\n");
-        //pendingNodes.forEach((element) => declare(element));   
-        for (const [key, value] of Object.entries(thePendingNodes)) {
-            register(value);
-            //post(value, "\n");
-        }
-    }
+    // Initialize first inputs, then only child models (so that input can preempt it)
+    //initializeChildInputs(thisNode);
+    initializeChildModels(thisNode);
+
 }
 
 // notifyParentNode
@@ -99,27 +79,27 @@ function register(uid)
 // output public init message if all child nodes have been initialized
 function notifyParentNode(parentNodeUID, uid)
 { 
+    post("-------notifyParentNode", parentNodeUID, uid, "\n");
     let parentNode = new Dict();
     parentNode.quiet = 1;
-    parentNode.name = parentNodeUID;
+    parentNode.name = parentNodeUID + ".attr";;
 
-    //add child node
-    parentNode.replace("childNodes::" + uid, 1);
-    //post("Adding child node", uid, "to", parentNodeUID, "\n");
-
-    //remove pending node
+    // Remove from pendingNodes and add to childNodes
     parentNode.remove("pendingNodes::" + uid);
-    //post("Removing pending node", uid, "from", parentNodeUID, "\n");
+    parentNode.replace("childNodes::" + uid, 1);
+    post("Node", uid, "is now a child node of", parentNodeUID, "\n");
 
     parentParentNodeUID = parentNode.get("parent");
-
+    post("parentParentNodeUID", parentParentNodeUID, "\n");
     // send public init signal for this node (for view and remotes which have a parent)
     // notifyParentNode(parentNodeUID)
+    if (parentNodeUID == "mvc-root") return;
+
     let pendingNodes = parentNode.get("pendingNodes").getkeys();
     if (!pendingNodes) {
         //post(parentNodeUID, "contains no more pending nodes\n");
         // send it recursively to parents
-        let parentParentNodeUID = parentNode.get("parent");
+        //let parentParentNodeUID = parentNode.get("parent");
         if (parentParentNodeUID != "mvc.root"){
             //post("---We should trigger notify on:", parentParentNodeUID, "\n");
             messnamed(parentNodeUID + ".init", "----private");
@@ -137,16 +117,56 @@ function notifyParentNode(parentNodeUID, uid)
     }
 }
 
+// notifyParentNode
+// remove pending child node from parent when init done
+// output public init message if all child nodes have been initialized
+function inputNotifyParentNode(parentNodeUID, uid)
+{ 
+    let parentNode = new Dict();
+    parentNode.quiet = 1;
+    parentNode.name = parentNodeUID + ".attr";;
+
+    // Remove from pendingNodes and add to childNodes
+    parentNode.remove("pendingInputs::" + uid);
+    parentNode.replace("childInputs::" + uid, 1);
+    //post("Node", uid, "is now a child node of", parentNodeUID, "\n");
+
+    // parentParentNodeUID = parentNode.get("parent");
+
+    // send public init signal for this node (for view and remotes which have a parent)
+    // notifyParentNode(parentNodeUID)
+    // let pendingNodes = parentNode.get("pendingNodes").getkeys();
+    // if (!pendingNodes) {
+    //     //post(parentNodeUID, "contains no more pending nodes\n");
+    //     // send it recursively to parents
+    //     let parentParentNodeUID = parentNode.get("parent");
+    //     if (parentParentNodeUID != "mvc.root"){
+    //         //post("---We should trigger notify on:", parentParentNodeUID, "\n");
+    //         messnamed(parentNodeUID + ".init", "----private");
+    //         notifyParentNode(parentParentNodeUID, parentNodeUID);
+    //     }
+    //     else {
+    //         //post("---Reached top-level node\n");
+    //         messnamed(parentNodeUID + ".init", "----private");
+    //     }
+    //     // send public init
+    //     messnamed(parentNodeUID + ".init", "++++public");
+    // }
+    // else {
+    //     //post("PendingNodes left in", parentNodeUID, ":" , pendingNodes, "\n");
+    // }
+}
+
 
 // undeclare node from the namespace
 // this is called from mvc.model (and mvc.inputs?)
 function unregister(uid)
 {
     // get the attr dict for this node
-    post("Unregister node:", uid, "\n");
+    post("--------Unregister node:", uid, "\n");
     let thisNode = new Dict();
     thisNode.quiet = 1;
-    thisNode.name = uid;
+    thisNode.name = uid + ".attr";;
     let fulladdress = thisNode.get("fulladdress");
     //post("Removing from namespace:", fulladdress, "\n");
     //remove this node's address from namespace
@@ -157,7 +177,7 @@ function unregister(uid)
     parentUID = thisNode.get("parent");
     let parentNode = new Dict();
     parentNode.quiet = 1;
-    parentNode.name = parentUID;
+    parentNode.name = parentUID + ".attr";;
     parentNode.remove("childNodes::"+uid);
 
     //recursively undeclare child nodes
@@ -181,25 +201,61 @@ function unregister(uid)
     thisNode.remove("fulladdress");
 }
 
+function punregister(uid)
+{
+    // get the attr dict for this node
+    post("Unregister input:", uid, "\n");
+    let thisNode = new Dict();
+    thisNode.quiet = 1;
+    thisNode.name = uid + ".attr";;
+    let fulladdress = thisNode.get("fulladdress");
+    //post("Removing from namespace:", fulladdress, "\n");
+    //remove this node's address from namespace
+    MVCinputs.remove(fulladdress);
+    // TODO : also remove from parameters.value, state.value, etc.
+
+    // remove from parent's child nodes
+    parentUID = thisNode.get("parent");
+    let parentNode = new Dict();
+    parentNode.quiet = 1;
+    parentNode.name = parentUID + ".attr";;
+    parentNode.remove("childInputs::"+uid);
+
+    // last, clear this node attr
+    thisNode.remove("fulladdress");
+}
 
 function free(uid)
 {
     // get the attr dict for this node
-    post("Freeing node:", uid, "\n");
+    post("------Freeing node:", uid, "\n");
     unregister(uid);
 
     let thisNode = new Dict();
     thisNode.quiet = 1;
-    thisNode.name = uid;
+    thisNode.name = uid + ".attr";;
 
     //remove from parent's child/pending nodes
     parentUID = thisNode.get("parent");
     let parentNode = new Dict();
     parentNode.quiet = 1;
-    parentNode.name = parentUID;
+    parentNode.name = parentUID + ".attr";;
 
-    parentNode.remove("childNodes::"+uid);
-    parentNode.remove("pendingNodes::"+uid);
+    let mvcType = thisNode.get("mvc-type");
+    switch(mvcType) {
+    case "model":
+        {
+            parentNode.remove("childNodes::"+uid);
+            parentNode.remove("pendingNodes::"+uid); 
+            break;         
+        }
+    case "parameter":
+        {
+            parentNode.remove("childInputs::"+uid);
+            parentNode.remove("pendingInputs::"+uid); 
+            break;         
+        }
+    }
 
     thisNode.remove("parent");
     thisNode.remove("address");
@@ -208,4 +264,72 @@ function free(uid)
     //thisNode.clear();
 }
 
+function initializeChildInputs(thisNode){
+        ///////////////////////////////
+    // initialize pending nodes
+    post("--------initializeChildInputs", thisNode, "\n");
+    let uid = thisNode.get("uid");
+    let parentNodeUID = thisNode.get("parent");
+    let pendingInputs = thisNode.get("pendingInputs");
+    let thePendingInputs;
+    if (pendingInputs){
+        thePendingInputs = pendingInputs.getkeys();
+        //post("pendingNodes", thePendingNodes, "\n");
+    }
+    else{
+        thePendingInputs = null;
+    }
+    
+    // iterate over pending nodes and initialize them recursively down to the leaves
+    if (thePendingInputs == null){
+        post("No (more) pending nodes in node:", uid, "\n");
+        // we are on a leaf, send public signal back recursively
+        messnamed(uid + ".init", "---private"); //send private init notif for this node
+        notifyParentNode(parentNodeUID, uid);
+        //messnamed(uid + ".init", "++public");
+    }
+    else {
+        //Object.keys(pendingNodes); //pendingNodes.keys();
+        post("There are",thePendingNodes.length, "pending nodes in", uid, ":", thePendingNodes, "\n");
+        //pendingNodes.forEach((element) => declare(element));   
+        for (const [key, value] of Object.entries(thePendingInputs)) {
+            register(value);
+            //post(value, "\n");
+        }
+    }
+}
 
+function initializeChildModels(thisNode){
+        ///////////////////////////////
+    // initialize pending nodes
+    post("--------initializeChildModels", thisNode, "\n");
+    let uid = thisNode.get("uid");
+    let parentNodeUID = thisNode.get("parent");
+    let pendingNodes = thisNode.get("pendingNodes");
+    let thePendingNodes;
+    if (pendingNodes){
+        thePendingNodes = pendingNodes.getkeys();
+        //post("pendingNodes", thePendingNodes, "\n");
+    }
+    else{
+        thePendingNodes = null;
+    }
+    
+    // iterate over pending nodes and initialize them recursively down to the leaves
+    if (thePendingNodes == null){
+        post("No (more) pending nodes in node:", uid, "\n");
+        // we are on a leaf, send public signal back recursively
+        messnamed(uid + ".init", "---private"); //send private init notif for this node
+        notifyParentNode(parentNodeUID, uid);
+        messnamed(uid + ".init", "++public");
+    }
+    else {
+        //Object.keys(pendingNodes); //pendingNodes.keys();
+        post("There are",thePendingNodes.length, "pending nodes in", uid, ":", thePendingNodes, "\n");
+        //pendingNodes.forEach((element) => declare(element));   
+        for (const [key, value] of Object.entries(thePendingNodes)) {
+            register(value);
+            //post(value, "\n");
+        }
+    }
+}
