@@ -15,7 +15,7 @@ function register(uid)
 
     let thisNodeAddress = thisNode.get("address");
     //post("thisNodeAddress:", thisNodeAddress, "\n");
-    
+        
     // return if no address or none
     if ((!thisNodeAddress)||(thisNodeAddress=="none")){
         post("Error: missing address for node:", uid, "\n")
@@ -37,7 +37,24 @@ function register(uid)
 
     let parentNode = new Dict();
     parentNode.quiet = 1;
-    parentNode.name = parentNodeUID + ".attr";;
+    parentNode.name = parentNodeUID + ".attr";
+
+    // select relevant namespace
+    let mvcType = thisNode.get("mvc-type");
+    post("mvc-type", mvcType, "\n");
+    let theNamespace;
+    switch(mvcType) {
+        case "model":
+            {
+                theNamespace = MVCnamespace;
+                break;         
+            }
+        case "parameter":
+            {
+                theNamespace = MVCinputs;
+                break;         
+            }
+        }
 
     // create full address for this node and register in namespace
     if (parentNodeUID != "mvc.root") { // if not top level
@@ -45,31 +62,30 @@ function register(uid)
         let parentNodeFulladdress = parentNode.get("fulladdress");
         if (parentNodeFulladdress) {
             fulladdress = parentNodeFulladdress + "::" + thisNodeAddress;
-
             //check if some of these adresses already exist in the namespace, if so returns
-            if (MVCnamespace.contains(fulladdress)){
-                 //post("This address already exists in the namespace", fulladdress, "\n");
+            if (theNamespace.contains(fulladdress)){
+                 post("This address already exists in the namespace", fulladdress, "\n");
                  return;
             }
 
             thisNode.replace("fulladdress", fulladdress);
         } 
         else{
-            //post("Missing address for parent node", parentNodeUID, "\n")
+            post("Missing address for parent node", parentNodeUID, "\n")
             return;
         }
     }
     else { // this is the device/top-level node
-        //post(uid, "is a top-level node.\n");
+        post(uid, "is a top-level node.\n");
         fulladdress = thisNodeAddress;
         thisNode.set("fulladdress", fulladdress);
     }
 
     // add this address to the namespace
-    MVCnamespace.replace(fulladdress+"::uid", uid);
+    theNamespace.replace(fulladdress+"::uid", uid);
 
     // Initialize first inputs, then only child models (so that input can preempt it)
-    //initializeChildInputs(thisNode);
+    initializeChildInputs(thisNode);
     initializeChildModels(thisNode);
 
 }
@@ -93,7 +109,7 @@ function notifyParentNode(parentNodeUID, uid)
     post("parentParentNodeUID", parentParentNodeUID, "\n");
     // send public init signal for this node (for view and remotes which have a parent)
     // notifyParentNode(parentNodeUID)
-    if (parentNodeUID == "mvc-root") return;
+    if (parentNodeUID == "mvc.root") return;
 
     let pendingNodes = parentNode.get("pendingNodes").getkeys();
     if (!pendingNodes) {
@@ -170,6 +186,7 @@ function unregister(uid)
     let fulladdress = thisNode.get("fulladdress");
     //post("Removing from namespace:", fulladdress, "\n");
     //remove this node's address from namespace
+
     MVCnamespace.remove(fulladdress);
     // TODO : also remove from parameters.value, state.value, etc.
 
@@ -274,7 +291,7 @@ function initializeChildInputs(thisNode){
     let thePendingInputs;
     if (pendingInputs){
         thePendingInputs = pendingInputs.getkeys();
-        //post("pendingNodes", thePendingNodes, "\n");
+        post("thePendingInputs", thePendingInputs, "\n");
     }
     else{
         thePendingInputs = null;
@@ -290,7 +307,7 @@ function initializeChildInputs(thisNode){
     }
     else {
         //Object.keys(pendingNodes); //pendingNodes.keys();
-        post("There are",thePendingNodes.length, "pending nodes in", uid, ":", thePendingNodes, "\n");
+        post("There are",thePendingInputs.length, "pending nodes in", uid, ":", thePendingInputs, "\n");
         //pendingNodes.forEach((element) => declare(element));   
         for (const [key, value] of Object.entries(thePendingInputs)) {
             register(value);
