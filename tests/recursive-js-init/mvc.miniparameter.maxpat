@@ -29,8 +29,8 @@
                     "numinlets": 3,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 276.0, 93.0, 183.0, 22.0 ],
-                    "text": "mvc.minimodel.parser #1"
+                    "patching_rect": [ 249.0, 91.0, 177.0, 22.0 ],
+                    "text": "mvc.miniparameter.parser #0"
                 }
             },
             {
@@ -52,7 +52,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 63.0, 418.0, 138.0, 22.0 ],
-                    "text": "r #1.init"
+                    "text": "r #0.init"
                 }
             },
             {
@@ -63,7 +63,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 63.0, 165.0, 24.0, 24.0 ]
+                    "patching_rect": [ 63.0, 161.0, 24.0, 24.0 ]
                 }
             },
             {
@@ -73,13 +73,13 @@
                     "numinlets": 2,
                     "numoutlets": 5,
                     "outlettype": [ "dictionary", "", "", "", "" ],
-                    "patching_rect": [ 63.0, 195.0, 121.0, 22.0 ],
+                    "patching_rect": [ 63.0, 191.0, 121.0, 22.0 ],
                     "saved_object_attributes": {
                         "legacy": 0,
                         "parameter_enable": 0,
                         "parameter_mappable": 0
                     },
-                    "text": "dict #1"
+                    "text": "dict #0.attr"
                 }
             },
             {
@@ -98,7 +98,7 @@
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 277.0, 60.0, 100.0, 22.0 ],
+                    "patching_rect": [ 250.0, 58.0, 97.0, 22.0 ],
                     "text": "patcherargs"
                 }
             },
@@ -111,7 +111,7 @@
                     "numinlets": 0,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 440.0, 45.0, 30.0, 30.0 ]
+                    "patching_rect": [ 407.0, 45.0, 30.0, 30.0 ]
                 }
             }
         ],
