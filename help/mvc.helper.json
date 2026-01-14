@@ -215,7 +215,7 @@
         "category": "library"
     },
     "mvc.remote": {
-        "digest": "Monitor and remote control values from an mvc.parameter, mvc.state and mvc.message, .",
+        "digest": "Monitor and remote control values from an mvc.parameter, mvc.state or mvc.message.",
         "description": "mvc.remote allows to bind to a component's input for remote control or monitoring. This can either be a mvc.parameter, an mvc.state or an mvc.message. The address it refers to can be set dynamically and multiple addresses can be provided, either as a list or through brace expansion notation and wildcards. The mvc.remote object helps implementing the view and controller part in the MVC model used in the MVC package.",
         "category": "library"
     },
