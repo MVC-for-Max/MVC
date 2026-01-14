@@ -11,34 +11,39 @@ function declare(uid)
     let thisNodeAddress = thisNode.get("address");
     post("thisNodeAddress:", thisNodeAddress, "\n");
     
-    // return if no address
-    if (!thisNodeAddress){
+    // return if no address or none
+    if ((!thisNodeAddress)||(thisNodeAddress=="none")){
         post("missing address for node:", uid, "\n")
         return;
     }
 
-    // return if no parent
+    // return if no parent or none or same UID as node
     let parentNodeUID = thisNode.get("parent");
     post("parentNodeUID:", parentNodeUID, "\n");
-    if (!parentNodeUID){
+    if ((!parentNodeUID)||(parentNodeUID=="none")||(parentNodeUID==uid)){
         post("missing parent for node:", uid, "\n")
         return;
     }
 
-    // harvest child nodes
-    //messnamed(uid + ".harvest", "bang");
-
     // fulladdress will hold the concatenation (should be addresslist)
     let fulladdress;
+
+    let parentNode = new Dict();
+    parentNode.name = parentNodeUID;
 
     // create full address for this node and register in namespace
     if (parentNodeUID != "mvc.root") { // if not top level
         post(uid, "is a sub-node.\n")
-        let parentNode = new Dict();
-        parentNode.name = parentNodeUID;
         let parentNodeFulladdress = parentNode.get("fulladdress");
         if (parentNodeFulladdress) {
             fulladdress = parentNodeFulladdress + "::" + thisNodeAddress;
+
+            //check if some of these adresses already exist in the namespace, if so returns
+            if (MVCnamespace.contains(fulladdress)){
+                 post("This address already exists in the namespace", fulladdress, "\n");
+                 return;
+            }
+
             thisNode.replace("fulladdress", fulladdress);
         } 
         else{
@@ -52,22 +57,28 @@ function declare(uid)
         thisNode.set("fulladdress", fulladdress);
     }
 
-    //post("fulladdress", fulladdress, "\n");
+    // add this address to the namespace
     MVCnamespace.replace(fulladdress+"::uid", uid);
 
-    // declare child-nodes
-    messnamed(uid + ".i.ini", 1);
     
-    //while pending node
-    // initialize them and remove them from the pending nodes
-    var pendingNodes = thisNode.get("pendingNodes");
-    //post("pendingNodes", pendingNodes.getkeys(), "\n");
-    //post("length.......", Object.keys(pendingNodes).length, "\n");
-    //post("stringify", JSON.stringify(pendingNodes), "\n");
-    var thePendingNodes = pendingNodes.getkeys();
-
+    // initialize pending nodes
+    let pendingNodes = thisNode.get("pendingNodes");
+    let thePendingNodes;
+    if (pendingNodes){
+        thePendingNodes = pendingNodes.getkeys();
+        post("pendingNodes", thePendingNodes, "\n");
+    }
+    else{
+        thePendingNodes = null;
+    }
+    
+    // iterate over pending nodes and initialize them recursively down to the leaves
     if (thePendingNodes == null){
         post("No (more) pending nodes in node:", uid, "\n");
+        // we are on a leaf, send public signal back recursively
+        messnamed(uid + ".init", "---private"); //send private init notif for this node
+        notifyParentNode(parentNodeUID, uid);
+        messnamed(uid + ".init", "++public");
     }
     else {
         //Object.keys(pendingNodes); //pendingNodes.keys();
@@ -78,12 +89,7 @@ function declare(uid)
             //post(value, "\n");
         }
     }
-
-    if (parentNodeUID!="mvc.root"){
-        notifyParentNode(parentNodeUID, uid);
-    }
 }
-
 
 // notifyParentNode
 // remove pending child node from parent when init done
@@ -93,18 +99,35 @@ function notifyParentNode(parentNodeUID, uid)
     let parentNode = new Dict();
     parentNode.quiet = 1;
     parentNode.name = parentNodeUID;
-    
+
+    //add child node
+    parentNode.replace("childNodes::" + uid, 1);
+    post("Adding child node", uid, "to", parentNodeUID, "\n");
+
     //remove pending node
     parentNode.remove("pendingNodes::" + uid);
-    post("Removing pending node", uid, "from", parentNodeUID, "\n")    
+    post("Removing pending node", uid, "from", parentNodeUID, "\n");
 
- 
+    parentParentNodeUID = parentNode.get("parent");
+
     // send public init signal for this node (for view and remotes which have a parent)
     // notifyParentNode(parentNodeUID)
     let pendingNodes = parentNode.get("pendingNodes").getkeys();
     if (!pendingNodes) {
         post(parentNodeUID, "contains no more pending nodes\n");
-        messnamed(parentNodeUID + ".init", 1);
+        // send it recursively to parents
+        let parentParentNodeUID = parentNode.get("parent");
+        if (parentParentNodeUID != "mvc.root"){
+            post("---We should trigger notify on:", parentParentNodeUID, "\n");
+            messnamed(parentNodeUID + ".init", "----private");
+            notifyParentNode(parentParentNodeUID, parentNodeUID);
+        }
+        else {
+            post("---Reached top-level node\n");
+            messnamed(parentNodeUID + ".init", "----private");
+        }
+        // send public init
+        messnamed(parentNodeUID + ".init", "++++public");
     }
     else {
         post("PendingNodes left in", parentNodeUID, ":" , pendingNodes, "\n");
@@ -121,13 +144,34 @@ function undeclare(uid)
     let thisNode = new Dict();
     thisNode.name = uid;
     let fulladdress = thisNode.get("fulladdress");
-
+    post("Removing from namespace:", fulladdress, "\n");
     //remove this node's address from namespace
     MVCnamespace.remove(fulladdress);
     // TODO : also remove from parameters.value, state.value, etc.
 
-    // undeclare child-nodes (if any)
-    messnamed(uid + ".i.ini", 0);
+    // remove from parent's child nodes
+    parentUID = thisNode.get("parent");
+    let parentNode = new Dict();
+    parentNode.name = parentUID;
+    parentNode.remove("childNodes::"+uid);
+
+    //recursively undeclare child nodes
+    let childNodes = thisNode.get("childNodes");
+    let theChildNodes;
+    if (childNodes){
+        theChildNodes = childNodes.getkeys();
+        //post("theChildNodes", theChildNodes, "\n");
+    }
+    else{
+        theChildNodes = null;
+    }
+    if (theChildNodes !== null){
+        for (const [key, value] of Object.entries(theChildNodes)) {
+            undeclare(value);
+            post("Undeclare", value, "\n");
+            thisNode.set("pendingNodes::"+value, 1);
+        }
+    }
 
     // last, clear this node attr
     thisNode.remove("fulladdress");
@@ -150,3 +194,28 @@ function unregister(uid)
     // last, clear this node attr
     thisNode.remove("fulladdress");
 }
+
+function free(uid)
+{
+    // get the attr dict for this node
+    post("Freeing node:", uid, "\n");
+    undeclare(uid);
+
+    let thisNode = new Dict();
+    thisNode.name = uid;
+
+    //remove from parent's child/pending nodes
+    parentUID = thisNode.get("parent");
+    let parentNode = new Dict();
+    parentNode.name = parentUID;
+    parentNode.remove("childNodes::"+uid);
+    parentNode.remove("pendingNodes::"+uid);
+
+    thisNode.remove("parent");
+    thisNode.remove("address");
+    thisNode.remove("uid");
+
+    //thisNode.clear();
+}
+
+
