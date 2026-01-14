@@ -1,393 +1,369 @@
-let MVCmodels = new Dict();
-MVCmodels.name = "mvc.models";
-MVCmodels.quiet = 1;
+/*************************************************************
+ * MVC NODE MANAGEMENT – SINGLE SCRIPT (COMMENTED)
+ * Gestion hiérarchique MVC (models / parameters)
+ * Compatible Max/MSP Dict API
+ *************************************************************/
 
-let MVCinputs = new Dict();
-MVCinputs.name = "mvc.inputs";
-MVCinputs.quiet = 1;
+/* ==========================================================
+ * NAMESPACES
+ * ==========================================================
+ * Contient la configuration et les namespaces globaux
+ * pour chaque type MVC.
+ */
 
-function register(uid)
-{
-    post("-------register", uid, "\n");
-    let thisNode = new Dict();
-    thisNode.quiet = 1;
-    thisNode.name = uid + ".attr";;
+const MVC = {
+    model: {
+        namespace: new Dict("mvc.models"),   // Namespace des modèles
+        pendingKey: "pendingNodes",          // Clé des enfants en attente
+        childKey: "childNodes",              // Clé des enfants validés
+        notify: notifyParentNode             // Fonction de notification parent
+    },
+    parameter: {
+        namespace: new Dict("mvc.inputs"),   // Namespace des paramètres
+        pendingKey: "pendingInputs",
+        childKey: "childInputs",
+        notify: inputNotifyParentNode
+    }
+};
 
-    let thisNodeAddress = thisNode.get("address");
-    //post("thisNodeAddress:", thisNodeAddress, "\n");
+MVC.model.namespace.quiet = 1;
+MVC.parameter.namespace.quiet = 1;
 
-    // return if no address or none
-    if ((!thisNodeAddress)||(thisNodeAddress=="none")){
-        post("Error: missing address for node:", uid, "\n")
+
+/* ==========================================================
+ * UTILITIES
+ * ==========================================================
+ */
+
+/**
+ * Retourne le Dict .attr associé à un UID
+ * @param {String} uid
+ * @returns {Dict}
+ */
+function nodeDict(uid) {
+    const d = new Dict(uid + ".attr");
+    d.quiet = 1;
+    return d;
+}
+
+/**
+ * Teste si une valeur est absente ou invalide
+ * @param {*} v
+ * @returns {Boolean}
+ */
+function hasNoValue(v) {
+    return !v || v === "none";
+}
+
+/**
+ * Retourne les clés d’un Dict ou null s’il est vide
+ * @param {Dict} dict
+ * @returns {Array|null}
+ */
+function getKeys(dict) {
+    return dict ? dict.getkeys() : null;
+}
+
+/**
+ * Replace un enfant supprimé dans les pending du parent
+ * @param {Dict} node
+ * @param {String} pendingKey
+ */
+function restoreToPending(node, pendingKey) {
+    const parentUID = node.get("parent");
+    if (!parentUID) return;
+
+    const parent = nodeDict(parentUID);
+    parent.replace(pendingKey + "::" + node.get("uid"), 1);
+}
+
+
+/* ==========================================================
+ * REGISTER
+ * ==========================================================
+ */
+
+/**
+ * Point d’entrée principal :
+ * - vérifie les attributs du nœud
+ * - sélectionne le type MVC
+ * - déclenche l’initialisation
+ * @param {String} uid
+ */
+function register(uid) {
+    post("---- register", uid, "\n");
+
+    const node = nodeDict(uid);
+    const address = node.get("address");
+    const parentUID = node.get("parent");
+    const type = node.get("mvc-type");
+
+    if (hasNoValue(address)) {
+        post("Error: missing address for node:", uid, "\n");
         unregister(uid);
         return;
     }
 
-    // return if no parent or none or same UID as node
-    let parentNodeUID = thisNode.get("parent");
-    //post("parentNodeUID:", parentNodeUID, "\n");
-    if ((!parentNodeUID)||(parentNodeUID=="none")||(parentNodeUID==uid)){
-        post("Error: missing parent for node:", uid, "\n")
+    if (hasNoValue(parentUID) || parentUID === uid) {
+        post("Error: missing parent for node:", uid, "\n");
         return;
     }
 
-    post("Register node:", uid, "\n");
-    // fulladdress will hold the concatenation (should be addresslist)
+    const handler = MVC[type];
+    if (!handler) return;
+
+    initializeNode(node, handler);
+}
+
+
+/* ==========================================================
+ * INITIALIZATION
+ * ==========================================================
+ */
+
+/**
+ * Initialise un nœud :
+ * - calcule son adresse complète
+ * - l’enregistre dans le namespace correspondant
+ * - déclenche l’initialisation de ses enfants
+ * @param {Dict} node
+ * @param {Object} handler
+ */
+function initializeNode(node, handler) {
+    const uid = node.get("uid");
+    const parentUID = node.get("parent");
+    const address = node.get("address");
+    const parent = nodeDict(parentUID);
     let fulladdress;
 
-    let parentNode = new Dict();
-    parentNode.quiet = 1;
-    parentNode.name = parentNodeUID + ".attr";
-
-    // select relevant namespace
-    let mvcType = thisNode.get("mvc-type");
-    post("mvc-type", mvcType, "\n");
-    let theNamespace;
-    switch(mvcType) {
-        case "model":
-            {
-                initializeChildModels(thisNode);
-                break;         
-            }
-        case "parameter":
-            {
-                initializeChildInputs(thisNode);
-                break;         
-            }
-        }
-}
-
-// notifyParentNode
-// remove pending child node from parent when init done
-// output public init message if all child nodes have been initialized
-function notifyParentNode(parentNodeUID, uid)
-{ 
-    post("-------notifyParentNode", parentNodeUID, uid, "\n");
-    let parentNode = new Dict();
-    parentNode.quiet = 1;
-    parentNode.name = parentNodeUID + ".attr";;
-
-    // Remove from pendingNodes and add to childNodes
-    parentNode.remove("pendingNodes::" + uid);
-    parentNode.replace("childNodes::" + uid, 1);
-    post("Node", uid, "is now a child node of", parentNodeUID, "\n");
-
-    parentParentNodeUID = parentNode.get("parent");
-    post("parentParentNodeUID", parentParentNodeUID, "\n");
-    // send public init signal for this node (for view and remotes which have a parent)
-    // notifyParentNode(parentNodeUID)
-    if (parentNodeUID == "mvc.root") return;
-
-    let pendingNodes = parentNode.get("pendingNodes").getkeys();
-    if (!pendingNodes) {
-        //post(parentNodeUID, "contains no more pending nodes\n");
-        // send it recursively to parents
-        //let parentParentNodeUID = parentNode.get("parent");
-        if (parentParentNodeUID != "mvc.root"){
-            //post("---We should trigger notify on:", parentParentNodeUID, "\n");
-            messnamed(parentNodeUID + ".init", "----private");
-            notifyParentNode(parentParentNodeUID, parentNodeUID);
-        }
-        else {
-            //post("---Reached top-level node\n");
-            messnamed(parentNodeUID + ".init", "----private");
-        }
-        // send public init
-        messnamed(parentNodeUID + ".init", "++++public");
-    }
-    else {
-        //post("PendingNodes left in", parentNodeUID, ":" , pendingNodes, "\n");
-    }
-}
-
-// notifyParentNode
-// remove pending child node from parent when init done
-// output public init message if all child nodes have been initialized
-function inputNotifyParentNode(parentNodeUID, uid)
-{ 
-    let parentNode = new Dict();
-    parentNode.quiet = 1;
-    parentNode.name = parentNodeUID + ".attr";;
-
-    // Remove from pendingNodes and add to childNodes
-    parentNode.remove("pendingInputs::" + uid);
-    parentNode.replace("childInputs::" + uid, 1);
-    //post("Node", uid, "is now a child node of", parentNodeUID, "\n");
-
-    // parentParentNodeUID = parentNode.get("parent");
-
-    // send public init signal for this node (for view and remotes which have a parent)
-    // notifyParentNode(parentNodeUID)
-    // let pendingNodes = parentNode.get("pendingNodes").getkeys();
-    // if (!pendingNodes) {
-    //     //post(parentNodeUID, "contains no more pending nodes\n");
-    //     // send it recursively to parents
-    //     let parentParentNodeUID = parentNode.get("parent");
-    //     if (parentParentNodeUID != "mvc.root"){
-    //         //post("---We should trigger notify on:", parentParentNodeUID, "\n");
-    //         messnamed(parentNodeUID + ".init", "----private");
-    //         notifyParentNode(parentParentNodeUID, parentNodeUID);
-    //     }
-    //     else {
-    //         //post("---Reached top-level node\n");
-    //         messnamed(parentNodeUID + ".init", "----private");
-    //     }
-    //     // send public init
-    //     messnamed(parentNodeUID + ".init", "++++public");
-    // }
-    // else {
-    //     //post("PendingNodes left in", parentNodeUID, ":" , pendingNodes, "\n");
-    // }
-}
-
-
-// undeclare node from the namespace
-// this is called from mvc.model (and mvc.inputs?)
-function unregister(uid)
-{
-    // get the attr dict for this node
-    post("--------Unregister node:", uid, "\n");
-    let thisNode = new Dict();
-    thisNode.quiet = 1;
-    thisNode.name = uid + ".attr";;
-    let fulladdress = thisNode.get("fulladdress");
-    //post("Removing from namespace:", fulladdress, "\n");
-    //remove this node's address from namespace
-
-    MVCmodels.remove(fulladdress);
-    // TODO : also remove from parameters.value, state.value, etc.
-
-    // remove from parent's child nodes
-    parentUID = thisNode.get("parent");
-    let parentNode = new Dict();
-    parentNode.quiet = 1;
-    parentNode.name = parentUID + ".attr";;
-    parentNode.remove("childNodes::"+uid);
-
-    //recursively undeclare child nodes
-    let childNodes = thisNode.get("childNodes");
-    let theChildNodes;
-    if (childNodes){
-        theChildNodes = childNodes.getkeys();
-        //post("theChildNodes", theChildNodes, "\n");
-    }
-    else{
-        theChildNodes = null;
-    }
-    if (theChildNodes !== null){
-        for (const [key, value] of Object.entries(theChildNodes)) {
-            unregister(value);
-            //post("Undeclare", value, "\n");
-            thisNode.set("pendingNodes::"+value, 1);
-        }
-    }
-    // last, clear this node attr
-    thisNode.remove("fulladdress");
-}
-
-function punregister(uid)
-{
-    // get the attr dict for this node
-    post("Unregister input:", uid, "\n");
-    let thisNode = new Dict();
-    thisNode.quiet = 1;
-    thisNode.name = uid + ".attr";;
-    let fulladdress = thisNode.get("fulladdress");
-    //post("Removing from namespace:", fulladdress, "\n");
-    //remove this node's address from namespace
-    MVCinputs.remove(fulladdress);
-    // TODO : also remove from parameters.value, state.value, etc.
-
-    // remove from parent's child nodes
-    parentUID = thisNode.get("parent");
-    let parentNode = new Dict();
-    parentNode.quiet = 1;
-    parentNode.name = parentUID + ".attr";;
-    parentNode.remove("childInputs::"+uid);
-
-    // last, clear this node attr
-    thisNode.remove("fulladdress");
-}
-
-function free(uid)
-{
-    // get the attr dict for this node
-    post("------Freeing node:", uid, "\n");
-
-    let thisNode = new Dict();
-    thisNode.quiet = 1;
-    thisNode.name = uid + ".attr";;
-
-    //remove from parent's child/pending nodes
-    parentUID = thisNode.get("parent");
-    let parentNode = new Dict();
-    parentNode.quiet = 1;
-    parentNode.name = parentUID + ".attr";;
-
-    let mvcType = thisNode.get("mvc-type");
-    switch(mvcType) {
-    case "model":
-        {
-            unregister(uid);
-            parentNode.remove("childNodes::"+uid);
-            parentNode.remove("pendingNodes::"+uid); 
-            break;         
-        }
-    case "parameter":
-        {
-            punregister(uid);
-            parentNode.remove("childInputs::"+uid);
-            parentNode.remove("pendingInputs::"+uid); 
-            break;         
-        }
-    }
-
-    thisNode.remove("parent");
-    thisNode.remove("address");
-    thisNode.remove("uid");
-
-    //thisNode.clear();
-}
-
-function initializeChildInputs(thisNode){
-        ///////////////////////////////
-    // initialize pending nodes
-    post("--------initializeChildInputs", thisNode, "\n");
-    let uid = thisNode.get("uid");
-    let parentNodeUID = thisNode.get("parent");
-    let thisNodeAddress = thisNode.get("address");
-
-    let parentNode = new Dict();
-    parentNode.quiet = 1;
-    parentNode.name = parentNodeUID + ".attr";
-
-   // create full address for this node and register in namespace
-    if (parentNodeUID != "mvc.root") { // if not top level
-        //post(uid, "is a sub-node.\n")
-        let parentNodeFulladdress = parentNode.get("fulladdress");
-        if (parentNodeFulladdress) {
-            fulladdress = parentNodeFulladdress + "::" + thisNodeAddress;
-            //check if some of these adresses already exist in the namespace, if so returns
-            if (MVCinputs.contains(fulladdress)){
-                 post("This address already exists in the namespace", fulladdress, "\n");
-                 return;
-            }
-
-            thisNode.replace("fulladdress", fulladdress);
-        } 
-        else{
-            post("Missing address for parent node", parentNodeUID, "\n")
+    if (parentUID !== "mvc.root") {
+        const parentAddress = parent.get("fulladdress");
+        if (!parentAddress) {
+            post("Missing address for parent:", parentUID, "\n");
             return;
         }
-    }
-    else { // this is the device/top-level node
-        post(uid, "is a top-level node.\n");
-        fulladdress = thisNodeAddress;
-        thisNode.set("fulladdress", fulladdress);
-    }
 
-    // add this address to the namespace
-    MVCinputs.replace(fulladdress+"::uid", uid);
+        fulladdress = parentAddress + "::" + address;
 
-    inputNotifyParentNode(parentNodeUID, uid);
-
-}
-
-function initializeChildModels(thisNode){
-        ///////////////////////////////
-    // initialize pending nodes
-    post("--------initializeChildModels", thisNode, "\n");
-    let uid = thisNode.get("uid");
-    let parentNodeUID = thisNode.get("parent");
-    let thisNodeAddress = thisNode.get("address");
-
-    let parentNode = new Dict();
-    parentNode.quiet = 1;
-    parentNode.name = parentNodeUID + ".attr";
-
-    let pendingNodes = thisNode.get("pendingNodes");
-    let thePendingNodes;
-    if (pendingNodes){
-        thePendingNodes = pendingNodes.getkeys();
-        //post("pendingNodes", thePendingNodes, "\n");
-    }
-    else{
-        thePendingNodes = null;
-    }
-
-
-    let pendingInputs = thisNode.get("pendingInputs");
-    let thePendingInputs;
-    if (pendingInputs){
-        thePendingInputs = pendingInputs.getkeys();
-        //post("pendingNodes", thePendingNodes, "\n");
-    }
-    else{
-        thePendingInputs = null;
-    }
-
-
-    // create full address for this node and register in namespace
-    if (parentNodeUID != "mvc.root") { // if not top level
-        //post(uid, "is a sub-node.\n")
-        let parentNodeFulladdress = parentNode.get("fulladdress");
-        if (parentNodeFulladdress) {
-            fulladdress = parentNodeFulladdress + "::" + thisNodeAddress;
-            //check if some of these adresses already exist in the namespace, if so returns
-            if (MVCmodels.contains(fulladdress)){
-                 post("This address already exists in the namespace", fulladdress, "\n");
-                 return;
-            }
-
-            thisNode.replace("fulladdress", fulladdress);
-        } 
-        else{
-            post("Missing address for parent node", parentNodeUID, "\n")
+        if (handler.namespace.contains(fulladdress)) {
+            post("Address already exists:", fulladdress, "\n");
             return;
         }
-    }
-    else { // this is the device/top-level node
-        post(uid, "is a top-level node.\n");
-        fulladdress = thisNodeAddress;
-        thisNode.set("fulladdress", fulladdress);
+    } else {
+        post(uid, "is a top-level node\n");
+        fulladdress = address;
     }
 
-    // add this address to the namespace
-    MVCmodels.replace(fulladdress+"::uid", uid);
+    node.replace("fulladdress", fulladdress);
+    handler.namespace.replace(fulladdress + "::uid", uid);
 
+    initializeChildren(node, handler);
+}
 
-    // iterate over pending inputs and initialize them recursively down to the leaves
-    if (thePendingInputs == null){
-        post("No (more) pending input in node:", uid, "\n");
-        // we are on a leaf, send public signal back recursively
-        messnamed(uid + ".init", "---private"); //send private init notif for this node
-        inputNotifyParentNode(parentNodeUID, uid);
-    }
-    else {
-        //Object.keys(pendingNodes); //pendingNodes.keys();
-        post("There are",thePendingInputs.length, "pending inputs in", uid, ":", thePendingInputs, "\n");
-        //pendingNodes.forEach((element) => declare(element));   
-        for (const [key, value] of Object.entries(thePendingInputs)) {
-            register(value);
-            //post(value, "\n");
+/**
+ * Initialise récursivement les enfants d’un nœud :
+ * - si aucun enfant en attente → notification
+ * - sinon → register() sur chaque enfant
+ * @param {Dict} node
+ * @param {Object} handler
+ */
+function initializeChildren(node, handler) {
+    const uid = node.get("uid");
+    const parentUID = node.get("parent");
+    const pending = getKeys(node.get(handler.pendingKey));
+
+    if (!pending) {
+        messnamed(uid + ".init", "---private");
+        handler.notify(parentUID, uid);
+
+        if (handler === MVC.model) {
+            messnamed(uid + ".init", "++public");
         }
+        return;
     }
 
-    // iterate over pending nodes and initialize them recursively down to the leaves
-    if (thePendingNodes == null){
-        post("No (more) pending nodes in node:", uid, "\n");
-        // we are on a leaf, send public signal back recursively
-        messnamed(uid + ".init", "---private"); //send private init notif for this node
-        notifyParentNode(parentNodeUID, uid);
-        messnamed(uid + ".init", "++public");
+    post("Pending", handler.pendingKey, "in", uid, ":", pending, "\n");
+    for (const k in pending) {
+        register(pending[k]);
     }
-    else {
-        //Object.keys(pendingNodes); //pendingNodes.keys();
-        post("There are",thePendingNodes.length, "pending nodes in", uid, ":", thePendingNodes, "\n");
-        //pendingNodes.forEach((element) => declare(element));   
-        for (const [key, value] of Object.entries(thePendingNodes)) {
-            register(value);
-            //post(value, "\n");
-        }
+}
+
+
+/* ==========================================================
+ * NOTIFICATIONS
+ * ==========================================================
+ */
+
+/**
+ * Notifie le parent d’un modèle qu’un enfant est initialisé :
+ * - enlève l’enfant des pending
+ * - l’ajoute aux enfants actifs
+ * - propage la notification si nécessaire
+ * @param {String} parentUID
+ * @param {String} uid
+ */
+function notifyParentNode(parentUID, uid) {
+    post("---- notifyParentNode", parentUID, uid, "\n");
+    if (parentUID === "mvc.root") return;
+
+    const parent = nodeDict(parentUID);
+    parent.remove("pendingNodes::" + uid);
+    parent.replace("childNodes::" + uid, 1);
+
+    const stillPending = getKeys(parent.get("pendingNodes"));
+    if (stillPending) return;
+
+    const grandParentUID = parent.get("parent");
+    messnamed(parentUID + ".init", "----private");
+
+    if (grandParentUID && grandParentUID !== "mvc.root") {
+        notifyParentNode(grandParentUID, parentUID);
+    }
+
+    messnamed(parentUID + ".init", "++++public");
+}
+
+/**
+ * Notifie le parent qu’un paramètre est initialisé
+ * (version simplifiée, sans propagation)
+ * @param {String} parentUID
+ * @param {String} uid
+ */
+function inputNotifyParentNode(parentUID, uid) {
+    const parent = nodeDict(parentUID);
+    parent.remove("pendingInputs::" + uid);
+    parent.replace("childInputs::" + uid, 1);
+}
+
+
+/* ==========================================================
+ * UNREGISTER
+ * ==========================================================
+ */
+
+/**
+ * Désenregistre un nœud selon son type MVC
+ * @param {String} uid
+ */
+function unregister(uid) {
+    const node = nodeDict(uid);
+    const type = node.get("mvc-type");
+
+    if (type === "model") unregisterModel(uid);
+    if (type === "parameter") unregisterInput(uid);
+}
+
+/**
+ * Désenregistre récursivement un modèle :
+ * - suppression du namespace
+ * - suppression des enfants
+ * @param {String} uid
+ */
+function unregisterModel(uid) {
+    post("---- Unregister model:", uid, "\n");
+
+    const node = nodeDict(uid);
+    const fulladdress = node.get("fulladdress");
+
+    // Remove from namespace
+    MVC.model.namespace.remove(fulladdress);
+
+    // Remove from parent's active children
+    removeFromParent(node, "childNodes");
+
+    // Restore into parent's pendingNodes
+    restoreToPending(node, "pendingNodes");
+
+    // Recursively unregister children
+    unregisterChildren(node, "childNodes", unregisterModel);
+
+    node.remove("fulladdress");
+}
+
+
+/**
+ * Désenregistre un paramètre
+ * @param {String} uid
+ */
+function unregisterInput(uid) {
+    post("---- Unregister input:", uid, "\n");
+
+    const node = nodeDict(uid);
+    const fulladdress = node.get("fulladdress");
+
+    // Remove from namespace
+    MVC.parameter.namespace.remove(fulladdress);
+
+    // Remove from parent's active inputs
+    removeFromParent(node, "childInputs");
+
+    // Restore into parent's pendingInputs
+    restoreToPending(node, "pendingInputs");
+
+    node.remove("fulladdress");
+}
+
+
+
+/* ==========================================================
+ * FREE
+ * ==========================================================
+ */
+
+/**
+ * Nettoyage complet d’un nœud :
+ * - unregister
+ * - suppression des liens parent/enfant
+ * - suppression des attributs
+ * @param {String} uid
+ */
+function free(uid) {
+    post("---- Free node:", uid, "\n");
+
+    const node = nodeDict(uid);
+    unregister(uid);
+
+    const parentUID = node.get("parent");
+    if (parentUID) {
+        const parent = nodeDict(parentUID);
+        parent.remove("childNodes::" + uid);
+        parent.remove("pendingNodes::" + uid);
+        parent.remove("childInputs::" + uid);
+        parent.remove("pendingInputs::" + uid);
+    }
+
+    node.remove("parent");
+    node.remove("address");
+    node.remove("uid");
+}
+
+
+/* ==========================================================
+ * HELPERS
+ * ==========================================================
+ */
+
+/**
+ * Supprime un nœud de la liste enfant de son parent
+ * @param {Dict} node
+ * @param {String} key
+ */
+function removeFromParent(node, key) {
+    const parentUID = node.get("parent");
+    if (!parentUID) return;
+    nodeDict(parentUID).remove(key + "::" + node.get("uid"));
+}
+
+/**
+ * Désenregistre récursivement les enfants d’un nœud
+ * @param {Dict} node
+ * @param {String} key
+ * @param {Function} fn
+ */
+function unregisterChildren(node, key, fn) {
+    const children = getKeys(node.get(key));
+    if (!children) return;
+    for (const k in children) {
+        fn(children[k]);
     }
 }
