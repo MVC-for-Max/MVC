@@ -177,29 +177,10 @@ function unregister(uid)
             thisNode.set("pendingNodes::"+value, 1);
         }
     }
-
     // last, clear this node attr
     thisNode.remove("fulladdress");
 }
 
-
-// unregister node from the namespace
-// lighter than undeclare, as it considers that namespace was already cleaned by parent node
-// we just remove fulladdress from this node's attr dict, and trigger subnodes to do the same
-function unregisterold(uid)
-{
-    // get the attr dict for this node
-    post("Unregistering node:", uid, "\n");
-    let thisNode = new Dict();
-    thisNode.quiet = 1;
-    thisNode.name = uid;
-
-    // undeclare child-nodes (if any)
-    messnamed(uid + ".i.ini", 0);
-
-    // last, clear this node attr
-    thisNode.remove("fulladdress");
-}
 
 function free(uid)
 {
