@@ -79,7 +79,7 @@
                         "parameter_enable": 0,
                         "parameter_mappable": 0
                     },
-                    "text": "dict #1"
+                    "text": "dict #1.attr"
                 }
             },
             {
