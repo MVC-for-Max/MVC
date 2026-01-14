@@ -1,6 +1,6 @@
-let MVCnamespace = new Dict();
-MVCnamespace.name = "mvc.models";
-MVCnamespace.quiet = 1;
+let MVCmodels = new Dict();
+MVCmodels.name = "mvc.models";
+MVCmodels.quiet = 1;
 
 let MVCinputs = new Dict();
 MVCinputs.name = "mvc.inputs";
@@ -15,7 +15,7 @@ function register(uid)
 
     let thisNodeAddress = thisNode.get("address");
     //post("thisNodeAddress:", thisNodeAddress, "\n");
-        
+
     // return if no address or none
     if ((!thisNodeAddress)||(thisNodeAddress=="none")){
         post("Error: missing address for node:", uid, "\n")
@@ -46,48 +46,15 @@ function register(uid)
     switch(mvcType) {
         case "model":
             {
-                theNamespace = MVCnamespace;
+                initializeChildModels(thisNode);
                 break;         
             }
         case "parameter":
             {
-                theNamespace = MVCinputs;
+                initializeChildInputs(thisNode);
                 break;         
             }
         }
-
-    // create full address for this node and register in namespace
-    if (parentNodeUID != "mvc.root") { // if not top level
-        //post(uid, "is a sub-node.\n")
-        let parentNodeFulladdress = parentNode.get("fulladdress");
-        if (parentNodeFulladdress) {
-            fulladdress = parentNodeFulladdress + "::" + thisNodeAddress;
-            //check if some of these adresses already exist in the namespace, if so returns
-            if (theNamespace.contains(fulladdress)){
-                 post("This address already exists in the namespace", fulladdress, "\n");
-                 return;
-            }
-
-            thisNode.replace("fulladdress", fulladdress);
-        } 
-        else{
-            post("Missing address for parent node", parentNodeUID, "\n")
-            return;
-        }
-    }
-    else { // this is the device/top-level node
-        post(uid, "is a top-level node.\n");
-        fulladdress = thisNodeAddress;
-        thisNode.set("fulladdress", fulladdress);
-    }
-
-    // add this address to the namespace
-    theNamespace.replace(fulladdress+"::uid", uid);
-
-    // Initialize first inputs, then only child models (so that input can preempt it)
-    initializeChildInputs(thisNode);
-    initializeChildModels(thisNode);
-
 }
 
 // notifyParentNode
@@ -187,7 +154,7 @@ function unregister(uid)
     //post("Removing from namespace:", fulladdress, "\n");
     //remove this node's address from namespace
 
-    MVCnamespace.remove(fulladdress);
+    MVCmodels.remove(fulladdress);
     // TODO : also remove from parameters.value, state.value, etc.
 
     // remove from parent's child nodes
@@ -246,7 +213,6 @@ function free(uid)
 {
     // get the attr dict for this node
     post("------Freeing node:", uid, "\n");
-    unregister(uid);
 
     let thisNode = new Dict();
     thisNode.quiet = 1;
@@ -262,12 +228,14 @@ function free(uid)
     switch(mvcType) {
     case "model":
         {
+            unregister(uid);
             parentNode.remove("childNodes::"+uid);
             parentNode.remove("pendingNodes::"+uid); 
             break;         
         }
     case "parameter":
         {
+            punregister(uid);
             parentNode.remove("childInputs::"+uid);
             parentNode.remove("pendingInputs::"+uid); 
             break;         
@@ -287,33 +255,42 @@ function initializeChildInputs(thisNode){
     post("--------initializeChildInputs", thisNode, "\n");
     let uid = thisNode.get("uid");
     let parentNodeUID = thisNode.get("parent");
-    let pendingInputs = thisNode.get("pendingInputs");
-    let thePendingInputs;
-    if (pendingInputs){
-        thePendingInputs = pendingInputs.getkeys();
-        post("thePendingInputs", thePendingInputs, "\n");
-    }
-    else{
-        thePendingInputs = null;
-    }
-    
-    // iterate over pending nodes and initialize them recursively down to the leaves
-    if (thePendingInputs == null){
-        post("No (more) pending nodes in node:", uid, "\n");
-        // we are on a leaf, send public signal back recursively
-        messnamed(uid + ".init", "---private"); //send private init notif for this node
-        notifyParentNode(parentNodeUID, uid);
-        //messnamed(uid + ".init", "++public");
-    }
-    else {
-        //Object.keys(pendingNodes); //pendingNodes.keys();
-        post("There are",thePendingInputs.length, "pending nodes in", uid, ":", thePendingInputs, "\n");
-        //pendingNodes.forEach((element) => declare(element));   
-        for (const [key, value] of Object.entries(thePendingInputs)) {
-            register(value);
-            //post(value, "\n");
+    let thisNodeAddress = thisNode.get("address");
+
+    let parentNode = new Dict();
+    parentNode.quiet = 1;
+    parentNode.name = parentNodeUID + ".attr";
+
+   // create full address for this node and register in namespace
+    if (parentNodeUID != "mvc.root") { // if not top level
+        //post(uid, "is a sub-node.\n")
+        let parentNodeFulladdress = parentNode.get("fulladdress");
+        if (parentNodeFulladdress) {
+            fulladdress = parentNodeFulladdress + "::" + thisNodeAddress;
+            //check if some of these adresses already exist in the namespace, if so returns
+            if (MVCinputs.contains(fulladdress)){
+                 post("This address already exists in the namespace", fulladdress, "\n");
+                 return;
+            }
+
+            thisNode.replace("fulladdress", fulladdress);
+        } 
+        else{
+            post("Missing address for parent node", parentNodeUID, "\n")
+            return;
         }
     }
+    else { // this is the device/top-level node
+        post(uid, "is a top-level node.\n");
+        fulladdress = thisNodeAddress;
+        thisNode.set("fulladdress", fulladdress);
+    }
+
+    // add this address to the namespace
+    MVCinputs.replace(fulladdress+"::uid", uid);
+
+    inputNotifyParentNode(parentNodeUID, uid);
+
 }
 
 function initializeChildModels(thisNode){
@@ -322,6 +299,12 @@ function initializeChildModels(thisNode){
     post("--------initializeChildModels", thisNode, "\n");
     let uid = thisNode.get("uid");
     let parentNodeUID = thisNode.get("parent");
+    let thisNodeAddress = thisNode.get("address");
+
+    let parentNode = new Dict();
+    parentNode.quiet = 1;
+    parentNode.name = parentNodeUID + ".attr";
+
     let pendingNodes = thisNode.get("pendingNodes");
     let thePendingNodes;
     if (pendingNodes){
@@ -331,7 +314,65 @@ function initializeChildModels(thisNode){
     else{
         thePendingNodes = null;
     }
-    
+
+
+    let pendingInputs = thisNode.get("pendingInputs");
+    let thePendingInputs;
+    if (pendingInputs){
+        thePendingInputs = pendingInputs.getkeys();
+        //post("pendingNodes", thePendingNodes, "\n");
+    }
+    else{
+        thePendingInputs = null;
+    }
+
+
+    // create full address for this node and register in namespace
+    if (parentNodeUID != "mvc.root") { // if not top level
+        //post(uid, "is a sub-node.\n")
+        let parentNodeFulladdress = parentNode.get("fulladdress");
+        if (parentNodeFulladdress) {
+            fulladdress = parentNodeFulladdress + "::" + thisNodeAddress;
+            //check if some of these adresses already exist in the namespace, if so returns
+            if (MVCmodels.contains(fulladdress)){
+                 post("This address already exists in the namespace", fulladdress, "\n");
+                 return;
+            }
+
+            thisNode.replace("fulladdress", fulladdress);
+        } 
+        else{
+            post("Missing address for parent node", parentNodeUID, "\n")
+            return;
+        }
+    }
+    else { // this is the device/top-level node
+        post(uid, "is a top-level node.\n");
+        fulladdress = thisNodeAddress;
+        thisNode.set("fulladdress", fulladdress);
+    }
+
+    // add this address to the namespace
+    MVCmodels.replace(fulladdress+"::uid", uid);
+
+
+    // iterate over pending inputs and initialize them recursively down to the leaves
+    if (thePendingInputs == null){
+        post("No (more) pending input in node:", uid, "\n");
+        // we are on a leaf, send public signal back recursively
+        messnamed(uid + ".init", "---private"); //send private init notif for this node
+        inputNotifyParentNode(parentNodeUID, uid);
+    }
+    else {
+        //Object.keys(pendingNodes); //pendingNodes.keys();
+        post("There are",thePendingInputs.length, "pending inputs in", uid, ":", thePendingInputs, "\n");
+        //pendingNodes.forEach((element) => declare(element));   
+        for (const [key, value] of Object.entries(thePendingInputs)) {
+            register(value);
+            //post(value, "\n");
+        }
+    }
+
     // iterate over pending nodes and initialize them recursively down to the leaves
     if (thePendingNodes == null){
         post("No (more) pending nodes in node:", uid, "\n");
