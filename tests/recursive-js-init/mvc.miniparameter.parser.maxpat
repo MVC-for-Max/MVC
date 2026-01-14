@@ -1901,7 +1901,7 @@
                                                     "numoutlets": 2,
                                                     "outlettype": [ "", "" ],
                                                     "patching_rect": [ 50.0, 109.0, 214.0, 22.0 ],
-                                                    "text": "combine pendingInput:: #1"
+                                                    "text": "combine pendingInputs:: #1"
                                                 }
                                             },
                                             {
@@ -2006,7 +2006,7 @@
                                     "numoutlets": 2,
                                     "outlettype": [ "", "" ],
                                     "patching_rect": [ 258.0, 158.0, 214.0, 22.0 ],
-                                    "text": "combine pendingInput:: #1"
+                                    "text": "combine pendingInputs:: #1"
                                 }
                             },
                             {
