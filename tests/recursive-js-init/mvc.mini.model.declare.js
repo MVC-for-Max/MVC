@@ -25,6 +25,11 @@ function invalid(v) {
     return v === null || v === undefined || v === "none";
 }
 
+function asArray(v) {
+    return v == null ? [] : (Array.isArray(v) ? v : [v]);
+}
+
+
 /* ===================== BRACE EXPANSION ===================== */
 
 function expandAddress(addr) {
@@ -56,64 +61,59 @@ function expandAddressList(addr) {
 
 /* ===================== ADDRESS DISTRIBUTION ===================== */
 
-function distributeAddresses(parentList, expanded) {
-    var addresslist = [];
-    var parentmap = [];
-    var childrenmap = [];
+function distributeAddresses(n, parent) {
+    let addresslist = []; // the final address list
+    let parentmap = [];   // an array mapping each address to the index of the parent addresses
+    let childrenmap = []; // a nested array mapping parent index to an array of corresponding child addresses indices
 
-    if (!parentList || parentList.length === 0) parentList = [""];
+    let expandedAddresses = n.get('expandedAddresses');
+    //addresslist = expanded.flat();
 
-    var parentCount = parentList.length;
-    var groupCount = expanded.length;
+    //if (!parentList || parentList.length === 0) parentList = [""];
 
-    var parentIndex = 0;
-    var globalIndex = 0;
-
-    // initialize parentmap
-    for (var i = 0; i < groupCount; i++) {
-        parentmap[i] = [];
-    }
-
-    var groupIndex = 0;
-    var offsetInGroup = 0;
-
-    while (parentIndex < parentCount) {
-        var group = expanded[groupIndex];
-        var parent = parentList[parentIndex];
-
-        var childAddr = group[offsetInGroup];
-
-        var full = parent
-            ? parent + "::" + childAddr
-            : childAddr;
-
-        addresslist.push(full);
-
-        // 1-based indices (Max-friendly)
-        parentmap[groupIndex].push(globalIndex + 1);
-        childrenmap.push(groupIndex + 1);
-
-        globalIndex++;
-        parentIndex++;
-        offsetInGroup++;
-
-        // advance inside group
-        if (offsetInGroup >= group.length) {
-            offsetInGroup = 0;
-            groupIndex++;
-
-            // wrap groups if exhausted
-            if (groupIndex >= groupCount) {
-                groupIndex = 0;
-            }
+    if (n.get('parent') == 'mvc.root'){ // If no parent, consider the addresses as absolute (can only happen for the device's top level model)
+      addresslist = expandedAddresses.flat();
+      //post('addresslist flattened', addresslist, '\n');
+      const tmp = new Array(addresslist.length);
+      for (let i = 0; i < addresslist.length; i++) {
+          parentmap[i] = 1;
+          tmp[i] = i + 1;
+      }
+      childrenmap[0] = tmp;
+    } 
+    else if (parent.get('uid') != n.get('uid')){ //concat on parent address
+    
+      let adddressIndex = 0; //the address index in the final addresslist
+      let parentAddresses = parent.get('addresslist');
+    
+      for (let i = 0; i < parentAddresses.length; i++) {
+        const childIndexArray = [];
+        const addressesArrayForThisParentAddress = expandedAddresses[i%expandedAddresses.length];
+        //post('addressesArrayForThisParentAddress', addressesArrayForThisParentAddress, '\n');
+    
+        for (let j = 0; j < addressesArrayForThisParentAddress.length; j++) {
+          var childAdd = addressesArrayForThisParentAddress[j];
+          if (childAdd !== 'none'){
+            addresslist.push(parentAddresses[i] + '::' + childAdd);          
+            childrenmap.push(i+1);
+            adddressIndex++;
+            childIndexArray.push(adddressIndex);
+          }
         }
+        parentmap.push(childIndexArray);
+      }
+      //addresslist = ["addresslist"].concat(addresslist);
+    }
+    else { // if parent-uid and child-uid are the same: this is the device
+      //addresslist = ["addresslist"].concat(expandedAddresses[0]);
+      addresslist = expandedAddresses[0] || [];
+      parentmap = [1];
+      childrenmap = [1];
     }
 
-    return {
-        addresslist: addresslist,
-        parentmap: parentmap,
-        childrenmap: childrenmap
-    };
+  n.replace('addresslist', addresslist);
+  n.replace('parentmap', parentmap);
+  n.replace('childrenmap', childrenmap);
 }
 
 
@@ -158,18 +158,18 @@ function initializeNode(n, parent) {
     var parentList = parent ? parent.get("addresslist") : null;
     if (parentList && !Array.isArray(parentList)) parentList = [parentList];
 
-    var dist = distributeAddresses(parentList, expanded);
+    var dist = distributeAddresses(n, parent);
 
-    n.replace("addresslist", dist.addresslist);
-    n.replace("parentmap", dist.parentmap);
-    n.replace("childrenmap", dist.childrenmap);
+    //n.replace("addresslist", dist.addresslist);
+    //n.replace("parentmap", dist.parentmap);
+    //n.replace("childrenmap", dist.childrenmap);
     n.replace("initialized", 1);
 
-    for (var i = 0; i < dist.addresslist.length; i++) {
+    for (var i = 0; i < n.get('addresslist').length; i++) {
         if (type === "model") {
-            MVC_MODELS.replace(dist.addresslist[i] + "::uid", uid);
+            MVC_MODELS.replace(n.get('addresslist')[i] + "::uid", uid);
         } else {
-            MVC_PARAMETERS.replace(dist.addresslist[i] + "::uid", uid);
+            MVC_PARAMETERS.replace(n.get('addresslist')[i] + "::uid", uid);
         }
     }
 
