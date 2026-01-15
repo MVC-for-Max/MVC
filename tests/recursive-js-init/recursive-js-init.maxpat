@@ -229,8 +229,8 @@
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 630.0, 665.0, 219.0, 22.0 ],
-                    "text": "mvc.miniparameter myModel frequency"
+                    "patching_rect": [ 630.0, 665.0, 249.0, 22.0 ],
+                    "text": "mvc.miniparameter myModel frequency.{1..3}"
                 }
             },
             {
