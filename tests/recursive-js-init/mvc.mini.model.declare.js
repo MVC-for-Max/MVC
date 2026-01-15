@@ -4,10 +4,13 @@
  ****************************************************************/
 
 var MVC_MODELS = new Dict("mvc.models");
-var MVC_PARAMETERS = new Dict("mvc.parameters");
+var MVC_INPUTS = new Dict("mvc.inputs");
+var MVC_PARAMETERS_VALUES = new Dict("mvc.parameters.values");
+var MVC_STATES_VALUES = new Dict("mvc.states.values");
+
 
 MVC_MODELS.quiet = 1;
-MVC_PARAMETERS.quiet = 1;
+MVC_INPUTS.quiet = 1;
 
 /* ===================== UTILITIES ===================== */
 
@@ -29,6 +32,18 @@ function asArray(v) {
     return v == null ? [] : (Array.isArray(v) ? v : [v]);
 }
 
+function findGoneItems(CurrentArray, PreviousArray) {
+   var CurrentArrSize = CurrentArray.length;
+   var PreviousArrSize = PreviousArray.length;
+   var missingItems = [];
+   // loop through previous array
+   for(var j = 0; j < PreviousArrSize; j++) {
+      // look for same thing in new array
+      if (CurrentArray.indexOf(PreviousArray[j]) == -1)
+         missingItems.push(PreviousArray[j]);
+   }
+   return missingItems;
+}
 
 /* ===================== BRACE EXPANSION ===================== */
 
@@ -116,6 +131,23 @@ function distributeAddresses(n, parent) {
   n.replace('childrenmap', childrenmap);
 }
 
+function namespaceCollision(n) {
+
+    let addresslist = n.get('addresslist');
+    let uid = n.get('uid');
+
+    for (let i = 0; i < (addresslist.length); i++) {
+        let theAdd = addresslist[i];
+        let theUID = MVC_INPUTS.get(theAdd+"::uid");
+        if (theUID == null) break;  
+        else if (uid != theUID[0]) {
+            post('Parameter', addresslist[i].replace(/::/g, '/'), 'is already in the namespace.\n')
+            return 1;
+        }   
+    }    
+    return 0;
+}
+
 
 /* ===================== REGISTER ===================== */
 
@@ -127,6 +159,7 @@ function register(uid) {
 
     if (invalid(type) || invalid(parentUID) || invalid(address)) return;
 
+    // top level model
     if (parentUID === "mvc.root") {
         initializeNode(n, null);
         return;
@@ -150,31 +183,70 @@ function register(uid) {
 
 function initializeNode(n, parent) {
     var uid = n.get("uid");
-    var type = n.get("mvc-type");
+    var mvcType = n.get("mvc-type");
+    let previousAddresses = asArray(n.get('addresslist'));
 
+    // expand brace-notation
     var expanded = expandAddressList(n.get("address"));
     n.replace("expandedAddresses", expanded);
 
+    // fetch parent addresslist
     var parentList = parent ? parent.get("addresslist") : null;
     if (parentList && !Array.isArray(parentList)) parentList = [parentList];
 
-    var dist = distributeAddresses(n, parent);
+    // distribute this node's addresses onto parent addresslist
+    // this will fill n.addresslist
+    distributeAddresses(n, parent); 
 
-    //n.replace("addresslist", dist.addresslist);
-    //n.replace("parentmap", dist.parentmap);
-    //n.replace("childrenmap", dist.childrenmap);
+    // check namespace collision
+    if (namespaceCollision(n)) return;
+
     n.replace("initialized", 1);
 
-    for (var i = 0; i < n.get('addresslist').length; i++) {
-        if (type === "model") {
-            MVC_MODELS.replace(n.get('addresslist')[i] + "::uid", uid, i+1);
-        } else {
-            MVC_PARAMETERS.replace(n.get('addresslist')[i] + "::uid", uid, i+1);
+    // find gone addresses and remove them in the value dict
+    let missingAdresses = findGoneItems(n.get('addresslist'), previousAddresses);
+    for (let i = 0; i < (missingAdresses.length); i++) {
+        let theAdd = missingAdresses[i];
+        //post("missing address:", theAdd, '\n');
+        MVC_INPUTS.remove(theAdd);
+        switch(mvcType){
+            case 'state':
+                MVC_STATES_VALUES.remove(theAdd);
+                break;
+            case 'parameter':
+                MVC_PARAMETERS_VALUES.remove(theAdd);
+                break;
+            case 'message':
+                break;
+            default:
+               break;
         }
     }
 
+    for (var i = 0; i < n.get('addresslist').length; i++) {
+        let theAddress = n.get('addresslist')[i]; 
+        if (mvcType === 'model') {
+            MVC_MODELS.replace(theAddress + '::uid', uid, i+1);
+        } 
+        else {
+            MVC_INPUTS.replace(theAddress + '::uid', uid, i+1);
+            if (mvcType === 'parameter') {
+                // only write default is address didn't already exist
+                if (!MVC_PARAMETERS_VALUES.contains(theAddress)){
+                    MVC_PARAMETERS_VALUES.replace(theAddress, n.get('default'));
+                }
+            }
+            else if (mvcType === 'state') {
+                // only write default is address didn't already exist
+                if (!MVC_STATES_VALUES.contains(theAddress)){
+                    MVC_STATES_VALUES.replace(theAddress, n.get('default'));
+                }
+            } // else
+        }
+   }
+
     if (parent) {
-        if (type === "model") {
+        if (mvcType === "model") {
             parent.replace("childModels::" + uid, 1);
             parent.remove("pendingChildModels::" + uid);
         } else {
@@ -183,7 +255,7 @@ function initializeNode(n, parent) {
         }
     }
 
-    if (type === "model") {
+    if (mvcType === "model") {
         initializePendingChildren(n);
     }
 
@@ -231,7 +303,7 @@ function unregisterModelSubtree(n) {
 }
 
 function unregisterModel(n) {
-    removeFromNamespaces(n, true);
+    removeFromNamespaces(n);
 
     moveChildrenToPending(n, "childModels", "pendingChildModels");
     moveChildrenToPending(n, "childParameters", "pendingChildParameters");
@@ -252,7 +324,7 @@ function unregisterModel(n) {
 /* ===================== PARAMETER UNREGISTER ===================== */
 
 function unregisterParameter(n) {
-    removeFromNamespaces(n, false);
+    removeFromNamespaces(n);
 
     var parentUID = n.get("parent");
     if (!invalid(parentUID) && parentUID !== "mvc.root") {
@@ -288,7 +360,7 @@ function freeModel(n) {
         unregisterModelSubtree(node(models[i]));
     }
 
-    removeFromNamespaces(n, true);
+    removeFromNamespaces(n);
 
     moveChildrenToPending(n, "childModels", "pendingChildModels");
     moveChildrenToPending(n, "childParameters", "pendingChildParameters");
@@ -304,7 +376,9 @@ function freeModel(n) {
 }
 
 function freeParameter(n) {
-    removeFromNamespaces(n, false);
+
+    // don't remove a duplicate that wasn't initialized
+    if (n.get('initialized')) removeFromNamespaces(n);
 
     var parentUID = n.get("parent");
     if (!invalid(parentUID)) {
@@ -328,16 +402,22 @@ function moveChildrenToPending(n, from, to) {
     }
 }
 
-function removeFromNamespaces(n, isModel) {
-    var list = n.get("addresslist");
-    if (!list) return;
+function removeFromNamespaces(n) {
+    let addresslist = n.get("addresslist");
+    let mvcType = n.get("mvc-type");
 
-    for (var i = 0; i < list.length; i++) {
-        if (isModel) {
-            MVC_MODELS.remove(list[i]);
-            MVC_PARAMETERS.remove(list[i]);
+    if (!addresslist) return;
+
+    for (var i = 0; i < addresslist.length; i++) {
+        if (mvcType == 'model') {
+            MVC_MODELS.remove(addresslist[i]);
+            MVC_INPUTS.remove(addresslist[i]);
+            MVC_PARAMETERS_VALUES.remove(addresslist[i]);
         } else {
-            MVC_PARAMETERS.remove(list[i]);
+            MVC_INPUTS.remove(addresslist[i]);
+            if (mvcType == 'parameter') MVC_PARAMETERS_VALUES.remove(addresslist[i]);
+            else if (mvcType == 'state') MVC_STATES_VALUES.remove(addresslist[i]);
+            // else, this is a message
         }
     }
 }
@@ -348,5 +428,5 @@ function dump() {
     post("---- MVC MODELS ----\n");
     post(MVC_MODELS.stringify(), "\n");
     post("---- MVC PARAMETERS ----\n");
-    post(MVC_PARAMETERS.stringify(), "\n");
+    post(MVC_INPUTS.stringify(), "\n");
 }
