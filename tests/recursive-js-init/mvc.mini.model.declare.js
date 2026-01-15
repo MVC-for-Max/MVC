@@ -3,10 +3,10 @@
  * Max/MSP JavaScript
  ****************************************************************/
 
-var MVC_MODELS = new Dict("mvc.models");
-var MVC_INPUTS = new Dict("mvc.inputs");
-var MVC_PARAMETERS_VALUES = new Dict("mvc.parameters.values");
-var MVC_STATES_VALUES = new Dict("mvc.states.values");
+var MVC_MODELS = new Dict("mvc.models.dict");
+var MVC_INPUTS = new Dict("mvc.inputs.dict");
+var MVC_PARAMETERS_VALUES = new Dict("mvc.parameters.values.dict");
+var MVC_STATES_VALUES = new Dict("mvc.states.values.dict");
 
 
 MVC_MODELS.quiet = 1;
@@ -157,6 +157,8 @@ function register(uid) {
     var parentUID = n.get("parent");
     var address = n.get("address");
 
+    post("register");
+
     if (invalid(type) || invalid(parentUID) || invalid(address)) return;
 
     // top level model
@@ -223,7 +225,9 @@ function initializeNode(n, parent) {
         }
     }
 
-    for (var i = 0; i < n.get('addresslist').length; i++) {
+    let addresscount = n.get('addresslist').length;
+
+    for (var i = 0; i < addresscount; i++) {
         let theAddress = n.get('addresslist')[i]; 
         if (mvcType === 'model') {
             MVC_MODELS.replace(theAddress + '::uid', uid, i+1);
@@ -259,7 +263,8 @@ function initializeNode(n, parent) {
         initializePendingChildren(n);
     }
 
-    messnamed(uid + ".init", 1);
+
+    messnamed(uid + ".init", addresscount);
 }
 
 function initializePendingChildren(n) {
@@ -378,7 +383,8 @@ function freeModel(n) {
 function freeParameter(n) {
 
     // don't remove a duplicate that wasn't initialized
-    if (n.get('initialized')) removeFromNamespaces(n);
+    //if (n.get('initialized')) removeFromNamespaces(n);
+     removeFromNamespaces(n);
 
     var parentUID = n.get("parent");
     if (!invalid(parentUID)) {
