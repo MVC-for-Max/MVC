@@ -31,7 +31,7 @@
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
                     "patching_rect": [ 329.5, 550.0, 167.0, 22.0 ],
-                    "text": "zl.reg unregister #1"
+                    "text": "zl.reg free #1"
                 }
             },
             {
@@ -546,6 +546,7 @@
                             {
                                 "box": {
                                     "id": "obj-3",
+                                    "linecount": 3,
                                     "maxclass": "newobj",
                                     "numinlets": 1,
                                     "numoutlets": 0,
