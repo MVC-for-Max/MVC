@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 59.0, 119.0, 1000.0, 755.0 ],
+        "rect": [ 358.0, 118.0, 1000.0, 755.0 ],
         "boxes": [
             {
                 "box": {
@@ -31,7 +31,7 @@
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
                     "patching_rect": [ 329.5, 550.0, 167.0, 22.0 ],
-                    "text": "zl.reg free #1"
+                    "text": "zl.reg unregister #1"
                 }
             },
             {
@@ -546,7 +546,6 @@
                             {
                                 "box": {
                                     "id": "obj-3",
-                                    "linecount": 3,
                                     "maxclass": "newobj",
                                     "numinlets": 1,
                                     "numoutlets": 0,
@@ -1727,8 +1726,8 @@
                                                     "numinlets": 2,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "", "" ],
-                                                    "patching_rect": [ 50.0, 109.0, 214.0, 22.0 ],
-                                                    "text": "combine pendingNodes:: #1"
+                                                    "patching_rect": [ 50.0, 109.0, 225.0, 22.0 ],
+                                                    "text": "combine pendingChildModels:: #1"
                                                 }
                                             },
                                             {
@@ -1832,8 +1831,8 @@
                                     "numinlets": 2,
                                     "numoutlets": 2,
                                     "outlettype": [ "", "" ],
-                                    "patching_rect": [ 258.0, 158.0, 217.0, 22.0 ],
-                                    "text": "combine pendingNodes:: #1.attr"
+                                    "patching_rect": [ 258.0, 158.0, 245.0, 22.0 ],
+                                    "text": "combine pendingChildModels:: #1.attr"
                                 }
                             },
                             {
@@ -2116,13 +2115,13 @@
                                             {
                                                 "box": {
                                                     "id": "obj-10",
-                                                    "linecount": 4,
+                                                    "linecount": 5,
                                                     "maxclass": "message",
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 273.0, 311.0, 176.0, 62.0 ],
-                                                    "text": "replace pendingNodes::toto 1, remove pendingNodes::toto, replace pendingInputs::toto 1, remove pendingInputs::toto"
+                                                    "patching_rect": [ 273.0, 271.0, 176.0, 76.0 ],
+                                                    "text": "replace pendingChildModels::toto 1, remove pendingNodes::toto, replace pendingInputs::toto 1, remove pendingInputs::toto"
                                                 }
                                             },
                                             {
@@ -2132,7 +2131,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "bang" ],
-                                                    "patching_rect": [ 273.0, 287.0, 100.0, 22.0 ],
+                                                    "patching_rect": [ 273.0, 247.0, 100.0, 22.0 ],
                                                     "text": "loadbang"
                                                 }
                                             },
@@ -2232,12 +2231,6 @@
                                             }
                                         ],
                                         "lines": [
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-1", 0 ],
-                                                    "source": [ "obj-10", 0 ]
-                                                }
-                                            },
                                             {
                                                 "patchline": {
                                                     "destination": [ "obj-1", 0 ],
@@ -2498,12 +2491,6 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-16", 0 ],
-                    "source": [ "obj-14", 2 ]
-                }
-            },
-            {
-                "patchline": {
                     "destination": [ "obj-21", 0 ],
                     "source": [ "obj-14", 3 ]
                 }
@@ -2542,7 +2529,6 @@
             {
                 "patchline": {
                     "destination": [ "obj-1", 1 ],
-                    "midpoints": [ 665.5, 506.90234375, 188.5, 506.90234375 ],
                     "source": [ "obj-22", 0 ]
                 }
             },
