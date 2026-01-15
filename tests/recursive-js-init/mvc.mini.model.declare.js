@@ -1,5 +1,5 @@
 /****************************************************************
- * MVC REGISTRATION MANAGER (FULL REWRITE)
+ * MVC REGISTRATION MANAGER (ADDRESS-LIST VERSION)
  * Max/MSP JavaScript
  ****************************************************************/
 
@@ -43,16 +43,53 @@ function expandAddress(addr) {
     return out;
 }
 
-function cartesian(parentAddrs, childAddrs) {
-    if (!parentAddrs) return childAddrs.slice();
-
-    var out = [];
-    for (var i = 0; i < parentAddrs.length; i++) {
-        for (var j = 0; j < childAddrs.length; j++) {
-            out.push(parentAddrs[i] + "::" + childAddrs[j]);
+function expandAddressList(addr) {
+    if (Array.isArray(addr)) {
+        var out = [];
+        for (var i = 0; i < addr.length; i++) {
+            out.push(expandAddress(addr[i]));
         }
+        return out;
     }
-    return out;
+    return [expandAddress(addr)];
+}
+
+/* ===================== ADDRESS DISTRIBUTION ===================== */
+
+function distributeAddresses(parentList, expanded) {
+    var addresslist = [];
+    var parentmap = [];
+    var childrenmap = [];
+
+    if (!parentList || parentList.length === 0) parentList = [""];
+
+    var pIndex = 0;
+    var aIndex = 0;
+
+    for (var i = 0; i < expanded.length; i++) {
+        parentmap[i] = [];
+
+        var group = expanded[i];
+        var parent = parentList[pIndex % parentList.length];
+
+        for (var j = 0; j < group.length; j++) {
+            var full = parent
+                ? parent + "::" + group[j]
+                : group[j];
+
+            addresslist.push(full);
+            parentmap[i].push(aIndex + 1);     // 1-based
+            childrenmap.push(i + 1);            // 1-based
+            aIndex++;
+        }
+        pIndex++;
+    }
+
+    return {
+        addresslist: addresslist,
+        parentmap: parentmap,
+        childrenmap: childrenmap
+    };
 }
 
 /* ===================== REGISTER ===================== */
@@ -90,25 +127,26 @@ function initializeNode(n, parent) {
     var uid = n.get("uid");
     var type = n.get("mvc-type");
 
-    var local = expandAddress(n.get("address"));
-    var parentFull = parent ? parent.get("fullAddress") : null;
+    var expanded = expandAddressList(n.get("address"));
+    n.replace("expandedAddresses", expanded);
 
-    if (parentFull && !Array.isArray(parentFull)) {
-        parentFull = [parentFull];
-    }
+    var parentList = parent ? parent.get("addresslist") : null;
+    if (parentList && !Array.isArray(parentList)) parentList = [parentList];
 
-    var full = cartesian(parentFull, local);
+    var dist = distributeAddresses(parentList, expanded);
 
-    for (var i = 0; i < full.length; i++) {
+    n.replace("addresslist", dist.addresslist);
+    n.replace("parentmap", dist.parentmap);
+    n.replace("childrenmap", dist.childrenmap);
+    n.replace("initialized", 1);
+
+    for (var i = 0; i < dist.addresslist.length; i++) {
         if (type === "model") {
-            MVC_MODELS.replace(full[i] + "::uid", uid);
+            MVC_MODELS.replace(dist.addresslist[i] + "::uid", uid);
         } else {
-            MVC_PARAMETERS.replace(full[i] + "::uid", uid);
+            MVC_PARAMETERS.replace(dist.addresslist[i] + "::uid", uid);
         }
     }
-
-    n.replace("fullAddress", full);
-    n.replace("initialized", 1);
 
     if (parent) {
         if (type === "model") {
@@ -180,9 +218,13 @@ function unregisterModel(n) {
         p.replace("pendingChildModels::" + n.get("uid"), 1);
     }
 
-    n.remove("fullAddress");
+    n.remove("addresslist");
+    n.remove("parentmap");
+    n.remove("childrenmap");
     n.remove("initialized");
 }
+
+/* ===================== PARAMETER UNREGISTER ===================== */
 
 function unregisterParameter(n) {
     removeFromNamespaces(n, false);
@@ -194,7 +236,9 @@ function unregisterParameter(n) {
         p.replace("pendingChildParameters::" + n.get("uid"), 1);
     }
 
-    n.remove("fullAddress");
+    n.remove("addresslist");
+    n.remove("parentmap");
+    n.remove("childrenmap");
     n.remove("initialized");
 }
 
@@ -231,12 +275,7 @@ function freeModel(n) {
         p.remove("pendingChildModels::" + n.get("uid"));
     }
 
-    n.remove("fullAddress");
-    n.remove("initialized");
-    n.remove("address");
-    n.remove("parent");
-    n.remove("mvc-type");
-    n.remove("uid");
+    n.clear();
 }
 
 function freeParameter(n) {
@@ -265,27 +304,15 @@ function moveChildrenToPending(n, from, to) {
 }
 
 function removeFromNamespaces(n, isModel) {
-    var f = n.get("fullAddress");
-    if (!f) return;
-    if (!Array.isArray(f)) f = [f];
+    var list = n.get("addresslist");
+    if (!list) return;
 
-    for (var i = 0; i < f.length; i++) {
+    for (var i = 0; i < list.length; i++) {
         if (isModel) {
-            MVC_MODELS.remove(f[i]);
-            MVC_PARAMETERS.remove(f[i]);
+            MVC_MODELS.remove(list[i]);
+            MVC_PARAMETERS.remove(list[i]);
         } else {
-            MVC_PARAMETERS.remove(f[i]);
-        }
-    }
-}
-
-function removeParametersByPrefix(prefix) {
-    var all = keys(MVC_PARAMETERS);
-    if (!all) return;
-
-    for (var i = 0; i < all.length; i++) {
-        if (all[i].indexOf(prefix + "::") === 0) {
-            MVC_PARAMETERS.remove(all[i]);
+            MVC_PARAMETERS.remove(list[i]);
         }
     }
 }
