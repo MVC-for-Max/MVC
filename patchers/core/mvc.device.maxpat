@@ -268,7 +268,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 168.0, 197.69805280368098, 343.0, 35.0 ],
+                    "patching_rect": [ 168.0, 197.69805280368098, 347.0, 35.0 ],
                     "text": "mvc.model #1 mvc.root @type #1 @version 0.4",
                     "varname": "mvc.model"
                 }
@@ -421,7 +421,6 @@
                                     "fontname": "Arial",
                                     "fontsize": 13.0,
                                     "id": "obj-30",
-                                    "linecount": 2,
                                     "maxclass": "newobj",
                                     "numinlets": 1,
                                     "numoutlets": 0,
@@ -3033,6 +3032,59 @@
                         "boxes": [
                             {
                                 "box": {
+                                    "id": "obj-75",
+                                    "maxclass": "message",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 776.0, 227.0, 50.0, 22.0 ],
+                                    "text": "dump"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "obj-21",
+                                    "maxclass": "newobj",
+                                    "numinlets": 0,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 657.0, 203.0, 117.0, 22.0 ],
+                                    "text": "r mvc.model.declare"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "obj-22",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [ 657.0, 291.0, 49.0, 22.0 ],
+                                    "text": "forward"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "filename": "mvc.mini.node.declare.js",
+                                    "id": "obj-24",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 657.0, 260.0, 157.0, 22.0 ],
+                                    "saved_object_attributes": {
+                                        "parameter_enable": 0
+                                    },
+                                    "text": "v8 mvc.mini.node.declare.js",
+                                    "textfile": {
+                                        "filename": "mvc.mini.node.declare.js",
+                                        "flags": 0,
+                                        "embed": 0,
+                                        "autowatch": 1
+                                    }
+                                }
+                            },
+                            {
+                                "box": {
                                     "fontsize": 14.0,
                                     "id": "obj-12",
                                     "maxclass": "newobj",
@@ -3058,7 +3110,6 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
                                                     "patching_rect": [ 74.0, 48.0, 311.0, 47.0 ],
-                                                    "presentation_linecount": 3,
                                                     "text": "This could possibly used by parameters when queried their value(s), to alleviate the mvc.parameter object, but it is slightly slower."
                                                 }
                                             },
@@ -4237,7 +4288,6 @@
                                                         ]
                                                     },
                                                     "patching_rect": [ 40.0, 300.0, 257.0, 22.0 ],
-                                                    "presentation_linecount": 2,
                                                     "text": "p \"get-values (slower zl version using attr dict)\""
                                                 }
                                             },
@@ -4956,7 +5006,6 @@
                                         ]
                                     },
                                     "patching_rect": [ 685.0, 105.40108980997906, 210.0, 24.0 ],
-                                    "presentation_linecount": 3,
                                     "text": "p param-recall-current-noremote"
                                 }
                             },
@@ -6567,7 +6616,7 @@
                                             {
                                                 "box": {
                                                     "id": "obj-72",
-                                                    "linecount": 3,
+                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
@@ -6699,7 +6748,7 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-5",
-                                                                    "linecount": 4,
+                                                                    "linecount": 3,
                                                                     "maxclass": "newobj",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 2,
@@ -29984,7 +30033,26 @@
                                 }
                             }
                         ],
-                        "lines": []
+                        "lines": [
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-24", 0 ],
+                                    "source": [ "obj-21", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-22", 0 ],
+                                    "source": [ "obj-24", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-24", 0 ],
+                                    "source": [ "obj-75", 0 ]
+                                }
+                            }
+                        ]
                     },
                     "patching_rect": [ 341.0, 360.0, 117.0, 24.0 ],
                     "text": "p public-functions",
@@ -30008,7 +30076,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 134.0, 159.0, 733.0, 739.0 ],
+                        "rect": [ 619.0, 100.0, 733.0, 739.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -31270,7 +31338,7 @@
                                             {
                                                 "box": {
                                                     "id": "obj-13",
-                                                    "linecount": 6,
+                                                    "linecount": 5,
                                                     "maxclass": "newobj",
                                                     "numinlets": 2,
                                                     "numoutlets": 2,
@@ -31348,11 +31416,11 @@
                                             {
                                                 "box": {
                                                     "id": "obj-6",
-                                                    "linecount": 3,
+                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 3,
-                                                    "outlettype": [ "bang", "mvc.root", "ParameterHelper" ],
+                                                    "outlettype": [ "bang", "mvc.root", "loresHelper" ],
                                                     "patching_rect": [ 57.0, 73.0, 96.0, 35.0 ],
                                                     "text": "t b mvc.root #1"
                                                 }
@@ -31768,7 +31836,7 @@
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
-                                                    "outlettype": [ "ParameterHelper" ],
+                                                    "outlettype": [ "loresHelper" ],
                                                     "patching_rect": [ 50.0, 124.89135802469136, 278.0, 22.0 ],
                                                     "text": "t #1"
                                                 }
