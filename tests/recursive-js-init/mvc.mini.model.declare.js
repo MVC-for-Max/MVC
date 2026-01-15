@@ -32,13 +32,9 @@ function register(uid) {
     var localAddress = n.get("address");
     var parentUID = n.get("parent");
 
-    post("--register\n");
+    if (invalid(type) || invalid(localAddress) || invalid(parentUID)) return;
 
-    if (invalid(type) || invalid(localAddress) || invalid(parentUID)){
-        post("Cannot register node", uid, "\n");
-        return; 
-    } 
-
+    // Root model initializes immediately
     if (parentUID === "mvc.root") {
         initializeNode(n, null);
         return;
@@ -46,11 +42,22 @@ function register(uid) {
 
     var parent = node(parentUID);
 
-    // Parent not initialized yet → stay pending
-    if (invalid(parent.get("fullAddress"))) return;
+    /* --- Parent not initialized or not yet existing --- */
+    if (invalid(parent.get("fullAddress"))) {
 
+        if (type === "model") {
+            parent.replace("pendingChildModels::" + uid, 1);
+        } else {
+            parent.replace("pendingChildParameters::" + uid, 1);
+        }
+
+        return;
+    }
+
+    /* --- Parent initialized --- */
     initializeNode(n, parent);
 }
+
 
 /* ===================== INITIALIZATION ===================== */
 function initializeNode(n, parent) {
@@ -58,7 +65,7 @@ function initializeNode(n, parent) {
     var type = n.get("mvc-type");
     var localAddress = n.get("address");
 
-    post("--initializeNode\n");
+    //post("--initializeNode\n");
     var fullAddress = parent
         ? parent.get("fullAddress") + "::" + localAddress
         : localAddress;
@@ -120,13 +127,14 @@ function unregister(uid) {
         unregisterModelSubtree(n);
     } else {
         unregisterParameter(n);
+        messnamed(uid + ".init", 0);
     }
-
-    // Send uninit message
-    messnamed(uid + ".init", 0);
 }
 
 function unregisterModelSubtree(n) {
+    var uid = n.get("uid");
+
+    /* --- First unregister child models (deepest first) --- */
     var childModels = keys(n.get("childModels"));
     if (childModels) {
         for (var i = 0; i < childModels.length; i++) {
@@ -134,14 +142,20 @@ function unregisterModelSubtree(n) {
         }
     }
 
+    /* --- Then unregister child parameters --- */
     var childParams = keys(n.get("childParameters"));
     if (childParams) {
         for (var j = 0; j < childParams.length; j++) {
             unregisterParameter(node(childParams[j]));
+            messnamed(childParams[j] + ".init", 0);
         }
     }
 
+    /* --- Finally unregister THIS model --- */
     unregisterModel(n);
+
+    /* --- Emit init 0 AFTER children --- */
+    messnamed(uid + ".init", 0);
 }
 
 function unregisterModel(n) {
@@ -150,7 +164,7 @@ function unregisterModel(n) {
     var parentUID = n.get("parent");
 
     if (!invalid(fullAddress)) {
-        MVC_MODELS.remove(fullAddress); // full removal
+        MVC_MODELS.remove(fullAddress);
         removeParametersByPrefix(fullAddress);
     }
 
@@ -166,6 +180,7 @@ function unregisterModel(n) {
     n.remove("fullAddress");
     n.remove("initialized");
 }
+
 
 function unregisterParameter(n) {
     var uid = n.get("uid");
@@ -208,7 +223,7 @@ function removeParametersByPrefix(prefix) {
     }
 }
 
-/* ===================== FREE (HARD REMOVAL) ===================== */
+/* ===================== FREE ===================== */
 function free(uid) {
     var n = node(uid);
     var type = n.get("mvc-type");
@@ -216,18 +231,19 @@ function free(uid) {
     if (type === "model") {
         freeModel(n);
     } else {
-        freeParameterHard(n);
+        freeParameter(n);
     }
 
     messnamed(uid + ".init", 0);
 }
+
 
 function freeModel(n) {
     var uid = n.get("uid");
     var fullAddress = n.get("fullAddress");
     var parentUID = n.get("parent");
 
-    // 1. Unregister children (→ pending)
+    /* 1. Unregister child models recursively */
     var childModels = keys(n.get("childModels"));
     if (childModels) {
         for (var i = 0; i < childModels.length; i++) {
@@ -235,26 +251,27 @@ function freeModel(n) {
         }
     }
 
-    var childParams = keys(n.get("childParameters"));
-    if (childParams) {
-        for (var j = 0; j < childParams.length; j++) {
-            unregisterParameter(node(childParams[j]));
-        }
-    }
-
-    // 2. Remove from MVC namespace
+    /* 2. Delete subtree from namespaces */
     if (!invalid(fullAddress)) {
         MVC_MODELS.remove(fullAddress);
-        removeParametersByPrefix(fullAddress);
+        MVC_PARAMETERS.remove(fullAddress);
+        //removeParametersByPrefix(fullAddress);
     }
 
-    // 3. Remove from parent WITHOUT pending transfer
-    if (!invalid(parentUID) && parentUID !== "mvc.root") {
+    /* 3. Move children to pending */
+    moveChildrenToPending(n, "childModels", "pendingChildModels");
+    moveChildrenToPending(n, "childParameters", "pendingChildParameters");
+
+    /* 4. remove self from parent's (pending) children */
+    if (!invalid(parentUID)) {
         var parent = node(parentUID);
         parent.remove("childModels::" + uid);
+        parent.remove("pendingChildModels::" + uid);
+
     }
 
-    // 4. Fully clean node
+
+    // 5. Clean attribute node, but keep pending children
     n.remove("childModels");
     n.remove("childParameters");
     //n.remove("pendingChildModels");
@@ -268,7 +285,7 @@ function freeModel(n) {
 }
 
 
-function freeParameterHard(n) {
+function freeParameter(n) {
     var uid = n.get("uid");
     var fullAddress = n.get("fullAddress");
     var parentUID = n.get("parent");
