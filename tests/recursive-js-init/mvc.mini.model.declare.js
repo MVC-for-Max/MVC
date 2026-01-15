@@ -1,13 +1,6 @@
 /****************************************************************
- * MVC REGISTRATION MANAGER (UPDATED)
+ * MVC REGISTRATION MANAGER (FULL REWRITE)
  * Max/MSP JavaScript
- *
- * Features:
- * - models & parameters with dynamic order
- * - tree structure with pending children
- * - full removal from namespace
- * - pending parameters initialized before models
- * - sends init message after registration/unregistration
  ****************************************************************/
 
 var MVC_MODELS = new Dict("mvc.models");
@@ -17,24 +10,61 @@ MVC_MODELS.quiet = 1;
 MVC_PARAMETERS.quiet = 1;
 
 /* ===================== UTILITIES ===================== */
+
 function node(uid) {
     var d = new Dict(uid + ".attr");
     d.quiet = 1;
     return d;
 }
-function keys(d) { return d ? d.getkeys() : null; }
-function invalid(v) { return v === null || v === undefined || v === "none"; }
+
+function keys(d) {
+    return d ? d.getkeys() : null;
+}
+
+function invalid(v) {
+    return v === null || v === undefined || v === "none";
+}
+
+/* ===================== BRACE EXPANSION ===================== */
+
+function expandAddress(addr) {
+    if (addr.indexOf("{") === -1) return [addr];
+
+    var m = addr.match(/\{(\d+)\.\.(\d+)\}/);
+    if (!m) return [addr];
+
+    var a = parseInt(m[1], 10);
+    var b = parseInt(m[2], 10);
+
+    var out = [];
+    for (var i = a; i <= b; i++) {
+        out.push(addr.replace(m[0], i));
+    }
+    return out;
+}
+
+function cartesian(parentAddrs, childAddrs) {
+    if (!parentAddrs) return childAddrs.slice();
+
+    var out = [];
+    for (var i = 0; i < parentAddrs.length; i++) {
+        for (var j = 0; j < childAddrs.length; j++) {
+            out.push(parentAddrs[i] + "::" + childAddrs[j]);
+        }
+    }
+    return out;
+}
 
 /* ===================== REGISTER ===================== */
+
 function register(uid) {
     var n = node(uid);
     var type = n.get("mvc-type");
-    var localAddress = n.get("address");
     var parentUID = n.get("parent");
+    var address = n.get("address");
 
-    if (invalid(type) || invalid(localAddress) || invalid(parentUID)) return;
+    if (invalid(type) || invalid(parentUID) || invalid(address)) return;
 
-    // Root model initializes immediately
     if (parentUID === "mvc.root") {
         initializeNode(n, null);
         return;
@@ -42,43 +72,42 @@ function register(uid) {
 
     var parent = node(parentUID);
 
-    /* --- Parent not initialized or not yet existing --- */
-    if (invalid(parent.get("fullAddress"))) {
-
+    if (invalid(parent.get("initialized"))) {
         if (type === "model") {
             parent.replace("pendingChildModels::" + uid, 1);
         } else {
             parent.replace("pendingChildParameters::" + uid, 1);
         }
-
         return;
     }
 
-    /* --- Parent initialized --- */
     initializeNode(n, parent);
 }
 
-
 /* ===================== INITIALIZATION ===================== */
+
 function initializeNode(n, parent) {
     var uid = n.get("uid");
     var type = n.get("mvc-type");
-    var localAddress = n.get("address");
 
-    //post("--initializeNode\n");
-    var fullAddress = parent
-        ? parent.get("fullAddress") + "::" + localAddress
-        : localAddress;
+    var local = expandAddress(n.get("address"));
+    var parentFull = parent ? parent.get("fullAddress") : null;
 
-    if (type === "model") {
-        if (MVC_MODELS.contains(fullAddress)) return;
-        MVC_MODELS.replace(fullAddress + "::uid", uid); // FULL removal
-    } else {
-        if (MVC_PARAMETERS.contains(fullAddress)) return;
-        MVC_PARAMETERS.replace(fullAddress + "::uid", uid);
+    if (parentFull && !Array.isArray(parentFull)) {
+        parentFull = [parentFull];
     }
 
-    n.replace("fullAddress", fullAddress);
+    var full = cartesian(parentFull, local);
+
+    for (var i = 0; i < full.length; i++) {
+        if (type === "model") {
+            MVC_MODELS.replace(full[i] + "::uid", uid);
+        } else {
+            MVC_PARAMETERS.replace(full[i] + "::uid", uid);
+        }
+    }
+
+    n.replace("fullAddress", full);
     n.replace("initialized", 1);
 
     if (parent) {
@@ -95,30 +124,19 @@ function initializeNode(n, parent) {
         initializePendingChildren(n);
     }
 
-    // Send init message after registration
     messnamed(uid + ".init", 1);
 }
 
-function initializePendingChildren(modelNode) {
-    // --- First initialize pending parameters
-    var pendingParams = keys(modelNode.get("pendingChildParameters"));
-    if (pendingParams) {
-        for (var j = 0; j < pendingParams.length; j++) {
-            register(pendingParams[j]);
-        }
-    }
+function initializePendingChildren(n) {
+    var p = keys(n.get("pendingChildParameters"));
+    if (p) for (var i = 0; i < p.length; i++) register(p[i]);
 
-    // --- Then initialize pending models
-    // so that parameters can preempt this
-    var pendingModels = keys(modelNode.get("pendingChildModels"));
-    if (pendingModels) {
-        for (var i = 0; i < pendingModels.length; i++) {
-            register(pendingModels[i]);
-        }
-    }
+    var m = keys(n.get("pendingChildModels"));
+    if (m) for (var j = 0; j < m.length; j++) register(m[j]);
 }
 
 /* ===================== UNREGISTER ===================== */
+
 function unregister(uid) {
     var n = node(uid);
     var type = n.get("mvc-type");
@@ -134,81 +152,130 @@ function unregister(uid) {
 function unregisterModelSubtree(n) {
     var uid = n.get("uid");
 
-    /* --- First unregister child models (deepest first) --- */
-    var childModels = keys(n.get("childModels"));
-    if (childModels) {
-        for (var i = 0; i < childModels.length; i++) {
-            unregisterModelSubtree(node(childModels[i]));
-        }
+    var models = keys(n.get("childModels"));
+    if (models) for (var i = 0; i < models.length; i++) {
+        unregisterModelSubtree(node(models[i]));
     }
 
-    /* --- Then unregister child parameters --- */
-    var childParams = keys(n.get("childParameters"));
-    if (childParams) {
-        for (var j = 0; j < childParams.length; j++) {
-            unregisterParameter(node(childParams[j]));
-            messnamed(childParams[j] + ".init", 0);
-        }
+    var params = keys(n.get("childParameters"));
+    if (params) for (var j = 0; j < params.length; j++) {
+        unregisterParameter(node(params[j]));
+        messnamed(params[j] + ".init", 0);
     }
 
-    /* --- Finally unregister THIS model --- */
     unregisterModel(n);
-
-    /* --- Emit init 0 AFTER children --- */
     messnamed(uid + ".init", 0);
 }
 
 function unregisterModel(n) {
-    var uid = n.get("uid");
-    var fullAddress = n.get("fullAddress");
-    var parentUID = n.get("parent");
-
-    if (!invalid(fullAddress)) {
-        MVC_MODELS.remove(fullAddress);
-        removeParametersByPrefix(fullAddress);
-    }
+    removeFromNamespaces(n, true);
 
     moveChildrenToPending(n, "childModels", "pendingChildModels");
     moveChildrenToPending(n, "childParameters", "pendingChildParameters");
 
+    var parentUID = n.get("parent");
     if (!invalid(parentUID) && parentUID !== "mvc.root") {
-        var parent = node(parentUID);
-        parent.remove("childModels::" + uid);
-        parent.replace("pendingChildModels::" + uid, 1);
+        var p = node(parentUID);
+        p.remove("childModels::" + n.get("uid"));
+        p.replace("pendingChildModels::" + n.get("uid"), 1);
     }
 
     n.remove("fullAddress");
     n.remove("initialized");
 }
 
-
 function unregisterParameter(n) {
-    var uid = n.get("uid");
-    var fullAddress = n.get("fullAddress");
+    removeFromNamespaces(n, false);
+
     var parentUID = n.get("parent");
-
-    if (!invalid(fullAddress)) {
-        MVC_PARAMETERS.remove(fullAddress);
-    }
-
     if (!invalid(parentUID) && parentUID !== "mvc.root") {
-        var parent = node(parentUID);
-        parent.remove("childParameters::" + uid);
-        parent.replace("pendingChildParameters::" + uid, 1);
+        var p = node(parentUID);
+        p.remove("childParameters::" + n.get("uid"));
+        p.replace("pendingChildParameters::" + n.get("uid"), 1);
     }
 
     n.remove("fullAddress");
     n.remove("initialized");
+}
+
+/* ===================== FREE ===================== */
+
+function free(uid) {
+    var n = node(uid);
+    var type = n.get("mvc-type");
+
+    if (type === "model") {
+        freeModel(n);
+    } else {
+        freeParameter(n);
+    }
+
+    messnamed(uid + ".init", 0);
+}
+
+function freeModel(n) {
+    var models = keys(n.get("childModels"));
+    if (models) for (var i = 0; i < models.length; i++) {
+        unregisterModelSubtree(node(models[i]));
+    }
+
+    removeFromNamespaces(n, true);
+
+    moveChildrenToPending(n, "childModels", "pendingChildModels");
+    moveChildrenToPending(n, "childParameters", "pendingChildParameters");
+
+    var parentUID = n.get("parent");
+    if (!invalid(parentUID)) {
+        var p = node(parentUID);
+        p.remove("childModels::" + n.get("uid"));
+        p.remove("pendingChildModels::" + n.get("uid"));
+    }
+
+    n.remove("fullAddress");
+    n.remove("initialized");
+    n.remove("address");
+    n.remove("parent");
+    n.remove("mvc-type");
+    n.remove("uid");
+}
+
+function freeParameter(n) {
+    removeFromNamespaces(n, false);
+
+    var parentUID = n.get("parent");
+    if (!invalid(parentUID)) {
+        var p = node(parentUID);
+        p.remove("childParameters::" + n.get("uid"));
+        p.remove("pendingChildParameters::" + n.get("uid"));
+    }
+
+    n.clear();
 }
 
 /* ===================== HELPERS ===================== */
-function moveChildrenToPending(n, childKey, pendingKey) {
-    var children = keys(n.get(childKey));
-    if (!children) return;
 
-    for (var i = 0; i < children.length; i++) {
-        n.replace(pendingKey + "::" + children[i], 1);
-        n.remove(childKey + "::" + children[i]);
+function moveChildrenToPending(n, from, to) {
+    var c = keys(n.get(from));
+    if (!c) return;
+
+    for (var i = 0; i < c.length; i++) {
+        n.replace(to + "::" + c[i], 1);
+        n.remove(from + "::" + c[i]);
+    }
+}
+
+function removeFromNamespaces(n, isModel) {
+    var f = n.get("fullAddress");
+    if (!f) return;
+    if (!Array.isArray(f)) f = [f];
+
+    for (var i = 0; i < f.length; i++) {
+        if (isModel) {
+            MVC_MODELS.remove(f[i]);
+            MVC_PARAMETERS.remove(f[i]);
+        } else {
+            MVC_PARAMETERS.remove(f[i]);
+        }
     }
 }
 
@@ -223,90 +290,8 @@ function removeParametersByPrefix(prefix) {
     }
 }
 
-/* ===================== FREE ===================== */
-function free(uid) {
-    var n = node(uid);
-    var type = n.get("mvc-type");
-
-    if (type === "model") {
-        freeModel(n);
-    } else {
-        freeParameter(n);
-    }
-
-    messnamed(uid + ".init", 0);
-}
-
-
-function freeModel(n) {
-    var uid = n.get("uid");
-    var fullAddress = n.get("fullAddress");
-    var parentUID = n.get("parent");
-
-    /* 1. Unregister child models recursively */
-    var childModels = keys(n.get("childModels"));
-    if (childModels) {
-        for (var i = 0; i < childModels.length; i++) {
-            unregisterModelSubtree(node(childModels[i]));
-        }
-    }
-
-    /* 2. Delete subtree from namespaces */
-    if (!invalid(fullAddress)) {
-        MVC_MODELS.remove(fullAddress);
-        MVC_PARAMETERS.remove(fullAddress);
-        //removeParametersByPrefix(fullAddress);
-    }
-
-    /* 3. Move children to pending */
-    moveChildrenToPending(n, "childModels", "pendingChildModels");
-    moveChildrenToPending(n, "childParameters", "pendingChildParameters");
-
-    /* 4. remove self from parent's (pending) children */
-    if (!invalid(parentUID)) {
-        var parent = node(parentUID);
-        parent.remove("childModels::" + uid);
-        parent.remove("pendingChildModels::" + uid);
-
-    }
-
-
-    // 5. Clean attribute node, but keep pending children
-    n.remove("childModels");
-    n.remove("childParameters");
-    //n.remove("pendingChildModels");
-    //n.remove("pendingChildParameters");
-    n.remove("fullAddress");
-    n.remove("initialized");
-    n.remove("address");
-    n.remove("uid");
-    n.remove("parent");
-    n.remove("mvc-type");
-}
-
-
-function freeParameter(n) {
-    var uid = n.get("uid");
-    var fullAddress = n.get("fullAddress");
-    var parentUID = n.get("parent");
-
-    if (!invalid(fullAddress)) {
-        MVC_PARAMETERS.remove(fullAddress);
-    }
-
-    if (!invalid(parentUID)) {
-        var parent = node(parentUID);
-        parent.remove("childParameters::" + uid);
-        parent.remove("pendingChildParameters::" + uid);
-
-    }
-
-    n.clear();
-}
-
-
-
 /* ===================== DEBUG ===================== */
+
 function dump() {
     post("---- MVC MODELS ----\n");
     post(MVC_MODELS.stringify(), "\n");
