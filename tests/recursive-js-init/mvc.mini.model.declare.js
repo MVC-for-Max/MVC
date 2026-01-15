@@ -63,26 +63,50 @@ function distributeAddresses(parentList, expanded) {
 
     if (!parentList || parentList.length === 0) parentList = [""];
 
-    var pIndex = 0;
-    var aIndex = 0;
+    var parentCount = parentList.length;
+    var groupCount = expanded.length;
 
-    for (var i = 0; i < expanded.length; i++) {
+    var parentIndex = 0;
+    var globalIndex = 0;
+
+    // initialize parentmap
+    for (var i = 0; i < groupCount; i++) {
         parentmap[i] = [];
+    }
 
-        var group = expanded[i];
-        var parent = parentList[pIndex % parentList.length];
+    var groupIndex = 0;
+    var offsetInGroup = 0;
 
-        for (var j = 0; j < group.length; j++) {
-            var full = parent
-                ? parent + "::" + group[j]
-                : group[j];
+    while (parentIndex < parentCount) {
+        var group = expanded[groupIndex];
+        var parent = parentList[parentIndex];
 
-            addresslist.push(full);
-            parentmap[i].push(aIndex + 1);     // 1-based
-            childrenmap.push(i + 1);            // 1-based
-            aIndex++;
+        var childAddr = group[offsetInGroup];
+
+        var full = parent
+            ? parent + "::" + childAddr
+            : childAddr;
+
+        addresslist.push(full);
+
+        // 1-based indices (Max-friendly)
+        parentmap[groupIndex].push(globalIndex + 1);
+        childrenmap.push(groupIndex + 1);
+
+        globalIndex++;
+        parentIndex++;
+        offsetInGroup++;
+
+        // advance inside group
+        if (offsetInGroup >= group.length) {
+            offsetInGroup = 0;
+            groupIndex++;
+
+            // wrap groups if exhausted
+            if (groupIndex >= groupCount) {
+                groupIndex = 0;
+            }
         }
-        pIndex++;
     }
 
     return {
@@ -91,6 +115,7 @@ function distributeAddresses(parentList, expanded) {
         childrenmap: childrenmap
     };
 }
+
 
 /* ===================== REGISTER ===================== */
 
