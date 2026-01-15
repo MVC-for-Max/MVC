@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ -134.0, -973.0, 1486.0, 839.0 ],
+        "rect": [ -134.0, -973.0, 1650.0, 839.0 ],
         "boxes": [
             {
                 "box": {
@@ -40,13 +40,13 @@
                     "numinlets": 2,
                     "numoutlets": 5,
                     "outlettype": [ "dictionary", "", "", "", "" ],
-                    "patching_rect": [ 1309.0, 67.0, 155.0, 22.0 ],
+                    "patching_rect": [ 1309.0, 67.0, 148.0, 22.0 ],
                     "saved_object_attributes": {
                         "legacy": 0,
                         "parameter_enable": 0,
                         "parameter_mappable": 0
                     },
-                    "text": "dict mvc.states.values"
+                    "text": "dict mvc.states.values.dict"
                 }
             },
             {
@@ -56,17 +56,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 1308.0, 97.0, 143.0, 271.0 ]
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-17",
-                    "maxclass": "newobj",
-                    "numinlets": 1,
-                    "numoutlets": 5,
-                    "outlettype": [ "mvc.ministate", "myModel", "usa.{1..3}", "@default", "int" ],
-                    "patching_rect": [ 538.0, 781.0, 291.0, 22.0 ],
-                    "text": "t mvc.ministate myModel usa.{1..3} @default 400"
                 }
             },
             {
@@ -142,13 +131,13 @@
                     "numinlets": 2,
                     "numoutlets": 5,
                     "outlettype": [ "dictionary", "", "", "", "" ],
-                    "patching_rect": [ 1146.0, 68.0, 155.0, 22.0 ],
+                    "patching_rect": [ 1146.0, 68.0, 177.0, 22.0 ],
                     "saved_object_attributes": {
                         "legacy": 0,
                         "parameter_enable": 0,
                         "parameter_mappable": 0
                     },
-                    "text": "dict mvc.parameters.values"
+                    "text": "dict mvc.parameters.values.dict"
                 }
             },
             {
@@ -297,7 +286,7 @@
                                     "maxclass": "inlet",
                                     "numinlets": 0,
                                     "numoutlets": 1,
-                                    "outlettype": [ "" ],
+                                    "outlettype": [ "int" ],
                                     "patching_rect": [ 50.0, 40.0, 30.0, 30.0 ]
                                 }
                             },
@@ -379,9 +368,9 @@
                     "id": "obj-73",
                     "linecount": 2,
                     "maxclass": "newobj",
-                    "numinlets": 1,
-                    "numoutlets": 2,
-                    "outlettype": [ "", "" ],
+                    "numinlets": 2,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "int", "" ],
                     "patching_rect": [ 497.0, 75.0, 252.0, 35.0 ],
                     "text": "mvc.miniparameter myModel frequency.{1..3} @default 400"
                 }
@@ -432,7 +421,7 @@
                         "parameter_enable": 0,
                         "parameter_mappable": 0
                     },
-                    "text": "dict mvc.inputs"
+                    "text": "dict mvc.inputs.dict"
                 }
             },
             {
@@ -654,7 +643,7 @@
                         "parameter_enable": 0,
                         "parameter_mappable": 0
                     },
-                    "text": "dict mvc.models"
+                    "text": "dict mvc.models.dict"
                 }
             },
             {
@@ -933,7 +922,7 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-73", 0 ],
+                    "destination": [ "obj-73", 1 ],
                     "source": [ "obj-14", 0 ]
                 }
             },
@@ -945,7 +934,7 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-73", 0 ],
+                    "destination": [ "obj-73", 1 ],
                     "source": [ "obj-18", 0 ]
                 }
             },
@@ -963,7 +952,7 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-73", 0 ],
+                    "destination": [ "obj-73", 1 ],
                     "source": [ "obj-22", 0 ]
                 }
             },
@@ -1120,7 +1109,7 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-73", 0 ],
+                    "destination": [ "obj-73", 1 ],
                     "source": [ "obj-44", 0 ]
                 }
             },
@@ -1272,12 +1261,6 @@
                 "patchline": {
                     "destination": [ "obj-101", 0 ],
                     "source": [ "obj-73", 1 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-106", 0 ],
-                    "source": [ "obj-73", 0 ]
                 }
             },
             {
