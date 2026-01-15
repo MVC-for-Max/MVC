@@ -167,9 +167,9 @@ function initializeNode(n, parent) {
 
     for (var i = 0; i < n.get('addresslist').length; i++) {
         if (type === "model") {
-            MVC_MODELS.replace(n.get('addresslist')[i] + "::uid", uid);
+            MVC_MODELS.replace(n.get('addresslist')[i] + "::uid", uid, i+1);
         } else {
-            MVC_PARAMETERS.replace(n.get('addresslist')[i] + "::uid", uid);
+            MVC_PARAMETERS.replace(n.get('addresslist')[i] + "::uid", uid, i+1);
         }
     }
 
