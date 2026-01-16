@@ -152,6 +152,7 @@ function namespaceCollision(n) {
 /* ===================== REGISTER ===================== */
 
 function register(uid) {
+    post('---function register----\n');
     var n = node(uid);
     var type = n.get("mvc-type");
     var parentUID = n.get("parent");
@@ -182,6 +183,8 @@ function register(uid) {
 /* ===================== INITIALIZATION ===================== */
 
 function initializeNode(n, parent) {
+     post('---initializeNode----\n');
+
     var uid = n.get("uid");
     var mvcType = n.get("mvc-type");
     let previousAddresses = asArray(n.get('addresslist'));
@@ -266,6 +269,7 @@ function initializeNode(n, parent) {
 }
 
 function initializePendingChildren(n) {
+     post('---initializePendingChildren----\n');
     var p = keys(n.get("pendingChildParameters"));
     if (p) for (var i = 0; i < p.length; i++) register(p[i]);
 
@@ -276,6 +280,7 @@ function initializePendingChildren(n) {
 /* ===================== UNREGISTER ===================== */
 
 function unregister(uid) {
+    post('---unregister----\n');
     var n = node(uid);
     var type = n.get("mvc-type");
 
@@ -327,6 +332,7 @@ function unregisterModel(n) {
 /* ===================== PARAMETER UNREGISTER ===================== */
 
 function unregisterParameter(n) {
+    post('---unregisterParameter----\n');
     removeFromNamespaces(n);
 
     var parentUID = n.get("parent");
@@ -345,6 +351,7 @@ function unregisterParameter(n) {
 /* ===================== FREE ===================== */
 
 function free(uid) {
+    post('---free----\n');
     var n = node(uid);
     var type = n.get("mvc-type");
 
