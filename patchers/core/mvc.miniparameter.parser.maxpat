@@ -13,6 +13,31 @@
         "boxes": [
             {
                 "box": {
+                    "id": "obj-34",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 57.0, 189.0, 150.0, 20.0 ],
+                    "text": "usefull for remotes"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-30",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 4,
+                    "outlettype": [ "", "", "", "" ],
+                    "patching_rect": [ 57.0, 224.0, 110.0, 22.0 ],
+                    "saved_object_attributes": {
+                        "embed": 0,
+                        "precision": 6
+                    },
+                    "text": "coll #1.remotes"
+                }
+            },
+            {
+                "box": {
                     "id": "obj-49",
                     "maxclass": "newobj",
                     "numinlets": 1,
