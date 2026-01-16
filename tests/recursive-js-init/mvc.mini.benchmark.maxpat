@@ -63,8 +63,8 @@
                     "numinlets": 2,
                     "numoutlets": 3,
                     "outlettype": [ "", "int", "" ],
-                    "patching_rect": [ 23.0, 636.0, 135.0, 35.0 ],
-                    "text": "mvc.miniparameter test tralala @default 3"
+                    "patching_rect": [ 23.0, 636.0, 187.0, 35.0 ],
+                    "text": "mvc.miniparameter myModel tralala @default 3"
                 }
             },
             {
@@ -142,7 +142,7 @@
                     "numinlets": 2,
                     "numoutlets": 3,
                     "outlettype": [ "", "int", "" ],
-                    "patching_rect": [ 304.0, 636.0, 159.0, 35.0 ],
+                    "patching_rect": [ 304.0, 636.0, 160.0, 35.0 ],
                     "text": "mvc.parameter myoldModel tralala @default 3"
                 }
             },
@@ -264,8 +264,8 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 304.0, 318.0, 205.0, 22.0 ],
-                    "text": "mvc.model myoldModel loresHelper"
+                    "patching_rect": [ 304.0, 318.0, 157.0, 22.0 ],
+                    "text": "mvc.model myoldModel test"
                 }
             },
             {
@@ -293,7 +293,7 @@
                     "numoutlets": 2,
                     "outlettype": [ "", "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 130.0, 508.0, 50.0, 22.0 ]
+                    "patching_rect": [ 130.0, 508.0, 66.0, 22.0 ]
                 }
             },
             {
@@ -670,8 +670,8 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 23.0, 318.0, 176.0, 22.0 ],
-                    "text": "mvc.minimodel test loresHelper"
+                    "patching_rect": [ 23.0, 318.0, 163.0, 22.0 ],
+                    "text": "mvc.minimodel myModel test"
                 }
             },
             {
