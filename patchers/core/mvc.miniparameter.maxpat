@@ -1154,7 +1154,7 @@
                     "numinlets": 3,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
-                    "patching_rect": [ 258.0, 97.5, 223.0, 22.0 ],
+                    "patching_rect": [ 280.0, 97.5, 201.0, 22.0 ],
                     "text": "mvc.miniparameter.parser #0"
                 }
             },
@@ -1213,7 +1213,7 @@
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 258.0, 39.0, 140.0, 35.0 ],
+                    "patching_rect": [ 280.0, 44.0, 140.0, 35.0 ],
                     "text": "patcherargs @mvc-type parameter"
                 }
             },
@@ -1301,15 +1301,22 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-14", 2 ],
+                    "order": 0,
+                    "source": [ "obj-44", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-24", 1 ],
-                    "order": 1,
+                    "order": 2,
                     "source": [ "obj-44", 0 ]
                 }
             },
             {
                 "patchline": {
                     "destination": [ "obj-45", 1 ],
-                    "order": 0,
+                    "order": 1,
                     "source": [ "obj-44", 0 ]
                 }
             },
