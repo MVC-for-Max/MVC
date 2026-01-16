@@ -156,9 +156,6 @@ function register(uid) {
     var type = n.get("mvc-type");
     var parentUID = n.get("parent");
     var address = n.get("address");
-    
-        post("register");
-
 
     if (invalid(type) || invalid(parentUID) || invalid(address)) return;
 
@@ -170,7 +167,7 @@ function register(uid) {
 
     var parent = node(parentUID);
 
-    if (invalid(parent.get("initialized"))) {
+    if (invalid(parent.get("addresslist"))) {
         if (type === "model") {
             parent.replace("pendingChildModels::" + uid, 1);
         } else {
@@ -204,7 +201,7 @@ function initializeNode(n, parent) {
     // check namespace collision
     if (namespaceCollision(n)) return;
 
-    n.replace("initialized", 1);
+    //n.replace("initialized", 1);
 
     // find gone addresses and remove them in the value dict
     let missingAdresses = findGoneItems(n.get('addresslist'), previousAddresses);
@@ -324,7 +321,7 @@ function unregisterModel(n) {
     n.remove("addresslist");
     n.remove("parentmap");
     n.remove("childrenmap");
-    n.remove("initialized");
+    //n.remove("initialized");
 }
 
 /* ===================== PARAMETER UNREGISTER ===================== */
@@ -342,7 +339,7 @@ function unregisterParameter(n) {
     n.remove("addresslist");
     n.remove("parentmap");
     n.remove("childrenmap");
-    n.remove("initialized");
+    //n.remove("initialized");
 }
 
 /* ===================== FREE ===================== */
@@ -384,7 +381,8 @@ function freeModel(n) {
 function freeParameter(n) {
 
     // don't remove a duplicate that wasn't initialized
-    if (n.get('initialized')) removeFromNamespaces(n);
+    //if (n.get('initialized')) removeFromNamespaces(n);
+     removeFromNamespaces(n);
 
     var parentUID = n.get("parent");
     if (!invalid(parentUID)) {
