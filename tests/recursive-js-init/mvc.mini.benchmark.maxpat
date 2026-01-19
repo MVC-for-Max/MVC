@@ -9,8 +9,66 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 243.0, 133.0, 970.0, 740.0 ],
+        "rect": [ 243.0, 133.0, 1176.0, 740.0 ],
         "boxes": [
+            {
+                "box": {
+                    "id": "obj-2",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "bang" ],
+                    "patching_rect": [ 908.0, 2.0, 58.0, 22.0 ],
+                    "text": "loadbang"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-31",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 942.0, 38.0, 50.0, 22.0 ],
+                    "text": "clear"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-39",
+                    "maxclass": "button",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "bang" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 907.0, 38.0, 24.0, 24.0 ]
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-44",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 5,
+                    "outlettype": [ "dictionary", "", "", "", "" ],
+                    "patching_rect": [ 909.0, 66.0, 118.0, 22.0 ],
+                    "saved_object_attributes": {
+                        "legacy": 0,
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "dict myModel.attr"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-53",
+                    "maxclass": "dict.view",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 909.0, 96.0, 143.0, 271.0 ]
+                }
+            },
             {
                 "box": {
                     "id": "obj-68",
@@ -778,6 +836,12 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-39", 0 ],
+                    "source": [ "obj-2", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-27", 0 ],
                     "source": [ "obj-20", 0 ]
                 }
@@ -844,6 +908,12 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-44", 0 ],
+                    "source": [ "obj-31", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-13", 0 ],
                     "source": [ "obj-32", 0 ]
                 }
@@ -887,6 +957,12 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-44", 0 ],
+                    "source": [ "obj-39", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-19", 1 ],
                     "source": [ "obj-4", 0 ]
                 }
@@ -919,6 +995,12 @@
                 "patchline": {
                     "destination": [ "obj-40", 0 ],
                     "source": [ "obj-43", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-53", 0 ],
+                    "source": [ "obj-44", 0 ]
                 }
             },
             {
