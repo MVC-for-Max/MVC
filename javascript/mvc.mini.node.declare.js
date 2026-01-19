@@ -141,7 +141,7 @@ function namespaceCollision(n) {
         let theUID = MVC_INPUTS.get(theAdd+"::uid");
         if (theUID == null) break;  
         else if (uid != theUID[0]) {
-            post('Parameter', addresslist[i].replace(/::/g, '/'), 'is already in the namespace.\n')
+            post('Input', addresslist[i].replace(/::/g, '/'), 'is already in the namespace.\n')
             return 1;
         }   
     }    
@@ -151,16 +151,19 @@ function namespaceCollision(n) {
 
 /* ===================== REGISTER ===================== */
 
-function register(uid) {
-    post('---function register----\n');
+function registerModel(uid) {
+    post('---function registerModel----\n');
     var n = node(uid);
     var mvcType = n.get("mvc-type");
     var parentUID = n.get("parent");
     var address = n.get("address");
 
+    // first unregister model and submodels recursively
+    unregisterModelSubtree(n);
+
     if (invalid(mvcType) || invalid(parentUID) || invalid(address)) return;
 
-    if (mvcType == 'model') unregister(n);
+    // first unregister model and its sub-model
 
     // top level model
     if (parentUID === "mvc.root") {
@@ -169,13 +172,38 @@ function register(uid) {
     }
 
     var parent = node(parentUID);
+    //post('parentNode', parentUID, '\n');
 
+    // if parent is not initialized (but exists), add this node to parent's pending nodes
     if (invalid(parent.get("addresslist"))) {
-        if (mvcType === "model") {
-            parent.replace("pendingChildModels::" + uid, 1);
-        } else {
-            parent.replace("pendingChildParameters::" + uid, 1);
-        }
+        parent.replace("pendingChildModels::" + uid, 1);
+        return;
+    }
+
+    initializeNode(n, parent);
+}
+
+function registerInput(uid) {
+    post('---function registerInput----\n');
+    var n = node(uid);
+    var mvcType = n.get("mvc-type");
+    var parentUID = n.get("parent");
+    var address = n.get("address");
+
+    if (invalid(mvcType) || invalid(parentUID) || invalid(address)) return;
+
+    // (commented as this is already filtered out in mvc.parameter.parser)
+    // if (parentUID === "mvc.root") {
+    //     post("Inputs can't bind to mvc.root\n");
+    //     return;
+    // }
+
+    var parent = node(parentUID);
+    //post('parentNode', parentUID, '\n');
+
+    // if parent is not initialized (but exists), add this node to parent's pending nodes
+    if (invalid(parent.get("addresslist"))) {
+        parent.replace("pendingChildParameters::" + uid, 1);
         return;
     }
 
@@ -275,26 +303,13 @@ function initializeNode(n, parent) {
 function initializePendingChildren(n) {
      post('---initializePendingChildren----\n');
     var p = keys(n.get("pendingChildParameters"));
-    if (p) for (var i = 0; i < p.length; i++) register(p[i]);
+    if (p) for (var i = 0; i < p.length; i++) registerInput(p[i]);
 
     var m = keys(n.get("pendingChildModels"));
-    if (m) for (var j = 0; j < m.length; j++) register(m[j]);
+    if (m) for (var j = 0; j < m.length; j++) registerModel(m[j]);
 }
 
 /* ===================== UNREGISTER ===================== */
-
-function unregister(uid) {
-    post('---unregister----\n');
-    var n = node(uid);
-    var type = n.get("mvc-type");
-
-    if (type === "model") {
-        unregisterModelSubtree(n);
-    } else {
-        unregisterParameter(n);
-        messnamed(uid + ".init", 0);
-    }
-}
 
 function unregisterModelSubtree(n) {
     post('---unregisterModelSubtree----\n');
@@ -356,55 +371,51 @@ function unregisterParameter(n) {
 
 /* ===================== FREE ===================== */
 
-function free(uid) {
-    post('---free----\n');
-    var n = node(uid);
-    var type = n.get("mvc-type");
+function freeModel(uid) {
+    post('---freeModel----\n');
+    let n = node(uid);
+    
+    //let models = keys(n.get("childModels"));
+    //if (models) for (var i = 0; i < models.length; i++) {
+    //    unregisterModelSubtree(node(models[i]));
+    //}
 
-    if (type === "model") {
-        freeModel(n);
-    } else {
-        freeParameter(n);
-    }
+    unregisterModelSubtree(n);
 
-    messnamed(uid + ".init", 0);
-}
 
-function freeModel(n) {
-    var models = keys(n.get("childModels"));
-    if (models) for (var i = 0; i < models.length; i++) {
-        unregisterModelSubtree(node(models[i]));
-    }
-
-    removeFromNamespaces(n);
+    //removeFromNamespaces(n);
 
     moveChildrenToPending(n, "childModels", "pendingChildModels");
     moveChildrenToPending(n, "childParameters", "pendingChildParameters");
 
-    var parentUID = n.get("parent");
+    let parentUID = n.get("parent");
     if (!invalid(parentUID)) {
-        var p = node(parentUID);
+        let p = node(parentUID);
         p.remove("childModels::" + n.get("uid"));
         p.remove("pendingChildModels::" + n.get("uid"));
     }
 
     n.clear();
+    messnamed(uid + ".init", 0);
 }
 
-function freeParameter(n) {
+function freeInput(uid) {
+    post('---freeInput----\n');
+    let n = node(uid);
 
     // don't remove a duplicate that wasn't initialized
     //if (n.get('initialized')) removeFromNamespaces(n);
-     removeFromNamespaces(n);
+    removeFromNamespaces(n);
 
-    var parentUID = n.get("parent");
+    let parentUID = n.get("parent");
     if (!invalid(parentUID)) {
-        var p = node(parentUID);
+        let p = node(parentUID);
         p.remove("childParameters::" + n.get("uid"));
         p.remove("pendingChildParameters::" + n.get("uid"));
     }
 
     n.clear();
+    messnamed(uid + ".init", 0);
 }
 
 /* ===================== HELPERS ===================== */
