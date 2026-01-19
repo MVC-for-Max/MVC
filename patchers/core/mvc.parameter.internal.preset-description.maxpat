@@ -16,8 +16,8 @@
                     "id": "obj-44",
                     "maxclass": "newobj",
                     "numinlets": 3,
-                    "numoutlets": 3,
-                    "outlettype": [ "", "", "" ],
+                    "numoutlets": 5,
+                    "outlettype": [ "", "", "bang", "int", "" ],
                     "patching_rect": [ 48.0, 155.0, 301.0, 22.0 ],
                     "text": "mvc.miniparameter.parser #0"
                 }
@@ -42,7 +42,7 @@
                     "maxclass": "newobj",
                     "numinlets": 3,
                     "numoutlets": 0,
-                    "patching_rect": [ 48.0, 263.0, 174.0, 40.0 ],
+                    "patching_rect": [ 118.5, 256.0, 174.0, 40.0 ],
                     "text": "mvc.core.param.sender #0"
                 }
             },
@@ -116,7 +116,7 @@
                             }
                         ]
                     },
-                    "patching_rect": [ 48.0, 233.0, 47.0, 24.0 ],
+                    "patching_rect": [ 118.5, 226.0, 47.0, 24.0 ],
                     "text": "p type"
                 }
             },
@@ -439,7 +439,7 @@
                             }
                         ]
                     },
-                    "patching_rect": [ 48.0, 206.0, 96.5, 24.0 ],
+                    "patching_rect": [ 118.5, 199.0, 96.5, 24.0 ],
                     "text": "p receive"
                 }
             }
@@ -473,15 +473,15 @@
                 "patchline": {
                     "destination": [ "obj-24", 0 ],
                     "order": 1,
-                    "source": [ "obj-44", 0 ]
+                    "source": [ "obj-44", 1 ]
                 }
             },
             {
                 "patchline": {
                     "destination": [ "obj-8", 2 ],
-                    "midpoints": [ 57.5, 187.5234375, 212.5, 187.5234375 ],
+                    "midpoints": [ 128.0, 187.5234375, 283.0, 187.5234375 ],
                     "order": 0,
-                    "source": [ "obj-44", 0 ]
+                    "source": [ "obj-44", 1 ]
                 }
             },
             {

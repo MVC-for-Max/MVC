@@ -24,17 +24,6 @@
             },
             {
                 "box": {
-                    "id": "obj-5",
-                    "maxclass": "newobj",
-                    "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 298.0, 50.0, 100.0, 22.0 ],
-                    "text": "mvc.minimodel"
-                }
-            },
-            {
-                "box": {
                     "id": "obj-11",
                     "maxclass": "newobj",
                     "numinlets": 1,
@@ -344,6 +333,7 @@
                             {
                                 "box": {
                                     "id": "obj-1",
+                                    "linecount": 3,
                                     "maxclass": "newobj",
                                     "numinlets": 0,
                                     "numoutlets": 1,
@@ -647,6 +637,7 @@
                                             {
                                                 "box": {
                                                     "id": "obj-5",
+                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
@@ -690,6 +681,7 @@
                                             {
                                                 "box": {
                                                     "id": "obj-10",
+                                                    "linecount": 3,
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
@@ -1121,7 +1113,7 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-17",
-                                                                    "linecount": 3,
+                                                                    "linecount": 4,
                                                                     "maxclass": "newobj",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 5,
@@ -1525,6 +1517,7 @@
                                             {
                                                 "box": {
                                                     "id": "obj-1",
+                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
@@ -1766,7 +1759,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 47.0, 136.0, 85.0, 22.0 ],
+                                                    "patching_rect": [ 47.0, 136.0, 132.0, 22.0 ],
                                                     "text": "append #1"
                                                 }
                                             },
@@ -4282,6 +4275,7 @@
                                             {
                                                 "box": {
                                                     "id": "obj-22",
+                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 2,
                                                     "numoutlets": 5,
@@ -6385,7 +6379,7 @@
                     "maxclass": "newobj",
                     "numinlets": 3,
                     "numoutlets": 3,
-                    "outlettype": [ "", "", "" ],
+                    "outlettype": [ "none", "", "" ],
                     "patching_rect": [ 77.0, 153.0, 568.0000000000001, 22.0 ],
                     "text": "mvc.minimodel.parser #1"
                 }
