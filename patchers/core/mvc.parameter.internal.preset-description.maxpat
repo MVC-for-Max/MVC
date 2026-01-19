@@ -30,8 +30,8 @@
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 48.0, 71.0, 160.0, 76.0 ],
-                    "text": "patcherargs @mvc-type parameter @type string @description \"this model's preset description @default undefined @unit none\""
+                    "patching_rect": [ 48.0, 71.0, 162.0, 76.0 ],
+                    "text": "patcherargs @mvc-type parameter @type string @description \"this model's preset description\" @default undefined @unit none"
                 }
             },
             {
