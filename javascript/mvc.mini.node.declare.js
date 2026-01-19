@@ -154,11 +154,13 @@ function namespaceCollision(n) {
 function register(uid) {
     post('---function register----\n');
     var n = node(uid);
-    var type = n.get("mvc-type");
+    var mvcType = n.get("mvc-type");
     var parentUID = n.get("parent");
     var address = n.get("address");
 
-    if (invalid(type) || invalid(parentUID) || invalid(address)) return;
+    if (invalid(mvcType) || invalid(parentUID) || invalid(address)) return;
+
+    if (mvcType == 'model') unregister(n);
 
     // top level model
     if (parentUID === "mvc.root") {
@@ -169,7 +171,7 @@ function register(uid) {
     var parent = node(parentUID);
 
     if (invalid(parent.get("addresslist"))) {
-        if (type === "model") {
+        if (mvcType === "model") {
             parent.replace("pendingChildModels::" + uid, 1);
         } else {
             parent.replace("pendingChildParameters::" + uid, 1);
@@ -183,19 +185,21 @@ function register(uid) {
 /* ===================== INITIALIZATION ===================== */
 
 function initializeNode(n, parent) {
-     post('---initializeNode----\n');
+    post('---initializeNode----\n');
 
     var uid = n.get("uid");
     var mvcType = n.get("mvc-type");
     let previousAddresses = asArray(n.get('addresslist'));
 
     // expand brace-notation
-    var expanded = expandAddressList(n.get("address"));
-    n.replace("expandedAddresses", expanded);
+    var expandedAddresses = expandAddressList(n.get("address"));
+    n.replace("expandedAddresses", expandedAddresses);
+    post("expandedAddresses:", JSON.stringify(expandedAddresses) , '\n');
 
     // fetch parent addresslist
     var parentList = parent ? parent.get("addresslist") : null;
     if (parentList && !Array.isArray(parentList)) parentList = [parentList];
+    post("parentList:", parentList, '\n');
 
     // distribute this node's addresses onto parent addresslist
     // this will fill n.addresslist
@@ -210,7 +214,7 @@ function initializeNode(n, parent) {
     let missingAdresses = findGoneItems(n.get('addresslist'), previousAddresses);
     for (let i = 0; i < (missingAdresses.length); i++) {
         let theAdd = missingAdresses[i];
-        //post("missing address:", theAdd, '\n');
+        post("missing address:", theAdd, '\n');
         MVC_INPUTS.remove(theAdd);
         switch(mvcType){
             case 'state':
@@ -293,6 +297,7 @@ function unregister(uid) {
 }
 
 function unregisterModelSubtree(n) {
+    post('---unregisterModelSubtree----\n');
     var uid = n.get("uid");
 
     var models = keys(n.get("childModels"));
@@ -311,6 +316,7 @@ function unregisterModelSubtree(n) {
 }
 
 function unregisterModel(n) {
+    post('---unregisterModel----\n');
     removeFromNamespaces(n);
 
     moveChildrenToPending(n, "childModels", "pendingChildModels");
