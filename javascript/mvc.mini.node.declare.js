@@ -8,9 +8,468 @@ var MVC_INPUTS = new Dict("mvc.inputs.dict");
 var MVC_PARAMETERS_VALUES = new Dict("mvc.parameters.values.dict");
 var MVC_STATES_VALUES = new Dict("mvc.states.values.dict");
 
-
 MVC_MODELS.quiet = 1;
 MVC_INPUTS.quiet = 1;
+
+///////////////////////////////////////////////////////
+// Public functions
+
+// this function is called from the mvc.model object
+// it unregisters the model and its submodels prior to registering with the new address/parent/type
+// This unregistration should only be done at that (top) level, since we'll do it recursively in the unregisterModelSubtree function
+// no need to remove sub-models and sub-inputs twice
+
+// called from mvc.model on patcherargs's done, address or parent messages
+function registerModel(uid){
+	post("----registerModel\n");
+    let n = node(uid);
+    let address = n.get("address");
+    post("address", address, "\n")
+    // if invalid address 
+    if (invalid(address)){
+        post("Unregister node because invalid address", address, "\n")
+        _unregisterModel(n);
+        n.remove("addresslist");
+        return;
+    }
+    else {
+        _unregisterModel(n);
+        n.remove("addresslist");
+        _registerModel(n);
+    }
+    //_unregisterModel(n);
+}
+
+// called from mvc.model on freebang
+function freeModel(uid){
+	post("----freeModel\n");
+	let n = node(uid);
+	_unregisterModel(n);
+
+    let parentUID = n.get("parent");
+    let parent = node(parentUID);
+    _removeFromChildModels(parent, uid);
+    _removeFromPendingChildModels(parent, uid);
+
+	// clear the node, except for the pendingInputs and models
+	let pendingChildModels =  asArray(n.get("pendingChildModels"));
+	let pendingChildInputs =  asArray(n.get("pendingChildInputs"));
+	n.clear();
+	n.replace("pendingChildModels", pendingChildModels);
+	n.replace("pendingChildInputs", pendingChildInputs);
+}
+
+// called from mvc.parameter, mvc.state or mvc.message on patcherargs's done, address or parent messages
+// should we split that in separate functions?
+function registerInput(uid){
+	post("----registerInput\n");
+    let n = node(uid);
+    _registerInput(n);
+}
+
+// called from mvc.parameter, mvc.state or mvc.message on freebang
+function freeInput(uid){
+	post("----freeInput\n");
+    let n = node(uid);
+    _unregisterInput(n);  // will put this input in the parent's childInput
+    //remove from parentPendingInputs
+    let parentUID = n.get("parent");
+    let parent = node(uid);
+    _removeFromPendingChildInputs(parent, uid);
+    n.clear();
+}
+
+//// called from mvc.view on patcherargs's done, address or parent messages
+//function registerView(uid){
+//    let n = node(uid);
+//    _unregisterView(n);
+//    _registerView(n);
+//}
+//// called from mvc.view on freebang
+//function freeView(uid){
+//	let n = node(uid);
+//	_unregisterView(n);
+//
+//	// clear the node, except for the pendingInputs and models
+//	let pendingChildModels =  n.get("pendingChildModels");
+//	let pendingChildInputs =  n.get("pendingChildInputs");
+//	n.clear();
+//	n.replace("pendingChildModels") = pendingChildModels;
+//	n.replace("pendingChildInputs") = pendingChildInputs;
+//}
+//
+///// called from mvc.remote on patcherargs's done, address or parent messages
+//function registerRemote(uid){
+//    let n = node(uid);
+//    _registerRemote(n);
+//}
+///// called from mvc.remote on freebang
+//function freeRemote(uid){
+//    let n = node(uid);
+//    _unregisterRemote(n);
+//    n.clear();
+//}
+
+
+///////////////////////////////////////////////////////
+// Private functions
+
+// this function is called only internally
+_registerModel.local = 1;
+function _registerModel(n){
+	post("----_registerModel\n");
+
+    let uid = n.get("uid");
+
+	// if the model already has an addresslist, it means it has been initiliazed from outside
+	// this happens when a parameter has been initialized that preempt the internal registration
+	// think for instance of the channelcount parameter in a multichannel model like mvc.mc.lores~
+    if (!invalid(n.get("addresslist"))) {
+        post("This node's init has been preempted", uid, "\n");
+        return;
+    }
+
+    let address = n.get("address");
+    let parentUID = n.get("parent");
+    let parent = node(parentUID);
+    let previousAddresses = asArray(n.get('addresslist'));
+    post("parentUID", parentUID, "\n")
+    post("uid", uid, "\n")
+
+    // add this node to parent's pending nodes
+    if (invalid(parentUID)){
+        post("Aborting as parent uid is invalid:", parentUID, "\n");
+        return;
+    }
+    else {
+        post("OK, adding", uid, "to pendingChildModels of", parentUID, "\n");
+        _addToPendingChildModels(parent, uid);
+    }
+
+    post("address", address, "\n");
+    if (invalid(address)){
+        post("invalid address", address, "\n");
+        return;
+    }
+
+    ///// Alright, parent exist and is initialized (or is mvc.root)
+
+	// expand brace-notation
+    let expandedAddresses = expandAddressList(n.get("address"));
+    n.replace("expandedAddresses", expandedAddresses);
+    post("expandedAddresses:", JSON.stringify(expandedAddresses) , '\n');
+
+    // distribute addresses over parent's
+    distributedAddresses = distributeAddresses(n, parent); 	
+
+    // check namespace collision
+    if (modelAddressAlreadyInUse(n)){
+        post("namespace collision - exiting... \n");
+		_unregisterModel(n);
+    	return;
+    }
+
+    post("addresslist", n.get("addresslist"), "\n");
+    post("previousAddresses", previousAddresses, "\n")
+
+    // find gone addresses and remove them in the value dict
+    let missingAdresses = findGoneItems(n.get("addresslist"), previousAddresses);
+    post("missingAdresses", JSON.stringify(missingAdresses), "\n");
+    for (let i = 0; i < (missingAdresses.length); i++) {
+        let theAdd = missingAdresses[i];
+        post("missing address:", theAdd, '\n');
+        MVC_MODELS.remove(theAdd);
+        MVC_INPUTS.remove(theAdd);
+        MVC_STATES_VALUES.remove(theAdd);
+        MVC_PARAMETERS_VALUES.remove(theAdd);
+    }
+
+    // add adresses to namespace
+    let addresscount = n.get("addresslist").length;
+    for (let i = 0; i < addresscount; i++) {
+        let theAddress = n.get("addresslist")[i]; 
+        MVC_MODELS.replace(theAddress + "::uid", uid, i+1);
+    }
+
+    // first initiliaze inputs, then models, so that inputs values can preempt model's init in the event they are use to define a submodel address
+    _registerPendingInputs(n);
+    _registerPendingModels(n);
+
+	// change from pending to child models
+	_removeFromPendingChildModels(parent, uid);
+	_addToChildModels(parent, uid);
+
+    messnamed(uid + ".init", addresscount);
+}
+
+_registerInput.local = 1;
+function _registerInput(n){
+	post("----_registerInput\n");
+
+	// if the input already has an addresslist, it means it has been initiliazed from outside
+	// this could happen when a parameter has been initialized that preempt the internal registration
+	// although this is less common for inputs than for models, a parameter whose address would have been initialized by another parameter might 
+    //if (n.get("addresslist")) return;
+    var uid = n.get("uid");
+    var mvcType = n.get("mvc-type");
+    let address = n.get("address");
+    let parentUID = n.get("parent");
+    let parent = node(parentUID);
+    let previousAddresses = asArray(n.get('addresslist'));
+
+    if (invalid(parentUID) || invalid(address)) return;
+
+    // if parent exists but is not initialized, add this node to parent's pending nodes
+    if (invalid(parent.get("addresslist"))) {
+    	let pendingChildModels = asArray(parent.get("pendingChildModels")).push(uid);
+        parent.replace("pendingChildModels", pendingChildModels);
+        return;
+    }
+
+    ///// Alright, parent exist and is initialized
+
+	// expand brace-notation
+    let expandedAddresses = expandAddressList(n.get("address"));
+    n.replace("expandedAddresses", expandedAddresses);
+    post("expandedAddresses:", JSON.stringify(expandedAddresses) , '\n');
+
+    // distribute addresses over parent's
+    distributedAddresses = distributeAddresses(n, parent); 	
+
+    // check namespace collision
+    if (inputAddressAlreadyInUse(n)){
+		_unregisterInput(n);
+    	return;
+    }
+
+    // find gone addresses and remove them in the value dict
+    let missingAdresses = findGoneItems(n.get("addresslist"), previousAddresses);
+    for (let i = 0; i < (missingAdresses.length); i++) {
+        let theAdd = missingAdresses[i];
+        post("missing address:", theAdd, '\n');
+        MVC_INPUTS.remove(theAdd);
+        switch(mvcType){
+            case 'state':
+                MVC_STATES_VALUES.remove(theAdd);
+                break;
+            case 'parameter':
+                MVC_PARAMETERS_VALUES.remove(theAdd);
+                break;
+            case 'message':
+                break;
+            default:
+               break;
+        }
+    }
+
+    // add adresses to namespace and set default value if needed
+    let addresscount = n.get("addresslist").length;
+    for (let i = 0; i < addresscount; i++) {
+        let theAddress = n.get("addresslist")[i]; 
+        MVC_INPUTS.replace(theAddress + "::uid", uid, i+1);
+        let defaultValue = n.get("default");
+        if (mvcType === 'parameter') {
+            // only write default is address didn't already exist
+            if (!MVC_PARAMETERS_VALUES.contains(theAddress)){
+                MVC_PARAMETERS_VALUES.replace(theAddress, defaultValue);
+            }
+        }
+        else if (mvcType === 'state') {
+            // only write default is address didn't already exist
+            if (!MVC_STATES_VALUES.contains(theAddress)){
+                MVC_STATES_VALUES.replace(theAddress, defaultValue);
+            }
+        } // else
+    }
+
+	// change from pending to child models in parent's attr dictionary
+	_removeFromPendingChildInputs(parent, uid);
+	_addToChildInputs(parent, uid);
+
+    messnamed(uid + ".init", addresscount);
+}
+
+function _registerPendingModels(n){
+	post("----_registerPendingModels\n");
+    let pendingChildModels = asArray(n.get("pendingChildModels"));
+    for (let i = 0; i < pendingChildModels.length; i++) {
+        let uid = pendingChildModels[i];
+        let n = node(uid);
+        _registerModel(n);
+    }
+}
+
+function _registerPendingInputs(n){
+	post("----_registerPendingInputs\n");
+    let pendingChildInputs = asArray(n.get("pendingChildInputs"));
+    for (let i = 0; i < pendingChildInputs.length; i++) {
+        let uid = pendingChildInputs[i];
+        let n = node(uid);
+        _registerInput(n);
+    }
+}
+
+function _unregisterModel(n){
+	post("----_unregisterModel\n");
+    let childInputs = asArray(n.get("childInputs"));
+    for (let i = 0; i < childInputs.length; i++) {
+        let uid = childInputs[i];
+        let child = node(uid);
+        _unregisterInput(child);
+    }
+
+    let childModels = asArray(n.get("childModels"));
+    for (let i = 0; i < childModels.length; i++) {
+        let uid = childModels[i];
+        let child = node(uid);
+        _unregisterModel(child);
+    }
+
+    //remove from namespace
+    let addresslist = asArray(n.get("addresslist"));
+    post("addresslist", addresslist, "\n");
+    for (var i = 0; i < addresslist.length; i++) {
+        MVC_MODELS.remove(addresslist[i]);
+        //MVC_INPUTS.remove(addresslist[i]);
+        //MVC_PARAMETERS_VALUES.remove(addresslist[i]); // these two should not be necessary _unregisterInput
+    }
+
+    // move to parent's pending models
+    let uid = n.get("uid");
+    let parentUID = n.get("parent");
+    let parent = node(parentUID);
+	_removeFromChildModels(parent, uid);
+    _addToPendingChildModels(parent, uid);
+
+    // cleanup attr dict and send init message to 0.
+	//n.replace("addresslist", []);
+    n.remove("addresslist");
+	//n.replace("expandedAddresses", []);
+	//n.replace("parentmap", []);
+	//n.replace("childrenmap", []);
+	messnamed(uid + ".init", 0);
+}
+
+function _unregisterInput(n){
+	post("----_unregisterInput\n");
+    let uid = n.get("uid");
+    let parentUID = n.get("parent");
+    let parent = node(parentUID);
+    let addresslist = asArray(n.get("addresslist"));
+    let mvcType = n.get("mvc-type");
+
+    //remove from namespace
+    for (let i = 0; i < addresslist.length; i++) {
+        MVC_INPUTS.remove(addresslist[i]);
+        if (mvcType == 'parameter') MVC_PARAMETERS_VALUES.remove(addresslist[i]);
+        else if (mvcType == 'state') MVC_STATES_VALUES.remove(addresslist[i]);
+        // else, this is a message
+    }
+
+	// move to parent's pending inputs
+	_removeFromChildInputs(parent, uid);
+    _addToPendingChildInputs(parent, uid);
+
+    // cleanup attr dict and send init message to 0.
+	n.replace("addresslist", []);
+	//n.replace("expandedAddresses", []);
+	//n.replace("parentmap", []);
+	//n.replace("childrenmap", []);
+	messnamed(uid + ".init", 0);
+}
+
+
+
+// utils
+
+function _removeFromPendingChildModels(n, uid){
+	let pendingChildModels = asArray(n.get("pendingChildModels"));
+    post("pendingChildModels", pendingChildModels, "\n")
+    let updatedArray = _removeItemFromArray(pendingChildModels, uid);
+    post("updatedArray", updatedArray, "\n")
+	n.replace("pendingChildModels",updatedArray );
+}
+function _addToPendingChildModels(n, uid){
+	let pendingChildModels = asArray(n.get("pendingChildModels"));
+	n.replace("pendingChildModels", _addUniqueItemToArray(pendingChildModels, uid));
+}
+function _removeFromChildModels(n, uid){
+	let childModels = asArray(n.get("childModels"));
+	n.replace("childModels", _removeItemFromArray(childModels, uid));
+}
+function _addToChildModels(n, uid){
+	let childModels = asArray(n.get("childModels"));
+	n.replace("childModels", _addUniqueItemToArray(childModels,uid));
+}
+function _removeFromPendingChildInputs(n, uid){
+	let pendingChildInputs = asArray(n.get("pendingChildInputs"));
+	n.replace("pendingChildInputs", _removeItemFromArray(pendingChildInputs, uid));
+}
+function _addToPendingChildInputs(n, uid){
+	let pendingChildInputs = asArray(n.get("pendingChildInputs"));
+	n.replace("pendingChildInputs", _addUniqueItemToArray(pendingChildInputs, uid));
+}
+function _removeFromChildInputs(n, uid){
+	let childInputs = asArray(n.get("childInputs"));
+	n.replace("childInputs", _removeItemFromArray(childInputs, uid));
+}
+function _addToChildInputs(n, uid){
+	let childInputs = asArray(n.get("childInputs"));
+	n.replace("childInputs", _addUniqueItemToArray(childInputs, uid));
+}
+
+
+function _removeItemFromArray(arr, value) {
+    post("the input array:", JSON.stringify(arr), "\n")
+    var index = arr.indexOf(value);
+    post(value, "found at", index, "\n");
+    if (index > -1) {
+      arr.splice(index, 1);
+    }
+    post("updated:", JSON.stringify(arr), "\n")
+    return arr;
+}
+
+function _addUniqueItemToArray(arr, value){
+	if(arr.indexOf(value) === -1) {
+    	arr.push(value);
+	}
+	return arr;
+}
+
+function modelAddressAlreadyInUse(n)
+{
+	let addresslist = n.get("addresslist");
+    let uid = n.get("uid");
+
+    for (let i = 0; i < (addresslist.length); i++) {
+        let theAdd = addresslist[i];
+        let theUID = MVC_MODELS.get(theAdd+"::uid");
+        if (theUID == null) break;  
+        else if (uid != theUID[0]) {
+            post('Model', addresslist[i].replace(/::/g, '/'), 'is already in the namespace.\n')
+            return 1;
+        }   
+    }    
+    return 0;
+}
+
+function inputAddressAlreadyInUse(n)
+{
+	let addresslist = n.get("addresslist");
+    let uid = n.get("uid");
+
+    for (let i = 0; i < (addresslist.length); i++) {
+        let theAdd = addresslist[i];
+        let theUID = MVC_INPUTS.get(theAdd+"::uid");
+        if (theUID == null) break;  
+        else if (uid != theUID[0]) {
+            post('Input', addresslist[i].replace(/::/g, '/'), 'is already in the namespace.\n')
+            return 1;
+        }   
+    }    
+    return 0;
+}
 
 /* ===================== UTILITIES ===================== */
 
@@ -99,7 +558,7 @@ function distributeAddresses(n, parent) {
     else if (parent.get('uid') != n.get('uid')){ //concat on parent address
     
       let adddressIndex = 0; //the address index in the final addresslist
-      let parentAddresses = parent.get('addresslist');
+      let parentAddresses = asArray(parent.get('addresslist'));
     
       for (let i = 0; i < parentAddresses.length; i++) {
         const childIndexArray = [];
@@ -131,330 +590,7 @@ function distributeAddresses(n, parent) {
   n.replace('childrenmap', childrenmap);
 }
 
-function namespaceCollision(n) {
-
-    let addresslist = n.get('addresslist');
-    let uid = n.get('uid');
-
-    for (let i = 0; i < (addresslist.length); i++) {
-        let theAdd = addresslist[i];
-        let theUID = MVC_INPUTS.get(theAdd+"::uid");
-        if (theUID == null) break;  
-        else if (uid != theUID[0]) {
-            post('Input', addresslist[i].replace(/::/g, '/'), 'is already in the namespace.\n')
-            return 1;
-        }   
-    }    
-    return 0;
-}
-
-
-/* ===================== REGISTER ===================== */
-
-function registerModel(uid) {
-    post('---function registerModel----\n');
-    var n = node(uid);
-    var mvcType = n.get("mvc-type");
-    var parentUID = n.get("parent");
-    var address = n.get("address");
-
-    // first unregister model and submodels recursively
-    unregisterModelSubtree(n);
-
-    if (invalid(mvcType) || invalid(parentUID) || invalid(address)) return;
-
-    // first unregister model and its sub-model
-
-    // top level model
-    if (parentUID === "mvc.root") {
-        initializeNode(n, null);
-        return;
-    }
-
-    var parent = node(parentUID);
-    //post('parentNode', parentUID, '\n');
-
-    // if parent is not initialized (but exists), add this node to parent's pending nodes
-    if (invalid(parent.get("addresslist"))) {
-        parent.replace("pendingChildModels::" + uid, 1);
-        return;
-    }
-
-    initializeNode(n, parent);
-}
-
-function registerInput(uid) {
-    post('---function registerInput----\n');
-    var n = node(uid);
-    var mvcType = n.get("mvc-type");
-    var parentUID = n.get("parent");
-    var address = n.get("address");
-
-    if (invalid(mvcType) || invalid(parentUID) || invalid(address)) return;
-
-    // (commented as this is already filtered out in mvc.parameter.parser)
-    // if (parentUID === "mvc.root") {
-    //     post("Inputs can't bind to mvc.root\n");
-    //     return;
-    // }
-
-    var parent = node(parentUID);
-    //post('parentNode', parentUID, '\n');
-
-    // if parent is not initialized (but exists), add this node to parent's pending nodes
-    if (invalid(parent.get("addresslist"))) {
-        parent.replace("pendingChildParameters::" + uid, 1);
-        return;
-    }
-
-    initializeNode(n, parent);
-}
-
-/* ===================== INITIALIZATION ===================== */
-
-function initializeNode(n, parent) {
-    post('---initializeNode----\n');
-
-    var uid = n.get("uid");
-    var mvcType = n.get("mvc-type");
-    let previousAddresses = asArray(n.get('addresslist'));
-
-    // expand brace-notation
-    var expandedAddresses = expandAddressList(n.get("address"));
-    n.replace("expandedAddresses", expandedAddresses);
-    post("expandedAddresses:", JSON.stringify(expandedAddresses) , '\n');
-
-    // fetch parent addresslist
-    var parentList = parent ? parent.get("addresslist") : null;
-    if (parentList && !Array.isArray(parentList)) parentList = [parentList];
-    post("parentList:", parentList, '\n');
-
-    // distribute this node's addresses onto parent addresslist
-    // this will fill n.addresslist
-    distributeAddresses(n, parent); 
-
-    // check namespace collision
-    if (namespaceCollision(n)) return;
-
-    //n.replace("initialized", 1);
-
-    // find gone addresses and remove them in the value dict
-    let missingAdresses = findGoneItems(n.get('addresslist'), previousAddresses);
-    for (let i = 0; i < (missingAdresses.length); i++) {
-        let theAdd = missingAdresses[i];
-        post("missing address:", theAdd, '\n');
-        MVC_INPUTS.remove(theAdd);
-        switch(mvcType){
-            case 'state':
-                MVC_STATES_VALUES.remove(theAdd);
-                break;
-            case 'parameter':
-                MVC_PARAMETERS_VALUES.remove(theAdd);
-                break;
-            case 'message':
-                break;
-            default:
-               break;
-        }
-    }
-
-    let addresscount = n.get('addresslist').length;
-
-    for (var i = 0; i < addresscount; i++) {
-        let theAddress = n.get('addresslist')[i]; 
-        if (mvcType === 'model') {
-            MVC_MODELS.replace(theAddress + '::uid', uid, i+1);
-        } 
-        else {
-            MVC_INPUTS.replace(theAddress + '::uid', uid, i+1);
-            if (mvcType === 'parameter') {
-                // only write default is address didn't already exist
-                if (!MVC_PARAMETERS_VALUES.contains(theAddress)){
-                    MVC_PARAMETERS_VALUES.replace(theAddress, n.get('default'));
-                }
-            }
-            else if (mvcType === 'state') {
-                // only write default is address didn't already exist
-                if (!MVC_STATES_VALUES.contains(theAddress)){
-                    MVC_STATES_VALUES.replace(theAddress, n.get('default'));
-                }
-            } // else
-        }
-   }
-
-    if (parent) {
-        if (mvcType === "model") {
-            parent.replace("childModels::" + uid, 1);
-            parent.remove("pendingChildModels::" + uid);
-        } else {
-            parent.replace("childParameters::" + uid, 1);
-            parent.remove("pendingChildParameters::" + uid);
-        }
-    }
-
-    if (mvcType === "model") {
-        initializePendingChildren(n);
-    }
-
-
-    messnamed(uid + ".init", addresscount);
-}
-
-function initializePendingChildren(n) {
-     post('---initializePendingChildren----\n');
-    var p = keys(n.get("pendingChildParameters"));
-    if (p) for (var i = 0; i < p.length; i++) registerInput(p[i]);
-
-    var m = keys(n.get("pendingChildModels"));
-    if (m) for (var j = 0; j < m.length; j++) registerModel(m[j]);
-}
-
-/* ===================== UNREGISTER ===================== */
-
-function unregisterModelSubtree(n) {
-    post('---unregisterModelSubtree----\n');
-    var uid = n.get("uid");
-
-    var models = keys(n.get("childModels"));
-    if (models) for (var i = 0; i < models.length; i++) {
-        unregisterModelSubtree(node(models[i]));
-    }
-
-    var params = keys(n.get("childParameters"));
-    if (params) for (var j = 0; j < params.length; j++) {
-        unregisterParameter(node(params[j]));
-        messnamed(params[j] + ".init", 0);
-    }
-
-    unregisterModel(n);
-    messnamed(uid + ".init", 0);
-}
-
-function unregisterModel(n) {
-    post('---unregisterModel----\n');
-    removeFromNamespaces(n);
-
-    moveChildrenToPending(n, "childModels", "pendingChildModels");
-    moveChildrenToPending(n, "childParameters", "pendingChildParameters");
-
-    var parentUID = n.get("parent");
-    if (!invalid(parentUID) && parentUID !== "mvc.root") {
-        var p = node(parentUID);
-        p.remove("childModels::" + n.get("uid"));
-        p.replace("pendingChildModels::" + n.get("uid"), 1);
-    }
-
-    n.remove("addresslist");
-    n.remove("parentmap");
-    n.remove("childrenmap");
-    //n.remove("initialized");
-}
-
-/* ===================== PARAMETER UNREGISTER ===================== */
-
-function unregisterParameter(n) {
-    post('---unregisterParameter----\n');
-    removeFromNamespaces(n);
-
-    var parentUID = n.get("parent");
-    if (!invalid(parentUID) && parentUID !== "mvc.root") {
-        var p = node(parentUID);
-        p.remove("childParameters::" + n.get("uid"));
-        p.replace("pendingChildParameters::" + n.get("uid"), 1);
-    }
-
-    n.remove("addresslist");
-    n.remove("parentmap");
-    n.remove("childrenmap");
-    //n.remove("initialized");
-}
-
-/* ===================== FREE ===================== */
-
-function freeModel(uid) {
-    post('---freeModel----\n');
-    let n = node(uid);
-    
-    //let models = keys(n.get("childModels"));
-    //if (models) for (var i = 0; i < models.length; i++) {
-    //    unregisterModelSubtree(node(models[i]));
-    //}
-
-    unregisterModelSubtree(n);
-
-
-    //removeFromNamespaces(n);
-
-    moveChildrenToPending(n, "childModels", "pendingChildModels");
-    moveChildrenToPending(n, "childParameters", "pendingChildParameters");
-
-    let parentUID = n.get("parent");
-    if (!invalid(parentUID)) {
-        let p = node(parentUID);
-        p.remove("childModels::" + n.get("uid"));
-        p.remove("pendingChildModels::" + n.get("uid"));
-    }
-
-    n.clear();
-    messnamed(uid + ".init", 0);
-}
-
-function freeInput(uid) {
-    post('---freeInput----\n');
-    let n = node(uid);
-
-    // don't remove a duplicate that wasn't initialized
-    //if (n.get('initialized')) removeFromNamespaces(n);
-    removeFromNamespaces(n);
-
-    let parentUID = n.get("parent");
-    if (!invalid(parentUID)) {
-        let p = node(parentUID);
-        p.remove("childParameters::" + n.get("uid"));
-        p.remove("pendingChildParameters::" + n.get("uid"));
-    }
-
-    n.clear();
-    messnamed(uid + ".init", 0);
-}
-
-/* ===================== HELPERS ===================== */
-
-function moveChildrenToPending(n, from, to) {
-    var c = keys(n.get(from));
-    if (!c) return;
-
-    for (var i = 0; i < c.length; i++) {
-        n.replace(to + "::" + c[i], 1);
-        n.remove(from + "::" + c[i]);
-    }
-}
-
-function removeFromNamespaces(n) {
-    let addresslist = n.get("addresslist");
-    let mvcType = n.get("mvc-type");
-
-    if (!addresslist) return;
-
-    for (var i = 0; i < addresslist.length; i++) {
-        if (mvcType == 'model') {
-            MVC_MODELS.remove(addresslist[i]);
-            MVC_INPUTS.remove(addresslist[i]);
-            MVC_PARAMETERS_VALUES.remove(addresslist[i]);
-        } else {
-            MVC_INPUTS.remove(addresslist[i]);
-            if (mvcType == 'parameter') MVC_PARAMETERS_VALUES.remove(addresslist[i]);
-            else if (mvcType == 'state') MVC_STATES_VALUES.remove(addresslist[i]);
-            // else, this is a message
-        }
-    }
-}
-
-/* ===================== DEBUG ===================== */
-
-function dump() {
-    post("---- MVC MODELS ----\n");
-    post(MVC_MODELS.stringify(), "\n");
-    post("---- MVC PARAMETERS ----\n");
-    post(MVC_INPUTS.stringify(), "\n");
-}
+//let test = ["tralala"];
+//post("test1", test,"\n");
+//_removeItemFromArray(test, "tralala");
+//post("test", test,"\n");
