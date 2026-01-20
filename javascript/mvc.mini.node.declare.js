@@ -25,21 +25,11 @@ MVC_STATES_VALUES.quiet = 1;
 function registerModel(uid){
 	post("----registerModel\n");
     let n = node(uid);
-    let address = n.get("address");
-    post("address", address, "\n")
-    // if invalid address 
-    if (invalid(address)){
-        post("Unregister node because invalid address", address, "\n")
-        _unregisterModel(n);
-        n.remove("addresslist");
-        return;
-    }
-    else {
-        //reset the preempt flag as we call from Max
-        n.replace("preempt", 0);
-        _registerModel(n);
-        n.replace("preempt", 1);
-    }
+    //reset the preempt flag as we call from Max
+    n.replace("preempt", 0);
+    _registerModel(n);
+    n.replace("preempt", 1);
+    
 }
 
 // called from mvc.model on freebang
@@ -134,7 +124,14 @@ function _registerModel(n){
 	post("----_registerModel\n");
 
     let uid = n.get("uid");
+    let address = n.get("address");
 
+    if (invalid(address)){
+        post("Unregister node because invalid address", address, "\n")
+        _unregisterModel(n);
+        n.remove("addresslist");
+        return;
+    }
 	// if the model already has an addresslist, it means it has been initiliazed from outside
 	// this happens when a parameter has been initialized that preempt the internal registration
 	// think for instance of the channelcount parameter in a multichannel model like mvc.mc.lores~
@@ -145,7 +142,6 @@ function _registerModel(n){
         return;
     }
 
-    let address = n.get("address");
     let parentUID = n.get("parent");
     let parent = node(parentUID);
     let previousAddresses = asArray(n.get('addresslist'));
@@ -237,23 +233,31 @@ _registerInput.local = 1;
 function _registerInput(n){
 	post("----_registerInput\n");
 
+    let parent = node(parentUID);
+    if (invalid(parentUID)) return;
+
+    let address = n.get("address");
+    if (invalid(address)){
+        post("Unregister input because invalid address", address, "\n")
+        _unregisterInput(n);
+        n.remove("addresslist");
+        return;
+    }
+
 	// if the input already has an addresslist, it means it has been initiliazed from outside
 	// this could happen when a parameter has been initialized that preempt the internal registration
 	// although this is less common for inputs than for models, a parameter whose address would have been initialized by another parameter might 
     //if (n.get("addresslist")) return;
     var uid = n.get("uid");
     var mvcType = n.get("mvc-type");
-    let address = n.get("address");
     let parentUID = n.get("parent");
-    let parent = node(parentUID);
     let previousAddresses = asArray(n.get('addresslist'));
-
-    if (invalid(parentUID) || invalid(address)) return;
 
     // if parent exists but is not initialized, add this node to parent's pending nodes
     if (invalid(parent.get("addresslist"))) {
-    	let pendingChildModels = asArray(parent.get("pendingChildModels")).push(uid);
-        parent.replace("pendingChildModels", pendingChildModels);
+    	let pendingChildInputs = asArray(parent.get("pendingChildInputs"));
+        pendingChildInputs.push(uid)
+        parent.replace("pendingChildInputs", pendingChildInputs);
         return;
     }
 
