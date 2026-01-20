@@ -102,17 +102,21 @@ function freeInput(uid){
 //	n.replace("pendingChildInputs") = pendingChildInputs;
 //}
 //
-///// called from mvc.remote on patcherargs's done, address or parent messages
-//function registerRemote(uid){
-//    let n = node(uid);
-//    _registerRemote(n);
-//}
-///// called from mvc.remote on freebang
-//function freeRemote(uid){
-//    let n = node(uid);
-//    _unregisterRemote(n);
-//    n.clear();
-//}
+/// called from mvc.remote on patcherargs's done, address or parent messages
+function registerRemote(uid){
+    post("----registerRemote\n");
+    let n = node(uid);
+    //reset the preempt flag as we call from Max
+    n.replace("preempt", 0);
+    _registerRemote(n);
+    n.replace("preempt", 1);
+}
+/// called from mvc.remote on freebang
+function freeRemote(uid){
+    let n = node(uid);
+    _unregisterRemote(n);
+    n.clear();
+}
 
 
 ///////////////////////////////////////////////////////
@@ -322,6 +326,56 @@ function _registerInput(n){
 
     post("sending init message to", uid, "\n");
     messnamed(uid + ".init", addresscount);
+}
+
+_registerRemote.local = 1;
+function _registerRemote(n){
+    post("----_registerRemote\n");
+
+    var uid = n.get("uid");
+    let address = n.get("address");
+    let parent = node(parentUID);
+    let parentUID = n.get("parent");
+    let previousAddresses = asArray(n.get('addresslist'));
+
+    // if parent exists but is not initialized, add this node to parent's pending nodes
+    if ((!invalid(parentUID))&& (invalid(parent.get("addresslist")))) {
+        let pendingRemotes = asArray(parent.get("pendingRemotes"));
+        pendingRemotes.push(uid)
+        parent.replace("pendingRemotes", pendingRemotes);
+        return;
+    }
+
+    ///// Alright, parent exist and is initialized
+
+    // expand brace-notation
+    let expandedAddresses = expandAddressList(n.get("address"));
+    n.replace("expandedAddresses", expandedAddresses);
+    post("expandedAddresses:", JSON.stringify(expandedAddresses) , '\n');
+
+    // distribute addresses over parent's
+    distributedAddresses = distributeAddresses(n, parent);
+
+    //filter this list of address against existing namespace
+    // TODO
+
+    // find gone addresses and remove them in the value dict
+    let missingAdresses = findGoneItems(n.get("addresslist"), previousAddresses);
+    for (let i = 0; i < (missingAdresses.length); i++) {
+        let theAdd = missingAdresses[i];
+        post("missing address:", theAdd, '\n');
+        //Remove from input's remote value
+        let [inputUID, inputIndex] = MVC_INPUTS.get(theAdd+::"uid");
+        let inputNode = node(inputUID);
+
+    }
+
+    // change from pending to child models in parent's attr dictionary
+    //_removeFromPendingRemotes(parent, uid);
+    //_addToRemotes(parent, uid);
+    //
+    //post("sending init message to", uid, "\n");
+    //messnamed(uid + ".init", addresscount);
 }
 
 function _registerPendingModels(n){
