@@ -9,18 +9,28 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ -140.0, -955.0, 1480.0, 899.0 ],
+        "rect": [ -140.0, -955.0, 1852.0, 899.0 ],
         "boxes": [
             {
                 "box": {
-                    "id": "obj-128",
-                    "linecount": 3,
+                    "id": "obj-53",
                     "maxclass": "newobj",
                     "numinlets": 2,
                     "numoutlets": 3,
                     "outlettype": [ "", "int", "" ],
-                    "patching_rect": [ 883.0, 915.0, 146.0, 49.0 ],
-                    "text": "mvc.parameter foo gabuzo.{1..4} @default 440"
+                    "patching_rect": [ 840.0, 969.0, 100.0, 22.0 ],
+                    "text": "mvc.remote"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-43",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "int", "" ],
+                    "patching_rect": [ 768.0, 905.0, 220.0, 22.0 ],
+                    "text": "mvc.miniremote myModel/channelcount"
                 }
             },
             {
@@ -93,18 +103,6 @@
                     "outlettype": [ "", "int", "" ],
                     "patching_rect": [ 33.0, 855.0, 150.0, 35.0 ],
                     "text": "mvc.parameter nouille @default 3.14"
-                }
-            },
-            {
-                "box": {
-                    "format": 6,
-                    "id": "obj-118",
-                    "maxclass": "flonum",
-                    "numinlets": 1,
-                    "numoutlets": 2,
-                    "outlettype": [ "", "bang" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 810.0, 915.0, 50.0, 22.0 ]
                 }
             },
             {
@@ -339,7 +337,6 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 606.0, 807.0, 87.0, 22.0 ],
-                    "presentation_linecount": 2,
                     "text": "address tralala"
                 }
             },
@@ -351,7 +348,6 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 699.0, 807.0, 101.0, 22.0 ],
-                    "presentation_linecount": 3,
                     "text": "address ga bu zo"
                 }
             },
