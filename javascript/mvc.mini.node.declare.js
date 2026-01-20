@@ -123,6 +123,12 @@ _registerModel.local = 1;
 function _registerModel(n){
 	post("----_registerModel\n");
 
+    let parentUID = n.get("parent");
+    if (invalid(parentUID)){
+        post("Aborting as parent uid is invalid:", parentUID, "\n");
+        return;
+    }
+
     let uid = n.get("uid");
     let address = n.get("address");
 
@@ -142,21 +148,14 @@ function _registerModel(n){
         return;
     }
 
-    let parentUID = n.get("parent");
     let parent = node(parentUID);
     let previousAddresses = asArray(n.get('addresslist'));
     post("parentUID", parentUID, "\n")
     post("uid", uid, "\n")
 
     // add this node to parent's pending nodes
-    if (invalid(parentUID)){
-        post("Aborting as parent uid is invalid:", parentUID, "\n");
-        return;
-    }
-    else {
-        post("OK, adding", uid, "to pendingChildModels of", parentUID, "\n");
-        _addToPendingChildModels(parent, uid);
-    }
+    post("adding", uid, "to pendingChildModels of", parentUID, "\n");
+    _addToPendingChildModels(parent, uid);
 
     post("address", address, "\n");
     if (invalid(address)){
@@ -233,7 +232,7 @@ _registerInput.local = 1;
 function _registerInput(n){
 	post("----_registerInput\n");
 
-    let parent = node(parentUID);
+    let parentUID = n.get("parent");
     if (invalid(parentUID)) return;
 
     let address = n.get("address");
@@ -249,8 +248,8 @@ function _registerInput(n){
 	// although this is less common for inputs than for models, a parameter whose address would have been initialized by another parameter might 
     //if (n.get("addresslist")) return;
     var uid = n.get("uid");
+    let parent = node(parentUID);
     var mvcType = n.get("mvc-type");
-    let parentUID = n.get("parent");
     let previousAddresses = asArray(n.get('addresslist'));
 
     // if parent exists but is not initialized, add this node to parent's pending nodes
