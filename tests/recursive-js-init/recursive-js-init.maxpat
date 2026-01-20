@@ -13,6 +13,90 @@
         "boxes": [
             {
                 "box": {
+                    "id": "obj-128",
+                    "linecount": 3,
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "int", "" ],
+                    "patching_rect": [ 883.0, 915.0, 146.0, 49.0 ],
+                    "text": "mvc.parameter foo gabuzo.{1..4} @default 440"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-127",
+                    "linecount": 3,
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 16.0, 764.0, 100.0, 49.0 ],
+                    "text": "mvc.minimodel beuh myModel beeuuhh"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-126",
+                    "linecount": 2,
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 133.0, 805.5, 50.0, 35.0 ],
+                    "text": "parent beuh"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-120",
+                    "maxclass": "button",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "bang" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 242.0, 811.0, 24.0, 24.0 ]
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-121",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 5,
+                    "outlettype": [ "dictionary", "", "", "", "" ],
+                    "patching_rect": [ 242.0, 837.0, 105.0, 22.0 ],
+                    "saved_object_attributes": {
+                        "legacy": 0,
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "dict beuh.attr"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-122",
+                    "maxclass": "dict.view",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 242.0, 868.0, 182.0, 184.0 ]
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-119",
+                    "linecount": 2,
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "int", "" ],
+                    "patching_rect": [ 33.0, 855.0, 150.0, 35.0 ],
+                    "text": "mvc.parameter nouille @default 3.14"
+                }
+            },
+            {
+                "box": {
                     "format": 6,
                     "id": "obj-118",
                     "maxclass": "flonum",
@@ -21,17 +105,6 @@
                     "outlettype": [ "", "bang" ],
                     "parameter_enable": 0,
                     "patching_rect": [ 810.0, 915.0, 50.0, 22.0 ]
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-116",
-                    "maxclass": "newobj",
-                    "numinlets": 2,
-                    "numoutlets": 3,
-                    "outlettype": [ "", "int", "" ],
-                    "patching_rect": [ 810.0, 883.0, 226.0, 22.0 ],
-                    "text": "mvc.parameter foo gabuzo @default 440"
                 }
             },
             {
@@ -1222,14 +1295,26 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-118", 0 ],
-                    "source": [ "obj-116", 0 ]
+                    "destination": [ "obj-13", 0 ],
+                    "source": [ "obj-12", 0 ]
                 }
             },
             {
                 "patchline": {
-                    "destination": [ "obj-13", 0 ],
-                    "source": [ "obj-12", 0 ]
+                    "destination": [ "obj-121", 0 ],
+                    "source": [ "obj-120", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-122", 0 ],
+                    "source": [ "obj-121", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-119", 1 ],
+                    "source": [ "obj-126", 0 ]
                 }
             },
             {
