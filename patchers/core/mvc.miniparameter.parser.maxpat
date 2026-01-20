@@ -1726,6 +1726,17 @@
                         "boxes": [
                             {
                                 "box": {
+                                    "id": "obj-2",
+                                    "maxclass": "button",
+                                    "numinlets": 1,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "bang" ],
+                                    "parameter_enable": 0,
+                                    "patching_rect": [ 50.0, 74.0, 24.0, 24.0 ]
+                                }
+                            },
+                            {
+                                "box": {
                                     "id": "obj-24",
                                     "maxclass": "comment",
                                     "numinlets": 1,
@@ -1737,12 +1748,11 @@
                             {
                                 "box": {
                                     "id": "obj-22",
-                                    "linecount": 2,
                                     "maxclass": "newobj",
                                     "numinlets": 2,
                                     "numoutlets": 2,
                                     "outlettype": [ "", "" ],
-                                    "patching_rect": [ 50.0, 107.0, 76.0, 35.0 ],
+                                    "patching_rect": [ 50.0, 107.0, 84.0, 22.0 ],
                                     "text": "zl.reg 0 #1"
                                 }
                             },
@@ -1772,13 +1782,19 @@
                         "lines": [
                             {
                                 "patchline": {
+                                    "destination": [ "obj-22", 0 ],
+                                    "source": [ "obj-2", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
                                     "destination": [ "obj-21", 0 ],
                                     "source": [ "obj-22", 0 ]
                                 }
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-22", 0 ],
+                                    "destination": [ "obj-2", 0 ],
                                     "source": [ "obj-35", 0 ]
                                 }
                             }
@@ -2223,7 +2239,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 253.0, 421.0, 119.0, 22.0 ],
+                    "patching_rect": [ 253.0, 421.0, 124.0, 22.0 ],
                     "text": "zl.reg freeInput #1"
                 }
             },
@@ -3136,7 +3152,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 205.0, 358.0, 138.0, 22.0 ],
+                    "patching_rect": [ 205.0, 358.0, 144.0, 22.0 ],
                     "text": "zl.reg registerInput #1"
                 }
             },
