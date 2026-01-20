@@ -10,6 +10,8 @@ var MVC_STATES_VALUES = new Dict("mvc.states.values.dict");
 
 MVC_MODELS.quiet = 1;
 MVC_INPUTS.quiet = 1;
+MVC_PARAMETERS_VALUES.quiet = 1;
+MVC_STATES_VALUES.quiet = 1;
 
 ///////////////////////////////////////////////////////
 // Public functions
@@ -33,11 +35,11 @@ function registerModel(uid){
         return;
     }
     else {
-        _unregisterModel(n);
-        n.remove("addresslist");
+        //reset the preempt flag as we call from Max
+        n.replace("preempt", 0);
         _registerModel(n);
+        n.replace("preempt", 1);
     }
-    //_unregisterModel(n);
 }
 
 // called from mvc.model on freebang
@@ -64,17 +66,29 @@ function freeModel(uid){
 function registerInput(uid){
 	post("----registerInput\n");
     let n = node(uid);
-    _registerInput(n);
+    let address = n.get("address");
+    if (invalid(address)){
+        post("Unregister input because invalid address", address, "\n")
+        _unregisterInput(n);
+        n.remove("addresslist");
+        return;
+    }
+    else {
+        //reset the preempt flag as we call from Max
+        n.replace("preempt", 0);
+        _registerInput(n);
+        n.replace("preempt", 1);
+    }
 }
 
 // called from mvc.parameter, mvc.state or mvc.message on freebang
 function freeInput(uid){
-	post("----freeInput\n");
     let n = node(uid);
+    let parentUID = n.get("parent");
+    let parent = node(parentUID);
+    post("freeInput", parentUID, uid, "\n");
     _unregisterInput(n);  // will put this input in the parent's childInput
     //remove from parentPendingInputs
-    let parentUID = n.get("parent");
-    let parent = node(uid);
     _removeFromPendingChildInputs(parent, uid);
     n.clear();
 }
@@ -124,7 +138,9 @@ function _registerModel(n){
 	// if the model already has an addresslist, it means it has been initiliazed from outside
 	// this happens when a parameter has been initialized that preempt the internal registration
 	// think for instance of the channelcount parameter in a multichannel model like mvc.mc.lores~
-    if (!invalid(n.get("addresslist"))) {
+    //if (!invalid(n.get("addresslist"))) {
+    post("preempt", (n.get("preempt")), "\n");
+    if (n.get("preempt")) {
         post("This node's init has been preempted", uid, "\n");
         return;
     }
@@ -168,6 +184,21 @@ function _registerModel(n){
 		_unregisterModel(n);
     	return;
     }
+
+    // unregistered child models and inputs so that they are pending to this node
+    let childModels = asArray(n.get("childModels"));
+    for (let i = 0; i < (childModels.length); i++) {
+        let childModelUID = childModels[i];
+        let n = node(childModelUID);
+        _unregisterModel(n);
+    }
+    let childInputs = asArray(n.get("childInputs"));
+    for (let i = 0; i < (childInputs.length); i++) {
+        let childInputUID = childInputs[i];
+        let n = node(childInputUID);
+        _unregisterInput(n);
+    }
+
 
     post("addresslist", n.get("addresslist"), "\n");
     post("previousAddresses", previousAddresses, "\n")
@@ -286,6 +317,7 @@ function _registerInput(n){
 	_removeFromPendingChildInputs(parent, uid);
 	_addToChildInputs(parent, uid);
 
+    post("sending init message to", uid, "\n");
     messnamed(uid + ".init", addresscount);
 }
 
@@ -296,6 +328,8 @@ function _registerPendingModels(n){
         let uid = pendingChildModels[i];
         let n = node(uid);
         _registerModel(n);
+        //reset the preempt flag
+        n.replace("preempt", 0);
     }
 }
 
@@ -306,6 +340,8 @@ function _registerPendingInputs(n){
         let uid = pendingChildInputs[i];
         let n = node(uid);
         _registerInput(n);
+        //reset the preempt flag
+        n.replace("preempt", 0);
     }
 }
 
@@ -330,8 +366,8 @@ function _unregisterModel(n){
     post("addresslist", addresslist, "\n");
     for (var i = 0; i < addresslist.length; i++) {
         MVC_MODELS.remove(addresslist[i]);
-        //MVC_INPUTS.remove(addresslist[i]);
-        //MVC_PARAMETERS_VALUES.remove(addresslist[i]); // these two should not be necessary _unregisterInput
+        MVC_INPUTS.remove(addresslist[i]);
+        MVC_PARAMETERS_VALUES.remove(addresslist[i]); // these two should not be necessary _unregisterInput
     }
 
     // move to parent's pending models
@@ -383,6 +419,7 @@ function _unregisterInput(n){
 // utils
 
 function _removeFromPendingChildModels(n, uid){
+    post("_removeFromPendingChildModels", n.get("uid"), uid, "\n");
 	let pendingChildModels = asArray(n.get("pendingChildModels"));
     post("pendingChildModels", pendingChildModels, "\n")
     let updatedArray = _removeItemFromArray(pendingChildModels, uid);
@@ -390,37 +427,47 @@ function _removeFromPendingChildModels(n, uid){
 	n.replace("pendingChildModels",updatedArray );
 }
 function _addToPendingChildModels(n, uid){
+    post("_addToPendingChildModels", n.get("uid"), uid, "\n");
 	let pendingChildModels = asArray(n.get("pendingChildModels"));
 	n.replace("pendingChildModels", _addUniqueItemToArray(pendingChildModels, uid));
 }
 function _removeFromChildModels(n, uid){
+    post("_removeFromChildModels", n.get("uid"), uid, "\n");
 	let childModels = asArray(n.get("childModels"));
 	n.replace("childModels", _removeItemFromArray(childModels, uid));
 }
 function _addToChildModels(n, uid){
+    post("_addToChildModels", n.get("uid"), uid, "\n");
 	let childModels = asArray(n.get("childModels"));
 	n.replace("childModels", _addUniqueItemToArray(childModels,uid));
 }
 function _removeFromPendingChildInputs(n, uid){
+    post("_removeFromPendingChildInputs", n.get("uid"), uid, "\n");
 	let pendingChildInputs = asArray(n.get("pendingChildInputs"));
-	n.replace("pendingChildInputs", _removeItemFromArray(pendingChildInputs, uid));
+    post("pendingChildInputs", pendingChildInputs, "\n");
+    _removeItemFromArray(pendingChildInputs, uid)
+    post("pendingChildInputs", pendingChildInputs, "\n");
+	n.replace("pendingChildInputs", pendingChildInputs);
 }
 function _addToPendingChildInputs(n, uid){
+    post("_addToPendingChildInputs", n.get("uid"), uid, "\n");
 	let pendingChildInputs = asArray(n.get("pendingChildInputs"));
 	n.replace("pendingChildInputs", _addUniqueItemToArray(pendingChildInputs, uid));
 }
 function _removeFromChildInputs(n, uid){
+    post("_removeFromChildInputs", n.get("uid"), uid, "\n");
 	let childInputs = asArray(n.get("childInputs"));
 	n.replace("childInputs", _removeItemFromArray(childInputs, uid));
 }
 function _addToChildInputs(n, uid){
+    post("_addToChildInputs", n.get("uid"), uid, "\n");
 	let childInputs = asArray(n.get("childInputs"));
 	n.replace("childInputs", _addUniqueItemToArray(childInputs, uid));
 }
 
 
 function _removeItemFromArray(arr, value) {
-    post("the input array:", JSON.stringify(arr), "\n")
+    post("_removeItemFromArray", JSON.stringify(arr), value, "\n")
     var index = arr.indexOf(value);
     post(value, "found at", index, "\n");
     if (index > -1) {
