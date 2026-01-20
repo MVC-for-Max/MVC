@@ -13,6 +13,18 @@
         "boxes": [
             {
                 "box": {
+                    "id": "obj-2",
+                    "linecount": 2,
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 294.0, 162.0, 100.0, 35.0 ],
+                    "text": "prepend addresscount"
+                }
+            },
+            {
+                "box": {
                     "id": "obj-1",
                     "maxclass": "newobj",
                     "numinlets": 1,
@@ -27,8 +39,8 @@
                     "id": "obj-44",
                     "maxclass": "newobj",
                     "numinlets": 3,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
+                    "numoutlets": 2,
+                    "outlettype": [ "none", "" ],
                     "patching_rect": [ 276.0, 93.0, 183.0, 22.0 ],
                     "text": "mvc.minimodel.parser #1"
                 }
@@ -41,18 +53,7 @@
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 63.0, 458.0, 30.0, 30.0 ]
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-4",
-                    "maxclass": "newobj",
-                    "numinlets": 0,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 63.0, 418.0, 138.0, 22.0 ],
-                    "text": "r #1.init"
+                    "patching_rect": [ 450.0, 277.0, 30.0, 30.0 ]
                 }
             },
             {
@@ -124,6 +125,12 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-26", 0 ],
+                    "source": [ "obj-2", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-44", 1 ],
                     "source": [ "obj-23", 1 ]
                 }
@@ -148,8 +155,14 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-2", 0 ],
+                    "source": [ "obj-44", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-26", 0 ],
-                    "source": [ "obj-4", 0 ]
+                    "source": [ "obj-44", 1 ]
                 }
             },
             {
