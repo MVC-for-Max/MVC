@@ -13,6 +13,18 @@
         "boxes": [
             {
                 "box": {
+                    "id": "obj-57",
+                    "linecount": 2,
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "" ],
+                    "patching_rect": [ 293.0, 205.5, 70.0, 35.0 ],
+                    "text": "zl.reg get addresslist"
+                }
+            },
+            {
+                "box": {
                     "comment": "",
                     "id": "obj-49",
                     "index": 1,
@@ -296,7 +308,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 329.0, 280.0, 24.0, 24.0 ]
+                    "patching_rect": [ 293.0, 176.5, 24.0, 24.0 ]
                 }
             },
             {
@@ -316,7 +328,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 59.0, 119.0, 1000.0, 755.0 ],
+                        "rect": [ 59.0, 119.0, 308.0, 375.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -408,7 +420,7 @@
                             }
                         ]
                     },
-                    "patching_rect": [ 329.0, 137.0, 58.0, 22.0 ],
+                    "patching_rect": [ 293.0, 143.5, 94.0, 22.0 ],
                     "text": "p change"
                 }
             },
@@ -1322,13 +1334,12 @@
             {
                 "box": {
                     "id": "obj-1",
-                    "linecount": 2,
                     "maxclass": "message",
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 368.0, 206.0, 102.0, 35.0 ],
-                    "text": "name $1.attr, get addresslist"
+                    "patching_rect": [ 368.0, 206.0, 102.0, 22.0 ],
+                    "text": "name $1.attr"
                 }
             },
             {
@@ -1360,7 +1371,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 329.0, 107.0, 173.0, 22.0 ],
+                    "patching_rect": [ 293.0, 113.0, 209.0, 22.0 ],
                     "text": "zl.slice 1"
                 }
             },
@@ -1788,7 +1799,7 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-21", 0 ],
+                    "destination": [ "obj-57", 0 ],
                     "source": [ "obj-48", 0 ]
                 }
             },
@@ -1796,6 +1807,12 @@
                 "patchline": {
                     "destination": [ "obj-47", 0 ],
                     "source": [ "obj-53", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-11", 0 ],
+                    "source": [ "obj-57", 0 ]
                 }
             },
             {
