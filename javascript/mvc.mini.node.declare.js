@@ -14,7 +14,7 @@ MVC_INPUTS.quiet = 1;
 MVC_PARAMETERS_VALUES.quiet = 1;
 MVC_STATES_VALUES.quiet = 1;
 
-let DEBUG = 0;
+let DEBUG = 1;
 
 ///////////////////////////////////////////////////////
 // Public functions
@@ -313,6 +313,7 @@ function _registerInput(n){
         MVC_INPUTS.replace(theAddress + "::uid", uid, i+1);
         let defaultValue = n.get("default");
         if (mvcType === 'parameter') {
+            debugpost("setting default for", theAddress, "?\n");
             // only write default is address didn't already exist
             if (!MVC_PARAMETERS_VALUES.contains(theAddress)){
                 MVC_PARAMETERS_VALUES.replace(theAddress, defaultValue);
@@ -369,9 +370,9 @@ function _registerRemote(n){
     let namespace = [];
     var MVC_INPUTS_Obj = JSON.parse(MVC_INPUTS.stringify());
     flattenInputs(namespace, MVC_INPUTS_Obj, '', '::');
-    debugpost("namespace", namespace, "\n");
+    debugpost("namespace", JSON.stringify(namespace), "\n");
     let filteredAddresslist = matchGlobs(n.get("addresslist"), namespace);
-    debugpost("filteredAddresslist", filteredAddresslist, "\n");
+    debugpost("filteredAddresslist", JSON.stringify(filteredAddresslist), "\n");
 
     // find gone addresses and remove them in the value dict
     let missingAdresses = findGoneItems(n.get("addresslist"), previousAddresses);
@@ -786,6 +787,6 @@ function debugpost()
 {
     if (DEBUG) {
         var a = arrayfromargs(messagename, arguments);
-        post(a, "\n");
+        post(a);
     }
 }
