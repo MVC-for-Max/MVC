@@ -9,19 +9,8 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ -140.0, -955.0, 1852.0, 899.0 ],
+        "rect": [ -84.0, -975.0, 1429.0, 904.0 ],
         "boxes": [
-            {
-                "box": {
-                    "id": "obj-53",
-                    "maxclass": "newobj",
-                    "numinlets": 2,
-                    "numoutlets": 3,
-                    "outlettype": [ "", "int", "" ],
-                    "patching_rect": [ 840.0, 969.0, 100.0, 22.0 ],
-                    "text": "mvc.remote"
-                }
-            },
             {
                 "box": {
                     "id": "obj-43",
@@ -29,8 +18,19 @@
                     "numinlets": 2,
                     "numoutlets": 3,
                     "outlettype": [ "", "int", "" ],
-                    "patching_rect": [ 768.0, 905.0, 220.0, 22.0 ],
-                    "text": "mvc.miniremote myModel/channelcount"
+                    "patching_rect": [ 864.0, 845.0, 223.0, 22.0 ],
+                    "text": "mvc.miniremote myModel/preset*"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-53",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "int", "" ],
+                    "patching_rect": [ 889.0, 657.5, 201.0, 22.0 ],
+                    "text": "mvc.parameter myModel multi.{1..4}"
                 }
             },
             {
@@ -112,7 +112,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 615.0, 755.0, 183.0, 22.0 ],
+                    "patching_rect": [ 615.0, 755.0, 99.0, 22.0 ],
                     "text": "prepend address"
                 }
             },
@@ -124,7 +124,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 651.0, 946.0, 24.0, 24.0 ]
+                    "patching_rect": [ 615.0, 923.0, 24.0, 24.0 ]
                 }
             },
             {
@@ -135,7 +135,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 678.0, 944.0, 24.0, 24.0 ]
+                    "patching_rect": [ 672.0, 923.0, 24.0, 24.0 ]
                 }
             },
             {
@@ -146,7 +146,7 @@
                     "numoutlets": 2,
                     "outlettype": [ "", "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 670.0, 911.0, 50.0, 22.0 ]
+                    "patching_rect": [ 672.0, 897.0, 50.0, 22.0 ]
                 }
             },
             {
@@ -157,7 +157,7 @@
                     "numoutlets": 2,
                     "outlettype": [ "", "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 606.0, 911.0, 50.0, 22.0 ]
+                    "patching_rect": [ 615.0, 897.0, 50.0, 22.0 ]
                 }
             },
             {
@@ -167,7 +167,7 @@
                     "numinlets": 3,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
-                    "patching_rect": [ 606.0, 883.0, 108.0, 22.0 ],
+                    "patching_rect": [ 615.0, 871.0, 108.0, 22.0 ],
                     "text": "route uid initialized"
                 }
             },
@@ -245,7 +245,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 1106.0, 690.0, 24.0, 24.0 ]
+                    "patching_rect": [ 1094.0, 737.0, 24.0, 24.0 ]
                 }
             },
             {
@@ -255,7 +255,7 @@
                     "numinlets": 2,
                     "numoutlets": 5,
                     "outlettype": [ "dictionary", "", "", "", "" ],
-                    "patching_rect": [ 1106.0, 716.0, 85.0, 22.0 ],
+                    "patching_rect": [ 1094.0, 763.0, 61.0, 22.0 ],
                     "saved_object_attributes": {
                         "legacy": 0,
                         "parameter_enable": 0,
@@ -270,7 +270,7 @@
                     "maxclass": "dict.view",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 1106.0, 747.0, 182.0, 184.0 ]
+                    "patching_rect": [ 1094.0, 794.0, 182.0, 184.0 ]
                 }
             },
             {
@@ -336,7 +336,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 606.0, 807.0, 87.0, 22.0 ],
+                    "patching_rect": [ 615.0, 807.0, 87.0, 22.0 ],
                     "text": "address tralala"
                 }
             },
@@ -369,7 +369,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 606.0, 845.0, 203.0, 22.0 ],
+                    "patching_rect": [ 615.0, 845.0, 203.0, 22.0 ],
                     "text": "mvc.minimodel foo myModel tralala"
                 }
             },
@@ -434,11 +434,11 @@
             {
                 "box": {
                     "id": "obj-16",
-                    "linecount": 3,
+                    "linecount": 4,
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 1196.5, 651.0, 343.0, 47.0 ],
+                    "patching_rect": [ 1169.0, 651.0, 239.0, 60.0 ],
                     "text": "TODO: parameter should not unregister when changing address, because we need to keep those values in the namespace that are still there after new address"
                 }
             },
@@ -711,7 +711,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 172.0, 99.0, 50.0, 22.0 ],
-                    "text": "dump"
+                    "text": "test"
                 }
             },
             {
@@ -744,7 +744,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 993.0, 40.0, 24.0, 24.0 ]
+                    "patching_rect": [ 994.0, 42.0, 24.0, 24.0 ]
                 }
             },
             {
@@ -1177,7 +1177,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 242.0, 227.0, 184.0, 22.0 ],
+                    "patching_rect": [ 242.0, 227.0, 121.0, 22.0 ],
                     "text": "mvc.device myModel"
                 }
             },
