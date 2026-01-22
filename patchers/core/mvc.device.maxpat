@@ -268,8 +268,8 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 168.0, 197.69805280368098, 347.0, 35.0 ],
-                    "text": "mvc.model #1 mvc.root @type #1 @version 0.4",
+                    "patching_rect": [ 168.0, 197.69805280368098, 331.0, 35.0 ],
+                    "text": "mvc.model #1 mvc-root @type #1 @version 0.4",
                     "varname": "mvc.model"
                 }
             },
@@ -6362,6 +6362,8 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 1,
+                                                                        "node_bin_path": "",
+                                                                        "npm_bin_path": "",
                                                                         "watch": 1
                                                                     },
                                                                     "text": "node.script mvc.wildcard-matching.js @autostart 1 @watch 1 @defer 1",
@@ -26476,8 +26478,6 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 0,
                                                                         "defer": 0,
-                                                                        "node_bin_path": "",
-                                                                        "npm_bin_path": "",
                                                                         "watch": 0
                                                                     },
                                                                     "text": "node.script mvc.wildcard-node.js",
@@ -29333,6 +29333,8 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 1,
+                                                                        "node_bin_path": "",
+                                                                        "npm_bin_path": "",
                                                                         "watch": 1
                                                                     },
                                                                     "text": "node.script mvc.brace.expansion.js @autostart 1 @watch 1 @defer 1",
@@ -31338,7 +31340,7 @@
                                             {
                                                 "box": {
                                                     "id": "obj-13",
-                                                    "linecount": 5,
+                                                    "linecount": 4,
                                                     "maxclass": "newobj",
                                                     "numinlets": 2,
                                                     "numoutlets": 2,
@@ -31420,7 +31422,7 @@
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 3,
-                                                    "outlettype": [ "bang", "mvc.root", "loresHelper" ],
+                                                    "outlettype": [ "bang", "mvc.root", "myModel" ],
                                                     "patching_rect": [ 57.0, 73.0, 96.0, 35.0 ],
                                                     "text": "t b mvc.root #1"
                                                 }
@@ -31836,7 +31838,7 @@
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
-                                                    "outlettype": [ "loresHelper" ],
+                                                    "outlettype": [ "myModel" ],
                                                     "patching_rect": [ 50.0, 124.89135802469136, 278.0, 22.0 ],
                                                     "text": "t #1"
                                                 }
@@ -32530,8 +32532,6 @@
                                                     "saved_object_attributes": {
                                                         "autostart": 0,
                                                         "defer": 0,
-                                                        "node_bin_path": "",
-                                                        "npm_bin_path": "",
                                                         "watch": 0
                                                     },
                                                     "text": "node.script mvc.createfolder.js",
@@ -35198,7 +35198,7 @@
                                                                     "fontname": "Arial",
                                                                     "fontsize": 12.0,
                                                                     "id": "obj-60",
-                                                                    "linecount": 3,
+                                                                    "linecount": 2,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
