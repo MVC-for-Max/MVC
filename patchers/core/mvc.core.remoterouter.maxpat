@@ -13,6 +13,18 @@
         "boxes": [
             {
                 "box": {
+                    "bubble": 1,
+                    "id": "obj-61",
+                    "linecount": 2,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 511.0, 362.0, 133.0, 37.0 ],
+                    "text": "TODO= should be eventually removed"
+                }
+            },
+            {
+                "box": {
                     "id": "obj-57",
                     "linecount": 2,
                     "maxclass": "newobj",
@@ -1338,7 +1350,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 368.0, 206.0, 102.0, 22.0 ],
+                    "patching_rect": [ 368.0, 206.0, 76.0, 22.0 ],
                     "text": "name $1.attr"
                 }
             },
