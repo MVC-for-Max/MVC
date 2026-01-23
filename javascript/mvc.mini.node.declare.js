@@ -445,7 +445,7 @@ function _registerView(n){
     }
 
     // expand brace-notation
-    let expandedAddresses
+    let expandedAddresses;
     if (address == "") {
         expandedAddresses = [];
         let parent = node(parentUID);
