@@ -14,7 +14,7 @@ MVC_INPUTS.quiet = 1;
 MVC_PARAMETERS_VALUES.quiet = 1;
 MVC_STATES_VALUES.quiet = 1;
 
-let DEBUG = 0;
+let DEBUG = 1;
 
 ///////////////////////////////////////////////////////
 // Public functions
@@ -32,7 +32,6 @@ function registerModel(uid){
 
     //publicInit(n);
 }
-
 // called from mvc.model on freebang
 function freeModel(uid){
     let n = node(uid);
@@ -51,7 +50,6 @@ function freeModel(uid){
 	n.replace("pendingChildModels", pendingChildModels);
 	n.replace("pendingChildInputs", pendingChildInputs);
 }
-
 // called from mvc.parameter, mvc.state or mvc.message on patcherargs's done, address or parent messages
 // should we split that in separate functions?
 function registerInput(uid){
@@ -68,7 +66,6 @@ function registerInput(uid){
         _registerInput(n);
     }
 }
-
 // called from mvc.parameter, mvc.state or mvc.message on freebang
 function freeInput(uid){
     let n = node(uid);
@@ -81,26 +78,18 @@ function freeInput(uid){
     _removeFromPendingChildInputs(parent, uid);
     n.clear();
 }
-
-//// called from mvc.view on patcherargs's done, address or parent messages
-//function registerView(uid){
-//    let n = node(uid);
-//    _unregisterView(n);
-//    _registerView(n);
-//}
-//// called from mvc.view on freebang
-//function freeView(uid){
-//	let n = node(uid);
-//	_unregisterView(n);
-//
-//	// clear the node, except for the pendingInputs and models
-//	let pendingChildModels =  n.get("pendingChildModels");
-//	let pendingChildInputs =  n.get("pendingChildInputs");
-//	n.clear();
-//	n.replace("pendingChildModels") = pendingChildModels;
-//	n.replace("pendingChildInputs") = pendingChildInputs;
-//}
-//
+// called from mvc.view on patcherargs's done, address or parent messages
+function registerView(uid){
+    let n = node(uid);
+    debugpost("----registerView", uid, "\n");
+    _registerView(n);
+}
+// called from mvc.view on freebang
+function freeView(uid){
+    let n = node(uid);
+    debugpost("----freeView", uid, "\n");
+    _unregisterView(n);
+}
 /// called from mvc.remote on patcherargs's done, address or parent messages
 function registerRemote(uid){
     let n = node(uid);
@@ -364,12 +353,12 @@ function _registerRemote(n){
     }
 
     // if parent exists but is not initialized, add this node to parent's pending nodes
-    if ((!invalid(parentUID)) && (invalid(parent.get("addresslist")))) {
-        let pendingRemotes = asArray(parent.get("pendingRemotes"));
-        pendingRemotes.push(uid)
-        parent.replace("pendingRemotes", pendingRemotes);
-        //return;
-    }
+    //if ((!invalid(parentUID)) && (invalid(parent.get("addresslist")))) {
+    //    let pendingRemotes = asArray(parent.get("pendingRemotes"));
+    //    pendingRemotes.push(uid)
+    //    parent.replace("pendingRemotes", pendingRemotes);
+    //    //return;
+    //}
 
     debugpost("parentUID", parentUID, "\n");
 
@@ -407,15 +396,7 @@ function _registerRemote(n){
         debugpost("missing remote address:", theAdd, '\n');
         //Remove from input's remote value
         MVC_INPUTS.remove(theAdd+"::remotes::"+uid);
-        //let destNodeRemotes = asArray(MVC_INPUTS.get(theAdd+"::remotes"));
-        //debugpost("current remotes are:", JSON.stringify(destNodeRemotes));
-        //_removeItemFromArray(destNodeRemotes, [uid, i+1]);
-        //let [inputUID, inputIndex] = MVC_INPUTS.get(theAdd+"::uid");
-        //let inputNode = node(inputUID + ".attr");
-        //inputNode.replace("remotes::" + uid);
     }
-
-
 
     // add this addresses to the relevant nodes
     let theDest = [];
@@ -426,20 +407,6 @@ function _registerRemote(n){
         let [destUID, destIdx] = MVC_INPUTS.get(theAdd+"::uid");
         MVC_INPUTS.replace(theAdd+"::remotes::" + uid, i+1);
         theDest.push([destUID, destIdx]);
-        
-        // store in array
-        //let destNodeRemotes = asArray(MVC_INPUTS.get(theAdd+"::remotes"));
-        //debugpost("---adding", uid, i, "to", destUID, ".attr","\n");
-        //destNodeRemotes.push([uid, i+1]);
-        //MVC_INPUTS.replace(theAdd+"::remotes", destNodeRemotes);
-
-        //destNode.replace
-        //Remove from input's remote value
-        //let [inputUID, inputIndex] = MVC_INPUTS.get(theAdd+"::uid");
-        //debugpost(inputUID, inputIndex, "\n");
-        //let inputNode = node(inputUID);
-        //post(inputNode.get("uid"), "\n");
-        //inputNode.replace("remotes::" + uid, i+1);
     }
     // pust the destination addresses in the remote's attr dict
     n.replace("destination",theDest);
@@ -449,7 +416,7 @@ function _registerRemote(n){
         const initPath = commonPath(addresslist);
         const initNode = MVC_MODELS.contains(initPath) ? MVC_MODELS.get(initPath+"::uid") : MVC_INPUTS.get(initPath+"::uid");
         n.replace("initNode", initNode[0]+".publicinit");       
-    }else{
+    } else{
         n.replace("initNode", "");
     }
 
@@ -459,6 +426,64 @@ function _registerRemote(n){
     //
     //debugpost("sending init message to", uid, "\n");
     messnamed(uid + ".init", addresslist.length);
+}
+
+
+function _registerView(n){
+    var uid = n.get("uid");
+    debugpost("----_registerView", uid, "\n");
+
+    let address = n.get("address");
+    debugpost("address", address, "\n");
+    let parentUID = n.get("parent");
+    let parent = node(parentUID);
+    let previousAddresses = asArray(n.get('addresslist'));
+
+    // address cannot be an empty string
+    if (invalid(address)) {
+        n.replace("address", "");
+    }
+
+    // expand brace-notation
+    let expandedAddresses
+    if (address == "") {
+        expandedAddresses = [];
+        let parent = node(parentUID);
+        n.replace("expandedAddresses", expandedAddresses);
+        n.replace("addresslist", parent.get("addresslist"));
+        n.replace("childrenmap", parent.get("childrenmap"));
+        n.replace("parentmap", parent.get("parentmap"));
+    }
+    else {
+        let expandedAddresses = expandAddressList(n.get("address"));
+        n.replace("expandedAddresses", expandedAddresses);
+        debugpost("expandedAddresses:", JSON.stringify(expandedAddresses) , "\n");
+    
+        // distribute addresses over parent's
+        distributeAddresses(n, parent);
+        debugpost("addresslist", JSON.stringify(n.get("addresslist")), "\n");       
+    }
+
+
+    // the addresslist returned by distributeAddresses() is only potential, 
+    // we'll need to filter it against namespace first
+    let potentialAddresslist = n.get("addresslist");
+    n.replace("potentialAddresslist", potentialAddresslist);
+
+    //filter this list of address against existing namespace
+    let namespace = [];
+    var MVC_MODELS_Obj = JSON.parse(MVC_MODELS.stringify());
+    flattenInputs(namespace, MVC_MODELS_Obj, '', '::');
+    debugpost("namespace", JSON.stringify(namespace), "\n");
+    let addresslist = matchGlobs(potentialAddresslist, namespace);
+    debugpost("filteredAddresslist", JSON.stringify(addresslist), "\n");
+    n.replace("addresslist", addresslist);
+
+}
+
+
+function _unregisterView(n){
+    var uid = n.get("uid");
 }
 
 function _registerPendingModels(n){
