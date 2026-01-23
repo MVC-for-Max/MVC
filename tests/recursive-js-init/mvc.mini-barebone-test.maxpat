@@ -9,8 +9,44 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ -140.0, -1018.0, 1342.0, 984.0 ],
+        "rect": [ 34.0, 100.0, 1342.0, 848.0 ],
         "boxes": [
+            {
+                "box": {
+                    "id": "obj-123",
+                    "maxclass": "newobj",
+                    "numinlets": 0,
+                    "numoutlets": 0,
+                    "patcher": {
+                        "fileversion": 1,
+                        "appversion": {
+                            "major": 9,
+                            "minor": 1,
+                            "revision": 2,
+                            "architecture": "x64",
+                            "modernui": 1
+                        },
+                        "classnamespace": "box",
+                        "rect": [ 59.0, 119.0, 1000.0, 755.0 ],
+                        "boxes": [
+                            {
+                                "box": {
+                                    "id": "obj-2",
+                                    "maxclass": "comment",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [ 83.0, 65.0, 150.0, 20.0 ],
+                                    "text": "mvc.view are initialized"
+                                }
+                            }
+                        ],
+                        "lines": []
+                    },
+                    "patching_rect": [ 37.0, 247.0, 100.0, 22.0 ],
+                    "text": "p notes",
+                    "varname": "not's"
+                }
+            },
             {
                 "box": {
                     "id": "obj-118",
@@ -133,8 +169,8 @@
                     "numinlets": 2,
                     "numoutlets": 3,
                     "outlettype": [ "", "int", "" ],
-                    "patching_rect": [ 483.0, 1148.0, 232.0, 22.0 ],
-                    "text": "mvc.miniview myView @parent SubModel"
+                    "patching_rect": [ 483.0, 1148.0, 248.0, 22.0 ],
+                    "text": "mvc.miniview myView @parent mySubModel"
                 }
             },
             {
@@ -3263,6 +3299,17 @@
                 }
             }
         ],
+        "parameters": {
+            "parameterbanks": {
+                "0": {
+                    "index": 0,
+                    "name": "",
+                    "parameters": [ "-", "-", "-", "-", "-", "-", "-", "-" ],
+                    "buttons": [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+                }
+            },
+            "inherited_shortname": 1
+        },
         "autosave": 0
     }
 }
