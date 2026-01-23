@@ -29,6 +29,8 @@ function registerModel(uid){
     let n = node(uid);
 	debugpost("----registerModel", uid, "\n");
     _registerModel(n);
+
+    //publicInit(n);
 }
 
 // called from mvc.model on freebang
@@ -545,6 +547,12 @@ function _unregisterRemote(n){
         ////post(inputNode.get("uid"), "\n");
         //inputNode.remove("remotes::" + uid);        
     }
+}
+
+
+function publicInit(n){
+    let uid = n.get("uid");
+    messnamed(uid + ".init", 0);
 }
 
 
