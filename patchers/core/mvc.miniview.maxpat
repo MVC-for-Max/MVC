@@ -13,6 +13,18 @@
         "boxes": [
             {
                 "box": {
+                    "id": "obj-9",
+                    "linecount": 2,
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 619.0, 298.0, 100.0, 35.0 ],
+                    "text": "loadmess uid #1"
+                }
+            },
+            {
+                "box": {
                     "id": "obj-15",
                     "maxclass": "newobj",
                     "numinlets": 0,
@@ -60,7 +72,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 1197.0, 207.0, 387.0, 436.0 ],
+                        "rect": [ 1091.0, 207.0, 387.0, 436.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -2795,7 +2807,7 @@
                             {
                                 "box": {
                                     "id": "obj-70",
-                                    "linecount": 2,
+                                    "linecount": 3,
                                     "maxclass": "newobj",
                                     "numinlets": 2,
                                     "numoutlets": 5,
@@ -5862,7 +5874,7 @@
                                                     "numoutlets": 2,
                                                     "outlettype": [ "", "" ],
                                                     "patching_rect": [ 225.0, 102.0, 148.0, 22.0 ],
-                                                    "text": "zl.reg freeView #0"
+                                                    "text": "zl.reg freeView #1"
                                                 }
                                             },
                                             {
@@ -5884,7 +5896,7 @@
                                                     "numoutlets": 2,
                                                     "outlettype": [ "", "" ],
                                                     "patching_rect": [ 29.0, 102.0, 174.0, 22.0 ],
-                                                    "text": "zl.reg registerView #0"
+                                                    "text": "zl.reg registerView #1"
                                                 }
                                             },
                                             {
@@ -5906,7 +5918,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 29.0, 189.0, 174.0, 22.0 ],
-                                                    "text": "r #0.init"
+                                                    "text": "r #1.init"
                                                 }
                                             },
                                             {
@@ -6134,7 +6146,7 @@
                                                         "parameter_enable": 0,
                                                         "parameter_mappable": 0
                                                     },
-                                                    "text": "dict #0.attr @quiet 1"
+                                                    "text": "dict #1.attr @quiet 1"
                                                 }
                                             },
                                             {
@@ -6529,6 +6541,12 @@
                 "patchline": {
                     "destination": [ "obj-77", 0 ],
                     "source": [ "obj-8", 2 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-26", 0 ],
+                    "source": [ "obj-9", 0 ]
                 }
             }
         ]
