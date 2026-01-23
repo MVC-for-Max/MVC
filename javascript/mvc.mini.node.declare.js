@@ -10,11 +10,11 @@ var MVC_PARAMETERS_VALUES = new Dict("mvc.parameters.values.dict");
 var MVC_STATES_VALUES = new Dict("mvc.states.values.dict");
 
 MVC_MODELS.quiet = 1;
-MVC_INPUTS.quiet = 0;
+MVC_INPUTS.quiet = 1;
 MVC_PARAMETERS_VALUES.quiet = 1;
 MVC_STATES_VALUES.quiet = 1;
 
-let DEBUG = 1;
+let DEBUG = 0;
 
 ///////////////////////////////////////////////////////
 // Public functions
