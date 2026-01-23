@@ -10,7 +10,7 @@ var MVC_PARAMETERS_VALUES = new Dict("mvc.parameters.values.dict");
 var MVC_STATES_VALUES = new Dict("mvc.states.values.dict");
 
 MVC_MODELS.quiet = 1;
-MVC_INPUTS.quiet = 1;
+MVC_INPUTS.quiet = 0;
 MVC_PARAMETERS_VALUES.quiet = 1;
 MVC_STATES_VALUES.quiet = 1;
 
@@ -335,6 +335,7 @@ function _registerInput(n){
     messnamed(uid + ".init", addresscount);
 }
 
+/////////////////////////////////////////////////////////////
 _registerRemote.local = 1;
 function _registerRemote(n){
     var uid = n.get("uid");
@@ -374,23 +375,55 @@ function _registerRemote(n){
     let filteredAddresslist = matchGlobs(n.get("addresslist"), namespace);
     debugpost("filteredAddresslist", JSON.stringify(filteredAddresslist), "\n");
 
+    let addresslist = n.get("addresslist");
     // find gone addresses and remove them in the value dict
-    let missingAdresses = findGoneItems(n.get("addresslist"), previousAddresses);
+    let missingAdresses = findGoneItems(addresslist, previousAddresses);
     for (let i = 0; i < (missingAdresses.length); i++) {
         let theAdd = missingAdresses[i];
         debugpost("missing remote address:", theAdd, '\n');
         //Remove from input's remote value
-        let [inputUID, inputIndex] = MVC_INPUTS.get(theAdd+"::uid");
-        let inputNode = node(inputUID + ".attr");
-        inputNode.replace("remotes::" + uid);
+        MVC_INPUTS.remove(theAdd+"::remotes::"+uid);
+        //let destNodeRemotes = asArray(MVC_INPUTS.get(theAdd+"::remotes"));
+        //debugpost("current remotes are:", JSON.stringify(destNodeRemotes));
+        //_removeItemFromArray(destNodeRemotes, [uid, i+1]);
+        //let [inputUID, inputIndex] = MVC_INPUTS.get(theAdd+"::uid");
+        //let inputNode = node(inputUID + ".attr");
+        //inputNode.replace("remotes::" + uid);
     }
+
+    // add this addresses to the relevant nodes
+    let theDest = [];
+    for (let i = 0; i < addresslist.length; i++) {
+        let theAdd = addresslist[i];
+        debugpost("adding remote address:", theAdd, '\n');
+        //add to inputs
+        let [destUID, destIdx] = MVC_INPUTS.get(theAdd+"::uid");
+        MVC_INPUTS.replace(theAdd+"::remotes::" + uid, i+1);
+        theDest.push([destUID, destIdx]);
+        
+        // store in array
+        //let destNodeRemotes = asArray(MVC_INPUTS.get(theAdd+"::remotes"));
+        //debugpost("---adding", uid, i, "to", destUID, ".attr","\n");
+        //destNodeRemotes.push([uid, i+1]);
+        //MVC_INPUTS.replace(theAdd+"::remotes", destNodeRemotes);
+
+        //destNode.replace
+        //Remove from input's remote value
+        //let [inputUID, inputIndex] = MVC_INPUTS.get(theAdd+"::uid");
+        //debugpost(inputUID, inputIndex, "\n");
+        //let inputNode = node(inputUID);
+        //post(inputNode.get("uid"), "\n");
+        //inputNode.replace("remotes::" + uid, i+1);
+    }
+    // pust the destination addresses in the remote's attr dict
+    n.replace("destination",theDest);
 
     // change from pending to child models in parent's attr dictionary
     //_removeFromPendingRemotes(parent, uid);
     //_addToRemotes(parent, uid);
     //
     //debugpost("sending init message to", uid, "\n");
-    //messnamed(uid + ".init", addresscount);
+    messnamed(uid + ".init", addresslist.length);
 }
 
 function _registerPendingModels(n){
@@ -490,7 +523,28 @@ function _unregisterInput(n){
 }
 
 function _unregisterRemote(n){
+    let uid = n.get("uid");
+    debugpost("----_unregisterRemote", uid, "\n");
 
+    let addresslist = asArray(n.get("addresslist"));
+
+    //remove from namespace
+    for (let i = 0; i < addresslist.length; i++) {
+        let theAdd = addresslist[i];
+        debugpost("remove remote address:", theAdd, '\n');
+        MVC_INPUTS.remove(theAdd+"::remotes::" + uid);
+
+        //let destNodeRemotes = asArray(MVC_INPUTS.get(theAdd+"::remotes"));
+        //debugpost("current remotes are:", JSON.stringify(destNodeRemotes));
+        //_removeItemFromArray(destNodeRemotes, [uid, i+1]);
+//
+        //Remove from input's remote value
+        //let [inputUID, inputIndex] = MVC_INPUTS.get(theAdd+"::uid");
+        //debugpost(inputUID, inputIndex, "\n");
+        //let inputNode = node(inputUID);
+        ////post(inputNode.get("uid"), "\n");
+        //inputNode.remove("remotes::" + uid);        
+    }
 }
 
 
