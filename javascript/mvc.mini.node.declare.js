@@ -232,6 +232,9 @@ function _registerModel(n){
 	_addToChildModels(parent, uid);
 
     messnamed(uid + ".init", addresscount);
+
+    // send recursive public init signal
+    publicInit(n);
 }
 
 _registerInput.local = 1;
@@ -335,6 +338,10 @@ function _registerInput(n){
 
     debugpost("sending init message to", uid, "\n");
     messnamed(uid + ".init", addresscount);
+
+    // send recursive public init signal
+    publicInit(n);
+
 }
 
 /////////////////////////////////////////////////////////////
@@ -344,9 +351,17 @@ function _registerRemote(n){
     debugpost("----_registerRemote", uid, "\n");
 
     let address = n.get("address");
+    debugpost("address", address, "\n");
     let parentUID = n.get("parent");
     let parent = node(parentUID);
     let previousAddresses = asArray(n.get('addresslist'));
+
+    // address cannot be an empty string
+    if (invalid(address)||(address === "")) {
+        post("Invalid address", address, "\n");
+        n.remove("address");
+        return;
+    }
 
     // if parent exists but is not initialized, add this node to parent's pending nodes
     if ((!invalid(parentUID)) && (invalid(parent.get("addresslist")))) {
@@ -369,15 +384,22 @@ function _registerRemote(n){
     distributeAddresses(n, parent);
     debugpost("addresslist", JSON.stringify(n.get("addresslist")), "\n");
 
+    // the addresslist returned by distributeAddresses() is only potential, 
+    // we'll need to filter it against namespace first
+    let potentialAddresslist = n.get("addresslist");
+    n.replace("potentialAddresslist", potentialAddresslist);
+
     //filter this list of address against existing namespace
     let namespace = [];
     var MVC_INPUTS_Obj = JSON.parse(MVC_INPUTS.stringify());
     flattenInputs(namespace, MVC_INPUTS_Obj, '', '::');
     debugpost("namespace", JSON.stringify(namespace), "\n");
-    let filteredAddresslist = matchGlobs(n.get("addresslist"), namespace);
-    debugpost("filteredAddresslist", JSON.stringify(filteredAddresslist), "\n");
+    let addresslist = matchGlobs(potentialAddresslist, namespace);
+    debugpost("filteredAddresslist", JSON.stringify(addresslist), "\n");
+    n.replace("addresslist", addresslist);
 
-    let addresslist = n.get("addresslist");
+
+    //let addresslist = n.get("addresslist");
     // find gone addresses and remove them in the value dict
     let missingAdresses = findGoneItems(addresslist, previousAddresses);
     for (let i = 0; i < (missingAdresses.length); i++) {
@@ -392,6 +414,8 @@ function _registerRemote(n){
         //let inputNode = node(inputUID + ".attr");
         //inputNode.replace("remotes::" + uid);
     }
+
+
 
     // add this addresses to the relevant nodes
     let theDest = [];
@@ -419,6 +443,15 @@ function _registerRemote(n){
     }
     // pust the destination addresses in the remote's attr dict
     n.replace("destination",theDest);
+
+    if (addresslist.length > 0){
+         //find UID of root path for this node (either in inputs, or in models)
+        const initPath = commonPath(addresslist);
+        const initNode = MVC_MODELS.contains(initPath) ? MVC_MODELS.get(initPath+"::uid") : MVC_INPUTS.get(initPath+"::uid");
+        n.replace("initNode", initNode[0]+".publicinit");       
+    }else{
+        n.replace("initNode", "");
+    }
 
     // change from pending to child models in parent's attr dictionary
     //_removeFromPendingRemotes(parent, uid);
@@ -494,6 +527,9 @@ function _unregisterModel(n){
 	//n.replace("parentmap", []);
 	//n.replace("childrenmap", []);
 	messnamed(uid + ".init", 0);
+
+    // send recursive public init signal
+    publicInit(n);
 }
 
 function _unregisterInput(n){
@@ -522,6 +558,9 @@ function _unregisterInput(n){
 	//n.replace("parentmap", []);
 	//n.replace("childrenmap", []);
 	messnamed(uid + ".init", 0);
+
+    // send recursive public init signal
+    publicInit(n);
 }
 
 function _unregisterRemote(n){
@@ -551,8 +590,19 @@ function _unregisterRemote(n){
 
 
 function publicInit(n){
+
     let uid = n.get("uid");
-    messnamed(uid + ".init", 0);
+    let parentUID = n.get("parent");
+    let parentNode = node(parentUID);
+
+    //recursive call to top-level model
+    if (parentUID == "mvc-root") {
+        messnamed("mvc-root.publicinit", "bang");    
+    } else{
+        publicInit(parentNode);
+    }
+    post("publicinit", uid, "\n");
+    messnamed(uid + ".publicinit", "bang");
 }
 
 
@@ -852,3 +902,71 @@ function debugpost()
         post(a);
     }
 }
+
+
+
+/**********************************************
+ * Series of functions for finding common path
+ **********************************************/
+
+/**
+ * Given an array of strings, return an array of arrays, containing the
+ * strings split at the given separator
+ * @param {!Array<!string>} a
+ * @param {string} sep
+ * @returns {!Array<!Array<string>>}
+ */
+const splitStrings = (a, sep = '/') => a.map(i => i.split(sep));
+
+/**
+ * Given an index number, return a function that takes an array and returns the
+ * element at the given index
+ * @param {number} i
+ * @return {function(!Array<*>): *}
+ */
+const elAt = i => a => a[i];
+
+/**
+ * Transpose an array of arrays:
+ * Example:
+ * [['a', 'b', 'c'], ['A', 'B', 'C'], [1, 2, 3]] ->
+ * [['a', 'A', 1], ['b', 'B', 2], ['c', 'C', 3]]
+ * @param {!Array<!Array<*>>} a
+ * @return {!Array<!Array<*>>}
+ */
+const rotate = a => a[0].map((e, i) => a.map(elAt(i)));
+
+/**
+ * Checks of all the elements in the array are the same.
+ * @param {!Array<*>} arr
+ * @return {boolean}
+ */
+const allElementsEqual = arr => arr.every(e => e === arr[0]);
+
+/**
+ * Checks that no element have wildcard
+ * @param {!Array<*>} arr
+ * @return {boolean}
+ */
+const noWildcardInElement = arr => arr.some(e => {
+    // Define the special characters to check for
+  const specialCharacters = ['*', '?'];
+  // Check if the current string contains any special characters
+    for (let j = 0; j < specialCharacters.length; j++) {
+      if (e.includes(specialCharacters[j])) {
+        return false; // Found a special character, return true
+      }
+    }
+    // No special characters found in any of the strings
+  return true;
+});
+
+/**
+ * Returns the longest common path without wildcard in it
+ * @param {!Array<*>} input : the array of paths
+ * @return {string} : the longest path
+ */
+const commonPath = (input, sep = '::') => rotate(splitStrings(input, sep))
+        .filter(noWildcardInElement)
+    .filter(allElementsEqual)
+    .map(elAt(0)).join(sep);
