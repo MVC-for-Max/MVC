@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 612.0, 203.0, 660.0, 604.0 ],
+        "rect": [ 658.0, 271.0, 660.0, 604.0 ],
         "boxes": [
             {
                 "box": {
@@ -197,7 +197,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 1022.0, 183.0, 501.0, 639.0 ],
+                        "rect": [ 977.0, 183.0, 501.0, 639.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -370,13 +370,13 @@
                             },
                             {
                                 "box": {
-                                    "comment": "",
+                                    "comment": "addresscount",
                                     "id": "obj-36",
                                     "index": 2,
                                     "maxclass": "inlet",
                                     "numinlets": 0,
                                     "numoutlets": 1,
-                                    "outlettype": [ "" ],
+                                    "outlettype": [ "int" ],
                                     "patching_rect": [ 241.0, 57.0, 30.0, 30.0 ]
                                 }
                             },
@@ -552,7 +552,7 @@
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
-                    "outlettype": [ "" ],
+                    "outlettype": [ "int" ],
                     "patching_rect": [ 197.0, 88.0, 30.0, 30.0 ]
                 }
             },
@@ -614,7 +614,7 @@
             },
             {
                 "box": {
-                    "comment": "",
+                    "comment": "enable hetero check",
                     "id": "obj-4",
                     "index": 1,
                     "maxclass": "outlet",
@@ -649,7 +649,7 @@
             },
             {
                 "box": {
-                    "comment": "",
+                    "comment": "bang to check hetero",
                     "id": "obj-21",
                     "index": 2,
                     "maxclass": "outlet",
