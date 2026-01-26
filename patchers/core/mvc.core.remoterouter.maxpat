@@ -191,7 +191,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 668.0, 1062.0, 24.0, 24.0 ]
+                    "patching_rect": [ 379.5, 722.0, 24.0, 24.0 ]
                 }
             },
             {
@@ -303,7 +303,7 @@
                             }
                         ]
                     },
-                    "patching_rect": [ 668.0, 919.0, 58.0, 22.0 ],
+                    "patching_rect": [ 379.5, 579.0, 58.0, 22.0 ],
                     "text": "p change"
                 }
             },
@@ -313,7 +313,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 842.0, 1033.0, 165.0, 20.0 ],
+                    "patching_rect": [ 553.5, 693.0, 165.0, 20.0 ],
                     "text": "maybe should better be a coll"
                 }
             },
@@ -324,7 +324,7 @@
                     "numinlets": 2,
                     "numoutlets": 5,
                     "outlettype": [ "dictionary", "", "", "", "" ],
-                    "patching_rect": [ 768.0, 1226.0, 228.0, 22.0 ],
+                    "patching_rect": [ 479.5, 886.0, 228.0, 22.0 ],
                     "saved_object_attributes": {
                         "legacy": 0,
                         "parameter_enable": 0,
@@ -340,7 +340,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 768.0, 1198.0, 108.0, 22.0 ],
+                    "patching_rect": [ 479.5, 858.0, 108.0, 22.0 ],
                     "text": "zl.join"
                 }
             },
@@ -351,7 +351,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 768.0, 1171.0, 72.0, 22.0 ],
+                    "patching_rect": [ 479.5, 831.0, 72.0, 22.0 ],
                     "text": "prepend set"
                 }
             },
@@ -362,7 +362,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 768.0, 1143.0, 78.0, 22.0 ],
+                    "patching_rect": [ 479.5, 803.0, 78.0, 22.0 ],
                     "text": "mvc.osc2dict"
                 }
             },
@@ -373,7 +373,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 769.0, 1115.0, 71.5, 22.0 ],
+                    "patching_rect": [ 480.5, 775.0, 71.5, 22.0 ],
                     "text": "zl.nth"
                 }
             },
@@ -384,7 +384,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 732.0, 1063.0, 55.0, 22.0 ],
+                    "patching_rect": [ 443.5, 723.0, 55.0, 22.0 ],
                     "text": "zl.slice 1"
                 }
             },
@@ -395,7 +395,7 @@
                     "numinlets": 2,
                     "numoutlets": 5,
                     "outlettype": [ "dictionary", "", "", "", "" ],
-                    "patching_rect": [ 707.0, 1032.0, 121.0, 22.0 ],
+                    "patching_rect": [ 418.5, 692.0, 121.0, 22.0 ],
                     "saved_object_attributes": {
                         "legacy": 1,
                         "parameter_enable": 0,
@@ -411,7 +411,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 707.0, 999.0, 73.0, 22.0 ],
+                    "patching_rect": [ 418.5, 659.0, 73.0, 22.0 ],
                     "text": "prepend get"
                 }
             },
@@ -422,7 +422,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 707.0, 954.0, 57.0, 22.0 ],
+                    "patching_rect": [ 418.5, 614.0, 57.0, 22.0 ],
                     "text": "tosymbol"
                 }
             },
@@ -433,7 +433,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 822.0, 961.0, 55.0, 22.0 ],
+                    "patching_rect": [ 533.5, 621.0, 55.0, 22.0 ],
                     "text": "zl.slice 1"
                 }
             },
@@ -444,7 +444,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 668.0, 889.0, 173.0, 22.0 ],
+                    "patching_rect": [ 379.5, 549.0, 173.0, 22.0 ],
                     "text": "zl.slice 1"
                 }
             },
