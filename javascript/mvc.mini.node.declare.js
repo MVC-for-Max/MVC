@@ -27,7 +27,7 @@ let DEBUG = 0;
 // called from mvc.model on patcherargs's done, address or parent messages
 function registerModel(uid){
     let n = node(uid);
-	debugpost("----registerModel", uid, "\n");
+	postdebug("----registerModel", uid, "\n");
     _registerModel(n);
 
     //publicInit(n);
@@ -35,7 +35,7 @@ function registerModel(uid){
 // called from mvc.model on freebang
 function freeModel(uid){
     let n = node(uid);
-	debugpost("----freeModel", uid, "\n");
+	postdebug("----freeModel", uid, "\n");
 	_unregisterModel(n);
 
     let parentUID = n.get("parent");
@@ -54,10 +54,10 @@ function freeModel(uid){
 // should we split that in separate functions?
 function registerInput(uid){
     let n = node(uid);
-	debugpost("----registerInput", uid, "\n");
+	postdebug("----registerInput", uid, "\n");
     let address = n.get("address");
     if (invalid(address)){
-        debugpost("Unregister input because invalid address", address, "\n")
+        postdebug("Unregister input because invalid address", address, "\n")
         _unregisterInput(n);
         n.remove("addresslist");
         return;
@@ -69,10 +69,10 @@ function registerInput(uid){
 // called from mvc.parameter, mvc.state or mvc.message on freebang
 function freeInput(uid){
     let n = node(uid);
-    debugpost("----freeInput", uid, "\n");
+    postdebug("----freeInput", uid, "\n");
     let parentUID = n.get("parent");
     let parent = node(parentUID);
-    debugpost("freeInput", parentUID, uid, "\n");
+    postdebug("freeInput", parentUID, uid, "\n");
     _unregisterInput(n);  // will put this input in the parent's childInput
     //remove from parentPendingInputs
     _removeFromPendingChildInputs(parent, uid);
@@ -81,26 +81,26 @@ function freeInput(uid){
 // called from mvc.view on patcherargs's done, address or parent messages
 function registerView(uid){
     let n = node(uid);
-    debugpost("----registerView", uid, "\n");
+    postdebug("----registerView", uid, "\n");
     _registerView(n);
 }
 // called from mvc.view on freebang
 function freeView(uid){
     let n = node(uid);
-    debugpost("----freeView", uid, "\n");
+    postdebug("----freeView", uid, "\n");
     _unregisterView(n);
     n.clear();
 }
 /// called from mvc.remote on patcherargs's done, address or parent messages
 function registerRemote(uid){
     let n = node(uid);
-    debugpost("----registerRemote", uid, "\n");
+    postdebug("----registerRemote", uid, "\n");
     _registerRemote(n);
 }
 /// called from mvc.remote on freebang
 function freeRemote(uid){
     let n = node(uid);
-    debugpost("----freeRemote", uid, "\n");
+    postdebug("----freeRemote", uid, "\n");
     _unregisterRemote(n);
     n.clear();
 }
@@ -114,20 +114,20 @@ _registerModel.local = 1;
 function _registerModel(n){
 
     let uid = n.get("uid");
-    debugpost("----_registerModel:", uid, "\n");
+    postdebug("----_registerModel:", uid, "\n");
 
     let parentUID = n.get("parent");
     if (invalid(parentUID)){
-        debugpost("Aborting as parent uid is invalid:", parentUID, "\n");
+        postdebug("Aborting as parent uid is invalid:", parentUID, "\n");
         return;
     }
 
     let address = n.get("address");
-    debugpost("parentUID", parentUID, "\n")
-    debugpost("uid", uid, "\n")
+    postdebug("parentUID", parentUID, "\n")
+    postdebug("uid", uid, "\n")
 
     if (invalid(address)){
-        debugpost("Unregister node because invalid address", address, "\n")
+        postdebug("Unregister node because invalid address", address, "\n")
         _unregisterModel(n);
         n.remove("addresslist");
         return;
@@ -136,21 +136,21 @@ function _registerModel(n){
     let parent = node(parentUID);
 
     // add this node to parent's pending nodes
-    debugpost("adding", uid, "to pendingChildModels of", parentUID, "\n");
+    postdebug("adding", uid, "to pendingChildModels of", parentUID, "\n");
     _addToPendingChildModels(parent, uid);
 
     // if parent has no addresslist, just stay in pending child nodes, except if parent is mvc-root
     if ((parentUID != "mvc-root")&&(asArray(parent.get("addresslist")).length == 0)) {
-        debugpost("Parent has not been initialized yet. Resume init for",uid, "\n");
+        postdebug("Parent has not been initialized yet. Resume init for",uid, "\n");
         return;
     }
 
     let previousAddresses = asArray(n.get('addresslist'));
-    debugpost("previousAddresses", previousAddresses, "\n");
+    postdebug("previousAddresses", previousAddresses, "\n");
 
-    debugpost("address", address, "\n");
+    postdebug("address", address, "\n");
     if (invalid(address)){
-        debugpost("invalid address", address, "\n");
+        postdebug("invalid address", address, "\n");
         return;
     }
 
@@ -159,7 +159,7 @@ function _registerModel(n){
 	// expand brace-notation
     let expandedAddresses = expandAddressList(n.get("address"));
     n.replace("expandedAddresses", expandedAddresses);
-    debugpost("expandedAddresses:", JSON.stringify(expandedAddresses) , '\n');
+    postdebug("expandedAddresses:", JSON.stringify(expandedAddresses) , '\n');
 
     // distribute addresses over parent's
     distributeAddresses(n, parent); 	
@@ -167,7 +167,7 @@ function _registerModel(n){
     // check namespace collision
     if (_modelAddressAlreadyInUse(n)){
         messnamed(uid + ".debugpost", "error", "Some addresses already registered in namespace.");
-        //debugpost("Namespace collision for model", uid, ". Resuming init.\n"); // todo: make that an error in the object itself
+        //postdebug("Namespace collision for model", uid, ". Resuming init.\n"); // todo: make that an error in the object itself
         n.remove("addresslist");
         return;
     }
@@ -191,15 +191,15 @@ function _registerModel(n){
     }
 
 
-    debugpost("addresslist", n.get("addresslist"), "\n");
-    debugpost("previousAddresses", previousAddresses, "\n")
+    postdebug("addresslist", n.get("addresslist"), "\n");
+    postdebug("previousAddresses", previousAddresses, "\n")
 
     // find gone addresses and remove them in the value dict
     let missingAdresses = findGoneItems(n.get("addresslist"), previousAddresses);
-    debugpost("missingAdresses", JSON.stringify(missingAdresses), "\n");
+    postdebug("missingAdresses", JSON.stringify(missingAdresses), "\n");
     for (let i = 0; i < (missingAdresses.length); i++) {
         let theAdd = missingAdresses[i];
-        debugpost("missing address:", theAdd, '\n');
+        postdebug("missing address:", theAdd, '\n');
         MVC_MODELS.remove(theAdd);
         MVC_INPUTS.remove(theAdd);
         MVC_STATES_VALUES.remove(theAdd);
@@ -230,14 +230,14 @@ function _registerModel(n){
 _registerInput.local = 1;
 function _registerInput(n){
     var uid = n.get("uid");
-	debugpost("----_registerInput", uid, "\n");
+	postdebug("----_registerInput", uid, "\n");
 
     let parentUID = n.get("parent");
     if (invalid(parentUID)) return;
 
     let address = n.get("address");
     if (invalid(address)){
-        debugpost("Unregister input because invalid address", address, "\n")
+        postdebug("Unregister input because invalid address", address, "\n")
         _unregisterInput(n);
         n.remove("addresslist");
         return;
@@ -252,12 +252,12 @@ function _registerInput(n){
     let previousAddresses = asArray(n.get('addresslist'));
 
     // add this node to parent's pending nodes
-    debugpost("adding", uid, "to pendingChildInputs of", parentUID, "\n");
+    postdebug("adding", uid, "to pendingChildInputs of", parentUID, "\n");
     _addToPendingChildInputs(parent, uid);
 
     // if parent has no addresslist, just stay in pending child nodes, except if parent is mvc-root
     if ((parentUID != "mvc-root")&&(asArray(parent.get("addresslist")).length == 0)) {
-        debugpost("Parent has not been initialized yet. Resume init for",uid, "\n");
+        postdebug("Parent has not been initialized yet. Resume init for",uid, "\n");
         return;
     }
 
@@ -266,14 +266,14 @@ function _registerInput(n){
 	// expand brace-notation
     let expandedAddresses = expandAddressList(n.get("address"));
     n.replace("expandedAddresses", expandedAddresses);
-    debugpost("expandedAddresses:", JSON.stringify(expandedAddresses) , '\n');
+    postdebug("expandedAddresses:", JSON.stringify(expandedAddresses) , '\n');
 
     // distribute addresses over parent's
     distributeAddresses(n, parent); 	
 
     // check namespace collision and resume registration if duplicate
     if (_inputAddressAlreadyInUse(n)){
-        //debugpost("Namespace collision for input", uid, ". Resuming init.\n"); // todo: make that an error in the object itself
+        //postdebug("Namespace collision for input", uid, ". Resuming init.\n"); // todo: make that an error in the object itself
         messnamed(uid + ".debugpost", "error", "Some addresses already registered in namespace.");
 		n.remove("addresslist");
     	return;
@@ -285,7 +285,7 @@ function _registerInput(n){
     let missingAdresses = findGoneItems(n.get("addresslist"), previousAddresses);
     for (let i = 0; i < (missingAdresses.length); i++) {
         let theAdd = missingAdresses[i];
-        debugpost("missing address:", theAdd, '\n');
+        postdebug("missing address:", theAdd, '\n');
         MVC_INPUTS.remove(theAdd);
         switch(mvcType){
             case 'state':
@@ -308,7 +308,7 @@ function _registerInput(n){
         MVC_INPUTS.replace(theAddress + "::uid", uid, i+1);
         let defaultValue = n.get("default");
         if (mvcType === 'parameter') {
-            debugpost("setting default for", theAddress, "?\n");
+            postdebug("setting default for", theAddress, "?\n");
             // only write default is address didn't already exist
             if (!MVC_PARAMETERS_VALUES.contains(theAddress)){
                 MVC_PARAMETERS_VALUES.replace(theAddress, defaultValue);
@@ -326,7 +326,7 @@ function _registerInput(n){
 	_removeFromPendingChildInputs(parent, uid);
 	_addToChildInputs(parent, uid);
 
-    debugpost("sending init message to", uid, "\n");
+    postdebug("sending init message to", uid, "\n");
     messnamed(uid + ".init", addresscount);
 
     // send recursive public init signal
@@ -338,17 +338,17 @@ function _registerInput(n){
 _registerRemote.local = 1;
 function _registerRemote(n){
     var uid = n.get("uid");
-    debugpost("----_registerRemote", uid, "\n");
+    postdebug("----_registerRemote", uid, "\n");
 
     let address = n.get("address");
-    debugpost("address", address, "\n");
+    postdebug("address", address, "\n");
     let parentUID = n.get("parent");
     let parent = node(parentUID);
     let previousAddresses = asArray(n.get('addresslist'));
 
     // address cannot be an empty string
     if (invalid(address)||(address === "")) {
-        post("Invalid address", address, "\n");
+        postdebug("Invalid address", address, "\n");
         n.remove("address");
         return;
     }
@@ -361,18 +361,18 @@ function _registerRemote(n){
     //    //return;
     //}
 
-    debugpost("parentUID", parentUID, "\n");
+    postdebug("parentUID", parentUID, "\n");
 
     ///// Alright, parent exist and is initialized
 
     // expand brace-notation
     let expandedAddresses = expandAddressList(n.get("address"));
     n.replace("expandedAddresses", expandedAddresses);
-    //debugpost("expandedAddresses:", JSON.stringify(expandedAddresses) , "\n");
+    //postdebug("expandedAddresses:", JSON.stringify(expandedAddresses) , "\n");
 
     // distribute addresses over parent's
     distributeAddresses(n, parent);
-    debugpost("addresslist", JSON.stringify(n.get("addresslist")), "\n");
+    postdebug("addresslist", JSON.stringify(n.get("addresslist")), "\n");
 
     // the addresslist returned by distributeAddresses() is only potential, 
     // we'll need to filter it against namespace first
@@ -383,9 +383,9 @@ function _registerRemote(n){
     let namespace = [];
     var MVC_INPUTS_Obj = JSON.parse(MVC_INPUTS.stringify());
     flattenInputs(namespace, MVC_INPUTS_Obj, '', '::');
-    debugpost("namespace", JSON.stringify(namespace), "\n");
+    postdebug("namespace", JSON.stringify(namespace), "\n");
     let addresslist = matchGlobs(potentialAddresslist, namespace);
-    debugpost("filteredAddresslist", JSON.stringify(addresslist), "\n");
+    postdebug("filteredAddresslist", JSON.stringify(addresslist), "\n");
     n.replace("addresslist", addresslist);
 
 
@@ -394,7 +394,7 @@ function _registerRemote(n){
     let missingAdresses = findGoneItems(addresslist, previousAddresses);
     for (let i = 0; i < (missingAdresses.length); i++) {
         let theAdd = missingAdresses[i];
-        debugpost("missing remote address:", theAdd, '\n');
+        postdebug("missing remote address:", theAdd, '\n');
         //Remove from input's remote value
         MVC_INPUTS.remove(theAdd+"::remotes::"+uid);
     }
@@ -403,7 +403,7 @@ function _registerRemote(n){
     let theDest = [];
     for (let i = 0; i < addresslist.length; i++) {
         let theAdd = addresslist[i];
-        debugpost("adding remote address:", theAdd, '\n');
+        postdebug("adding remote address:", theAdd, '\n');
         //add to inputs
         let [destUID, destIdx] = MVC_INPUTS.get(theAdd+"::uid");
         MVC_INPUTS.replace(theAdd+"::remotes::" + uid, i+1);
@@ -425,17 +425,17 @@ function _registerRemote(n){
     //_removeFromPendingRemotes(parent, uid);
     //_addToRemotes(parent, uid);
     //
-    //debugpost("sending init message to", uid, "\n");
+    //postdebug("sending init message to", uid, "\n");
     messnamed(uid + ".init", addresslist.length);
 }
 
 
 function _registerView(n){
     var uid = n.get("uid");
-    debugpost("----_registerView", uid, "\n");
+    postdebug("----_registerView", uid, "\n");
 
     let address = n.get("address");
-    debugpost("address", address, "\n");
+    postdebug("address", address, "\n");
     let parentUID = n.get("parent");
     let parent = node(parentUID);
     let previousAddresses = asArray(n.get('addresslist'));
@@ -453,10 +453,10 @@ function _registerView(n){
     else {
         let expandedAddresses = expandAddressList(n.get("address"));
         n.replace("expandedAddresses", expandedAddresses);
-        debugpost("expandedAddresses:", JSON.stringify(expandedAddresses) , "\n");
+        postdebug("expandedAddresses:", JSON.stringify(expandedAddresses) , "\n");
         // distribute addresses over parent's
         distributeAddresses(n, parent);
-        debugpost("addresslist", JSON.stringify(n.get("addresslist")), "\n");       
+        postdebug("addresslist", JSON.stringify(n.get("addresslist")), "\n");       
     }
 
 
@@ -469,9 +469,9 @@ function _registerView(n){
     let namespace = [];
     var MVC_MODELS_Obj = JSON.parse(MVC_MODELS.stringify());
     flattenInputs(namespace, MVC_MODELS_Obj, '', '::');
-    debugpost("namespace", JSON.stringify(namespace), "\n");
+    postdebug("namespace", JSON.stringify(namespace), "\n");
     let addresslist = matchGlobs(potentialAddresslist, namespace);
-    debugpost("filteredAddresslist", JSON.stringify(addresslist), "\n");
+    postdebug("filteredAddresslist", JSON.stringify(addresslist), "\n");
     n.replace("addresslist", addresslist);
 
     let addresscount = addresslist.length;
@@ -491,9 +491,9 @@ function _unregisterView(n){
 }
 
 function _registerPendingModels(n){
-	debugpost("----_registerPendingModels\n");
+	postdebug("----_registerPendingModels\n");
     let pendingChildModels = asArray(n.get("pendingChildModels"));
-    debugpost("... now will register pending models:", JSON.stringify(pendingChildModels));
+    postdebug("... now will register pending models:", JSON.stringify(pendingChildModels));
     for (let i = 0; i < pendingChildModels.length; i++) {
         let uid = pendingChildModels[i];
         // send init message to model
@@ -504,9 +504,9 @@ function _registerPendingModels(n){
 }
 
 function _registerPendingInputs(n){
-	debugpost("----_registerPendingInputs\n");
+	postdebug("----_registerPendingInputs\n");
     let pendingChildInputs = asArray(n.get("pendingChildInputs"));
-    debugpost("... now will register pending inputs:", JSON.stringify(pendingChildInputs));
+    postdebug("... now will register pending inputs:", JSON.stringify(pendingChildInputs));
     for (let i = 0; i < pendingChildInputs.length; i++) {
         let uid = pendingChildInputs[i];
         // send init message to input
@@ -518,7 +518,7 @@ function _registerPendingInputs(n){
 
 function _unregisterModel(n){
     let uid = n.get("uid");
-	debugpost("----_unregisterModel", uid, "\n");
+	postdebug("----_unregisterModel", uid, "\n");
 
     let childInputs = asArray(n.get("childInputs"));
     for (let i = 0; i < childInputs.length; i++) {
@@ -536,7 +536,7 @@ function _unregisterModel(n){
 
     //remove from namespace
     let addresslist = asArray(n.get("addresslist"));
-    debugpost("addresslist", addresslist, "\n");
+    postdebug("addresslist", addresslist, "\n");
     for (var i = 0; i < addresslist.length; i++) {
         MVC_MODELS.remove(addresslist[i]);
         MVC_INPUTS.remove(addresslist[i]);
@@ -563,7 +563,7 @@ function _unregisterModel(n){
 
 function _unregisterInput(n){
     let uid = n.get("uid");
-	debugpost("----_unregisterInput", uid, "\n");
+	postdebug("----_unregisterInput", uid, "\n");
     let parentUID = n.get("parent");
     let parent = node(parentUID);
     let addresslist = asArray(n.get("addresslist"));
@@ -594,23 +594,23 @@ function _unregisterInput(n){
 
 function _unregisterRemote(n){
     let uid = n.get("uid");
-    debugpost("----_unregisterRemote", uid, "\n");
+    postdebug("----_unregisterRemote", uid, "\n");
 
     let addresslist = asArray(n.get("addresslist"));
 
     //remove from namespace
     for (let i = 0; i < addresslist.length; i++) {
         let theAdd = addresslist[i];
-        debugpost("remove remote address:", theAdd, '\n');
+        postdebug("remove remote address:", theAdd, '\n');
         MVC_INPUTS.remove(theAdd+"::remotes::" + uid);
 
         //let destNodeRemotes = asArray(MVC_INPUTS.get(theAdd+"::remotes"));
-        //debugpost("current remotes are:", JSON.stringify(destNodeRemotes));
+        //postdebug("current remotes are:", JSON.stringify(destNodeRemotes));
         //_removeItemFromArray(destNodeRemotes, [uid, i+1]);
 //
         //Remove from input's remote value
         //let [inputUID, inputIndex] = MVC_INPUTS.get(theAdd+"::uid");
-        //debugpost(inputUID, inputIndex, "\n");
+        //postdebug(inputUID, inputIndex, "\n");
         //let inputNode = node(inputUID);
         ////post(inputNode.get("uid"), "\n");
         //inputNode.remove("remotes::" + uid);        
@@ -640,61 +640,61 @@ function publicInit(n){
 
 // utils
 function _removeFromPendingChildModels(n, uid){
-    //debugpost("----_removeFromPendingChildModels", n.get("uid"), uid, "\n");
+    //postdebug("----_removeFromPendingChildModels", n.get("uid"), uid, "\n");
 	let pendingChildModels = asArray(n.get("pendingChildModels"));
-    //debugpost("pendingChildModels", pendingChildModels, "\n")
+    //postdebug("pendingChildModels", pendingChildModels, "\n")
     let updatedArray = _removeItemFromArray(pendingChildModels, uid);
-    //debugpost("updatedArray", updatedArray, "\n")
+    //postdebug("updatedArray", updatedArray, "\n")
 	n.replace("pendingChildModels",updatedArray );
 }
 function _addToPendingChildModels(n, uid){
-    //debugpost("----_addToPendingChildModels", n.get("uid"), uid, "\n");
+    //postdebug("----_addToPendingChildModels", n.get("uid"), uid, "\n");
 	let pendingChildModels = asArray(n.get("pendingChildModels"));
 	n.replace("pendingChildModels", _addUniqueItemToArray(pendingChildModels, uid));
 }
 function _removeFromChildModels(n, uid){
-    //debugpost("----_removeFromChildModels", n.get("uid"), uid, "\n");
+    //postdebug("----_removeFromChildModels", n.get("uid"), uid, "\n");
 	let childModels = asArray(n.get("childModels"));
 	n.replace("childModels", _removeItemFromArray(childModels, uid));
 }
 function _addToChildModels(n, uid){
-    //debugpost("----_addToChildModels", n.get("uid"), uid, "\n");
+    //postdebug("----_addToChildModels", n.get("uid"), uid, "\n");
 	let childModels = asArray(n.get("childModels"));
 	n.replace("childModels", _addUniqueItemToArray(childModels,uid));
 }
 function _removeFromPendingChildInputs(n, uid){
-    //debugpost("----_removeFromPendingChildInputs", n.get("uid"), uid, "\n");
+    //postdebug("----_removeFromPendingChildInputs", n.get("uid"), uid, "\n");
 	let pendingChildInputs = asArray(n.get("pendingChildInputs"));
-    //debugpost("pendingChildInputs", pendingChildInputs, "\n");
+    //postdebug("pendingChildInputs", pendingChildInputs, "\n");
     _removeItemFromArray(pendingChildInputs, uid)
-    //debugpost("pendingChildInputs", pendingChildInputs, "\n");
+    //postdebug("pendingChildInputs", pendingChildInputs, "\n");
 	n.replace("pendingChildInputs", pendingChildInputs);
 }
 function _addToPendingChildInputs(n, uid){
-    //debugpost("----_addToPendingChildInputs", n.get("uid"), uid, "\n");
+    //postdebug("----_addToPendingChildInputs", n.get("uid"), uid, "\n");
 	let pendingChildInputs = asArray(n.get("pendingChildInputs"));
 	n.replace("pendingChildInputs", _addUniqueItemToArray(pendingChildInputs, uid));
 }
 function _removeFromChildInputs(n, uid){
-    //debugpost("----_removeFromChildInputs", n.get("uid"), uid, "\n");
+    //postdebug("----_removeFromChildInputs", n.get("uid"), uid, "\n");
 	let childInputs = asArray(n.get("childInputs"));
 	n.replace("childInputs", _removeItemFromArray(childInputs, uid));
 }
 function _addToChildInputs(n, uid){
-    //debugpost("----_addToChildInputs", n.get("uid"), uid, "\n");
+    //postdebug("----_addToChildInputs", n.get("uid"), uid, "\n");
 	let childInputs = asArray(n.get("childInputs"));
 	n.replace("childInputs", _addUniqueItemToArray(childInputs, uid));
 }
 
 
 function _removeItemFromArray(arr, value) {
-    //debugpost("----_removeItemFromArray", JSON.stringify(arr), value, "\n")
+    //postdebug("----_removeItemFromArray", JSON.stringify(arr), value, "\n")
     var index = arr.indexOf(value);
-    //debugpost(value, "found at", index, "\n");
+    //postdebug(value, "found at", index, "\n");
     if (index > -1) {
       arr.splice(index, 1);
     }
-    //debugpost("updated:", JSON.stringify(arr), "\n")
+    //postdebug("updated:", JSON.stringify(arr), "\n")
     return arr;
 }
 
@@ -710,15 +710,15 @@ function _modelAddressAlreadyInUse(n)
 {
 	let addresslist = n.get("addresslist");
     let uid = n.get("uid");
-    //debugpost("----_modelAddressAlreadyInUse", uid, "\n");
+    //postdebug("----_modelAddressAlreadyInUse", uid, "\n");
 
-    //debugpost("addresslist", JSON.stringify(addresslist), "\n");
+    //postdebug("addresslist", JSON.stringify(addresslist), "\n");
     for (let i = 0; i < (addresslist.length); i++) {
         let theAdd = addresslist[i];
         let theUID = MVC_MODELS.get(theAdd+"::uid");
         if (theUID != null) {
             if (uid !== theUID[0]) {
-                //debugpost('Model', addresslist[i].replace(/::/g, '/'), 'is already in the namespace.\n')
+                //postdebug('Model', addresslist[i].replace(/::/g, '/'), 'is already in the namespace.\n')
                 return 1;
             }
         }
@@ -738,7 +738,7 @@ function _inputAddressAlreadyInUse(n)
         //if (theUID == null) break;  
         if (theUID != null) {
             if (uid !== theUID[0]) {
-                //debugpost('Input', addresslist[i].replace(/::/g, '/'), 'is already in the namespace.\n')
+                //postdebug('Input', addresslist[i].replace(/::/g, '/'), 'is already in the namespace.\n')
                 return 1;
             }
         }
@@ -847,20 +847,20 @@ function expandAddressList(addr) {
 /* ===================== ADDRESS DISTRIBUTION ===================== */
 
 function distributeAddresses(n, parent) {
-    debugpost("----distributeAddresses\n");
+    postdebug("----distributeAddresses\n");
     let addresslist = []; // the final address list
     let parentmap = [];   // an array mapping each address to the index of the parent addresses
     let childrenmap = []; // a nested array mapping parent index to an array of corresponding child addresses indices
 
     let expandedAddresses = n.get("expandedAddresses");
     //addresslist = expanded.flat();
-    //debugpost("expandedAddresses", JSON.stringify(expandedAddresses), "\n");
+    //postdebug("expandedAddresses", JSON.stringify(expandedAddresses), "\n");
 
     //if (!parentList || parentList.length === 0) parentList = [""];
 
     if (n.get("parent") == "mvc-root"){ // If no parent, consider the addresses as absolute (can only happen for the device's top level model)
       addresslist = expandedAddresses.flat();
-      //debugpost('Flattened-addresslist:', addresslist, '\n');
+      //postdebug('Flattened-addresslist:', addresslist, '\n');
       const tmp = new Array(addresslist.length);
       for (let i = 0; i < addresslist.length; i++) {
           parentmap[i] = 1;
@@ -869,14 +869,14 @@ function distributeAddresses(n, parent) {
       childrenmap[0] = tmp;
     } 
     else if (parent.get("uid") != n.get("uid")){ //concat on parent address
-       // debugpost("yuk\n")
+       // postdebug("yuk\n")
       let adddressIndex = 0; //the address index in the final addresslist
       let parentAddresses = asArray(parent.get("addresslist"));
     
       for (let i = 0; i < parentAddresses.length; i++) {
         const childIndexArray = [];
         const addressesArrayForThisParentAddress = expandedAddresses[i%expandedAddresses.length];
-        //debugpost('addressesArrayForThisParentAddress', addressesArrayForThisParentAddress, '\n');
+        //postdebug('addressesArrayForThisParentAddress', addressesArrayForThisParentAddress, '\n');
     
         for (let j = 0; j < addressesArrayForThisParentAddress.length; j++) {
           var childAdd = addressesArrayForThisParentAddress[j];
@@ -904,9 +904,9 @@ function distributeAddresses(n, parent) {
 }
 
 //let test = ["tralala"];
-//debugpost("test1", test,"\n");
+//postdebug("test1", test,"\n");
 //_removeItemFromArray(test, "tralala");
-//debugpost("test", test,"\n");
+//postdebug("test", test,"\n");
 
 
 function testpicomatch() {
@@ -919,16 +919,16 @@ function testpicomatch() {
     ];
 
     var matches = matchGlobs(patterns, namespace);
-    debugpost("Matched files:\n" + matches.join("\n") + "\n");
+    postdebug("Matched files:\n" + matches.join("\n") + "\n");
 }
 
 function picomatchClearCache() {
     clearMatchGlobsCache();
-    debugpost("Pattern cache cleared\n");
+    postdebug("Pattern cache cleared\n");
 }
 
 
-function debugpost()
+function postdebug()
 {
     if (DEBUG) {
         var a = arrayfromargs(messagename, arguments);
