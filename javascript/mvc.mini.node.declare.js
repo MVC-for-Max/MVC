@@ -166,7 +166,7 @@ function _registerModel(n){
 
     // check namespace collision
     if (_modelAddressAlreadyInUse(n)){
-        messnamed(uid + ".debugpost", "error", "Some addresses already registered in namespace.");
+        messnamed(uid + ".post", "error", "Some addresses already registered in namespace.");
         //postdebug("Namespace collision for model", uid, ". Resuming init.\n"); // todo: make that an error in the object itself
         n.remove("addresslist");
         return;
@@ -274,7 +274,7 @@ function _registerInput(n){
     // check namespace collision and resume registration if duplicate
     if (_inputAddressAlreadyInUse(n)){
         //postdebug("Namespace collision for input", uid, ". Resuming init.\n"); // todo: make that an error in the object itself
-        messnamed(uid + ".debugpost", "error", "Some addresses already registered in namespace.");
+        messnamed(uid + ".post", "error", "Some addresses already registered in namespace.");
 		n.remove("addresslist");
     	return;
     }
@@ -625,16 +625,15 @@ function publicInit(n){
 
     if (invalid(parentUID)) return;
 
-    let parentNode = node(parentUID);
-
     //recursive call to top-level model
     if (parentUID == "mvc-root") {
         messnamed("mvc-root.publicinit", "bang");    
     } else{
+        let parentNode = node(parentUID);
         publicInit(parentNode);
     }
-    post("publicinit", uid, "\n");
-    //messnamed(uid + ".publicinit", "bang");
+    postdebug("publicinit", uid, "\n");
+    messnamed(uid + ".publicinit", "bang");
 }
 
 
