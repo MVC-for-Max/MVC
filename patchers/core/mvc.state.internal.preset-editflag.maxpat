@@ -13,17 +13,6 @@
         "boxes": [
             {
                 "box": {
-                    "id": "obj-15",
-                    "maxclass": "newobj",
-                    "numinlets": 2,
-                    "numoutlets": 2,
-                    "outlettype": [ "bang", "" ],
-                    "patching_rect": [ 144.0, 137.0, 54.0, 22.0 ],
-                    "text": "sel done"
-                }
-            },
-            {
-                "box": {
                     "fontsize": 14.0,
                     "id": "obj-45",
                     "maxclass": "newobj",
@@ -123,7 +112,7 @@
                     "maxclass": "newobj",
                     "numinlets": 3,
                     "numoutlets": 5,
-                    "outlettype": [ "", "", "bang", "int", "" ],
+                    "outlettype": [ "", "", "bang", "int", "publicinit" ],
                     "patching_rect": [ 144.0, 175.0, 207.0, 22.0 ],
                     "text": "mvc.miniparameter.parser #0"
                 }
@@ -148,7 +137,7 @@
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 91.0, 32.0, 137.0, 76.0 ],
+                    "patching_rect": [ 139.0, 79.0, 139.0, 76.0 ],
                     "text": "patcherargs @mvc-type state @type bool @description \"This model's edit flag\" @default 0 @unit none"
                 }
             },
@@ -722,14 +711,14 @@
         "lines": [
             {
                 "patchline": {
-                    "destination": [ "obj-15", 0 ],
+                    "destination": [ "obj-33", 1 ],
                     "source": [ "obj-12", 1 ]
                 }
             },
             {
                 "patchline": {
                     "destination": [ "obj-33", 0 ],
-                    "source": [ "obj-15", 0 ]
+                    "source": [ "obj-12", 0 ]
                 }
             },
             {
