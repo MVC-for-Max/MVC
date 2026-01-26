@@ -9,18 +9,30 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 34.0, 100.0, 1342.0, 848.0 ],
+        "rect": [ 85.0, 100.0, 832.0, 848.0 ],
         "boxes": [
             {
                 "box": {
                     "format": 6,
-                    "id": "obj-121",
+                    "id": "obj-115",
                     "maxclass": "flonum",
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "", "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 399.0, 1256.0, 50.0, 22.0 ]
+                    "patching_rect": [ 389.5, 1209.5, 50.0, 22.0 ]
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-122",
+                    "linecount": 2,
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "int", "" ],
+                    "patching_rect": [ 449.0, 1203.0, 125.0, 35.0 ],
+                    "text": "mvc.miniremote foo.1 @parent myView"
                 }
             },
             {
@@ -109,7 +121,7 @@
                             }
                         ]
                     },
-                    "patching_rect": [ 467.0, 1258.0, 37.0, 22.0 ],
+                    "patching_rect": [ 555.0, 1244.0, 37.0, 22.0 ],
                     "text": "p dict"
                 }
             },
@@ -120,7 +132,7 @@
                     "numinlets": 2,
                     "numoutlets": 5,
                     "outlettype": [ "dictionary", "", "", "", "" ],
-                    "patching_rect": [ 402.0, 1305.0, 61.0, 22.0 ],
+                    "patching_rect": [ 402.0, 1255.0, 61.0, 22.0 ],
                     "saved_object_attributes": {
                         "legacy": 0,
                         "parameter_enable": 0,
@@ -135,19 +147,7 @@
                     "maxclass": "dict.view",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 402.0, 1336.0, 192.0, 259.0 ]
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-94",
-                    "linecount": 3,
-                    "maxclass": "newobj",
-                    "numinlets": 2,
-                    "numoutlets": 3,
-                    "outlettype": [ "", "int", "" ],
-                    "patching_rect": [ 402.0, 1189.0, 100.0, 49.0 ],
-                    "text": "mvc.miniremote foo.1 @parent myView"
+                    "patching_rect": [ 402.0, 1286.0, 192.0, 259.0 ]
                 }
             },
             {
@@ -308,7 +308,7 @@
                     "numinlets": 2,
                     "numoutlets": 3,
                     "outlettype": [ "", "int", "" ],
-                    "patching_rect": [ 483.0, 1148.0, 248.0, 22.0 ],
+                    "patching_rect": [ 457.0, 1152.0, 248.0, 22.0 ],
                     "text": "mvc.miniview myView @parent mySubModel"
                 }
             },
@@ -2880,6 +2880,12 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-122", 0 ],
+                    "source": [ "obj-115", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-114", 0 ],
                     "source": [ "obj-116", 0 ]
                 }
@@ -2910,8 +2916,14 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-94", 0 ],
-                    "source": [ "obj-121", 0 ]
+                    "destination": [ "obj-100", 0 ],
+                    "source": [ "obj-122", 2 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-115", 0 ],
+                    "source": [ "obj-122", 0 ]
                 }
             },
             {
@@ -3431,18 +3443,6 @@
                 "patchline": {
                     "destination": [ "obj-101", 0 ],
                     "source": [ "obj-93", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-100", 0 ],
-                    "source": [ "obj-94", 2 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-121", 0 ],
-                    "source": [ "obj-94", 0 ]
                 }
             },
             {
