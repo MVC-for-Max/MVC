@@ -14,7 +14,7 @@ MVC_INPUTS.quiet = 1;
 MVC_PARAMETERS_VALUES.quiet = 1;
 MVC_STATES_VALUES.quiet = 1;
 
-let DEBUG = 1;
+let DEBUG = 0;
 
 ///////////////////////////////////////////////////////
 // Public functions
@@ -89,6 +89,7 @@ function freeView(uid){
     let n = node(uid);
     debugpost("----freeView", uid, "\n");
     _unregisterView(n);
+    n.clear();
 }
 /// called from mvc.remote on patcherargs's done, address or parent messages
 function registerRemote(uid){
@@ -439,14 +440,9 @@ function _registerView(n){
     let parent = node(parentUID);
     let previousAddresses = asArray(n.get('addresslist'));
 
-    // address cannot be an empty string
-    if (invalid(address)) {
-        n.replace("address", "");
-    }
-
     // expand brace-notation
     let expandedAddresses;
-    if (address == "") {
+    if ((address == "")||invalid(address)) {
         expandedAddresses = [];
         let parent = node(parentUID);
         n.replace("expandedAddresses", expandedAddresses);
@@ -458,7 +454,6 @@ function _registerView(n){
         let expandedAddresses = expandAddressList(n.get("address"));
         n.replace("expandedAddresses", expandedAddresses);
         debugpost("expandedAddresses:", JSON.stringify(expandedAddresses) , "\n");
-    
         // distribute addresses over parent's
         distributeAddresses(n, parent);
         debugpost("addresslist", JSON.stringify(n.get("addresslist")), "\n");       
@@ -479,11 +474,20 @@ function _registerView(n){
     debugpost("filteredAddresslist", JSON.stringify(addresslist), "\n");
     n.replace("addresslist", addresslist);
 
+    let addresscount = addresslist.length;
+
+    // send init done message to the view
+    messnamed(uid + ".init", addresscount);
+
+    // send init message to child views/inputs
+    messnamed(uid + ".publicinit", "bang");
 }
 
 
 function _unregisterView(n){
     var uid = n.get("uid");
+    // send init message to child views/inputs
+    messnamed(uid + ".publicinit", "bang");
 }
 
 function _registerPendingModels(n){
@@ -554,7 +558,7 @@ function _unregisterModel(n){
 	messnamed(uid + ".init", 0);
 
     // send recursive public init signal
-    publicInit(n);
+    //publicInit(n);
 }
 
 function _unregisterInput(n){
@@ -618,6 +622,9 @@ function publicInit(n){
 
     let uid = n.get("uid");
     let parentUID = n.get("parent");
+
+    if (invalid(parentUID)) return;
+
     let parentNode = node(parentUID);
 
     //recursive call to top-level model
@@ -627,7 +634,7 @@ function publicInit(n){
         publicInit(parentNode);
     }
     post("publicinit", uid, "\n");
-    messnamed(uid + ".publicinit", "bang");
+    //messnamed(uid + ".publicinit", "bang");
 }
 
 
@@ -826,6 +833,7 @@ function expandAddress(addr) {
 }
 
 function expandAddressList(addr) {
+    if (invalid(addr)) return [];
     if (Array.isArray(addr)) {
         var out = [];
         for (var i = 0; i < addr.length; i++) {
