@@ -114,7 +114,7 @@
                     "numoutlets": 5,
                     "outlettype": [ "", "", "bang", "int", "publicinit" ],
                     "patching_rect": [ 144.0, 175.0, 207.0, 22.0 ],
-                    "text": "mvc.miniparameter.parser #0"
+                    "text": "mvc.ministate.parser #0"
                 }
             },
             {
