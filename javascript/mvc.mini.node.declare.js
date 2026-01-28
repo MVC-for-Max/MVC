@@ -126,19 +126,20 @@ function _registerModel(n){
     postdebug("parentUID", parentUID, "\n")
     postdebug("uid", uid, "\n")
 
-    if (invalid(address)){
-        postdebug("Unregister node because invalid address", address, "\n")
-        _unregisterModel(n);
-        n.remove("addresslist");
-        return;
-    }
-
     let parent = node(parentUID);
 
     // add this node to parent's pending nodes
     postdebug("adding", uid, "to pendingChildModels of", parentUID, "\n");
     _addToPendingChildModels(parent, uid);
 
+
+    if (invalid(address)){
+        postdebug("Unregister node because invalid address", address, "\n")
+        _unregisterModel(n);
+        n.remove("addresslist");
+        return;
+    }
+    
     // if parent has no addresslist, just stay in pending child nodes, except if parent is mvc-root
     if ((parentUID != "mvc-root")&&(asArray(parent.get("addresslist")).length == 0)) {
         postdebug("Parent has not been initialized yet. Resume init for",uid, "\n");
