@@ -412,14 +412,14 @@ function _registerRemote(n){
     // pust the destination addresses in the remote's attr dict
     n.replace("destination",theDest);
 
-    if (addresslist.length > 0){
-         //find UID of root path for this node (either in inputs, or in models)
-        const initPath = commonPath(addresslist);
-        const initNode = MVC_MODELS.contains(initPath) ? MVC_MODELS.get(initPath+"::uid") : MVC_INPUTS.get(initPath+"::uid");
-        n.replace("initNode", initNode[0]+".publicinit");       
-    } else{
-        n.replace("initNode", "");
-    }
+    //if (addresslist.length > 0){
+    //     //find UID of root path for this node (either in inputs, or in models)
+    //    const initPath = commonPath(addresslist);
+    //    const initNode = MVC_MODELS.contains(initPath) ? MVC_MODELS.get(initPath+"::uid") : MVC_INPUTS.get(initPath+"::uid");
+    //    n.replace("initNode", initNode[0]+".publicinit");       
+    //} else{
+    //    n.replace("initNode", "");
+    //}
 
     // change from pending to child models in parent's attr dictionary
     //_removeFromPendingRemotes(parent, uid);
@@ -820,36 +820,6 @@ function isObject(val) {
   return val != null && typeof val === 'object' && Array.isArray(val) === false;
 };
 
-/* ===================== BRACE EXPANSION ===================== */
-
-function expandAddress(addr) {
-    if (addr.indexOf("{") === -1) return [addr];
-
-    var m = addr.match(/\{(\d+)\.\.(\d+)\}/);
-    if (!m) return [addr];
-
-    var a = parseInt(m[1], 10);
-    var b = parseInt(m[2], 10);
-
-    var out = [];
-    for (var i = a; i <= b; i++) {
-        out.push(addr.replace(m[0], i));
-    }
-    return out;
-}
-
-function expandAddressList(addr) {
-    if (invalid(addr)) return [];
-    if (Array.isArray(addr)) {
-        var out = [];
-        for (var i = 0; i < addr.length; i++) {
-            out.push(expandAddress(addr[i]));
-        }
-        return out;
-    }
-    return [expandAddress(addr)];
-}
-
 /* ===================== ADDRESS DISTRIBUTION ===================== */
 
 function distributeAddresses(n, parent) {
@@ -1009,3 +979,121 @@ const commonPath = (input, sep = '::') => rotate(splitStrings(input, sep))
         .filter(noWildcardInElement)
     .filter(allElementsEqual)
     .map(elAt(0)).join(sep);
+
+
+
+/* ===================== BRACE EXPANSION ===================== */
+function expandAddressList(addr) {
+    if (invalid(addr)) return [];
+    if (Array.isArray(addr)) {
+        var out = [];
+        for (var i = 0; i < addr.length; i++) {
+            out.push(expandAddress(addr[i]));
+        }
+        return out;
+    }
+    return [expandAddress(addr)];
+}
+
+function expandAddress(str) {
+  function expand(s) {
+    const start = s.indexOf('{');
+    if (start === -1) return [s];
+
+    let depth = 0;
+    let end = start;
+
+    // Trouver la fermeture correspondante
+    for (; end < s.length; end++) {
+      if (s[end] === '{') depth++;
+      if (s[end] === '}') {
+        depth--;
+        if (depth === 0) break;
+      }
+    }
+
+    const before = s.slice(0, start);
+    const after = s.slice(end + 1);
+    const content = s.slice(start + 1, end);
+
+    const options = parseOptions(content);
+    const result = [];
+
+    for (const option of options) {
+      for (const expanded of expand(before + option + after)) {
+        result.push(expanded);
+      }
+    }
+
+    return result;
+  }
+
+  function parseOptions(content) {
+    // Détection plage {x..y}
+    const rangeMatch = content.match(/^(-?\w+)\.\.(-?\w+)$/);
+    if (rangeMatch) {
+      return expandRange(rangeMatch[1], rangeMatch[2]);
+    }
+
+    // Split par , ou | en respectant l'imbrication
+    const parts = [];
+    let current = '';
+    let depth = 0;
+
+    for (const char of content) {
+      if ((char === ',' || char === '|') && depth === 0) {
+        parts.push(current);
+        current = '';
+      } else {
+        if (char === '{') depth++;
+        if (char === '}') depth--;
+        current += char;
+      }
+    }
+    parts.push(current);
+
+    return parts;
+  }
+
+  function expandRange(start, end) {
+    // Numérique
+    if (isNumeric(start) && isNumeric(end)) {
+      const a = Number(start);
+      const b = Number(end);
+      const step = a <= b ? 1 : -1;
+      const res = [];
+
+      for (let i = a; step > 0 ? i <= b : i >= b; i += step) {
+        res.push(String(i));
+      }
+      return res;
+    }
+
+    // Alphabétique
+    if (isAlpha(start) && isAlpha(end)) {
+      const a = start.charCodeAt(0);
+      const b = end.charCodeAt(0);
+      const step = a <= b ? 1 : -1;
+      const res = [];
+
+      for (let i = a; step > 0 ? i <= b : i >= b; i += step) {
+        res.push(String.fromCharCode(i));
+      }
+      return res;
+    }
+
+    // Pas une plage valide
+    return [start + ".." + end];
+  }
+
+  function isNumeric(v) {
+    return /^-?\d+$/.test(v);
+  }
+
+  function isAlpha(v) {
+    return /^[A-Za-z]$/.test(v);
+  }
+
+  return expand(str);
+}
+
