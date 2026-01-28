@@ -17,9 +17,9 @@
                     "maxclass": "newobj",
                     "numinlets": 3,
                     "numoutlets": 5,
-                    "outlettype": [ "", "", "bang", "int", "" ],
+                    "outlettype": [ "", "", "bang", "int", "publicinit" ],
                     "patching_rect": [ 197.0, 122.0, 207.0, 22.0 ],
-                    "text": "mvc.miniparameter.parser #0"
+                    "text": "mvc.ministate.parser #0"
                 }
             },
             {
@@ -137,7 +137,7 @@
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 197.0, 23.0, 152.0, 76.0 ],
+                    "patching_rect": [ 197.0, 23.0, 156.0, 76.0 ],
                     "text": "patcherargs @mvc-type state @type bool @description \"Chained ON value\" @default 1 @unit none"
                 }
             },
