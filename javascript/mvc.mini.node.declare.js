@@ -462,17 +462,24 @@ function _registerView(n){
 
     // the addresslist returned by distributeAddresses() is only potential, 
     // we'll need to filter it against namespace first
-    let potentialAddresslist = n.get("addresslist");
+    let potentialAddresslist = asArray(n.get("addresslist"));
     n.replace("potentialAddresslist", potentialAddresslist);
+    let addresslist = [];
+    postdebug("potentialAddresslist", potentialAddresslist.length, JSON.stringify(potentialAddresslist),"\n");
 
     //filter this list of address against existing namespace
-    let namespace = [];
-    var MVC_MODELS_Obj = JSON.parse(MVC_MODELS.stringify());
-    flattenInputs(namespace, MVC_MODELS_Obj, '', '::');
-    postdebug("namespace", JSON.stringify(namespace), "\n");
-    let addresslist = matchGlobs(potentialAddresslist, namespace);
-    postdebug("filteredAddresslist", JSON.stringify(addresslist), "\n");
-    n.replace("addresslist", addresslist);
+    if (potentialAddresslist.length > 0){
+        let namespace = [];
+        var MVC_MODELS_Obj = JSON.parse(MVC_MODELS.stringify());
+        flattenInputs(namespace, MVC_MODELS_Obj, '', '::');
+        postdebug("namespace", JSON.stringify(namespace), "\n");
+        addresslist = matchGlobs(potentialAddresslist, namespace);
+        postdebug("filteredAddresslist", JSON.stringify(addresslist), "\n");
+        n.replace("addresslist", addresslist);       
+    }
+    else {
+        n.replace("addresslist", []);  
+    }
 
     let addresscount = addresslist.length;
 
