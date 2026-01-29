@@ -4,7 +4,7 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 2,
+            "revision": 3,
             "architecture": "x64",
             "modernui": 1
         },
@@ -25,13 +25,13 @@
             {
                 "box": {
                     "id": "obj-23",
-                    "linecount": 4,
+                    "linecount": 3,
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 164.0, 46.0, 113.0, 62.0 ],
-                    "text": "patcherargs @mvc-type parameter @description #2"
+                    "patching_rect": [ 164.0, 46.0, 137.0, 49.0 ],
+                    "text": "patcherargs @mvc-type message @description #2"
                 }
             },
             {
@@ -69,7 +69,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -88,7 +88,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -532,7 +532,7 @@
                     "maxclass": "newobj",
                     "numinlets": 3,
                     "numoutlets": 0,
-                    "patching_rect": [ 146.0, 283.0, 173.0, 40.0 ],
+                    "patching_rect": [ 146.0, 283.0, 177.0, 40.0 ],
                     "text": "mvc.core.message.sender #0"
                 }
             },
@@ -572,7 +572,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -614,7 +614,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -825,7 +825,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1221,7 +1221,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-14", 2 ],
-                    "midpoints": [ 232.5, 165.203125, 309.5, 165.203125 ],
+                    "midpoints": [ 232.5, 165.203125, 313.5, 165.203125 ],
                     "order": 0,
                     "source": [ "obj-44", 1 ]
                 }
