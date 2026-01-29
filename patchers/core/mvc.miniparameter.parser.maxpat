@@ -13,6 +13,18 @@
         "boxes": [
             {
                 "box": {
+                    "id": "obj-9",
+                    "linecount": 2,
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 169.5, 618.0, 105.0, 35.0 ],
+                    "text": "prepend addresscount"
+                }
+            },
+            {
+                "box": {
                     "id": "obj-36",
                     "maxclass": "newobj",
                     "numinlets": 1,
@@ -3861,6 +3873,13 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-9", 0 ],
+                    "order": 2,
+                    "source": [ "obj-44", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-2", 0 ],
                     "source": [ "obj-46", 0 ]
                 }
@@ -4019,6 +4038,12 @@
                 "patchline": {
                     "destination": [ "obj-29", 0 ],
                     "source": [ "obj-8", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-2", 0 ],
+                    "source": [ "obj-9", 0 ]
                 }
             }
         ]
