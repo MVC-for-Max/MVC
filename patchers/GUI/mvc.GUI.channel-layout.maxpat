@@ -4,12 +4,12 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 2,
+            "revision": 3,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 711.0, -934.0, 921.0, 632.0 ],
+        "rect": [ 57.0, -916.0, 921.0, 632.0 ],
         "openinpresentation": 1,
         "enablehscroll": 0,
         "enablevscroll": 0,
@@ -23,17 +23,6 @@
                     "outlettype": [ "bang" ],
                     "parameter_enable": 0,
                     "patching_rect": [ 216.0, 208.0, 24.0, 24.0 ]
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-8",
-                    "maxclass": "newobj",
-                    "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "bang" ],
-                    "patching_rect": [ 232.0, 6.0, 58.0, 22.0 ],
-                    "text": "loadbang"
                 }
             },
             {
@@ -81,7 +70,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -264,7 +253,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -391,7 +380,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -521,7 +510,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -633,7 +622,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -793,7 +782,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -985,7 +974,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1517,7 +1506,7 @@
                     "maxclass": "newobj",
                     "numinlets": 2,
                     "numoutlets": 2,
-                    "outlettype": [ "select", "7494.focus" ],
+                    "outlettype": [ "select", "5133.focus" ],
                     "patching_rect": [ 464.0, 396.0, 98.0, 22.0 ],
                     "text": "mvc.GUI.tabbing"
                 }
@@ -1545,7 +1534,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1752,7 +1741,7 @@
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
                     "patching_rect": [ 322.75, 138.0, 69.0, 22.0 ],
-                    "save": [ "#N", "thispatcher", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
+                    "save": [ "#N", "thispatcher", ";", "#Q", "window", "flags", "grow", "close", "zoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 57, -916, 978, -284, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
                     "text": "thispatcher"
                 }
             },
@@ -1813,7 +1802,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1955,10 +1944,11 @@
                                     "bgfillcolor_color2": [ 0.2, 0.2, 0.2, 1.0 ],
                                     "bgfillcolor_proportion": 0.5,
                                     "bgfillcolor_type": "color",
-                                    "fontface": 0,
+                                    "fontface": 2,
                                     "fontsize": 11.0,
                                     "hint": "Filter mode",
                                     "id": "obj-9",
+                                    "ignoreclick": 1,
                                     "items": [ "Mono", ",", "Stereo", ",", "5.1 surround", ",", "7.1 surround", ",", "Custom..." ],
                                     "maxclass": "umenu",
                                     "numinlets": 1,
@@ -1968,7 +1958,7 @@
                                     "patching_rect": [ 394.0, 163.5, 169.0, 21.0 ],
                                     "presentation": 1,
                                     "presentation_rect": [ 180.0, -3.5, 70.0, 21.0 ],
-                                    "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
+                                    "textcolor": [ 0.5, 0.5, 0.5, 1.0 ]
                                 }
                             },
                             {
@@ -2163,7 +2153,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -2261,7 +2251,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -2409,7 +2399,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -2728,6 +2718,7 @@
                     "fontname": "Ableton Sans Medium",
                     "fontsize": 11.0,
                     "id": "obj-6",
+                    "ignoreclick": 1,
                     "maxclass": "number",
                     "maximum": 5,
                     "minimum": 1,
@@ -2791,11 +2782,11 @@
                     "bgfillcolor_color2": [ 0.2, 0.2, 0.2, 1.0 ],
                     "bgfillcolor_proportion": 0.5,
                     "bgfillcolor_type": "color",
-                    "fontface": 0,
-                    "hint": "/channelcount : Number of channels",
+                    "fontface": 2,
+                    "hint": "/channelcount : no target",
                     "id": "obj-7",
                     "ignoreclick": 1,
-                    "items": "Number of channels",
+                    "items": "no target",
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -2804,7 +2795,7 @@
                     "patching_rect": [ 669.75, 318.0, 100.0, 22.0 ],
                     "presentation": 1,
                     "presentation_rect": [ 0.0, -3.0, 131.0, 22.0 ],
-                    "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
+                    "textcolor": [ 0.5, 0.5, 0.5, 1.0 ],
                     "textjustification": 2
                 }
             },
@@ -2829,11 +2820,12 @@
                     "bgfillcolor_color2": [ 0.2, 0.2, 0.2, 1.0 ],
                     "bgfillcolor_proportion": 0.5,
                     "bgfillcolor_type": "color",
-                    "fontface": 0,
+                    "fontface": 2,
                     "fontsize": 12.0,
                     "hint": "Channel layout",
                     "id": "obj-9",
-                    "items": [ "Mono", ",", "Stereo", ",", "5.1 surround", ",", "7.1 surround", ",", "Custom..." ],
+                    "ignoreclick": 1,
+                    "items": "<empty>",
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -2842,7 +2834,7 @@
                     "patching_rect": [ 166.0, 367.0, 169.0, 22.0 ],
                     "presentation": 1,
                     "presentation_rect": [ 152.0, -3.0, 89.0, 22.0 ],
-                    "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
+                    "textcolor": [ 0.5, 0.5, 0.5, 1.0 ]
                 }
             },
             {
@@ -2863,7 +2855,7 @@
             {
                 "box": {
                     "bgcolor": [ 0.0, 0.0, 0.0, 0.0 ],
-                    "fontface": 0,
+                    "fontface": 2,
                     "fontsize": 12.0,
                     "hint": "Channel count",
                     "id": "obj-38",
@@ -2878,7 +2870,7 @@
                     "patching_rect": [ 493.0, 457.0, 64.0, 22.0 ],
                     "presentation": 1,
                     "presentation_rect": [ 242.0, -3.0, 40.0, 22.0 ],
-                    "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
+                    "textcolor": [ 0.5, 0.5, 0.5, 1.0 ],
                     "triangle": 0,
                     "tricolor": [ 0.29, 0.298, 0.306, 1.0 ]
                 }
@@ -3186,12 +3178,6 @@
                 "patchline": {
                     "destination": [ "obj-18", 0 ],
                     "source": [ "obj-61", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-26", 0 ],
-                    "source": [ "obj-8", 0 ]
                 }
             },
             {
