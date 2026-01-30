@@ -4,7 +4,7 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 2,
+            "revision": 3,
             "architecture": "x64",
             "modernui": 1
         },
@@ -14,12 +14,11 @@
             {
                 "box": {
                     "id": "obj-2",
-                    "linecount": 2,
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 294.0, 162.0, 100.0, 35.0 ],
+                    "patching_rect": [ 276.0, 128.0, 128.0, 22.0 ],
                     "text": "prepend addresscount"
                 }
             },
@@ -53,7 +52,7 @@
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 450.0, 277.0, 30.0, 30.0 ]
+                    "patching_rect": [ 440.0, 273.0, 30.0, 30.0 ]
                 }
             },
             {
