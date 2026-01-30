@@ -1,3 +1,15 @@
+# Init signals
+- loadbang
+- patcherargs'done (PargsD)
+- deferred loadbang
+- deferred PargsD
+
+
+
+# When opening a patcher
+- at their PargsD, all mvc.inputs and mvc.models push their UID in the parent model's pendingChildInputs (for inputs) or pendingChildModels (for models). This allows potential setting of attributes (address, parent) from their parent patcher.
+- then any of these models/inputs call the register function
+- if the parent is not ready (= has no address list), we return and wait for an init signal from this parent
 
 
 # model init
