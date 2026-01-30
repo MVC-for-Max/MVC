@@ -14,7 +14,7 @@ MVC_INPUTS.quiet = 1;
 MVC_PARAMETERS_VALUES.quiet = 1;
 MVC_STATES_VALUES.quiet = 1;
 
-let DEBUG = 0;
+let DEBUG = 1;
 
 ///////////////////////////////////////////////////////
 // Public functions
@@ -27,7 +27,7 @@ let DEBUG = 0;
 // called from mvc.model on patcherargs's done, address or parent messages
 function registerModel(uid){
     let n = node(uid);
-	postdebug("----registerModel", uid, "\n");
+	//postdebug("----registerModel", uid, "\n");
     _registerModel(n);
 
     //publicInit(n);
@@ -54,7 +54,7 @@ function freeModel(uid){
 // should we split that in separate functions?
 function registerInput(uid){
     let n = node(uid);
-	postdebug("----registerInput", uid, "\n");
+	//postdebug("----registerInput", uid, "\n");
     let address = n.get("address");
     if (invalid(address)){
         postdebug("Unregister input because invalid address", address, "\n")
@@ -123,8 +123,8 @@ function _registerModel(n){
     }
 
     let address = n.get("address");
-    postdebug("parentUID", parentUID, "\n")
-    postdebug("uid", uid, "\n")
+    postdebug("  parentUID", parentUID, "\n")
+    postdebug("  uid", uid, "\n")
 
     let parent = node(parentUID);
 
@@ -147,7 +147,7 @@ function _registerModel(n){
     }
 
     let previousAddresses = asArray(n.get('addresslist'));
-    postdebug("previousAddresses", previousAddresses, "\n");
+    //postdebug("previousAddresses", JSON.stringify(previousAddresses), "\n");
 
     postdebug("address", address, "\n");
     if (invalid(address)){
@@ -164,6 +164,8 @@ function _registerModel(n){
 
     // distribute addresses over parent's
     distributeAddresses(n, parent); 	
+    let addresslist = n.get("addresslist");
+    postdebug("addresslist", JSON.stringify(addresslist), "\n")
 
     // check namespace collision
     if (_modelAddressAlreadyInUse(n)){
@@ -191,9 +193,7 @@ function _registerModel(n){
         //_unregisterInput(childInput);
     }
 
-
-    postdebug("addresslist", n.get("addresslist"), "\n");
-    postdebug("previousAddresses", previousAddresses, "\n")
+    postdebug("previousAddresses", JSON.stringify(previousAddresses), "\n")
 
     // find gone addresses and remove them in the value dict
     let missingAdresses = findGoneItems(n.get("addresslist"), previousAddresses);
@@ -234,7 +234,10 @@ function _registerInput(n){
 	postdebug("----_registerInput", uid, "\n");
 
     let parentUID = n.get("parent");
-    if (invalid(parentUID)) return;
+    if (invalid(parentUID)) {
+        postdebug("The input", uid, "has no parent. Returning.\n")
+        return;
+    }
 
     let address = n.get("address");
     if (invalid(address)){
@@ -303,23 +306,28 @@ function _registerInput(n){
     }
 
     // add adresses to namespace and set default value if needed
+    postdebug("Setting the values:\n");
     let addresscount = n.get("addresslist").length;
     for (let i = 0; i < addresscount; i++) {
         let theAddress = n.get("addresslist")[i]; 
         MVC_INPUTS.replace(theAddress + "::uid", uid, i+1);
         let defaultValue = n.get("default");
         if (mvcType === 'parameter') {
-            postdebug("setting default for", theAddress, "?\n");
             // only write default is address didn't already exist
             if (!MVC_PARAMETERS_VALUES.contains(theAddress)){
+                postdebug("   ---setting default for param", theAddress, "\n");
                 MVC_PARAMETERS_VALUES.replace(theAddress, defaultValue);
             }
+            else postdebug("   ---keeping value for param", theAddress, "\n");
         }
         else if (mvcType === 'state') {
             // only write default is address didn't already exist
             if (!MVC_STATES_VALUES.contains(theAddress)){
+                postdebug("   ---setting default for state", theAddress, "\n");
                 MVC_STATES_VALUES.replace(theAddress, defaultValue);
             }
+            else postdebug("   ---keeping value for state", theAddress, "\n");
+
         } // else
     }
 
@@ -501,7 +509,7 @@ function _unregisterView(n){
 function _registerPendingModels(n){
 	postdebug("----_registerPendingModels\n");
     let pendingChildModels = asArray(n.get("pendingChildModels"));
-    postdebug("... now will register pending models:", JSON.stringify(pendingChildModels));
+    postdebug("... now will register pending models:", JSON.stringify(pendingChildModels), "\n");
     for (let i = 0; i < pendingChildModels.length; i++) {
         let uid = pendingChildModels[i];
         // send init message to model
@@ -514,7 +522,7 @@ function _registerPendingModels(n){
 function _registerPendingInputs(n){
 	postdebug("----_registerPendingInputs\n");
     let pendingChildInputs = asArray(n.get("pendingChildInputs"));
-    postdebug("... now will register pending inputs:", JSON.stringify(pendingChildInputs));
+    postdebug("... now will register pending inputs:", JSON.stringify(pendingChildInputs), "\n");
     for (let i = 0; i < pendingChildInputs.length; i++) {
         let uid = pendingChildInputs[i];
         // send init message to input
