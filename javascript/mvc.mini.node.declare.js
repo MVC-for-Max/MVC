@@ -29,7 +29,6 @@ function registerModel(uid){
     let n = node(uid);
 	//postdebug("----registerModel", uid, "\n");
     _registerModel(n);
-
     //publicInit(n);
 }
 // called from mvc.model on freebang
@@ -112,6 +111,8 @@ function freeRemote(uid){
 // this function is called only internally
 _registerModel.local = 1;
 function _registerModel(n){
+
+    invalidateModelsNamespace();
 
     let uid = n.get("uid");
     postdebug("----_registerModel:", uid, "\n");
@@ -229,6 +230,9 @@ function _registerModel(n){
 
 _registerInput.local = 1;
 function _registerInput(n){
+
+    invalidateInputsNamespace();
+
     var uid = n.get("uid");
 	postdebug("----_registerInput", uid, "\n");
 
@@ -536,6 +540,9 @@ function _registerPendingInputs(n){
 }
 
 function _unregisterModel(n){
+
+    invalidateModelsNamespace();
+
     let uid = n.get("uid");
 	postdebug("----_unregisterModel", uid, "\n");
 
@@ -581,6 +588,9 @@ function _unregisterModel(n){
 }
 
 function _unregisterInput(n){
+
+    invalidateInputsNamespace();
+
     let uid = n.get("uid");
 	postdebug("----_unregisterInput", uid, "\n");
     let parentUID = n.get("parent");
@@ -1144,8 +1154,8 @@ function flattenDictNamespace(dict, target, path) {
     }
 }
 
+// Cache inputs namespace
 let INPUTS_NAMESPACE_CACHE = null;
-
 function getInputsNamespaceCached() {
     if (!INPUTS_NAMESPACE_CACHE) {
         INPUTS_NAMESPACE_CACHE = [];
@@ -1153,14 +1163,19 @@ function getInputsNamespaceCached() {
     }
     return INPUTS_NAMESPACE_CACHE;
 }
+function invalidateInputsNamespace() {
+    INPUTS_NAMESPACE_CACHE = null;
+}
 
+// Cache models namespace
 let MODELS_NAMESPACE_CACHE = null;
-
 function getModelsNamespaceCached() {
     if (!MODELS_NAMESPACE_CACHE) {
         MODELS_NAMESPACE_CACHE = [];
-        flattenDictNamespace(MVC_INPUTS, MODELS_NAMESPACE_CACHE);
+        flattenDictNamespace(MVC_MODELS, MODELS_NAMESPACE_CACHE);
     }
     return MODELS_NAMESPACE_CACHE;
 }
-
+function invalidateModelsNamespace() {
+    MODELS_NAMESPACE_CACHE = null;
+}
