@@ -391,7 +391,8 @@ function _registerRemote(n){
     let namespace = [];
     //old: var MVC_INPUTS_Obj = JSON.parse(MVC_INPUTS.stringify());
     //old: flattenInputs(namespace, MVC_INPUTS_Obj, '', '::');
-    flattenDictNamespace(MVC_INPUTS, namespace);
+    //old:flattenDictNamespace(MVC_INPUTS, namespace);
+    namespace = getInputsNamespaceCached();
     postdebug("namespace", JSON.stringify(namespace), "\n");
     let addresslist = matchGlobs(potentialAddresslist, namespace);
     postdebug("filteredAddresslist", JSON.stringify(addresslist), "\n");
@@ -481,7 +482,8 @@ function _registerView(n){
         let namespace = [];
         //old: var MVC_MODELS_Obj = JSON.parse(MVC_MODELS.stringify());
         //old: flattenInputs(namespace, MVC_MODELS_Obj, '', '::');
-        flattenDictNamespace(MVC_MODELS, namespace);
+        //flattenDictNamespace(MVC_MODELS, namespace);
+        namespace = getModelsNamespaceCached();
         postdebug("namespace", JSON.stringify(namespace), "\n");
         addresslist = matchGlobs(potentialAddresslist, namespace);
         postdebug("filteredAddresslist", JSON.stringify(addresslist), "\n");
@@ -1133,12 +1135,32 @@ function flattenDictNamespace(dict, target, path) {
             target.push(path);
         }
         else if (v && v.getkeys) {
-            flattenDictNamespaceFast(
+            flattenDictNamespace(
                 v,
                 target,
                 path ? path + "::" + k : k
             );
         }
     }
+}
+
+let INPUTS_NAMESPACE_CACHE = null;
+
+function getInputsNamespaceCached() {
+    if (!INPUTS_NAMESPACE_CACHE) {
+        INPUTS_NAMESPACE_CACHE = [];
+        flattenDictNamespace(MVC_INPUTS, INPUTS_NAMESPACE_CACHE);
+    }
+    return INPUTS_NAMESPACE_CACHE;
+}
+
+let MODELS_NAMESPACE_CACHE = null;
+
+function getModelsNamespaceCached() {
+    if (!MODELS_NAMESPACE_CACHE) {
+        MODELS_NAMESPACE_CACHE = [];
+        flattenDictNamespace(MVC_INPUTS, MODELS_NAMESPACE_CACHE);
+    }
+    return MODELS_NAMESPACE_CACHE;
 }
 
