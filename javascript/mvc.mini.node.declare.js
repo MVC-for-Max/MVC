@@ -443,7 +443,7 @@ function _registerRemote(n){
     messnamed(uid + ".init", addresslist.length);
 }
 
-
+_registerView.local = 1;
 function _registerView(n){
     var uid = n.get("uid");
     postdebug("----_registerView", uid, "\n");
@@ -506,13 +506,14 @@ function _registerView(n){
     messnamed(uid + ".publicinit", "bang");
 }
 
-
+_unregisterView.local = 1;
 function _unregisterView(n){
     var uid = n.get("uid");
     // send init message to child views/inputs
     messnamed(uid + ".publicinit", "bang");
 }
 
+_registerPendingModels.local = 1;
 function _registerPendingModels(n){
 	postdebug("----_registerPendingModels\n");
     let pendingChildModels = asArray(n.get("pendingChildModels"));
@@ -526,6 +527,7 @@ function _registerPendingModels(n){
     }
 }
 
+_registerPendingInputs.local = 1;
 function _registerPendingInputs(n){
 	postdebug("----_registerPendingInputs\n");
     let pendingChildInputs = asArray(n.get("pendingChildInputs"));
@@ -539,6 +541,7 @@ function _registerPendingInputs(n){
     }
 }
 
+_unregisterModel.local = 1;
 function _unregisterModel(n){
 
     invalidateModelsNamespace();
@@ -587,6 +590,7 @@ function _unregisterModel(n){
     //publicInit(n);
 }
 
+_unregisterInput.local = 1;
 function _unregisterInput(n){
 
     invalidateInputsNamespace();
@@ -621,6 +625,7 @@ function _unregisterInput(n){
     publicInit(n);
 }
 
+_unregisterRemote.local = 1;
 function _unregisterRemote(n){
     let uid = n.get("uid");
     postdebug("----_unregisterRemote", uid, "\n");
@@ -647,6 +652,7 @@ function _unregisterRemote(n){
 }
 
 
+publicInit.local = 1;
 function publicInit(n){
 
     let uid = n.get("uid");
@@ -667,6 +673,7 @@ function publicInit(n){
 
 
 // utils
+_removeFromPendingChildModels.local = 1;
 function _removeFromPendingChildModels(n, uid){
     //postdebug("----_removeFromPendingChildModels", n.get("uid"), uid, "\n");
 	let pendingChildModels = asArray(n.get("pendingChildModels"));
@@ -675,21 +682,25 @@ function _removeFromPendingChildModels(n, uid){
     //postdebug("updatedArray", updatedArray, "\n")
 	n.replace("pendingChildModels",updatedArray );
 }
+_addToPendingChildModels.local = 1;
 function _addToPendingChildModels(n, uid){
     //postdebug("----_addToPendingChildModels", n.get("uid"), uid, "\n");
 	let pendingChildModels = asArray(n.get("pendingChildModels"));
 	n.replace("pendingChildModels", _addUniqueItemToArray(pendingChildModels, uid));
 }
+_removeFromChildModels.local = 1;
 function _removeFromChildModels(n, uid){
     //postdebug("----_removeFromChildModels", n.get("uid"), uid, "\n");
 	let childModels = asArray(n.get("childModels"));
 	n.replace("childModels", _removeItemFromArray(childModels, uid));
 }
+_addToChildModels.local = 1;
 function _addToChildModels(n, uid){
     //postdebug("----_addToChildModels", n.get("uid"), uid, "\n");
 	let childModels = asArray(n.get("childModels"));
 	n.replace("childModels", _addUniqueItemToArray(childModels,uid));
 }
+_removeFromPendingChildInputs.local = 1;
 function _removeFromPendingChildInputs(n, uid){
     //postdebug("----_removeFromPendingChildInputs", n.get("uid"), uid, "\n");
 	let pendingChildInputs = asArray(n.get("pendingChildInputs"));
@@ -698,23 +709,26 @@ function _removeFromPendingChildInputs(n, uid){
     //postdebug("pendingChildInputs", pendingChildInputs, "\n");
 	n.replace("pendingChildInputs", pendingChildInputs);
 }
+_addToPendingChildInputs.local = 1;
 function _addToPendingChildInputs(n, uid){
     //postdebug("----_addToPendingChildInputs", n.get("uid"), uid, "\n");
 	let pendingChildInputs = asArray(n.get("pendingChildInputs"));
 	n.replace("pendingChildInputs", _addUniqueItemToArray(pendingChildInputs, uid));
 }
+_removeFromChildInputs.local = 1;
 function _removeFromChildInputs(n, uid){
     //postdebug("----_removeFromChildInputs", n.get("uid"), uid, "\n");
 	let childInputs = asArray(n.get("childInputs"));
 	n.replace("childInputs", _removeItemFromArray(childInputs, uid));
 }
+_addToChildInputs.local = 1;
 function _addToChildInputs(n, uid){
     //postdebug("----_addToChildInputs", n.get("uid"), uid, "\n");
 	let childInputs = asArray(n.get("childInputs"));
 	n.replace("childInputs", _addUniqueItemToArray(childInputs, uid));
 }
 
-
+_removeItemFromArray.local=1;
 function _removeItemFromArray(arr, value) {
     //postdebug("----_removeItemFromArray", JSON.stringify(arr), value, "\n")
     var index = arr.indexOf(value);
@@ -726,6 +740,7 @@ function _removeItemFromArray(arr, value) {
     return arr;
 }
 
+_addUniqueItemToArray.local = 1;
 function _addUniqueItemToArray(arr, value){
 	if(arr.indexOf(value) === -1) {
     	arr.push(value);
@@ -777,6 +792,7 @@ function _inputAddressAlreadyInUse(n)
 /* ===================== UTILITIES ===================== */
 
 const NODE_CACHE = Object.create(null);
+node.local = 1;
 function node(uid) {
     let d = NODE_CACHE[uid];
     if (!d) {
@@ -787,18 +803,22 @@ function node(uid) {
     return d;
 }
 
+keys.local = 1;
 function keys(d) {
     return d ? d.getkeys() : null;
 }
 
+invalid.local = 1;
 function invalid(v) {
     return v === null || v === undefined || v === "none";
 }
 
+asArray.local = 1;
 function asArray(v) {
     return v == null ? [] : (Array.isArray(v) ? v : [v]);
 }
 
+findGoneItems.local = 1;
 function findGoneItems(current, previous) {
     const curSet = new Set(current);
     const missing = [];
@@ -810,6 +830,7 @@ function findGoneItems(current, previous) {
 
 // flattenInputs: flatten a JS object (obj) into an (target) array
 // optionally add a (parent) prefix and define the separator levels (e.g. /) 
+flattenInputs.local = 1;
 function flattenInputs(target, obj, parent, separator) {
     // init
     for (var key in obj) {
@@ -839,12 +860,13 @@ function flattenInputs(target, obj, parent, separator) {
 /**
  * Check if an object is an object
  */
+isObject.local = 1;
 function isObject(val) {
   return val != null && typeof val === 'object' && Array.isArray(val) === false;
 };
 
 /* ===================== ADDRESS DISTRIBUTION ===================== */
-
+distributeAddresses.local = 1;
 function distributeAddresses(n, parent) {
     postdebug("----distributeAddresses\n");
     let addresslist = []; // the final address list
@@ -921,12 +943,14 @@ function testpicomatch() {
     postdebug("Matched files:\n" + matches.join("\n") + "\n");
 }
 
+picomatchClearCache.local = 1;
 function picomatchClearCache() {
     clearMatchGlobsCache();
     postdebug("Pattern cache cleared\n");
 }
 
 
+postdebug.local = 1;
 function postdebug()
 {
     if (DEBUG) {
@@ -1006,6 +1030,7 @@ const commonPath = (input, sep = '::') => rotate(splitStrings(input, sep))
 
 
 /* ===================== BRACE EXPANSION ===================== */
+expandAddressList.local = 1;
 function expandAddressList(addr) {
     if (invalid(addr)) return [];
     if (Array.isArray(addr)) {
@@ -1019,6 +1044,7 @@ function expandAddressList(addr) {
 }
 
 const EXPAND_CACHE = Object.create(null);
+expandAddressCached.local = 1;
 function expandAddressCached(str) {
     let res = EXPAND_CACHE[str];
     if (!res) {
@@ -1028,6 +1054,7 @@ function expandAddressCached(str) {
     return res;
 }
 
+expandAddress.local = 1;
 function expandAddress(str) {
   function expand(s) {
     const start = s.indexOf('{');
@@ -1130,7 +1157,7 @@ function expandAddress(str) {
   return expand(str);
 }
 
-
+flattenDictNamespace.local = 1;
 function flattenDictNamespace(dict, target, path) {
     path = path || "";
 
@@ -1156,6 +1183,7 @@ function flattenDictNamespace(dict, target, path) {
 
 // Cache inputs namespace
 let INPUTS_NAMESPACE_CACHE = null;
+getInputsNamespaceCached.local = 1;
 function getInputsNamespaceCached() {
     if (!INPUTS_NAMESPACE_CACHE) {
         INPUTS_NAMESPACE_CACHE = [];
@@ -1163,12 +1191,14 @@ function getInputsNamespaceCached() {
     }
     return INPUTS_NAMESPACE_CACHE;
 }
+invalidateInputsNamespace.local = 1;
 function invalidateInputsNamespace() {
     INPUTS_NAMESPACE_CACHE = null;
 }
 
 // Cache models namespace
 let MODELS_NAMESPACE_CACHE = null;
+getModelsNamespaceCached.local = 1;
 function getModelsNamespaceCached() {
     if (!MODELS_NAMESPACE_CACHE) {
         MODELS_NAMESPACE_CACHE = [];
@@ -1176,6 +1206,7 @@ function getModelsNamespaceCached() {
     }
     return MODELS_NAMESPACE_CACHE;
 }
+invalidateModelsNamespace.local = 1;
 function invalidateModelsNamespace() {
     MODELS_NAMESPACE_CACHE = null;
 }
