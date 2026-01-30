@@ -389,8 +389,9 @@ function _registerRemote(n){
 
     //filter this list of address against existing namespace
     let namespace = [];
-    var MVC_INPUTS_Obj = JSON.parse(MVC_INPUTS.stringify());
-    flattenInputs(namespace, MVC_INPUTS_Obj, '', '::');
+    //old: var MVC_INPUTS_Obj = JSON.parse(MVC_INPUTS.stringify());
+    //old: flattenInputs(namespace, MVC_INPUTS_Obj, '', '::');
+    flattenDictNamespace(MVC_INPUTS, namespace);
     postdebug("namespace", JSON.stringify(namespace), "\n");
     let addresslist = matchGlobs(potentialAddresslist, namespace);
     postdebug("filteredAddresslist", JSON.stringify(addresslist), "\n");
@@ -478,8 +479,9 @@ function _registerView(n){
     //filter this list of address against existing namespace
     if (potentialAddresslist.length > 0){
         let namespace = [];
-        var MVC_MODELS_Obj = JSON.parse(MVC_MODELS.stringify());
-        flattenInputs(namespace, MVC_MODELS_Obj, '', '::');
+        //old: var MVC_MODELS_Obj = JSON.parse(MVC_MODELS.stringify());
+        //old: flattenInputs(namespace, MVC_MODELS_Obj, '', '::');
+        flattenDictNamespace(MVC_MODELS, namespace);
         postdebug("namespace", JSON.stringify(namespace), "\n");
         addresslist = matchGlobs(potentialAddresslist, namespace);
         postdebug("filteredAddresslist", JSON.stringify(addresslist), "\n");
@@ -762,9 +764,14 @@ function _inputAddressAlreadyInUse(n)
 
 /* ===================== UTILITIES ===================== */
 
+const NODE_CACHE = Object.create(null);
 function node(uid) {
-    var d = new Dict(uid + ".attr");
-    d.quiet = 1;
+    let d = NODE_CACHE[uid];
+    if (!d) {
+        d = new Dict(uid + ".attr");
+        d.quiet = 1;
+        NODE_CACHE[uid] = d;
+    }
     return d;
 }
 
@@ -780,17 +787,13 @@ function asArray(v) {
     return v == null ? [] : (Array.isArray(v) ? v : [v]);
 }
 
-function findGoneItems(CurrentArray, PreviousArray) {
-   var CurrentArrSize = CurrentArray.length;
-   var PreviousArrSize = PreviousArray.length;
-   var missingItems = [];
-   // loop through previous array
-   for(var j = 0; j < PreviousArrSize; j++) {
-      // look for same thing in new array
-      if (CurrentArray.indexOf(PreviousArray[j]) == -1)
-         missingItems.push(PreviousArray[j]);
-   }
-   return missingItems;
+function findGoneItems(current, previous) {
+    const curSet = new Set(current);
+    const missing = [];
+    for (let i = 0; i < previous.length; i++) {
+        if (!curSet.has(previous[i])) missing.push(previous[i]);
+    }
+    return missing;
 }
 
 // flattenInputs: flatten a JS object (obj) into an (target) array
@@ -996,11 +999,21 @@ function expandAddressList(addr) {
     if (Array.isArray(addr)) {
         var out = [];
         for (var i = 0; i < addr.length; i++) {
-            out.push(expandAddress(addr[i]));
+            out.push(expandAddressCached(addr[i]));
         }
         return out;
     }
     return [expandAddress(addr)];
+}
+
+const EXPAND_CACHE = Object.create(null);
+function expandAddressCached(str) {
+    let res = EXPAND_CACHE[str];
+    if (!res) {
+        res = expandAddress(str);
+        EXPAND_CACHE[str] = res;
+    }
+    return res;
 }
 
 function expandAddress(str) {
@@ -1103,5 +1116,29 @@ function expandAddress(str) {
   }
 
   return expand(str);
+}
+
+
+function flattenDictNamespace(dict, target, path) {
+    path = path || "";
+
+    const keys = dict.getkeys();
+    if (!keys) return;
+
+    for (let i = 0; i < keys.length; i++) {
+        const k = keys[i];
+        const v = dict.get(k);
+
+        if (k === "uid") {
+            target.push(path);
+        }
+        else if (v && v.getkeys) {
+            flattenDictNamespaceFast(
+                v,
+                target,
+                path ? path + "::" + k : k
+            );
+        }
+    }
 }
 
