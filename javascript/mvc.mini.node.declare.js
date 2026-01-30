@@ -14,7 +14,7 @@ MVC_INPUTS.quiet = 1;
 MVC_PARAMETERS_VALUES.quiet = 1;
 MVC_STATES_VALUES.quiet = 1;
 
-let DEBUG = 1;
+let DEBUG = 0;
 
 ///////////////////////////////////////////////////////
 // Public functions
@@ -123,8 +123,7 @@ function _registerModel(n){
     }
 
     let address = n.get("address");
-    postdebug("  parentUID", parentUID, "\n")
-    postdebug("  uid", uid, "\n")
+    postdebug("  parentUID = ", parentUID, ", uid = ", uid, "\n")
 
     let parent = node(parentUID);
 
@@ -648,7 +647,7 @@ function publicInit(n){
         let parentNode = node(parentUID);
         publicInit(parentNode);
     }
-    postdebug("publicinit", uid, "\n");
+    //postdebug("publicinit", uid, "\n");
     messnamed(uid + ".publicinit", "bang");
 }
 
