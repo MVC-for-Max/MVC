@@ -4,13 +4,60 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 2,
+            "revision": 3,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ -138.0, -937.0, 1481.0, 659.0 ],
+        "rect": [ 173.0, -816.0, 800.0, 659.0 ],
         "boxes": [
+            {
+                "box": {
+                    "id": "obj-9",
+                    "linecount": 2,
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 1096.0, 165.0, 50.0, 35.0 ],
+                    "text": "parent bu"
+                }
+            },
+            {
+                "box": {
+                    "format": 6,
+                    "id": "obj-6",
+                    "maxclass": "flonum",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "bang" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 984.0, 271.0, 50.0, 22.0 ]
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-4",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 386.0, 184.0, 141.0, 22.0 ],
+                    "text": "address myModel.1"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-1",
+                    "linecount": 2,
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "int", "publicinit" ],
+                    "patching_rect": [ 984.0, 226.0, 308.0, 35.0 ],
+                    "text": "mvc.parameter myModel myParam @type decimal @default 3."
+                }
+            },
             {
                 "box": {
                     "id": "obj-89",
@@ -19,7 +66,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 285.0, 294.0, 24.0, 24.0 ]
+                    "patching_rect": [ 328.0, 294.0, 24.0, 24.0 ]
                 }
             },
             {
@@ -28,7 +75,7 @@
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 797.0, 250.0, 49.0, 22.0 ],
+                    "patching_rect": [ 910.0, 253.0, 49.0, 22.0 ],
                     "text": "print ++"
                 }
             },
@@ -41,7 +88,7 @@
                     "numoutlets": 2,
                     "outlettype": [ "", "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 268.0, 108.0, 50.0, 22.0 ]
+                    "patching_rect": [ 268.0, 108.0, 99.0, 22.0 ]
                 }
             },
             {
@@ -52,7 +99,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 188.0, 80.0, 24.0, 24.0 ]
+                    "patching_rect": [ 208.0, 165.0, 24.0, 24.0 ]
                 }
             },
             {
@@ -75,7 +122,6 @@
                     "numoutlets": 3,
                     "outlettype": [ "int", "float", "bang" ],
                     "patching_rect": [ 228.0, 63.0, 100.0, 35.0 ],
-                    "presentation_linecount": 2,
                     "text": "mvc.benchmarker"
                 }
             },
@@ -86,7 +132,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 693.0, 216.0, 117.0, 22.0 ],
+                    "patching_rect": [ 806.0, 219.0, 117.0, 22.0 ],
                     "text": "mvc.model bu ga bu"
                 }
             },
@@ -97,7 +143,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 561.0, 216.0, 120.0, 22.0 ],
+                    "patching_rect": [ 674.0, 219.0, 120.0, 22.0 ],
                     "text": "mvc.model ga foo ga"
                 }
             },
@@ -108,7 +154,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 375.0, 288.0, 164.0, 22.0 ],
+                    "patching_rect": [ 488.0, 291.0, 164.0, 22.0 ],
                     "text": "mvc.model yup myModel yup"
                 }
             },
@@ -119,7 +165,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 377.0, 250.0, 160.0, 22.0 ],
+                    "patching_rect": [ 490.0, 253.0, 160.0, 22.0 ],
                     "text": "mvc.model bar myModel bar"
                 }
             },
@@ -130,7 +176,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 377.0, 216.0, 159.0, 22.0 ],
+                    "patching_rect": [ 490.0, 219.0, 159.0, 22.0 ],
                     "text": "mvc.model foo myModel foo"
                 }
             },
@@ -152,8 +198,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 208.0, 219.0, 103.0, 22.0 ],
-                    "text": "address myModel"
+                    "patching_rect": [ 208.0, 219.0, 141.0, 22.0 ],
+                    "text": "address myModel.{1..20}"
                 }
             },
             {
@@ -174,13 +220,12 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 176.0, 254.0, 141.0, 22.0 ],
-                    "text": "mvc.model myModel test"
+                    "patching_rect": [ 176.0, 254.0, 193.0, 22.0 ],
+                    "text": "mvc.model myModel test myModel"
                 }
             },
             {
                 "box": {
-                    "color": [ 0.438625166187593, 0.438625058064006, 0.438625086318427, 1.0 ],
                     "id": "obj-64",
                     "maxclass": "newobj",
                     "numinlets": 2,
@@ -193,6 +238,24 @@
             }
         ],
         "lines": [
+            {
+                "patchline": {
+                    "destination": [ "obj-6", 0 ],
+                    "source": [ "obj-1", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-65", 1 ],
+                    "source": [ "obj-4", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-1", 0 ],
+                    "source": [ "obj-6", 0 ]
+                }
+            },
             {
                 "patchline": {
                     "destination": [ "obj-89", 0 ],
@@ -252,10 +315,16 @@
                     "destination": [ "obj-81", 1 ],
                     "source": [ "obj-89", 0 ]
                 }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-1", 1 ],
+                    "source": [ "obj-9", 0 ]
+                }
             }
         ],
         "parameters": {
-            "obj-64::obj-27::obj-25::obj-61::obj-20.1::obj-12::obj-8::obj-7": [ "live.toggle[1]", "live.toggle", 0 ],
+            "obj-64::obj-27::obj-24::obj-25::obj-61::obj-20.1::obj-12::obj-8::obj-7": [ "live.toggle[2]", "live.toggle", 0 ],
             "parameterbanks": {
                 "0": {
                     "index": 0,
