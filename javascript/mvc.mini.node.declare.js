@@ -255,7 +255,7 @@ function _registerInput(n){
 	// although this is less common for inputs than for models, a parameter whose address would have been initialized by another parameter might 
     //if (n.get("addresslist")) return;
     let parent = node(parentUID);
-    var mvcType = n.get("mvc-type");
+    let mvcType = n.get("mvc-type");
     let previousAddresses = asArray(n.get('addresslist'));
 
     // add this node to parent's pending nodes
@@ -308,16 +308,19 @@ function _registerInput(n){
         }
     }
 
+    // get default value and clip it to range
+    let defaultValue = getInputDefaultValue(n);
+
     // add adresses to namespace and set default value if needed
     postdebug("Setting the values:\n");
     let addresscount = n.get("addresslist").length;
     for (let i = 0; i < addresscount; i++) {
         let theAddress = n.get("addresslist")[i]; 
         MVC_INPUTS.replace(theAddress + "::uid", uid, i+1);
-        let defaultValue = n.get("default");
         if (mvcType === 'parameter') {
             // only write default is address didn't already exist
             if (!MVC_PARAMETERS_VALUES.contains(theAddress)){
+                // TODO: a possible issue is to set a value outside the range
                 postdebug("   ---setting default for param", theAddress, "\n");
                 MVC_PARAMETERS_VALUES.replace(theAddress, defaultValue);
             }
@@ -1210,3 +1213,13 @@ invalidateModelsNamespace.local = 1;
 function invalidateModelsNamespace() {
     MODELS_NAMESPACE_CACHE = null;
 }
+
+
+// get default value and clamp it to type and range
+function getInputDefaultValue(n){
+    let defaultValue = n.get("default");
+    let inputType = n.get("type");
+    return defaultValue;
+}
+
+
