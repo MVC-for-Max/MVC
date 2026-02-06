@@ -42,7 +42,7 @@ This repository adopt follows a hybrid ["GitFlow"](https://www.atlassian.com/en/
 
 Essentially this means that : 
 - unstable development happens in the`develop` branch
-- the `develop` branch is merged to the `main` branch once it is stable, like before a release.
+- the `develop` branch is merged to the `main` branch once it is stable, typically before a release.
 - a release branch is made from the `main` branch
 - a release is made from a `release/v.x.x.x` branch (with v.x.x.x being the release version number tag), so that any hotfix on this release will be made on that specific branch (and most probably be brought back to the development too, but not to the master).
 
