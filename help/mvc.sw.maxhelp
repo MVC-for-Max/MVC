@@ -116,6 +116,17 @@
                         "boxes": [
                             {
                                 "box": {
+                                    "bubble": 1,
+                                    "id": "obj-24",
+                                    "maxclass": "comment",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [ 250.5, 455.0, 150.0, 24.0 ],
+                                    "text": "No brace or wildcard!"
+                                }
+                            },
+                            {
+                                "box": {
                                     "format": 6,
                                     "id": "obj-20",
                                     "maxclass": "flonum",
@@ -123,7 +134,7 @@
                                     "numoutlets": 2,
                                     "outlettype": [ "", "bang" ],
                                     "parameter_enable": 0,
-                                    "patching_rect": [ 10.0, 456.0, 50.0, 22.0 ]
+                                    "patching_rect": [ 34.0, 456.0, 50.0, 22.0 ]
                                 }
                             },
                             {
@@ -133,7 +144,7 @@
                                     "numinlets": 2,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 70.0, 456.0, 149.0, 22.0 ],
+                                    "patching_rect": [ 94.0, 456.0, 149.0, 22.0 ],
                                     "text": "mvc.sw SwHelper/Castor1"
                                 }
                             },
@@ -146,7 +157,7 @@
                                     "numoutlets": 2,
                                     "outlettype": [ "", "bang" ],
                                     "parameter_enable": 0,
-                                    "patching_rect": [ 398.0, 386.0, 50.0, 22.0 ]
+                                    "patching_rect": [ 438.0, 389.0, 50.0, 22.0 ]
                                 }
                             },
                             {
@@ -156,18 +167,8 @@
                                     "numinlets": 2,
                                     "numoutlets": 3,
                                     "outlettype": [ "", "int", "" ],
-                                    "patching_rect": [ 459.0, 386.0, 220.0, 22.0 ],
+                                    "patching_rect": [ 491.0, 389.0, 193.0, 22.0 ],
                                     "text": "mvc.remote SwHelper/Castor{1..2}"
-                                }
-                            },
-                            {
-                                "box": {
-                                    "id": "obj-13",
-                                    "maxclass": "comment",
-                                    "numinlets": 1,
-                                    "numoutlets": 0,
-                                    "patching_rect": [ 38.0, 79.0, 150.0, 20.0 ],
-                                    "text": "DRAFT!"
                                 }
                             },
                             {
@@ -179,7 +180,7 @@
                                     "numoutlets": 2,
                                     "outlettype": [ "", "bang" ],
                                     "parameter_enable": 0,
-                                    "patching_rect": [ 393.0, 435.0, 50.0, 22.0 ]
+                                    "patching_rect": [ 438.0, 426.0, 50.0, 22.0 ]
                                 }
                             },
                             {
@@ -189,7 +190,7 @@
                                     "numinlets": 2,
                                     "numoutlets": 3,
                                     "outlettype": [ "", "int", "" ],
-                                    "patching_rect": [ 452.0, 435.0, 199.0, 22.0 ],
+                                    "patching_rect": [ 491.0, 425.0, 172.0, 22.0 ],
                                     "text": "mvc.remote SwHelper/Castor3"
                                 }
                             },
@@ -202,7 +203,7 @@
                                     "numoutlets": 2,
                                     "outlettype": [ "", "bang" ],
                                     "parameter_enable": 0,
-                                    "patching_rect": [ 393.0, 476.0, 50.0, 22.0 ]
+                                    "patching_rect": [ 438.0, 462.0, 50.0, 22.0 ]
                                 }
                             },
                             {
@@ -212,7 +213,7 @@
                                     "numinlets": 2,
                                     "numoutlets": 3,
                                     "outlettype": [ "", "int", "" ],
-                                    "patching_rect": [ 452.0, 476.0, 199.0, 22.0 ],
+                                    "patching_rect": [ 491.0, 462.0, 172.0, 22.0 ],
                                     "text": "mvc.remote SwHelper/Castor1"
                                 }
                             },
@@ -245,7 +246,7 @@
                                     "numinlets": 2,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 235.0, 403.0, 167.0, 22.0 ],
+                                    "patching_rect": [ 259.0, 403.0, 167.0, 22.0 ],
                                     "text": "address ReceiveHelper/Polux"
                                 }
                             },
@@ -256,7 +257,7 @@
                                     "numinlets": 2,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 212.0, 379.0, 179.0, 22.0 ],
+                                    "patching_rect": [ 236.0, 379.0, 179.0, 22.0 ],
                                     "text": "address ReceiveHelper/Castor3"
                                 }
                             },
@@ -267,7 +268,7 @@
                                     "numinlets": 2,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 199.0, 355.0, 179.0, 22.0 ],
+                                    "patching_rect": [ 208.0, 353.0, 179.0, 22.0 ],
                                     "text": "address ReceiveHelper/Castor1"
                                 }
                             },
@@ -316,7 +317,7 @@
                                     "numinlets": 2,
                                     "numoutlets": 2,
                                     "outlettype": [ "", "" ],
-                                    "patching_rect": [ 45.5, 183.0, 222.0, 29.0 ],
+                                    "patching_rect": [ 45.5, 183.0, 182.0, 29.0 ],
                                     "text": "mvc.device SwHelper",
                                     "varname": "mvc.device"
                                 }
