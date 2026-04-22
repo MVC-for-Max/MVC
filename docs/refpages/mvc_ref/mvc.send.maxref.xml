@@ -33,6 +33,9 @@
 		<inlet id="0" type="anything">
 			<digest>Messages to set the values (see below)</digest>
 		</inlet>
+		<inlet id="1" type="address">
+			<digest>Messages to set the address (see below)</digest>
+		</inlet>
 	</inletlist>
 
 	<!--OUTLETS-->
@@ -43,7 +46,7 @@
 	<objarglist>
 		<objarg name="address" optional="0" type="symbol">
 			<digest>
-				Destination adress.
+				Target adress
 			</digest>
 			<description>
 				The <m>address</m> of the monitored <o>mvc.parameter</o>, <o>mvc.state</o> or <o>mvc.message</o> should be expressed with slash-separated symbols (à la OSC).
@@ -82,6 +85,8 @@
 	
 	<!--SEEALSO-->
 	<seealsolist>
+		<seealso name="mvc.receive"/>
+		<seealso name="mvc.sw"/>
 		<seealso name="mvc.remote"/>
 		<seealso name="mvc.model"/>
 		<seealso name="mvc.device"/>
