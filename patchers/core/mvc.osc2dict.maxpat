@@ -37,28 +37,6 @@
             },
             {
                 "box": {
-                    "id": "obj-10",
-                    "maxclass": "newobj",
-                    "numinlets": 2,
-                    "numoutlets": 2,
-                    "outlettype": [ "", "" ],
-                    "patching_rect": [ 50.0, 199.0, 159.0, 22.0 ],
-                    "text": "zl.join @zlmaxsize 32767"
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-5",
-                    "maxclass": "newobj",
-                    "numinlets": 2,
-                    "numoutlets": 2,
-                    "outlettype": [ "", "" ],
-                    "patching_rect": [ 50.0, 80.0, 159.0, 22.0 ],
-                    "text": "zl.slice 1 @zlmaxsize 32767"
-                }
-            },
-            {
-                "box": {
                     "id": "obj-2",
                     "maxclass": "newobj",
                     "numinlets": 1,
@@ -111,37 +89,19 @@
             {
                 "patchline": {
                     "destination": [ "obj-26", 0 ],
-                    "source": [ "obj-10", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-10", 0 ],
                     "source": [ "obj-2", 3 ]
                 }
             },
             {
                 "patchline": {
-                    "destination": [ "obj-10", 0 ],
+                    "destination": [ "obj-26", 0 ],
                     "source": [ "obj-2", 0 ]
                 }
             },
             {
                 "patchline": {
-                    "destination": [ "obj-5", 0 ],
-                    "source": [ "obj-25", 0 ]
-                }
-            },
-            {
-                "patchline": {
                     "destination": [ "obj-1", 0 ],
-                    "source": [ "obj-5", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-10", 1 ],
-                    "source": [ "obj-5", 1 ]
+                    "source": [ "obj-25", 0 ]
                 }
             }
         ]
