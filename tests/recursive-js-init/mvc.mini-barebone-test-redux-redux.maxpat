@@ -3,14 +3,25 @@
         "fileversion": 1,
         "appversion": {
             "major": 9,
-            "minor": 1,
-            "revision": 3,
+            "minor": 2,
+            "revision": 0,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ -120.0, -945.0, 1369.0, 848.0 ],
+        "rect": [ 34.0, 100.0, 1369.0, 848.0 ],
         "boxes": [
+            {
+                "box": {
+                    "id": "obj-22",
+                    "linecount": 2,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 780.0, 635.0, 150.0, 33.0 ],
+                    "text": "issue: default can be outside the range."
+                }
+            },
             {
                 "box": {
                     "format": 6,
@@ -20,7 +31,7 @@
                     "numoutlets": 2,
                     "outlettype": [ "", "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 475.0, 964.0, 50.0, 22.0 ]
+                    "patching_rect": [ 478.0, 964.0, 50.0, 22.0 ]
                 }
             },
             {
@@ -133,8 +144,8 @@
                         "fileversion": 1,
                         "appversion": {
                             "major": 9,
-                            "minor": 1,
-                            "revision": 3,
+                            "minor": 2,
+                            "revision": 0,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -178,7 +189,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 782.0, 628.0, 103.0, 22.0 ],
+                    "patching_rect": [ 831.0, 584.0, 103.0, 22.0 ],
                     "text": "address caca"
                 }
             },
@@ -189,7 +200,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 741.0, 586.0, 103.0, 22.0 ],
+                    "patching_rect": [ 790.0, 542.0, 103.0, 22.0 ],
                     "text": "address bar.{1..4}"
                 }
             },
@@ -200,19 +211,20 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 748.0, 604.0, 51.0, 22.0 ],
+                    "patching_rect": [ 797.0, 560.0, 51.0, 22.0 ],
                     "text": "address"
                 }
             },
             {
                 "box": {
                     "id": "obj-93",
+                    "linecount": 2,
                     "maxclass": "newobj",
                     "numinlets": 2,
                     "numoutlets": 3,
                     "outlettype": [ "", "int", "publicinit" ],
-                    "patching_rect": [ 486.0, 634.0, 281.0, 22.0 ],
-                    "text": "mvc.parameter mySubModel bar.{1..4} @default 16"
+                    "patching_rect": [ 486.0, 634.0, 285.0, 35.0 ],
+                    "text": "mvc.parameter mySubModel bar.{1..4} @default 16 @type decimal @range 0 10 @clip both"
                 }
             },
             {
@@ -335,8 +347,8 @@
                         "fileversion": 1,
                         "appversion": {
                             "major": 9,
-                            "minor": 1,
-                            "revision": 3,
+                            "minor": 2,
+                            "revision": 0,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -502,8 +514,8 @@
                         "fileversion": 1,
                         "appversion": {
                             "major": 9,
-                            "minor": 1,
-                            "revision": 3,
+                            "minor": 2,
+                            "revision": 0,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1441,7 +1453,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 313.0, 124.0, 103.0, 22.0 ],
+                    "patching_rect": [ 356.0, 124.0, 103.0, 22.0 ],
                     "text": "address myModel"
                 }
             },
@@ -1489,7 +1501,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 313.0, 234.0, 243.0, 22.0 ],
-                    "text": "mvc.minimodel myModel mvc-root myModel"
+                    "text": "mvc.minimodel myModel mvc-root"
                 }
             },
             {
@@ -1533,6 +1545,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 53.0, 132.0, 163.0, 22.0 ],
                     "saved_object_attributes": {
+                        "embed": 0,
                         "parameter_enable": 0
                     },
                     "text": "v8 mvc.mini.node.declare.js",
