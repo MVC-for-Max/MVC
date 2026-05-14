@@ -393,7 +393,7 @@ function _registerRemote(n){
     // we'll need to filter it against namespace first
     let potentialAddresslist = n.get("addresslist");
 
-    if (potentialAddresslist.some(str => /[\?*]/.test(str))) {
+    //if (potentialAddresslist.some(str => /[\?*]/.test(str))) {
         n.replace("potentialAddresslist", potentialAddresslist);
         //filter this list of address against existing namespace
         let namespace = [];
@@ -402,13 +402,12 @@ function _registerRemote(n){
         //old:flattenDictNamespace(MVC_INPUTS, namespace);
         namespace = getInputsNamespaceCached();
         postdebug("namespace", JSON.stringify(namespace), "\n");
-        post("Remote potentialAddresslist", potentialAddresslist);
+        //post("Remote potentialAddresslist", potentialAddresslist);
         let addresslist = matchGlobs(potentialAddresslist, namespace);
         postdebug("filteredAddresslist", JSON.stringify(addresslist), "\n");
         n.replace("addresslist", addresslist);
-    }
+    //}
 
-    let addresslist = n.get("addresslist");
     //let addresslist = n.get("addresslist");
     // find gone addresses and remove them in the value dict
     let missingAdresses = findGoneItems(addresslist, previousAddresses);
@@ -485,29 +484,27 @@ function _registerView(n){
     // we'll need to filter it against namespace first
     let potentialAddresslist = asArray(n.get("addresslist"));
 
-    // if any address contains a "?"" or a "*", filter against namespace
-    if (potentialAddresslist.some(str => /[\?*]/.test(str))) {
+    if (potentialAddresslist.length > 0){
         n.replace("potentialAddresslist", potentialAddresslist);
         let addresslist = [];
         postdebug("potentialAddresslist", potentialAddresslist.length, JSON.stringify(potentialAddresslist),"\n");
     
         //filter this list of address against existing namespace
-        //if (potentialAddresslist.length > 0){
-            let namespace = [];
-            //old: var MVC_MODELS_Obj = JSON.parse(MVC_MODELS.stringify());
-            //old: flattenInputs(namespace, MVC_MODELS_Obj, '', '::');
-            //flattenDictNamespace(MVC_MODELS, namespace);
-            namespace = getModelsNamespaceCached();
-            postdebug("namespace", JSON.stringify(namespace), "\n");
-            post("View potentialAddresslist", potentialAddresslist);
-            addresslist = matchGlobs(potentialAddresslist, namespace);
-            postdebug("filteredAddresslist", JSON.stringify(addresslist), "\n");
-            n.replace("addresslist", addresslist);       
-        //}
-        //else {
-        //    n.replace("addresslist", []);  
-        //}
+        let namespace = [];
+        //old: var MVC_MODELS_Obj = JSON.parse(MVC_MODELS.stringify());
+        //old: flattenInputs(namespace, MVC_MODELS_Obj, '', '::');
+        //flattenDictNamespace(MVC_MODELS, namespace);
+        namespace = getModelsNamespaceCached();
+        postdebug("namespace", JSON.stringify(namespace), "\n");
+        //post("View potentialAddresslist", potentialAddresslist);
+        addresslist = matchGlobs(potentialAddresslist, namespace);
+        postdebug("filteredAddresslist", JSON.stringify(addresslist), "\n");
+        n.replace("addresslist", addresslist);       
     }
+    else {
+        n.replace("addresslist", []);  
+    }
+    //}
 
     let addresslist = asArray(n.get("addresslist"));
     let addresscount = addresslist.length;
