@@ -306,5 +306,10 @@
         "digest": "Simple receiver to mvc.parameter, mvc.state and mvc.message.",
         "description": "mvc.receive allows to receive data from a component's input for remote control. This can either be a mvc.parameter, an mvc.state or an mvc.message. The address should be stated as an OSC string. The mvc.receive does not support braces and wildcard notation; you should use mvc.remote for that.",
         "category": "library"
+    },
+    "mvc.mc.biquad~": {
+        "digest": "A multichannel biquad filter.",
+        "description": "mvc.mc.biquad~ provides the mc.biquad~ filter object as an MVC component",
+        "category": "component"
     }
 }
