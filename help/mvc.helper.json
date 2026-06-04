@@ -271,5 +271,10 @@
         "digest": "Multi-mode signal average (multichannel).",
         "description": "mvc.mc.average~ provides the mc.average~ filter object as an MVC component",
         "category": "component"
+    },
+    "mvc.model.gui": {
+        "digest": "Monitor and remote control from an mvc.model.",
+        "description": "mvc.model.gui allows to bind to an mvc.model for remote control or monitoring. The mvc.model it refers to can be set dynamically and multiple addresses can be provided through brace expansion notation.\nmvc.model.gui helps implementing the view and controller part in the MVC model used in the MVC package.",
+        "category": "library"
     }
 }
