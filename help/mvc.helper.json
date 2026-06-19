@@ -276,5 +276,10 @@
         "digest": "Monitor and remote control from an mvc.model.",
         "description": "mvc.model.gui allows to bind to an mvc.model for remote control or monitoring. The mvc.model it refers to can be set dynamically and multiple addresses can be provided through brace expansion notation.\nmvc.model.gui helps implementing the view and controller part in the MVC model used in the MVC package.",
         "category": "library"
+    },
+    "mvc.mc.biquad~": {
+        "digest": "A multichannel biquad filter.",
+        "description": "mvc.mc.biquad~ provides the mc.biquad~ filter object as an MVC component",
+        "category": "component"
     }
 }
