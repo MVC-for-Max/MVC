@@ -158,12 +158,13 @@ function _registerModel(n){
     ///// Alright, parent exist and is initialized (or is mvc-root)
 
 	// expand brace-notation
-    let expandedAddresses = expandAddressList(n.get("address"));
-    n.replace("expandedAddresses", expandedAddresses);
-    postdebug("expandedAddresses:", JSON.stringify(expandedAddresses) , '\n');
-
-    // distribute addresses over parent's
-    distributeAddresses(n, parent); 	
+    if (!expandAndDistributeAddresses(n, parent)) {
+        n.replace("addresslist", previousAddresses);
+	    n.remove("expandedAddresses");
+	    _unregisterModel(n);
+	    return;
+    }
+    postdebug("expandedAddresses:", JSON.stringify(n.get("expandedAddresses")) , '\n');
     let addresslist = n.get("addresslist");
     postdebug("addresslist", JSON.stringify(addresslist), "\n")
 
@@ -271,12 +272,12 @@ function _registerInput(n){
     ///// Alright, parent exist and is initialized
 
 	// expand brace-notation
-    let expandedAddresses = expandAddressList(n.get("address"));
-    n.replace("expandedAddresses", expandedAddresses);
-    postdebug("expandedAddresses:", JSON.stringify(expandedAddresses) , '\n');
-
-    // distribute addresses over parent's
-    distributeAddresses(n, parent); 	
+    if (!expandAndDistributeAddresses(n, parent)) {
+        n.replace("addresslist", previousAddresses);
+	    n.remove("expandedAddresses");
+	    _unregisterInput(n);
+	    return;
+    }
 
     // check namespace collision and resume registration if duplicate
     if (_inputAddressAlreadyInUse(n)){
@@ -387,12 +388,15 @@ function _registerRemote(n){
     ///// Alright, parent exist and is initialized
 
     // expand brace-notation
-    let expandedAddresses = expandAddressList(n.get("address"));
-    n.replace("expandedAddresses", expandedAddresses);
-    //postdebug("expandedAddresses:", JSON.stringify(expandedAddresses) , "\n");
-
-    // distribute addresses over parent's
-    distributeAddresses(n, parent);
+    if (!expandAndDistributeAddresses(n, parent)) {
+        _unregisterRemote(n);
+        n.replace("addresslist", []);
+        n.replace("destination", []);
+        n.remove("expandedAddresses");
+        n.remove("potentialAddresslist");
+        messnamed(uid + ".init", 0);
+        return;
+    }
     postdebug("addresslist", JSON.stringify(n.get("addresslist")), "\n");
 
     // the addresslist returned by distributeAddresses() is only potential, 
@@ -478,11 +482,14 @@ function _registerView(n){
         n.replace("parentmap", parent.get("parentmap"));
     }
     else {
-        let expandedAddresses = expandAddressList(n.get("address"));
-        n.replace("expandedAddresses", expandedAddresses);
-        postdebug("expandedAddresses:", JSON.stringify(expandedAddresses) , "\n");
-        // distribute addresses over parent's
-        distributeAddresses(n, parent);
+        if (!expandAndDistributeAddresses(n, parent)) {
+            n.replace("addresslist", []);
+            n.remove("expandedAddresses");
+            n.remove("potentialAddresslist");
+            messnamed(uid + ".init", 0);
+            messnamed(uid + ".publicinit", "bang");
+            return;
+        }
         postdebug("addresslist", JSON.stringify(n.get("addresslist")), "\n");       
     }
 
@@ -923,7 +930,7 @@ function distributeAddresses(n, parent) {
         for (let j = 0; j < addressesArrayForThisParentAddress.length; j++) {
           var childAdd = addressesArrayForThisParentAddress[j];
           if (childAdd !== ''){
-            addresslist.push(parentAddresses[i] + '::' + childAdd);          
+            addresslist.push(parentAddresses[i] + '::' + childAdd);
             childrenmap.push(i+1);
             adddressIndex++;
             childIndexArray.push(adddressIndex);
@@ -943,6 +950,31 @@ function distributeAddresses(n, parent) {
   n.replace("addresslist", addresslist);
   n.replace("parentmap", parentmap);
   n.replace("childrenmap", childrenmap);
+}
+
+const MAX_ADDRESS_COUNT = 32767;
+
+appendExpandedAddress.local = 1;
+function appendExpandedAddress(addresses, address) {
+    if (addresses.length >= MAX_ADDRESS_COUNT) {
+        throw new RangeError("Address count exceeds the maximum of " + MAX_ADDRESS_COUNT + ".");
+    }
+    addresses.push(address);
+}
+
+expandAndDistributeAddresses.local = 1;
+function expandAndDistributeAddresses(n, parent) {
+    try {
+        let expandedAddresses = expandAddressList(n.get("address"));
+        n.replace("expandedAddresses", expandedAddresses);
+        distributeAddresses(n, parent);
+        return true;
+    }
+    catch (error) {
+        if (!(error instanceof RangeError)) throw error;
+        messnamed(n.get("uid") + ".post", "error", error.message);
+        return false;
+    }
 }
 
 //let test = ["tralala"];
@@ -1057,11 +1089,20 @@ function expandAddressList(addr) {
     if (Array.isArray(addr)) {
         var out = [];
         for (var i = 0; i < addr.length; i++) {
-            out.push(addressUnset(addr[i]) ? [] : expandAddressCached(addr[i]).filter(address => address !== ""));
+            let addresses = addressUnset(addr[i]) ? [] : expandAddressCached(addr[i]).filter(address => address !== "");
+            out.push(addresses);
         }
         return out;
     }
-    return [expandAddress(addr).filter(address => address !== "")];
+    let addresses = expandAddress(addr).filter(address => address !== "");
+    return [addresses];
+}
+
+checkAddressCount.local = 1;
+function checkAddressCount(count) {
+    if (count > MAX_ADDRESS_COUNT) {
+        throw new RangeError("Address count exceeds the maximum of " + MAX_ADDRESS_COUNT + ".");
+    }
 }
 
 const EXPAND_CACHE = Object.create(null);
@@ -1101,8 +1142,9 @@ function expandAddress(str) {
     const result = [];
 
     for (const option of options) {
-      for (const expanded of expand(before + option + after)) {
-        result.push(expanded);
+      const expandedOptions = expand(before + option + after);
+      for (const expanded of expandedOptions) {
+        appendExpandedAddress(result, expanded);
       }
     }
 
@@ -1123,6 +1165,7 @@ function expandAddress(str) {
 
     for (const char of content) {
       if ((char === ',' || char === '|') && depth === 0) {
+        checkAddressCount(parts.length + 1);
         parts.push(current);
         current = '';
       } else {
@@ -1131,6 +1174,7 @@ function expandAddress(str) {
         current += char;
       }
     }
+    checkAddressCount(parts.length + 1);
     parts.push(current);
 
     return parts;
@@ -1141,6 +1185,10 @@ function expandAddress(str) {
     if (isNumeric(start) && isNumeric(end)) {
       const a = Number(start);
       const b = Number(end);
+      if (!Number.isSafeInteger(a) || !Number.isSafeInteger(b)) {
+        throw new RangeError("Brace expansion range endpoints must be safe integers.");
+      }
+      checkAddressCount(Math.abs(b - a) + 1);
       const step = a <= b ? 1 : -1;
       const res = [];
 
@@ -1154,6 +1202,7 @@ function expandAddress(str) {
     if (isAlpha(start) && isAlpha(end)) {
       const a = start.charCodeAt(0);
       const b = end.charCodeAt(0);
+      checkAddressCount(Math.abs(b - a) + 1);
       const step = a <= b ? 1 : -1;
       const res = [];
 

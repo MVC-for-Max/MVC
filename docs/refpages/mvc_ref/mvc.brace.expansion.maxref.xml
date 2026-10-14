@@ -36,6 +36,7 @@
 				- {1..12} wil create instances for all numbers between 1 and 12 
 				- {3..13..3} will create instances for all numbers between 3 and 13, with a step of 3 (i.e. 3, 6, 9, 12
 				- {A,b,some,things} will create an instance for each string between commas (avoid spaces)
+				Each brace expression is limited to 32767 expanded addresses. Exceeding this limit reports an error and prevents registration.
 			</description>
 		</inlet>
 	</inletlist>
