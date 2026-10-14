@@ -169,7 +169,7 @@ function _registerModel(n){
 
     // check namespace collision
     if (_modelAddressAlreadyInUse(n)){
-        messnamed(uid + ".post", "error", "Some addresses already registered in namespace.");
+        messnamed(uid + ".post", "error", "Some model addresses are already registered in namespace. Unregistering model.");
         n.replace("addresslist", previousAddresses);
         _unregisterModel(n);
         return;
@@ -280,7 +280,7 @@ function _registerInput(n){
 
     // check namespace collision and resume registration if duplicate
     if (_inputAddressAlreadyInUse(n)){
-        messnamed(uid + ".post", "error", "Some addresses already registered in namespace.");
+        messnamed(uid + ".post", "error", "Some input addresses are already registered in namespace. Unregistering input.");
         n.replace("addresslist", previousAddresses);
         _unregisterInput(n);
     	return;
