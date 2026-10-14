@@ -1286,7 +1286,7 @@
                                                     "id": "obj-49",
                                                     "maxclass": "number",
                                                     "maximum": 24,
-                                                    "minimum": 0,
+                                                    "minimum": 1,
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "", "bang" ],
@@ -1310,7 +1310,7 @@
                                                 "box": {
                                                     "id": "obj-47",
                                                     "maxclass": "number",
-                                                    "minimum": 0,
+                                                    "minimum": 1,
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "", "bang" ],
@@ -1810,8 +1810,8 @@
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 121.0, 57.0, 185.0, 35.0 ],
-                    "text": "patcherargs @mvc-type parameter"
+                    "patching_rect": [ 121.0, 54.5, 185.0, 35.0 ],
+                    "text": "patcherargs @mvc-type parameter @type integer"
                 }
             },
             {

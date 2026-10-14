@@ -2029,8 +2029,8 @@
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 121.0, 86.0, 185.0, 35.0 ],
-                    "text": "patcherargs @mvc-type parameter"
+                    "patching_rect": [ 121.0, 67.07180138690387, 185.0, 35.0 ],
+                    "text": "patcherargs @mvc-type parameter @type decimal"
                 }
             },
             {

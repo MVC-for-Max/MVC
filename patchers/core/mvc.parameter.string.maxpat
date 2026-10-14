@@ -36,13 +36,13 @@
             {
                 "box": {
                     "id": "obj-23",
-                    "linecount": 3,
+                    "linecount": 2,
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 162.5, 91.0, 113.0, 49.0 ],
-                    "text": "patcherargs @mvc-type parameter"
+                    "patching_rect": [ 162.5, 91.0, 144.0, 35.0 ],
+                    "text": "patcherargs @mvc-type parameter @type string"
                 }
             },
             {
