@@ -675,23 +675,47 @@ function _unregisterRemote(n){
 }
 
 
+const pendingPublicInit = [];
+const pendingPublicInitUIDs = Object.create(null);
+let publicInitScheduled = false;
+const publicInitTask = new Task(flushPublicInit, this);
+
 publicInit.local = 1;
 function publicInit(n){
-
     let uid = n.get("uid");
     let parentUID = n.get("parent");
 
     if (invalidParentUID(parentUID)) return;
 
-    //recursive call to top-level model
     if (parentUID == "mvc-root") {
-        messnamed("mvc-root.publicinit", "bang");    
+        queuePublicInit("mvc-root");
     } else{
         let parentNode = node(parentUID);
         publicInit(parentNode);
     }
-    //postdebug("publicinit", uid, "\n");
-    messnamed(uid + ".publicinit", "bang");
+    queuePublicInit(uid);
+}
+
+queuePublicInit.local = 1;
+function queuePublicInit(uid) {
+    if (!pendingPublicInitUIDs[uid]) {
+        pendingPublicInitUIDs[uid] = true;
+        pendingPublicInit.push(uid);
+    }
+    if (!publicInitScheduled) {
+        publicInitScheduled = true;
+        publicInitTask.schedule(0);
+    }
+}
+
+flushPublicInit.local = 1;
+function flushPublicInit() {
+    publicInitScheduled = false;
+    const pendingUIDs = pendingPublicInit.splice(0, pendingPublicInit.length);
+    for (let i = 0; i < pendingUIDs.length; i++) {
+        delete pendingPublicInitUIDs[pendingUIDs[i]];
+        messnamed(pendingUIDs[i] + ".publicinit", "bang");
+    }
 }
 
 
