@@ -364,7 +364,13 @@ function _registerRemote(n){
     // address cannot be an empty string
     if (invalid(address)||(address === "")) {
         postdebug("Invalid address", address, "\n");
+        _unregisterRemote(n);
         n.remove("address");
+        n.replace("addresslist", []);
+        n.replace("destination", []);
+        n.remove("expandedAddresses");
+        n.remove("potentialAddresslist");
+        messnamed(uid + ".init", 0);
         return;
     }
 
@@ -1228,4 +1234,3 @@ function getInputDefaultValue(n){
     let inputType = n.get("type");
     return defaultValue;
 }
-
