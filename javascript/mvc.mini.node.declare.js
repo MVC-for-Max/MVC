@@ -55,7 +55,7 @@ function registerInput(uid){
     let n = node(uid);
 	//postdebug("----registerInput", uid, "\n");
     let address = n.get("address");
-    if (invalid(address)){
+    if (addressUnset(address)){
         postdebug("Unregister input because invalid address", address, "\n")
         _unregisterInput(n);
         n.remove("addresslist");
@@ -118,7 +118,7 @@ function _registerModel(n){
     postdebug("----_registerModel:", uid, "\n");
 
     let parentUID = n.get("parent");
-    if (invalid(parentUID)){
+    if (invalidParentUID(parentUID)){
         postdebug("Aborting as parent uid is invalid:", parentUID, "\n");
         return;
     }
@@ -133,7 +133,7 @@ function _registerModel(n){
     _addToPendingChildModels(parent, uid);
 
 
-    if (invalid(address)){
+    if (addressUnset(address)){
         postdebug("Unregister node because invalid address", address, "\n")
         _unregisterModel(n);
         n.remove("addresslist");
@@ -150,7 +150,7 @@ function _registerModel(n){
     //postdebug("previousAddresses", JSON.stringify(previousAddresses), "\n");
 
     postdebug("address", address, "\n");
-    if (invalid(address)){
+    if (addressUnset(address)){
         postdebug("invalid address", address, "\n");
         return;
     }
@@ -237,13 +237,13 @@ function _registerInput(n){
 	postdebug("----_registerInput", uid, "\n");
 
     let parentUID = n.get("parent");
-    if (invalid(parentUID)) {
+    if (invalidParentUID(parentUID)) {
         postdebug("The input", uid, "has no parent. Returning.\n")
         return;
     }
 
     let address = n.get("address");
-    if (invalid(address)){
+    if (addressUnset(address)){
         postdebug("Unregister input because invalid address", address, "\n")
         _unregisterInput(n);
         n.remove("addresslist");
@@ -362,7 +362,7 @@ function _registerRemote(n){
     let previousAddresses = asArray(n.get('addresslist'));
 
     // address cannot be an empty string
-    if (invalid(address)||(address === "")) {
+    if (addressUnset(address)) {
         postdebug("Invalid address", address, "\n");
         _unregisterRemote(n);
         n.remove("address");
@@ -375,7 +375,7 @@ function _registerRemote(n){
     }
 
     // if parent exists but is not initialized, add this node to parent's pending nodes
-    //if ((!invalid(parentUID)) && (invalid(parent.get("addresslist")))) {
+    //if ((!invalidParentUID(parentUID)) && (addressUnset(parent.get("addresslist")))) {
     //    let pendingRemotes = asArray(parent.get("pendingRemotes"));
     //    pendingRemotes.push(uid)
     //    parent.replace("pendingRemotes", pendingRemotes);
@@ -469,7 +469,7 @@ function _registerView(n){
 
     // expand brace-notation
     let expandedAddresses;
-    if ((address == "")||invalid(address)) {
+    if (addressUnset(address)) {
         expandedAddresses = [];
         let parent = node(parentUID);
         n.replace("expandedAddresses", expandedAddresses);
@@ -674,7 +674,7 @@ function publicInit(n){
     let uid = n.get("uid");
     let parentUID = n.get("parent");
 
-    if (invalid(parentUID)) return;
+    if (invalidParentUID(parentUID)) return;
 
     //recursive call to top-level model
     if (parentUID == "mvc-root") {
@@ -824,9 +824,14 @@ function keys(d) {
     return d ? d.getkeys() : null;
 }
 
-invalid.local = 1;
-function invalid(v) {
+invalidParentUID.local = 1;
+function invalidParentUID(v) {
     return v === null || v === undefined || v === "none";
+}
+
+addressUnset.local = 1;
+function addressUnset(address) {
+    return address === null || address === undefined || address === "";
 }
 
 asArray.local = 1;
@@ -917,7 +922,7 @@ function distributeAddresses(n, parent) {
     
         for (let j = 0; j < addressesArrayForThisParentAddress.length; j++) {
           var childAdd = addressesArrayForThisParentAddress[j];
-          if (childAdd !== 'none'){
+          if (childAdd !== ''){
             addresslist.push(parentAddresses[i] + '::' + childAdd);          
             childrenmap.push(i+1);
             adddressIndex++;
@@ -1048,15 +1053,15 @@ const commonPath = (input, sep = '::') => rotate(splitStrings(input, sep))
 /* ===================== BRACE EXPANSION ===================== */
 expandAddressList.local = 1;
 function expandAddressList(addr) {
-    if (invalid(addr)) return [];
+    if (addressUnset(addr)) return [];
     if (Array.isArray(addr)) {
         var out = [];
         for (var i = 0; i < addr.length; i++) {
-            out.push(expandAddressCached(addr[i]));
+            out.push(addressUnset(addr[i]) ? [] : expandAddressCached(addr[i]).filter(address => address !== ""));
         }
         return out;
     }
-    return [expandAddress(addr)];
+    return [expandAddress(addr).filter(address => address !== "")];
 }
 
 const EXPAND_CACHE = Object.create(null);

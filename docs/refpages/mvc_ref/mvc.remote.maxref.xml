@@ -58,7 +58,7 @@
 				Monitored adress(es).
 			</digest>
 			<description>
-				The <m>address</m> of the monitored <o>mvc.parameter</o>, <o>mvc.state</o> or <o>mvc.message</o> should be expressed with slash-separated symbols (à la OSC).
+				The <m>address</m> of the monitored <o>mvc.parameter</o>, <o>mvc.state</o> or <o>mvc.message</o> should be expressed with slash-separated symbols (à la OSC). Send an empty or missing address to clear the remote's target.
 			</description>
 		</objarg>
 	</objarglist>

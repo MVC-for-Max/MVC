@@ -80,7 +80,7 @@
 				The parameter name.
 			</digest>
 			<description>
-				The parameter name should be a symbol (that is, it can contain spaces, as long as it is surrounded by quotes). It can make use of the <link type="vignette" module="mvc" name="brace_expansion">brace expansion notation</link>. Note that the use of slashes (like "cutoff/frequency") in the name is prohibited.
+				The parameter name should be a symbol (that is, it can contain spaces, as long as it is surrounded by quotes). It can make use of the <link type="vignette" module="mvc" name="brace_expansion">brace expansion notation</link>. An empty or missing name unregisters the parameter from the namespace. Note that the use of slashes (like "cutoff/frequency") in the name is prohibited.
 			</description>
 		</objarg>
 

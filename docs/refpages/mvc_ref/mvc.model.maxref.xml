@@ -90,7 +90,7 @@
 		<objarg name="name" optional="0" type="symbol">
 			<digest>The model's name, as seen in the namespace</digest>
 			<description>
-				The model's name is a symbol that defines the address in the <link type="vignette" module="mvc" name="MVC_namespace">MVC namespace</link>. It can make use of the <link type="vignette" module="mvc" name="brace_expansion">brace expansion notation</link>. Although multiple mvc.models cannot have the same UID, they can have the same name, as it may take place in a different place in the <link type="vignette" module="mvc" name="MVC_namespace">MVC namespace</link>.
+				The model's name is a symbol that defines the address in the <link type="vignette" module="mvc" name="MVC_namespace">MVC namespace</link>. It can make use of the <link type="vignette" module="mvc" name="brace_expansion">brace expansion notation</link>. An empty or missing name unregisters the model from the namespace. Although multiple mvc.models cannot have the same UID, they can have the same name, as it may take place in a different place in the <link type="vignette" module="mvc" name="MVC_namespace">MVC namespace</link>.
 			</description>
 		</objarg>
 	</objarglist>
