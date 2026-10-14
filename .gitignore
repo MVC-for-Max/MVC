@@ -63,3 +63,4 @@ duplicates
 # test folders #
 #########################
 _outside_git/
+.vscode/settings.json
