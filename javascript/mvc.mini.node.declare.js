@@ -170,8 +170,8 @@ function _registerModel(n){
     // check namespace collision
     if (_modelAddressAlreadyInUse(n)){
         messnamed(uid + ".post", "error", "Some addresses already registered in namespace.");
-        //postdebug("Namespace collision for model", uid, ". Resuming init.\n"); // todo: make that an error in the object itself
-        n.remove("addresslist");
+        n.replace("addresslist", previousAddresses);
+        _unregisterModel(n);
         return;
     }
 
@@ -280,9 +280,9 @@ function _registerInput(n){
 
     // check namespace collision and resume registration if duplicate
     if (_inputAddressAlreadyInUse(n)){
-        //postdebug("Namespace collision for input", uid, ". Resuming init.\n"); // todo: make that an error in the object itself
         messnamed(uid + ".post", "error", "Some addresses already registered in namespace.");
-		n.remove("addresslist");
+        n.replace("addresslist", previousAddresses);
+        _unregisterInput(n);
     	return;
     }
 
@@ -1228,5 +1228,4 @@ function getInputDefaultValue(n){
     let inputType = n.get("type");
     return defaultValue;
 }
-
 
